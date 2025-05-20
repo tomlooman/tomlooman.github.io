@@ -1,0 +1,12 @@
+main:
+  - title: "Courses"
+    url: /courses/
+  - title: "Contact"
+    url: "/contact/"
+
+
+sidebar-main:
+  - title: "Parent Page A"
+    image: "/assets/images/your-image.jpg"
+    image_alt: "image"
+    text: "Some text here."
