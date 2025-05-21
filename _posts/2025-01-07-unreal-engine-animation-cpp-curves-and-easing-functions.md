@@ -1,6 +1,7 @@
 ---
 title: "Animating in C++: Curves and Easing Functions"
 date: 2025-01-07
+last_modified_at: 2025-05-20
 categories: 
   - "cpp"
   - "gameplay"

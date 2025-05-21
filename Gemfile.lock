@@ -288,6 +288,8 @@ DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll-feed (~> 0.12)
   jekyll-include-cache
+  jekyll-paginate
+  jekyll-sitemap
   minimal-mistakes-jekyll
   tzinfo (>= 1, < 3)
   tzinfo-data
