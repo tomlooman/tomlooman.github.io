@@ -4,3 +4,5 @@
 
 layout: home
 ---
+
+<div id="list-item" data-text="test"></div>

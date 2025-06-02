@@ -1,0 +1,21 @@
+@use '/react-src/styles/colors.scss';
+
+.listItem {
+  list-style: none;
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.5;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    background-image: url('../../assets/arrow_right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
