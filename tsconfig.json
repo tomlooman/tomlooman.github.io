@@ -8,5 +8,5 @@
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["react-src"]
+  "include": ["react-src/**/*", "react-src/global.d.ts"]
 }
