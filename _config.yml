@@ -46,12 +46,14 @@ defaults:
       type: pages
     values:
       layout: single
+      css: main
   # _posts
   - scope:
       path: "_posts"
       type: posts
     values:
       layout: single
+      css: main
       toc: true
       toc_sticky: true
       related: true
