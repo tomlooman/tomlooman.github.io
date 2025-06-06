@@ -5,4 +5,6 @@
 layout: home
 ---
 
-<div id="list-item" data-text="test"></div>
+## title
+<div id="courses-banner"></div>
+some text here...
