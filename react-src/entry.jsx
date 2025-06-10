@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import ListItem from './components/ListItem';
 import CoursesBanner from './components/CoursesBanner';
 import EmailSignUp from './components/EmailSignUp';
+import CoursesMainIntroduction from './components/CoursesMainIntroduction';
 
 const listItems = document.getElementsByClassName('list-item');
 if (listItems.length) {
@@ -20,4 +21,9 @@ if (coursesBanner) {
 const emailSighUp = document.getElementById('email-sign-up');
 if (emailSighUp) {
   createRoot(emailSighUp).render(<EmailSignUp />);
+}
+
+const coursesMainIntroduction = document.getElementById('courses-main-introduction');
+if (coursesMainIntroduction) {
+  createRoot(coursesMainIntroduction).render(<CoursesMainIntroduction />);
 }

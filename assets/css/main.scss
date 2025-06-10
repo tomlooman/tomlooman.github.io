@@ -12,12 +12,14 @@ $typeface-heading: "Manrope", sans-serif;
 @import "minimal-mistakes"; // main partials
 
 #main {
-  padding-inline: 0 !important;
+  padding-inline: 0;
+  max-width: unset;
+  margin: 0;
 
   .archive {
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
+    padding: 0;
+    margin: 0;
+    width: 100%;
     box-sizing: border-box;
 
     > *:not(.wide-content) {
