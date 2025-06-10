@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import ListItem from './components/ListItem';
 import CoursesBanner from './components/CoursesBanner';
+import EmailSignUp from './components/EmailSignUp';
 
 const listItems = document.getElementsByClassName('list-item');
 if (listItems.length) {
@@ -14,4 +15,9 @@ if (listItems.length) {
 const coursesBanner = document.getElementById('courses-banner');
 if (coursesBanner) {
   createRoot(coursesBanner).render(<CoursesBanner />);
+}
+
+const emailSighUp = document.getElementById('email-sign-up');
+if (emailSighUp) {
+  createRoot(emailSighUp).render(<EmailSignUp />);
 }

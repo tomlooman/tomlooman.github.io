@@ -11,10 +11,29 @@ $typeface-heading: "Manrope", sans-serif;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+#main {
+  padding-inline: 0 !important;
+
+  .archive {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box;
+
+    > *:not(.wide-content) {
+      padding: 0 200px;
+    }
+  }
+}
+
 body {
   font-family: "Manrope", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Manrope", sans-serif;
+}
+
+p {
+  font-size: .75rem;
 }

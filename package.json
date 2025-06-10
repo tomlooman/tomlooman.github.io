@@ -4,7 +4,11 @@
   "main": "index.js",
   "repository": "https://github.com/tomlooman/tomlooman.git",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.27.4",
     "@babel/preset-env": "^7.27.2",
@@ -23,7 +27,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "bundle exec jekyll serve",
+    "start": "vite build && bundle exec jekyll serve",
     "predeploy": "yarn build",
     "deploy": "bundle exec jekyll build"
   }

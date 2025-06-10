@@ -5,6 +5,10 @@
 layout: home
 ---
 
-## title
+## title text
 <div id="courses-banner"></div>
 some text here...
+<br />
+
+<div class="wide-content"><div id="email-sign-up"></div></div>
+
