@@ -29,4 +29,30 @@
 .right {
   background-color: colors.$white;
   clip-path: polygon(55% 0, 100% 0, 100% 100%, 70% 100%);
+  position: relative;
+
+  > div {
+    position: absolute;
+
+    &:first-of-type {
+      top: 0;
+      left: 60%;
+      width: 40%;
+      height: 33%;
+    }
+
+    &:nth-of-type(2) {
+      top: 33%;
+      left: 65%;
+      width: 35%;
+      height: 33%;
+    }
+
+    &:last-of-type {
+      top: 66%;
+      left: 70%;
+      width: 30%;
+      height: 34%;
+    }
+  }
 }
