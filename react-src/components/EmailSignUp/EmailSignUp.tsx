@@ -19,6 +19,7 @@ const EmailSignUp = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         classes={{ root: style.textFieldRoot }}
                     />
+                    {/* TODO: Change onClick to use a proper email signup function */}
                     <button className={style.signUpButton} onClick={() => console.log(email)}>Sign me up</button>
                 </div>
             </div>

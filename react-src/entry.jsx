@@ -4,6 +4,7 @@ import ListItem from './components/ListItem';
 import CoursesBanner from './components/CoursesBanner';
 import EmailSignUp from './components/EmailSignUp';
 import CoursesMainIntroduction from './components/CoursesMainIntroduction';
+import Footer from './components/Footer';
 
 const listItems = document.getElementsByClassName('list-item');
 if (listItems.length) {
@@ -26,4 +27,9 @@ if (emailSighUp) {
 const coursesMainIntroduction = document.getElementById('courses-main-introduction');
 if (coursesMainIntroduction) {
   createRoot(coursesMainIntroduction).render(<CoursesMainIntroduction />);
+}
+
+const footer = document.getElementById('footer');
+if (footer) {
+  createRoot(footer).render(<Footer />);
 }

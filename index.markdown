@@ -2,7 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: custom-home
 ---
 
 <h2>Title text</h2>
@@ -24,3 +24,4 @@ some text here some text here some text here some text here some text here...
 
 <div class="wide-content"><div id="courses-main-introduction"></div></div>
 
+<br />
