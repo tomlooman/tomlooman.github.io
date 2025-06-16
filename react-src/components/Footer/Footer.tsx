@@ -35,6 +35,7 @@ const Footer = () => {
                 <div className={style.newsLetter}>
                     <h2>Join the Newsletter</h2>
                     <p>Get tutorials, articles and other game development content straight in your inbox!</p>
+                    {/* TODO: change onSubmit to use a proper email signup function */}
                     <SingleInputForm
                         label="Email address"
                         onSubmit={(value) => console.log(value)}
