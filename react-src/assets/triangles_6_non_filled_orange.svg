@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 2700 452.24" xml:space="preserve">
+  <style type="text/css">
+    .arrow {
+      fill: none;
+      stroke: #F26533;
+      stroke-width: 3;
+      stroke-miterlimit: 10;
+    }
+  </style>
+  <g>
+    <polygon class="arrow" points="40.94,384.35 357.4,67.89 673.86,384.35 476.54,384.35 357.4,265.22 238.27,384.35" />
+    <polygon class="arrow" points="446.65,67.89 763.11,384.35 1079.57,67.89 882.25,67.89 763.11,187.03 643.98,67.89" />
+    <polygon class="arrow" points="852.36,384.35 1168.82,67.89 1485.28,384.35 1287.95,384.35 1168.82,265.22 1049.68,384.35" />
+    <polygon class="arrow" points="1257.77,67.89 1574.23,384.35 1890.69,67.89 1693.37,67.89 1574.23,187.03 1455.1,67.89" />
+    <polygon class="arrow" points="1663.48,384.35 1979.94,67.89 2296.4,384.35 2099.08,384.35 1979.94,265.22 1860.81,384.35" />
+    <polygon class="arrow" points="2069.19,67.89 2385.65,384.35 2702.11,67.89 2504.79,67.89 2385.65,187.03 2266.52,67.89" />
+  </g>
+</svg>
