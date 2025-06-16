@@ -1,6 +1,7 @@
 import React from 'react';
-import style from './Footer.module.scss';
 import arrowSvg from '../../assets/triangles_6_non_filled_orange.svg';
+import SingleInputForm from '../Forms/SigleInputForm';
+import style from './Footer.module.scss';
 
 interface Link {
     label: string;
@@ -34,6 +35,27 @@ const Footer = () => {
                 <div className={style.newsLetter}>
                     <h2>Join the Newsletter</h2>
                     <p>Get tutorials, articles and other game development content straight in your inbox!</p>
+                    <SingleInputForm
+                        label="Email address"
+                        onSubmit={(value) => console.log(value)}
+                        submitText="Subscribe"
+                        inputLabelProps={{
+                            sx: {
+                                '&.Mui-focused': {
+                                    display: 'none',
+                                },
+                            },
+                        }}
+                        inputProps={{
+                            sx: {
+                                '&.MuiOutlinedInput-root': {
+                                    '&.Mui-focused fieldset': {
+                                        borderColor: "transparent",
+                                    },
+                                },
+                            },
+                        }}
+                    />
                 </div>
             </div>
         </div>

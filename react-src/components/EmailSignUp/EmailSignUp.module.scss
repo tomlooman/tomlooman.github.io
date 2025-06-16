@@ -1,4 +1,3 @@
-@use 'sass:color';
 @use '/react-src/styles/colors.scss' as colors;
 
 .emailSignUpBanner {
@@ -17,32 +16,6 @@
             color: colors.$orange;
             font-size: .75rem;
             width: 50%;
-        }
-
-        .signUpForm {
-            display: flex;
-            align-items: center;
-
-            .textFieldRoot {
-                background-color: colors.$white;
-
-                * { font-size: .75rem; }
-            }
-
-            .signUpButton {
-                background-color: colors.$orange;
-                color: colors.$white;
-                border: colors.$white 1px solid;
-                padding: 10px 20px;
-                cursor: pointer;
-                border-radius: 5px;
-                font-size: .75rem;
-                margin-left: 1rem;
-
-                &:hover {
-                    background-color: color.scale(colors.$orange, $lightness: -10%);
-                }
-            }
         }
     }
 }

@@ -59,15 +59,15 @@
         .newsLetter {
             padding: calc(50px + 2rem) 2rem 2rem;
 
-            h2 {
+            > h2 {
                 color: colors.$orange;
                 margin: 0 0 .5rem;
             }
 
-            p {
+            > p {
                 font-size: .7rem;
                 color: colors.$white;
-                margin: 0;
+                margin: 0 0 1rem;
                 line-height: 1.25;
             }
         }
