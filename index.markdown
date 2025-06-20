@@ -25,3 +25,5 @@ some text here some text here some text here some text here some text here...
 <div class="wide-content"><div id="courses-main-introduction"></div></div>
 
 <br />
+
+<div id="reviews"></div>

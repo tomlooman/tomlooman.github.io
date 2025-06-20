@@ -6,9 +6,12 @@
     align-items: center;
 
     .textFieldRoot {
+        height: 40px;
+
         > div {
             border-radius: 5px 0 0 5px;
             background-color: colors.$white;
+            height: 100%;;
         }
 
         * { font-size: .75rem; }
@@ -22,7 +25,7 @@
         cursor: pointer;
         border-radius: 0 5px 5px 0;
         font-size: .75rem;
-        height: 39px;
+        height: 40px;
 
         &:hover {
             background-color: color.scale(colors.$orange, $lightness: -20%);

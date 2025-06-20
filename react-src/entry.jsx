@@ -4,6 +4,7 @@ import ListItem from './components/ListItem';
 import CoursesBanner from './components/CoursesBanner';
 import EmailSignUp from './components/EmailSignUp';
 import CoursesMainIntroduction from './components/CoursesMainIntroduction';
+import Reviews from './components/Reviews';
 import Footer from './components/Footer';
 
 const listItems = document.getElementsByClassName('list-item');
@@ -27,6 +28,11 @@ if (emailSighUp) {
 const coursesMainIntroduction = document.getElementById('courses-main-introduction');
 if (coursesMainIntroduction) {
   createRoot(coursesMainIntroduction).render(<CoursesMainIntroduction />);
+}
+
+const reviews = document.getElementById('reviews');
+if (reviews) {
+  createRoot(reviews).render(<Reviews />);
 }
 
 const footer = document.getElementById('footer');
