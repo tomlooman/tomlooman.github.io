@@ -12,8 +12,13 @@ const ReviewItem = ({ review }: ReviewProps) => {
       <p dangerouslySetInnerHTML={{ __html: review.text }} />
       <div>
         <div className={style.line} />
-        <h5>{review.name}</h5>
-        <p>{review.jobTitle}{review.company && ` (${review.company})`}</p>
+        <div className={style.reviewer}>
+          <img src={review.imageUrl} alt={`${review.name} profile photo`} className={style.avatar} />
+          <div>
+            <h5>{review.name}</h5>
+            <p>{review.jobTitle}{review.company && ` (${review.company})`}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
