@@ -1,10 +1,43 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+  # Only the main Sass file needs front matter (the dashes are enough)
 ---
+
 @charset "utf-8";
 
 $max-width: 1400px;
-
+$typeface: "Manrope", sans-serif;
+$typeface-heading: "Manrope", sans-serif;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+#main {
+  padding-inline: 0;
+  max-width: unset;
+  margin: 0;
+
+  .archive {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    > *:not(.wide-content) {
+      padding: 0 200px;
+    }
+  }
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Manrope", sans-serif;
+}
+
+p {
+  font-size: .75rem;
+}
+
+.page__footer { display: none; }
