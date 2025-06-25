@@ -25,6 +25,19 @@ $typeface-heading: "Manrope", sans-serif;
     > *:not(.wide-content) {
       padding: 0 200px;
     }
+
+    @media screen and (max-width: 992px) {
+      > *:not(.wide-content) {
+        padding: 0 100px;
+      } 
+    }
+
+    @media screen and (max-width: 768px) {
+      > *:not(.wide-content) {
+        padding: 0 2rem;
+      }
+      
+    }
   }
 }
 
@@ -41,3 +54,10 @@ p {
 }
 
 .page__footer { display: none; }
+
+.archive__subtitle {
+  border-bottom: none;
+  font-size: 1.25em;
+  color: unset;
+  text-align: center;
+}

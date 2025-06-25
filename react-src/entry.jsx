@@ -5,6 +5,7 @@ import CoursesBanner from './components/CoursesBanner';
 import EmailSignUp from './components/EmailSignUp';
 import CoursesMainIntroduction from './components/CoursesMainIntroduction';
 import Reviews from './components/Reviews';
+import LinkButton from './components/LinkButton';
 import Footer from './components/Footer';
 
 const listItems = document.getElementsByClassName('list-item');
@@ -33,6 +34,14 @@ if (coursesMainIntroduction) {
 const reviews = document.getElementById('reviews');
 if (reviews) {
   createRoot(reviews).render(<Reviews />);
+}
+
+const seeAllPostsButton = document.getElementById('see-all-posts-button');
+if (seeAllPostsButton) {
+  const text = seeAllPostsButton.getAttribute('data-text');
+  const url = seeAllPostsButton.getAttribute('data-url');
+
+  createRoot(seeAllPostsButton).render(<LinkButton text={text} url={url} />);
 }
 
 const footer = document.getElementById('footer');

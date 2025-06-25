@@ -59,6 +59,11 @@ defaults:
       related: true
       read_time: true
       share: true
+  - scope:
+      path: "blog"
+    values:
+      layout: archive
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
