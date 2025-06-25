@@ -4,7 +4,10 @@ layout: archive
 
 {{ content }}
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+<br />
+<br />
+
+<h2 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Latest articles" }}</h2>
 
 {% if paginator %}
   {% assign posts = paginator.posts %}
@@ -13,11 +16,14 @@ layout: archive
 {% endif %}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
+{% assign latest_posts = posts | slice: 0, 4 %}
 <div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html entries=posts type=entries_layout %}
+  {% include documents-collection.html entries=latest_posts type=entries_layout %}
 </div>
 
 {% include paginator.html %}
+
+<div id="see-all-posts-button" data-text="See all posts" data-url="/blog"></div>
 
 <br />
 
