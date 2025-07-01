@@ -9,7 +9,6 @@ tags:
   - "animation"
   - "cpp"
 coverImage: "Blog_AnimatingCurves_Small.jpg"
-permalink: unreal-engine-animating-cpp-curves-easing-functions
 excerpt: TODO
 ---
 

@@ -6,6 +6,7 @@ import EmailSignUp from './components/EmailSignUp';
 import CoursesMainIntroduction from './components/CoursesMainIntroduction';
 import Reviews from './components/Reviews';
 import LinkButton from './components/LinkButton';
+import LatestBlogs from './components/LatestBlogs';
 import Footer from './components/Footer';
 
 const listItems = document.getElementsByClassName('list-item');
@@ -34,6 +35,12 @@ if (coursesMainIntroduction) {
 const reviews = document.getElementById('reviews');
 if (reviews) {
   createRoot(reviews).render(<Reviews />);
+}
+
+const latestBlogs = document.getElementById('latest-blogs');
+if (latestBlogs) {
+  const posts = latestBlogs.getAttribute('data-posts');
+  createRoot(latestBlogs).render(<LatestBlogs posts={JSON.parse(posts)} />);
 }
 
 const seeAllPostsButton = document.getElementById('see-all-posts-button');
