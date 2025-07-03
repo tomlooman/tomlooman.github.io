@@ -7,6 +7,7 @@ import CoursesMainIntroduction from './components/CoursesMainIntroduction';
 import Reviews from './components/Reviews';
 import LinkButton from './components/LinkButton';
 import LatestBlogs from './components/LatestBlogs';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
 const listItems = document.getElementsByClassName('list-item');
@@ -49,6 +50,11 @@ if (seeAllPostsButton) {
   const url = seeAllPostsButton.getAttribute('data-url');
 
   createRoot(seeAllPostsButton).render(<LinkButton text={text} url={url} />);
+}
+
+const faq = document.getElementById('faq');
+if (faq) {
+  createRoot(faq).render(<FAQ />);
 }
 
 const footer = document.getElementById('footer');
