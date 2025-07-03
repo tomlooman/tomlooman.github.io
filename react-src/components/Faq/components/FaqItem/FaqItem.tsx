@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import upArrowSvg from "../../../../assets/faq_arrow_up.svg";
 import downArrowSvg from "../../../../assets/faq_arrow_down.svg";
+import rightArrowSvg from "../../../../assets/faq_arrow_right.svg";
 import style from "./FaqItem.module.scss";
 
 interface FaqItemProps {
@@ -14,11 +15,10 @@ const FaqItem = ({ question, answer }: FaqItemProps) => {
     return (
         <div className={style.wrapper}>
             <div className={style.question} onClick={() => setIsOpen(!isOpen)}>
-                <p>{question}</p>
                 <div className={style.arrowWrapper}>
                     <img
-                        src={upArrowSvg}
-                        alt="arrow up"
+                        src={rightArrowSvg}
+                        alt="arrow right"
                         className={`${style.arrow} ${isOpen ? style.hidden : style.visible}`}
                     />
                     <img
@@ -27,6 +27,7 @@ const FaqItem = ({ question, answer }: FaqItemProps) => {
                         className={`${style.arrow} ${style.arrowDown} ${isOpen ? style.visible : style.hidden}`}
                     />
                 </div>
+                <p>{question}</p>
             </div>
 
             {isOpen && <p className={style.answer}>{answer}</p>}
