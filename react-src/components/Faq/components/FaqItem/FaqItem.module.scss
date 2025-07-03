@@ -1,7 +1,7 @@
 @use '/react-src/styles/colors.scss' as colors;
 
 .wrapper {
-    border-bottom: 2px solid colors.$navy;
+    border-bottom: 1.5px solid colors.$navy;
 
     .question {
         display: flex;
