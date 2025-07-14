@@ -15,16 +15,31 @@ layout: archive
   {% assign posts = site.posts %}
 {% endif %}
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-{% assign latest_posts = posts | slice: 0, 4 %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html entries=latest_posts type=entries_layout %}
-</div>
+{% assign latest_posts = site.posts | slice: 0, 4 %}
+
+{% capture post_data_json %}
+[
+  {% for post in latest_posts %}
+    {
+      "title": "{{ post.title | escape }}",
+      "url": "{{ post.url | relative_url }}",
+      "coverImage": "{{ post.coverImage | relative_url | remove_first: '/' }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+{% endcapture %}
+
+<div id="latest-blogs" data-posts='{{ post_data_json | strip_newlines | escape }}'></div>
 
 {% include paginator.html %}
 
 <div id="see-all-posts-button" data-text="See all posts" data-url="/blog"></div>
 
+<br />
+
+<div id="faq"></div>
+
+<br />
 <br />
 
 <div class="wide-content">

@@ -59,10 +59,8 @@ defaults:
       related: true
       read_time: true
       share: true
-  - scope:
-      path: "blog"
-    values:
-      layout: archive
+      permalink: /blog/:title/
+
 
 
 # Exclude from processing.

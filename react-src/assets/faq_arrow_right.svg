@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Right Arrow -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 781.61 452.24" xml:space="preserve">
+  <style type="text/css">
+    .arrow { fill:none;stroke:#112548;stroke-width:8;stroke-miterlimit:10; }
+  </style>
+  <g transform="rotate(90 390.8 226.12)">
+    <polygon class="arrow" points="271.67,384.35 390.8,265.22 509.94,384.35 707.26,384.35 390.8,67.89 74.34,384.35"/>
+  </g>
+</svg>
