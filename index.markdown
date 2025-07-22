@@ -26,4 +26,12 @@ some text here some text here some text here some text here some text here...
 
 <br />
 
+<div id="pricing"></div>
+
+<br />
+
 <div id="reviews"></div>
+
+<br />
+
+<div id="faq"></div>
