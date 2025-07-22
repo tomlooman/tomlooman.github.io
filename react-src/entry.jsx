@@ -5,6 +5,7 @@ import CoursesBanner from './components/CoursesBanner';
 import EmailSignUp from './components/EmailSignUp';
 import CoursesMainIntroduction from './components/CoursesMainIntroduction';
 import Reviews from './components/Reviews';
+import Pricing from './components/Pricing';
 import LinkButton from './components/LinkButton';
 import LatestBlogs from './components/LatestBlogs';
 import FAQ from './components/FAQ';
@@ -36,6 +37,11 @@ if (coursesMainIntroduction) {
 const reviews = document.getElementById('reviews');
 if (reviews) {
   createRoot(reviews).render(<Reviews />);
+}
+
+const pricing = document.getElementById('pricing');
+if (pricing) {
+  createRoot(pricing).render(<Pricing />);
 }
 
 const latestBlogs = document.getElementById('latest-blogs');
