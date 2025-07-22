@@ -3,6 +3,8 @@ main:
     url: /courses/
   - title: "Contact"
     url: "/contact/"
+  - title: "Nuggets"
+    url: "/nuggets/"
 
 
 sidebar-main:

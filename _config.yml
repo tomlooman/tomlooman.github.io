@@ -58,9 +58,20 @@ defaults:
       toc_sticky: true
       related: true
       read_time: true
-      share: true
+      share: false
       permalink: /blog/:title/
+  # _nuggets
+  - scope:
+      path: "_nuggets"
+    values:
+      layout: single
+      css: main
 
+
+collections:
+  nuggets:
+    output: true
+    permalink: /:collection/:name
 
 
 # Exclude from processing.

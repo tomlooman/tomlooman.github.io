@@ -1,5 +1,5 @@
 ---
-title: "Unreal Engine: Naming Convention Guide"
+title: "Unreal Engine Naming Convention Guide"
 date: 2014-04-03
 coverImage: "UnrealEngine_ParentLogoUwoTagTransparentBlack.png"
 layout: single
@@ -8,101 +8,134 @@ sidebar:
     nav: sidebar-main
 ---
 
-The goal of this document is to share our internal naming conventions with the community to give everyone something to start out with. Using and getting comfortable with a strict naming convention is essential before your projects grow beyond a few dozen files.
+The goal of this document is to share my internal naming conventions with the community as used by the [Action Roguelike GitHub](https://github.com/tomlooman/ActionRoguelike) project and the [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp) to give everyone something to start out with. Using and getting comfortable with a naming convention is essential before your projects grow beyond thousands of files.
 
-Last Revision: **April 12, 2022**
+Last Revision: **July, 2025**
 
-First, consider how you are accessing your content. The content browser has powerful filter features making pre-fixes and suffixes less interesting compared to older Unreal Engine editions. However, this still doesn't apply to the simpler drop-down selection UI for picking class variables, etc. The same can happen when logging asset names in which 'assetName something error' occurred, bad naming can make it difficult to track down the origin.
+First, consider how you are accessing your assets. The Content Browser in Unreal Engine has powerful filter features making pre-fixes and suffixes less critical compared to older Unreal Engine editions. However, this same level of filtering doesn't apply to the simpler drop-down selection UI for picking class variables, etc. The same can happen when logging asset names in which 'assetName something error' occurred, bad naming can make it difficult to track down the origin.
 
-The most complete style guide is [available on GitHub by Allar](https://github.com/Allar/ue4-style-guide). It's a style we mostly adopted for our projects.
+Note: The most complete style guide is [available on GitHub by Allar](https://github.com/Allar/ue4-style-guide). Allar's guide has a ton of depth and additional information you can apply if you see fit.
 
-## Coding Standards
+## C++ Coding Standards
 
-Epic has a [Coding Standards](https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStandard/index.html) page that's worth a read.
+Epic has an official [C++ Coding Standards](https://dev.epicgames.com/documentation/en-us/unreal-engine/epic-cplusplus-coding-standard-for-unreal-engine) page that's worth a read.
 
-Splash Damage has its own extension of the Epic Coding Standard on [GitHub](https://github.com/splash-damage/coding-standards). It is well laid out in [SplashDamageCodingStandard.h](https://github.com/splash-damage/coding-standards/blob/master/SplashDamageCodingStandard.h) and [SplashDamageCodingStandard.cpp](https://github.com/splash-damage/coding-standards/blob/master/SplashDamageCodingStandard.cpp). They even included some conventions on Blueprints via a plugin and webpage.
+Splash Damage has its own extension of the Epic C++ Coding Standard on [GitHub](https://github.com/splash-damage/coding-standards). It is well laid out in [SplashDamageCodingStandard.h](https://github.com/splash-damage/coding-standards/blob/master/SplashDamageCodingStandard.h) and [SplashDamageCodingStandard.cpp](https://github.com/splash-damage/coding-standards/blob/master/SplashDamageCodingStandard.cpp).
 
 ## General Naming Rules
 
 - All names in English.
-- All asset dependencies should be in the same folder. (except for shared assets)
+- Basic asset dependencies should be in the same folder. (except for shared assets)
+    - This primarily applies to simple structures such as Meshes, Materials and Textures
+    - Folder names such as Meshes, Textures are redundant and require more navigation.
 - Asset type determines prefix.
-    - _Blueprint is **BP\_**assetname\_01_
-- Certain types (eg. textures) use a suffix to specify sub-types. 
-    - _T\_Grass\_01**\_N** for normal maps_
+    - Blueprint is BP_assetname
+- Certain types (eg. textures) use a suffix to specify sub-types.
+    - T_Grass_N for normal maps
 - Use underscores to split type from identifier and numeric values.
-    - _SM**\_**DoorHandle**\_**01_
-- Use numeric values with 2 digits.
-    - _SM\_Pipe\_**01**_
+    - SM_DoorHandle
+- Use numeric values with 2 digits for generic variants.
+    - SM_Pipe_01
 
-## Content Browser
+Assets generally follow the following file structure as described on [Epic's own naming convention doc](https://dev.epicgames.com/documentation/en-us/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects):
 
-You can add the asset type to your search query. eg. searching "ship material" will search for assets named ship that may be of type material. This is powerful to nail down specific assets within a group of similar names. (_Make sure "Search Asset Class Names" is enabled in the View Options of your Content Browser_)
+[TypePrefix]\_[BaseName]\_[Descriptor]\_[OptionalVariant]
 
-Tip: Use **Ctrl+P** in the editor/viewport to quickly search for assets without using the Content Browser. This is incredibly powerful when you have properly named your assets!
+### Naming Examples
+- SM_Pipe_Short
+- SM_Pipe_Long
+- T_Pipe_Long_D
+- T_Pipe_Long_N
+
+## Content Browser Tips
+
+You can include the asset type to your search query. eg. searching "player material" will search for assets named "ship" that may be of type material. This is powerful to nail down specific assets within a group of similar names. (Make sure "Search Asset Class Names" is enabled in the View Options of your Content Browser).
+
+Use **Ctrl+P** in the editor/viewport to open the Asset Panel to quickly search for assets without using the Content Browser. This is incredibly powerful when you have properly named your assets! So long as I roughly remember the asset name or partial name, I use this more often than the content browser.
 
 ### Content Directories
 
 All game content is placed in a sub-folder. eg. Content/**MyGame**/UI/... This helps in migrating between projects and splitting your content from marketplace packs that are added like Content/**MyMarketplacePack**/...
 
-When testing out local assets that are not ready to be used by other members of your team (or perhaps never should be) you can put them in your **Developer-folder**. You can enable this folder in the view options of the Content Browser. These assets will not show up in searches by other developers
+When testing out local assets that are not ready to be used by other members of your team (and never should be) you can put them in your **Developer-folder**. You can enable this folder in the view options of the Content Browser. These assets will not show up in searches by other developers.
 
 | **Sub-Folder** | **Description** |
 | --- | --- |
 | Content/**MyGame** | Top-level folder for all game-specific content. All rows are relative to this folder. |
 | ../AI |  |
-| ../Art | Holds all art content (except for UI/FX) |
+| ../Art | All art content such as meshes, textures, materials (except for UI/FX) |
 | ../Audio |  |
 | ../Core |  |
+| ../Input | Enhanced Input |
 | ../Characters |  |
 | ../Characters/Animations |  |
-| ../FX |  |
-| ../FX/Flares | Contains Particle systems, materials and textures specific to all types of Flares. |
+| ../Effects |  |
+| ../Effects/Flares | Example: Systems, materials and textures specific to all types of Flares. |
 | ../Maps | Contains all levels including dev-only. |
-| ../Maps/Dev/... | Dev-only maps that are not cooked/packaged. |
+| ../Maps/Dev/... | Shared Dev-only maps that are not cooked/packaged. |
 | ../UI |  |
 | ../UI/Materials | UI-specific materials. |
 | ../UI/Fonts |  |
-| ../Actions | Example of Action folder that's specific to my projects. (Actions are like Abilities) |
+| ../Actions | Example of Actions, similar to GAS Abilities. |
 | ../Expeditions | Example of major feature that deserves its own top-level folder. Mainly holds Blueprints. |
 |  |  |
 
-## Marketplace Importing
-
-It's recommended to use a dedicated Marketplace content project to import the packs first. This is your staging area before migrating pieces into your main project. This lets you review and filter out unwanted content early.
-
 ## Asset Naming
 
-### Lyra Starter Game
+### Common Types
 
-[Lyra Starter Game](https://docs.unrealengine.com/5.0/en-US/lyra-sample-game-in-unreal-engine/) is a new project that shipped with the release of Unreal Engine 5.0. They use the Gameplay Ability System which introduces certain asset types and their own naming. Here are some of the prefixes they use in the project.
+For this list I stick mainly to the commonly used types and those that are used in the C++ Course material and my open-source projects on GitHub. They don't suffer much from [Epic's own Naming Convention Document](https://dev.epicgames.com/documentation/en-us/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects). 
 
-| Prefix | Asset Type |
-| --- | --- |
-| GA\_ | Gameplay Abilities |
-| GE\_ | Gameplay Effects |
-| GCN\_ | Gameplay Cue Notifies (UGameplayCueNotify) |
-| GCNL\_ | Latent Gameplay Cue Notifies (Inherits from AGameplayCueNotify\_Actor and subclasses.) |
-| Phase\_ | Game Phase Abilities |
-| AbilitySet\_ | Ability Set |
-| IA\_ | Input Action (Enhanced Input) |
-| InputData\_ | (Lyra) Input Config |
-| W\_ | Widget (Blueprint) UI |
-| B\_ | All other blueprints such as pawn types, item spawners, etc. |
+| Asset Type | Prefix | Comment |
+| --- | --- | ---|
+ Blueprint | BP_  | 
+ Blueprint Interface |  BPI_ |  
+ Enumeration |  E |  Same as in C++ (enum EWeaponType) 
+ |
+ Material |  M_ |  
+ Material Instance |  MI_|  
+ Material Function |  MF_ | 
+ Material Parameter Collection |  MPC_ |  
+ Texture |  T_ |  Has suffix/variants for texture types. See suffixes table below. 
+|
+ Static Mesh |  SM_ |  
+ Skeletal Mesh |  SK_ |  
+ Niagara System |  NS_ |  
+ Vector/Float/Color Curve |  Curve_|  
+ Camera Shake |  CamShake_ |  
+ UMG Widget |  Widget_| 
 
-### Prefixes
+### Physics
 
-Somes tables are temporarily broken and incomplete, please check out the link above for a more complete list of naming tables.
+| Asset Type | Prefix | Comment |
+| --- | --- | --- |
+ Physics Material |  _PhysMat |
+ Physics Asset | PHYS_ |
 
-\[table sort="asc"\] Asset Type, Prefix, Example, Comment Blueprint, BP\_, BP\_WallLight\_01, Except for derived common classes: HUD / GameMode / Character Blueprint Interface, BPI\_, BPI\_InventoryItem\_01, Material, M\_, M\_Grass\_01, Material Instance, MI\_, MI\_Grass\_01, Material Function, MF\_, MF\_CheapContrast, Not numbered Material Parameter Collection, MPC\_, MPC\_EnvironmentSettings\_01, Static Mesh, SM\_, SM\_Wall\_01, Skeletal Mesh, SK\_, SK\_Character\_01, Texture, T\_, T\_Grass\_01\_D, Has suffix for texture types. See suffixes table. Particle System, P\_, P\_Fire\_01, Physics Material, \_PhysMat, Dirt\_PhysMat, Not numbered Sound, S\_, S\_HitImpact\_Mono\_01, Include \_Mono or \_Stereo designations Sound Cue, S\_\*\_Cue, S\_HitImpact\_01\_Cue, Attenuation, \_att, Explosion\_att, Enumeration, E, EWeaponType, Not numbered. Similar to convention in code (enum EWeaponType) Render Target, RT\_, RT\_CameraCapturePoint\_01, Vector/Float/Color Curve, Curve\_, Curve\_Recoil\_AK47, Camera Shake, CamShake\_, CamShake\_Landed, User Widget, Widget\_, Widget\_EnergyBar, Font, Font\_, Font\_Roboto48, Font size is included in name. \[/table\]
+### Animation
 
-### Suffixes
+| Asset Type | Prefix | Comment |
+| --- | --- | --- |
+ Animation Blueprint | _AnimBP |
+ AnimMontage | _Montage |
+ Skeleton | _SKEL |
+ BlendSpace | BS_ |
+
+ ### Audio
+
+| Asset Type | Prefix | Comment |
+| --- | --- | --- |
+ Sound Wave |  S_ | Include sub-category like S_UI_ or S_Combat_
+ MetaSound Source | MSS_ | |
+ Attenuation |  Att_ |  |  
+
+### Suffixes & Variants
 
 #### Textures
 
-Texture types all use the T\_ prefix.
+Texture types all use the T_ prefix.
 
-\[table sort="asc" width="300px"\] Texture type, Suffix Diffuse/Color Map, \_D Normal Map, \_N Emissive Map, \_E Mask Map, \_M Roughness Map, \_R Metallic Map, \_MT Specular, \_S Displacement, \_DP Ambient Occlusion, \_AO Height Map, \_H Flow Map, \_F Light Map (custom), \_L \[/table\]
+Texture type, Suffix Diffuse/Color Map, _D Normal Map, _N Emissive Map, _E Mask Map, _M Roughness Map, _R Metallic Map, _MT Specular, _S Displacement, _DP Ambient Occlusion, _AO Height Map, _H Flow Map, _F Light Map (custom), _L
 
 ### Animation
 
@@ -110,8 +143,22 @@ These types have no prefix. These names are pretty standard to how the engine au
 
 | **Type** | **Suffix** |
 | --- | --- |
-| Animation Blueprint | \_AnimBP |
-| Physics Asset | \_PhysicsAsset |
-| Skeleton | \_Skeleton |
-| BlendSpace | \_BlendSpace |
-| AnimMontage | \_Montage |
+
+
+### Example: Lyra Starter Game
+
+[Lyra Starter Game](https://docs.unrealengine.com/5.0/en-US/lyra-sample-game-in-unreal-engine/) is an official sample project that shipped with the release of Unreal Engine 5.0. They use the Gameplay Ability System which introduces certain asset types and their own naming. Here are some of the prefixes they use in the project.
+
+| Prefix | Asset Type |
+| --- | --- |
+| GA_ | Gameplay Abilities |
+| GE_ | Gameplay Effects |
+| GCN_ | Gameplay Cue Notifies (UGameplayCueNotify) |
+| AbilitySet_ | Ability Set |
+| IA_ | Input Action (Enhanced Input) |
+| InputData_ | (Lyra) Input Config |
+| W_ | Widget (Blueprint) UI |
+| B_ | All other blueprints such as pawn types, item spawners, etc. |
+
+## References
+- [Recommended Asset Naming Conventions | Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects)
