@@ -17,7 +17,7 @@ const Pricing = () => {
 
     return (
         <div className={style.wrapper}>
-            <h2>Pricing</h2>
+            <h2>Get Started Today!</h2>
             <div className={style.content}>
                 <div className={style.priceItem}>
                     <div className={style.priceTitle}>
@@ -34,7 +34,7 @@ const Pricing = () => {
                         </FormControl>
                     </div>
                     <div className={style.priceDescription}>
-                        <p>Single Seat License. For Individuals (Personal Funds) & small studios with less than $100,000 in revenue/funding.</p>
+                        <p>Single User License. For individuals, educators and studios with less than $1M in yearly revenue/funding.</p>
                         <div>
                             <h1>{`$${selectedIndieType === PriceItemType.INDIE_BASIC ? Prices.INDIE_BASIC : Prices.INDIE_PAYMENT_PLAN}`}</h1>
                             <div className={style.priceAdditionalInfo}>{selectedIndieType === PriceItemType.INDIE_PAYMENT_PLAN && `(5 payments of $${Prices.INDIE_PAYMENT_PLAN / 5}/month)`}</div>
@@ -44,10 +44,10 @@ const Pricing = () => {
                 </div>
                 <div className={style.priceItem}>
                     <div className={style.priceTitle}>
-                        <h5>Pro</h5>
+                        <h5>Pro (Studio)</h5>
                     </div>
                     <div className={style.priceDescription}>
-                        <p>Single Seat License. Companies with revenue or funding above $100,000 USD.</p>
+                        <p>Single User License. For users within studios with over $1M in yearly revenue/funding.</p>
                         <div>
                             <h1>{`$${Prices.PRO}`}</h1>
                             <div className={style.priceAdditionalInfo} />

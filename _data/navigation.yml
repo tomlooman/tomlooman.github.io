@@ -1,6 +1,11 @@
 main:
   - title: "Courses"
     url: /courses/
+    children:
+      - title: "Unreal Engine C++ Course" # cant get this to work yet
+        url: /courses/unrealengine-cpp/
+      - title: "Unreal Engine Optimization Course"
+        url: /courses/unrealengine-optimization/
   - title: "Contact"
     url: "/contact/"
   - title: "Nuggets"

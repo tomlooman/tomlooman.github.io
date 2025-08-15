@@ -5,10 +5,9 @@
 layout: custom-home
 ---
 
-<h2>Title text</h2>
+<h2>Unreal Engine 5 Courses</h2>
 <div id="courses-banner"></div>
-some text here some text here some text here some text here some text here some text here. 
-some text here some text here some text here some text here some text here.
+Master Unreal Engine C++ Game Development with this university-grade course.
 <br />
 
 <div class="wide-content"><div id="email-sign-up"></div></div>
