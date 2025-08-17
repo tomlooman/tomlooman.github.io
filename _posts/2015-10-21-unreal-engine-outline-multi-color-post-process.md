@@ -13,11 +13,13 @@ tags:
   - "tutorial"
   - "unreal-engine"
 coverImage: "ue4_multicoloredoutlines.jpg"
+redirect_from:
+  - /ue4-evolves-outline-post-effect
 ---
 
 With some of the recent changes to Unreal Engine 4, rendering multi-color outlines is now possible! This is done through the use of Custom Stencil, a new buffer similar to Custom Depth - but allowing meshes to render as integer values. This provides us with a 1-255 range of indices that can be used to apply different outline colors to meshes and even combine multiple features such as the decal x-ray shown below by using a different stencil index.
 
-![ue4_coloredoutlines01_small](images/ue4_coloredoutlines01_small.jpg)
+![](/assets/images/ue4_coloredoutlines01_small.jpg)
 
 ## The Original Custom Depth
 
@@ -25,7 +27,7 @@ The original outline material I made last year was based on Custom Depth, before
 
 The new effect is still using Custom Depth to determine the (optional) occlusion which adds the faint overlayed color adjusted by tweaking the _FillAlpha_ parameter in the post process. This occlusion can be turned off in the material by unchecking _FillOcclusion_ in the material instance.
 
-![ue4_coloredoutlines02](images/ue4_coloredoutlines02.jpg)
+![](/assets/images/ue4_coloredoutlines02.jpg)
 
 Above: the Custom Depth visualizer.
 
@@ -39,13 +41,13 @@ Custom Stencil is disabled by default, to enable go to _**Window > Project Setti
 
 Some of the meshes are not visible in the Custom Stencil visualizer in this example, their Stencil value is set to 0 (default), excluding them from this buffer.
 
-![ue4_coloredoutlines03](images/ue4_coloredoutlines03.jpg)
+![](/assets/images/ue4_coloredoutlines03.jpg)
 
 To enable this visualizer go to your viewport, look for _Lit > Buffer Visualizer > Custom Stencil_.
 
 You can enable Custom Depth and change the Stencil index through the editor menu of a mesh under the Rendering category.
 
-[![ue4_coloredoutlines05](images/ue4_coloredoutlines05.jpg)](https://www.tomlooman.com/wp-content/uploads/2015/10/ue4_coloredoutlines05.jpg)
+![](/assets/images/ue4_coloredoutlines05.jpg)
 
 If you're using C++ you can define the stencil indices in a convenient place in your game code.
 
@@ -71,5 +73,4 @@ You can get access to the material files [**here**](https://courses.tomlooman.co
 ## References
 
 - [The many uses of Custom Depth](https://www.tomlooman.com/the-many-uses-of-custom-depth-in-unreal-4/)
-
 - [Hologram Material](https://www.tomlooman.com/ue4-hologram-material/)

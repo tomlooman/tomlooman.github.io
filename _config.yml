@@ -34,7 +34,9 @@ logo: "/assets/site_logo_whiteorange.webp"
 theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
   - jekyll-include-cache
+  - jekyll-redirect-from
 
 # SEO Related
 google_site_verification : "" # Replace this with your ID, or delete
@@ -71,7 +73,7 @@ defaults:
       related: true
       read_time: true
       share: false
-      permalink: /blog/:title/
+      permalink: /:title/
   # _nuggets
   - scope:
       path: "_nuggets"
