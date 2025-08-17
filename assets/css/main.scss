@@ -49,8 +49,21 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Manrope", sans-serif;
 }
 
+
 p {
-  font-size: .75rem;
+  font-size: .9em;
+}
+
+.page__content p {
+  font-size: .85em;
+}
+
+.page__content li {
+  font-size: 0.85em;
+}
+
+.page-meta {
+  font-size: 0.9em;
 }
 
 .page__footer { display: none; }
