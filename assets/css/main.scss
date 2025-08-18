@@ -60,6 +60,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
 }
 
+/* captions below images inside of blogs, marked as EM by adding * around the text */
+p > img + em {
+  display: block;
+  text-align: center;
+  font-size: 0.8em;
+}
 
 /* For blog stuff */
 

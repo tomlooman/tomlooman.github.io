@@ -9,31 +9,20 @@ tags:
   - "rendering"
   - "unreal-engine"
 coverImage: "Thumb_JetBrainsPerfTalk-1.jpg"
+last-modified-at: 18-08-2025
 ---
 
-For the 2022 JetBrains GameDev Day, I was invited to give a talk about Unreal Engine. I decided to create one for game optimization in Unreal Engine. It's a topic I've been spending a lot of time with recently and wanted to share some tips and tricks. The slot of 45 minutes had only room for so much...so expect more performance-oriented blog posts from me soon!
+For the JetBrains GameDev Day, I was invited to give a talk about Unreal Engine. I decided to create one for game optimization in Unreal Engine. It's a topic I've been spending a lot of time with recently and wanted to share some tips and tricks. The slot of 45 minutes had only room for so much...so expect more performance-oriented blog posts from me soon!
 
 Certain rendering features are not supported by Unreal Engine 5's Nanite Virtualized Geometry. These limitations are called out in the individual sections.
 
 ## Talk Motivation and Contents
 
-'on a budget' from the title of the talk refers to cheap and easy-to-apply optimizations for a wide range of projects. I won't be talking about highly complex custom systems or engine modifications.
-
-**Table of Contents**
-
-- Built-in Profiling Tools & Commands
-
-- Easy Optimization Opportunities
-
-- Significance Manager
-
-- “Did you know?”
-
-[**Slides are available as PDF**](Unreal-Engine-Game-Optimization-on-a-Budget.pdf).
-
-https://www.youtube.com/watch?v=G51QWcitCII
+"on a budget" from the title of the talk refers to cheap and easy-to-apply optimizations for a wide range of projects. I won't be talking about highly complex custom systems or engine modifications.
 
 **I recommend you watch the full presentation**, the summarized version contains only brief notes with each slide.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/G51QWcitCII?si=srQyyCvQVci00QPP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Profiling Preparations
 
@@ -42,13 +31,9 @@ Before you can start profiling make sure you are set up. Here is a brief checkli
 Ideally, when profiling with tools such as Unreal Insights you package your game rather than running from within the editor. Besides getting very different memory usage and more stuttery level streaming, your frame timings may be quite different in an editor build as well. Running the game in 'Standalone' is still very convenient, make sure your Editor viewport has 'Realtime' disabled and is minimized.
 
 - `r.vsync 0`
-
 - `t.maxfps 0`
-
 - SmoothFrameRate = false (Project Settings)
-
 - Lighting Built & MapCheck Errors resolved
-
 - Packaged Game build
     - Editor 'Standalone' is convenient (however memory and certain timings may be inaccurate)
 
@@ -58,22 +43,14 @@ You should not be blindly optimizing code in your project. Instead, make sure yo
 
 - Game Thread / Render Thread / GPU
     - Unreal Insights
-    
-    - ProfileGPU + r.RHISetGPUCaptureOptions 1
-    
-    - `stat unitgraph`
-    
-    - `stat detailed`
-    
-    - `r.screenpercentage 20`
-    
+    - ProfileGPU + `r.RHISetGPUCaptureOptions 1`
+    - `stat unitgraph`    
+    - `stat detailed`  
+    - `r.screenpercentage 20`    
     - `pause` (Freeze Game Thread)
-
 - Memory & Loading
     - Unreal Insights (-trace=memory,loadtime,file)
-    
     - `memreport -full`
-    
     - `loadtimes.dumpreport`
 
 ## Unreal Insights
@@ -81,14 +58,10 @@ You should not be blindly optimizing code in your project. Instead, make sure yo
 Unreal Insights is the new flagship profiling tool that came in late Unreal Engine 4 and is still seeing major improvements in 5.0 with more advanced Memory profiling for example.
 
 - Detailed Insights into the frame timings:
-    - CPU/GPU
-    
-    - Memory
-    
-    - File Loading
-    
+    - CPU/GPU  
+    - Memory  
+    - File Loading    
     - Threading
-
 - Drill down on a single frame or session
 
 ![](/assets/images/insights_overview-900x143.png)
@@ -98,10 +71,9 @@ Unreal Insights is the new flagship profiling tool that came in late Unreal Engi
 Some common trace channels to use on your game executable or in Standalone. `statnamedevents` argument provides more detailed information on object names.
 
 - `-trace=log,cpu,gpu,frame,bookmark,loadtime,file,memory,net`
-
 - `-statnamedevents`
 
-- [Full list of Trace Channels](http://docs.unrealengine.com/5.0/en-US/unreal-insights-reference-in-unreal-engine-5)
+[Full list of Trace Channels](http://docs.unrealengine.com/5.0/en-US/unreal-insights-reference-in-unreal-engine-5)
 
 ![](/assets/images/pie_standalone_arguments.png)
 
@@ -110,15 +82,12 @@ Some common trace channels to use on your game executable or in Standalone. `sta
 Bookmarks add contextual information about changes and transitions that happens during the profiling session. This includes streaming in new levels, executing console commands, starting a cinematic sequence, etc. You can easily add new bookmarks to your own game code to add more context. While profiling use `bookmark` trace channel.
 
 - Bookmarks for context and transitions
-    - GC (Garbage Collection)
-    
-    - Sequencer Start
-    
-    - Level streaming (Start/Complete)
-    
+    - GC (Garbage Collection)  
+    - Sequencer Start  
+    - Level streaming (Start/Complete) 
     - Console Commands
 
-`**TRACE_BOOKMARK**(Format, Args)`
+C++: `TRACE_BOOKMARK(Format, Args)`
 
 [![](/assets/images/insights_bookmarks-900x140.png)]()
 
@@ -127,7 +96,6 @@ Bookmarks add contextual information about changes and transitions that happens 
 For your C++ game code, it can be valuable to include additional profiling details by adding your own stat tracing. By default your blueprint functions will only show up as 'Blueprint Time', adding custom profiling will add more details on where this time is spent if that Blueprint called into your C++ game code. This is relatively straightforward to do and is detailed in my blog post below.
 
 - Add profiling detail to your game code
-
 - Track as “stat _YourCategory_” in the viewport or via Insights.
 
 I previously wrote about this topic before in [Profiling Stats (Stat Commands)](https://www.tomlooman.com/unreal-engine-profiling-stat-commands/).
@@ -142,11 +110,8 @@ It may prove valuable to run some commands during a profiling session to see how
 
 - Run commands to compare during the session (Shows as Bookmark)
     - `r.ScreenPercentage 20`
-    
     - `pause`
-
 - Use only necessary Trace Channels for lower overhead
-
 - Add custom Bookmarks for gameplay context
 
 ## Memreport -full
@@ -155,10 +120,8 @@ It may prove valuable to run some commands during a profiling session to see how
 
 - `memreport -full`
     - Runs a number of individual commands for memory profiling
-
 - `obj list class=`
     - Example: `obj list class=AnimSequence`
-
 - Only in Packaged Builds for accurate results
     - Example: `AnimSequence` is twice as large in editor builds.
 
@@ -170,14 +133,10 @@ It may prove valuable to run some commands during a profiling session to see how
 
 - `dumpticks` / `dumpticks grouped`
     - Outputs all Actor and Component Ticks
-
 - `listtimers`
     - Run on low frequency
-    
     - avoid heavy load (stuttering)
-
 - `stat uobjects`
-
 - Disable/Reduce further with _Significance Manager_
     - _More on that later…_
 
@@ -186,50 +145,32 @@ It may prove valuable to run some commands during a profiling session to see how
 By default meshes in your scenes will have both physics and collision enabled. This can be wasteful if you don't use physics and especially if a lot of them are moving around. Player movement only requires 'QueryOnly' on objects and so it's possible you are wasting CPU and memory on loading and maintaining physics bodies that remain unused.
 
 - Unreal configured to just work out of the box.
-    - “Collision Enabled” => Physics + Query
-    
+    - “Collision Enabled” => Physics + Query    
     - Most things require just ‘QueryOnly’
-
 - Disable Components that players can’t reach or interact with.
 
 - Profiling
-    - `stat physics`
-    
-    - `stat collision`
-    
-    - `obj list class=BodySetup`
-    
-    - `show CollisionPawn`
-    
+    - `stat physics`  
+    - `stat collision` 
+    - `obj list class=BodySetup` 
+    - `show CollisionPawn` 
     - `show CollisionVisibility`
 
-Tip: Landscape may use lower collision MIPs.
+Tip: Landscape Components may use lower collision MIPs to reduce memory overhead and collision complexity.
 
 ## Moving SceneComponents
 
 Moving game objects with a lot of `SceneComponents` is far from free. Especially if you use default settings. There are some easy optimizations to apply which can greatly reduce CPU cost.
 
 - Move/Rotate only once per frame
-
 - Disable Collision & GenerateOverlaps=False
-
 - AutoManageAttachment
     - Audio & Niagara
-
 - Profiling
     - `stat component`
 
-<figure>
-
-[![](/assets/images/insights_movecomponents-900x212.png)]()
-
-<figcaption>
-
-two large yellow 'MoveComponent' sections due to SetActorLocation, and SetActorRotation separate calls.
-
-</figcaption>
-
-</figure>
+![](/assets/images/insights_movecomponents-900x212.png)
+*two large yellow 'MoveComponent' sections due to SetActorLocation, and SetActorRotation separate calls.*
 
 ### Component Bounds
 
@@ -237,7 +178,6 @@ While not expensive on a per-component basis, with tons of `PrimitiveComponents`
 
 - `UseAttachParentBound=True`
     - Skips “CalcBounds”
-
 - `show Bounds` or `showflag.bounds 1`
 
 [![](/assets/images/boundsmadness_cropped.jpg)]()
@@ -252,79 +192,46 @@ Significance Manager is often only briefly mentioned but can be challenging to g
 
 - Scale down fidelity based on game-specific logic
     - Distance To
-    
     - Max number of objects in full fidelity (‘buckets’)
-
 - Calculates ‘significance value’ to scale-down game objects.
     - Examples: NPCs, puzzle Actors, Vehicles, other Players
-
 - Reduce/Cull:
-    - Tick rate
-    
-    - Traces / Queries
-    
-    - Animation updates (SKs)
-    
+    - Tick rate 
+    - Traces / Queries 
+    - Animation updates (SKs) 
     - Audio/Particle playback or update rate
-
 - Profiling
     - ShowDebug SignificanceManager
-        - sigman.filtertag <name>
-    
-    - stat significancemanager
-
+        - `sigman.filtertag <name>`
+    - `stat significancemanager`
 - Examples
     - **[GitHub.com/tomlooman/ActionRoguelike](https://github.com/tomlooman/ActionRoguelike)**
-    
     - USSignificanceComponent.h
 
 ## Occlusion Culling
 
 Occlusion Culling is often a costly part of your frame and something that may be difficult to tackle without knowing what's adding this cost and the tools available to optimize. The easiest is to reduce the number of considered primitives. This is where level streaming, [HLOD](https://docs.unrealengine.com/4.27/en-US/BuildingWorlds/HLOD/), and distance culling can be a great help.
 
-Note: _Nanite_ in UE5 has an entirely different occlusion culling system (Two-pass HZB) running on the GPU. This no longer queries the GPU occlusion queries on the N+1 frame. Non-nanite geometry in UE5 can still use this 'old' behavior.
+Note: Nanite in UE5 has an entirely different occlusion culling system (Two-pass HZB) running on the GPU. This no longer queries the GPU occlusion queries on the N+1 frame. Non-nanite geometry in UE5 can still use this 'old' behavior.
 
 - Frustum Culling and Occlusion Queries
-
 - GPU query results polled in next frame
-
-- **HLOD** Can greatly reduce occlusion cost (See below)
-
+- **HLOD** can greatly reduce occlusion cost (See below)
 - Profiling
-    - `r.visualizeoccludedprimitives 1`
-    
+    - `r.visualizeoccludedprimitives 1` 
     - `stat initviews`
 
-<figure>
+![](/assets/images/occlusion_HLOD_1-900x374.jpg)
+*modular mesh building, many occluded parts*
 
-[![](/assets/images/occlusion_HLOD_1-900x374.jpg)]()
-
-<figcaption>
-
-modular mesh building, many occluded parts
-
-</figcaption>
-
-</figure>
-
-<figure>
-
-[![](/assets/images/occlusion_HLOD_2-900x455.jpg)]()
-
-<figcaption>
-
-Single HLOD generated for static geometry.
-
-</figcaption>
-
-</figure>
+![](/assets/images/occlusion_HLOD_2-900x455.jpg)
+*Single HLOD generated for static geometry.*
 
 ## RenderDoc: Occlusion Query Results
 
 [RenderDoc](https://renderdoc.org/) is a fantastic tool to help dissect and understand how Unreal is rendering your frame. In this example, I use the DepthTest to visualize the occlusion query result. You may find you are sending hundreds of queries with boxes of only a few pixels in size that had no chance of ever succeeding or the tiny mesh even being relevant to the frame once rendered.
 
 - `DepthTest` Overlay in RenderDoc
-
 - Easily find ‘wasteful’ queries on tiny/far objects
 
 Note: As mentioned in the previous section. Nanite does not issue individual GPU occlusion queries. This visualization can still be used for non-Nanite meshes.
@@ -339,15 +246,11 @@ Distance Culling is not supported for Nanite. Non-nanite geometry such as transl
 
 - PrimitiveComponent: Max/Min Draw Distance
     - Light Cones, Fog Volumes, Blueprint Components
-
 - Distance Cull Volume
-    - Maps object “Size” with “CullDistance”
-    
+    - Maps object “Size” with “CullDistance” 
     - Reduce Occlusion Query cost
-
 - Profiling
-    - `showflag.distanceculledprimitives 1`
-    
+    - `showflag.distanceculledprimitives 1` 
     - `stat initviews`
 
 ## Min/Max Draw Distance
@@ -355,10 +258,8 @@ Distance Culling is not supported for Nanite. Non-nanite geometry such as transl
 MinDrawDistance may be useful to cull up-close translucent surfaces that cause a lot of overdraw and don't necessarily contribute a lot to your scene (eg. it might even fade out when near the camera in the material, this still requires the pixel to be evaluated).
 
 - Example: Light Cones
-
 - Vis: Shader Complexity
     - Pixel Overdraw
-
 - DistanceCullFade
     - Blends 0-1, 1-0
 
@@ -397,7 +298,6 @@ Freeze the occlusion culling to see whether your scene is properly occluded or i
 FreezeRendering does not work with UE5's Nanite.
 
 - ‘FreezeRendering’ + **;** (semi-colon) to fly with DebugCamera
-
 - Verify occlusion is working as expected
 
 <figure>
@@ -430,17 +330,12 @@ Lights can still add considerable cost to your render thread even if they aren't
 
 - Automatic ScreenSize culling is not strict enough
     - MinScreenRadiusForLights (0.03)
-
 - Cull earlier case-by-case
     - MaxDrawDistance
-    
     - MaxDistanceFadeRange
-
 - Profiling
     - Show > LightComplexity (Alt+7)
-    
     - Show > StationaryLightOverlap
-    
     - ToggleLight <partialname>
 
 <figure>
@@ -463,29 +358,19 @@ Besides reducing the memory load potentially significantly, it can help occlusio
 
 - Streaming Volumes vs. Manual Load/Unload
     - Camera Location based (caution: third person view and cinematic shots)
-    
     - Cannot combine both on a specific sublevel, can mix within the game
-
 - Profiling
-    - `stat levels`
-    
-    - `Loadtimes.dumpreport` (+ loadtimes.reset)
-    
+    - `stat levels`    
+    - `Loadtimes.dumpreport` (+ loadtimes.reset) 
     - Unreal Insight
-        - Look for level load & “GC” bookmarks
-        
+        - Look for level load & “GC” bookmarks     
         - `loadtime,file` trace channels
-
 - Performance Impacts
-    - Initial level load time
-    
-    - Occlusion cost
-    
+    - Initial level load time 
+    - Occlusion cost 
     - Memory
-
 - Options: Load, LoadNotVisible, LoadVisible
     - Keep in memory while hiding to aid the renderer
-
 - Consider streaming early in Level Design!
     - Splitting into multiple ULevels
     
@@ -503,7 +388,6 @@ The following [Animation Optimization](https://docs.unrealengine.com/5.0/en-US/a
 
 - Allow ‘Fast Path’ by moving Computations out of AnimGraph (into EventGraph)
     - Use WarnAboutBlueprintUsage to get warnings in AnimGraph
-
 - Profiling
     - stat anim
 
@@ -512,19 +396,13 @@ The following [Animation Optimization](https://docs.unrealengine.com/5.0/en-US/a
 Skeletal Meshes add a chunky amount of processing to your CPU threads, there are some easy wins to look into when you have many SKs alive at a time, especially if they don't always contribute to the frame.
 
 - Update Rate Optimization (URO) for distant SkelMeshes
-
 - VisibilityBasedAnimTickOption (per-class and config variable in DefaultEngine.ini)
-    - OnlyTickPoseWhenRendered
-    
-    - AlwaysTickPoseAndRefreshBones
-    
+    - OnlyTickPoseWhenRendered 
+    - AlwaysTickPoseAndRefreshBones 
     - …
-
 - More Bools!
-    - bRenderAsStatic
-    
-    - bPauseAnims 
-    
+    - bRenderAsStatic  
+    - bPauseAnims   
     - bNoSkeletonUpdate
 
 ### Animation Compression Library (ACL)
@@ -534,13 +412,9 @@ This animation compression library has cut the memory size for animations in hal
 The ACL plugin is built in with Unreal Engine 5.3+. Existing projects that migrated (to 5.3+) may still need to manually update their animations to compress using ACL.
 
 - [ACL Plugin](https://docs.unrealengine.com/5.3/en-US/animation-compression-library-in-unreal-engine/) (by Nicholas Frechette)
-
 - Compression speed-up (from minutes to seconds!, 56x faster)
-
 - Decompression Speed (8.4x faster)
-
 - Memory Size (cut in half across the game)
-
 - Used in _Fortnite_ and other AAA titles
 
 ## Oodle Data & Oodle Texture
@@ -548,10 +422,8 @@ The ACL plugin is built in with Unreal Engine 5.3+. Existing projects that migra
 [Oodle](https://docs.unrealengine.com/4.27/en-US/TestingAndOptimization/Oodle/) has been providing incredible compression for years, and more recently ships with Unreal out of the box. It can greatly improve game packaged sizes and with faster decompression, it can improve load times as well!
 
 - RDO (Rate Distortion Optimization) Compression
-    - Significant gains in compression compared to the default
-    
+    - Significant gains in compression compared to the default 
     - Takes longer to compress (off by default in-editor)
-
 - RDO Works with Oodle Data by ‘preparing’ the texture data
 
 [![](/assets/images/oodledata_config-900x315.png)]()
@@ -563,7 +435,6 @@ Scalability is a critical concept to allow your game to run on a wide range of d
 I wrote a blog post about applying [Hardware Benchmark for default scalability](https://www.tomlooman.com/unreal-engine-optimal-graphics-settings/).
 
 - Run CPU/GPU benchmark and apply Scalability Settings
-
 - Returns “score” with 100 baseline for Avg. CPU/GPU
 
 ## Shadow Proxies
@@ -574,15 +445,11 @@ Your Mileage may very greatly for Nanite geometry. Requires additional testing i
 
 - Single low-poly silhouette mesh
     - RenderMainPass=False
-
 - Bespoke mesh or using built-in Mesh Tools
-    - ‘Merge Actors’ (Right-Click assets in level)
-    
+    - ‘Merge Actors’ (Right-Click assets in level) 
     - UE5 Geometry Script
-
 - Profiling
-    - ‘ShadowDepths’ in Insights &
-    
+    - ‘ShadowDepths’ in Insights &    
     - ProfileGPU + r.RHISetGPUCaptureOptions 1
 
 [![](/assets/images/ue_modularbuilding-900x511.jpg)]()
@@ -594,7 +461,6 @@ Your Mileage may very greatly for Nanite geometry. Requires additional testing i
 SizeMap is a valuable tool to quickly find and address hard references in your content. This is an often hidden danger that can add considerable development cost and the end of your project once you're struggling with memory and load times.
 
 - Find unexpected references and bloated content
-
 - Use on Blueprints and (sub)Levels early and often
 
 Check out Mark Craig's recent talk on [the hidden danger of Asset Dependency Chains](https://www.youtube.com/watch?v=4-oRyDLfo7M).
@@ -606,10 +472,8 @@ Check out Mark Craig's recent talk on [the hidden danger of Asset Dependency Cha
 I found myself often using this panel to investigate opportunities for memory and total map sizes. Especially Landscape assets will show up as huge bloated assets. Reducing collision complexity and deleting unseen Landscape Components can help a lot here. You may find certain asset variants used only once in the level, and can consider swapping these out to keep them out of memory and your load screen entirely!
 
 - Stats on current level
-    - Primitive Stats
-    
+    - Primitive Stats 
     - Texture Stats
-
 - Tip: Shift-click for _secondary_ sort.
     - Sort ‘Count’ + ‘Tris’ or ‘Size’ (Find large assets used only once)
 
@@ -619,12 +483,9 @@ I found myself often using this panel to investigate opportunities for memory an
 
 - `ToggleForceDefaultMaterial` _(Non-Nanite)_
     - Will show significant changes to BasePass cost as everything can render with the same shader. You can use this to compare your scene and see how your shaders are affecting it.
-
 - `stat Dumphitches`
     - profiling hitches can be problematic, this is a first step in finding expensive function calls when a hitch does occur
-
 - `stat none` (clear all categories on screen)
-
 - `r.ForceLODShadow X` _(Non-Nanite)_
     - For low-end platforms, this can be one of those easy to do tricks to significantly cut down on triangles rendered for shadows. Make sure you have good LODs! (Non-nanite, Non-VSM, VSM has a better LOD Bias (`r.Shadow.NaniteLODBias`) option available.
 
