@@ -18,7 +18,7 @@ Since the last time I wrote about Utility AI for Unreal Engine 4, it has been st
 
 This post is mainly going to be a walkthrough of what I've been experimenting with and how the overall structure is shaping up. I'd like to add more practical guides in future parts including some more gameplay footage of the AI in action.
 
-![](images/UtilityAI_FeaturedImage_Part2_Thin.jpg)
+![](/assets/images/UtilityAI_FeaturedImage_Part2_Thin.jpg)
 
 ## System Breakdown
 
@@ -40,7 +40,7 @@ _Example:_ A melee attack taking several seconds and locking the movement of the
 
 While Unreal comes with a Blackboard feature built-in for its Behavior Trees it lacks a few things I really want such as adding keys at runtime. Some other things I wanted: GameplayTags as keys (avoid typo's, forgetting key names) Save Game support and possibly replication support. Replication is only relevant if Blackboards are used for things besides AI which I am still experimenting with.
 
-![](images/ue4_blackboard_setfloat-900x246.jpg)
+![](/assets/images/ue4_blackboard_setfloat-900x246.jpg)
 
 The AIController contains a Blackboard and can be used as a data bank. This easily lets tasks share these variables such as _TargetActor_ which might only be set by one task but used by many. Each _key_ can be listened to for value changes.
 
@@ -60,7 +60,7 @@ For a while I used a C++ function that was able to run any Blueprint function by
 
 <figure>
 
-![](images/UtilityAI_ScoringFunc-900x294.jpg)
+![](/assets/images/UtilityAI_ScoringFunc-900x294.jpg)
 
 <figcaption>
 

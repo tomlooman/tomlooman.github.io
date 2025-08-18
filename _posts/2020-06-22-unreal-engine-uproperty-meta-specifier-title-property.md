@@ -44,7 +44,7 @@ The result of displaying this in the editor: ("Environment", "Players", "Pirates
 
 <figure>
 
-![](images/ue4_uproperty_metaspecifier_titleproperty.jpg)
+![](/assets/images/ue4_uproperty_metaspecifier_titleproperty.jpg)
 
 <figcaption>
 

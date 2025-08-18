@@ -66,7 +66,7 @@ public:
 
 - **Config=Game** - Store in DefaultGame.ini, other examples include Engine, Input.
 
-![Unreal Editor Project Settings with the new custom settings.](images/ue_projectsettings_customconfig-900x312.jpg)
+![Unreal Editor Project Settings with the new custom settings.](/assets/images/ue_projectsettings_customconfig-900x312.jpg)
 
 To access the developer settings in C++ we use the CDO ([Class Default Object](https://dev.epicgames.com/documentation/en-us/unreal-engine/objects-in-unreal-engine)) as that is already automatically instanced for us and accessed using GetDefault<T>();
 
@@ -92,7 +92,7 @@ The neat thing about configuration files is that the values are stored as plain 
 
 Getting read-only access to the configuration settings is very easy using the GetClassDefaults node. Make sure you mark your variables BlueprintReadOnly for them to show up.
 
-![blueprint node Get Class Defaults to access Developer Settings.](images/ue_developersettings_blueprintaccess.jpg)
+![blueprint node Get Class Defaults to access Developer Settings.](/assets/images/ue_developersettings_blueprintaccess.jpg)
 
 ## Game User Settings
 

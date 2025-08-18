@@ -15,7 +15,7 @@ coverImage: "actionroguelike_ue4_combatsample-copy.jpg"
 
 For the [Stanford University Fall 2020 Curriculum](https://www.tomlooman.com/stanford-cs193u/), I built a small game project using mainly C++ mixed with some Blueprint in Unreal Engine. For those interested, the entire Computer Science course (CS193U) was provided through Zoom lectures and has been recorded. I'm working on getting this published and meanwhile, this project is already [open-source through GitHub](https://github.com/tomlooman/ActionRoguelike) to be taken apart by anyone!
 
-![](images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)
+![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)
 
 **Check out the full project [right here](https://github.com/tomlooman/ActionRoguelike)** **on GitHub!**
 
@@ -92,7 +92,7 @@ Below I've listed some of the more relevant features included in the project. I 
 
 <figure>
 
-![](images/ue4_actionroguelike_aisample.jpg)
+![](/assets/images/ue4_actionroguelike_aisample.jpg)
 
 <figcaption>
 
@@ -104,7 +104,7 @@ Spotted by Minion's sight sense.
 
 <figure>
 
-[![](images/assignment4_behaviortree-900x532.jpg)]()
+[![](/assets/images/assignment4_behaviortree-900x532.jpg)]()
 
 <figcaption>
 

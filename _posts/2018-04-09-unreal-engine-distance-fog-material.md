@@ -18,7 +18,7 @@ coverImage: "Thumb_DepthFog.jpg"
 
 Back in the forward rendering days you would get distance fog basically for free in your standard materials (specifically referring to XNA) and now in the age of deferred renderers we have all sorts of different - more advanced - fog types built-in to Unreal (eg. Atmospheric, Exponential Height fog) While those are great for certain types of scenery, I still find myself needing the classic fog style to not only add atmosphere but hide distance gameplay objects or simply focus the players vision more on the near range rather than the horizon. This is there the built-in fog types fail, luckily it's really easy to build your own.
 
-![](images/Thumb_DepthFog.jpg)
+![](/assets/images/Thumb_DepthFog.jpg)
 
 This type of dense fog can be helpful in optimizing view distances too, where beyond a certain range you cull out objects and no one will notice (I'd suggest to keep the big pieces like towers, terrain etc. that define the fog's rough horizon) The core implementation of this effect is actually really simple. You check the Scene Depth in your post process and based on that value you interpolate between your original Scene Color and a Fog Color. You now already have your fog material basics completed. The next thing you could do is to add more control over the fall-off by adding Power-node into the graph or adding an offset to the Scene Depth to start the fog beyond the first unit of distance from the camera's view.
 
@@ -28,7 +28,7 @@ There is one problem with this simple implementation however, and that will be a
 
 <figure>
 
-![](images/depthfog_original01.jpg)
+![](/assets/images/depthfog_original01.jpg)
 
 <figcaption>
 
@@ -40,7 +40,7 @@ incorrect depth, straight line that rotates with camera angle.
 
 <figure>
 
-![](images/depthfog_original02.jpg)
+![](/assets/images/depthfog_original02.jpg)
 
 <figcaption>
 
@@ -52,7 +52,7 @@ incorrect depth, straight line that rotates with camera angle.
 
 <figure>
 
-![](images/depthfog_corrected01.jpg)
+![](/assets/images/depthfog_corrected01.jpg)
 
 <figcaption>
 
@@ -64,7 +64,7 @@ incorrect depth, straight line that rotates with camera angle.
 
 <figure>
 
-![](images/depthfog_correct02.jpg)
+![](/assets/images/depthfog_correct02.jpg)
 
 <figcaption>
 
@@ -76,7 +76,7 @@ incorrect depth, straight line that rotates with camera angle.
 
 For our little fog effect we need something more than a straight forward Scene Depth comparison as the same problem occurs. Instead we use the following:
 
-![](images/ue4_depthfog_materialnodes01.jpg)
+![](/assets/images/ue4_depthfog_materialnodes01.jpg)
 
 By using the above we get a consistent density in the fog regardless of the view rotation.
 
@@ -84,7 +84,7 @@ By using the above we get a consistent density in the fog regardless of the view
 
 Now finally I wanted to make the effect slightly more dynamic, by adding clouds. These are not actual volumetric clouds, as that is more expensive and complex to calculate, instead it's a 3D Perlin noise texture that pans through world-space and is blended into the fog material. The effect doesn't hold up too well at close range, so it's only added on the distant pixels of the scene where it looks more believable as 'volumetric' clouds.
 
-![](images/ue4_depthfog_clouds.gif)
+![](/assets/images/ue4_depthfog_clouds.gif)
 
 The clouds are a 'cheap trick' and might not work for every style of game. But I think it adds a nice dynamic layer on top of the static distance fog by slightly altering the perceived density at a distance. I'd like to do more experimentation with these clouds as in the current implementation they are barely noticeable and require more work.
 

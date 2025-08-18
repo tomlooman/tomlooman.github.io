@@ -34,7 +34,7 @@ This screenshot (Unreal Insights) shows a game running without any handling of P
 
 <figure>
 
-![](images/psocaching_hitches.jpg)
+![](/assets/images/psocaching_hitches.jpg)
 
 <figcaption>
 
@@ -110,7 +110,7 @@ Display the following stats using the `stat psoprecache` console command.
 
 This stat command is only available in builds without `WITH_EDITOR` compile flag, such as packaged builds. In-editor this command is not available.
 
-![](images/psocaching_statpsocache.jpg)
+![](/assets/images/psocaching_statpsocache.jpg)
 
 ### Precaching in Unreal Insights
 
@@ -118,7 +118,7 @@ You can best see the compilation steps in the game's load screen using Unreal In
 
 To get proper stats here you do need to enable PSO Validation mentioned earlier. Don't forget about `-clearPSODriverCache` to have a clean cache every run for maximum stutters.
 
-![](images/psocaching_insights.jpg)
+![](/assets/images/psocaching_insights.jpg)
 
 "_PSOPrecache: Untracked_" in stats and Insights are most likely global shaders and not missed material shaders. You should be able to catch these using Bundled PSOs.
 

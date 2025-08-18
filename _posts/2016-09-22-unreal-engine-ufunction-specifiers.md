@@ -26,7 +26,7 @@ Exposes the function as a node to Blueprint. Must be combined with the **Categor
 
 ```
 
-[![ue4_ufunction_blueprintcallable2](images/ue4_ufunction_blueprintcallable2.jpg)]()
+[![ue4_ufunction_blueprintcallable2](/assets/images/ue4_ufunction_blueprintcallable2.jpg)]()
 
 ##### const (C++ keyword)
 
@@ -38,7 +38,7 @@ When using the "const" keyword on your function (see code sample), the Blueprint
 
 ```
 
-[![ue4_ufunction_blueprintcallable](images/ue4_ufunction_blueprintcallable.jpg)]()
+[![ue4_ufunction_blueprintcallable](/assets/images/ue4_ufunction_blueprintcallable.jpg)]()
 
 #### BlueprintImplementableEvent
 
@@ -52,7 +52,7 @@ Used when Blueprint implements the logic of this function instead of C++. Can 
 
 ```
 
-[![ue4_ufunction_event](images/ue4_ufunction_event.jpg)]()
+[![ue4_ufunction_event](/assets/images/ue4_ufunction_event.jpg)]()
 
 An important note here is the difference between specifying 'void' or a return type (eg. bool) on the function. The above code sample is of type void, and therefore results in a Event node, where the sample below (with a bool as return type) will be overridable as a Function instead. This difference is not exclusive to this keyword.
 
@@ -62,7 +62,7 @@ An important note here is the difference between specifying 'void' or a return t
 
 ```
 
-[![ue4_ufunction_function](images/ue4_ufunction_function.jpg)]()
+[![ue4_ufunction_function](/assets/images/ue4_ufunction_function.jpg)]()
 
 #### BlueprintNativeEvent
 
@@ -86,7 +86,7 @@ void AMyGameCharacter::OnEnterInventory_Implementation()
 
 ```
 
-[![ue4_ufunction_blueprintnativeevent](images/ue4_ufunction_blueprintnativeevent.jpg)]()
+[![ue4_ufunction_blueprintnativeevent](/assets/images/ue4_ufunction_blueprintnativeevent.jpg)]()
 
 The same logic applies as explained in BlueprintImplementableEvent. Specifying a return value compiles to a Function, and using 'void' compiles to an Event node as seen above.
 
@@ -102,7 +102,7 @@ Similar to using the 'const' keyword as explained at **BlueprintCallable** above
 
 ```
 
-[![ue4_ufunction_blueprintpure](images/ue4_ufunction_blueprintpure.jpg)]()
+[![ue4_ufunction_blueprintpure](/assets/images/ue4_ufunction_blueprintpure.jpg)]()
 
 ## Metadata Specifiers
 
@@ -132,7 +132,7 @@ Deprecation is an important part of a healthy pipeline. Customize the message us
 
 ```
 
-[![ue4_ufunction_deprecation](images/ue4_ufunction_deprecation.jpg)]()
+[![ue4_ufunction_deprecation](/assets/images/ue4_ufunction_deprecation.jpg)]()
 
 ##### DeprecationMessage
 
@@ -148,7 +148,7 @@ Customize the message with helpful information for the designers. Such as which 
 
 The category keyword is cosmetic only and is used to group functions (and properties) in the editor. See **BlueprintCallable** for usage example.
 
-[![ue4_function_category](images/ue4_function_category.jpg)]()
+[![ue4_function_category](/assets/images/ue4_function_category.jpg)]()
 
 As you can see our functions show up under "Character" which we specified as the category in all above code samples.
 
@@ -164,7 +164,7 @@ Using Exec on functions is great for (debug) commands such as giving health to a
 
 ```
 
-[![ue4_function_exec](images/ue4_function_exec.jpg)]()
+[![ue4_function_exec](/assets/images/ue4_function_exec.jpg)]()
 
 If you found this useful, please consider sharing this page with your fellow Unreal Engine 4 Developers!
 

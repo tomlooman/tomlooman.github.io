@@ -24,7 +24,7 @@ A `FGameplayTag` is essentially an [FName](https://docs.unrealengine.com/en-US/f
 
 <figure>
 
-![](images/gameplaytags_editorselection.png)
+![](/assets/images/gameplaytags_editorselection.png)
 
 <figcaption>
 
@@ -36,7 +36,7 @@ GameplayTag selection menu for any FGameplayTag of FGameplayTagContainer variabl
 
 <figure>
 
-![](images/gameplaytags_configsettings.png)
+![](/assets/images/gameplaytags_configsettings.png)
 
 <figcaption>
 
@@ -76,7 +76,7 @@ It may be confusing that there are multiple tagging systems in Unreal. The basic
 
 <figure>
 
-[![](images/gameplaytags_findreference.jpg)]()
+[![](/assets/images/gameplaytags_findreference.jpg)]()
 
 <figcaption>
 
@@ -96,7 +96,7 @@ I highly recommend looking into [Lyra Starter Game](https://docs.unrealengine.co
 
 You could start an ability by GameplayTag rather than calling Start() on it directly by holding a hard reference to a specific ability class.
 
-![](images/gameplaytags_startaction.jpg)
+![](/assets/images/gameplaytags_startaction.jpg)
 
 ### Gameplay Message Router (Lyra Plugin)
 
@@ -104,7 +104,7 @@ Lyra has a plugin dedicated to this called _GameplayMessageRouter_ which I recom
 
 <figure>
 
-![](images/gameplaytags_messagerouter.png)
+![](/assets/images/gameplaytags_messagerouter.png)
 
 <figcaption>
 
@@ -116,7 +116,7 @@ Send a message with tag Event.Module.Disabled for other game systems to listen t
 
 <figure>
 
-![](images/gameplaytags_listenformessage-1250x455.png)
+![](/assets/images/gameplaytags_listenformessage-1250x455.png)
 
 <figcaption>
 
@@ -130,7 +130,7 @@ Listen for Event.Module.Disabled event, the struct used here must match the one 
 
 <figure>
 
-[![](images/ue_gameplaytags_taglistener-900x441.jpg)]()
+[![](/assets/images/ue_gameplaytags_taglistener-900x441.jpg)]()
 
 <figcaption>
 
@@ -150,7 +150,7 @@ Mark up your loot tables with tags that can block specific items from dropping i
 
 <figure>
 
-[![](images/ue_gameplaytags_datatablerows-900x79.jpg)]()
+[![](/assets/images/ue_gameplaytags_datatablerows-900x79.jpg)]()
 
 <figcaption>
 
@@ -197,7 +197,7 @@ Casting and class references won't hit you as a problem until much later in the 
 
 The best way to check for references is by using the [Reference Viewer](https://docs.unrealengine.com/5.2/en-US/finding-asset-references-in-unreal-engine/) & [Size Map](https://dev.epicgames.com/community/learning/tutorials/r4y7/unreal-engine-size-map) tool. (Both available by right-clicking your asset in the Content Browser)
 
-[![](images/ue_gameplaytags_sizemaptool-900x548.jpg)]()
+[![](/assets/images/ue_gameplaytags_sizemaptool-900x548.jpg)]()
 
 In the example above I already see some references that shouldn't be there. We somehow end up referencing several classes such as _BaseShip_ and _TurretRotating_ class (left top) which are 30MB and 11MB in size and should have nothing to do with a Player Pawn. These problems will often occur during development, it's better to find these early as you may need to adjust your framework design or change your coding habits before it's too late in the project. This is not just for the final game product either, you are loading in these referenced assets any time you boot up the editor or load in a particular blueprint (and all its references) that you work on.
 
@@ -209,7 +209,7 @@ My game has a large number of "Items" which isn't just restricted to what you co
 
 <figure>
 
-[![](images/ue_gameplaytags_items-1-900x154.jpg)]()
+[![](/assets/images/ue_gameplaytags_items-1-900x154.jpg)]()
 
 <figcaption>
 
@@ -223,7 +223,7 @@ Some of the current item types in WARPSQUAD.
 
 GameplayTags can be replicated more efficiently by Unreal than FNames. There are some options available in _Project Settings > GameplayTags_. 'Fast Replication' is able to replicate tags by Index instead of the full Name, for this the tag list must be identical between client and server.
 
-[![](images/ue_gameplaytags_tagreplication-900x142.jpg)]()
+[![](/assets/images/ue_gameplaytags_tagreplication-900x142.jpg)]()
 
 ## GameplayTag Stack Container
 

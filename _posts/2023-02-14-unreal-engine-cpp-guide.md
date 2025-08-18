@@ -137,7 +137,7 @@ UParticleSystem* CastingEffect;
 
 Note that this pointer is going to be empty (_`nullptr`_) unless we assigned it to a specific ParticleSystem via the Editor. That's why we add `UPROPERTY(EditAnywhere)` to expose the variable to be assigned in the editor.
 
-[![](images/ue_cppguide_subclassof-1.jpg)]()
+[![](/assets/images/ue_cppguide_subclassof-1.jpg)]()
 
 Now in the [class file of the projectile attack](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Private/SAction_ProjectileAttack.cpp) (line 28), we can use this asset pointer to spawn the specified ParticleSystem:
 
@@ -499,11 +499,11 @@ void OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, 
 
 You can easily bind your dynamic delegates in Blueprint. When implemented on an ActorComponent as in the example below you can select the Component in the outliner and click the "+" symbol in its details panel. This creates the Delegate on the EventGraph and is already bound for us.
 
-[![](images/ue_cppguide_blueprintdelegates-900x320.jpg)]()
+[![](/assets/images/ue_cppguide_blueprintdelegates-900x320.jpg)]()
 
 You can also manually bind the delegates via the EventGraph (eg. binding to another Actor's delegates.
 
-[![](images/ue_cppguide_assigndelegate-900x363.jpg)]()
+[![](/assets/images/ue_cppguide_assigndelegate-900x363.jpg)]()
 
 Note: Dynamic delegates are less performant than non-dynamic (seen below) variants. It's therefore advisable to only use this type when you want to expose it to Blueprint.
 

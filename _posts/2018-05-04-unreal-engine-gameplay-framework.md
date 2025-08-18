@@ -24,7 +24,7 @@ I also have a [Complete Guide to Unreal C++](https://www.tomlooman.com/unreal-en
 
 When building games in Unreal Engine you'll find a lot of boilerplate is already done for you. There are a handful of classes you'll be using a lot in making games in C++ (or Blueprint for that matter).
 
-![](images/GF_Header-copy.jpg)
+![](/assets/images/GF_Header-copy.jpg)
 
 ## Actor
 
@@ -320,7 +320,7 @@ Filled with useful functions, and a must-know class when making any game. Defini
 
 Check out my **[Professional Game Development in C++ and Unreal Engine](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)** course! Taking you from setting up basic character movement all the way to building an ability system, framework design, AI, multiplayer, performance profiling and so much more!
 
-[![](images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)
+[![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)
 
 # References
 

@@ -20,7 +20,7 @@ To make it easy to get information on what the widget is attached to, we need to
 
 In the C++ Implementation below our custom widget component sets the Owner (an Actor) of the WidgetComponent as variable inside our custom UserWidget class so that we have instant access to the owning actor when working on the UI element. This is great for retrieving the health of the Actor we are attached to for example. The C++ snippets below show you how that's done. But first, let's look at the simplest Blueprint implementation to get an understanding of what we're trying to solve in the most basic way.
 
-![](images/ue4_umg_widgets01.jpg)
+![](/assets/images/ue4_umg_widgets01.jpg)
 
 ## The Simplest Implementation in Blueprint
 
@@ -28,9 +28,9 @@ Not everyone wants to touch C++, and it's not really required. You may also not 
 
 I created a fresh Widget Blueprint, added a variable called OwningActor of type Actor. Now I access the Widget Component on the Actor that will own the Widget (eg. the Player pawn Blueprint from the image above) during BeginPlay, and we get the "User Widget Object" which we need to cast to the correct type. Finally we fill in the OwningActor variable with the Actor "self" and we're done!
 
-![](images/ue4_itemwidgetsbp03.jpg)
+![](/assets/images/ue4_itemwidgetsbp03.jpg)
 
-![](images/ue4_umg_widgets02.jpg)
+![](/assets/images/ue4_umg_widgets02.jpg)
 
 In the above example we added the widget blueprint to a grenade actor so it can display the information on mouse-over when the player sees it in the world. Look at the end of the post for some more context screenshots in case you're not quite following this yet.
 
@@ -168,11 +168,11 @@ public:
 
 That's all the code required to use this in your game project. The main thing to keep in mind is that your in-world widgets should use both these classes for this to work. When you create a new Blueprint class now that derives from SActorWidget you will have the following variable available:
 
-![](images/ue4_itemwidgets01.jpg)
+![](/assets/images/ue4_itemwidgets01.jpg)
 
 If you're following along, make sure the Actor has the SActorWidgetComponent instead of the built-in WidgetComponent and assigned your UMG Widget class as your normally would with [WidgetComponents](https://docs.unrealengine.com/latest/INT/Engine/Components/Widget/).
 
-![](images/ue4_itemwidgets02.jpg)
+![](/assets/images/ue4_itemwidgets02.jpg)
 
 That's it! This quick little trick should make it a lot easier to display in-world information on Actors. Both a quick and easy Blueprint implementation and a C++ alternative to 'bake this down' if your project so desires.
 

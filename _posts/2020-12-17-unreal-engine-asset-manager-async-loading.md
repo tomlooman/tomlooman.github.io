@@ -71,7 +71,7 @@ You can either use UPrimaryDataAsset or override GetPrimaryAssetId() in any UObj
 
 <figure>
 
-![](images/2020-12-04-18_26_09-WarpSquad-Unreal-Editor.jpg)
+![](/assets/images/2020-12-04-18_26_09-WarpSquad-Unreal-Editor.jpg)
 
 <figcaption>
 
@@ -83,7 +83,7 @@ Data Asset Examples of 'Mutations' in WARPSQUAD.
 
 <figure>
 
-![](images/2020-12-04-18_26_20-WarpSquad-Unreal-Editor.jpg)
+![](/assets/images/2020-12-04-18_26_20-WarpSquad-Unreal-Editor.jpg)
 
 <figcaption>
 
@@ -167,7 +167,7 @@ void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLoca
 
 Async loading is a bit easier in Blueprint as there is a neat little node available.
 
-![](images/ue4_blueprintasyncload-900x394.jpg)
+![](/assets/images/ue4_blueprintasyncload-900x394.jpg)
 
 The downside of async loading in Blueprint is that we can't pass in additional parameters in our own Delegate as easily as we did in C++ example above where we pass in the FVector for spawn location. You can pass in variables from other pins after the load has completed, but I'm unsure about how these variable values are 'captured' and so should be used with caution as they may have changed since you started the load request a few frames ago.
 
@@ -208,7 +208,7 @@ After configuring your Asset Manager it will automatically discover new PrimaryA
 
 <figure>
 
-![](images/ue4_projectsettings_assetmanager.jpg)
+![](/assets/images/ue4_projectsettings_assetmanager.jpg)
 
 <figcaption>
 
@@ -230,7 +230,7 @@ right-click on an asset in the content browser lets you "Audit Assets...". This 
 
 <figure>
 
-![](images/ue4_auditassets-900x323.jpg)
+![](/assets/images/ue4_auditassets-900x323.jpg)
 
 <figcaption>
 

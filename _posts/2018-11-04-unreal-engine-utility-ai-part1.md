@@ -34,7 +34,7 @@ As mentioned in the intro we had some issues with using Behavior Trees once the 
 
 <figure>
 
-[![](images/ue4_behaviortrees_example.png)](https://www.tomlooman.com/ue4-cpp-multiplayer-course/)
+[![](/assets/images/ue4_behaviortrees_example.png)](https://www.tomlooman.com/ue4-cpp-multiplayer-course/)
 
 <figcaption>
 
@@ -46,7 +46,7 @@ Behavior Tree example from AI in my Unreal Engine course.
 
 Furthermore, custom Decorators, Services, Tasks are all individual assets. This can blow up your asset count and jumping between assets cost mental effort and time. I find it reduces my productivity when jumping between asset files a lot. Utility AI still generated some assets such as Tasks, but the overall amount is much lower. Most is of the logic is happening inside the AI Controller class after all. The assets below are from a folder related to a still rather simple stealth game AI. It's a decent number of assets and will continue to grow.
 
-![](images/ue4_behaviortrees_assets.jpg)
+![](/assets/images/ue4_behaviortrees_assets.jpg)
 
 There is also a performance consideration to be made, but I currently don't have comparative numbers to claim either to be faster. From what I have heard, this favors Utility.
 
@@ -54,7 +54,7 @@ And finally, stability of the AI systems in Unreal Engine is another factor. We'
 
 The AI Tools do come with some powerful behavior debugging tools such as [Gameplay Debugger](https://docs.unrealengine.com/en-us/Gameplay/Tools/GameplayDebugger) and [Visual Logger](https://docs.unrealengine.com/en-us/Gameplay/Tools/VisualLogger). I recommend checking these out and apply them to your projects. These tools aren't limited to AI or Behavior Trees either and can be used for any kind of gameplay event.
 
-![](images/visuallogger_example.png)
+![](/assets/images/visuallogger_example.png)
 
 ## Implementation Basics in Unreal Engine 4
 
@@ -66,7 +66,7 @@ All tasks are evaluated every few seconds in the AIController and the highest sc
 
 <figure>
 
-![](images/ue4_utilityai_basicgraph.jpg)
+![](/assets/images/ue4_utilityai_basicgraph.jpg)
 
 <figcaption>
 
@@ -80,7 +80,7 @@ Scoring can be quite simple. In the example below we give the task a score of 0.
 
 <figure>
 
-![](images/ue4_utilityai_scoreexample.jpg)
+![](/assets/images/ue4_utilityai_scoreexample.jpg)
 
 <figcaption>
 

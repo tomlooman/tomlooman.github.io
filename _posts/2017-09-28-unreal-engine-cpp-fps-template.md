@@ -20,4 +20,4 @@ To give you an idea of the changes I made, the Character class is about 1/3 the 
 
 You may also be interested in some of my other [C++ Tutorials](https://www.tomlooman.com/unreal-engine-cpp-tutorials/) such as [Using Timers in C++](https://www.tomlooman.com/unreal-engine-cpp-timers/) or my [C++ Complete Guide](https://www.tomlooman.com/unreal-engine-cpp-guide/)!
 
-[![](images/Thumb_FPSTemplate2.jpg)](https://github.com/tomlooman/SimpleFPSTemplate)
+[![](/assets/images/Thumb_FPSTemplate2.jpg)](https://github.com/tomlooman/SimpleFPSTemplate)

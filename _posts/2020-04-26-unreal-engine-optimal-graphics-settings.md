@@ -16,7 +16,7 @@ coverImage: "ue4_runhardwarebenchmark.jpg"
 
 Unreal Engine can auto-detect 'optimal' (graphical) settings per player based on a quick CPU and GPU benchmark. The functions are available in Blueprint to hook up into your game's options menu.
 
-![](images/ue4_runhardwarebenchmark.jpg)
+![](/assets/images/ue4_runhardwarebenchmark.jpg)
 
 Behind the scenes, the benchmark returns a performance index for CPU and GPU with a reference of 100.0 for "average good CPU/GPU". These values are then used to apply a series of scalability options like shadow resolution, texture quality, SSR quality etc.
 

@@ -11,13 +11,13 @@ coverImage: "ue4_hitmask_damageexample.jpg"
 
 Earlier this week I tweeted about hit-masking characters to show dynamic blood and wounds. Today I'd like to talk a little about the effect and how it came to be. I'll talk a little bit about the technical details and some alternatives. The effect is a proof of concept to try and find a cheaper alternative to texture splatting using render targets. So let's get going!
 
-[![](images/ue4_hitmask_damageexample.jpg)]()
+[![](/assets/images/ue4_hitmask_damageexample.jpg)]()
 
-[![](images/etOcKPR.gif "source: imgur.com")](http://imgur.com/etOcKPR)
+[![](/assets/images/etOcKPR.gif "source: imgur.com")](http://imgur.com/etOcKPR)
 
 We have a few decals types in our game like bullet impacts and blood splats we splat on walls behind damaged characters. These decals are attached to the component it hit, but if you were to attempt to do this on an animated mesh you'd notice the decal sliding over the surface which doesn't look too great. I noticed this kind of sliding in PlayerUnknown's Battlegrounds the other day, where they use traditional decals on characters, but a more stable solution is desirable especially for third person games where you constantly see your own characters body. It does the trick with small decals where the problem isn't as noticeable. Here is an exaggerated example of decal sliding:
 
-[![](images/TWV2kvH.gif "source: imgur.com")](http://imgur.com/TWV2kvH)
+[![](/assets/images/TWV2kvH.gif "source: imgur.com")](http://imgur.com/TWV2kvH)
 
 I wanted to try and find a solution for this problem on our characters and I was inspired by Ryan Bruck's GDC demos using Render Material to RenderTarget technique to splat spheres onto a character via a render target which can be used to mask wounds into the shader. Here is Ryan's render target based damage implementation:
 
@@ -31,7 +31,7 @@ The first call is straight forward, you want to render a splat into your charact
 
 There is a way to optimize the technique, by using the fairly recently added [pre-skinned local position node](https://docs.unrealengine.com/latest/INT/Engine/Rendering/Materials/ExpressionReference/Vector/#pre-skinnedlocalposition). This replaces the world position we bake into the render target with the pre-skinned local position. By doing this, we only require a capture once which we can do offline (since this position never changes at runtime). To capture the reference pose locations I made a quick blueprint and modified version of Ryan's unwrap material, captured the scene and turned the RT into a static texture (You can see an animated version of what this looks like below). This eliminates the need for the second render target at run-time entirely. Each hit, we transform the hit location (world-space) into the pre-skinned local-space of the mesh before we can apply it to the character. In the next section I'll explain more how the transforming from world space to pre-skinned space works.
 
-[![](images/ue4_uvunwrap_capture.gif)]()
+[![](/assets/images/ue4_uvunwrap_capture.gif)]()
 
  
 
@@ -43,11 +43,11 @@ So I ditched render targets entirely to try out using just SphereMasks to do the
 
 Like the original RT effect, to have the sphere masks work consistently with an animated mesh we need to use the reference pose to place the sphere mask at. When hitting the character, we transform the world position of the hit into the reference pose position (using the BoneName info we get from point damage events) you can do so by first inverse transforming the hit location from the current transform of the bone we hit, and then transforming that location using the reference pose transform of that same bone.
 
-[![](images/ue4_hitmask_debuglines.jpg)]()
+[![](/assets/images/ue4_hitmask_debuglines.jpg)]()
 
 Here you can see a visualization of the transform applied to the hit location (green) with the current pose transforms and the bone that was hit. And the blue lines the matching reference pose transformation. The purple line is to help indicate the difference.
 
-[![](images/ue4_hitmask_debuglines02.jpg)]()
+[![](/assets/images/ue4_hitmask_debuglines02.jpg)]()
 
 In the reference pose example (bottom of the two images), the hit location is already in the correct space, so you can see that the blue and green lines are overlapping and z-fighting even because they are at exactly the same offsets and there is no purple line because there is no difference in transforms to visualize.
 

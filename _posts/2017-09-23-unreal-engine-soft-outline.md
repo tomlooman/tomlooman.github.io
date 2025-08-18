@@ -24,9 +24,9 @@ The basis for all these effects rely on [Custom Depth](https://www.tomlooman.com
 
 There wasn't an easy way to blur the pixels at the time nor a decent way to down-sample the render target containing the outlined objects in order to make this blur operation cheaper. Overall it came to be too costly to come with a decent solution and so I stuck with the binary outlines you may have been in several of my earlier posts. Recently I decided to revisit this issue by doing a quick experiment using a modified version of _SpiralBlur_, a material node that's available in Unreal Engine, that is using some custom (HLSL) shader code to blur the pixels using a spiral blur method.
 
-[![](images/gzIxILN.jpg "source: imgur.com")](https://imgur.com/gzIxILN)
+[![](/assets/images/gzIxILN.jpg "source: imgur.com")](https://imgur.com/gzIxILN)
 
-[![](images/2mxmazG.jpg "source: imgur.com")](https://imgur.com/2mxmazG)
+[![](/assets/images/2mxmazG.jpg "source: imgur.com")](https://imgur.com/2mxmazG)
 
 Looks pretty decent, right? The effect is more expensive than the binary outlines since we must perform several blur steps in the SpiralBlur-node to get to look decently smooth. Without going the custom engine route there is no way to downsample the post-process step where we sample and blur the information from the Custom Depth buffer. Later in this article I will talk about the performance of the effect itself.
 
@@ -36,9 +36,9 @@ Unfortunately, I couldn't find any official UE4 documentation on the Spiral Blur
 
 The node graph for it is reasonably simple and most of the logic happens inside the custom node which I added as a code sample below.
 
-[![](images/softoutlines_matgraph.jpg)]()
+[![](/assets/images/softoutlines_matgraph.jpg)]()
 
-[![](images/softoutlines_MF-graph.jpg)]()
+[![](/assets/images/softoutlines_MF-graph.jpg)]()
 
 ## Outline Custom Node (HLSL)
 
@@ -86,7 +86,7 @@ else
 
 Performance was recorded on a 850M mobile GPU at 1280x720 with ~1.5ms measured and on my GTX 980 Ti it runs at 1920x1080 with 0.8ms for the post process material. It's heavily depending on the amount of iterations in the spiral blur. You will want to keep the DistanceSteps and RadialSteps as low as possible while maintaining a smooth edge. In the demo I settled on 4 DistanceSteps and 8 RadialSteps which is 32 iterations.
 
-[![](images/7sUn0Cx.jpg "source: imgur.com")](https://imgur.com/7sUn0Cx)
+[![](/assets/images/7sUn0Cx.jpg "source: imgur.com")](https://imgur.com/7sUn0Cx)
 
 ## Conclusion
 

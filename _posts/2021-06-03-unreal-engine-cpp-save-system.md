@@ -25,7 +25,7 @@ We'll be creating a save system similar to _Dark Souls_ with a bonfire interacti
 
 <figure>
 
-![](images/Dark_souls_bonfire.jpg)
+![](/assets/images/Dark_souls_bonfire.jpg)
 
 <figcaption>
 
@@ -135,7 +135,7 @@ void ASGameModeBase::WriteSaveGame()
 
 _Now it's time to prepare our Actors to be serialized..._
 
-![](images/ue_treasurechests.jpg)
+![](/assets/images/ue_treasurechests.jpg)
 
 Below is the [TreasureChest](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SItemChest.h) code taken directly from the project. Note the _ISGameplayInterface_ inheritance and '_SaveGame_' marked on the bLidOpened variable. That will be the only variable saved to disk. By default, we store the FTransform of the Actor as well. So we can push the treasure chest around the map (Simulate Physics is enabled) and on the next Play, the Location and Rotation will be restored along with the lid state.
 
@@ -402,7 +402,7 @@ void ASGameModeBase::InitGame(const FString& MapName, const FString& Options, FS
 
 Now while loading a level you should pass in _**?savegame=MySaveFile**_ in the options. "savegame" as an option is made up, you can type whatever as your option, just be sure to parse that same 'option' in C++.
 
-![](images/ue_parsinggamemodeoptions-900x348.jpg)
+![](/assets/images/ue_parsinggamemodeoptions-900x348.jpg)
 
 ### Loading SaveGame before BeginPlay
 
@@ -412,7 +412,7 @@ This could be useful to initialize with the relevant saved data or skipping enti
 
 ## The Bonfire
 
-![](images/ue_bonfire_ingame-900x500.jpg)
+![](/assets/images/ue_bonfire_ingame-900x500.jpg)
 
 In the previous sections we set up the entire save/load system. Now to finish it off, I'll break down how to make a simple bonfire-style interaction. I'm skipping all the steps specific to interacting with the Actor itself, you can view the source code for more details.
 
@@ -432,7 +432,7 @@ Once interacted with once, the bFireActive is now saved into the bonfire and on 
 
 <figure>
 
-![](images/ue4_bonfire_savesystem-900x421.jpg)
+![](/assets/images/ue4_bonfire_savesystem-900x421.jpg)
 
 <figcaption>
 
@@ -444,7 +444,7 @@ Bonfire Blueprint Graph
 
 <figure>
 
-![](images/ue4_bonfire_savesystem_savevar.jpg)
+![](/assets/images/ue4_bonfire_savesystem_savevar.jpg)
 
 <figcaption>
 

@@ -14,9 +14,9 @@ coverImage: "ws_mainmenu_motd.jpg"
 
 For my upcoming game [_WARPSQUAD_](https://store.steampowered.com/app/764710), I was curious how easy it is to fetch data from a web service to be displayed in-game. The initial use case is a simple Message of the Day (MOTD) to be displayed in the main menu. Allowing for easy communication with players during playtests or (service) issues. You could use such web interfacing for posting in-game feedback too or whatever data you want to keep outside of the game executable to update on the fly.
 
-![](images/ws_mainmenu_motd-900x460.jpg)
+![](/assets/images/ws_mainmenu_motd-900x460.jpg)
 
-![](images/ws_asyncblueprintnode_motd-900x277.jpg)
+![](/assets/images/ws_asyncblueprintnode_motd-900x277.jpg)
 
 This short tutorial will hit on two main subjects that you can use separately. First, how to set up async (latent) Blueprint Nodes in C++ that can be used for any number of things that may run over multiple frames such as web services (A built-in use case is async loading of assets) Secondly I'll show a simple HTTP Request to "GET" JSON data from a web page.
 
@@ -144,7 +144,7 @@ ULZAsyncAction_RequestHttpMessage* ULZAsyncAction_RequestHttpMessage::AsyncReque
 
 Blueprint Result:
 
-![](images/ws_asyncblueprintnode_motd-900x277.jpg)
+![](/assets/images/ws_asyncblueprintnode_motd-900x277.jpg)
 
 ## Closing
 

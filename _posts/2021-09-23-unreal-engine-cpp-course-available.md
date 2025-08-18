@@ -14,7 +14,7 @@ coverImage: "actionroguelike_ue4_combatsample5.jpg"
 
 > Master Unreal Engine C++ Game Development with this university-grade course.
 
-![](images/actionroguelike_ue4_combatsample5-900x446.jpg)
+![](/assets/images/actionroguelike_ue4_combatsample5-900x446.jpg)
 
 My **Unreal Engine C++ course** has just launched! It is packed with high-quality C++ and gameplay-focused lectures totaling nearly **30 hours of videos** and **7 assignments.**
 
@@ -24,7 +24,7 @@ With nearly 30 hours of content it's too much to list here, I recommend checking
 
 <figure>
 
-![](images/ue_course_herobanner_split_small-900x284.jpg)
+![](/assets/images/ue_course_herobanner_split_small-900x284.jpg)
 
 <figcaption>
 
@@ -55,7 +55,7 @@ Check out the **[Course page](https://tomlooman.com/cpp-activedeal)** to get all
 
 <figure>
 
-![](images/ue_course_github2_small-900x375.jpg)
+![](/assets/images/ue_course_github2_small-900x375.jpg)
 
 <figcaption>
 
@@ -69,7 +69,7 @@ While this course is more challenging than my previous work and targets an inter
 
 <figure>
 
-![](images/ue_course_multiplayer_small-900x375.jpg)
+![](/assets/images/ue_course_multiplayer_small-900x375.jpg)
 
 <figcaption>
 

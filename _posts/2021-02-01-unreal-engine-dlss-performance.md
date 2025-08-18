@@ -21,7 +21,7 @@ For testing, I used my open-source [SurvivalGame](https://github.com/tomlooman/E
 
 <figure>
 
-[![](images/ue4_survivalgame_dlss_overview-900x422.jpg)]()
+[![](/assets/images/ue4_survivalgame_dlss_overview-900x422.jpg)]()
 
 <figcaption>
 
@@ -39,7 +39,7 @@ Remember that aliasing itself occurs from rasterizing a scene to pixels. Fewer p
 
 <figure>
 
-[![](images/scenebaked_TXAAvsDLSS_Zoomed-900x356.jpg)]()
+[![](/assets/images/scenebaked_TXAAvsDLSS_Zoomed-900x356.jpg)]()
 
 <figcaption>
 
@@ -63,7 +63,7 @@ The internal resolution is downscaled automatically based on the DLSS quality-se
 
 <figure>
 
-![](images/survival_dlss_perf_sharpen_ngxsettings.jpg)
+![](/assets/images/survival_dlss_perf_sharpen_ngxsettings.jpg)
 
 <figcaption>
 
@@ -77,7 +77,7 @@ In my tests, the internal resolution can go down to 33% (in _Ultra Performance_,
 
 <figure>
 
-![](images/survival_sp50_noaa_zoomed-900x584.jpg)
+![](/assets/images/survival_sp50_noaa_zoomed-900x584.jpg)
 
 <figcaption>
 
@@ -97,7 +97,7 @@ It's telling that often I had to double-check the screenshots to make sure I had
 
 <figure>
 
-![](images/survival_zoom_txaa_cropbox.png)![](images/survival_zoom_dlss_quality_cropbox.png)
+![](/assets/images/survival_zoom_txaa_cropbox.png)![](/assets/images/survival_zoom_dlss_quality_cropbox.png)
 
 <figcaption>
 
@@ -109,7 +109,7 @@ Trees even look crisper on DLSS than native TAA. Cables hold up incredibly well,
 
 <figure>
 
-![](images/metro_test_fullres_35fps.png)![](images/metro_test_dlss_quality_64fps.png)
+![](/assets/images/metro_test_fullres_35fps.png)![](/assets/images/metro_test_dlss_quality_64fps.png)
 
 <figcaption>
 
@@ -123,7 +123,7 @@ Nearly indentical quality, slight error in the ceiling lights where a white line
 
 <figure>
 
-![](images/subway_raster_zoom_txaa.jpg)![](images/subway_raster_zoom_dlss_quality.jpg)
+![](/assets/images/subway_raster_zoom_txaa.jpg)![](/assets/images/subway_raster_zoom_dlss_quality.jpg)
 
 <figcaption>
 
@@ -151,7 +151,7 @@ Please keep in mind these numbers were taken from my unoptimized scenes, running
 
 <figure>
 
-[![](images/survival_dlss_quality_downscaled-900x506.jpg)]()
+[![](/assets/images/survival_dlss_quality_downscaled-900x506.jpg)]()
 
 <figcaption>
 
@@ -173,7 +173,7 @@ This scene was likely bottlenecked by the ray-traced reflections and so you'll s
 
 <figure>
 
-[![](images/ue4_subway_raster_dlss_quality_downscaled-900x506.jpg)]()
+[![](/assets/images/ue4_subway_raster_dlss_quality_downscaled-900x506.jpg)]()
 
 <figcaption>
 
@@ -193,7 +193,7 @@ The camera used a cinematic aspect ratio hence the 1024p height. This scene used
 
 <figure>
 
-[![](images/subway_raster_dlss_quality-900x496.jpg)]()
+[![](/assets/images/subway_raster_dlss_quality-900x496.jpg)]()
 
 <figcaption>
 
@@ -215,7 +215,7 @@ The extra renderpass occurs during Post Processing much like traditional AA solu
 
 <figure>
 
-![](images/ue4_profilegpu_dlss-1-900x363.jpg)
+![](/assets/images/ue4_profilegpu_dlss-1-900x363.jpg)
 
 <figcaption>
 

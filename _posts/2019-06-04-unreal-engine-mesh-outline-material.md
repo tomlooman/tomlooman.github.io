@@ -19,7 +19,7 @@ Post Processing especially affects notebook and mobile performance which commonl
 
 <figure>
 
-![](images/localoutlines_murdock.gif)
+![](/assets/images/localoutlines_murdock.gif)
 
 <figcaption>
 
@@ -41,13 +41,13 @@ You can get access to the material files [**here**](https://courses.tomlooman.co
 
 A quick check using an [Image Color Extract Tool](http://www.coolphptools.com/color_extract#demo) tells me that roughly **66%** of the above image contains the brightest green. (Screenshot taken from the Shader Complexity visualizer in the editor) This means it performed zero evaluations of our outline material! In a normal post-processing scenario, 100% of our pixels would need to be evaluated.
 
-![](images/imagecolorextracttool1.jpg)
+![](/assets/images/imagecolorextracttool1.jpg)
 
 Only a tiny fraction is colored red which means that pixels has been evaluated twice in this specific scenario. (and therefor 'more expensive' than the regular PP setup) The scenario is even a particularly bad-case scenario as we have 6 tightly packed outlined objects on which we zoomed in. With more real-world conditions the percentage of saved pixels can be far greater.
 
 <figure>
 
-![](images/ue4_outline_depthbuffer.jpg)
+![](/assets/images/ue4_outline_depthbuffer.jpg)
 
 <figcaption>
 
@@ -63,7 +63,7 @@ Using simple outline implementations you might run into issues where tightly fit
 
 <figure>
 
-![](images/ue4_overlapping_outlines-900x345.jpg)
+![](/assets/images/ue4_overlapping_outlines-900x345.jpg)
 
 <figcaption>
 
@@ -85,15 +85,15 @@ Since the translucent cubes are depth-tested, we get a small win with occluded p
 
 Additionally I wanted to give the 'World of Warcraft'-style outline a try. They use depth-fade to blend outline intensity based on the difference in depth, a common technique using in particle effects. This doesn't add an outline around the entire object keeping the object more grounded with the world. A downside is that objects that don't stick out a lot, will fail to render a clear outline. (see below)
 
-![](images/wow_depthoutlines.jpg)
+![](/assets/images/wow_depthoutlines.jpg)
 
-![](images/wow_depthoutline2-copy.jpg)
+![](/assets/images/wow_depthoutline2-copy.jpg)
 
 I've included a sample fade-out in the downloadable material files. Now that we have more data available to us, such as the object's bounds we can easily use that data to fade towards the Z-axis. You can even rotate the object and use the local rotation to fade towards the wall instead of down.
 
 <figure>
 
-![](images/outline_fade02.jpg)
+![](/assets/images/outline_fade02.jpg)
 
 <figcaption>
 
@@ -105,7 +105,7 @@ Standard depth-fade approach.
 
 <figure>
 
-![](images/outline_fade01.jpg)
+![](/assets/images/outline_fade01.jpg)
 
 <figcaption>
 
@@ -123,7 +123,7 @@ https://youtu.be/V9KfZe-oSgE
 
 <figure>
 
-![](images/ue4_gradient_outline-900x433.jpg)
+![](/assets/images/ue4_gradient_outline-900x433.jpg)
 
 <figcaption>
 

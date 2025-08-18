@@ -95,7 +95,7 @@ It will instead run about 3 times per frame in a burst, which is just a waste of
 
 **New in 5.4:** 'Max Once Per Frame' to avoid the catch-up behavior where the timer may be called multiple times per frame.
 
-![](images/GNDq-lMXIAAckpr.png)
+![](/assets/images/GNDq-lMXIAAckpr.png)
 
 In C++ this is available too of course, but is a bit more hidden inside `FTimerManagerTimerParameters` with `bMaxOncePerFrame`. Here is the example usage I could find in the engine:
 

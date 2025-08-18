@@ -27,7 +27,7 @@ Rotating the vertices is luckily very easy as we have a ready-to-use material no
 
 _Note: I used the ObjectPivotPoint, but keep in mind that its not available in the Pixel-shader. The "Normal"-pin runs on the pixel-shader while the "World Position Offset"-pin runs on the vertex shader_.
 
-[![](images/rotateaboutaxis.jpg)]()
+[![](/assets/images/rotateaboutaxis.jpg)]()
 
 **You may notice your lighting doesn't correctly update now that your mesh rotates on the GPU.** We'll need to fix the vertex normals next.
 
@@ -35,7 +35,7 @@ _Note: I used the ObjectPivotPoint, but keep in mind that its not available in t
 
 With the vertices moved around we need to fix the vertex normals as they still point the original direction, causing lighting issues. Again, we have a Material Function already available: **FixRotateAboutAxisNormals**.
 
-[![](images/fixrotateaboutaxisnormals.jpg)]()
+[![](/assets/images/fixrotateaboutaxisnormals.jpg)]()
 
 I was able to directly plug this into the pixel shader which is the "Normal" pin. The recommended way (as mentioned in the Material Function's description) is to add CustomizedUVs (option in the Material properties itself) to the material and instead re-calculate the normals in the vertex shader and pass it as UVs to the pixel shader. This can heavily reduce the number of times you need to re-calculate normals. (equal to the number of vertices in your mesh instead of the number of pixels on-screen for that mesh) This is especially useful if your meshes have low vertex counts.
 

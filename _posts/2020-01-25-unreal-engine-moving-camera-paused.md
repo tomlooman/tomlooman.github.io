@@ -39,7 +39,7 @@ void ULZGameplayStatics::SetCameraMoveableWhenPaused(const UObject* WorldContext
 
 Finally, make sure your InputEvent related to camera input executes while paused using **ExecuteWhenPaused** checkbox.
 
-![](images/ue4_executewhenpaused-1.jpg)
+![](/assets/images/ue4_executewhenpaused-1.jpg)
 
 This checkbox isn't necessary when used inside PlayerController since the FullTick checkbox enables **full** processing of input! (which may be an undesirable side effect, make sure your other PlayerController input is manually blocked as needed using **IsGamePaused**\-node)
 
