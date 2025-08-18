@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: archive
 ---
 {% for nugget in site.nuggets %}
   <h2>
