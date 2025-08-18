@@ -1,4 +1,6 @@
 main:
+  - title: "Blog"
+    url: /blog/
   - title: "Courses"
     url: /courses/
     children:
