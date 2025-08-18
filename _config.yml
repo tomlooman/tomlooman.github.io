@@ -71,7 +71,7 @@ defaults:
       toc: true
       toc_sticky: true
       related: true
-      read_time: true
+      read_time: false
       share: false
       permalink: /:title/
   # _nuggets
