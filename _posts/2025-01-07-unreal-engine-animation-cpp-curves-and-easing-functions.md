@@ -9,19 +9,20 @@ tags:
   - "animation"
   - "cpp"
 coverImage: "Blog_AnimatingCurves_Small.jpg"
-excerpt: TODO
+excerpt: Sometimes you just need a simple "tween" style animation in C++ to interpolate values or animate certain gameplay elements using Curves and Easing Functions.
 ---
 
 There are plenty of ways to animate or interpolate things in Unreal Engine. The skeletal animation tools for example are incredibly powerful, but none of the available tools in Unreal are very lightweight or easy to use in C++. Especially for things that are not even skeletal meshes to begin with such as animating the radius of some gameplay ability, opening a treasure chest, or any other kind of value interpolation to use in your game code.
 
 For a simple use case like opening of a treasure chest, we don't want to use advanced animation tools such as Sequencer, Control Rig, skeletal mesh animations etc. We just want to interpolate between two values, ideally non-linear. For example, with a little bounce and the end or easing in/out of the transition. _(The wobble at the end may be a little subtle in the recording, but it does add a nice touch in-game)_
 
-TODO ADD MISSING VIDEO
+![](/assets/images/anim_cpp_treasurechest.gif)
+
 
 In this article I demonstrate a simple animation system implementation that you can expand on with additional features. The source code is available in my [Action Roguelike project](https://github.com/tomlooman/ActionRoguelike) on GitHub ([Direct Link to Implementation Example](https://github.com/tomlooman/ActionRoguelike/blob/89d1e3c5fd9915c3739f944c6fffd744ffc5758a/Source/ActionRoguelike/World/RogueTreasureChest.cpp#L62)). This project is part of my [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), however its source code is open to everyone.
 
 {: .notice--info }
-**Note:** This is not a step-by-step tutorial to code along. Instead this article explains the problem of animating in C++, proposes a solution and provides a walkthrough of the source code.
+**Note:** This is not a step-by-step tutorial to code along. Instead this article explains the difficulties of animating in C++, proposes a solution and provides a walkthrough of the source code which is available on GitHub as part of the Action Roguelike project.
 
 ## Problems with Animating in C++
 
@@ -62,8 +63,8 @@ AnimSubsystem->PlayCurveAnim(LidAnimCurve, 1.f, [&](float CurrValue)
 
 If you are unfamiliar with [lambdas](https://en.cppreference.com/w/cpp/language/lambda), they work a little bit like this:
 
-- **\[&\]** captures the values outside the function so they can be accessed inside the lambda. The ampersand captures is the "default capture by reference" for the data used inside the lambda. In our example it is the LidMesh that must be "captured". This can also specify specific variables, which will capture them as a copy instead of by-reference.
-- **(float CurrValue)** optional parameter(s), in our case the CurrValue is the value we got out of the curve asset. We use this value to drive the animation.
+- **\[&\]** captures the values outside the function so they can be accessed inside the lambda. The ampersand capture is the "default capture by reference" for the data used inside the lambda. In our example the LidMesh must be "captured". We can also specify specific variables, which will capture them as a copy instead of by-reference.
+- **(float CurrValue)** optional parameter(s), in our case the "CurrValue" is the value we get out of the curve asset. We use this value to drive the animation.
 - **{ ... }** the body, it is the code that runs when calling the lambda inside the animation system.
 
 The Curve Asset would look a little something like this to create a slight wobble at the end.
@@ -131,7 +132,7 @@ Unreal's FMath has many more built-in functions to help animate in C++. The impl
 
 There is another great curve type available if you don't want to have many individual curve assets in your content folders. The `FRuntimeFloatCurve` type lets you set up the curve data straight inside the details panel! You still have the flexibility to assign a curve asset if you change your mind later.
 
-![](assets/images/anims_runtimefloatcurve.png)
+![](/assets/images/anims_runtimefloatcurve.png)
 
 Keep in mind that you'll need to change the animation system slightly as it currently does not accept this type of curve. You could either overload the Play() function on the subsystem to support that type (and may require a new struct to hold its data). Alternatively you could try to store the animations using `FRichCurve*` instead as that's the type inside of these curve classes that actually holds the keyframe data including `FRuntimeFloatCurve`, `UCurveFloat`, `UCurveVector`, `UCurveLinearColor`.
 
