@@ -5,8 +5,8 @@
 @charset "utf-8";
 
 $max-width: 1400px;
-$typeface: "Manrope", sans-serif;
-$typeface-heading: "Manrope", sans-serif;
+$typeface: "Manrope", "Roboto", "Arial", sans-serif;
+$typeface-heading: "Manrope", "Roboto", "Arial", sans-serif;
 $color-blue: #103D59;
 $color-orange: #ffa04a;
 $color-offwhite: #F2F4FA;
@@ -101,6 +101,10 @@ p {
   text-align: center;
 }
 
+.toc {
+  font-family: $typeface;
+}
+
 /* TOP TITLE BAR*/
 
 .site-title {
@@ -135,6 +139,7 @@ p {
 /* underline for the menu items */
 .greedy-nav .visible-links a:before {
   background: #FFF;
+  height: 2px;
 }
 
 .site-logo img {

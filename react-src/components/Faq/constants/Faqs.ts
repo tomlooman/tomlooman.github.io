@@ -39,7 +39,7 @@ export const FAQs: Faq[] = [
     },
     {
         question: "Are English Captions/Subtitles available?",
-        answer: "Yes! All videos have handmade English Captions."
+        answer: "Yes! All lessons include English subtitles."
     },
     {
         question: "I'm interested in your course, but the exchange rate is too high for me. Is there anything you can do?",

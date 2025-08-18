@@ -1,5 +1,5 @@
 ---
 title: "Meta Specifier Title Property"
-category: My Category
+category: UPROPERTY
 ---
 Explain here what makes this property so useful!
