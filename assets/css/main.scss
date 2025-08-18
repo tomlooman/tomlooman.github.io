@@ -7,6 +7,9 @@
 $max-width: 1400px;
 $typeface: "Manrope", sans-serif;
 $typeface-heading: "Manrope", sans-serif;
+$color-blue: #103D59;
+$color-orange: #ffa04a;
+$color-offwhite: #F2F4FA;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
@@ -97,3 +100,45 @@ p {
   color: unset;
   text-align: center;
 }
+
+/* TOP TITLE BAR*/
+
+.site-title {
+  text-transform: uppercase;
+}
+
+.masthead {
+  background-color: $color-blue;
+}
+
+.masthead__inner-wrap {
+  font-family: $typeface;
+  padding: 0em;
+}
+
+.masthead__menu-item {
+  font-size: 16px;
+}
+
+.greedy-nav {
+  background: inherit;
+}
+
+.greedy-nav a {
+  color: $color-offwhite;
+}
+
+.greedy-nav a:hover {
+    color: #FFF;
+}
+
+/* underline for the menu items */
+.greedy-nav .visible-links a:before {
+  background: #FFF;
+}
+
+.site-logo img {
+    max-height: 3em;
+}
+
+/* END TITLE BAR */
