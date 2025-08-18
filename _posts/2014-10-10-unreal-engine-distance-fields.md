@@ -32,7 +32,7 @@ The preview release of 4.5 introduced [Ray Traced Distance Field Soft Shadows](h
 
 The image below illustrates the basic goal of the soft shadowing technique, hard shadows near the caster that slowly soften as they get further away. This adds an incredible amount of shadow quality using a simple checkbox and can work wonders on your long normally low detailed directional shadows too when using high frequency details like rails.
 
-[![unreal 4.5 ray traced distance field soft shadows](images/ue45_softshadows_01.jpg)](https://www.tomlooman.com/wp-content/uploads/2014/10/ue45_softshadows_01.jpg)
+[![unreal 4.5 ray traced distance field soft shadows](images/ue45_softshadows_01.jpg)]()
 
 ###### Sun Temple
 
@@ -50,7 +50,7 @@ In the final test I enabled soft shadows in the Landscape Demo and did not enco
 
 The editor supports some cool visualizations, be sure to check the "_Mesh DistanceFields_" (shown below) when working with DFAO or soft shadows. The "_DistanceField AO_" visualizer only displays the generated AO as seen in the test wall comparison image above (under "DFAO in Switch")
 
-[![DF_Menuoptions](images/DF_Menuoptions.jpg)](https://www.tomlooman.com/wp-content/uploads/2014/10/DF_Menuoptions.jpg)
+[![DF_Menuoptions](images/DF_Menuoptions.jpg)]()
 
 #### Limitations
 
@@ -58,7 +58,7 @@ The official documentation lists several [limitations](https://docs.unrealengine
 
 The Ambient Occlusion technique does not work flawlessly for all situations and models, I recommend giving it a try when you have a good representation of your final geometric style and see if this technique is well-suited. The same seems true for Soft Shadows and I've found a few cases that yielded undesirable results. The angel figure in the Mobile demo is a good example where Soft Shadows did not yield the expected results. Skeletal Meshes do not work with soft shadows and as a result don't display a shadow at all (You may notice that they will not show up in the Mesh DistanceField visualizer either)
 
-[![SoftShadows_Artifacts_Comparison](images/SoftShadows_Artifacts_Comparison.jpg)](https://www.tomlooman.com/wp-content/uploads/2014/10/SoftShadows_Artifacts_Comparison.jpg)
+[![SoftShadows_Artifacts_Comparison](images/SoftShadows_Artifacts_Comparison.jpg)]()
 
 **Update: To resolve the shadowing issues above the distance field resolution map should be increased. More info on the [official docs page](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html#limitations).**
 

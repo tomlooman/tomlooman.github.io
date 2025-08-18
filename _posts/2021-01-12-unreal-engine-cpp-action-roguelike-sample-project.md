@@ -104,7 +104,7 @@ Spotted by Minion's sight sense.
 
 <figure>
 
-[![](images/assignment4_behaviortree-900x532.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/01/assignment4_behaviortree.jpg)
+[![](images/assignment4_behaviortree-900x532.jpg)]()
 
 <figcaption>
 

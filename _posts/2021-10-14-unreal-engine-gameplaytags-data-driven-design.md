@@ -76,7 +76,7 @@ It may be confusing that there are multiple tagging systems in Unreal. The basic
 
 <figure>
 
-[![](images/gameplaytags_findreference.jpg)](https://www.tomlooman.com/wp-content/uploads/2023/09/gameplaytags_findreference.jpg)
+[![](images/gameplaytags_findreference.jpg)]()
 
 <figcaption>
 
@@ -130,7 +130,7 @@ Listen for Event.Module.Disabled event, the struct used here must match the one 
 
 <figure>
 
-[![](images/ue_gameplaytags_taglistener-900x441.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/10/ue_gameplaytags_taglistener.jpg)
+[![](images/ue_gameplaytags_taglistener-900x441.jpg)]()
 
 <figcaption>
 
@@ -150,7 +150,7 @@ Mark up your loot tables with tags that can block specific items from dropping i
 
 <figure>
 
-[![](images/ue_gameplaytags_datatablerows-900x79.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/10/ue_gameplaytags_datatablerows.jpg)
+[![](images/ue_gameplaytags_datatablerows-900x79.jpg)]()
 
 <figcaption>
 
@@ -197,7 +197,7 @@ Casting and class references won't hit you as a problem until much later in the 
 
 The best way to check for references is by using the [Reference Viewer](https://docs.unrealengine.com/5.2/en-US/finding-asset-references-in-unreal-engine/) & [Size Map](https://dev.epicgames.com/community/learning/tutorials/r4y7/unreal-engine-size-map) tool. (Both available by right-clicking your asset in the Content Browser)
 
-[![](images/ue_gameplaytags_sizemaptool-900x548.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/10/ue_gameplaytags_sizemaptool.jpg)
+[![](images/ue_gameplaytags_sizemaptool-900x548.jpg)]()
 
 In the example above I already see some references that shouldn't be there. We somehow end up referencing several classes such as _BaseShip_ and _TurretRotating_ class (left top) which are 30MB and 11MB in size and should have nothing to do with a Player Pawn. These problems will often occur during development, it's better to find these early as you may need to adjust your framework design or change your coding habits before it's too late in the project. This is not just for the final game product either, you are loading in these referenced assets any time you boot up the editor or load in a particular blueprint (and all its references) that you work on.
 
@@ -209,7 +209,7 @@ My game has a large number of "Items" which isn't just restricted to what you co
 
 <figure>
 
-[![](images/ue_gameplaytags_items-1-900x154.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/10/ue_gameplaytags_items-1.jpg)
+[![](images/ue_gameplaytags_items-1-900x154.jpg)]()
 
 <figcaption>
 
@@ -223,7 +223,7 @@ Some of the current item types in WARPSQUAD.
 
 GameplayTags can be replicated more efficiently by Unreal than FNames. There are some options available in _Project Settings > GameplayTags_. 'Fast Replication' is able to replicate tags by Index instead of the full Name, for this the tag list must be identical between client and server.
 
-[![](images/ue_gameplaytags_tagreplication-900x142.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/10/ue_gameplaytags_tagreplication.jpg)
+[![](images/ue_gameplaytags_tagreplication-900x142.jpg)]()
 
 ## GameplayTag Stack Container
 

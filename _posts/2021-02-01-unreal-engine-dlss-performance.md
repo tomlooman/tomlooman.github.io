@@ -21,7 +21,7 @@ For testing, I used my open-source [SurvivalGame](https://github.com/tomlooman/E
 
 <figure>
 
-[![](images/ue4_survivalgame_dlss_overview-900x422.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/01/ue4_survivalgame_dlss_overview.jpg)
+[![](images/ue4_survivalgame_dlss_overview-900x422.jpg)]()
 
 <figcaption>
 
@@ -39,7 +39,7 @@ Remember that aliasing itself occurs from rasterizing a scene to pixels. Fewer p
 
 <figure>
 
-[![](images/scenebaked_TXAAvsDLSS_Zoomed-900x356.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/01/scenebaked_TXAAvsDLSS_Zoomed.jpg)
+[![](images/scenebaked_TXAAvsDLSS_Zoomed-900x356.jpg)]()
 
 <figcaption>
 
@@ -151,7 +151,7 @@ Please keep in mind these numbers were taken from my unoptimized scenes, running
 
 <figure>
 
-[![](images/survival_dlss_quality_downscaled-900x506.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/01/survival_dlss_quality_downscaled.jpg)
+[![](images/survival_dlss_quality_downscaled-900x506.jpg)]()
 
 <figcaption>
 
@@ -173,7 +173,7 @@ This scene was likely bottlenecked by the ray-traced reflections and so you'll s
 
 <figure>
 
-[![](images/ue4_subway_raster_dlss_quality_downscaled-900x506.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/01/ue4_subway_raster_dlss_quality_downscaled.jpg)
+[![](images/ue4_subway_raster_dlss_quality_downscaled-900x506.jpg)]()
 
 <figcaption>
 
@@ -193,7 +193,7 @@ The camera used a cinematic aspect ratio hence the 1024p height. This scene used
 
 <figure>
 
-[![](images/subway_raster_dlss_quality-900x496.jpg)](https://www.tomlooman.com/wp-content/uploads/2021/01/subway_raster_dlss_quality-900x496.jpg)
+[![](images/subway_raster_dlss_quality-900x496.jpg)]()
 
 <figcaption>
 

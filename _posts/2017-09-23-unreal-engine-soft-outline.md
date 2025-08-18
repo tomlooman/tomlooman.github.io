@@ -36,9 +36,9 @@ Unfortunately, I couldn't find any official UE4 documentation on the Spiral Blur
 
 The node graph for it is reasonably simple and most of the logic happens inside the custom node which I added as a code sample below.
 
-[![](images/softoutlines_matgraph.jpg)](https://www.tomlooman.com/wp-content/uploads/2017/08/softoutlines_matgraph.jpg)
+[![](images/softoutlines_matgraph.jpg)]()
 
-[![](images/softoutlines_MF-graph.jpg)](https://www.tomlooman.com/wp-content/uploads/2017/08/softoutlines_MF-graph.jpg)
+[![](images/softoutlines_MF-graph.jpg)]()
 
 ## Outline Custom Node (HLSL)
 

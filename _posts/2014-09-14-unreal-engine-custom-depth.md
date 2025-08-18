@@ -24,11 +24,11 @@ When using Custom Depth it's important to read through the _Issues & Limitations
 
 For those who have never used this feature before, you can enable Custom Depth for both Static and Skeletal meshes under the Rendering category named "Render Custom Depth" in the Details Panel.
 
-[![ue4_customdepth_properties.](images/ue4_customdepth_properties..png)](https://www.tomlooman.com/wp-content/uploads/2014/09/ue4_customdepth_properties..png)
+[![ue4_customdepth_properties.](images/ue4_customdepth_properties..png)]()
 
 To view the render output for this particular buffer go to **Buffer Visualization** in the viewport options of the Editor Viewport. Note that objects close to the camera are near-black and may be difficult to see!
 
-[![ue4_customdepth_visualisationdropdown](images/ue4_customdepth_visualisationdropdown-1024x615.jpg)](https://www.tomlooman.com/wp-content/uploads/2014/09/ue4_customdepth_visualisationdropdown.jpg)
+[![ue4_customdepth_visualisationdropdown](images/ue4_customdepth_visualisationdropdown-1024x615.jpg)]()
 
 <figure>
 
@@ -79,9 +79,9 @@ When using transparency on models like characters that have inner triangles (eye
 
 By rendering our character into the Custom Depth buffer we can cull any pixels that are behind the outer shell of the mesh. A slight depth offset should be added when comparing the depth of Scene and Custom to prevent too many pixels to be culled including the outer shell. The material setup for this is quite simple:
 
-[![materialnodes_depthculling](images/materialnodes_depthculling-1024x743.jpg)](https://www.tomlooman.com/wp-content/uploads/2014/09/materialnodes_depthculling.jpg)
+[![materialnodes_depthculling](images/materialnodes_depthculling-1024x743.jpg)]()
 
-[Material Nodes](https://www.tomlooman.com/wp-content/uploads/2014/09/materialnodes_depthculling_copypaste.txt) - **Copy this URL content and you can directly paste the above nodes into your own material. ([Project Source is available on GitHub](https://github.com/tomlooman/ue4-tutorials))**
+[Material Nodes]() - **Copy this URL content and you can directly paste the above nodes into your own material. ([Project Source is available on GitHub](https://github.com/tomlooman/ue4-tutorials))**
 
 I made a comparison of depth culling enabled and disabled in the setup below. The character on the right displays all occluded pixels in red. I rendered each character TWICE to work around a limitation where transparent materials do not render into custom depth at all (this is normal behavior for SceneDepth, but undesirable when explicitly enabling Custom Depth on a mesh with transparency applied) You can download the project source to see exactly how this was done.
 
@@ -93,7 +93,7 @@ For our game Switch, we used this culling technique on a stealth effect giving 
 
 It's important to know that if multiple materials use this technique that only the object closest to the camera is culled correctly. In this image, you can see the errors can would occur if you have multiple meshes overlapping. This should be taken into consideration when considering this technique - it may never be an issue if you use this effect sparingly or in isolated scenarios.
 
-[![showingoverlappingissue](images/showingoverlappingissue.jpg)](https://www.tomlooman.com/wp-content/uploads/2014/09/showingoverlappingissue.jpg)
+[![showingoverlappingissue](images/showingoverlappingissue.jpg)]()
 
 This issue can possibly be solved by adding a max depth delta when culling. I have had no need to dive into this further but may come back to this in the future when it starts to cause practical issues.
 

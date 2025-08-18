@@ -29,7 +29,7 @@ Certain rendering features are not supported by Unreal Engine 5's Nanite Virtual
 
 - “Did you know?”
 
-[**Slides are available as PDF**](https://www.tomlooman.com/wp-content/uploads/2022/11/Unreal-Engine-Game-Optimization-on-a-Budget.pdf).
+[**Slides are available as PDF**](Unreal-Engine-Game-Optimization-on-a-Budget.pdf).
 
 https://www.youtube.com/watch?v=G51QWcitCII
 
@@ -91,7 +91,7 @@ Unreal Insights is the new flagship profiling tool that came in late Unreal Engi
 
 - Drill down on a single frame or session
 
-[![](images/insights_overview-900x143.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/insights_overview.png)
+[![](images/insights_overview-900x143.png)]()
 
 ### Trace Channels
 
@@ -103,7 +103,7 @@ Some common trace channels to use on your game executable or in Standalone. `sta
 
 - [Full list of Trace Channels](http://docs.unrealengine.com/5.0/en-US/unreal-insights-reference-in-unreal-engine-5)
 
-[![](images/pie_standalone_arguments.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/pie_standalone_arguments.png)
+[![](images/pie_standalone_arguments.png)]()
 
 ### Bookmarks
 
@@ -120,7 +120,7 @@ Bookmarks add contextual information about changes and transitions that happens 
 
 `**TRACE_BOOKMARK**(Format, Args)`
 
-[![](images/insights_bookmarks-900x140.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/insights_bookmarks.png)
+[![](images/insights_bookmarks-900x140.png)]()
 
 ### Add new 'stat' profiling
 
@@ -132,9 +132,9 @@ For your C++ game code, it can be valuable to include additional profiling detai
 
 I previously wrote about this topic before in [Profiling Stats (Stat Commands)](https://www.tomlooman.com/unreal-engine-profiling-stat-commands/).
 
-[![](images/insight_statcyclecounter.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/insight_statcyclecounter.png)
+[![](images/insight_statcyclecounter.png)]()
 
-[![](images/insights_customstats-900x88.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/insights_customstats.png)
+[![](images/insights_customstats-900x88.png)]()
 
 ### Unreal Insight Tips
 
@@ -162,7 +162,7 @@ It may prove valuable to run some commands during a profiling session to see how
 - Only in Packaged Builds for accurate results
     - Example: `AnimSequence` is twice as large in editor builds.
 
-[![](images/memreport-900x312.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/memreport.png)
+[![](images/memreport-900x312.png)]()
 
 ## DumpTicks
 
@@ -221,7 +221,7 @@ Moving game objects with a lot of `SceneComponents` is far from free. Especially
 
 <figure>
 
-[![](images/insights_movecomponents-900x212.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/insights_movecomponents.png)
+[![](images/insights_movecomponents-900x212.png)]()
 
 <figcaption>
 
@@ -240,9 +240,9 @@ While not expensive on a per-component basis, with tons of `PrimitiveComponents`
 
 - `show Bounds` or `showflag.bounds 1`
 
-[![](images/boundsmadness_cropped.jpg)](https://www.tomlooman.com/wp-content/uploads/2022/11/boundsmadness_cropped.jpg)
+[![](images/boundsmadness_cropped.jpg)]()
 
-[![](images/insights_example_calcbounds-900x266.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/insights_example_calcbounds.png)
+[![](images/insights_example_calcbounds-900x266.png)]()
 
 ## Significance Manager
 
@@ -297,7 +297,7 @@ Note: _Nanite_ in UE5 has an entirely different occlusion culling system (Two-pa
 
 <figure>
 
-[![](images/occlusion_HLOD_1-900x374.jpg)](https://www.tomlooman.com/wp-content/uploads/2022/11/occlusion_HLOD_1.jpg)
+[![](images/occlusion_HLOD_1-900x374.jpg)]()
 
 <figcaption>
 
@@ -309,7 +309,7 @@ modular mesh building, many occluded parts
 
 <figure>
 
-[![](images/occlusion_HLOD_2-900x455.jpg)](https://www.tomlooman.com/wp-content/uploads/2022/11/occlusion_HLOD_2.jpg)
+[![](images/occlusion_HLOD_2-900x455.jpg)]()
 
 <figcaption>
 
@@ -329,7 +329,7 @@ Single HLOD generated for static geometry.
 
 Note: As mentioned in the previous section. Nanite does not issue individual GPU occlusion queries. This visualization can still be used for non-Nanite meshes.
 
-[![](images/renderdoc_depthtest-900x577.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/renderdoc_depthtest.png)
+[![](images/renderdoc_depthtest-900x577.png)]()
 
 ## Distance Culling
 
@@ -366,7 +366,7 @@ Min/Max Draw Distance is not supported for Nanite.
 
 <figure>
 
-[![](images/minmaxdrawdistance_1-900x393.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/minmaxdrawdistance_1.png)
+[![](images/minmaxdrawdistance_1-900x393.png)]()
 
 <figcaption>
 
@@ -378,7 +378,7 @@ Default scene with many overlapping surfaces
 
 <figure>
 
-[![](images/minmaxdrawdistance_2-900x430.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/minmaxdrawdistance_2.png)
+[![](images/minmaxdrawdistance_2-900x430.png)]()
 
 <figcaption>
 
@@ -388,7 +388,7 @@ Min+Max Draw distance Set
 
 </figure>
 
-[![](images/culldistancenode_2.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/culldistancenode_2.png)
+[![](images/culldistancenode_2.png)]()
 
 ## FreezeRendering
 
@@ -402,7 +402,7 @@ FreezeRendering does not work with UE5's Nanite.
 
 <figure>
 
-[![](images/ue_freezerendering_1-900x494.jpg)](https://www.tomlooman.com/wp-content/uploads/2022/11/ue_freezerendering_1.jpg)
+[![](images/ue_freezerendering_1-900x494.jpg)]()
 
 <figcaption>
 
@@ -414,7 +414,7 @@ Player looking toward building
 
 <figure>
 
-[![](images/ue_freezerendering_2-900x494.jpg)](https://www.tomlooman.com/wp-content/uploads/2022/11/ue_freezerendering_2.jpg)
+[![](images/ue_freezerendering_2-900x494.jpg)]()
 
 <figcaption>
 
@@ -445,7 +445,7 @@ Lights can still add considerable cost to your render thread even if they aren't
 
 <figure>
 
-[![](images/lightcomplexity-900x360.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/lightcomplexity.png)
+[![](images/lightcomplexity-900x360.png)]()
 
 <figcaption>
 
@@ -495,9 +495,9 @@ Besides reducing the memory load potentially significantly, it can help occlusio
 
 The following [Animation Optimization](https://docs.unrealengine.com/5.0/en-US/animation-optimization-in-unreal-engine/) doc page contains more information about the tips presented in the talk.
 
-[![](images/warnaboutblueprintusage.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/warnaboutblueprintusage.png)
+[![](images/warnaboutblueprintusage.png)]()
 
-[![](images/anim_fastpathenabed-900x278.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/anim_fastpathenabed.png)
+[![](images/anim_fastpathenabed-900x278.png)]()
 
 ### Fast Path
 
@@ -554,7 +554,7 @@ The ACL plugin is built in with Unreal Engine 5.3+. Existing projects that migra
 
 - RDO Works with Oodle Data by ‘preparing’ the texture data
 
-[![](images/oodledata_config-900x315.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/oodledata_config.png)
+[![](images/oodledata_config-900x315.png)]()
 
 ## SynthBenchmark
 
@@ -585,9 +585,9 @@ Your Mileage may very greatly for Nanite geometry. Requires additional testing i
     
     - ProfileGPU + r.RHISetGPUCaptureOptions 1
 
-[![](images/ue_modularbuilding-900x511.jpg)](https://www.tomlooman.com/wp-content/uploads/2022/11/ue_modularbuilding.jpg)
+[![](images/ue_modularbuilding-900x511.jpg)]()
 
-[![](images/mergeactors_panel.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/mergeactors_panel.png)
+[![](images/mergeactors_panel.png)]()
 
 ## SizeMap (Disk & Memory)
 
@@ -599,7 +599,7 @@ SizeMap is a valuable tool to quickly find and address hard references in your c
 
 Check out Mark Craig's recent talk on [the hidden danger of Asset Dependency Chains](https://www.youtube.com/watch?v=4-oRyDLfo7M).
 
-[![](images/sizemap-900x615.jpg)](https://www.tomlooman.com/wp-content/uploads/2022/11/sizemap.jpg)
+[![](images/sizemap-900x615.jpg)]()
 
 ## Statistics Window
 
@@ -613,7 +613,7 @@ I found myself often using this panel to investigate opportunities for memory an
 - Tip: Shift-click for _secondary_ sort.
     - Sort ‘Count’ + ‘Tris’ or ‘Size’ (Find large assets used only once)
 
-[![](images/statistics_panel-900x204.png)](https://www.tomlooman.com/wp-content/uploads/2022/11/statistics_panel.png)
+[![](images/statistics_panel-900x204.png)]()
 
 ## Useful Console Commands
 
