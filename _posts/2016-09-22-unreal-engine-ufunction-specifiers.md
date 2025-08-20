@@ -20,7 +20,7 @@ The following keywords help expose your code to Blueprints for designers to buil
 
 Exposes the function as a node to Blueprint. Must be combined with the **Category** keyword.
 
-```
+```cpp
 	UFUNCTION(BlueprintCallable, Category = "Character")
 	void RespawnCharacter();
 
@@ -32,7 +32,7 @@ Exposes the function as a node to Blueprint. Must be combined with the **Categor
 
 When using the "const" keyword on your function (see code sample), the Blueprint node will not have an execution line. 'const' promises the function will not change any data a thus the node will look like the GetMaxHealth node below. It's great for getter functions for example where you only want to get a value from C++.
 
-```
+```cpp
 	UFUNCTION(BlueprintCallable, Category = "Character")
 	float GetMaxHealth() const;
 
@@ -46,7 +46,7 @@ When using the "const" keyword on your function (see code sample), the Blueprint
 
 Used when Blueprint implements the logic of this function instead of C++. Can be combined with **BlueprintCallable** so it can be called from Blueprint, otherwise only C++ can call this function.
 
-```
+```cpp
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category = "Character")
 	void SetupInventory();
 
@@ -56,7 +56,7 @@ Used when Blueprint implements the logic of this function instead of C++. Can 
 
 An important note here is the difference between specifying 'void' or a return type (eg. bool) on the function. The above code sample is of type void, and therefore results in a Event node, where the sample below (with a bool as return type) will be overridable as a Function instead. This difference is not exclusive to this keyword.
 
-```
+```cpp
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category = "Character")
 	bool SetupInventory();
 
@@ -70,7 +70,7 @@ An important note here is the difference between specifying 'void' or a return t
 
 Useful when the code provides a basic implementation and Blueprint extends the logic. The function body looks a little different with a \_Implementation suffix (see code below) you still call \[FunctionName\] without the suffix in code as usual. As with the other keywords, use **BlueprintCallable** to expose to Blueprint.
 
-```
+```cpp
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Character")
 	void OnEnterInventory();
 
@@ -78,7 +78,7 @@ Useful when the code provides a basic implementation and Blueprint extends the l
 
 Code below is the body in the .cpp file
 
-```
+```cpp
 void AMyGameCharacter::OnEnterInventory_Implementation()
 {
     // base implementation to be extended by Blueprint...
@@ -96,7 +96,7 @@ The same logic applies as explained in BlueprintImplementableEvent. Specifying a
 
 Similar to using the 'const' keyword as explained at **BlueprintCallable** above. Nodes with this keyword have no execution line pin and cannot alter any data of the object. Great for math nodes or "get" functions to retrieve variables from the object. This keyword also implies **BlueprintCallable**. These functions must have a return value.
 
-```
+```cpp
 	UFUNCTION(BlueprintPure, Category = "Character")
 	float GetMaxHealth();
 
@@ -114,7 +114,7 @@ Meta keywords have a slightly different syntax via UFUNCTION(... , meta = (Keywo
 
 This meta keyword limits the use of the function it's applied to, meaning that only the Blueprint instance itself can call the function, any other Blueprint classes do not have access to this function. This access limitation does not affect C++.
 
-```
+```cpp
 	UFUNCTION(BlueprintCallable, meta = (BlueprintProtected), Category = "Character")
 	bool SetupInventory();
 
@@ -126,7 +126,7 @@ This meta keyword limits the use of the function it's applied to, meaning that o
 
 Deprecation is an important part of a healthy pipeline. Customize the message using DeprecationMessage.
 
-```
+```cpp
 	UFUNCTION(BlueprintCallable, meta = (DeprecatedFunction, DeprecationMessage = "Hello Designers! Please use RespawnPlayer instead!"), Category = "Character")
 	void RespawnCharacter();
 
@@ -158,7 +158,7 @@ As you can see our functions show up under "Character" which we specified as the
 
 Using Exec on functions is great for (debug) commands such as giving health to a player or enabling god mode. You can provide one or multiple parameters which will be displayed via the in-game console (~ Tilde-key) as seen below.
 
-```
+```cpp
 	UFUNCTION(Exec)
 	void GiveHealth(float BonusHealth);
 

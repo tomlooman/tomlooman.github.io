@@ -24,7 +24,7 @@ This short tutorial will hit on two main subjects that you can use separately. F
 
 Here is an example JSON in the simplest format, a single key-value pair.
 
-```
+```cpp
 {
    "MOTD" : "Message of the day!\nYou could insert all sorts of markup and use UMG RichTextBox for detailed formatting."
 }
@@ -40,7 +40,7 @@ Create a new C++ Class derived from **UBlueprintAsyncActionBase** this allows us
 
 For the HTTP request you'll need the following #includes in your newly created .cpp file:
 
-```
+```cpp
 #include "Runtime/Online/HTTP/Public/HttpModule.h"
 #include "Interfaces/IHttpRequest.h"
 #include "Interfaces/IHttpResponse.h"
@@ -52,7 +52,7 @@ The node requires a few elements to function, with Unreal converting it to the c
 
 Header:
 
-```
+```cpp
 // Event that will be the 'Completed' exec wire in the blueprint node along with all parameters as output pins.
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHttpRequestCompleted, const FString&, MOTD, bool, bSuccess);
 
@@ -83,7 +83,7 @@ public:
 
 Class:
 
-```
+```cpp
 void ULZAsyncAction_RequestHttpMessage::Activate()
 {
 	// Create HTTP Request

@@ -17,7 +17,7 @@ You set timers through the global timer manager which is available through `GetW
 
 Code sample from my [Survival Game](https://github.com/tomlooman/EpicSurvivalGame/blob/master/SurvivalGame/Source/SurvivalGame/Private/Items/SBombActor.cpp) _BombActor_ where we set a timer for a delayed explosion:
 
-```
+```cpp
 /* Activate the fuze to explode the bomb after several seconds */
 void ASBombActor::OnUsed(APawn* InstigatorPawn)
 {
@@ -32,7 +32,7 @@ void ASBombActor::OnUsed(APawn* InstigatorPawn)
 
 The `FTimerHandle` is in the header file. Although you are not required to keep a reference to the handle, it's recommended to put this in your header to properly clear or pause your timer instance.
 
-```
+```cpp
 /* Handle to manage the timer */
 FTimerHandle FuzeTimerHandle;
 ```
@@ -43,7 +43,7 @@ The function `OnExplode()` has no parameters in this example. To pass along para
 
 It's possible to pass parameters into timer functions (delegates). The example is from [Action Roguelike's Projectile Attack](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Private/SAction_ProjectileAttack.cpp). In this case, we bind the function by name instead.
 
-```
+```cpp
 FTimerHandle TimerHandle_AttackDelay;
 FTimerDelegate Delegate; // Delegate to bind function with parameters
 Delegate.BindUFunction(this, "AttackDelay_Elapsed", Character); // Character is the parameter we wish to pass with the function.
@@ -53,7 +53,7 @@ GetWorld()->GetTimerManager().SetTimer(TimerHandle_AttackDelay, Delegate, Attack
 
 To bind functions _with parameters_ to a timer, it must be specified in the header with `UFUNCTION()`. You can remember this since the `FTimerDelegate` from the above example calls a function literally named `.BindUFunction()`.
 
-```
+```cpp
 UFUNCTION()
 void AttackDelay_Elapsed(ACharacter* InstigatorCharacter);
 ```
@@ -62,7 +62,7 @@ void AttackDelay_Elapsed(ACharacter* InstigatorCharacter);
 
 When destroying or deactivating objects, make sure you clear any active timers. There are two ways of dealing with timer removal. You don't need to do this for timers that have elapsed and aren't looping.
 
-```
+```cpp
 void ASBombActor::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
 	Super::EndPlay(EndPlayReason);
@@ -99,7 +99,7 @@ It will instead run about 3 times per frame in a burst, which is just a waste of
 
 In C++ this is available too of course, but is a bit more hidden inside `FTimerManagerTimerParameters` with `bMaxOncePerFrame`. Here is the example usage I could find in the engine:
 
-```
+```cpp
 // Example found in UKismetSystemLibrary::K2_SetTimerDelegate
 TimerManager.SetTimer(Handle, Delegate, Time, 
 FTimerManagerTimerParameters { .bLoop = bLooping, .bMaxOncePerFrame = bMaxOncePerFrame }); // Creates the FTimerManagerTimerParameters struct inline

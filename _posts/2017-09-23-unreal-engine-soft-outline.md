@@ -42,7 +42,7 @@ The node graph for it is reasonably simple and most of the logic happens inside 
 
 ## Outline Custom Node (HLSL)
 
-```
+```cpp
 float3 CurColor=0;
 float2 NewUV = UV;
 int i=0;

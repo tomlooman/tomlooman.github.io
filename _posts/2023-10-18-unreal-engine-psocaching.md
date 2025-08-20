@@ -60,7 +60,7 @@ Fornite's load screen is said to be about 15 seconds longer on first load due to
 
 [PSO Precaching](https://docs.unrealengine.com/en-US/pso-precaching-for-unreal-engine/) attempts to compile the PSOs ahead of time during the PostLoad() of the object that supports it. This works well for loading screens where the objects won't be rendered yet. For in-game spawning and streaming this may be too late and compilation may not be finished when the object should be rendered on screen. There is a new feature for exactly this issue which can skip the draw call until the PSO is ready.
 
-```
+```cpp
 // Skips the draw command which is at a different stage from the Proxy Creation skip below. This may cause artifacts as part of the object could be rendered if split among different commands.
 r.SkipDrawOnPSOPrecaching=0 (keep this off, it's no longer recommended by Epic)
 
@@ -90,7 +90,7 @@ If your stutters are severe enough then you may not need Insights for rough comp
 
 PSO Precaching is very easy to use, you simply add the following to your `DefaultEngine.ini`
 
-```
+```cpp
 [/Script/Engine.RendererSettings]
 r.PSOPrecaching=1
 ```
@@ -101,7 +101,7 @@ No further preparation is required. When the packaged game loads a level for the
 
 You can get some in-viewport stats if you have validation enabled. You have two CVARs for this:
 
-```
+```cpp
 r.PSOPrecache.Validation=2
 r.PSOPrecache.Validation.TrackMinimalPSOs=1
 ```
@@ -140,7 +140,7 @@ However, if you just want to confirm Bundled PSOs working properly, it may be ea
 
 Add the following to `DefaultEngine.ini`
 
-```
+```cpp
 [DevOptions.Shaders]
 NeedsShaderStableKeys=true
 
@@ -157,7 +157,7 @@ r.PSOPrecache.ProxyCreationWhenPSOReady=1
 
 And `DefaultGame.ini` (may already be set)
 
-```
+```cpp
 [/Script/UnrealEd.ProjectPackagingSettings]
 bShareMaterialShaderCode=True
 bSharedMaterialNativeLibraries=True
@@ -288,13 +288,13 @@ The **build configuration does not affect the generated PSOs**. You can use Debu
 
 You can expose the number of remaining precompiles from Bundled PSOs to display some number or percentage in your main menu:
 
-```
+```cpp
 FShaderPipelineCache::NumPrecompilesRemaining()
 ```
 
 There are many **more CVARs available** in the different PSO related code files:
 
-```
+```cpp
 RenderCore/ShaderPipelineCache.cpp
 Engine/PSOPrecache.cpp
 ```
@@ -322,13 +322,9 @@ _All feedback on this post is most welcome! I'm sure I've still missed something
 ## References
 
 - [PSO Precaching](https://docs.unrealengine.com/en-US/pso-precaching-for-unreal-engine/)
-
 - [Bundled PSO Docs](https://docs.unrealengine.com/en-US/manually-creating-bundled-pso-caches-in-unreal-engine/)
-
 - [Example Project (GitHub)](https://github.com/tomlooman/ActionRoguelike)
-
 - [UDN Post "PSO Precache Hitches"](https://udn.unrealengine.com/s/question/0D74z00000DxOfSCAV/detail)
-
 - [UDN Post "Enabling PSO Precaching (Automated PSO caching)"](https://udn.unrealengine.com/s/question/0D54z00009L4IZjCAN/enabling-pso-precaching-automated-pso-caching)
 
 

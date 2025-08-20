@@ -15,11 +15,11 @@ coverImage: "ue4_pausedscreen.jpg"
 
 You can continue to move/rotate your camera while game logic is PAUSED in Unreal Engine. Unfortunately, it's a little obscure to set up so here is a quick overview with C++.
 
-```
+```cpp
 PlayerController::bShouldPerformFullTickWhenPaused (true) //  Allows Camera Updates during PlayerController Tick. 
 ```
 
-```
+```cpp
 UWorld::bIsCameraMoveableWhenPaused (true) // Fixes TXAA/MotionBlur glitches.
 ```
 
@@ -27,7 +27,7 @@ _bIsCameraMoveableWhenPaused_ doesn't actually allow rotation itself but fixes T
 
 Here is an example of exposing this to Blueprint:
 
-```
+```cpp
 void ULZGameplayStatics::SetCameraMoveableWhenPaused(const UObject* WorldContextObject, bool bNewIsMoveable)
  {
      if (ensure(WorldContextObject))

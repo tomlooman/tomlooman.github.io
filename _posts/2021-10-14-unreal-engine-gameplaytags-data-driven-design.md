@@ -160,7 +160,7 @@ Mark up your loot tables with tags that can block specific items from dropping i
 
 </figure>
 
-```
+```cpp
 USTRUCT(BlueprintType)
 struct FItemTableRow : public FTableRowBase
 {
@@ -251,7 +251,7 @@ Below is an example of the ActionComponent and Action classes which define a con
 
 ActionComponent holding container for tags:
 
-```
+```cpp
 #include "GameplayTagContainer.h"
 
 UCLASS()
@@ -266,7 +266,7 @@ class ACTIONROGUELIKE_API USActionComponent : public UActorComponent
 
 Action which adds tags to owner when activated and holds blocked tags which prevent the action from running if present on the owner.
 
-```
+```cpp
 #include "GameplayTagContainer.h"
 
 UCLASS(Blueprintable)
@@ -286,7 +286,7 @@ class ACTIONROGUELIKE_API USAction : public UObject
 
 Starting the action will add the tags to the owner.
 
-```
+```cpp
 void USAction::StartAction_Implementation(AActor* Instigator)
 {
 
@@ -299,7 +299,7 @@ void USAction::StartAction_Implementation(AActor* Instigator)
 
 CanStart checks for any "illegal" tags present on the owner.
 
-```
+```cpp
 bool USAction::CanStart_Implementation(AActor* Instigator)
 {
 
@@ -318,7 +318,7 @@ bool USAction::CanStart_Implementation(AActor* Instigator)
 
 Since 4.27 it's much easier to define GameplayTags directly in C++. This can be helpful if your framework requires certain tags to be present without having to define them elsewhere in your INI files. You then don't need to use the _RequestGameplayTag()_ function from earlier so long as you defined this tag in code and not the project settings.
 
-```
+```cpp
 // Macro in your CPP file, naming style is an example. First param is what you use to access this Tag in your C++.
 UE_DEFINE_GAMEPLAY_TAG(TAG_Attribute_Health, "Attribute.Health");
 

@@ -22,7 +22,7 @@ Behind the scenes, the benchmark returns a performance index for CPU and GPU wit
 
 You can see your own performance index by running the **`SynthBenchmark`** console command. `scalability auto` runs the hardware benchmark and logs the resulting scalability and CPU/GPU scores.
 
-```
+```cpp
 // Run benchmark, will freeze game for a bit. Higher workscale increases time it takes to run tests (10 is default and should be used for shipping builds)
 UGameUserSettings::RunHardwareBenchmark(int32 WorkScale, float CPUMultiplier, float GPUMultiplier);
 

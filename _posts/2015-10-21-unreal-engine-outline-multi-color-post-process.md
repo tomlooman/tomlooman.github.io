@@ -52,7 +52,7 @@ You can enable Custom Depth and change the Stencil index through the editor menu
 
 If you're using C++ you can define the stencil indices in a convenient place in your game code.
 
-```
+```cpp
 /* Stencil index mapping to PP_OutlineColored */ 
 #define STENCIL_FRIENDLY_OUTLINE 252; 
 #define STENCIL_NEUTRAL_OUTLINE 253; 
@@ -62,7 +62,7 @@ If you're using C++ you can define the stencil indices in a convenient place in 
 
 Enabling custom depth and setting the index in C++ is pretty straightforward (Available in Blueprint as well).
 
-```
+```cpp
 GetMesh()->SetRenderCustomDepth(true); 
 GetMesh()->SetCustomDepthStencilValue(255); // assign within 1-255 range.
 ```

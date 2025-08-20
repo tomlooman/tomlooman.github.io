@@ -72,7 +72,7 @@ Can call Blueprint functions like Score\_MyTaskName and return the function retu
 
 I used the following code. _(disclaimer: I can't guarantee the memory allocations used here are optimal or 100% safe - it's the best I could find when looking around)_
 
-```
+```cpp
 float ALZAIController::CallScoreFunctionByName(FName InFunctionName)
 {
 	UFunction* Func = FindFunction(InFunctionName);

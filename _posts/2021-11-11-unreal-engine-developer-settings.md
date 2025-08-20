@@ -19,7 +19,7 @@ This system requires some (basic) [C++](https://www.tomlooman.com/unreal-engine-
 
 ## Setting up Developer Settings & Configuration Files
 
-```
+```cpp
 // Example of configuration file content. These files are located in MyProject/Config/*.ini
 
 [/Script/ActionRoguelike.SSaveGameSettings]
@@ -37,7 +37,7 @@ _DeveloperSettings_ is a Module. Creating a UDeveloperSettings derived class wil
 
 Below you'll find an example from the sample project, make sure you expose it to the editor as well (_EditAnywhere_) so it shows up in your Project Settings automatically (see screenshot below).
 
-```
+```cpp
 UCLASS(Config=Game, defaultconfig, meta = (DisplayName="Save Game Settings")) // Give it a better looking name in UI
 class ACTIONROGUELIKE_API USSaveGameSettings : public UDeveloperSettings
 {
@@ -70,7 +70,7 @@ public:
 
 To access the developer settings in C++ we use the CDO ([Class Default Object](https://dev.epicgames.com/documentation/en-us/unreal-engine/objects-in-unreal-engine)) as that is already automatically instanced for us and accessed using GetDefault<T>();
 
-```
+```cpp
 void USSaveGameSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
@@ -106,7 +106,7 @@ This new class lets us bind _console variables_ to project settings and easily c
 
 An example of this can be found in the [Lyra Starter Game](https://www.unrealengine.com/marketplace/en-US/product/lyra) which was released with UE5.0. The _LyraWeaponsDebugSettings_ has several properties for debugging trace hits. By using _DeveloperSettingsBackedByCVars_ and the ConsoleVariable meta-specifier you can bind the variables together.
 
-```
+```cpp
 // Should we do debug drawing for bullet traces (if above zero, sets how long (in seconds)
 UPROPERTY(config, EditAnywhere, Category=General, meta=(ConsoleVariable="lyra.Weapon.DrawBulletTraceDuration")
 float DrawBulletTraceDuration;
@@ -128,7 +128,7 @@ namespace LyraConsoleVariables
 
 Then access the CVar by using the Namespace and the static float, not the variable in the Settings file.
 
-```
+```cpp
 if (LyraConsoleVariables::DrawBulletTracesDuration > 0.0f)
 {
 	static float DebugThickness = 1.0f;
@@ -138,7 +138,7 @@ if (LyraConsoleVariables::DrawBulletTracesDuration > 0.0f)
 
 From testing this out in the Action Roguelike project, it's important to **manually apply the CVARs from INI** during `PostInitProperties()` with the example below or check out the [RogueDeveloperSettings](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Development/RogueDeveloperSettings.cpp).
 
-```
+```cpp
 void URogueDeveloperSettings::PostInitProperties()
 {
 #if WITH_EDITOR

@@ -73,7 +73,7 @@ You should generally only check for nullptr if it's likely and acceptable that a
 
 Now imagine in the example below we return a nullptr from GetPlayerController() and (quietly) skip the if-statement where we would otherwise add an item to inventory. Further down the line, you will scratch your head wondering why you didn't receive this item. Having no player controller is unlikely enough in most cases that when it does happen, you may be better off failing entirely as the state of the game is already broken.
 
-```
+```cpp
 APlayerController* PC = GetWorld()->GetPlayerController();
 if (PC)
 {
@@ -85,14 +85,14 @@ For more info on this concept, I recommend [Ari Arnbjörnsson's talk (at 22:48)]
 
 When creating components to be used in your Actor classes we use similar syntax. In the header file, we define a pointer to a component, this will be a nullptr until we assign it an instance of the component. Here is an example from the header of [SCharacter.h](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SCharacter.h) where we define a `CameraComponent`. _(See "ObjectPtr<T>" further down in this article which will replace using raw pointers in headers in future releases of UE5)_
 
-```
+```cpp
 UPROPERTY(VisibleAnywhere)
 UCameraComponent* CameraComp;
 ```
 
 Now in the [SCharacter.cpp](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Private/SCharacter.cpp) constructor (called during spawning/instantiation of the Character class), we create an instance of the CameraComponent.
 
-```
+```cpp
 // This function is only used within constructors to create new instances of our components. Outside of the constructor we use NewObject<T>();
 CameraComp = CreateDefaultSubobject<UCameraComponent>("CameraComp");
 // We can now safely call functions on the component
@@ -107,7 +107,7 @@ If you want to create a new object outside the constructor, you instead use [New
 
 In Unreal Engine 5 a new concept was introduced called `TObjectPtr` to replace raw pointers (eg. `UCameraComponent*`) in header files with UProperties. This benefits the new systems such as virtualized assets among other things which is why it's the new standard moving forward. The example above will now look as follows.
 
-```
+```cpp
 UPROPERTY(VisibleAnywhere)
 TObjectPtr<UCameraComponent> CameraComp;
 ```
@@ -124,7 +124,7 @@ Much like the previous example of the Camera Component, in Unreal Engine 5 you w
 
 We can take a [projectile attack](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SAction_ProjectileAttack.h) ability as an example that references a particle system. The header defines the `ParticleSystem` pointer:
 
-```
+```cpp
 /* Particle System played during attack animation */
 UPROPERTY(EditAnywhere, Category = "Attack")
 UParticleSystem* CastingEffect;
@@ -137,7 +137,7 @@ Note that this pointer is going to be empty (_`nullptr`_) unless we assigned it 
 
 Now in the [class file of the projectile attack](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Private/SAction_ProjectileAttack.cpp) (line 28), we can use this asset pointer to spawn the specified ParticleSystem:
 
-```
+```cpp
 UGameplayStatics::SpawnEmitterAttached(CastingEffect, Character->GetMesh(), HandSocketName, FVector::ZeroVector, FRotator::ZeroRotator, EAttachLocation::SnapToTarget);
 ```
 
@@ -149,7 +149,7 @@ Used to **access Variables or call Functions** of objects. You can type in the p
 
 Examples:
 
-```
+```cpp
 // pointer to Actor class called AMyCar ('A' prefix explained later)
 AMyCar* MyCar = SpawnActor<AMyCar>(...); 
 // Calling function on class instance (pointer)
@@ -171,13 +171,13 @@ Used to **access 'static functions' (and variables) on classes.** A good example
 
 Example of calling a static function on a class:
 
-```
+```cpp
 UGameplayStatics::PlaySoundAtLocation(this, SoundOnStagger, GetActorLocation());
 ```
 
 Since these functions are static, they don't belong to a specific '`UWorld`'. `UWorld` is generally the level/world you play in, but within the editor, it could be many other things (the static mesh editor has its own `UWorld` for example). Many things need `UWorld`, and so you will often see the first parameter of static functions look like this:
 
-```
+```cpp
 static void PlaySoundAtLocation(const UObject* WorldContextObject, USoundBase* Sound, FVector Location, ...)
 ```
 
@@ -185,7 +185,7 @@ static void PlaySoundAtLocation(const UObject* WorldContextObject, USoundBase* S
 
 You will also see a double colon when declaring the body of a function itself (regardless of it being 'static' or not)
 
-```
+```cpp
 void ASAICharacter::Stagger(UAnimMontage* AnimMontage, FName SectionName /* = NAME_None*/)
 {
   // ... code in the function (this is in the .cpp file)
@@ -204,7 +204,7 @@ A common concept is to '_pass by reference_' a value type like a struct, or a bi
 
 - More importantly, because a copy is created, you can't simply change that variable and have it change in the 'original' variable too, you basically cloned it and left the original variable unchanged. If you want to change the original variable inside the function, you need to pass it in as a reference (**this is specific to value types** like float, bool, structs such as FVector, etc.) Let me give you an example.
 
-```
+```cpp
 void ChangeTime(float TimeToUpdate)
 {
     // add 1 second to the total time
@@ -214,7 +214,7 @@ void ChangeTime(float TimeToUpdate)
 
 Now calling this function as seen in the example below will print out 0.0f at the end since the original _TimeVar_ was never actually changed.
 
-```
+```cpp
 float TimeVar = 0.0f;
 
 ChangeTime(TimeVar);
@@ -224,7 +224,7 @@ print(TimeVar); // This would print out: 0.0f  - because we cloned the original
 
 Now we change the function to:
 
-```
+```cpp
 void ChangeTime(float& TimeToUpdate)
 {
     // add 1 second to the total time
@@ -234,7 +234,7 @@ void ChangeTime(float& TimeToUpdate)
 
 Now if we use the same code as before, we get a different result: The printed value would now be 1.0f.
 
-```
+```cpp
 float TimeVar = 0.0f;
 
 ChangeTime(TimeVar);
@@ -248,7 +248,7 @@ Another important use is the _address operator_, which even lets us pass functio
 
 The _BindAxis_ function in the example below needs to know which function to call when the mapped input is triggered. We pass in the function and use the _address operator (&)_.
 
-```
+```cpp
 // Called to bind functionality to input
 void ASCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -261,7 +261,7 @@ void ASCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 Another common use case is to pass a function into timers. The third parameter is again the function we pass in to be called when the timer elapses.
 
-```
+```cpp
 // Activate the fuze to explode the bomb after several seconds
 GetWorldTimerManager().SetTimer(FuzeTimerHandle, this, &ASBombActor::Explode, MaxFuzeTime, false);
 ```
@@ -278,7 +278,7 @@ These keywords can mark variables and functions in the header file to give 'acce
 
 Generally, you only want to expose what can be safely called/changed from the outside (other classes). You don't want to make your variables _public_ if they should trigger an event whenever they are changed. Instead, you mark the variable _protected_ or even _private_ and create a _public_ function instead which sets the variable and calls the desired event.
 
-```
+```cpp
 private:
   int32 MyInt;
 
@@ -292,7 +292,7 @@ Forward declaring C++ classes is done in header files and is done instead of inc
 
 Let's say we wish to use `UParticleSystem` class in another header named `MyCharacter.h`. The header file (and compiler) doesn't need to know everything about `UParticleSystem`, just that the word is used as a _class_.
 
-```
+```cpp
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "SCharacter.generated.h"
@@ -321,7 +321,7 @@ _Casting_ to specific classes is something you'll use all the time. Casting poin
 
 As an example, you might want to Cast your APawn\* (pointer) to your own character class (eg. _ASCharacter_) as casting is required to access the variables and functions declared in that specific class.
 
-```
+```cpp
 APawn* MyPawn = GetPawn();
 ASCharacter* MyCharacter = Cast<ASCharacter>(MyPawn);
 if (MyCharacter) // verify the cast succeeded before calling functions
@@ -353,7 +353,7 @@ An alternative to interfaces is to create a single base class (as mentioned earl
 
 Interfaces are a little odd at first in C++ as they require two classes with different prefix letters. They are both used for different reasons but first, let's look at the header.
 
-```
+```cpp
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
 class USGameplayInterface : public UInterface
@@ -378,7 +378,7 @@ public:
 
 With the interface class defined you can 'inherit' from it in other C++ classes and implement actual behavior. For this, you use the "I" prefixed class name. Next to `public AActor` we add `, public ISGameplayInterface` to specify we want to inherit the functions from the interface.
 
-```
+```cpp
 UCLASS()
 class ACTIONROGUELIKE_API ASItemChest : public AActor, public ISGameplayInterface // 'inherit' from interface
 {
@@ -393,7 +393,7 @@ _BlueprintNativeEvent_ is useful to allow C++ to provide a base implementation, 
 
 In order to check whether a specific class implements (inherits from) the interface you can use `Implements<T>()`. For this, you use the "U" prefixed class name.
 
-```
+```cpp
 if (MyActor->Implements<USGameplayInterface>())
 {
 }
@@ -401,7 +401,7 @@ if (MyActor->Implements<USGameplayInterface>())
 
 Calling interface functions is again unconventional. The signature looks as follows: `IMyInterface::Execute_YourFunctionName(ObjectToCallOn, Params);` This is another case where you use the "I" prefixed class.
 
-```
+```cpp
 ISGameplayInterface::Execute_Interact(MyActor, MyParam1);
 ```
 
@@ -421,7 +421,7 @@ There are several types of these delegates/events. I'll explain the most commonl
 
 You start by declaring the delegate with a MACRO. There are variants available to allow passing in parameters, these have the following suffix. \_OneParam, \_TwoParams, \_ThreeParams, etc. You define these in the header file, ideally, above the class where you want to call them.
 
-```
+```cpp
 // These macros will sit at the top of your header files.
 DECLARE_DYNAMIC_MULTICAST_DELEGATE()
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams()
@@ -437,20 +437,20 @@ Note: _Dynamic Multicast Delegates_ are also known as _Event Dispatchers_ in Blu
 
 The macros take at least one parameter, which defines their name. eg. _FOnAttributeChanged_ could be a name we use as our Delegate to execute whenever an attribute such as Health changes.
 
-```
+```cpp
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(<typename>)
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(<typename>, <paramtype1>, <paramvarname1>, <paramtype2>,<paramvarname2>)
 ```
 
 Here is one example of a delegate with four parameters to notify code about a change to an attribute. The type and variable names are split by commas, unlike normal functions.
 
-```
+```cpp
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnAttributeChanged, AActor, InstigatorActor, USAttributeComponent, OwningComp, float, NewValue, float, Delta);
 ```
 
 You now add the delegate in your class header, which may look as follows:
 
-```
+```cpp
 UPROPERTY(BlueprintAssignable, Category = "Attributes")
 FOnAttributeChanged OnHealthChanged;
 ```
@@ -461,7 +461,7 @@ You may have noticed BlueprintAssignable, this is a powerful feature of the Dyna
 
 Finally, to actually trigger the callback we call OnHealthChanged_.Broadcast()_ and pass in the expected parameters.
 
-```
+```cpp
 OnHealthChanged.Broadcast(InstigatorActor, this, NewHealth, Delta);
 ```
 
@@ -475,7 +475,7 @@ Since delegates are weakly referenced you often don't need to unbind delegates w
 
 You can bind to a delegate calling `.AddDynamic()`. The first parameter takes a `UObject` for which we can pass '`this`'. The second parameter types the address of the function (`YourClass::YourFunction`) which is why we pass the function with the ampersand (`&`) symbol which is the address operator.
 
-```
+```cpp
 void ASAICharacter::PostInitializeComponents()
 {
   Super::PostInitializeComponents();
@@ -486,7 +486,7 @@ void ASAICharacter::PostInitializeComponents()
 
 The above OnHealthChanged function is declared with `UFUNCTION()` in the header.
 
-```
+```cpp
 UFUNCTION()
 void OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth, float Delta);
 ```
@@ -511,7 +511,7 @@ When used only in C++ we can define delegates with an unspecified amount of para
 
 The StreamableManager of Unreal defines a `FStreamableDelegate`.
 
-```
+```cpp
 DECLARE_DELEGATE(FStreamableDelegate);
 ```
 
@@ -519,7 +519,7 @@ This doesn't specify any parameters yet and lets us define what we wish to pass 
 
 The following is taken from `SGameModeBase` in the ActionRoguelike project ([link to code](https://github.com/tomlooman/ActionRoguelike/blob/dc18d0b1267ddc6f6640b55d2c7ca4b2fd54bdcd/Source/ActionRoguelike/Private/SGameModeBase.cpp#L222)). We asynchronously load the data of an enemy Blueprint to spawn them once the load has finished.
 
-```
+```cpp
 if (UAssetManager* Manager = UAssetManager::GetIfValid())
 {
   // Primary Id is part of AssetManager, we grab one from a DataTable
@@ -537,7 +537,7 @@ if (UAssetManager* Manager = UAssetManager::GetIfValid())
 
 In the example above we create a new Delegate variable and fill it with variables, in this case `MonsterId` and the first vector location from an array (`Locations[0]`). Once the LoadPrimaryAsset function from Unreal has finished, it will call the delegate `OnMonsterLoaded` with the provided parameters we passed into the CreateUObject function previously.
 
-```
+```cpp
 void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
 ```
 
@@ -571,7 +571,7 @@ Classes in Unreal have a prefix, for example, the class 'Actor' is named 'AActor
 
 **T**. Template classes, like `TSubclassOf<T>` (class derived from T, which can be almost anything), `TArray<T>` (lists), `TMap<T>` (dictionaries) etc. classes that can accept multiple classes. Examples:
 
-```
+```cpp
 // A list of strings.
 TArray<FString> MyStrings;
 
@@ -640,7 +640,7 @@ Basically variations of lists of objects/values. Array is a simple list that you
 
 Very useful for assigning classes that derive from a certain type. For example, you may expose this variable to Blueprint where a designer can assign which projectile class must be spawned.
 
-```
+```cpp
 UPROPERTY(EditAnywhere) // Expose to Blueprint
 TSubclassOf<AProjectileActor> ProjectileClass; // The class to assign in Blueprint, eg. BP_MyMagicProjectile.
 ```
@@ -649,7 +649,7 @@ Now the designer will get a list of classes to assign that derive from Projectil
 
 Here we use the TSubclassOf variable ProjectileClass to spawn a new instance: ([link to code](https://github.com/tomlooman/ActionRoguelike/blob/dc18d0b1267ddc6f6640b55d2c7ca4b2fd54bdcd/Source/ActionRoguelike/Private/SAction_ProjectileAttack.cpp#L86))
 
-```
+```cpp
 FTransform SpawnTM = FTransform(ProjRotation, HandLocation);
 GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
 ```
@@ -666,7 +666,7 @@ Allows extra markup on functions, and exposes it to the [Property System (Reflec
 
 Here is [additional information in a blog post](https://www.tomlooman.com/ue4-ufunction-keywords-explained/) on the available keywords within `UFUNCTION()` and how to use them. There are a lot of [function specifiers](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Functions/Specifiers/) worth checking out, and [BenUI](https://benui.ca/unreal/ufunction/) does a great job of detailing what's available.
 
-```
+```cpp
 // Can be called by Blueprint
 UFUNCTION(BlueprintCallable, Category = "Action")
 bool IsRunning() const;
@@ -680,7 +680,7 @@ void StartAction(AActor* Instigator);
 
 Allows marking-up variables, and exposing them to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose your C++ to Blueprint but it can do a lot more using this large list of [property specifiers](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Properties/Specifiers/). Again, it's worth checking out [BenUI's article](https://benui.ca/unreal/uproperty/) on UPROPERTY specifiers.
 
-```
+```cpp
 // Expose to Blueprint and allow editing of its defaults and only grant read-only access in the node graphs.
 UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "UI")
 TSoftObjectPtr<UTexture2D> Icon;
@@ -694,7 +694,7 @@ USActionComponent* ActionComp;
 
 At the top of classes and structs and used by Unreal to add boilerplate code required by the engine.
 
-```
+```cpp
 GENERATED_BODY()
 ```
 
@@ -702,7 +702,7 @@ GENERATED_BODY()
 
 These macros are required when defining new classes, structs, and enums in Unreal Engine. When you create your new class, this is already added for you in the Header. By default, they will be empty like `UCLASS()` but can be used to add additional markup to an object for example
 
-```
+```cpp
 USTRUCT(BlueprintType)
 struct FMyStruct
 {
@@ -713,7 +713,7 @@ struct FMyStruct
 
 Macro to easily log information including a category (eg. LogAI, LogGame, LogEngine) and a severity (eg. Log, Warning, Error, or Verbose) and can be an incredibly valuable tool to verify your code by printing out some data while playing your game much like _PrintString_ in Blueprint.
 
-```
+```cpp
 // The simple logging without additional info about the context
 UE_LOG(LogAI, Log, TEXT("Just a simple log print"));
 // Putting actual data and numbers here is a lot more useful though!
@@ -730,7 +730,7 @@ You can find examples of these code modules in your engine installation folder (
 
 Not every module is loaded by default. When programming in C++ you sometimes need to include additional modules to access their code. One such example is `AIModule` that you must add to the module's _\*.build.cs_ file in which you wish to use it before being able to access any of the AI classes it contains.
 
-```
+```cpp
 PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AIModule", "GameplayTasks", "UMG", "GameplayTags", "OnlineSubsystem", "DeveloperSettings" });
 ```
 
@@ -743,13 +743,9 @@ Ari from Epic Games has a great talk on Modules that I recommend checking out an
 ## Why use modules?
 
 - Better code practices/encapsulation of functionality
-
 - Re-use code easily between projects
-
 - Only ship modules you use (eg. trim out Editor-only functionality and unused Unreal features)
-
 - Faster compilation and linking times
-
 - Better control of what gets loaded and when.
 
 https://www.youtube.com/watch?v=DqqQ\_wiWYOw
@@ -768,7 +764,7 @@ It's important to be mindful of how many objects you are creating and deleting a
 
 References to Actors (and ActorComponents) can be automatically _nulled_ after they get destroyed. For this to work you must mark the pointer with `UPROPERTY()` so it can be tracked properly.
 
-```
+```cpp
 // SInteractionComponent.h
 UPROPERTY()
 TObjectPtr<AActor> FocusedActor;
@@ -788,14 +784,14 @@ I will update this post once the new behavior has been enabled by default.
 
 _Weak Object Pointer_. This is similar to pointers like `UObject*`, except that we tell the engine that we don't want to hold onto the memory or object if we are the last piece of code referencing it. UObjects are automatically destroyed and garbage collected when no code is holding a (hard) reference to it. Use weak object pointers carefully to ensure objects are GC'ed when needed.
 
-```
+```cpp
 // UGameAbility derived from UObject
 TWeakObjectPtr<UGameAbility> MyReferencedAbility;
 ```
 
 Now we don't try to hold onto the object explicitly and it can be garbage collected safely. Before accessing the object, we must call `.Get()` which will attempt to retrieve the object from the internal object array and makes sure it's valid. If it's no longer a valid object, a nullptr is returned instead.
 
-```
+```cpp
 UGameAbility* Ability = MyReferencedAbility.Get();
 if (Ability)
 {
@@ -803,9 +799,7 @@ if (Ability)
 ```
 
 - [Documentation on WeakObjPtr<T>](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/SmartPointerLibrary/WeakPointer/index.html)
-
 - [Soft & Weak Object Pointers (Ari Arnbjörnsson)](https://www.notion.so/Soft-Weak-Pointers-2347eefb694b49fb8314fdd71ca83065#e499f9b4c5694bfdb8c9148039205590)
-
 - [Even more technical, on Smart Pointers in Unreal](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/SmartPointerLibrary/index.html)
 
 # Class Default Object
@@ -816,7 +810,7 @@ You can easily get the CDO in C++ via [GetDefault<T>](https://docs.unrealengine.
 
 Below is one example from [SaveGameSubsystem](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Private/SSaveGameSubsystem.cpp) using the '_class default object'_ to access [DeveloperSettings](https://www.tomlooman.com/unreal-engine-developer-settings/) (Project & Editor Settings) without creating a new instance.
 
-```
+```cpp
 // Example from: SSaveGameSubsystem.cpp (in Initialize())
 
 const USSaveGameSettings* Settings = GetDefault<USSaveGameSettings>();
@@ -831,7 +825,7 @@ If you really need to be sure if something is not _Null_ or a specific (if-)stat
 
 Two main assertion types are _check_ and _ensure_.
 
-```
+```cpp
 check(MyValue == 1); // treated as fatal error if statement is 'false'
 check(MyActorPointer);
 
@@ -890,13 +884,8 @@ Things that didn't quite make it in yet or require a more detailed explanation i
 # References & Further Reading
 
 - [Laura's C++ Speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html)
-
 - [Why C++ In Unreal Engine Isn't That Scary?](https://dev.epicgames.com/community/learning/tutorials/Ml0p/why-c-in-unreal-engine-isn-t-that-scary)
-
 - [Gameplay Framework Primer](https://www.tomlooman.com/ue4-gameplay-framework/)
-
 - [Introduction to Unreal C++ Programming](https://docs.unrealengine.com/en-us/Programming/Introduction)
-
 - [Gameplay Framework Documentation](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Classes/index.html)
-
 - [Gameplay Programming Documentation](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/index.html)

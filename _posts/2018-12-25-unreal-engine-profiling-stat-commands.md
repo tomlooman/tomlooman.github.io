@@ -25,12 +25,12 @@ As an example, I like to keep track of how many Actors get spawned during a sess
 
 At the top of the .cpp file (in my case LZGameInstance.cpp) I declare the stat we wish to track. In the function that is triggered any time a new Actor is spawned we place the actual counter. Note that the **STATGROUP\_LODZERO** is defined elsewhere in my code to define a new Category that I'll explain in a later section.
 
-```
+```cpp
 // Keep track of the amount of Actors spawned at runtime (at the top of my class file)
 DECLARE_DWORD_ACCUMULATOR_STAT(TEXT("Actors Spawned"), STAT_ACTORSPAWN, STATGROUP_LODZERO);
 ```
 
-```
+```cpp
 // Increment stat by 1, keeping track of total actors spawned during the play session (Placed inside the event function)
 INC_DWORD_STAT(STAT_ACTORSPAWN); //Increments the counter by one each call.
 ```
@@ -39,11 +39,11 @@ The above example is nice to track occurances, but often you want to measure exe
 
 In the next example I'd like to measure if at some point a getter function cost becomes too large and requires optimization.
 
-```
+```cpp
 DECLARE_CYCLE_STAT(TEXT("GetModuleByClass (Single)"), STAT_GetSingleModuleByClass, STATGROUP_LODZERO);
 ```
 
-```
+```cpp
 AWSShipModule* AWSShip::GetModuleByClass(TSubclassOf<AWSShipModule> ModuleClass) const
 {
 	SCOPE_CYCLE_COUNTER(STAT_GetSingleModuleByClass);
@@ -79,7 +79,7 @@ Toggling can be done per category and multiple can be on screen at once. To show
 
 As you can see it only takes a few Macros to set up your own metrics. The one missing piece is how to define your own category as used in the above examples. Here is an example of declaring a Category:
 
-```
+```cpp
 DECLARE_STATS_GROUP(TEXT("LODZERO_Game"), STATGROUP_LODZERO, STATCAT_Advanced); 
 // DisplayName, GroupName (ends up as: "LODZERO"), Third param is always Advanced.
 ```
@@ -88,7 +88,7 @@ DECLARE_STATS_GROUP(TEXT("LODZERO_Game"), STATGROUP_LODZERO, STATCAT_Advanced);
 
 Finally, it's important to note you can also measure just a small part of a function by using curly braces.
 
-```
+```cpp
 void MyFunction()
 {
     // This part isn't counted
@@ -106,7 +106,7 @@ void MyFunction()
 
 To add trace details for your own game code, you can easily do so using the SCOPED\_NAMED\_EVENT.
 
-```
+```cpp
 SCOPED_NAMED_EVENT(StartActionName, FColor::Green);
 SCOPED_NAMED_EVENT_FSTRING(GetClass()->GetName(), FColor::White);
 ```
@@ -115,10 +115,9 @@ First parameter is a custom name as it shows up in Insights, the second is the c
 
 The example below has two examples, one tracing the entire function while the second variation is placed within curly braces which limits the trace to within those lines of code. The \_FSTRING variant lets us specify runtime names, but does add additional overhead so it should be used with consideration.
 
-```
+```cpp
 bool USActionComponent::StartActionByName(AActor* Instigator, FName ActionName)
 {
-
   // Trace the entire function below
   SCOPED_NAMED_EVENT(StartActionName, FColor::Green);
 
@@ -136,9 +135,9 @@ bool USActionComponent::StartActionByName(AActor* Instigator, FName ActionName)
 
       Action->StartAction(Instigator);
     }
+    }
   }
 }
-
 ```
 
 ## Conclusion

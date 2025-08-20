@@ -66,7 +66,7 @@ While you can visualize the Custom Depth buffer in the editor, you are more like
 
 Use the following **console command to add a picture-in-picture style visualizer**:
 
-```
+```cpp
 vis customdepth // picture-in-picture
 vis customdepth uv1 // fullscreen
 ```

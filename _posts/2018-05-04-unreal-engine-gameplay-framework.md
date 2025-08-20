@@ -38,7 +38,7 @@ You can easily spawn a new Actor instance in code by using `GetWorld()->SpawnAct
 
 Here is a snippet where an Actor is spawned at runtime:
 
-```
+```cpp
 FTransform SpawnTM;
 FActorSpawnParameters SpawnParams;
 SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
@@ -87,7 +87,7 @@ A sub-class of this component is **SceneComponent**, and is the base class for a
 
 Components are most commonly created in the constructor of the Actor, you can also create and destroy components at runtime. First, let's look at one of my Actor's constructors.
 
-```
+```cpp
 ASEquippableActor::ASEquippableActor()
 {
   PrimaryActorTick.bCanEverTick = true;
@@ -106,7 +106,7 @@ The UStaticMeshComponent is created using the _CreateDefaultSubobject<T>_ (a fun
 
 You may also notice we setup the MeshComp to be the new RootComponent. Now any SceneComponent must be attached to this mesh, which is easily done using the following line:
 
-```
+```cpp
 WidgetComp = CreateDefaultSubobject<UWidgetComponent>(TEXT("InteractWidgetComp"));
 WidgetComp->SetupAttachment(MeshComp);
 ```
@@ -117,7 +117,7 @@ Together with Actor these Components are critical in building your game in both 
 
 During gameplay you can spawn your own components using the code below. This is different from the CreateDefaultSubobject which is for constructors only.
 
-```
+```cpp
 UActorComponent* SpawnedComponent = NewObject<UActorComponent>(this, UStaticMeshComponent::StaticClass(), TEXT("DynamicSpawnedMeshCompoent"));
 if (SpawnedComponent)
 {
@@ -227,7 +227,7 @@ Easy to access by calling GetWorld() inside your Actors.
 
 When trying to get the world instance in _static functions_ you need to pass in a 'WorldContextObject' which is basically just an input parameter that we can use to call ->GetWorld() on. Here is an example from one of my header files:
 
-```
+```cpp
 static APlayerController* GetFirstLocalPlayerController(UObject* WorldContextObject);
 ```
 
@@ -289,7 +289,7 @@ The base object for almost anything in the engine, Actors derive from UObject an
 
 UObjects are not spawned like Actors, but created using NewObject<T>() for example:
 
-```
+```cpp
 TSubclassOf<UObject> ClassToCreate;
 UObject* NewDesc = NewObject<UObject>(this, ClassToCreate);
 ```
@@ -308,7 +308,7 @@ Static class to handle common game-related functionality like playing sounds and
 
 Since GameplayStatics is a UBlueprintFunctionLibrary you can access it from anywhere in your code (or Blueprint for that matter)
 
-```
+```cpp
 UGameplayStatics::WhateverFunction(); // static functions are easily accessed anywhere, just include #include "Kismet/GameplayStatics.h"
 ```
 

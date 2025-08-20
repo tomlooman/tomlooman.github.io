@@ -23,7 +23,7 @@ This trick was made possible due to a graphics binding bug where the LightAttenu
 
 The implementation is really quite basic, I used the LightAttenuationTexture available only in Forward-rendering of the engine to find which part of affected by light. To access this buffer you need to use the Custom-node in the material editor, and apply the following code:
 
-```
+```CPP
 return Square(Texture2DSampleLevel(LightAttenuationTexture, LightAttenuationTextureSampler, UV, 0));
 ```
 

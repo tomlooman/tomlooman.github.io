@@ -22,7 +22,7 @@ I recommend reading the [documentation page](https://dev.epicgames.com/documenta
 
 Your project must define certain classes as Primary Assets (these may often be derived from [PrimaryDataAsset](https://docs.unrealengine.com/en-US/API/Runtime/Engine/Engine/UPrimaryDataAsset/index.html) but can derive from any UObject). These are the assets you will manage and the system will load/unload any referenced content (also known as 'secondary assets') such as meshes and textures. You can turn these 'secondary assets' (Everything is considered a Secondary Asset by default) into Primary Assets by overriding GetPrimaryAssetId() from UObject.h:
 
-```
+```cpp
 /**
 * Returns an Type:Name pair representing the PrimaryAssetId for this object.
 * Assets that need to be globally referenced at runtime should return a valid Identifier.
@@ -35,7 +35,7 @@ An example of a _PrimaryAsset_ is an AI configuration asset that holds info abou
 
 Here is an example of a PrimaryAsset with [MonsterData](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SMonsterData.h) from my ActionRoguelike on GitHub. The use-case is a basic configuration for an AI to be spawned into the world. The actions are its abilities to be granted.
 
-```
+```cpp
 UCLASS()
 class ACTIONROGUELIKE_API USMonsterData : public UPrimaryDataAsset
 {
@@ -107,7 +107,7 @@ For example, my ships are of type _ShipConfig_ and one of the Ids that point to 
 
 Below is an example implementation of setting up the Id for a DataAsset.
 
-```
+```cpp
 FPrimaryAssetId ULZItemData::GetPrimaryAssetId() const
 {
     return FPrimaryAssetId(ItemType, GetFName());
@@ -122,7 +122,7 @@ This aspect is what I could find the least information on when diving into Asset
 
 Loading in C++ works by creating a Delegate with your own set of parameters you wish to pass along with it. In the example below I pass in the loaded Id and a vector spawn location.
 
-```
+```cpp
 // Get the Asset Manager from anywhere
 if (UAssetManager* Manager = UAssetManager::GetIfValid())
 {
@@ -145,7 +145,7 @@ if (UAssetManager* Manager = UAssetManager::GetIfValid())
 
 The OnMonsterLoaded Function once load has completed:
 
-```
+```cpp
 void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
 {
     UAssetManager* Manager = UAssetManager::GetIfValid();
@@ -175,7 +175,7 @@ The downside of async loading in Blueprint is that we can't pass in additional p
 
 Asset Bundles can be used to categorize the soft references inside your PrimaryAsset to a specific type or use-case. eg. in-game or menu. Sometimes you only need a small part of an asset to be loaded (eg. when viewing a weapon purely in UI without the Mesh rendered anywhere). You can mark up those variables with _meta = (Asset Bundles = "UI"_) (can be any name you decide) and during the async load request, you may specify to only load 1 or more specific bundles instead of the entire asset when no bundles are specified.
 
-```
+```cpp
 UPROPERTY(…, meta = (AssetBundles = "UI"))
 TSoftObjectPtr Icon;
 

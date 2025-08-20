@@ -46,7 +46,7 @@ Make sure your project is prepared using the link above, it shouldn't take too l
 
 The following is the code for SActorWidgetComponent and derives from Unreal's WidgetComponent class. The functionality we add here is to set the owning Actor on the SActorWidget class (will be covered in a bit) which is an exposed variable to Blueprint for use in the UMG Editor.
 
-```
+```cpp
 #include "SActorWidgetComponent.h"
 #include "FrameworkZeroPCH.h"
 #include "SActorWidget.h"
@@ -85,7 +85,7 @@ void USActorWidgetComponent::InitWidget()
 
 Here is the header file:
 
-```
+```cpp
 #pragma once
 
 #include "CoreMinimal.h"
@@ -113,7 +113,7 @@ public:
 
 That covers part one, the main element however is the variable we add to the Widget class, which looks like this:
 
-```
+```cpp
 #include "SActorWidget.h"
 
 void USActorWidget::SetOwningActor(AActor* NewOwner)
@@ -132,7 +132,7 @@ void USActorWidget::SetOwningActor(AActor* NewOwner)
 
 And the header:
 
-```
+```cpp
 #pragma once
 
 #include "CoreMinimal.h"

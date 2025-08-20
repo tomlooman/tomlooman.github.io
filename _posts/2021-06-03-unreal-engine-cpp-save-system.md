@@ -61,7 +61,7 @@ In order to save the world state, we must decide which variables to store for ea
 
 For Actor variables we store its Name, Transform (Location, Rotation, Scale) and an array of byte data which will contain all variables marked with 'SaveGame' in their UPROPERTY.
 
-```
+```cpp
 USTRUCT()
 struct FActorSaveData
 {
@@ -92,7 +92,7 @@ The rest of the code is pretty straightforward (and explained in the comments) t
 
 To know which **#include**s to use in C++ for our FMemoryWriter and all other classes in this blog, make sure to check out the [source cpp files.](https://github.com/tomlooman/ActionRoguelike/tree/master/Source/ActionRoguelike)
 
-```
+```cpp
 void ASGameModeBase::WriteSaveGame()
 {
         // ... < playerstate saving code ommitted >
@@ -139,7 +139,7 @@ _Now it's time to prepare our Actors to be serialized..._
 
 Below is the [TreasureChest](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SItemChest.h) code taken directly from the project. Note the _ISGameplayInterface_ inheritance and '_SaveGame_' marked on the bLidOpened variable. That will be the only variable saved to disk. By default, we store the FTransform of the Actor as well. So we can push the treasure chest around the map (Simulate Physics is enabled) and on the next Play, the Location and Rotation will be restored along with the lid state.
 
-```
+```cpp
 UCLASS()
 class ACTIONROGUELIKE_API ASItemChest : public AActor, public ISGameplayInterface
 {
@@ -175,7 +175,7 @@ Finally we have the _OnActorLoaded\_Implementation()_ function to implement. Thi
 
 Keep in mind however that often you can rely on BeginPlay() as your 'OnActorLoaded' replacement. So long as you load the saved data into each Actor BEFORE BeginPlay() has been triggered. This is why we handle the loading logic very early in the process inside our GameMode class (more on that in 'Loading Game State' below)
 
-```
+```cpp
 void ASItemChest::Interact_Implementation(APawn* InstigatorPawn)
 {
 	bLidOpened = !bLidOpened;
@@ -202,7 +202,7 @@ In my example I chose to fetch all data from PlayerState just before saving the 
 
 You \*could\* choose to utilize SaveGame properties here too and store **some** of that player data automatically by converting it to binary array just like we do with Actors instead of manually writing it into SaveGame, but you'd still need to manually handle the PlayerID and Pawn Transform.
 
-```
+```cpp
 void ASPlayerState::SavePlayerState_Implementation(USSaveGame* SaveObject)
 {
 	if (SaveObject)
@@ -233,7 +233,7 @@ Make sure you call these on all PlayerStates before saving to disk. It's importa
 
 To retrieve the Player Data we do the opposite and have to manually assign the player's transform once the pawn has spawned and is ready to do so. You could override the player spawn logic in gamemode more seamlessly to use the saved transform instead. For the example, I stuck with a more simple approach of handling this during _HandleStartingNewPlayer_.
 
-```
+```cpp
 void ASPlayerState::LoadPlayerState_Implementation(USSaveGame* SaveObject)
 {
 	if (SaveObject)
@@ -257,7 +257,7 @@ void ASPlayerState::LoadPlayerState_Implementation(USSaveGame* SaveObject)
 
 Unlike loading Actor data which is handled on initial level load, for player states we want to load them in one-by-one as players join the server that might have previously played with us. We can do so during HandleStartingNewPlayer in the GameMode class.
 
-```
+```cpp
 void ASGameModeBase::HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer)
 {
 	// Calling Before Super:: so we set variables before 'beginplayingstate' is called in PlayerController (which is where we instantiate UI)
@@ -286,7 +286,7 @@ This is where you could probably implement it so that during the creation of the
 
 The function below looks for the Player id and uses fall-back while in PIE assuming we have no online subsystem loaded then. This function is used by Loading the player state above.
 
-```
+```cpp
 FPlayerSaveData* USSaveGame::GetPlayerData(APlayerState* PlayerState)
 {
 	if (PlayerState == nullptr)
@@ -325,7 +325,7 @@ Ideally, you can load your world state once while loading your persistent level.
 
 To restore our world state we do somewhat of the opposite as before. We load from disk, iterate all actors, and finally use an _FMemoryReader_ to convert each Actor's binary data back into "Unreal" Variables. Somewhat confusingly we still use Serialize() on the Actor, but because we pass in an FMemoryReader instead of an _FMemoryWriter_ the function can be used to pass saved variables back into the Actors.
 
-```
+```cpp
 void ASGameModeBase::LoadSaveGame()
 {
 
@@ -386,7 +386,7 @@ else
 
 To load a specific Save file that might have been selected in a previous level (such as your main menu) you can easily pass data between levels using GameMode URLs. These URLs are the 'Options' parameter and you probably used them already for things like "?listen" when hosting a multiplayer session.
 
-```
+```cpp
 void ASGameModeBase::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
 {
 	Super::InitGame(MapName, Options, ErrorMessage);

@@ -20,7 +20,7 @@ Editing Arrays containing Structs in Unreal Engine has some bad UX. Especially f
 
 Here is an example of a custom struct that contains the variable we wish to display in editor UI:
 
-```
+```cpp
 USTRUCT(BlueprintType)
 struct FTeamInfo
 {
@@ -35,7 +35,7 @@ public:
 
 Now let's add the _TitleProperty_ to the array somewhere else in our code. We specify "TeamName" as that is the property we wish to display when viewing this array in the Unreal Editor.
 
-```
+```cpp
 UPROPERTY(VisibleAnywhere, meta = (TitleProperty = "TeamName"))
 TArray<FTeamInfo> DefaultTeams;
 ```
