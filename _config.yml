@@ -38,6 +38,13 @@ plugins:
   - jekyll-include-cache
   - jekyll-redirect-from
 
+
+search                   : true
+search_full_content      : true
+search_provider          : lunr
+lunr:
+  search_within_pages    : true
+
 # SEO Related
 google_site_verification : "" # Replace this with your ID, or delete
 
@@ -80,6 +87,7 @@ defaults:
     values:
       layout: single
       css: main
+
 
 
 collections:

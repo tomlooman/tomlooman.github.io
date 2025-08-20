@@ -2,6 +2,7 @@
 layout: single
 title: Contact
 permalink: /contact/
+search: false
 ---
 
 

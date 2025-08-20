@@ -1,5 +1,6 @@
 ---
 layout: archive
+search: false
 ---
 {% for nugget in site.nuggets %}
   <h2>

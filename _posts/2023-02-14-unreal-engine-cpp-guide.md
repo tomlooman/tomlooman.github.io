@@ -6,8 +6,6 @@ categories:
 tags: 
   - "cpp"
   - "tutorial"
-  - "ue4"
-  - "ue5"
   - "unreal-engine"
 coverImage: "Blog_Banner_CPPCompleteGuide_770.jpg"
 ---
@@ -18,9 +16,7 @@ This article can be used as a reference guide in your Unreal Engine C++ journey 
 
 _**Disclaimer**: this guide is **not exhaustive in teaching you programming from the ground up**. This guide should help you **understand the specifics of C++ within Unreal Engine**. To have a starting point and reference guide while diving into the hands-on tutorials that demonstrate the practical use of C++ for your game._
 
-This guide is long, don't forget to bookmark it!
-
-\[toc\]
+This guide is extensive, don't forget to bookmark it!
 
 # C++ vs. Blueprints
 
@@ -48,14 +44,14 @@ Commonly known as "pointers", they may sound scarier than they actually are with
 
 The first way you'll be using pointers is to access and track instances of your objects. In order to access your player, you'll keep a _pointer to the player class_. For example, `AMyCharacter* MyPlayer;`
 
-```
+```cpp
 // Get pointer to player controller, points to somewhere in memory containing all data about the object.
 APlayerController* PC = GetWorld()->GetPlayerController();
 ```
 
 After running this code, the 'PC' variable is now pointing to the same place in memory as the player controller we retrieved from World. We didn't duplicate anything or create anything new, we just looked up where to find the object we need, and can now use it to do stuff for us such as calling functions on it or accessing its variables.
 
-```
+```cpp
 // Example function that tries to get the Actor underneath the player crosshair if there is any
 AActor* FocusedActor = GetFocusedInteractionActor();
 if (FocusedActor != nullptr)

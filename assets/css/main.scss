@@ -12,7 +12,9 @@ $color-orange: #ffa04a;
 $color-offwhite: #F2F4FA;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "overrides/variables";
 @import "minimal-mistakes"; // main partials
+@import "overrides/syntax";
 
 #main {
   padding-inline: 0;
@@ -134,6 +136,14 @@ p {
 
 .greedy-nav a:hover {
     color: #FFF;
+}
+
+.search__toggle {
+  color: $color-offwhite;
+}
+
+.navicon {
+  background: $color-offwhite;
 }
 
 /* underline for the menu items */
