@@ -46,12 +46,25 @@ $color-offwhite: #F2F4FA;
   }
 }
 
+a {
+  color: $color-orange;
+  font-weight: 500;
+}
+
+a:hover {
+  color: $color-blue;
+}
+
 body {
   font-family: "Manrope", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Manrope", sans-serif;
+}
+
+h2 {
+  margin-top: 1em;
 }
 
 .page__content h2 {
@@ -70,6 +83,24 @@ p > img + em {
   display: block;
   text-align: center;
   font-size: 0.8em;
+}
+
+/* inline code, similar to epic's docs */
+.page__content :not(pre) > code {
+  border-radius: 6px;
+  border: .0625rem solid #404044;
+  background: #263238c0;
+  color: #fff;
+}
+
+/* text wrapping on big code blocks */
+pre {
+  white-space: pre-wrap;
+}
+
+div.highlighter-rouge, figure.highlight {
+  border-radius: 6px;
+  border: .0625rem solid #404044;
 }
 
 /* For blog stuff */
