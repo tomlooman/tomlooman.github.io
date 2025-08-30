@@ -52,7 +52,7 @@ Some time ago I made a small [EQS](https://docs.unrealengine.com/en-us/Engine/AI
 
 The query has a gather-step followed by a scoring-step similar to Utility-systems (and EQS for that matter). Again, this deserves its own post some time in the future. Here is what that could look like if applied as Perception replacement.
 
-https://www.youtube.com/watch?v=fCAhGqtjjGc&feature=youtu.be
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fCAhGqtjjGc?si=TxOs-bRPt6HXygd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Bonus: Auto-matching Task name with Scoring Function.
 

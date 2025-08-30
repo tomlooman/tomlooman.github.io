@@ -27,9 +27,11 @@ Those interested in a GAS ([Gameplay Ability System](https://docs.unrealengine.c
 
 At the time of writing, there isn't a whole lot that makes this a real 'roguelike' with things like permadeath or proper RNG. But, I hope to extend this project later on with more relevant features to have a proper game loop to earn the name 'Action Roguelike'.
 
-https://youtu.be/8jDCtT88bdk
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8jDCtT88bdk?si=xYnswyOyk4r28874" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-https://www.youtube.com/watch?v=uSOEPkX3OtI
+<br>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uSOEPkX3OtI?si=LleA_jih1OosPaeW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Features
 
@@ -39,53 +41,30 @@ Below I've listed some of the more relevant features included in the project. I 
 
 - **Action System** (Gameplay Ability System-lite)
     - Dash Ability (Teleporting via projectile)
-    
     - Blackhole Ability
-    
     - Magic Projectile Attack
-    
     - "Thorns" buff (reflecting damage)
-    
     - Burning Damage-over-time effect
-
 - AttributeComponent (Health, Rage etc.)
-
 - **SaveGame System** for persisting progress of character and world state.
-
 - Heavy use of Events to drive UI and gameplay reactions.
-
 - Mix of C++ & Blueprint and how to combine these effectively.
-
 - **GameplayTags** to mark-up Actors, Buffs, Actions.
-
 - **Multiplayer support** for all features
-
 - GameMode Logic
     - EQS for binding bot/powerup spawn locations.
-    
     - Bot spawning system (bots cost points to spawn, gamemode gains points over time to spend)
-    
     - DataTable holds bot information
-    
     - DataAssets to hold enemy configurations
-
 - **Asset Manager:** Async loading of data assets
-
 - Async loading of UI icons
-
 - AI (Ranged Shooter style)
     - Minion AI with Behavior Trees (Roam, See, Chase, Attack, Flee/Heal)
-    
     - C++ Custom Behavior Trees Nodes
-    
     - EQS for attack/cover locations by AI Powerups
-
 - Powerup pickups to heal, gain credits/actions (UMG)
-
 - Main menu to host/join game (UMG)
-
 - UI elements for player attributes and projected widgets for powerups and enemy health.
-
 - C++ Localized Text Example
 
 **Check out the project file [right here](https://github.com/tomlooman/ActionRoguelike)** **on GitHub!**
