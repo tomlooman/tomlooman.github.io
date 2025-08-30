@@ -1,6 +1,7 @@
 ---
 title: "Unreal Engine Game Optimization on a Budget"
 date: 2022-11-03
+last_modified_at: 30-08-2025
 categories: 
   - "materials"
   - "rendering"
@@ -14,6 +15,7 @@ last-modified-at: 18-08-2025
 
 For the JetBrains GameDev Day, I was invited to give a talk about Unreal Engine. I decided to create one for game optimization in Unreal Engine. It's a topic I've been spending a lot of time with recently and wanted to share some tips and tricks. The slot of 45 minutes had only room for so much...so expect more performance-oriented blog posts from me soon!
 
+{: .notice--info }
 Certain rendering features are not supported by Unreal Engine 5's Nanite Virtualized Geometry. These limitations are called out in the individual sections.
 
 ## Talk Motivation and Contents
@@ -28,7 +30,7 @@ Certain rendering features are not supported by Unreal Engine 5's Nanite Virtual
 
 Before you can start profiling make sure you are set up. Here is a brief checklist of things to keep in mind when profiling. Disabling `vsync` and other framerate features. Having unbaked lights can drastically influence performance and muddy your results while profiling as slower render paths are used.
 
-Ideally, when profiling with tools such as Unreal Insights you package your game rather than running from within the editor. Besides getting very different memory usage and more stuttery level streaming, your frame timings may be quite different in an editor build as well. Running the game in 'Standalone' is still very convenient, make sure your Editor viewport has 'Realtime' disabled and is minimized.
+Ideally, when profiling with tools such as Unreal Insights you package your game rather than running from within the editor. Besides getting very different memory usage and more hitching level streaming, your frame timings may be quite different in an editor build as well. Running the game in 'Standalone' is still very convenient, make sure your Editor viewport has 'Realtime' disabled and is minimized.
 
 - `r.vsync 0`
 - `t.maxfps 0`
@@ -49,7 +51,7 @@ You should not be blindly optimizing code in your project. Instead, make sure yo
     - `r.screenpercentage 20`    
     - `pause` (Freeze Game Thread)
 - Memory & Loading
-    - Unreal Insights (-trace=memory,loadtime,file)
+    - Unreal Insights (`-trace=memory,loadtime,file`)
     - `memreport -full`
     - `loadtimes.dumpreport`
 
@@ -81,11 +83,11 @@ Some common trace channels to use on your game executable or in Standalone. `sta
 
 Bookmarks add contextual information about changes and transitions that happens during the profiling session. This includes streaming in new levels, executing console commands, starting a cinematic sequence, etc. You can easily add new bookmarks to your own game code to add more context. While profiling use `bookmark` trace channel.
 
-- Bookmarks for context and transitions
-    - GC (Garbage Collection)  
-    - Sequencer Start  
-    - Level streaming (Start/Complete) 
-    - Console Commands
+Bookmarks for context and transitions
+- GC (Garbage Collection)  
+- Sequencer Start  
+- Level streaming (Start/Complete) 
+- Console Commands
 
 C++: `TRACE_BOOKMARK(Format, Args)`
 
@@ -148,7 +150,6 @@ By default meshes in your scenes will have both physics and collision enabled. T
     - “Collision Enabled” => Physics + Query    
     - Most things require just ‘QueryOnly’
 - Disable Components that players can’t reach or interact with.
-
 - Profiling
     - `stat physics`  
     - `stat collision` 
@@ -156,6 +157,7 @@ By default meshes in your scenes will have both physics and collision enabled. T
     - `show CollisionPawn` 
     - `show CollisionVisibility`
 
+{: .notice--info }
 Tip: Landscape Components may use lower collision MIPs to reduce memory overhead and collision complexity.
 
 ## Moving SceneComponents
@@ -212,6 +214,7 @@ Significance Manager is often only briefly mentioned but can be challenging to g
 
 Occlusion Culling is often a costly part of your frame and something that may be difficult to tackle without knowing what's adding this cost and the tools available to optimize. The easiest is to reduce the number of considered primitives. This is where level streaming, [HLOD](https://docs.unrealengine.com/4.27/en-US/BuildingWorlds/HLOD/), and distance culling can be a great help.
 
+{: .notice--info }
 Note: Nanite in UE5 has an entirely different occlusion culling system (Two-pass HZB) running on the GPU. This no longer queries the GPU occlusion queries on the N+1 frame. Non-nanite geometry in UE5 can still use this 'old' behavior.
 
 - Frustum Culling and Occlusion Queries
@@ -234,6 +237,7 @@ Note: Nanite in UE5 has an entirely different occlusion culling system (Two-pass
 - `DepthTest` Overlay in RenderDoc
 - Easily find ‘wasteful’ queries on tiny/far objects
 
+{: .notice--info }
 Note: As mentioned in the previous section. Nanite does not issue individual GPU occlusion queries. This visualization can still be used for non-Nanite meshes.
 
 ![](/assets/images/renderdoc_depthtest.png)

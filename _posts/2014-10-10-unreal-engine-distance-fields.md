@@ -65,4 +65,4 @@ The Ambient Occlusion technique does not work flawlessly for all situations and 
 ###### Further Reading
 
 - [ByteWrangler](http://bytewrangler.blogspot.nl/2011/10/signed-distance-fields.html) has a nice and simple explanation of Signed Distance Fields (2D) with text rendering as example.
-- [Unreal Engine | Distance Field Ambient Occlusion](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html) details on setup, performance and limitations.
+- [Unreal Engine - Distance Field Ambient Occlusion](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html) details on setup, performance and limitations.

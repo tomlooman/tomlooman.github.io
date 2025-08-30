@@ -1,5 +1,5 @@
 ---
-title: "Easily Add Custom 'Project Settings' to Unreal Engine (.INI)"
+title: "Adding Custom 'Project Settings' to Unreal Engine (DeveloperSettings)"
 date: 2021-11-11
 categories: 
   - "cpp"
@@ -13,25 +13,25 @@ coverImage: "blog_header_developersettings_4.jpg"
 
 You might be placing all your settings and tweakable options in Blueprints or even hard-coded in C++. Unreal Engine does have the option to easily add more configuration settings in the INI config file system using the Developer Settings class. You are probably familiar with the existence of these configuration INI files already. DefaultGame.ini, DefaultEngine.ini, etc. are built using this class and the Unreal Editor's Project Settings and Editor Settings use this system.
 
-New in **Unreal Engine 5** is **_DeveloperSettingsBackedByCVars_** which adds easy binding with Console Variables (CVars) and project/editor settings. I'm explaining this new feature at the bottom of this post.
+{: .notice--info }
+New in **Unreal Engine 5** is `DeveloperSettingsBackedByCVars` which adds easy binding with Console Variables (CVars) and project/editor settings. I'm explaining this new feature at the bottom of this post.
 
-This system requires some (basic) [C++](https://www.tomlooman.com/unreal-engine-cpp-tutorials/) to define the variables, so even without programming experience, it's relatively easy to use.
+This system requires some simple [C++](https://www.tomlooman.com/unreal-engine-cpp-tutorials/) to define the variables, so even without programming experience, it's relatively easy to use.
 
 ## Setting up Developer Settings & Configuration Files
 
 ```cpp
 // Example of configuration file content. These files are located in MyProject/Config/*.ini
-
 [/Script/ActionRoguelike.SSaveGameSettings]
 SaveSlotName=SaveSlot03
 DummyTablePath=/Game/ActionRoguelike/Monsters/DT_Monsters.DT_Monsters
 ```
 
-By deriving a new C++ class from _UDeveloperSettings_ you can easily add your own. The \[CategoryName\] will be your Project + ClassName: **\[/Script/ActionRoguelike.SaveGameSettings\]** in the case of my open-source [Action Roguelike GitHub](https://github.com/tomlooman/ActionRoguelike) project.
+By deriving a new C++ class from `UDeveloperSettings` you can easily add your own. The `[CategoryName]` will be your Project + ClassName: `[/Script/ActionRoguelike.SaveGameSettings]` in the case of my open-source [Action Roguelike GitHub](https://github.com/tomlooman/ActionRoguelike) project.
 
 [Configuration Files](https://dev.epicgames.com/documentation/en-us/unreal-engine/configuration-files-in-unreal-engine) use key-value pairs **Key=Value** and support file paths and even arrays. We'll be filling an FString and asset path to assign a DataTable via the INI file.
 
-_DeveloperSettings_ is a Module. Creating a UDeveloperSettings derived class will add this module to your .uproject automatically. If it doesn't or you want all your modules in the _.Build.cs_ file then you should add DeveloperSettings manually.
+_DeveloperSettings_ is a Module. Creating a `UDeveloperSettings` derived class will add this module to your `.uproject` automatically. If it doesn't or you want all your modules in the `.Build.cs` file then you should add DeveloperSettings manually.
 
 ## Defining Developer Settings in C++
 
@@ -56,19 +56,15 @@ public:
 };
 ```
 
-- **Config** \- Exposes the variable to the INI file specified in the UCLASS in the top (Game = DefaultGame.ini)
-
-- **EditAnywhere** \- Exposes it to the Project Settings window.
-
-- **BlueprintReadOnly** \- Exposes variables to be accessed in Blueprint Graph via the "GetClassDefaults" node.
-
-- **defaultconfig** \- _"Save object config only to Default INIs, never to local INIs." (local INIs are in your MyProject/Saved/Config/... folder)_
-
-- **Config=Game** - Store in DefaultGame.ini, other examples include Engine, Input.
+- `Config` - Exposes the variable to the INI file specified in the `UCLASS` in the top (Game = DefaultGame.ini)
+- `EditAnywhere` - Exposes it to the Project Settings window.
+- `BlueprintReadOnly` - Exposes variables to be accessed in Blueprint Graph via the "GetClassDefaults" node.
+- `defaultconfig` - _"Save object config only to Default INIs, never to local INIs." (local INIs are in your MyProject/Saved/Config/... folder)_
+- `Config=Game` - Store in DefaultGame.ini, other examples include Engine, Input.
 
 ![Unreal Editor Project Settings with the new custom settings.](/assets/images/ue_projectsettings_customconfig.jpg)
 
-To access the developer settings in C++ we use the CDO ([Class Default Object](https://dev.epicgames.com/documentation/en-us/unreal-engine/objects-in-unreal-engine)) as that is already automatically instanced for us and accessed using GetDefault<T>();
+To access the developer settings in C++ we use the CDO ([Class Default Object](https://dev.epicgames.com/documentation/en-us/unreal-engine/objects-in-unreal-engine)) as that is already automatically instanced for us and accessed using `GetDefault<T>()`
 
 ```cpp
 void USSaveGameSubsystem::Initialize(FSubsystemCollectionBase& Collection)
@@ -100,21 +96,21 @@ If you want to store player configurable settings there is a different class ava
 
 ## DeveloperSettingsBackedByCVars
 
-New in **Unreal Engine 5.0** is **_DeveloperSettingsBackedByCVars_** which adds easy binding with Console Variables (CVars) and project/editor settings.
+`DeveloperSettingsBackedByCVars` adds binding editor/project settings with Console Variables (CVars).
 
 This new class lets us bind _console variables_ to project settings and easily change and store defaults either per developer or project-wide. In practice this means we can define default values in the INI files and at runtime change them using console variables.
 
-An example of this can be found in the [Lyra Starter Game](https://www.unrealengine.com/marketplace/en-US/product/lyra) which was released with UE5.0. The _LyraWeaponsDebugSettings_ has several properties for debugging trace hits. By using _DeveloperSettingsBackedByCVars_ and the ConsoleVariable meta-specifier you can bind the variables together.
+An example of this can be found in the [Lyra Starter Game](https://www.unrealengine.com/marketplace/en-US/product/lyra) which was released with UE5.0. The `LyraWeaponsDebugSettings` has several properties for debugging trace hits. By using `DeveloperSettingsBackedByCVars` and the ConsoleVariable meta-specifier you can bind the variables together.
 
 ```cpp
 // Should we do debug drawing for bullet traces (if above zero, sets how long (in seconds)
-UPROPERTY(config, EditAnywhere, Category=General, meta=(ConsoleVariable="lyra.Weapon.DrawBulletTraceDuration")
+UPROPERTY(config, EditAnywhere, Category=General, meta=(ConsoleVariable="lyra.Weapon.DrawBulletTraceDuration"))
 float DrawBulletTraceDuration;
 ```
 
-The Console Variable is still defined elsewhere. In the example, you can find the CVar inside _LyraGameplayAbility\_RangedWeapon.cpp_:
+The Console Variable is still defined elsewhere. In the example, you can find the CVar inside `LyraGameplayAbility_RangedWeapon.cpp`:
 
-```
+```cpp
 namespace LyraConsoleVariables
 {
 	static float DrawBulletTracesDuration = 0.0f;

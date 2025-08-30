@@ -39,5 +39,4 @@ This should be adjusted (towards the end of the project) to match your project's
 ## References
 
 - [Mathew Wadstein has a video](https://www.youtube.com/watch?v=Czp4g3AFP_k) this benchmark utility.
-
 - [Intel has a Plugin](https://software.intel.com/en-us/articles/cpu-capability-detect-using-unreal-engine-4-19) for more detailed CPU benchmarking using SynthBenchmark
