@@ -143,7 +143,7 @@ My game has a large number of "Items" which isn't just restricted to what you co
 
 GameplayTags can be replicated more efficiently by Unreal than `FName`. There are some options available in _Project Settings > GameplayTags_. 'Fast Replication' is able to replicate tags by Index instead of the full Name, for this the tag list must be identical between client and server.
 
-[![](/assets/images/ue_gameplaytags_tagreplication-900x142.jpg)]()
+[![](/assets/images/ue_gameplaytags_tagreplication.jpg)]()
 
 ## GameplayTag Stack Container
 

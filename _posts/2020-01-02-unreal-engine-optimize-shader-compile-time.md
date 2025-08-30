@@ -19,7 +19,7 @@ coverImage: "ue4_compileshaders-1.jpg"
 
 Unreal Engine **Project Settings** allow a major reduction (up to 50%) of shader permutations affecting shader compile times, package size, and load times. You can find the options under the **Engine >** **Rendering > Shader Permutation Reduction** Category. Which settings you can disable will depend on your project’s rendering requirements.
 
-![](/assets/images/ue5_shaderpermutations-900x440.jpg)
+![](/assets/images/ue5_shaderpermutations.jpg)
 
 - **Stationary Skylight** Stationary skylight requires permutations of the basepass shaders. You can disable this when never using a Stationary Skylight as the name implies.
 - **Low-Quality Lightmap shader permutations** The mobile renderer requires low-quality lightmaps, disabling this setting is not recommended for mobile titles using static lighting."

@@ -63,7 +63,7 @@ vis customdepth // picture-in-picture
 vis customdepth uv1 // fullscreen
 ```
 
-![](/assets/images/customdepth_visbuffer-1250x715.jpg)
+![](/assets/images/customdepth_visbuffer.jpg)
 
 ## Culling Inner Triangles
 
@@ -71,7 +71,7 @@ When using transparency on models like characters that have inner triangles (eye
 
 By rendering our character into the Custom Depth buffer we can cull any pixels that are behind the outer shell of the mesh. A slight depth offset should be added when comparing the depth of Scene and Custom to prevent too many pixels to be culled including the outer shell. The material setup for this is quite simple:
 
-![materialnodes_depthculling](/assets/images/materialnodes_depthculling-1024x743.jpg)
+![materialnodes_depthculling](/assets/images/materialnodes_depthculling.jpg)
 
 [Material Nodes]() - **Copy this URL content and you can directly paste the above nodes into your own material. ([Project Source is available on GitHub](https://github.com/tomlooman/ue4-tutorials))**
 

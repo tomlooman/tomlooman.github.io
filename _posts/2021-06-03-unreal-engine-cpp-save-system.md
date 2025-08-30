@@ -393,7 +393,7 @@ void ASGameModeBase::InitGame(const FString& MapName, const FString& Options, FS
 
 Now while loading a level you should pass in _**?savegame=MySaveFile**_ in the options. "savegame" as an option is made up, you can type whatever as your option, just be sure to parse that same 'option' in C++.
 
-![](/assets/images/ue_parsinggamemodeoptions-900x348.jpg)
+![](/assets/images/ue_parsinggamemodeoptions.jpg)
 
 ### Loading SaveGame before BeginPlay
 
@@ -403,7 +403,7 @@ This could be useful to initialize with the relevant saved data or skipping enti
 
 ## The Bonfire
 
-![](/assets/images/ue_bonfire_ingame-900x500.jpg)
+![](/assets/images/ue_bonfire_ingame.jpg)
 
 In the previous sections we set up the entire save/load system. Now to finish it off, I'll break down how to make a simple bonfire-style interaction. I'm skipping all the steps specific to interacting with the Actor itself, you can view the source code for more details.
 
@@ -421,7 +421,7 @@ Now to create the actual Bonfire in Blueprint it's super simple and fast to do b
 
 Once interacted with once, the bFireActive is now saved into the bonfire and on the next game load the particle system will activate through OnActorLoaded (our own interface function) You can do the same through BeginPlay() as we'll have loaded our Actor data before that is called as mentioned earlier in this post.
 
-![](/assets/images/ue4_bonfire_savesystem-900x421.jpg)
+![](/assets/images/ue4_bonfire_savesystem.jpg)
 *Bonfire Blueprint Graph*
 
 ![](/assets/images/ue4_bonfire_savesystem_savevar.jpg)

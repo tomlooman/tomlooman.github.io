@@ -44,7 +44,7 @@ Only a tiny fraction is colored red which means that pixels has been evaluated t
 
 Using simple outline implementations you might run into issues where tightly fitted outlines from different objects overlap. In some earlier experiments I ran into problems where I would shade pixels behind the cubes bounds. Eventually I fixed this by relying on stencil indices for each unique material. (eg. 1 index for the blue outlines and another for red)
 
-![](/assets/images/ue4_overlapping_outlines-900x345.jpg)
+![](/assets/images/ue4_overlapping_outlines.jpg)
 *Each outline material has independent shading, you can see both blue AND red lines on a few overlapping parts.*
 
 Depending on your specific outline implementation you may need additional filtering. Mainly when dealing with multiple semi-translucent outlines that may negatively affect overall Alpha.
@@ -79,7 +79,7 @@ To show the flexibility, I did a quick mash-up of adding colors and a panning li
 
 <br>
 
-![](/assets/images/ue4_gradient_outline-900x433.jpg)
+![](/assets/images/ue4_gradient_outline.jpg)
 *Another example, using the translucent mesh object bounds we can apply a color gradient to the outline.*
 
 ## Closing

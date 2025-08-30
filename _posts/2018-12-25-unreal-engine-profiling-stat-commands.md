@@ -73,7 +73,7 @@ Toggling can be done per category and multiple can be on screen at once. To show
 
 **Tip:** To hide all displayed stats you can simply type: "_stat none_".
 
-![](/assets/images/ue4_statcommands_example-900x233.jpg)
+![](/assets/images/ue4_statcommands_example.jpg)
 
 ## Adding new profiling metrics to your game
 

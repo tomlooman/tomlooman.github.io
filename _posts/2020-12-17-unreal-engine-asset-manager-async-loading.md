@@ -149,7 +149,7 @@ void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLoca
 
 Async loading is a bit easier in Blueprint as there is a neat little node available.
 
-![](/assets/images/ue4_blueprintasyncload-900x394.jpg)
+![](/assets/images/ue4_blueprintasyncload.jpg)
 
 The downside of async loading in Blueprint is that we can't pass in additional parameters in our own Delegate as easily as we did in C++ example above where we pass in the FVector for spawn location. You can pass in variables from other pins after the load has completed, but I'm unsure about how these variable values are 'captured' and so should be used with caution as they may have changed since you started the load request a few frames ago.
 
@@ -201,7 +201,7 @@ Auditing Assets gives you more insight into how your Primary Assets are setup an
 
 right-click on an asset in the content browser lets you "Audit Assets...". This gives you some insight into the total size associated with an asset, how often it's used, Ids, Type, etc. Use the buttons at the top to easily filter based on certain criteria.
 
-![](/assets/images/ue4_auditassets-900x323.jpg)
+![](/assets/images/ue4_auditassets.jpg)
 *Audit Assets Window*
 
 ## References

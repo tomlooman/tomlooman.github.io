@@ -19,7 +19,7 @@ Besides the new game agnostic algorithm, we also get much-improved anti-aliasing
 
 For testing, I used my open-source [SurvivalGame](https://github.com/tomlooman/EpicSurvivalGameSeries) (available on GitHub) and [Dekogon Studios' City Subway Train](https://www.unrealengine.com/marketplace/en-US/product/city-subway-train-modular) asset.
 
-[![](/assets/images/ue4_survivalgame_dlss_overview-900x422.jpg)]()
+[![](/assets/images/ue4_survivalgame_dlss_overview.jpg)]()
 *SurvivalGame on GitHub received a graphical refresh for this DLSS Test.*
 
 ## What is DLSS?
@@ -28,7 +28,7 @@ DLSS stands for [Deep Learning Super Sampling](https://www.nvidia.com/en-us/gefo
 
 Remember that aliasing itself occurs from rasterizing a scene to pixels. Fewer pixels will cause higher aliasing, so the fact that DLSS actually fixes most aliasing while we provide it a much lower input than native is pretty amazing if you ask me.
 
-[![](/assets/images/scenebaked_TXAAvsDLSS_Zoomed-900x356.jpg)]()
+[![](/assets/images/scenebaked_TXAAvsDLSS_Zoomed.jpg)]()
 *DLSS used an internal resolution of 720p, upscaled to 1440p. Even Zoomed-in you can barely see the difference. (but there is a big gain in performance, some numbers further down)*
 
 One title using DLSS to improve performance while maintaining visual fidelity is Deliver Us The Moon, built using UE4.
@@ -48,7 +48,7 @@ The internal resolution is downscaled automatically based on the DLSS quality-se
 
 In my tests, the internal resolution can go down to 33% (in _Ultra Performance_, meant for 4K Displays) which is a huge saving in screen-space operations such as pixel shaders, post-processing, and ray-tracing in particular. Even at 50% for Performance & Quality modes it's still x4 fewer pixels to process. Judging from the provided UI the internal resolution can change on the fly between a predefined range (eg. from 50% to 69% in Quality-Mode) I'm not sure at this time how DLSS decides which exact internal resolution to use.
 
-![](/assets/images/survival_sp50_noaa_zoomed-900x584.jpg)
+![](/assets/images/survival_sp50_noaa_zoomed.jpg)
 *Zoomed view of 1440p at 50% (r.ScreenPercentage 50, no AA), this is the input data that DLSS has to work with.*
 
 ## Anti-Aliasing Quality (DLSS vs. TAA)
@@ -86,7 +86,7 @@ Please keep in mind these numbers were taken from my unoptimized scenes, running
 
 #### Forest Scene (RTX On 2560x1440)
 
-[![](/assets/images/survival_dlss_quality_downscaled-900x506.jpg)]()
+[![](/assets/images/survival_dlss_quality_downscaled.jpg)]()
 *Forest Scene (Note: Downscaled JPG from 1440p source)*
 
 This scene was likely bottlenecked by the ray-traced reflections and so you'll see a huge gain in framerate as the internal resolution is reduced.
@@ -99,7 +99,7 @@ This scene was likely bottlenecked by the ray-traced reflections and so you'll s
 
 #### Subway Train (RTX On 2560x1024)
 
-[![](/assets/images/ue4_subway_raster_dlss_quality_downscaled-900x506.jpg)]()
+[![](/assets/images/ue4_subway_raster_dlss_quality_downscaled.jpg)]()
 *Subway RTX On (Note: Downscaled JPG from 1440p source)*
 
 The camera used a cinematic aspect ratio hence the 1024p height. This scene used similar RTX settings and even ray-traced ambient occlusion on top.
@@ -110,7 +110,7 @@ The camera used a cinematic aspect ratio hence the 1024p height. This scene used
 
 #### Subway Train (RTX Off 2560x1024)
 
-[![](/assets/images/subway_raster_dlss_quality-900x496.jpg)]()
+[![](/assets/images/subway_raster_dlss_quality.jpg)]()
 *Subway non-RTX (Note: Downscaled JPG from 1440p source)*
 
 Without any further RT-options enabled the difference in performance between internal resolutions appears to diminish somewhat. Although this was just a single test and your mileage may vary (as with all performance metrics, GPUs are a complicated beast)
@@ -123,7 +123,7 @@ Without any further RT-options enabled the difference in performance between int
 
 The extra renderpass occurs during Post Processing much like traditional AA solutions. On my _Nvidia RTX 2080 Ti_ the cost to upscale to 1440p was about 0.8-1.2ms. This number seems to be consistent regardless of which quality mode is used. For reference, TAA at full 1440p costs about 0.22ms on my machine.
 
-![](/assets/images/ue4_profilegpu_dlss-1-900x363.jpg)
+![](/assets/images/ue4_profilegpu_dlss-1.jpg)
 *ProfileGPU Output Window.*
 
 You can measure performance of individual render passes by either using "ProfileGPU" or "stat GPU" console commands.

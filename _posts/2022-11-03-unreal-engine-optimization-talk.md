@@ -64,7 +64,7 @@ Unreal Insights is the new flagship profiling tool that came in late Unreal Engi
     - Threading
 - Drill down on a single frame or session
 
-![](/assets/images/insights_overview-900x143.png)
+![](/assets/images/insights_overview.png)
 
 ### Trace Channels
 
@@ -89,7 +89,7 @@ Bookmarks add contextual information about changes and transitions that happens 
 
 C++: `TRACE_BOOKMARK(Format, Args)`
 
-[![](/assets/images/insights_bookmarks-900x140.png)]()
+[![](/assets/images/insights_bookmarks.png)]()
 
 ### Add new 'stat' profiling
 
@@ -102,7 +102,7 @@ I previously wrote about this topic before in [Profiling Stats (Stat Commands)](
 
 [![](/assets/images/insight_statcyclecounter.png)]()
 
-[![](/assets/images/insights_customstats-900x88.png)]()
+[![](/assets/images/insights_customstats.png)]()
 
 ### Unreal Insight Tips
 
@@ -125,7 +125,7 @@ It may prove valuable to run some commands during a profiling session to see how
 - Only in Packaged Builds for accurate results
     - Example: `AnimSequence` is twice as large in editor builds.
 
-[![](/assets/images/memreport-900x312.png)]()
+[![](/assets/images/memreport.png)]()
 
 ## DumpTicks
 
@@ -169,7 +169,7 @@ Moving game objects with a lot of `SceneComponents` is far from free. Especially
 - Profiling
     - `stat component`
 
-![](/assets/images/insights_movecomponents-900x212.png)
+![](/assets/images/insights_movecomponents.png)
 *two large yellow 'MoveComponent' sections due to SetActorLocation, and SetActorRotation separate calls.*
 
 ### Component Bounds
@@ -182,7 +182,7 @@ While not expensive on a per-component basis, with tons of `PrimitiveComponents`
 
 [![](/assets/images/boundsmadness_cropped.jpg)]()
 
-[![](/assets/images/insights_example_calcbounds-900x266.png)]()
+[![](/assets/images/insights_example_calcbounds.png)]()
 
 ## Significance Manager
 
@@ -221,10 +221,10 @@ Note: Nanite in UE5 has an entirely different occlusion culling system (Two-pass
     - `r.visualizeoccludedprimitives 1` 
     - `stat initviews`
 
-![](/assets/images/occlusion_HLOD_1-900x374.jpg)
+![](/assets/images/occlusion_HLOD_1.jpg)
 *modular mesh building, many occluded parts*
 
-![](/assets/images/occlusion_HLOD_2-900x455.jpg)
+![](/assets/images/occlusion_HLOD_2.jpg)
 *Single HLOD generated for static geometry.*
 
 ## RenderDoc: Occlusion Query Results
@@ -236,7 +236,7 @@ Note: Nanite in UE5 has an entirely different occlusion culling system (Two-pass
 
 Note: As mentioned in the previous section. Nanite does not issue individual GPU occlusion queries. This visualization can still be used for non-Nanite meshes.
 
-[![](/assets/images/renderdoc_depthtest-900x577.png)]()
+[![](/assets/images/renderdoc_depthtest.png)]()
 
 ## Distance Culling
 
@@ -282,10 +282,10 @@ FreezeRendering does not work with Nanite.
 - ‘FreezeRendering’ + **;** (semi-colon) to fly with DebugCamera
 - Verify occlusion is working as expected
 
-![](/assets/images/ue_freezerendering_1-900x494.jpg)()
+![](/assets/images/ue_freezerendering_1.jpg)()
 *Player looking toward building*
 
-[![](/assets/images/ue_freezerendering_2-900x494.jpg)]()
+[![](/assets/images/ue_freezerendering_2.jpg)]()
 *FreezeRendering enabled*
 
 ## Light Culling (Stationary & Movable)
@@ -302,7 +302,7 @@ Lights can still add considerable cost to your render thread even if they aren't
     - Show \> StationaryLightOverlap
     - ToggleLight \<partialname\>
 
-[![](/assets/images/lightcomplexity-900x360.png)]()
+[![](/assets/images/lightcomplexity.png)]()
 *Too many overlapping stationary lights*
 
 ## Level Streaming
@@ -336,7 +336,7 @@ The following [Animation Optimization](https://docs.unrealengine.com/5.0/en-US/a
 
 [![](/assets/images/warnaboutblueprintusage.png)]()
 
-[![](/assets/images/anim_fastpathenabed-900x278.png)]()
+[![](/assets/images/anim_fastpathenabed.png)]()
 
 ### Fast Path
 
@@ -380,7 +380,7 @@ The ACL plugin is built in with Unreal Engine 5.3+. Existing projects that migra
     - Takes longer to compress (off by default in-editor)
 - RDO Works with Oodle Data by ‘preparing’ the texture data
 
-[![](/assets/images/oodledata_config-900x315.png)]()
+[![](/assets/images/oodledata_config.png)]()
 
 ## SynthBenchmark
 
@@ -406,7 +406,7 @@ Your Mileage may very greatly for Nanite geometry. Requires additional testing i
     - ‘ShadowDepths’ in Insights &    
     - ProfileGPU + r.RHISetGPUCaptureOptions 1
 
-[![](/assets/images/ue_modularbuilding-900x511.jpg)]()
+[![](/assets/images/ue_modularbuilding.jpg)]()
 
 [![](/assets/images/mergeactors_panel.png)]()
 
@@ -419,7 +419,7 @@ SizeMap is a valuable tool to quickly find and address hard references in your c
 
 Check out Mark Craig's recent talk on [the hidden danger of Asset Dependency Chains](https://www.youtube.com/watch?v=4-oRyDLfo7M).
 
-[![](/assets/images/sizemap-900x615.jpg)]()
+[![](/assets/images/sizemap.jpg)]()
 
 ## Statistics Window
 
@@ -431,7 +431,7 @@ I found myself often using this panel to investigate opportunities for memory an
 - Tip: Shift-click for _secondary_ sort.
     - Sort ‘Count’ + ‘Tris’ or ‘Size’ (Find large assets used only once)
 
-[![](/assets/images/statistics_panel-900x204.png)]()
+[![](/assets/images/statistics_panel.png)]()
 
 ## Useful Console Commands
 

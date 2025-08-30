@@ -40,7 +40,7 @@ _Example:_ A melee attack taking several seconds and locking the movement of the
 
 While Unreal comes with a Blackboard feature built-in for its Behavior Trees it lacks a few things I really want such as adding keys at runtime. Some other things I wanted: GameplayTags as keys (avoid typo's, forgetting key names) Save Game support and possibly replication support. Replication is only relevant if Blackboards are used for things besides AI which I am still experimenting with.
 
-![](/assets/images/ue4_blackboard_setfloat-900x246.jpg)
+![](/assets/images/ue4_blackboard_setfloat.jpg)
 
 The AIController contains a Blackboard and can be used as a data bank. This easily lets tasks share these variables such as _TargetActor_ which might only be set by one task but used by many. Each _key_ can be listened to for value changes.
 
@@ -58,7 +58,7 @@ https://www.youtube.com/watch?v=fCAhGqtjjGc&feature=youtu.be
 
 For a while I used a C++ function that was able to run any Blueprint function by FName. This made it easy to setup tasks in Blueprint by name and match it to a scorer function in AIController. For example, my AI task _LaunchMissile_ would match to the Blueprint function named _Score\_LaunchMissile_ automatically.
 
-![](/assets/images/UtilityAI_ScoringFunc-900x294.jpg)
+![](/assets/images/UtilityAI_ScoringFunc.jpg)
 *Can call Blueprint functions like Score\_MyTaskName and return the function return value (BP function must return one float)*
 
 I used the following code. _(disclaimer: I can't guarantee the memory allocations used here are optimal or 100% safe - it's the best I could find when looking around)_

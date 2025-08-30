@@ -66,7 +66,7 @@ public:
 
 - **Config=Game** - Store in DefaultGame.ini, other examples include Engine, Input.
 
-![Unreal Editor Project Settings with the new custom settings.](/assets/images/ue_projectsettings_customconfig-900x312.jpg)
+![Unreal Editor Project Settings with the new custom settings.](/assets/images/ue_projectsettings_customconfig.jpg)
 
 To access the developer settings in C++ we use the CDO ([Class Default Object](https://dev.epicgames.com/documentation/en-us/unreal-engine/objects-in-unreal-engine)) as that is already automatically instanced for us and accessed using GetDefault<T>();
 

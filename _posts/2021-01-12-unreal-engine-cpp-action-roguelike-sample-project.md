@@ -93,7 +93,7 @@ Below I've listed some of the more relevant features included in the project. I 
 ![](/assets/images/ue4_actionroguelike_aisample.jpg)
 *Spotted by Minion's sight sense.*
 
-![](/assets/images/assignment4_behaviortree-900x532.jpg)
+![](/assets/images/assignment4_behaviortree.jpg)
 *Behavior Tree for Ranged Minion AI*
 
 ## What's Next?
