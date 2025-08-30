@@ -102,9 +102,9 @@ CameraComp->SetupAttachment(SpringArmComp);
 
 We have now created and assigned an instance to the `CameraComp` variable.
 
-If you want to create a new object outside the constructor, you instead use [NewObject<T>()](https://dev.epicgames.com/documentation/en-us/unreal-engine/uobject-instance-creation), and for creating and spawning Actors use `GetWorld()->SpawnActor<T>()` where T is the class you want to spawn such as `ARogueCharacter`.
+If you want to create a new object outside the constructor, you instead use [NewObject\<T\>()](https://dev.epicgames.com/documentation/en-us/unreal-engine/uobject-instance-creation), and for creating and spawning Actors use `GetWorld()->SpawnActor<T>()` where T is the class you want to spawn such as `ARogueCharacter`.
 
-### TObjectPtr<T>
+### TObjectPtr\<T\>
 
 In Unreal Engine 5 a new concept was introduced called `TObjectPtr<T>` to replace raw pointers (eg. `UCameraComponent*`) in header files with UProperties. This benefits the new systems such as virtualized assets among other things which is why it's the new standard moving forward. The example above will now look as follows.
 
@@ -134,7 +134,7 @@ TObjectPtr<UNiagaraSystem> CastingEffect;
 
 Note that this pointer is going to be empty (`nullptr`) unless we assigned it to a specific Niagara particle system via the Unreal Editor. That's why we add `UPROPERTY(EditAnywhere)` to expose the variable to be assigned with an asset.
 
-[![](/assets/images/ue_cppguide_subclassof-1.jpg)]()
+![](/assets/images/ue_cppguide_subclassof-1.jpg)
 
 Now in the [class file of the projectile attack](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/ActionSystem/RogueAction_ProjectileAttack.cpp) (line 25), we can use this asset pointer to spawn the specified particle system:
 
@@ -311,7 +311,7 @@ Here is the [character class](https://github.com/tomlooman/ActionRoguelike/blob/
 
 Forward Declaration is mentioned in [Epic's Coding Standards](https://dev.epicgames.com/documentation/en-us/unreal-engine/epic-cplusplus-coding-standard-for-unreal-engine/#physicaldependencies) as well. _"If you can use forward declarations instead of including a header, do so."_
 
-# Casting (Cast<T>)
+# Casting (Cast\<T\>)
 
 _Casting_ to specific classes is something you'll use all the time. Casting pointers in Unreal Engine is a bit different from 'raw C++' in that it's safe to cast to types that might not be valid, your code won't crash and instead just returns a `nullptr` (null pointer).
 
@@ -405,7 +405,7 @@ IRogueGameplayInterface::Execute_Interact(MyActor, MyParam1);
 
 However, if you want to share functionality between Actors but don't want to use a base class then you could use an [ActorComponent](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Actors/Components/).
 
-[Steve Streeting](https://www.stevestreeting.com/2020/11/02/ue4-c-interfaces-hints-n-tips/) has more details on using Interfaces which I recommend checking out. There is a code example in the Action Roguelike project as well using [SGameplayInterface](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SGameplayInterface.h) used by [InteractionComponent](https://github.com/tomlooman/ActionRoguelike/blob/dc18d0b1267ddc6f6640b55d2c7ca4b2fd54bdcd/Source/ActionRoguelike/Private/SInteractionComponent.cpp#L137) to call `Interact()` on any Actor implementing the interface.
+[Steve Streeting](https://www.stevestreeting.com/2020/11/02/ue4-c-interfaces-hints-n-tips/) has more details on using Interfaces which I recommend checking out. There is a code example in the Action Roguelike project as well using [RogueGameplayInterface](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameplayInterface.h) used by [InteractionComponent](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Player/RogueInteractionComponent.cpp) to call `Interact()` on any Actor implementing the interface.
 
 # Delegates (Events)
 
@@ -491,11 +491,11 @@ void OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, 
 
 You can easily bind your dynamic delegates in Blueprint. When implemented on an ActorComponent as in the example below you can select the Component in the outliner and click the "+" symbol in its details panel. This creates the Delegate on the EventGraph and is already bound for us.
 
-[![](/assets/images/ue_cppguide_blueprintdelegates-900x320.jpg)]()
+![](/assets/images/ue_cppguide_blueprintdelegates.jpg)
 
-You can also manually bind the delegates via the EventGraph (eg. binding to another Actor's delegates.
+You can also manually bind the delegates via the EventGraph (eg. binding to another Actor's delegates).
 
-[![](/assets/images/ue_cppguide_assigndelegate-900x363.jpg)]()
+![](/assets/images/ue_cppguide_assigndelegate.jpg)
 
 Note: Dynamic delegates are less performant than non-dynamic (seen below) variants. It's therefore advisable to only use this type when you want to expose it to Blueprint.
 
@@ -513,7 +513,7 @@ DECLARE_DELEGATE(FStreamableDelegate);
 
 This doesn't specify any parameters yet and lets us define what we wish to pass along in our own game code.
 
-The following is taken from `SGameModeBase` in the ActionRoguelike project ([link to code](https://github.com/tomlooman/ActionRoguelike/blob/dc18d0b1267ddc6f6640b55d2c7ca4b2fd54bdcd/Source/ActionRoguelike/Private/SGameModeBase.cpp#L222)). We asynchronously load the data of an enemy Blueprint to spawn them once the load has finished.
+The following is taken from `RogueGameModeBase` in the ActionRoguelike project ([link to code](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameModeBase.cpp)). We asynchronously load the data of an enemy Blueprint to spawn them once the load has finished.
 
 ```cpp
 if (UAssetManager* Manager = UAssetManager::GetIfValid())
@@ -625,7 +625,7 @@ Basically variations of lists of objects/values. Array is a simple list that you
 - [TMap (aka Dictionaries)](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TMap/index.html)
 - [TSet](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TSet/index.html)
 
-## TSubclassOf<T>
+## TSubclassOf\<T\>
 
 Very useful for assigning classes that derive from a certain type. For example, you may expose this variable to Blueprint where a designer can assign which projectile class must be spawned.
 
@@ -636,14 +636,14 @@ TSubclassOf<AProjectileActor> ProjectileClass; // The class to assign in Bluepri
 
 Now the designer will get a list of classes to assign that derive from ProjectileActor, making the code very dynamic and easy to change from Blueprint.
 
-Here we use the TSubclassOf variable ProjectileClass to spawn a new instance: ([link to code](https://github.com/tomlooman/ActionRoguelike/blob/dc18d0b1267ddc6f6640b55d2c7ca4b2fd54bdcd/Source/ActionRoguelike/Private/SAction_ProjectileAttack.cpp#L86))
+Here we use the TSubclassOf variable ProjectileClass to spawn a new instance: ([link to code](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/ActionSystem/RogueAction_ProjectileAttack.cpp))
 
 ```cpp
 FTransform SpawnTM = FTransform(ProjRotation, HandLocation);
 GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
 ```
 
-- [Documentation on TSubclassOf<T>](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TSubclassOf/index.html)
+- [Documentation on TSubclassOf\<T\>](https://dev.epicgames.com/documentation/en-us/unreal-engine/typed-object-pointer-properties-in-unreal-engine)
 
 # C++ MACROS (& Unreal Property System)
 
@@ -709,7 +709,7 @@ UE_LOG(LogAI, Log, TEXT("Just a simple log print"));
 UE_LOG(LogAI, Warning, TEXT("X went wrong in Actor %s"), *GetName()); 
 ```
 
-The above syntax may look a bit scary. The third parameter is a string we can fill with useful data, in the above case we print the name of the object so we know in which instance this happened. The asterisk (\*) before `GetName()` is used to convert the return value to the correct type (from FString returned by the function to Char\[\] for the macro). The Unreal Wiki has a lot more [detailed explanation on logging](https://unrealcommunity.wiki/logging-lgpidy6i).
+The above syntax may look a bit scary. The third parameter is a string we can fill with useful data, in the above case we print the name of the object so we know in which instance this happened. The asterisk (\*) before `GetName()` is used to convert the return value to the correct type (from `FString` returned by the function to `Char[]` for the macro). The Unreal Wiki has a lot more [detailed explanation on logging](https://unrealcommunity.wiki/logging-lgpidy6i).
 
 # Modules
 
@@ -759,7 +759,7 @@ UPROPERTY()
 TObjectPtr<AActor> FocusedActor;
 ```
 
-"Destroyed actors don’t have references to them nulled until they’re actually garbage collected. That's what _IsValid(<yourobject>)_ is used for checking." - [Ari Arnbjörnsson](https://www.notion.so/Soft-Weak-Pointers-2347eefb694b49fb8314fdd71ca83065)
+"Destroyed actors don’t have references to them nulled until they’re actually garbage collected. That's what _IsValid(yourobject)_ is used for checking." - [Ari Arnbj\örnsson](https://www.notion.so/Soft-Weak-Pointers-2347eefb694b49fb8314fdd71ca83065)
 
 You can read more about [automatic updating of references](https://docs.unrealengine.com/5.1/en-US/unreal-object-handling-in-unreal-engine/#automaticupdatingofreferences) on the official docs. The thing to keep in mind is that it only works for Actor and ActorComponent derived classes.
 
@@ -769,7 +769,7 @@ In UE5 the behavior for automatically clearing RawPtrs / ObjectPtrs will change.
 {: .notice--info }
 "This will be changing a bit in UE5. The GC will no longer clear UPROPERTY + RawPtr/TObjectPtr references (even for Actors) but instead mark them as garbage (MarkAsGarbage()) and not GC them. The only way to clear the memory will be to null the reference or use weak pointers." - [Ari Arnbjörnsson](https://twitter.com/flassari/status/1528668001901617152). I will update this post once the new behavior has been enabled by default.
 
-## TWeakObjPtr<T> (UObjects)
+## TWeakObjPtr\<T\>
 
 _Weak Object Pointer_. This is similar to pointers like `UObject*`, except that we tell the engine that we don't want to hold onto the memory or object if we are the last piece of code referencing it. UObjects are automatically destroyed and garbage collected when no code is holding a (hard) reference to it. Use weak object pointers carefully to ensure objects are GC'ed when needed.
 
@@ -787,7 +787,7 @@ if (Ability)
 }
 ```
 
-- [Documentation on WeakObjPtr<T>](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/SmartPointerLibrary/WeakPointer/index.html)
+- [Documentation on WeakObjPtr\<T\>](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/SmartPointerLibrary/WeakPointer/index.html)
 - [Soft & Weak Object Pointers (Ari Arnbjörnsson)](https://www.notion.so/Soft-Weak-Pointers-2347eefb694b49fb8314fdd71ca83065#e499f9b4c5694bfdb8c9148039205590)
 - [Even more technical, on Smart Pointers in Unreal](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/SmartPointerLibrary/index.html)
 
@@ -795,9 +795,9 @@ if (Ability)
 
 _Class Default Object_ is the default instance of a class in Unreal Engine. This instance is automatically created and used to quickly instantiate new instances. You can use this CDO in other ways too to avoid having to manually create and maintain an instance.
 
-You can easily get the CDO in C++ via [GetDefault<T>](https://docs.unrealengine.com/4.27/en-US/API/Runtime/CoreUObject/UObject/GetDefault/2/). You should take care to not accidentally make changes to the CDO as this will bleed over into any new instance created for that class.
+You can easily get the CDO in C++ via [GetDefault\<T\>](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/CoreUObject/UObject/GetDefault/1). You should take care to not accidentally make changes to the CDO as this will bleed over into any new instance created for that class.
 
-Below is one example from [SaveGameSubsystem](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Private/SSaveGameSubsystem.cpp) using the '_class default object'_ to access [DeveloperSettings](https://www.tomlooman.com/unreal-engine-developer-settings/) (Project & Editor Settings) without creating a new instance.
+Below is one example from [SaveGameSubsystem](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/SaveSystem/RogueSaveGameSubsystem.cpp) using the '_class default object'_ to access [DeveloperSettings](https://www.tomlooman.com/unreal-engine-developer-settings/) (Which can contain Project & Editor Settings to access in your game code) without first creating a new instance.
 
 ```cpp
 // Example from: SSaveGameSubsystem.cpp (in Initialize())
