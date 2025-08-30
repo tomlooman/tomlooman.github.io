@@ -387,22 +387,14 @@ There is a a lot of optimizations in the release notes that you may want to dive
 
 ## Animation
 
-- Optimize RigLogic for low LOD evaluation (targeting low-power devices), bringing a 30-40% performance improvement // Do I include this stuff or is it too minor and just too specific to mention into a “highlights”. I want people to easily read it.
-
+- Optimize RigLogic for low LOD evaluation (targeting low-power devices), bringing a 30-40% performance improvement
 - Optimized RichCurve evaluation
-
 - Optimized skinned mesh proxy creation
-
 - Added memory usage estimate during animated curve compression
-
 - Bugfix: Fix missing fast path icons for blend space nodes
-
 - Added option to disable animation ticking when a skeletal mesh is directly occlusion/frustum culled
-
-- PR: Fix incorrect comparison of VisibilityBasedAnimTickOption in AnimationBudgetAllocator.
-
+- Fix incorrect comparison of VisibilityBasedAnimTickOption in AnimationBudgetAllocator.
 - Allowed post process Animation Blueprints to be applied based on a LOD threshold per-component
-
 - Fixed OnlyTickMontagesAndRefreshBonesWhenPlayingMontages option updating the anim instance multiple times
 
 ## World Streaming
