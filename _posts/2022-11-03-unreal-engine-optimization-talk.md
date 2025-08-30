@@ -89,7 +89,7 @@ Bookmarks add contextual information about changes and transitions that happens 
 
 C++: `TRACE_BOOKMARK(Format, Args)`
 
-[![](/assets/images/insights_bookmarks.png)]()
+![](/assets/images/insights_bookmarks.png)
 
 ### Add new 'stat' profiling
 
@@ -100,9 +100,9 @@ For your C++ game code, it can be valuable to include additional profiling detai
 
 I previously wrote about this topic before in [Profiling Stats (Stat Commands)](https://www.tomlooman.com/unreal-engine-profiling-stat-commands/).
 
-[![](/assets/images/insight_statcyclecounter.png)]()
+![](/assets/images/insight_statcyclecounter.png)
 
-[![](/assets/images/insights_customstats.png)]()
+![](/assets/images/insights_customstats.png)
 
 ### Unreal Insight Tips
 
@@ -125,7 +125,7 @@ It may prove valuable to run some commands during a profiling session to see how
 - Only in Packaged Builds for accurate results
     - Example: `AnimSequence` is twice as large in editor builds.
 
-[![](/assets/images/memreport.png)]()
+![](/assets/images/memreport.png)
 
 ## DumpTicks
 
@@ -180,9 +180,9 @@ While not expensive on a per-component basis, with tons of `PrimitiveComponents`
     - Skips “CalcBounds”
 - `show Bounds` or `showflag.bounds 1`
 
-[![](/assets/images/boundsmadness_cropped.jpg)]()
+![](/assets/images/boundsmadness_cropped.jpg)
 
-[![](/assets/images/insights_example_calcbounds.png)]()
+![](/assets/images/insights_example_calcbounds.png)
 
 ## Significance Manager
 
@@ -236,7 +236,7 @@ Note: Nanite in UE5 has an entirely different occlusion culling system (Two-pass
 
 Note: As mentioned in the previous section. Nanite does not issue individual GPU occlusion queries. This visualization can still be used for non-Nanite meshes.
 
-[![](/assets/images/renderdoc_depthtest.png)]()
+![](/assets/images/renderdoc_depthtest.png)
 
 ## Distance Culling
 
@@ -285,7 +285,7 @@ FreezeRendering does not work with Nanite.
 ![](/assets/images/ue_freezerendering_1.jpg)()
 *Player looking toward building*
 
-[![](/assets/images/ue_freezerendering_2.jpg)]()
+![](/assets/images/ue_freezerendering_2.jpg)
 *FreezeRendering enabled*
 
 ## Light Culling (Stationary & Movable)
@@ -302,7 +302,7 @@ Lights can still add considerable cost to your render thread even if they aren't
     - Show \> StationaryLightOverlap
     - ToggleLight \<partialname\>
 
-[![](/assets/images/lightcomplexity.png)]()
+![](/assets/images/lightcomplexity.png)
 *Too many overlapping stationary lights*
 
 ## Level Streaming
@@ -334,9 +334,9 @@ Besides reducing the memory load potentially significantly, it can help occlusio
 
 The following [Animation Optimization](https://docs.unrealengine.com/5.0/en-US/animation-optimization-in-unreal-engine/) doc page contains more information about the tips presented in the talk.
 
-[![](/assets/images/warnaboutblueprintusage.png)]()
+![](/assets/images/warnaboutblueprintusage.png)
 
-[![](/assets/images/anim_fastpathenabed.png)]()
+![](/assets/images/anim_fastpathenabed.png)
 
 ### Fast Path
 
@@ -380,7 +380,7 @@ The ACL plugin is built in with Unreal Engine 5.3+. Existing projects that migra
     - Takes longer to compress (off by default in-editor)
 - RDO Works with Oodle Data by ‘preparing’ the texture data
 
-[![](/assets/images/oodledata_config.png)]()
+![](/assets/images/oodledata_config.png)
 
 ## SynthBenchmark
 
@@ -406,9 +406,9 @@ Your Mileage may very greatly for Nanite geometry. Requires additional testing i
     - ‘ShadowDepths’ in Insights &    
     - ProfileGPU + r.RHISetGPUCaptureOptions 1
 
-[![](/assets/images/ue_modularbuilding.jpg)]()
+![](/assets/images/ue_modularbuilding.jpg)
 
-[![](/assets/images/mergeactors_panel.png)]()
+![](/assets/images/mergeactors_panel.png)
 
 ## SizeMap (Disk & Memory)
 
@@ -419,7 +419,7 @@ SizeMap is a valuable tool to quickly find and address hard references in your c
 
 Check out Mark Craig's recent talk on [the hidden danger of Asset Dependency Chains](https://www.youtube.com/watch?v=4-oRyDLfo7M).
 
-[![](/assets/images/sizemap.jpg)]()
+![](/assets/images/sizemap.jpg)
 
 ## Statistics Window
 
@@ -431,7 +431,7 @@ I found myself often using this panel to investigate opportunities for memory an
 - Tip: Shift-click for _secondary_ sort.
     - Sort ‘Count’ + ‘Tris’ or ‘Size’ (Find large assets used only once)
 
-[![](/assets/images/statistics_panel.png)]()
+![](/assets/images/statistics_panel.png)
 
 ## Useful Console Commands
 

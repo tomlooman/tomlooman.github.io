@@ -19,7 +19,7 @@ Besides the new game agnostic algorithm, we also get much-improved anti-aliasing
 
 For testing, I used my open-source [SurvivalGame](https://github.com/tomlooman/EpicSurvivalGameSeries) (available on GitHub) and [Dekogon Studios' City Subway Train](https://www.unrealengine.com/marketplace/en-US/product/city-subway-train-modular) asset.
 
-[![](/assets/images/ue4_survivalgame_dlss_overview.jpg)]()
+![](/assets/images/ue4_survivalgame_dlss_overview.jpg)
 *SurvivalGame on GitHub received a graphical refresh for this DLSS Test.*
 
 ## What is DLSS?
@@ -28,7 +28,7 @@ DLSS stands for [Deep Learning Super Sampling](https://www.nvidia.com/en-us/gefo
 
 Remember that aliasing itself occurs from rasterizing a scene to pixels. Fewer pixels will cause higher aliasing, so the fact that DLSS actually fixes most aliasing while we provide it a much lower input than native is pretty amazing if you ask me.
 
-[![](/assets/images/scenebaked_TXAAvsDLSS_Zoomed.jpg)]()
+![](/assets/images/scenebaked_TXAAvsDLSS_Zoomed.jpg)
 *DLSS used an internal resolution of 720p, upscaled to 1440p. Even Zoomed-in you can barely see the difference. (but there is a big gain in performance, some numbers further down)*
 
 One title using DLSS to improve performance while maintaining visual fidelity is Deliver Us The Moon, built using UE4.
@@ -86,7 +86,7 @@ Please keep in mind these numbers were taken from my unoptimized scenes, running
 
 #### Forest Scene (RTX On 2560x1440)
 
-[![](/assets/images/survival_dlss_quality_downscaled.jpg)]()
+![](/assets/images/survival_dlss_quality_downscaled.jpg)
 *Forest Scene (Note: Downscaled JPG from 1440p source)*
 
 This scene was likely bottlenecked by the ray-traced reflections and so you'll see a huge gain in framerate as the internal resolution is reduced.
@@ -99,7 +99,7 @@ This scene was likely bottlenecked by the ray-traced reflections and so you'll s
 
 #### Subway Train (RTX On 2560x1024)
 
-[![](/assets/images/ue4_subway_raster_dlss_quality_downscaled.jpg)]()
+![](/assets/images/ue4_subway_raster_dlss_quality_downscaled.jpg)
 *Subway RTX On (Note: Downscaled JPG from 1440p source)*
 
 The camera used a cinematic aspect ratio hence the 1024p height. This scene used similar RTX settings and even ray-traced ambient occlusion on top.
@@ -110,7 +110,7 @@ The camera used a cinematic aspect ratio hence the 1024p height. This scene used
 
 #### Subway Train (RTX Off 2560x1024)
 
-[![](/assets/images/subway_raster_dlss_quality.jpg)]()
+![](/assets/images/subway_raster_dlss_quality.jpg)
 *Subway non-RTX (Note: Downscaled JPG from 1440p source)*
 
 Without any further RT-options enabled the difference in performance between internal resolutions appears to diminish somewhat. Although this was just a single test and your mileage may vary (as with all performance metrics, GPUs are a complicated beast)

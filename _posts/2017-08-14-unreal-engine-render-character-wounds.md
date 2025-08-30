@@ -11,7 +11,7 @@ coverImage: "ue4_hitmask_damageexample.jpg"
 
 Earlier this week I tweeted about hit-masking characters to show dynamic blood and wounds. Today I'd like to talk a little about the effect and how it came to be. I'll talk a little bit about the technical details and some alternatives. The effect is a proof of concept to try and find a cheaper alternative to texture splatting using render targets. So let's get going!
 
-[![](/assets/images/ue4_hitmask_damageexample.jpg)]()
+![](/assets/images/ue4_hitmask_damageexample.jpg)
 
 [![](/assets/images/etOcKPR.gif "source: imgur.com")](http://imgur.com/etOcKPR)
 

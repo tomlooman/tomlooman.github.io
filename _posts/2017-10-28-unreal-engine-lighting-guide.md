@@ -38,7 +38,7 @@ With a Directional Light set at 3.14 in your scene that should give you the same
 
 Check out the Static Mesh Editor to let Unreal Engine generate lightmaps for you. By specifying the Min Lightmap Resolution you define the space between each UV island (Padding) By keeping this the same as the actual lightmap sizes used on the asset you get the best padding on the lightmaps and thereby better shadows in the same resolution. (**16:36 video timestamp**)
 
-[![](/assets/images/ue4_lightmapresolution.jpg)]()
+![](/assets/images/ue4_lightmapresolution.jpg)
 
 ### Lighting Quality Settings
 
@@ -54,39 +54,39 @@ Users tend to go crazy and bounce up to 100 times, this doesn't affect the build
 - Bounce 3 (3 minutes 46 seconds)
 - Bounce 100 (3 minutes 31 seconds)
 
-[![](/assets/images/ue4_lightbounce_1.jpg)]()
+![](/assets/images/ue4_lightbounce_1.jpg)
 
-[![](/assets/images/ue4_lightbounce_2.jpg)]()
+![](/assets/images/ue4_lightbounce_2.jpg)
 
-[![](/assets/images/ue4_lightbounce_3.jpg)]()
+![](/assets/images/ue4_lightbounce_3.jpg)
 
-[![](/assets/images/ue4_lightbounce_4.jpg)]()
+![](/assets/images/ue4_lightbounce_4.jpg)
 
-[![](/assets/images/ue4_lightbounce_5.jpg)]()
+![](/assets/images/ue4_lightbounce_5.jpg)
 
 #### Static Lighting Level Scale (20:20)
 
 Changes the scale of the level for lightmass, where lower scales results in more light evaluation detail. With fine details you will see them influence the scene more with a lower level-scale.
 
-[![](/assets/images/ue4_lightlevelscale_1.jpg)]()
+![](/assets/images/ue4_lightlevelscale_1.jpg)
 
-[![](/assets/images/ue4_lightlevelscale_2.jpg)]()
+![](/assets/images/ue4_lightlevelscale_2.jpg)
 
-[![](/assets/images/ue4_lightlevelscale_3.jpg)]()
+![](/assets/images/ue4_lightlevelscale_3.jpg)
 
-[![](/assets/images/ue4_lightlevelscale_4.jpg)]()
+![](/assets/images/ue4_lightlevelscale_4.jpg)
 
 #### Indirect Lighting Smoothness (**21:00**)
 
 Increasing the smoothness value above 1 reduces the noise in the indirect lighting, at the cost of increased build times. This noise would for example originate from the Level Scale value tweaked before.
 
-[![](/assets/images/ue4_indirectlightingsmoothness_05.jpg)]()
+![](/assets/images/ue4_indirectlightingsmoothness_05.jpg)
 
-[![](/assets/images/ue4_indirectlightingsmoothness_08.jpg)]()
+![](/assets/images/ue4_indirectlightingsmoothness_08.jpg)
 
-[![](/assets/images/ue4_indirectlightingsmoothness_1.jpg)]()
+![](/assets/images/ue4_indirectlightingsmoothness_1.jpg)
 
-[![](/assets/images/ue4_indirectlightingsmoothness_2.jpg)]()
+![](/assets/images/ue4_indirectlightingsmoothness_2.jpg)
 
 #### Indirect Lighting Quality (**21:51**)
 
@@ -97,13 +97,13 @@ Increases the number of rays for the final gathering. Ranges between 1 and 10, w
 - Indirect Lighting Quality 5 (29 minutes 46 seconds)
 - Indirect Lighting Quality 10 (1 hour 5 minutes 24 seconds)
 
-[![](/assets/images/ue4_indirectlightingquality_1.jpg)]()
+![](/assets/images/ue4_indirectlightingquality_1.jpg)
 
-[![](/assets/images/ue4_indirectlightingquality_2.jpg)]()
+![](/assets/images/ue4_indirectlightingquality_2.jpg)
 
-[![](/assets/images/ue4_indirectlightingquality_5.jpg)]()
+![](/assets/images/ue4_indirectlightingquality_5.jpg)
 
-[![](/assets/images/ue4_indirectlightingquality_10.jpg)]()
+![](/assets/images/ue4_indirectlightingquality_10.jpg)
 
 #### Lighting Build Quality (22:10)
 
@@ -135,23 +135,23 @@ Artifacts can be reduced to an acceptable level when the above multiplication re
 
 Example of the scene used during the demo with a few high-end quality settings:
 
-[![](/assets/images/ue4_lightingexample.jpg)]()
+![](/assets/images/ue4_lightingexample.jpg)
 
 #### Directional Light Stationary Area Shadow (41:42)
 
 Broadens the shadow of the directional light for overcast like lighting scenarios. Range is between 1 and 10.
 
-[![](/assets/images/ue4_areashadow.jpg)]()
+![](/assets/images/ue4_areashadow.jpg)
 
-[![](/assets/images/ue4_areashadow_example.jpg)]()
+![](/assets/images/ue4_areashadow_example.jpg)
 
-[![](/assets/images/ue4_areashadow_overcast.jpg)]()
+![](/assets/images/ue4_areashadow_overcast.jpg)
 
 #### Contact Shadows
 
 Contact Shadows add shadows for little details on bigger geometry such as the lamps below. This feature is a little heavy (numbers missing) and personally (Tom, not Jerome), as of 4.17, I found it had some artifacts for these small objects in a distance and haven't used it much because of it. The value here is small, so start off with 0.1 and go from there.
 
-[![](/assets/images/ue4_contactshadowlength.jpg)]()
+![](/assets/images/ue4_contactshadowlength.jpg)
 
 #### Conclusion
 

@@ -48,7 +48,7 @@ The concept of hierarchies may become more clear once you start thinking of your
 
 It may be confusing that there are multiple tagging systems in Unreal. The basic system of tagging (Actor/Component Tags) works with [Strings](https://docs.unrealengine.com/en-US/fstring-in-unreal-engine/) and has none of the neat features of GameplayTags. Once your content starts to grow in the hundreds of gameplay assets you really don't want to end up with typos in your handwritten string tags or re-open assets all throughout your content folders to remember how you named that one particular tag since the basic tag systems have no central database. This system also lacks the hierarchy feature. It'll become a nightmare to manage and compare Tags using this basic system unless you implement this yourself from scratch.
 
-[![](/assets/images/gameplaytags_findreference.jpg)]()
+![](/assets/images/gameplaytags_findreference.jpg)
 *GameplayTags can be tracked in the Reference Viewer*
 
 ## Some practical use-cases
@@ -75,7 +75,7 @@ Lyra has a plugin dedicated to this called _GameplayMessageRouter_ which I recom
 
 ### GameplayTag Add/Remove Events
 
-[![](/assets/images/ue_gameplaytags_taglistener.jpg)]()
+![](/assets/images/ue_gameplaytags_taglistener.jpg)
 *Adding GameplayTag "listeners" is invaluable in building an event-driven gameplay framework. Here we listen for the Pawn to go into ADS (Aim down Sights) so we can run some logic in response. _(Note: AddGameplayTagListener is a function from my own project - similar functionality can be found in [GAS](https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/GameplayAbilitySystem/))_*
 
 You want to wrap your custom `AddTag()` and `RemoveTag()` functions so you can broadcast an event/delegate.
@@ -86,7 +86,7 @@ I'll be adding a better example of this to the Action Roguelike sample project, 
 
 Mark up your loot tables with tags that can block specific items from dropping in the table or tags that are required in order to drop a particular item as loot. Below is an example of a TableRow struct usable in DataTables.
 
-[![](/assets/images/ue_gameplaytags_datatablerows.jpg)]()
+![](/assets/images/ue_gameplaytags_datatablerows.jpg)
 *'Required Tags' can be used to filter out items from the loot table before rolling the dice. These 'Tags' can be grabbed from anywhere in your game code such as those applied to the character, the looted chest, the environment, etc.*
 
 ```cpp
@@ -126,7 +126,7 @@ Casting and class references won't hit you as a problem until much later in the 
 
 The best way to check for references is by using the [Reference Viewer](https://docs.unrealengine.com/5.2/en-US/finding-asset-references-in-unreal-engine/) & [Size Map](https://dev.epicgames.com/community/learning/tutorials/r4y7/unreal-engine-size-map) tool. (Both available by right-clicking your asset in the Content Browser)
 
-[![](/assets/images/ue_gameplaytags_sizemaptool.jpg)]()
+![](/assets/images/ue_gameplaytags_sizemaptool.jpg)
 
 In the example above I already see some references that shouldn't be there. We somehow end up referencing several classes such as _BaseShip_ and _TurretRotating_ class (left top) which are 30MB and 11MB in size and should have nothing to do with a Player Pawn. These problems will often occur during development, it's better to find these early as you may need to adjust your framework design or change your coding habits before it's too late in the project. This is not just for the final game product either, you are loading in these referenced assets any time you boot up the editor or load in a particular blueprint (and all its references) that you work on.
 
@@ -136,14 +136,14 @@ Any assets referenced here will be loaded when the asset in question is used - u
 
 My game has a large number of "Items" which isn't just restricted to what you consider items from an Inventory. Even Points of Interest, Characters, Ships, Achievements, etc. could be considered an Item. In practice, it's a (Primary)DataAsset that holds UI information, ability data, related Actor class, **GameplayTags**, etc. The GameplayTags can be useful to generically decorate your "Item" with whatever information is desired in its context.
 
-[![](/assets/images/ue_gameplaytags_items-1.jpg)]()
+![](/assets/images/ue_gameplaytags_items-1.jpg)
 *Some of the current item types in WARPSQUAD.*
 
 ## Networking (Replication)
 
 GameplayTags can be replicated more efficiently by Unreal than `FName`. There are some options available in _Project Settings > GameplayTags_. 'Fast Replication' is able to replicate tags by Index instead of the full Name, for this the tag list must be identical between client and server.
 
-[![](/assets/images/ue_gameplaytags_tagreplication.jpg)]()
+![](/assets/images/ue_gameplaytags_tagreplication.jpg)
 
 ## GameplayTag Stack Container
 
