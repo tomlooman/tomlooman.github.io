@@ -19,17 +19,8 @@ Besides the new game agnostic algorithm, we also get much-improved anti-aliasing
 
 For testing, I used my open-source [SurvivalGame](https://github.com/tomlooman/EpicSurvivalGameSeries) (available on GitHub) and [Dekogon Studios' City Subway Train](https://www.unrealengine.com/marketplace/en-US/product/city-subway-train-modular) asset.
 
-<figure>
-
 [![](/assets/images/ue4_survivalgame_dlss_overview-900x422.jpg)]()
-
-<figcaption>
-
-SurvivalGame on GitHub received a graphical refresh for this DLSS Test.
-
-</figcaption>
-
-</figure>
+*SurvivalGame on GitHub received a graphical refresh for this DLSS Test.*
 
 ## What is DLSS?
 
@@ -37,21 +28,12 @@ DLSS stands for [Deep Learning Super Sampling](https://www.nvidia.com/en-us/gefo
 
 Remember that aliasing itself occurs from rasterizing a scene to pixels. Fewer pixels will cause higher aliasing, so the fact that DLSS actually fixes most aliasing while we provide it a much lower input than native is pretty amazing if you ask me.
 
-<figure>
-
 [![](/assets/images/scenebaked_TXAAvsDLSS_Zoomed-900x356.jpg)]()
-
-<figcaption>
-
-DLSS used an internal resolution of 720p, upscaled to 1440p. Even Zoomed-in you can barely see the difference. (but there is a big gain in performance, some numbers further down)
-
-</figcaption>
-
-</figure>
+*DLSS used an internal resolution of 720p, upscaled to 1440p. Even Zoomed-in you can barely see the difference. (but there is a big gain in performance, some numbers further down)*
 
 One title using DLSS to improve performance while maintaining visual fidelity is Deliver Us The Moon, built using UE4.
 
-https://www.youtube.com/watch?v=via-LSKo\_q4
+<iframe width="560" height="315" src="https://www.youtube.com/embed/via-LSKo_q4?si=6aekugn5p4lPaoFe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Getting Started
 
@@ -61,31 +43,13 @@ For this article, Nvidia hooked me up with an RTX graphics card and access to th
 
 The internal resolution is downscaled automatically based on the DLSS quality-setting. You can choose between 5 modes from _Ultra Performance, Performance, Balanced, Quality,_ and _Ultra Quality_ (Although this last mode was '_not supported_' for my setup). Finally, you have the option to sharpen the output.
 
-<figure>
-
 ![](/assets/images/survival_dlss_perf_sharpen_ngxsettings.jpg)
-
-<figcaption>
-
-Helpful (UMG) Widget to display and test DLSS. (from Nvidia Branch)
-
-</figcaption>
-
-</figure>
+*Helpful (UMG) Widget to display and test DLSS. (from Nvidia Branch)*
 
 In my tests, the internal resolution can go down to 33% (in _Ultra Performance_, meant for 4K Displays) which is a huge saving in screen-space operations such as pixel shaders, post-processing, and ray-tracing in particular. Even at 50% for Performance & Quality modes it's still x4 fewer pixels to process. Judging from the provided UI the internal resolution can change on the fly between a predefined range (eg. from 50% to 69% in Quality-Mode) I'm not sure at this time how DLSS decides which exact internal resolution to use.
 
-<figure>
-
 ![](/assets/images/survival_sp50_noaa_zoomed-900x584.jpg)
-
-<figcaption>
-
-Zoomed view of 1440p at 50% (r.ScreenPercentage 50, no AA), this is the input data that DLSS has to work with.
-
-</figcaption>
-
-</figure>
+*Zoomed view of 1440p at 50% (r.ScreenPercentage 50, no AA), this is the input data that DLSS has to work with.*
 
 ## Anti-Aliasing Quality (DLSS vs. TAA)
 
@@ -95,43 +59,16 @@ Since DLSS is using a lower internal resolution, the real test is whether it can
 
 It's telling that often I had to double-check the screenshots to make sure I had the correct one between TAA and DLSS. Below you'll see a few zoomed-in comparisons so that image resizing can't interfere and honestly it's necessary in order to see the difference.
 
-<figure>
-
 ![](/assets/images/survival_zoom_txaa_cropbox.png)![](/assets/images/survival_zoom_dlss_quality_cropbox.png)
-
-<figcaption>
-
-Trees even look crisper on DLSS than native TAA. Cables hold up incredibly well, slightly harsh in places, mainly noticeable due to zoom-level.
-
-</figcaption>
-
-</figure>
-
-<figure>
+*Trees even look crisper on DLSS than native TAA. Cables hold up incredibly well, slightly harsh in places, mainly noticeable due to zoom-level.*
 
 ![](/assets/images/metro_test_fullres_35fps.png)![](/assets/images/metro_test_dlss_quality_64fps.png)
+*Left: 1440p TAA, Right: DLSS Quality-mode (Zoomed)*
 
-<figcaption>
-
-Left: 1440p TAA, Right: DLSS Quality-mode (Zoomed)
-
-</figcaption>
-
-</figure>
-
-Nearly indentical quality, slight error in the ceiling lights where a white line in the original texture got blown out by the upscaling algorithm causing a noticable stripe. I reckon this should be 'fixed' in the source texture instead.
-
-<figure>
+Nearly identical quality, slight error in the ceiling lights where a white line in the original texture got blown out by the upscaling algorithm causing a noticable stripe. I reckon this should be 'fixed' in the source texture instead.
 
 ![](/assets/images/subway_raster_zoom_txaa.jpg)![](/assets/images/subway_raster_zoom_dlss_quality.jpg)
-
-<figcaption>
-
-Left: TAA 1440p, Right: DLSS Quality-mode. (Zoomed)
-
-</figcaption>
-
-</figure>
+*Left: TAA 1440p, Right: DLSS Quality-mode. (Zoomed)*
 
 Reflections look ever so slightly different, this scene used ray-traced reflections on highly reflective materials.
 
@@ -139,27 +76,18 @@ Reflections look ever so slightly different, this scene used ray-traced reflecti
 
 For the quality and performance comparison I've made a quick video toggling between the 3 different AA modes (TAA, DLSS Quality & Performance) to see the difference. As you'll notice the visual quality is often difficult to see while the framerate takes a big leap at the same time. I would even argue that Quality-mode can conjure a higher quality image in some cases (I found that my foliage scene 'felt' crisper with DLSS enabled).
 
-https://youtu.be/JSub3PQz76M
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JSub3PQz76M?si=KTfDdDfnC40zt5Ti" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 _(Make sure to watch in 1440p and fullscreen.)_
 
 ### The Numbers
 
-Please keep in mind these numbers were taken from my unoptimized scenes, running in standalone-mode (outside the editor) but not a cooked build. Several RT features were turned on to strain the system (including raytraced reflections).
+Please keep in mind these numbers were taken from my unoptimized scenes, running in standalone-mode (outside the editor) but not a cooked build. Several RT features were turned on to strain the system (including ray-traced reflections).
 
 #### Forest Scene (RTX On 2560x1440)
 
-<figure>
-
 [![](/assets/images/survival_dlss_quality_downscaled-900x506.jpg)]()
-
-<figcaption>
-
-Forest Scene (Note: Downscaled JPG from 1440p source)
-
-</figcaption>
-
-</figure>
+*Forest Scene (Note: Downscaled JPG from 1440p source)*
 
 This scene was likely bottlenecked by the ray-traced reflections and so you'll see a huge gain in framerate as the internal resolution is reduced.
 
@@ -171,17 +99,8 @@ This scene was likely bottlenecked by the ray-traced reflections and so you'll s
 
 #### Subway Train (RTX On 2560x1024)
 
-<figure>
-
 [![](/assets/images/ue4_subway_raster_dlss_quality_downscaled-900x506.jpg)]()
-
-<figcaption>
-
-Subway RTX On (Note: Downscaled JPG from 1440p source)
-
-</figcaption>
-
-</figure>
+*Subway RTX On (Note: Downscaled JPG from 1440p source)*
 
 The camera used a cinematic aspect ratio hence the 1024p height. This scene used similar RTX settings and even ray-traced ambient occlusion on top.
 
@@ -191,17 +110,8 @@ The camera used a cinematic aspect ratio hence the 1024p height. This scene used
 
 #### Subway Train (RTX Off 2560x1024)
 
-<figure>
-
 [![](/assets/images/subway_raster_dlss_quality-900x496.jpg)]()
-
-<figcaption>
-
-Subway non-RTX (Note: Downscaled JPG from 1440p source)
-
-</figcaption>
-
-</figure>
+*Subway non-RTX (Note: Downscaled JPG from 1440p source)*
 
 Without any further RT-options enabled the difference in performance between internal resolutions appears to diminish somewhat. Although this was just a single test and your mileage may vary (as with all performance metrics, GPUs are a complicated beast)
 
@@ -213,17 +123,8 @@ Without any further RT-options enabled the difference in performance between int
 
 The extra renderpass occurs during Post Processing much like traditional AA solutions. On my _Nvidia RTX 2080 Ti_ the cost to upscale to 1440p was about 0.8-1.2ms. This number seems to be consistent regardless of which quality mode is used. For reference, TAA at full 1440p costs about 0.22ms on my machine.
 
-<figure>
-
 ![](/assets/images/ue4_profilegpu_dlss-1-900x363.jpg)
-
-<figcaption>
-
-ProfileGPU Output Window.
-
-</figcaption>
-
-</figure>
+*ProfileGPU Output Window.*
 
 You can measure performance of individual render passes by either using "ProfileGPU" or "stat GPU" console commands.
 

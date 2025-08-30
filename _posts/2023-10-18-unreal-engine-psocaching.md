@@ -34,17 +34,8 @@ This article will cover an [implementation using **Action Roguelike on GitHub**]
 
 This screenshot (Unreal Insights) shows a game running without any handling of PSOs. The result is enormous frame spikes when objects are first seen on screen as the PSO compilation steps stalls the game until the PSO is ready to be sent to the GPU. Here that PSO took 54.1ms to compile, meanwhile the game cannot continue rendering.
 
-<figure>
-
 ![](/assets/images/psocaching_hitches.jpg)
-
-<figcaption>
-
-Unreal Insights without caching, major frame spikes (top) and compilation tasks stalling the game (bottom). Insights bookmarks display when a new PSO is discovered (and its type graphics/compute)
-
-</figcaption>
-
-</figure>
+*Unreal Insights without caching, major frame spikes (top) and compilation tasks stalling the game (bottom). Insights bookmarks display when a new PSO is discovered (and its type graphics/compute)*
 
 ## PSO Precaching vs. Bundled PSO Cache
 

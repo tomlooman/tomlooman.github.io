@@ -1,5 +1,5 @@
 ---
-title: "Auto-detect Optimal Graphics Settings for Unreal"
+title: "Auto-apply optimal Scalability Settings for Unreal Engine"
 date: 2020-04-26
 categories: 
   - "rendering"

@@ -14,7 +14,7 @@ coverImage: "actionroguelike_ue4_combatsample5.jpg"
 
 > Master Unreal Engine C++ Game Development with this university-grade course.
 
-![](/assets/images/actionroguelike_ue4_combatsample5-900x446.jpg)
+![](/assets/images/actionroguelike_ue4_combatsample5.jpg)
 
 My **Unreal Engine C++ course** has just launched! It is packed with high-quality C++ and gameplay-focused lectures totaling nearly **30 hours of videos** and **7 assignments.**
 
@@ -22,17 +22,8 @@ By enrolling in your course you will be able to build a game complete with third
 
 With nearly 30 hours of content it's too much to list here, I recommend checking out the course page and curriculum for a list of individual lectures _(Free Previews available too!)_
 
-<figure>
-
-![](/assets/images/ue_course_herobanner_split_small-900x284.jpg)
-
-<figcaption>
-
-You'll learn a ton of essential skills for gameplay programming in Unreal Engine, and get to build fun assignments such as the blackhole projectile.
-
-</figcaption>
-
-</figure>
+![](/assets/images/ue_course_herobanner_split_small.jpg)
+*You'll learn a ton of essential skills for gameplay programming in Unreal Engine, and get to build fun assignments such as the blackhole projectile.*
 
 I’m incredibly excited to finally be launching this course! It’s taken a long time for everything to be polished up and ready to go. I’m absolutely certain you will love what I’ve created and truly believe it is the best thing I’ve created so far and filled to the brim with essential skills, tricks, and how-tos.
 
@@ -53,31 +44,13 @@ I’m incredibly excited to finally be launching this course! It’s taken a lon
 
 Check out the **[Course page](https://tomlooman.com/cpp-activedeal)** to get all the details on course contents!
 
-<figure>
-
-![](/assets/images/ue_course_github2_small-900x375.jpg)
-
-<figcaption>
-
-All code is available on GitHub, submitted per lecture for comparison of progress and assignment solutions.
-
-</figcaption>
-
-</figure>
+![](/assets/images/ue_course_github2_small.jpg)
+*All code is available on GitHub, submitted per lecture for comparison of progress and assignment solutions.*
 
 While this course is more challenging than my previous work and targets an intermediate level of student, you don't have to be a pro at all! Beginners to Unreal Engine or C++ are very welcome! Just make sure you bring some prior programming experience in languages similar to C++ such as C#, Java, etc. Check out the course page for more details on student requirements to see if you're a good fit!
 
-<figure>
-
-![](/assets/images/ue_course_multiplayer_small-900x375.jpg)
-
-<figcaption>
-
-All game features including our own gameplay framework and AI works in multiplayer.
-
-</figcaption>
-
-</figure>
+![](/assets/images/ue_course_multiplayer_small.jpg)
+*All game features including our own gameplay framework and AI works in multiplayer.*
 
 **[Course Page for Full Details](https://tomlooman.com/cpp-activedeal)**
 

@@ -265,29 +265,11 @@ MinDrawDistance may be useful to cull up-close translucent surfaces that cause a
 
 Min/Max Draw Distance is not supported for Nanite.
 
-<figure>
+![](/assets/images/minmaxdrawdistance_1.png)()
+*Default scene with many overlapping surfaces*
 
-![](/assets/images/minmaxdrawdistance_1-900x393.png)()
-
-<figcaption>
-
-Default scene with many overlapping surfaces
-
-</figcaption>
-
-</figure>
-
-<figure>
-
-![](/assets/images/minmaxdrawdistance_2-900x430.png)()
-
-<figcaption>
-
-Min+Max Draw distance Set
-
-</figcaption>
-
-</figure>
+![](/assets/images/minmaxdrawdistance_2.png)()
+*Min+Max Draw distance Set*
 
 ![](/assets/images/culldistancenode_2.png)()
 
@@ -295,34 +277,16 @@ Min+Max Draw distance Set
 
 Freeze the occlusion culling to see whether your scene is properly occluded or if certain Actors are still rendered unexpectedly.
 
-FreezeRendering does not work with UE5's Nanite.
+FreezeRendering does not work with Nanite.
 
 - ‘FreezeRendering’ + **;** (semi-colon) to fly with DebugCamera
 - Verify occlusion is working as expected
 
-<figure>
-
 ![](/assets/images/ue_freezerendering_1-900x494.jpg)()
-
-<figcaption>
-
-Player looking toward building
-
-</figcaption>
-
-</figure>
-
-<figure>
+*Player looking toward building*
 
 [![](/assets/images/ue_freezerendering_2-900x494.jpg)]()
-
-<figcaption>
-
-FreezeRendering enabled
-
-</figcaption>
-
-</figure>
+*FreezeRendering enabled*
 
 ## Light Culling (Stationary & Movable)
 
@@ -334,21 +298,12 @@ Lights can still add considerable cost to your render thread even if they aren't
     - MaxDrawDistance
     - MaxDistanceFadeRange
 - Profiling
-    - Show > LightComplexity (Alt+7)
-    - Show > StationaryLightOverlap
-    - ToggleLight <partialname>
-
-<figure>
+    - Show \> LightComplexity (Alt+7)
+    - Show \> StationaryLightOverlap
+    - ToggleLight \<partialname\>
 
 [![](/assets/images/lightcomplexity-900x360.png)]()
-
-<figcaption>
-
-Too many overlapping stationary lights
-
-</figcaption>
-
-</figure>
+*Too many overlapping stationary lights*
 
 ## Level Streaming
 
@@ -372,8 +327,7 @@ Besides reducing the memory load potentially significantly, it can help occlusio
 - Options: Load, LoadNotVisible, LoadVisible
     - Keep in memory while hiding to aid the renderer
 - Consider streaming early in Level Design!
-    - Splitting into multiple ULevels
-    
+    - Splitting into multiple ULevels    
     - Line of sight, natural corridors and points of no return
 
 ## Animation
@@ -389,7 +343,7 @@ The following [Animation Optimization](https://docs.unrealengine.com/5.0/en-US/a
 - Allow ‘Fast Path’ by moving Computations out of AnimGraph (into EventGraph)
     - Use WarnAboutBlueprintUsage to get warnings in AnimGraph
 - Profiling
-    - stat anim
+    - `stat anim`
 
 ### Quick Wins
 
@@ -401,9 +355,9 @@ Skeletal Meshes add a chunky amount of processing to your CPU threads, there are
     - AlwaysTickPoseAndRefreshBones 
     - …
 - More Bools!
-    - bRenderAsStatic  
-    - bPauseAnims   
-    - bNoSkeletonUpdate
+    - `bRenderAsStatic`
+    - `bPauseAnims`
+    - `bNoSkeletonUpdate`
 
 ### Animation Compression Library (ACL)
 

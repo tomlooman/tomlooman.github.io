@@ -90,29 +90,11 @@ Below I've listed some of the more relevant features included in the project. I 
 
 **Check out the project file [right here](https://github.com/tomlooman/ActionRoguelike)** **on GitHub!**
 
-<figure>
-
 ![](/assets/images/ue4_actionroguelike_aisample.jpg)
+*Spotted by Minion's sight sense.*
 
-<figcaption>
-
-Spotted by Minion's sight sense.
-
-</figcaption>
-
-</figure>
-
-<figure>
-
-[![](/assets/images/assignment4_behaviortree-900x532.jpg)]()
-
-<figcaption>
-
-Behavior Tree for Ranged Minion AI
-
-</figcaption>
-
-</figure>
+![](/assets/images/assignment4_behaviortree-900x532.jpg)
+*Behavior Tree for Ranged Minion AI*
 
 ## What's Next?
 

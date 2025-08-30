@@ -58,17 +58,8 @@ https://www.youtube.com/watch?v=fCAhGqtjjGc&feature=youtu.be
 
 For a while I used a C++ function that was able to run any Blueprint function by FName. This made it easy to setup tasks in Blueprint by name and match it to a scorer function in AIController. For example, my AI task _LaunchMissile_ would match to the Blueprint function named _Score\_LaunchMissile_ automatically.
 
-<figure>
-
 ![](/assets/images/UtilityAI_ScoringFunc-900x294.jpg)
-
-<figcaption>
-
-Can call Blueprint functions like Score\_MyTaskName and return the function return value (BP function must return one float)
-
-</figcaption>
-
-</figure>
+*Can call Blueprint functions like Score\_MyTaskName and return the function return value (BP function must return one float)*
 
 I used the following code. _(disclaimer: I can't guarantee the memory allocations used here are optimal or 100% safe - it's the best I could find when looking around)_
 

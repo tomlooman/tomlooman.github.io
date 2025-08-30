@@ -69,31 +69,13 @@ The Asset Manager in Unreal Engine works through Primary Assets that it loads an
 
 You can either use UPrimaryDataAsset or override GetPrimaryAssetId() in any UObject derived class as mentioned earlier to turn it into a Primary Asset. They look very similar code-wise in the MonsterData example earlier.
 
-<figure>
-
 ![](/assets/images/2020-12-04-18_26_09-WarpSquad-Unreal-Editor.jpg)
-
-<figcaption>
-
-Data Asset Examples of 'Mutations' in WARPSQUAD.
-
-</figcaption>
-
-</figure>
-
-<figure>
+*Data Asset Examples of 'Mutations' in WARPSQUAD.*
 
 ![](/assets/images/2020-12-04-18_26_20-WarpSquad-Unreal-Editor.jpg)
+*Data Asset Examples of 'Ship Configurations' in WARPSQUAD.*
 
-<figcaption>
-
-Data Asset Examples of 'Ship Configurations' in WARPSQUAD.
-
-</figcaption>
-
-</figure>
-
-### PrimaryDataAsset (DataAsset)
+### PrimaryDataAsset
 
 DataAsset class already set up to support Asset Manager. These assets will purely hold data and no functional logic. You can include Actor classes to spawn, Abilities to grant, UI names, Icons, etc.
 
@@ -206,21 +188,12 @@ In the case of a Treasure Chest, you can _Preload_ all the things it would spawn
 
 After configuring your Asset Manager it will automatically discover new PrimaryAssets when added. You setup this configuration in the _Project Settings > Asset Manager_.
 
-<figure>
-
 ![](/assets/images/ue4_projectsettings_assetmanager.jpg)
-
-<figcaption>
-
-Example Configuration from WARPSQUAD.
-
-</figcaption>
-
-</figure>
+*Example Configuration from WARPSQUAD.*
 
 ## What about Streamable Manager?
 
-Asset Manager wraps around the FStreamableManager, which is still a manager you can use for non PrimaryAssets. It's not a complete replacement, Asset Manager is just solving a specific problem and management.
+Asset Manager wraps around the `FStreamableManager`, which is still a manager you can use for non PrimaryAssets. It's not a complete replacement, Asset Manager is just solving a specific problem and management.
 
 ## Auditing Assets
 
@@ -228,20 +201,10 @@ Auditing Assets gives you more insight into how your Primary Assets are setup an
 
 right-click on an asset in the content browser lets you "Audit Assets...". This gives you some insight into the total size associated with an asset, how often it's used, Ids, Type, etc. Use the buttons at the top to easily filter based on certain criteria.
 
-<figure>
-
 ![](/assets/images/ue4_auditassets-900x323.jpg)
-
-<figcaption>
-
-Audit Assets Window
-
-</figcaption>
-
-</figure>
+*Audit Assets Window*
 
 ## References
 
 - [Asset Manager Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine)
-
 - [Action Roguelike Code Example (GitHub)](https://github.com/tomlooman/ActionRoguelike)

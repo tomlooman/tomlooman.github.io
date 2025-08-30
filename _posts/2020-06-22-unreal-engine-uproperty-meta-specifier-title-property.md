@@ -42,16 +42,7 @@ TArray<FTeamInfo> DefaultTeams;
 
 The result of displaying this in the editor: ("Environment", "Players", "Pirates", etc. are the TeamNames now embedded and visible even with the struct view collapsed. Without this specifier, the UI would be blank and you need to expand each element.
 
-<figure>
-
 ![](/assets/images/ue4_uproperty_metaspecifier_titleproperty.jpg)
-
-<figcaption>
-
-Example of the TeamName displayed in the array list.
-
-</figcaption>
-
-</figure>
+*Example of the TeamName displayed in the array list.*
 
 That's it! Now your arrays in the editor are far easier to read! It's worth reading through the [meta-specifier documentation](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Metadata/) as there are plenty of little tricks available. BenUI has recently created a [UPROPERTY page](https://benui.ca/unreal/uproperty/) to detail more of these nifty specifiers.

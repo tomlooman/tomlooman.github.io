@@ -23,17 +23,8 @@ This won't be a step-by-step tutorial. Instead, it's more of a system breakdown 
 
 We'll be creating a save system similar to _Dark Souls_ with a bonfire interaction that saves the world state. We will be saving a few actors and some player information. The bonfire itself is a thematic interaction, with the real interesting bits being the actual world state that we save/load. Such as the moved item locations, previously opened treasure chests, and obtained credits (aka "Souls").
 
-<figure>
-
 ![](/assets/images/Dark_souls_bonfire.jpg)
-
-<figcaption>
-
-Bonfire (Savepoint) from Dark Souls.
-
-</figcaption>
-
-</figure>
+*Bonfire (Savepoint) from Dark Souls.*
 
 ## Action Roguelike (Reference Project)
 
@@ -430,29 +421,11 @@ Now to create the actual Bonfire in Blueprint it's super simple and fast to do b
 
 Once interacted with once, the bFireActive is now saved into the bonfire and on the next game load the particle system will activate through OnActorLoaded (our own interface function) You can do the same through BeginPlay() as we'll have loaded our Actor data before that is called as mentioned earlier in this post.
 
-<figure>
-
 ![](/assets/images/ue4_bonfire_savesystem-900x421.jpg)
-
-<figcaption>
-
-Bonfire Blueprint Graph
-
-</figcaption>
-
-</figure>
-
-<figure>
+*Bonfire Blueprint Graph*
 
 ![](/assets/images/ue4_bonfire_savesystem_savevar.jpg)
-
-<figcaption>
-
-'SaveGame' is checked.
-
-</figcaption>
-
-</figure>
+*'SaveGame' is checked.*
 
 As you can see there isn't a lot of complexity involved in this basic SaveGame system. And even setting up savable variables in Blueprint is quite easy once the boilerplate has been implemented. There is a lot more to consider and required for your own complete system that covers all cases and will depend on your game mechanics. Perhaps you'll need to save the state of the ActorComponents too, or UObjects that hold info about abilities and/or attributes. I'll briefly discuss these in the next paragraph, but all are outside of the scope of this tutorial.
 
@@ -477,11 +450,7 @@ Also, don't forget to sign-up for **my newsletter below** for any new content I 
 ## References & Further Reading
 
 - [**Serialization Best Practices and Techniques - UnrealFest '23**](https://dev.epicgames.com/community/learning/talks-and-demos/4ORW/unreal-engine-serialization-best-practices-and-techniques)
-
 - [**My Unreal C++ Course handles Saving & Loading in more detail**](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)
-
 - [Saving and Loading your game (Docs BP / C++)](https://dev.epicgames.com/documentation/en-us/unreal-engine/saving-and-loading-your-game-in-unreal-engine)
-
 - [Saving/Loading Array of Object (Answerhub)](https://forums.unrealengine.com/t/what-is-the-best-way-to-handle-saving-loading-an-array-of-objects/281775)
-
 - [SPUD: Steve's Persistent Unreal Data library (Complete Save System Plugin)](https://github.com/sinbad/SPUD)

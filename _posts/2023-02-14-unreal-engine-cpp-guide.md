@@ -1,6 +1,7 @@
 ---
 title: "Unreal Engine C++ Complete Guide"
 date: 2023-02-14
+last_modified_at: 30-08-2025
 categories: 
   - "cpp"
 tags: 
@@ -246,7 +247,7 @@ print(TimeVar); // This would print out: 1.0f - because we passed in the origina
 
 Another important use is the _address operator_, which even lets us pass functions as parameters into other functions. This is very useful for binding user input and [setting timers](https://www.tomlooman.com/unreal-engine-cpp-timers/) to trigger specific functions.
 
-The `BindAxis` function in the example below needs to know which function to call when the mapped input is triggered. We pass in the function and use the _address operator (&)_.
+The `BindAxis()` function in the example below needs to know which function to call when the mapped input is triggered. We pass in the function and use the _address operator (&)_.
 
 ```cpp
 // Called to bind functionality to input

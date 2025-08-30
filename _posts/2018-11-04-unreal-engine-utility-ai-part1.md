@@ -32,17 +32,8 @@ Tasks can be given priority weights so that an agent is more likely to flee from
 
 As mentioned in the intro we had some issues with using Behavior Trees once the number of available tasks per Agent increased. Every new task could influence the other parts of the tree without this clearly showing up until you ran the tree through some actual playing. It requires a certain way of thinking to create effective trees and allow for easy extension which can be hard to get into. We also found it can be difficult to get back into a tree you haven't touched in a while.
 
-<figure>
-
 [![](/assets/images/ue4_behaviortrees_example.png)](https://www.tomlooman.com/ue4-cpp-multiplayer-course/)
-
-<figcaption>
-
-Behavior Tree example from AI in my Unreal Engine course.
-
-</figcaption>
-
-</figure>
+*Behavior Tree example from AI in my Unreal Engine course.*
 
 Furthermore, custom Decorators, Services, Tasks are all individual assets. This can blow up your asset count and jumping between assets cost mental effort and time. I find it reduces my productivity when jumping between asset files a lot. Utility AI still generated some assets such as Tasks, but the overall amount is much lower. Most is of the logic is happening inside the AI Controller class after all. The assets below are from a folder related to a still rather simple stealth game AI. It's a decent number of assets and will continue to grow.
 
@@ -64,37 +55,19 @@ Unreal ships with a [Gameplay Framework](https://www.tomlooman.com/ue4-gameplay-
 
 All tasks are evaluated every few seconds in the AIController and the highest scoring task is selected and executed. Only if the running task can be cancelled and aren't already running that task. A Task can start and complete in a single frame or run for however long it needs (eg. a MoveTo task will keep running until the destination is reached)
 
-<figure>
-
 ![](/assets/images/ue4_utilityai_basicgraph.jpg)
-
-<figcaption>
-
-Earlier implementation prototype showing the task selection part of the concept. (later prototype looks slightly different to better handle inheritance and AI variations, but core principles remain)
-
-</figcaption>
-
-</figure>
+*Earlier implementation prototype showing the task selection part of the concept. (later prototype looks slightly different to better handle inheritance and AI variations, but core principles remain)*
 
 Scoring can be quite simple. In the example below we give the task a score of 0.5 if the TargetActor is set. Otherwise it's zero meaning we don't want the AI to consider this Task. The talks of Dave Mark go more in detail on implementing more complex scoring functions.
 
-<figure>
-
 ![](/assets/images/ue4_utilityai_scoreexample.jpg)
-
-<figcaption>
-
-Example of a basic 'scoring function' in Utility AI
-
-</figcaption>
-
-</figure>
+*Example of a basic 'scoring function' in Utility AI*
 
 ## Other Uses for Utility Scoring
 
 The core concept of utility scoring can be used for other features too, for example to determine the 'best' object for the character to look at with its head (see video below). We've also successfully used this as an alternative to Unreal's Environment Query System where queries score a collection of actors or locations based on unique scoring functions to select best move-to location, spawn area, etc.
 
-https://youtu.be/WKS2RyR90V8
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WKS2RyR90V8?si=nSswWuxNcG9eUKBG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## What's Next?
 

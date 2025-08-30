@@ -1,6 +1,7 @@
 ---
 title: "Custom Depth in Unreal Engine"
 date: 2014-09-14
+last_modified_at: 30-08-2025
 categories: 
   - "materials"
   - "rendering"
@@ -16,7 +17,7 @@ coverImage: "ue4_customdepth_featured.png"
 
 Unreal Engine 4 introduced a new depth buffer along with its PBR rendering system. It's called "Custom Depth" and can be used for effects like the selection outline that is built-in in the Editor, rendering of occluded meshes, or custom culling of transparency. I will discuss some of the basics of using this buffer in the material editor and explain some of the features I used it for in my own projects.
 
-When using Custom Depth it's important to read through the _Issues & Limitations_ at the bottom of the page to prevent hours of headache and unnecessary debugging.
+When using Custom Depth it's important to read through the _Issues & Limitations_ at the bottom of the page to prevent unnecessary debugging.
 
 [![ue4_coloredoutlines01_small](/assets/images/ue4_coloredoutlines01_small.jpg)](https://www.tomlooman.com/multi-color-outline-post-process-in-unreal-engine-4/)
 
@@ -24,23 +25,14 @@ When using Custom Depth it's important to read through the _Issues & Limitations
 
 For those who have never used this feature before, you can enable Custom Depth for both Static and Skeletal meshes under the Rendering category named "Render Custom Depth" in the Details Panel.
 
-[![ue4_customdepth_properties.](/assets/images/ue4_customdepth_properties..png)]()
+![ue4_customdepth_properties.](/assets/images/ue4_customdepth_properties..png)
 
 To view the render output for this particular buffer go to **Buffer Visualization** in the viewport options of the Editor Viewport. Note that objects close to the camera are near-black and may be difficult to see!
 
-[![ue4_customdepth_visualisationdropdown](/assets/images/ue4_customdepth_visualisationdropdown-1024x615.jpg)]()
-
-<figure>
+![custom depth visualization](/assets/images/ue4_customdepth_visualisationdropdown.jpg)
 
 ![](/assets/images/ue4_multicoloredoutlines_depth.jpg)
-
-<figcaption>
-
-Custom Depth Visualizer in the Unreal Editor
-
-</figcaption>
-
-</figure>
+*Custom Depth Visualizer in the Unreal Editor*
 
 ## Rendering Object Outlines
 
@@ -79,7 +71,7 @@ When using transparency on models like characters that have inner triangles (eye
 
 By rendering our character into the Custom Depth buffer we can cull any pixels that are behind the outer shell of the mesh. A slight depth offset should be added when comparing the depth of Scene and Custom to prevent too many pixels to be culled including the outer shell. The material setup for this is quite simple:
 
-[![materialnodes_depthculling](/assets/images/materialnodes_depthculling-1024x743.jpg)]()
+![materialnodes_depthculling](/assets/images/materialnodes_depthculling-1024x743.jpg)
 
 [Material Nodes]() - **Copy this URL content and you can directly paste the above nodes into your own material. ([Project Source is available on GitHub](https://github.com/tomlooman/ue4-tutorials))**
 
@@ -93,7 +85,7 @@ For our game Switch, we used this culling technique on a stealth effect giving 
 
 It's important to know that if multiple materials use this technique that only the object closest to the camera is culled correctly. In this image, you can see the errors can would occur if you have multiple meshes overlapping. This should be taken into consideration when considering this technique - it may never be an issue if you use this effect sparingly or in isolated scenarios.
 
-[![showingoverlappingissue](/assets/images/showingoverlappingissue.jpg)]()
+![showing overlapping issue](/assets/images/showingoverlappingissue.jpg)
 
 This issue can possibly be solved by adding a max depth delta when culling. I have had no need to dive into this further but may come back to this in the future when it starts to cause practical issues.
 
@@ -106,13 +98,10 @@ As previously mentioned, for our game _Switch_ we used Custom Depth for a number
 ## Issues & Limitations
 
 - For translucent materials, you need to enable "Allow Custom Depth Writes" in your material.
-
-- Because the buffer is filled with all objects using Custom Depth it will not work when having multiple overlapped meshes (one behind the other) depending on how you're using the depth value - a transparent mesh might be entirely culled if you use custom depth to cull inner triangles. A possible workaround is to add a maximum depth difference when looking for inner triangles to reduce the errors.
+- Because the buffer is filled with all objects using Custom Depth it will not work when having multiple overlapped meshes (one behind the other) depending on how you're using the depth value. A transparent mesh might be entirely culled if you use custom depth to cull inner triangles. A possible workaround is to add a maximum depth difference when looking for inner triangles to reduce the errors.
 
 ## References
 
 - [Outlines Materials Pack](http://courses.tomlooman.com/p/object-outline-materials-unreal-engine)
-
 - [Multi-color Outline Effect](https://www.tomlooman.com/multi-color-outline-post-process-in-unreal-engine-4/)
-
 - [Rendering Soft Outlines in UE4](https://www.tomlooman.com/soft-outlines-in-ue4/)
