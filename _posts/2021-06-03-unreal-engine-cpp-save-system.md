@@ -391,7 +391,7 @@ void ASGameModeBase::InitGame(const FString& MapName, const FString& Options, FS
 }
 ```
 
-Now while loading a level you should pass in _**?savegame=MySaveFile**_ in the options. "savegame" as an option is made up, you can type whatever as your option, just be sure to parse that same 'option' in C++.
+Now while loading a level you should pass in `?savegame=MySaveFile` in the options. "savegame" as an option is made up, you can type whatever as your option, just be sure to parse that same 'option' in C++.
 
 ![](/assets/images/ue_parsinggamemodeoptions.jpg)
 

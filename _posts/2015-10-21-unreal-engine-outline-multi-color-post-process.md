@@ -26,25 +26,24 @@ With some of the recent changes to Unreal Engine 4, rendering multi-color outlin
 
 The original outline material I made last year was based on Custom Depth, before Custom Stencil was available. This meant there was no way to determine the mesh type after it was drawn into the buffer as single channel depth value. More info on the effect and other uses for Custom Depth are available in my of [my earlier posts](https://www.tomlooman.com/the-many-uses-of-custom-depth-in-unreal-4/). The original effect uses fewer instructions (97 vs. 144 of the new material) so if you don't require multiple colors in your game you can consider sticking to the old effect.
 
-The new effect is still using Custom Depth to determine the (optional) occlusion which adds the faint overlayed color adjusted by tweaking the _FillAlpha_ parameter in the post process. This occlusion can be turned off in the material by unchecking _FillOcclusion_ in the material instance.
+The new effect is still using Custom Depth to determine the (optional) occlusion which adds the faint overlay color adjusted by tweaking the _FillAlpha_ parameter in the post process. This occlusion can be turned off in the material by unchecking _FillOcclusion_ in the material instance.
 
 ![](/assets/images/ue4_coloredoutlines02.jpg)
-
-Above: the Custom Depth visualizer.
+*The Custom Depth visualizer.*
 
 ## Setup Instructions
 
-To enable the outline you need to place a **Post Process Volume**. Make sure you **set it to Unbound** so it's available regardless whether camera is inside the volume or not. With the post process volume selected, go to **Settings > Blendables** and add the PPI\_OutlineColored as the first entry.
+To enable the outline you need to place a **Post Process Volume**. Make sure you **set it to Unbound** so it's available regardless whether camera is inside the volume or not. With the post process volume selected, go to **Settings \> Blendables** and add the PPI\_OutlineColored as the first entry.
 
 ## Enabling Custom Stencil
 
-Custom Stencil is disabled by default, to enable go to _**Window > Project Settings > Rendering > Post Process > Custom Depth-stencil Pass**_ and set it to **Enabled with Stencil**.
+Custom Stencil is disabled by default, to enable go to _**Window \> Project Settings \> Rendering \> Post Process \> Custom Depth-stencil Pass**_ and set it to **Enabled with Stencil**.
 
 Some of the meshes are not visible in the Custom Stencil visualizer in this example, their Stencil value is set to 0 (default), excluding them from this buffer.
 
 ![](/assets/images/ue4_coloredoutlines03.jpg)
 
-To enable this visualizer go to your viewport, look for _Lit > Buffer Visualizer > Custom Stencil_.
+To enable this visualizer go to your viewport, look for _Lit \> Buffer Visualizer \> Custom Stencil_.
 
 You can enable Custom Depth and change the Stencil index through the editor menu of a mesh under the Rendering category.
 
