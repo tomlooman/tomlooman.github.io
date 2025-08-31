@@ -17,7 +17,7 @@ coverImage: "ue4_compileshaders-1.jpg"
 
 ![](/assets/images/ue4_compileshaders-1.jpg)
 
-Unreal Engine **Project Settings** allow a major reduction (up to 50%) of shader permutations affecting shader compile times, package size, and load times. You can find the options under the **Engine >** **Rendering > Shader Permutation Reduction** Category. Which settings you can disable will depend on your project’s rendering requirements.
+Unreal Engine **Project Settings** allow a major reduction (up to 50%) of shader permutations affecting shader compile times, package size, and load times. You can find the options under the **Engine \> Rendering \> Shader Permutation Reduction** Category. Which settings you can disable will depend on your project’s rendering requirements.
 
 ![](/assets/images/ue5_shaderpermutations.jpg)
 
@@ -32,6 +32,6 @@ When your project is missing required shader permutations by the level it will t
 
 These options are enabled by default, especially stylized games that don't rely on PBR/realistic lighting may benefit. But many if not most projects may find that they can delete certain settings such as _LowQualityLightmaps_ which are targeting the Mobile renderer (HoloLens and certain other VR games might use the Mobile renderer as well).
 
-Changing any of these settings requires all shaders to be recompiled. This may take a long time depending on your project size. For teams using a shared [Derived Data Cache](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/DerivedDataCache/) I'd recommend looking into the _\-fill_ command line option to have the shaders back in the DDC more easily (without having to load each level.
+Changing any of these settings requires all shaders to be recompiled. This may take a long time depending on your project size. For teams using a shared [Derived Data Cache](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/DerivedDataCache/) I'd recommend looking into the _\-fill_ command line option to have the shaders back in the DDC more easily (without having to load each level).
 
 Another nice effect when turning off these shader permutations is optimized package size and load times. Reducing these permutations will reduce the total size of your materials once cooked.

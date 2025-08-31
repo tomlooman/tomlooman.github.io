@@ -26,7 +26,7 @@ A `FGameplayTag` is essentially an [FName](https://docs.unrealengine.com/en-US/f
 *GameplayTag selection menu for any FGameplayTag of FGameplayTagContainer variable.*
 
 ![](/assets/images/gameplaytags_configsettings.png)
-*Gameplay Tag Manager in _Project Settings > Project > GameplayTags > Manage Gameplay Tags_*
+*Gameplay Tag Manager in _Project Settings \> Project \> GameplayTags \> Manage Gameplay Tags_*
 
 Another powerful feature is the hierarchy to find exact tags or match based on their parent. This lets you create a tree of tags from broad to very narrow. some examples:
 
@@ -141,7 +141,7 @@ My game has a large number of "Items" which isn't just restricted to what you co
 
 ## Networking (Replication)
 
-GameplayTags can be replicated more efficiently by Unreal than `FName`. There are some options available in _Project Settings > GameplayTags_. 'Fast Replication' is able to replicate tags by Index instead of the full Name, for this the tag list must be identical between client and server.
+GameplayTags can be replicated more efficiently by Unreal than `FName`. There are some options available in _Project Settings \> GameplayTags_. 'Fast Replication' is able to replicate tags by Index instead of the full Name, for this the tag list must be identical between client and server.
 
 ![](/assets/images/ue_gameplaytags_tagreplication.jpg)
 

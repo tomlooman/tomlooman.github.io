@@ -66,7 +66,7 @@ The overall biggest highlights of this release are continued improvements to Unr
 
 ### **Insights Asset Memory Profiling (Experimental)**
 
-![](images/insights_llm.png)
+![](/assets/images/insights_llm.png)
 
 [](https://dev.epicgames.com/community/api/documentation/image/4945efed-91a2-4991-8d56-b0486dc1c947?resizing_type=fit)In Unreal Engine 5.6, Insight Profiling introduces a new (experimental) Low Level Memory (LLM) tracing of assets within your projects. Launch your client with the appropriate arguments to enable asset memory tracing on your game client. The functionality includes:
 
@@ -78,7 +78,7 @@ The overall biggest highlights of this release are continued improvements to Unr
 
 ## **GPU Profiler 2.0**
 
-![](images/ue56_insightsgpu-1.jpg)
+![](/assets/images/ue56_insightsgpu-1.jpg)
 
 [](https://dev.epicgames.com/community/api/documentation/image/e1507154-55d5-42b4-a6a2-9909970df61d)Unreal Engine 5.6 introduces a re-architected Insights GPU profiler.
 
@@ -94,9 +94,9 @@ Within Unreal Insights you’ll find the biggest improvements as you now see t**
 
 I’ve included examples of the new stat GPU and log output from ProfileGPU console command.
 
-![](images/ue56_statgpu.jpg)
+![](/assets/images/ue56_statgpu.jpg)
 
-![](images/ue56_profilegpulog-1.jpg)
+![](/assets/images/ue56_profilegpulog-1.jpg)
 
 ## **Renderer Parallelization**
 
@@ -344,7 +344,7 @@ Mover 2.0 has other performance improvements in this release that I have omitted
 
 - Improvements to the performance and thread safety of the `tick.AllowBatchedTicks` system first added in 5.5.
     - _This system is intended not to batch the same tick functions, but instead batch tick functions inside single TaskGraph tasks to reduce the overhead of that system instead._
-- Change ticking to use ProcessUntilTasksComplete to periodically call an update function while waiting for tasks on other threads. Added tick.IdleTaskWorkMS cvar to control this, if > 0 the game thread will spend that many milliseconds trying to process other work (like worker thread tasks) when the game thread is idle
+- Change ticking to use ProcessUntilTasksComplete to periodically call an update function while waiting for tasks on other threads. Added tick.IdleTaskWorkMS cvar to control this, if \> 0 the game thread will spend that many milliseconds trying to process other work (like worker thread tasks) when the game thread is idle
 - Add an **optional deferred component move handler** (`s.GroupedComponentMovement.Enable`) on the UWorld to allow scene components to request movement to be propagated later on the frame as a larger group of updates to help improve performance.
     - This sound incredibly useful to automatically defer FScopedMovementUpdate calls to be batched together later in the frame.
     - Character & Projectile Movement Components do not use this grouped update behavior at this time as it requires specifying the scoped movement with EScopedUpdate::DeferredGroupUpdates instead of the current EScopedUpdate::DeferredUpdates

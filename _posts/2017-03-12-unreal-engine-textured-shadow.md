@@ -7,6 +7,8 @@ categories:
 tags: 
   - "experimental"
 coverImage: "disney_shadowman_ue4_small.jpg"
+redirect_from:
+  - /unreal-engine-shadows-outline/
 ---
 
 This weekend I stumbled upon a [reddit post](https://www.reddit.com/r/movies/comments/5yvf23/in_disneys_the_princess_and_the_frog_the_shadow/) about Dr. Facilier's interesting shadow in The Princess and the Frog and it inspired me to experiment with Forward shading in Unreal Engine 4 to re-create a similar effect in real-time shading. OP pointed out that The Shadow Man's shadow changes the wallpaper his shadow is cast on. A subtle but quite interesting effect!

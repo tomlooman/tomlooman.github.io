@@ -186,7 +186,7 @@ In the case of a Treasure Chest, you can _Preload_ all the things it would spawn
 
 ## Asset Manager Configuration
 
-After configuring your Asset Manager it will automatically discover new PrimaryAssets when added. You setup this configuration in the _Project Settings > Asset Manager_.
+After configuring your Asset Manager it will automatically discover new PrimaryAssets when added. You setup this configuration in the _Project Settings \> Asset Manager_.
 
 ![](/assets/images/ue4_projectsettings_assetmanager.jpg)
 *Example Configuration from WARPSQUAD.*

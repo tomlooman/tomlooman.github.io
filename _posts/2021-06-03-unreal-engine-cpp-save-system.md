@@ -30,7 +30,7 @@ We'll be creating a save system similar to _Dark Souls_ with a bonfire interacti
 
 **The entire project is available through [GitHub](https://github.com/tomlooman/ActionRoguelike)!** I recommend you download that and browse through it. It includes additional details such as the required #includes for each class used.
 
-This project was created for **[Stanford University Computer Science classes (CS193U)](https://www.tomlooman.com/stanford-cs193u/)** that I taught in late 2020. It is the reference project used in my **Unreal Engine C++ online course!**
+This project was created for **[Stanford University Computer Science classes (CS193U)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)** that I taught in late 2020. It is the reference project used in my **Unreal Engine C++ online course!**
 
 ## SaveGame System Design
 

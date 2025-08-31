@@ -13,7 +13,7 @@ tags:
 coverImage: "actionroguelike_ue4_combatsample-copy.jpg"
 ---
 
-For the [Stanford University Fall 2020 Curriculum](https://www.tomlooman.com/stanford-cs193u/), I built a small game project using mainly C++ mixed with some Blueprint in Unreal Engine. For those interested, the entire Computer Science course (CS193U) was provided through Zoom lectures and has been recorded. I'm working on getting this published and meanwhile, this project is already [open-source through GitHub](https://github.com/tomlooman/ActionRoguelike) to be taken apart by anyone!
+For the [Stanford University Fall 2020 Curriculum](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), I built a small game project using mainly C++ mixed with some Blueprint in Unreal Engine. For those interested, the entire Computer Science course (CS193U) was provided through Zoom lectures and has been recorded. I'm working on getting this published and meanwhile, this project is already [open-source through GitHub](https://github.com/tomlooman/ActionRoguelike) to be taken apart by anyone!
 
 ![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)
 

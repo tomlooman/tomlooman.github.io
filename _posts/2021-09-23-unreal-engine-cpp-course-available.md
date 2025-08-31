@@ -10,6 +10,8 @@ tags:
   - "ue5"
   - "unreal-engine"
 coverImage: "actionroguelike_ue4_combatsample5.jpg"
+redirect_from:
+  - /ue4-course-cpp-out-now
 ---
 
 > Master Unreal Engine C++ Game Development with this university-grade course.
@@ -42,7 +44,7 @@ I’m incredibly excited to finally be launching this course! It’s taken a lon
 - User Interfaces with UMG (using Event-based Principles)
 - Async Asset Loading & Soft References
 
-Check out the **[Course page](https://tomlooman.com/cpp-activedeal)** to get all the details on course contents!
+Check out the **[Course page](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)** to get all the details on course contents!
 
 ![](/assets/images/ue_course_github2_small.jpg)
 *All code is available on GitHub, submitted per lecture for comparison of progress and assignment solutions.*
@@ -52,7 +54,7 @@ While this course is more challenging than my previous work and targets an inter
 ![](/assets/images/ue_course_multiplayer_small.jpg)
 *All game features including our own gameplay framework and AI works in multiplayer.*
 
-**[Course Page for Full Details](https://tomlooman.com/cpp-activedeal)**
+**[Course Page for Full Details](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)**
 
 **As some of you may know, this syllabus was taught at _Stanford University_ last year as class _CS193U_ and I’ve worked hard since then to it compatible for online self-paced learning.** _(the online course is independent of Stanford and is not affiliated with the University)_
 
