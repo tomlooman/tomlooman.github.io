@@ -4,9 +4,6 @@ date: 2014-04-03
 last_modified_at: 30-08-2025
 coverImage: "UnrealEngine_ParentLogoUwoTagTransparentBlack.png"
 layout: single
-sidebar:
-    title: Sample Title
-    nav: sidebar-main
 ---
 
 The goal of this document is to share my internal naming conventions with the community as used by the [Action Roguelike GitHub](https://github.com/tomlooman/ActionRoguelike) project and the [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp) to give everyone something to start out with. Using and getting comfortable with a naming convention is essential before your projects grow beyond thousands of files.

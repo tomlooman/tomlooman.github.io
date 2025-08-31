@@ -15,7 +15,7 @@ main:
 
 
 sidebar-main:
-  - title: "Parent Page A"
-    image: "/assets/images/your-image.jpg"
+  - title: "Unreal C++ Course"
+    image: "/assets/images/Blog_Banner_CPPCompleteGuide_770.jpg"
     image_alt: "image"
     text: "Some text here."
