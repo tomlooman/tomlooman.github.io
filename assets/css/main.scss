@@ -10,6 +10,7 @@ $typeface-heading: "Manrope", "Roboto", "Arial", sans-serif;
 $color-blue: #103D59;
 $color-orange: #ffa04a;
 $color-offwhite: #F2F4FA;
+$doc-font-size: 15px;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "overrides/variables";
@@ -119,6 +120,7 @@ p {
 
 .page__content li {
   font-size: 0.85em;
+  margin-bottom: 0.1em;
 }
 
 .page-meta {
