@@ -35,6 +35,9 @@
     </div>
 
     {% include scripts.html %}
+    {% if jekyll.environment == "production" %}
+      {% include external_new_window.html %}
+    {% endif %}
     <script src="{{ '/assets/js/bundle.js' | relative_url }}"></script>
   </body>
 </html>
