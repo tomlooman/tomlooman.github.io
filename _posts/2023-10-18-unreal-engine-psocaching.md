@@ -297,11 +297,9 @@ Engine/PSOPrecache.cpp
 
 **For UE4 Developers:** Niagara lacks some support for proper PSO coverage. I've been told some users had to backport several commits to improve this PSO handling for UE4.27. For your info and further investigation here are those commits (must be logged in to view):
 
-[https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce](https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce)
-
-[https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c](https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c)
-
-[https://github.com/EpicGames/UnrealEngine/commit/343ba944233d869b11f6df057c5281f9074adf6e](https://github.com/EpicGames/UnrealEngine/commit/343ba944233d869b11f6df057c5281f9074adf6e) (non-niagara Compute PSOs)
+- [https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce](https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce)
+- [https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c](https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c)
+- [https://github.com/EpicGames/UnrealEngine/commit/343ba944233d869b11f6df057c5281f9074adf6e](https://github.com/EpicGames/UnrealEngine/commit/343ba944233d869b11f6df057c5281f9074adf6e) (non-niagara Compute PSOs)
 
 Some further info for those with [UDN access](https://udn.unrealengine.com/s/question/0D54z00007DWBzvCAH/what-is-the-correct-way-to-configure-the-pso-user-cache).
 
