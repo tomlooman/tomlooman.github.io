@@ -297,13 +297,16 @@ Engine/PSOPrecache.cpp
 
 **For UE4 Developers:** Niagara lacks some support for proper PSO coverage. I've been told some users had to backport several commits to improve this PSO handling for UE4.27. For your info and further investigation here are those commits (must be logged in to view):
 
-[https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce](https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce)
-
-[https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c](https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c)
-
-[https://github.com/EpicGames/UnrealEngine/commit/343ba944233d869b11f6df057c5281f9074adf6e](https://github.com/EpicGames/UnrealEngine/commit/343ba944233d869b11f6df057c5281f9074adf6e) (non-niagara Compute PSOs)
+- [https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce](https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce)
+- [https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c](https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c)
+- [https://github.com/EpicGames/UnrealEngine/commit/343ba944233d869b11f6df057c5281f9074adf6e](https://github.com/EpicGames/UnrealEngine/commit/343ba944233d869b11f6df057c5281f9074adf6e) (non-niagara Compute PSOs)
 
 Some further info for those with [UDN access](https://udn.unrealengine.com/s/question/0D54z00007DWBzvCAH/what-is-the-correct-way-to-configure-the-pso-user-cache).
+
+## Important Note for Nvidia GPUs
+As of 2 September 2025 - According to Epic, Nvidia driver update will change the PSO file extension which will break the `-clearPSODriverCache` command which is used for clearing your local cache to properly test PSO coverage. This is fixed in UE 5.6 but any versions prior to this will have this issue.
+
+A possible workaround I could think of is to disable your Shader Cache in Nvidia Control Panel directly or apply Epic's fix on your engine build older than 5.6. The patch is available [here](https://github.com/EpicGames/UnrealEngine/commit/f9338b5a0d9d7275425ad08666351c585a91a154). (requires Epic connected GitHub account to view)
 
 ## Closing
 
