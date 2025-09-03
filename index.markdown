@@ -25,12 +25,12 @@ some text here some text here some text here some text here some text here...
 
 <br />
 
-<div id="pricing"></div>
+<div id="pricing" data-course-id="1"></div>
 
 <br />
 
-<div id="reviews"></div>
+<div id="reviews" data-course-id="1"></div>
 
 <br />
 
-<div id="faq"></div>
+<div id="faq" data-course-id="1"></div>
