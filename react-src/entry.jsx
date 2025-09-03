@@ -41,7 +41,8 @@ if (reviews) {
 
 const pricing = document.getElementById('pricing');
 if (pricing) {
-  createRoot(pricing).render(<Pricing />);
+  const courseId = pricing.getAttribute('data-course-id');
+  createRoot(pricing).render(<Pricing courseId={Number(courseId)} />);
 }
 
 const latestBlogs = document.getElementById('latest-blogs');

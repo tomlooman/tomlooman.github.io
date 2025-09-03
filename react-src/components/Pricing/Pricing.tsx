@@ -2,9 +2,10 @@ import React from "react";
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import style from "./Pricing.module.scss";
 import { Prices } from "./constants/Prices";
 import SignUpButton from "./components/SignUpButton";
+import { Courses } from "../../constants/Courses";
+import style from "./Pricing.module.scss";
 
 enum PriceItemType {
     INDIE_BASIC = "indieBasic",
@@ -12,8 +13,21 @@ enum PriceItemType {
     PRO = "pro",
 }
 
-const Pricing = () => {
+interface PricingProps {
+    courseId: Courses;
+}
+
+const Pricing: React.FC<PricingProps> = ({ courseId }) => {
     const [selectedIndieType, setSelectedIndieType] = React.useState<PriceItemType>(PriceItemType.INDIE_BASIC);
+
+    const indieOriginalPrice = selectedIndieType === PriceItemType.INDIE_BASIC
+        ? Prices[courseId].INDIE_BASIC : Prices[courseId].INDIE_PAYMENT_PLAN;
+
+    const indieDiscountedPrice = selectedIndieType === PriceItemType.INDIE_BASIC
+        ? Prices[courseId].INDIE_BASIC_DISCOUNTED
+        : Prices[courseId].INDIE_PAYMENT_PLAN_DISCOUNTED;
+
+    const indiePaymentPlanPrice = Prices[courseId].INDIE_PAYMENT_PLAN_DISCOUNTED ? Prices[courseId].INDIE_PAYMENT_PLAN_DISCOUNTED : Prices[courseId].INDIE_PAYMENT_PLAN;
 
     return (
         <div className={style.wrapper}>
@@ -36,8 +50,8 @@ const Pricing = () => {
                     <div className={style.priceDescription}>
                         <p>Single User License. For individuals, educators and studios with less than $1M in yearly revenue/funding.</p>
                         <div>
-                            <h1>{`$${selectedIndieType === PriceItemType.INDIE_BASIC ? Prices.INDIE_BASIC : Prices.INDIE_PAYMENT_PLAN}`}</h1>
-                            <div className={style.priceAdditionalInfo}>{selectedIndieType === PriceItemType.INDIE_PAYMENT_PLAN && `(5 payments of $${Prices.INDIE_PAYMENT_PLAN / 5}/month)`}</div>
+                            <h1>{`$${indieDiscountedPrice || indieOriginalPrice}`} {!!indieDiscountedPrice && <span>{`$${indieOriginalPrice}`}</span>}</h1>
+                            <div className={style.priceAdditionalInfo}>{selectedIndieType === PriceItemType.INDIE_PAYMENT_PLAN && `(5 payments of $${indiePaymentPlanPrice / 5}/month)`}</div>
                         </div>
                     </div>
                     <SignUpButton />
@@ -49,7 +63,7 @@ const Pricing = () => {
                     <div className={style.priceDescription}>
                         <p>Single User License. For users within studios with over $1M in yearly revenue/funding.</p>
                         <div>
-                            <h1>{`$${Prices.PRO}`}</h1>
+                            <h1>{`$${Prices[courseId].PRO_DISCOUNTED || Prices[courseId].PRO}`} {!!Prices[courseId].PRO_DISCOUNTED && <span>{`$${Prices[courseId].PRO}`}</span>}</h1>
                             <div className={style.priceAdditionalInfo} />
                         </div>
                     </div>

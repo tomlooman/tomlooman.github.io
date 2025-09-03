@@ -56,6 +56,13 @@
 
                 > div > h1 {
                     margin: 1rem 0 0;
+
+                    > span {
+                        font-size: 1rem;
+                        text-decoration: line-through;
+                        margin-left: .5rem;
+                        font-weight: normal;
+                    }
                 }
             }
         }
