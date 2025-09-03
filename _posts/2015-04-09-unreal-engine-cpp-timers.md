@@ -1,6 +1,7 @@
 ---
 title: "Using C++ Timers in Unreal Engine"
 date: 2015-04-09
+last_modified_at: 03-09-2025
 categories: 
   - "cpp"
   - "gameplay"
@@ -9,52 +10,49 @@ coverImage: "Thumb_CPPTimers.jpg"
 
 Timers are incredibly helpful for gameplay programming in Unreal Engine. However, the syntax can be a little tricky if you're unfamiliar with C++. This blog post will cover all the essential features and syntax for using C++ timers effectively in your game.
 
-For a code example of timers, check out my [C++ Action Roguelike](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Private/SAction_ProjectileAttack.cpp) (delegate with parameters). Timers as part of game performance are covered in my game optimization course. More on that later.
+For code examples of timers, check out my [C++ Action Roguelike](https://github.com/tomlooman/ActionRoguelike) - I will use this project source in a variety of examples below. Timers as part of game performance are covered in my game optimization course. More on that later.
 
 ## Set Timer
 
 You set timers through the global timer manager which is available through `GetWorld()->GetTimerManager()` or the shorthand available in any Actor, `GetWorldTimerManager()` which returns the same timer manager. There are a couple of overloads (function variations) available to pass the function to execute, the interval between triggers (if looped), a flag to enable looping, and the optional first delay. You can also set a timer to run the next frame by calling `SetTimerForNextTick()`.
 
-Code sample from my [Survival Game](https://github.com/tomlooman/EpicSurvivalGame/blob/master/SurvivalGame/Source/SurvivalGame/Private/Items/SBombActor.cpp) _BombActor_ where we set a timer for a delayed explosion:
+Setting a timer can be pretty straightforward. Here is an example from an [Explosive Barrel](https://github.com/tomlooman/ActionRoguelike/blob/487fc2d6cae913f488deae544b1f49af65b5decf/Source/ActionRoguelike/World/RogueExplosiveBarrel.cpp#L73) class to delay the explosion after getting hit by a projectile:
 
 ```cpp
 /* Activate the fuze to explode the bomb after several seconds */
-void ASBombActor::OnUsed(APawn* InstigatorPawn)
+void ARogueExplosiveBarrel::OnHealthAttributeChanged(...)
 {
-  GetWorld()->GetTimerManager().SetTimer(
-    FuzeTimerHandle, // handle to cancel timer at a later time
-    this, // the owning object
-    &ASBombActor::OnExplode, // function to call on elapsed
-    MaxFuzeTime, // float delay until elapsed
-    false); // looping?
+		GetWorldTimerManager().SetTimer(
+      DelayedExplosionHandle, // timer handle in case we want to pause or cancel
+      this, // owning object, we clear the timer when this object is destroyed
+      &ThisClass::Explode, // function to call when time elapsed
+      ExplosionDelayTime // looping?
+      );
 }
 ```
 
-The `FTimerHandle` is in the header file. Although you are not required to keep a reference to the handle, it's recommended to put this in your header to properly clear or pause your timer instance.
+In the example, the `FTimerHandle` is defined in the header file. You are not required to keep a reference to the handle, but keep a reference to it when you need to pause or cancel the timer.
 
 ```cpp
 /* Handle to manage the timer */
-FTimerHandle FuzeTimerHandle;
+FTimerHandle DelayedExplosionHandle;
 ```
 
-The function `OnExplode()` has no parameters in this example. To pass along parameters on timer elapsed, there is a different way to bind the function...
+The function `Explode()` has no parameters in this example. To pass along parameters on timer elapsed, there is a different way to bind the function...
 
 ## Using SetTimer() on a Function with Parameters
 
-It's possible to pass parameters into timer functions (delegates). The example is from [Action Roguelike's Projectile Attack](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Private/SAction_ProjectileAttack.cpp). In this case, we bind the function by name instead.
+It's possible to pass parameters into timer functions (delegates). The example is from [Action Roguelike's Projectile Attack](https://github.com/tomlooman/ActionRoguelike/blob/487fc2d6cae913f488deae544b1f49af65b5decf/Source/ActionRoguelike/ActionSystem/RogueAction_ProjectileAttack.cpp#L37). In this case, we bind function through a FTimerDelegate and pass the delegate into the `SetTimer` function.
 
 ```cpp
 FTimerHandle TimerHandle_AttackDelay;
-FTimerDelegate Delegate; // Delegate to bind function with parameters
-Delegate.BindUFunction(this, "AttackDelay_Elapsed", Character); // Character is the parameter we wish to pass with the function.
+FTimerDelegate Delegate;
+Delegate.BindUObject(this, &ThisClass::AttackDelay_Elapsed, Character); // 'Character' is the parameter to pass in, this will be available in the AttackDelay_Elapsed function (see below)
 
 GetWorld()->GetTimerManager().SetTimer(TimerHandle_AttackDelay, Delegate, AttackAnimDelay, false);
 ```
 
-To bind functions _with parameters_ to a timer, it must be specified in the header with `UFUNCTION()`. You can remember this since the `FTimerDelegate` from the above example calls a function literally named `.BindUFunction()`.
-
 ```cpp
-UFUNCTION()
 void AttackDelay_Elapsed(ACharacter* InstigatorCharacter);
 ```
 
@@ -123,4 +121,4 @@ Check out the API for [FTimerManager](https://docs.unrealengine.com/latest/INT/A
 
 ## References
 
-- [Gameplay Timers (Official Documentation)](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Timers/)
+- [Gameplay Timers (Unreal Documentation)](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-timers-in-unreal-engine)
