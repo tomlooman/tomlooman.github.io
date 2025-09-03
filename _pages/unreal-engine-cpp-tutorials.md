@@ -38,3 +38,29 @@ This game project is what you'll build in my **Unreal Engine C++ Course**. If yo
 For many more C++ content available by others in the community, check out my [**Unreal Resource Bookmarks**](https://www.tomlooman.com/unreal-engine-resources/) page containing a bunch more C++ related content.
 
 ## Latest C++ Content
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% assign latest_posts = site.posts | where: "categories", "cpp" | slice: 0, 4 %}
+
+{% capture post_data_json %}
+[
+  {% for post in latest_posts %}
+    {
+      "title": "{{ post.title | escape }}",
+      "url": "{{ post.url | relative_url }}",
+      "coverImage": "{{ post.coverImage | relative_url | remove_first: '/' }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+{% endcapture %}
+
+<div id="latest-blogs" data-posts='{{ post_data_json | strip_newlines | escape }}'></div>
+
+{% include paginator.html %}
+
+<div id="see-all-posts-button" data-text="See all posts" data-url="/blog"></div>

@@ -1,5 +1,5 @@
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% if post.coverImage %}
+  {% capture teaser %}{{ post.coverImage }}{% endcapture %}
 {% else %}
   {% assign teaser = site.teaser %}
 {% endif %}
@@ -14,7 +14,7 @@
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
-        <img src="{{ teaser | relative_url }}" alt="">
+        <img src="/assets/images/{{ teaser | relative_url }}" alt="">
       </div>
     {% endif %}
     <h2 class="archive__item-title no_toc" itemprop="headline">

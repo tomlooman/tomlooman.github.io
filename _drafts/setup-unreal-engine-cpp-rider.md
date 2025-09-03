@@ -7,7 +7,7 @@ categories:
   - "unreal-engine"
 tags:
     - "rider"
-coverImage: ""
+coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 excerpt: ""
 ---
 

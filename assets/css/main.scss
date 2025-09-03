@@ -136,6 +136,10 @@ p {
   text-align: center;
 }
 
+.grid__item .archive__item-teaser {
+  max-height: 100%; /* allow full height thumbnails */
+}
+
 .toc {
   font-family: $typeface;
 }

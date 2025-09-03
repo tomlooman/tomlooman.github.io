@@ -2,7 +2,7 @@
 title: "Unreal Engine Naming Convention Guide"
 date: 2014-04-03
 last_modified_at: 30-08-2025
-coverImage: "UnrealEngine_ParentLogoUwoTagTransparentBlack.png"
+coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 layout: single
 ---
 
@@ -25,7 +25,7 @@ Splash Damage has its own extension of the Epic C++ Coding Standard on [GitHub](
     - This primarily applies to simple structures such as Meshes, Materials and Textures
     - Folder names such as Meshes, Textures are redundant and require more navigation.
 - Asset type determines prefix.
-    - Blueprint is BP_assetname
+    - Blueprint is BP_AssetName
 - Certain types (eg. textures) use a suffix to specify sub-types.
     - T_Grass_N for normal maps
 - Use underscores to split type from identifier and numeric values.
