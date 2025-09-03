@@ -36,7 +36,8 @@ if (coursesMainIntroduction) {
 
 const reviews = document.getElementById('reviews');
 if (reviews) {
-  createRoot(reviews).render(<Reviews />);
+  const courseId = reviews.getAttribute('data-course-id');
+  createRoot(reviews).render(<Reviews courseId={Number(courseId)} />);
 }
 
 const pricing = document.getElementById('pricing');
@@ -61,7 +62,8 @@ if (seeAllPostsButton) {
 
 const faq = document.getElementById('faq');
 if (faq) {
-  createRoot(faq).render(<FAQ />);
+  const courseId = faq.getAttribute('data-course-id');
+  createRoot(faq).render(<FAQ courseId={Number(courseId)} />);
 }
 
 const footer = document.getElementById('footer');
