@@ -116,12 +116,12 @@ First parameter is a custom name as it shows up in Unreal Insights, the second i
 The example below has two examples, one tracing the entire function while the second variation is placed within curly braces which limits the trace to within those lines of code. The `_FSTRING` variant lets us specify runtime names, but does add additional overhead so it should be used with consideration.
 
 ```cpp
-bool USActionComponent::StartActionByName(AActor* Instigator, FName ActionName)
+bool URogueActionComponent::StartActionByName(AActor* Instigator, FName ActionName)
 {
   // Trace the entire function below
   SCOPED_NAMED_EVENT(StartActionName, FColor::Green);
 
-  for (USAction* Action : Actions)
+  for (URogueAction* Action : Actions)
   {
     if (Action && Action->ActionName == ActionName)
     {

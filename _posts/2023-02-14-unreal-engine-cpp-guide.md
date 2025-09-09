@@ -188,7 +188,7 @@ static void PlaySoundAtLocation(const UObject* WorldContextObject, USoundBase* S
 You will also see a double colon when declaring the body of a function itself (regardless of it being `static` or not)
 
 ```cpp
-void ASAICharacter::Stagger(UAnimMontage* AnimMontage, FName SectionName /* = NAME_None*/)
+void ARogueAICharacter::Stagger(UAnimMontage* AnimMontage, FName SectionName /* = NAME_None*/)
 {
   // ... code in the function (this is in the .cpp file)
 }
@@ -264,7 +264,7 @@ Another common use case is to pass a function into timers. The third parameter i
 
 ```cpp
 // Activate the fuze to explode the bomb after several seconds
-GetWorldTimerManager().SetTimer(FuzeTimerHandle, this, &ASBombActor::Explode, MaxFuzeTime, false);
+GetWorldTimerManager().SetTimer(FuzeTimerHandle, this, &ARogueBombActor::Explode, MaxFuzeTime, false);
 ```
 
 ## Public, Protected, Private
@@ -391,7 +391,7 @@ class ACTIONROGUELIKE_API ARogueItemChest : public AActor, public IRogueGameplay
 In order to check whether a specific class implements (inherits from) the interface you can use `Implements<T>()`. For this, you use the "U" prefixed class name.
 
 ```cpp
-if (MyActor->Implements<USGameplayInterface>())
+if (MyActor->Implements<URogueGameplayInterface>())
 {
 }
 ```
@@ -442,7 +442,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(<typename>, <paramtype1>, <paramvar
 Here is one example of a delegate with four parameters to notify code about a change to an attribute. The type and variable names are split by commas, unlike normal functions.
 
 ```cpp
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnAttributeChanged, AActor, InstigatorActor, USAttributeComponent, OwningComp, float, NewValue, float, Delta);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FOnAttributeChanged, AActor, InstigatorActor, URogueAttributeComponent, OwningComp, float, NewValue, float, Delta);
 ```
 
 You now add the delegate in your class header, which may look as follows:
@@ -470,14 +470,14 @@ You should \*never\* bind your delegates in the constructor and choose either `A
 
 Since delegates are weakly referenced you often don't need to unbind delegates when destroying objects/actors unless you want to manually stop listening/reacting to specific events.
 
-You can bind to a delegate calling `.AddDynamic()`. The first parameter takes a `UObject` for which we can pass '`this`'. The second parameter types the address of the function (`YourClass::YourFunction`) which is why we pass the function with the ampersand (`&`) symbol which is the address operator.
+You can bind to a delegate calling `.AddDynamic()`. The first parameter takes a `UObject` for which we can pass `this`. The second parameter types the address of the function (`YourClass::YourFunction`) which is why we pass the function with the ampersand (`&`) symbol which is the address operator.
 
 ```cpp
-void ASAICharacter::PostInitializeComponents()
+void ARogueAICharacter::PostInitializeComponents()
 {
   Super::PostInitializeComponents();
 
-  AttributeComp->OnHealthChanged.AddDynamic(this, &ASAICharacter::OnHealthChanged);
+  AttributeComp->OnHealthChanged.AddDynamic(this, &ARogueAICharacter::OnHealthChanged);
 }
 ```
 
@@ -485,7 +485,7 @@ The above OnHealthChanged function is declared with `UFUNCTION()` in the header.
 
 ```cpp
 UFUNCTION()
-void OnHealthChanged(AActor* InstigatorActor, USAttributeComponent* OwningComp, float NewHealth, float Delta);
+void OnHealthChanged(AActor* InstigatorActor, URogueAttributeComponent* OwningComp, float NewHealth, float Delta);
 ```
 
 #### Binding in Blueprint
@@ -525,7 +525,7 @@ if (UAssetManager* Manager = UAssetManager::GetIfValid())
   TArray<FName> Bundles;
 
   // A very different syntax, we create a delegate via CreateUObject and pass in the parameters we want to use once loading has completed several frames or seconds later. (In this case the MonsterId is the asset we are loading via LoadPrimaryAsset and Locations[0] is the desired spawn location once loaded)
-  FStreamableDelegate Delegate = FStreamableDelegate::CreateUObject(this, &ASGameModeBase::OnMonsterLoaded, MonsterId, Locations[0]);
+  FStreamableDelegate Delegate = FStreamableDelegate::CreateUObject(this, &ARogueGameModeBase::OnMonsterLoaded, MonsterId, Locations[0]);
 
   // Requests the load in Asset Manager on the MonsterId (first param) and passes in the Delegate we just created
   Manager->LoadPrimaryAsset(MonsterId, Bundles, Delegate);
@@ -535,7 +535,7 @@ if (UAssetManager* Manager = UAssetManager::GetIfValid())
 In the example above we create a new Delegate variable and fill it with variables, in this case `MonsterId` and the first vector location from an array (`Locations[0]`). Once the LoadPrimaryAsset function from Unreal has finished, it will call the delegate `OnMonsterLoaded` with the provided parameters we passed into the CreateUObject function previously.
 
 ```cpp
-void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
+void ARogueGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
 ```
 
 Another example of using delegates/callbacks is with Timers. We don't need to specify our own delegate first and can directly pass in the function address so long as it has no parameters. It's possible to use timers with parameters as well. To learn more you can check out my blog post on [Using C++ Timers](https://www.tomlooman.com/unreal-engine-cpp-timers/).
@@ -677,7 +677,7 @@ TSoftObjectPtr<UTexture2D> Icon;
 
 // Mark 'replicated' to be synchronized between client and server in multiplayer.
 UPROPERTY(Replicated)
-USActionComponent* ActionComp;
+URogueActionComponent* ActionComp;
 ```
 
 ## GENERATED\_BODY()

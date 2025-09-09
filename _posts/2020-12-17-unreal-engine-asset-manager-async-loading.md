@@ -33,11 +33,11 @@ virtual FPrimaryAssetId GetPrimaryAssetId() const;
 
 An example of a _PrimaryAsset_ is an AI configuration asset that holds info about a specific monster along with which Actor to spawn for this AI, some attributes, abilities, and perhaps some UI stuff like name and icon.
 
-Here is an example of a PrimaryAsset with [MonsterData](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SMonsterData.h) from my ActionRoguelike on GitHub. The use-case is a basic configuration for an AI to be spawned into the world. The actions are its abilities to be granted.
+Here is an example of a PrimaryAsset with [MonsterData](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueMonsterData.h) from my ActionRoguelike on GitHub. The use-case is a basic configuration for an AI to be spawned into the world. The actions are its abilities to be granted.
 
 ```cpp
 UCLASS()
-class ACTIONROGUELIKE_API USMonsterData : public UPrimaryDataAsset
+class ACTIONROGUELIKE_API URogueMonsterData : public UPrimaryDataAsset
 {
  GENERATED_BODY()
 public:
@@ -47,7 +47,7 @@ public:
  
  /* Actions/buffs to grant this Monster */
  UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Spawn Info")
- TArray<TSubclassOf<USAction>> Actions;
+ TArray<TSubclassOf<URogueAction>> Actions;
 
  UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "UI")
  UTexture2D* Icon;
@@ -118,7 +118,7 @@ if (UAssetManager* Manager = UAssetManager::GetIfValid())
     FVector SpawnLocation = Locations[0]; 
 
     // Delegate with parameters we need once the asset had been loaded such as the Id we loaded and the location to spawn at. Will call function 'OnMonsterLoaded' once it's complete.
-    FStreamableDelegate Delegate = FStreamableDelegate::CreateUObject(this, &ASGameModeBase::OnMonsterLoaded, MonsterId, SpawnLocation);
+    FStreamableDelegate Delegate = FStreamableDelegate::CreateUObject(this, &ARogueGameModeBase::OnMonsterLoaded, MonsterId, SpawnLocation);
     
     // The actual async load request
     Manager->LoadPrimaryAsset(MonsterId, Bundles, Delegate);
@@ -128,12 +128,12 @@ if (UAssetManager* Manager = UAssetManager::GetIfValid())
 The OnMonsterLoaded Function once load has completed:
 
 ```cpp
-void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
+void ARogueGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
 {
     UAssetManager* Manager = UAssetManager::GetIfValid();
     if (Manager)
     {
-        USMonsterData* MonsterData = Cast<USMonsterData>(Manager->GetPrimaryAssetObject(LoadedId));
+        URogueMonsterData* MonsterData = Cast<URogueMonsterData>(Manager->GetPrimaryAssetObject(LoadedId));
 
         if (MonsterData)
         {
@@ -143,7 +143,7 @@ void ASGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLoca
 }
 ```
 
-[Example taken from open-source Action Roguelike.](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Private/SGameModeBase.cpp)
+[Example taken from open-source Action Roguelike.](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameModeBase.cpp)
 
 ### Blueprint Async Loading Example
 

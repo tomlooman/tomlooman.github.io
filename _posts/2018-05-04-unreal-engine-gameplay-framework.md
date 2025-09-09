@@ -46,7 +46,7 @@ SpawnParams.Owner = GetOwner();
 /* Attempt to assign an instigator (used for damage application) */
 SpawnParams.Instigator = Cast<APawn>(GetOwner());
 
-ASEquippableActor* NewItem = GetWorld()->SpawnActor<ASEquippableActor>(NewItemClass, SpawnTM, SpawnParams);
+AActor* NewItem = GetWorld()->SpawnActor<AActor>(NewItemClass, SpawnTM, SpawnParams);
 ```
 
 There are many ways to get access to Actors, usually you would have a pointer/reference to the specific Actor you are interested in. In the sample above, we can keep the pointer to the equippable actor via the NewItem variable and start manipulating the Actor instance through that.

@@ -82,7 +82,7 @@ The rest of the code is pretty straightforward (and explained in the comments) t
 To know which `#include` to use in C++ for our `FMemoryWriter` and all other classes in this blog, make sure to check out the [source cpp files.](https://github.com/tomlooman/ActionRoguelike/tree/master/Source/ActionRoguelike)
 
 ```cpp
-void ASGameModeBase::WriteSaveGame()
+void ARogueGameModeBase::WriteSaveGame()
 {
         // ... < playerstate saving code ommitted >
 
@@ -95,7 +95,7 @@ void ASGameModeBase::WriteSaveGame()
 		AActor* Actor = *It;
 		// Only interested in our 'gameplay actors', skip actors that are being destroyed
 		// Note: You might instead use a dedicated SavableObject interface for Actors you want to save instead of re-using GameplayInterface
-		if (Actor->IsPendingKill() || !Actor->Implements<USGameplayInterface>())
+		if (Actor->IsPendingKill() || !Actor->Implements<URogueGameplayInterface>())
 		{
 			continue;
 		}
@@ -247,7 +247,7 @@ void ARoguePlayerState::LoadPlayerState_Implementation(URogueSaveGame* SaveObjec
 Unlike loading Actor data which is handled on initial level load, for player states we want to load them in one-by-one as players join the server that might have previously played with us. We can do so during HandleStartingNewPlayer in the GameMode class.
 
 ```cpp
-void ASGameModeBase::HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer)
+void ARogueGameModeBase::HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer)
 {
 	// Calling Before Super:: so we set variables before 'beginplayingstate' is called in PlayerController (which is where we instantiate UI)
 	ARoguePlayerState* PS = NewPlayer->GetPlayerState<ARoguePlayerState>();
@@ -315,7 +315,7 @@ Ideally, you can load your world state once while loading your persistent level.
 To restore our world state we do somewhat of the opposite as before. We load from disk, iterate all actors, and finally use an _FMemoryReader_ to convert each Actor's binary data back into "Unreal" Variables. Somewhat confusingly we still use Serialize() on the Actor, but because we pass in an FMemoryReader instead of an _FMemoryWriter_ the function can be used to pass saved variables back into the Actors.
 
 ```cpp
-void ASGameModeBase::LoadSaveGame()
+void ARogueGameModeBase::LoadSaveGame()
 {
 
 if (UGameplayStatics::DoesSaveGameExist(SlotName, 0))
@@ -334,7 +334,7 @@ if (UGameplayStatics::DoesSaveGameExist(SlotName, 0))
 	{
 		AActor* Actor = *It;
 		// Only interested in our 'gameplay actors'
-		if (!Actor->Implements<USGameplayInterface>())
+		if (!Actor->Implements<URogueGameplayInterface>())
 		{
 		  continue;
 		}
@@ -376,7 +376,7 @@ else
 To load a specific Save file that might have been selected in a previous level (such as your main menu) you can easily pass data between levels using GameMode URLs. These URLs are the 'Options' parameter and you probably used them already for things like "?listen" when hosting a multiplayer session.
 
 ```cpp
-void ASGameModeBase::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
+void ARogueGameModeBase::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
 {
 	Super::InitGame(MapName, Options, ErrorMessage);
 

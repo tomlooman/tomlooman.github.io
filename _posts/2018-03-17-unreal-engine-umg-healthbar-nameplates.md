@@ -36,7 +36,7 @@ In the above example we added the widget blueprint to a grenade actor so it can 
 
 ## Preparing your C++ Project
 
-Besides the super easy implementation for Blueprint, you could do the exact same in C++ or you could opt to make your own user widget and widgetcompont classes, I'll quickly show you how that's done. For C++ to extend UMG, which is what we'll be doing, you will have to prepare your project first. The user "WCode" has Epic Wiki page for exactly that:
+Besides the super easy implementation for Blueprint, you could do the exact same in C++ or you could opt to make your own user widget and WidgetComponent classes, I'll quickly show you how that's done. For C++ to extend UMG, which is what we'll be doing, you will have to prepare your project first. The user "WCode" has Epic Wiki page for exactly that:
 
 **[Required: Extend UserWidget for UMG Widgets](https://nerivec.github.io/old-ue4-wiki/pages/extend-userwidget-for-umg-widgets.html)**
 
@@ -47,11 +47,7 @@ Make sure your project is prepared using the link above, it shouldn't take too l
 The following is the code for SActorWidgetComponent and derives from Unreal's WidgetComponent class. The functionality we add here is to set the owning Actor on the SActorWidget class (will be covered in a bit) which is an exposed variable to Blueprint for use in the UMG Editor.
 
 ```cpp
-#include "SActorWidgetComponent.h"
-#include "FrameworkZeroPCH.h"
-#include "SActorWidget.h"
-
-USActorWidgetComponent::USActorWidgetComponent()
+URogueActorWidgetComponent::URogueActorWidgetComponent()
 {
 	// Set common defaults when using widgets on Actors
 	SetDrawAtDesiredSize(true);
@@ -59,7 +55,7 @@ USActorWidgetComponent::USActorWidgetComponent()
 	SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
-void USActorWidgetComponent::InitWidget()
+void URogueActorWidgetComponent::InitWidget()
 {
 	// Base implementation creates the 'Widget' instance
 	Super::InitWidget();
@@ -67,13 +63,13 @@ void USActorWidgetComponent::InitWidget()
 	if (Widget)
 	{
 #if !UE_BUILD_SHIPPING
-		if (!Widget->IsA(USActorWidget::StaticClass()))
+		if (!Widget->IsA(URogueActorWidget::StaticClass()))
 		{
 			// Suggest deriving from actor widget (not strictly required, but you lose the benefit of auto-assigning the Actor this way)
 			UE_LOG(LogGame, Warning, TEXT("WidgetClass for %s does not derive from SActorWidget"), *GetNameSafe(GetOwner()));
 		}
 #endif
-		USActorWidget* WidgetInst = Cast<USActorWidget>(Widget);
+		URogueActorWidget* WidgetInst = Cast<URogueActorWidget>(Widget);
 		if (WidgetInst)
 		{
 			// Assign the owner, now we have easy access in the widget itself
@@ -86,18 +82,12 @@ void USActorWidgetComponent::InitWidget()
 Here is the header file:
 
 ```cpp
-#pragma once
-
-#include "CoreMinimal.h"
-#include "Components/WidgetComponent.h"
-#include "SActorWidgetComponent.generated.h"
-
 /**
  * Extension of the WidgetComponent to make it easy to have owning Actor context to the Widget. Commonly used to display health bars, names, and interaction panels above Actors.
 	Automatically calls SetOwningActor on the widget if the correct type of widget is used (ActorAttachWidget)
  */
 UCLASS(ClassGroup = (LODZERO), meta = (BlueprintSpawnableComponent))
-class LZFRAMEWORK_API USActorWidgetComponent : public UWidgetComponent
+class LZFRAMEWORK_API URogueActorWidgetComponent : public UWidgetComponent
 {
 	GENERATED_BODY()
 	
@@ -105,7 +95,7 @@ public:
 
 	virtual void InitWidget() override;
 	
-	USActorWidgetComponent();
+	URogueActorWidgetComponent();
 	
 };
 
@@ -114,9 +104,7 @@ public:
 That covers part one, the main element however is the variable we add to the Widget class, which looks like this:
 
 ```cpp
-#include "SActorWidget.h"
-
-void USActorWidget::SetOwningActor(AActor* NewOwner)
+void URogueActorWidget::SetOwningActor(AActor* NewOwner)
 {
 	if (OwningActor == NewOwner)
 	{
@@ -133,19 +121,13 @@ void USActorWidget::SetOwningActor(AActor* NewOwner)
 And the header:
 
 ```cpp
-#pragma once
-
-#include "CoreMinimal.h"
-#include "Blueprint/UserWidget.h"
-#include "SActorWidget.generated.h"
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnOwningActorChanged, AActor*, NewOwner);
 
 /**
  * Base class for UMG Widgets that belong to a single Actor in the world via a WidgetComponent, eg. for 3D health-bars, nameplate, interaction tooltip.
  */
 UCLASS(Abstract)
-class LZFRAMEWORK_API USActorWidget : public UUserWidget
+class LZFRAMEWORK_API URogueActorWidget : public UUserWidget
 {
  GENERATED_BODY()
 

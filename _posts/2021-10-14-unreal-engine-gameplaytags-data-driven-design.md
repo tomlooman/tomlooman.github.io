@@ -175,7 +175,7 @@ ActionComponent holding container for tags:
 #include "GameplayTagContainer.h"
 
 UCLASS()
-class ACTIONROGUELIKE_API USActionComponent : public UActorComponent
+class ACTIONROGUELIKE_API URogueActionComponent : public UActorComponent
 {
   GENERATED_BODY()
 
@@ -190,7 +190,7 @@ Action which adds tags to owner when activated and holds blocked tags which prev
 #include "GameplayTagContainer.h"
 
 UCLASS(Blueprintable)
-class ACTIONROGUELIKE_API USAction : public UObject
+class ACTIONROGUELIKE_API URogueAction : public UObject
 {
   GENERATED_BODY()
 
@@ -207,10 +207,10 @@ class ACTIONROGUELIKE_API USAction : public UObject
 Starting the action will add the tags to the owner.
 
 ```cpp
-void USAction::StartAction_Implementation(AActor* Instigator)
+void URogueAction::StartAction_Implementation(AActor* Instigator)
 {
 
-  USActionComponent* Comp = GetOwningComponent();
+  URogueActionComponent* Comp = GetOwningComponent();
   // AppendTags() for adding containers and AddTag() for single tags.	
   Comp->ActiveGameplayTags.AppendTags(GrantsTags);
 
@@ -220,10 +220,10 @@ void USAction::StartAction_Implementation(AActor* Instigator)
 CanStart checks for any "illegal" tags present on the owner.
 
 ```cpp
-bool USAction::CanStart_Implementation(AActor* Instigator)
+bool URogueAction::CanStart_Implementation(AActor* Instigator)
 {
 
-  USActionComponent* Comp = GetOwningComponent();
+  URogueActionComponent* Comp = GetOwningComponent();
 	
   if (Comp->ActiveGameplayTags.HasAny(BlockedTags))
   {
@@ -257,7 +257,7 @@ With the tag defined above you can use the `TAG_Attribute_Health` elsewhere in y
 
 ## Project Example
 
-Sometimes the best way to learn is by example. **My [open-source Action Roguelike](https://github.com/tomlooman/ActionRoguelike) project uses GameplayTags for Actions and Buffs.** For example, while Sprinting a tag is applied that prevents the player from attacking. You can find this in the _USActionComponent_ class and the _USAction_ class.
+Sometimes the best way to learn is by example. **My [open-source Action Roguelike](https://github.com/tomlooman/ActionRoguelike) project uses GameplayTags for Actions and Buffs.** For example, while Sprinting a tag is applied that prevents the player from attacking. You can find this in the _URogueActionComponent_ class and the _URogueAction_ class.
 
 This project is part of my new **Unreal Engine C++ Course** where I talk more in depth about GameplayTags and tons of other essential skills for Unreal C++ Game Programming!
 

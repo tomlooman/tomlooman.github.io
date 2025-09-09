@@ -1,6 +1,7 @@
 ---
 title: "New 'Action Roguelike' C++ Project on GitHub"
 date: 2021-01-12
+last_modified_at: 09-09-2025
 categories: 
   - "cpp"
 tags: 
@@ -13,7 +14,7 @@ tags:
 coverImage: "actionroguelike_ue4_combatsample-copy.jpg"
 ---
 
-For the [Stanford University Fall 2020 Curriculum](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), I built a small game project using mainly C++ mixed with some Blueprint in Unreal Engine. For those interested, the entire Computer Science course (CS193U) was provided through Zoom lectures and has been recorded. I'm working on getting this published and meanwhile, this project is already [open-source through GitHub](https://github.com/tomlooman/ActionRoguelike) to be taken apart by anyone!
+For the [Stanford University Fall Curriculum](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), I built a small game project using C++ mixed with some Blueprint in Unreal Engine. It has since been converted into an online course that anyone can participate in. It has been used by dozens of industry leading game studios to train their employees for C++ with Unreal Engine on top of thousands of indie developers.
 
 ![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)
 
@@ -21,11 +22,11 @@ For the [Stanford University Fall 2020 Curriculum](https://courses.tomlooman.com
 
 ## Description
 
-The game was built with a wide set of features to cover a variety of useful coding concepts to students including AI, multiplayer programming, save games, async asset loading, etc. Check out the non-exhaustive list of features below, I'm sure there is more that I forgot to include or that will drip in at a later time.
+The game was built with a wide set of features to cover a variety of useful coding concepts to students including AI, multiplayer programming, save games, async asset loading, etc. Check out the list of features below, I'm sure there is more that I forgot to include or that will drip in at a later time. Over the years I have continued to expand the project and keep it up to date with new Unreal Engine 5 releases and features.
 
-Those interested in a GAS ([Gameplay Ability System](https://docs.unrealengine.com/en-US/InteractiveExperiences/GameplayAbilitySystem/index.html)) style design might be keen to check out how we handled Abilities ([Action.h](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SAction.h)) and Buffs/Debuffs ([ActionEffect.h](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SActionEffect.h)) as this shares many similarities with GAS design, albeit its much simpler.
+Those interested in a GAS ([Gameplay Ability System](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine)) style design might be keen to check out how we handled Abilities ([Action.h](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/ActionSystem/RogueAction.h)) and Buffs/Debuffs ([ActionEffect.h](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/ActionSystem/RogueActionEffect.h)) as this shares many similarities with GAS design, although its much simpler.
 
-At the time of writing, there isn't a whole lot that makes this a real 'roguelike' with things like permadeath or proper RNG. But, I hope to extend this project later on with more relevant features to have a proper game loop to earn the name 'Action Roguelike'.
+At the time of writing, there isn't a whole lot that makes this a real 'rogue-like' with things like permadeath gameflow or proper randomized gameplay through levels and powerups. However it has laid the groundwork in support of all those features and work will continue on this project as it has for the past few years. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8jDCtT88bdk?si=xYnswyOyk4r28874" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -66,8 +67,6 @@ Below I've listed some of the more relevant features included in the project. I 
 - Main menu to host/join game (UMG)
 - UI elements for player attributes and projected widgets for powerups and enemy health.
 - C++ Localized Text Example
-
-**Check out the project file [right here](https://github.com/tomlooman/ActionRoguelike)** **on GitHub!**
 
 ![](/assets/images/ue4_actionroguelike_aisample.jpg)
 *Spotted by Minion's sight sense.*

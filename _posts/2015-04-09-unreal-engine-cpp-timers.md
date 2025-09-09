@@ -61,7 +61,7 @@ void AttackDelay_Elapsed(ACharacter* InstigatorCharacter);
 When destroying or deactivating objects, make sure you clear any active timers. There are two ways of dealing with timer removal. You don't need to do this for timers that have elapsed and aren't looping.
 
 ```cpp
-void ASBombActor::EndPlay(const EEndPlayReason::Type EndPlayReason)
+void ARogueBombActor::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {
 	Super::EndPlay(EndPlayReason);
 
