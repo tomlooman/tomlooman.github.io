@@ -444,8 +444,8 @@ I found myself often using this panel to investigate opportunities for memory an
 - `stat Dumphitches`
     - profiling hitches can be problematic, this is a first step in finding expensive function calls when a hitch does occur
 - `stat none` (clear all categories on screen)
-- `r.ForceLODShadow X` _(Non-Nanite)_
-    - For low-end platforms, this can be one of those easy to do tricks to significantly cut down on triangles rendered for shadows. Make sure you have good LODs! (Non-nanite, Non-VSM, VSM has a better LOD Bias (`r.Shadow.NaniteLODBias`) option available.
+- `r.ForceLODShadow X` (CSM & Non-Nanite) or `r.Shadow.NaniteLODBias` (VSM + Nanite)
+    - For low-end platforms, the forced shadow LOD can be one of those easy to do tricks to significantly cut down on triangles rendered for shadows with cascaded shadow mapping. Make sure you have good LODs! Virtual Shadow Mapping (VSM) has a better LOD Bias (`r.Shadow.NaniteLODBias`) option available instead of a forced LOD when using Nanite as well.
 
 ## Closing
 

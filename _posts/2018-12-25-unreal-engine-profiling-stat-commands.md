@@ -111,9 +111,9 @@ SCOPED_NAMED_EVENT(StartActionName, FColor::Green);
 SCOPED_NAMED_EVENT_FSTRING(GetClass()->GetName(), FColor::White);
 ```
 
-First parameter is a custom name as it shows up in Insights, the second is the color for display in the Insights UI.
+First parameter is a custom name as it shows up in Unreal Insights, the second is the color for display in the Insights UI.
 
-The example below has two examples, one tracing the entire function while the second variation is placed within curly braces which limits the trace to within those lines of code. The \_FSTRING variant lets us specify runtime names, but does add additional overhead so it should be used with consideration.
+The example below has two examples, one tracing the entire function while the second variation is placed within curly braces which limits the trace to within those lines of code. The `_FSTRING` variant lets us specify runtime names, but does add additional overhead so it should be used with consideration.
 
 ```cpp
 bool USActionComponent::StartActionByName(AActor* Instigator, FName ActionName)
@@ -149,7 +149,5 @@ Stat commands are incredibly useful if used pragmatically and provide a quick in
 ## References
 
 - [Stat Commands | Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/stat-commands-in-unreal-engine)
-
 - [Stats System Overview | Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-stats-system-overview)
-
 - [Trace Developer Guide (Insights) | Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/developer-guide-to-tracing-in-unreal-engine)

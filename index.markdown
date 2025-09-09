@@ -25,10 +25,6 @@ some text here some text here some text here some text here some text here...
 
 <br />
 
-<div id="pricing" data-course-id="1"></div>
-
-<br />
-
 <div id="reviews" data-course-id="1"></div>
 
 <br />

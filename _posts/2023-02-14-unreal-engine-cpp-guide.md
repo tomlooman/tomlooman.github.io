@@ -803,7 +803,7 @@ Below is one example from [SaveGameSubsystem](https://github.com/tomlooman/Actio
 ```cpp
 // Example from: SSaveGameSubsystem.cpp (in Initialize())
 
-const USSaveGameSettings* Settings = GetDefault<USSaveGameSettings>();
+const URogueSaveGameSettings* Settings = GetDefault<URogueSaveGameSettings>();
 
 // Access default value from class
 CurrentSlotName = Settings->SaveSlotName;

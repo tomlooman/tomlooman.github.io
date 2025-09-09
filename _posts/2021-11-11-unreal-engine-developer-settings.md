@@ -39,7 +39,7 @@ Below you'll find an example from the sample project, make sure you expose it to
 
 ```cpp
 UCLASS(Config=Game, defaultconfig, meta = (DisplayName="Save Game Settings")) // Give it a better looking name in UI
-class ACTIONROGUELIKE_API USSaveGameSettings : public UDeveloperSettings
+class ACTIONROGUELIKE_API URogueSaveGameSettings : public UDeveloperSettings
 {
 	GENERATED_BODY()
 
@@ -52,7 +52,7 @@ public:
 	UPROPERTY(Config, EditAnywhere, BlueprintReadOnly, Category = "General", AdvancedDisplay)
 	TSoftObjectPtr<UDataTable> DummyTablePath;
 
-	USSaveGameSettings();
+	URogueSaveGameSettings();
 };
 ```
 
@@ -67,11 +67,11 @@ public:
 To access the developer settings in C++ we use the CDO ([Class Default Object](https://dev.epicgames.com/documentation/en-us/unreal-engine/objects-in-unreal-engine)) as that is already automatically instanced for us and accessed using `GetDefault<T>()`
 
 ```cpp
-void USSaveGameSubsystem::Initialize(FSubsystemCollectionBase& Collection)
+void URogueSaveGameSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
-	const USSaveGameSettings* SGSettings = GetDefault<USSaveGameSettings>(); // Access via CDO
+	const URogueSaveGameSettings* SGSettings = GetDefault<URogueSaveGameSettings>(); // Access via CDO
 	// Access defaults from DefaultGame.ini
 	SlotName = SGSettings->SaveSlotName;
 

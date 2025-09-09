@@ -9,10 +9,20 @@ redirect_from:
     - /ue4-cpp-multiplayer-course/
     - /pro-course-github/
     - /unreal-engine-cpp-course
-redirect_to: # temporary redirect until this landing page is finished
-    - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15
+# redirect_to: # temporary redirect until this landing page is finished
+#    - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15
 ---
 
+
+<div id="pricing" data-course-id="1"></div>
+
+<br />
+
+<div id="reviews" data-course-id="1"></div>
+
+<br />
+
+<div id="faq" data-course-id="1"></div>
 
 ## Questions?
 

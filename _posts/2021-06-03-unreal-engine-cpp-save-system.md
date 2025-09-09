@@ -13,11 +13,9 @@ tags:
 coverImage: "bonfire_blog_header-1.jpg"
 ---
 
-## Introduction
+For your game, you will eventually need to write some kind of save system. To store player information, unlocks, achievements, etc. In some cases, you will need to save the world state such as looted chests, unlocked doors, dropped player items, etc.
 
-For your game, you'll eventually need to write some kind of save system. To store player information, unlocks, achievements, etc. In some cases, you will need to save the world state such as looted chests, unlocked doors, dropped player items, etc.
-
-In this tutorial (UE4 & UE5 Compatible) we will go through the setup of your very own C++ SaveGame system. Different types of games will have their own save systems needs. Use this article and code as a starting point for whatever game you're building. You'll need to be fairly familiar with Unreal Engine C++ to build this system.
+In this article we go through the setup of your very own C++ SaveGame system. Different types of games will have their own specific serialization needs. Use this article and code as a starting point for whatever game you're building. You should to be fairly familiar with Unreal Engine C++ to build this system.
 
 This won't be a step-by-step tutorial. Instead, it's more of a system breakdown with explanations. The [full source code is available](https://github.com/tomlooman/ActionRoguelike) for the entire project. If you do wish for a more guided approach, I teach this concept and many others in my **[Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15).**
 
@@ -40,9 +38,9 @@ Unreal has a built-in [SaveGame UObject](https://dev.epicgames.com/documentation
 
 Loading the game will basically do the inverse operations. We load the SaveGame UObject from disk, all the variables get restored in this SaveGame object. We then pass all these variables back into the Objects/Actors they originated from such as Player position, Credits earned, and individual Actor's state (matched by the Actor's Name in our example) such as whether a treasure chest was looted in our previous session.
 
-To identify which Actors we wish to save state for we use an [Interface](https://dev.epicgames.com/documentation/en-us/unreal-engine/interfaces-in-unreal-engine). We also use this interface to allow Actors to respond to a game load (_OnActorLoaded_) so he may run some actor-specific code to properly restore animation state etc. In the [Action Roguelike](https://github.com/tomlooman/ActionRoguelike) project I re-used my _[GameplayInterface](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SGameplayInterface.h)_, but I would recommend you make a fresh interface specifically for marking objects/actors as savable (eg. _SavableObjectInterface_)
+To identify which Actors we wish to save state for we use an [Interface](https://dev.epicgames.com/documentation/en-us/unreal-engine/interfaces-in-unreal-engine). We also use this interface to allow Actors to respond to a game load (_OnActorLoaded_) so he may run some actor-specific code to properly restore animation state etc. In the [Action Roguelike](https://github.com/tomlooman/ActionRoguelike) project I re-used my _[GameplayInterface](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameplayInterface.h)_, but I would recommend you make a fresh interface specifically for marking objects/actors as savable (eg. _SavableObjectInterface_)
 
-SaveGame files will be placed under **../MyProject/Saved/SaveGames./**
+SaveGame files will be placed under **../MyProject/Saved/SaveGames/**
 
 ## Saving World State
 
@@ -75,13 +73,13 @@ public:
 
 ### Converting Variables to Binary
 
-To convert variables into a binary array we need an _FMemoryWriter_ and _FObjectAndNameAsStringProxyArchive_ which is derived from FArchive (Unreal's data container for all sorts of serialized data including your game content).
+To convert variables into a binary array we need an `FMemoryWriter` and `FObjectAndNameAsStringProxyArchive` which is derived from `FArchive` (Unreal's data container for all sorts of serialized data including your game content).
 
 We filter by Interface to avoid calling Serialize on potentially thousands of static Actors in the world we don't wish to save. Storing the Actor's name will be used later to identify which Actor to deserialize (load) the data for. You could come up with your own solution such as an [FGuid](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/Core/Misc/FGuid) (mostly useful for runtime spawned Actors that might not have a consistent Name)
 
 The rest of the code is pretty straightforward (and explained in the comments) thanks to the built-in systems.
 
-To know which **#include**s to use in C++ for our FMemoryWriter and all other classes in this blog, make sure to check out the [source cpp files.](https://github.com/tomlooman/ActionRoguelike/tree/master/Source/ActionRoguelike)
+To know which `#include` to use in C++ for our `FMemoryWriter` and all other classes in this blog, make sure to check out the [source cpp files.](https://github.com/tomlooman/ActionRoguelike/tree/master/Source/ActionRoguelike)
 
 ```cpp
 void ASGameModeBase::WriteSaveGame()
@@ -128,11 +126,11 @@ _Now it's time to prepare our Actors to be serialized..._
 
 ![](/assets/images/ue_treasurechests.jpg)
 
-Below is the [TreasureChest](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Public/SItemChest.h) code taken directly from the project. Note the _ISGameplayInterface_ inheritance and '_SaveGame_' marked on the bLidOpened variable. That will be the only variable saved to disk. By default, we store the FTransform of the Actor as well. So we can push the treasure chest around the map (Simulate Physics is enabled) and on the next Play, the Location and Rotation will be restored along with the lid state.
+Below is the [TreasureChest](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/World/RogueTreasureChest.h) code taken directly from the project. Note the _IRogueGameplayInterface_ inheritance and '_SaveGame_' marked on the bLidOpened variable. That will be the only variable saved to disk. By default, we store the FTransform of the Actor as well. So we can push the treasure chest around the map (Simulate Physics is enabled) and on the next Play, the Location and Rotation will be restored along with the lid state.
 
 ```cpp
 UCLASS()
-class ACTIONROGUELIKE_API ASItemChest : public AActor, public ISGameplayInterface
+class ACTIONROGUELIKE_API ARogueTreasureChest : public AActor, public IRogueGameplayInterface
 {
 	GENERATED_BODY()
 public:
@@ -158,7 +156,7 @@ protected:
 
 public:	
 	// Sets default values for this actor's properties
-	ASItemChest();
+	ARogueTreasureChest();
 };
 ```
 
@@ -167,18 +165,18 @@ Finally we have the _OnActorLoaded\_Implementation()_ function to implement. Thi
 Keep in mind however that often you can rely on BeginPlay() as your 'OnActorLoaded' replacement. So long as you load the saved data into each Actor BEFORE BeginPlay() has been triggered. This is why we handle the loading logic very early in the process inside our GameMode class (more on that in 'Loading Game State' below)
 
 ```cpp
-void ASItemChest::Interact_Implementation(APawn* InstigatorPawn)
+void ARogueTreasureChest::Interact_Implementation(APawn* InstigatorPawn)
 {
 	bLidOpened = !bLidOpened;
 	OnRep_LidOpened();
 }
 
-void ASItemChest::OnActorLoaded_Implementation()
+void ARogueTreasureChest::OnActorLoaded_Implementation()
 {
 	OnRep_LidOpened();
 }
 
-void ASItemChest::OnRep_LidOpened()
+void ARogueTreasureChest::OnRep_LidOpened()
 {
 	float CurrPitch = bLidOpened ? TargetPitch : 0.0f;
 	LidMesh->SetRelativeRotation(FRotator(CurrPitch, 0, 0));
@@ -189,12 +187,12 @@ That takes care of the Actor states, all that's left is to iterate PlayerState i
 
 ## Saving Player Data
 
-In my example I chose to fetch all data from PlayerState just before saving the game. We do so by calling SavePlayerState(USSaveGame\* SaveObject); This lets us pass in whatever data is relevant into the SaveGame object, such as the PlayerId and Transform of the Pawn (if the player is currently alive)
+In my example I chose to fetch all data from PlayerState just before saving the game. We do so by calling `SavePlayerState(URogueSaveGame* SaveObject);` This lets us pass in whatever data is relevant into the SaveGame object, such as the PlayerId and Transform of the Pawn (if the player is currently alive)
 
-You \*could\* choose to utilize SaveGame properties here too and store **some** of that player data automatically by converting it to binary array just like we do with Actors instead of manually writing it into SaveGame, but you'd still need to manually handle the PlayerID and Pawn Transform.
+You \*could\* choose to utilize SaveGame properties here too and store **some** of that player data automatically by converting it to binary array just like we do with Actors instead of manually writing it into SaveGame, but you'd still need to manually handle the _PlayerID_ and _Pawn Transform_.
 
 ```cpp
-void ASPlayerState::SavePlayerState_Implementation(USSaveGame* SaveObject)
+void ARoguePlayerState::SavePlayerState_Implementation(URogueSaveGame* SaveObject)
 {
 	if (SaveObject)
 	{
@@ -225,7 +223,7 @@ Make sure you call these on all PlayerStates before saving to disk. It's importa
 To retrieve the Player Data we do the opposite and have to manually assign the player's transform once the pawn has spawned and is ready to do so. You could override the player spawn logic in gamemode more seamlessly to use the saved transform instead. For the example, I stuck with a more simple approach of handling this during _HandleStartingNewPlayer_.
 
 ```cpp
-void ASPlayerState::LoadPlayerState_Implementation(USSaveGame* SaveObject)
+void ARoguePlayerState::LoadPlayerState_Implementation(URogueSaveGame* SaveObject)
 {
 	if (SaveObject)
 	{
@@ -252,7 +250,7 @@ Unlike loading Actor data which is handled on initial level load, for player sta
 void ASGameModeBase::HandleStartingNewPlayer_Implementation(APlayerController* NewPlayer)
 {
 	// Calling Before Super:: so we set variables before 'beginplayingstate' is called in PlayerController (which is where we instantiate UI)
-	ASPlayerState* PS = NewPlayer->GetPlayerState<ASPlayerState>();
+	ARoguePlayerState* PS = NewPlayer->GetPlayerState<ARoguePlayerState>();
 	if (ensure(PS))
 	{
 		PS->LoadPlayerState(CurrentSaveGame);
@@ -278,7 +276,7 @@ This is where you could probably implement it so that during the creation of the
 The function below looks for the Player id and uses fall-back while in PIE assuming we have no online subsystem loaded then. This function is used by Loading the player state above.
 
 ```cpp
-FPlayerSaveData* USSaveGame::GetPlayerData(APlayerState* PlayerState)
+FPlayerSaveData* URogueSaveGame::GetPlayerData(APlayerState* PlayerState)
 {
 	if (PlayerState == nullptr)
 	{
@@ -322,7 +320,7 @@ void ASGameModeBase::LoadSaveGame()
 
 if (UGameplayStatics::DoesSaveGameExist(SlotName, 0))
 {
-	CurrentSaveGame = Cast<USSaveGame>(UGameplayStatics::LoadGameFromSlot(SlotName, 0));
+	CurrentSaveGame = Cast<URogueSaveGame>(UGameplayStatics::LoadGameFromSlot(SlotName, 0));
 	if (CurrentSaveGame == nullptr)
 	{
 	  UE_LOG(LogTemp, Warning, TEXT("Failed to load SaveGame Data."));
@@ -354,7 +352,7 @@ if (UGameplayStatics::DoesSaveGameExist(SlotName, 0))
 			// Convert binary array back into actor's variables
 			Actor->Serialize(Ar);
 
-			ISGameplayInterface::Execute_OnActorLoaded(Actor);
+			IRogueGameplayInterface::Execute_OnActorLoaded(Actor);
 
 			break;
 		  }
@@ -365,7 +363,7 @@ if (UGameplayStatics::DoesSaveGameExist(SlotName, 0))
 }
 else
 {
-  CurrentSaveGame = Cast<USSaveGame>(UGameplayStatics::CreateSaveGameObject(USSaveGame::StaticClass()));
+  CurrentSaveGame = Cast<URogueSaveGame>(UGameplayStatics::CreateSaveGameObject(URogueSaveGame::StaticClass()));
 
   UE_LOG(LogTemp, Log, TEXT("Created New SaveGame Data."));
 }
