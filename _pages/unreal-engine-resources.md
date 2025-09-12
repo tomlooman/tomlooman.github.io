@@ -120,14 +120,18 @@ Check out the [Game Development Resource](https://www.tomlooman.com/gamedev-lear
 
 ## Multiplayer
 
+- [Unreal Engine Multiplayer Tips and Tricks](https://wizardcell.com/unreal/multiplayer-tips-and-tricks/)  
+   "Good practices to adopt, and bad habits to avoid when doing online multiplayer in Unreal Engine"
+- [Networking Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/networking-and-multiplayer-in-unreal-engine)  
+   Overview page to tons of important networking replication concepts.
 - [How to Understand Network Replication](https://www.youtube.com/watch?v=JOJP0CvpB8w)  
    Alex has some of the best videos, this one is about essential concepts for Multiplayer Programming.
-- [How to Connect a Multiplayer Game with Steam](https://medium.com/swlh/ue4-tutorial-how-to-connect-a-multiplayer-game-with-steam-ccc89bd8d8a9)  
-   Setup tutorial for Steam online subsystem.
 - [Accurately syncing Unreal’s network clock](https://medium.com/@invicticide/accurately-syncing-unreals-network-clock-87a3f9262594)  
    Explains and attempts to reduce the inherit 'desync' of the server time clock due to latency.
-- [Reliable vs. Unreliable RPC performance and ordering](https://forums.unrealengine.com/t/reliable-vs-unreliable-rpc-performance-and-ordering/351943)  
+- [Reliable vs. Unreliable RPC performance and ordering](https://dev.epicgames.com/documentation/en-us/unreal-engine/replicated-object-execution-order-in-unreal-engine)  
    Just one of those things that's good to know about.
+- [Network Emulation - Bad Pings & Packet Loss](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-network-emulation-in-unreal-engine)  
+   Playing locally can mislead you into thinking the game is well implemented. Network emulation simulates real world connections with higher pings and packet loss.
 
 ## UMG & Slate
 
@@ -138,10 +142,12 @@ Check out the [Game Development Resource](https://www.tomlooman.com/gamedev-lear
 - [Advanced Text Styling with Rich Text Block](https://www.unrealengine.com/en-US/tech-blog/advanced-text-styling-with-rich-text-block)  
    Official blog on the power of Rich Text Block.
 
-## Loading & Streaming
+## Loading, Saving & Streaming
 
 - [Asset Manager for Data Assets & Async Loading](https://www.tomlooman.com/unreal-engine-asset-manager-async-loading/)  
    Asset Manager provides additional control to loading your content on-demand.
+- [Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/)  
+   "Compendium for traveling, disconnecting, and persisting data across such scenarios"
 
 ## Editor Extensions
 
@@ -154,7 +160,7 @@ Check out the [Game Development Resource](https://www.tomlooman.com/gamedev-lear
 - [Plugin Creation Resources](https://github.com/Sythenz/UE4-Plugin-Resources)  
    Collection of tutorials on creating plugins, modules, and slate.
 - [Editor Visualization Helpers](https://www.stevestreeting.com/2021/09/14/ue4-editor-visualisation-helper/)  
-   C++ Tutorial on implementing editor-time helpers to visualize your Actors in the world_.
+   C++ Tutorial on implementing editor-time helpers to visualize your Actors in the world.
 
 ## Sample Projects
 
