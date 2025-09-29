@@ -81,6 +81,8 @@ defaults:
       read_time: false
       share: false
       permalink: /:title/
+      sidebar:
+        nav: "sidebar-main"
   # _nuggets
   - scope:
       path: "_nuggets"

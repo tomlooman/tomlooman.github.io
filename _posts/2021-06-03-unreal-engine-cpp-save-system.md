@@ -1,5 +1,5 @@
 ---
-title: "Unreal Engine C++ Save System (SaveGame)"
+title: "Unreal Engine C++ Save System"
 date: 2021-06-03
 categories: 
   - "cpp"

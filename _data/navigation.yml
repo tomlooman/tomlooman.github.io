@@ -1,13 +1,14 @@
 main:
   - title: "Blog"
     url: /blog/
-  - title: "Courses"
-    url: /courses/
-    subitems:
-      - title: "Unreal Engine C++ Course" # cant get this to work yet
-        url: /courses/unrealengine-cpp/
-      - title: "Unreal Engine Optimization Course"
-        url: /courses/unrealengine-optimization/
+  - title: "Unreal Engine C++ Course"
+    url: /courses/unrealengine-cpp/
+  - title: "Unreal Engine Optimization Course"
+    url: /courses/unrealengine-optimization/
+  - title: "Training For Teams"
+    url: /studiotraining/
+  - title: "C++ Tutorials"
+    url: /unreal-engine-cpp-tutorials
   - title: "Contact"
     url: "/contact/"
   #- title: "Nuggets"
@@ -15,7 +16,27 @@ main:
 
 
 sidebar-main:
-  - title: "Unreal C++ Course"
-    image: "/assets/images/Blog_Banner_CPPCompleteGuide_770.jpg"
-    image_alt: "image"
-    text: "Some text here."
+  - title: "Unreal Engine Courses"
+    children:
+      - title: "C++ and Unreal Engine"
+        url: /courses/unrealengine-cpp/
+      - title: "Unreal Game Performance & Optimization"
+        url: /courses/unrealengine-Optimization
+  - title: "C++ Tutorials"
+    children:
+      - title: "Complete Guide"
+        url: /unreal-engine-cpp-guide
+      - title: "Gameplay Framework Classes"
+        url: /unreal-engine-gameplay-framework
+      - title: "Animating in C++: Curves and Easing Functions"
+        url: /unreal-engine-animation-cpp-curves-and-easing-functions/
+  - title: "Performance & Optimization"
+    children:
+      - title: "Game Optimization on a Budget - Talk"
+        url: /unreal-engine-optimization-talk
+  - title: "Release Notes"
+    children:
+      - title: "UE 5.6 Performance Highlights"
+        url: /unreal-engine-5-6-performance-highlights/
+      - title: "UE 5.5 Performance Highlights"
+        url: /unreal-engine-5-5-performance-highlights/
