@@ -56,16 +56,24 @@ a:hover {
   color: $color-blue;
 }
 
+* {
+  font-family: $typeface;
+}
+
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: $typeface;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Manrope", sans-serif;
+  font-family: $typeface;
 }
 
 h2 {
   margin-top: 1em;
+}
+
+.page__title a {
+  font-weight: bolder;
 }
 
 .page__content h2 {
@@ -127,7 +135,9 @@ p {
   font-size: 0.9em;
 }
 
-.page__footer { display: none; }
+.page__footer { 
+  display: none; 
+}
 
 .archive__subtitle {
   border-bottom: none;
@@ -142,6 +152,39 @@ p {
 
 .toc {
   font-family: $typeface;
+  border: 1px solid $color-orange;
+  border-radius: 4px;
+  background-color: #eaeff8;
+}
+
+.toc .nav__title {
+  color: #7a8288;
+  background-color: #eaeff8;;
+}
+
+.toc .active a {
+  color: $color-orange;
+}
+
+.nav__list .nav__items {
+  margin-left: 20px;
+  border: 1px solid $color-orange;
+  border-radius: 4px;
+  background-color: #eaeff8;
+}
+
+.nav__sub-title {
+  font-family: $typeface;
+  margin: 0.25em;
+}
+
+.nav__list .nav__items a {
+  font-weight: 400;
+  margin: 0.5em;
+}
+
+.nav__list .nav__items .active {
+    margin-inline-start: 0em;
 }
 
 /* TOP TITLE BAR*/

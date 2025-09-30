@@ -25,6 +25,7 @@ const Footer = () => {
     const links: FooterLink[] = [
         { label: "C++ Tutorials", url: "/unreal-engine-cpp-tutorials" },
         { label: "Unreal Engine Bookmarks", url: "/unreal-engine-resources" },
+        { label: "Action Roguelike (Open Source)", url: "https://github.com/tomlooman/ActionRoguelike/" },
         { label: "Contact", url: "/contact" },
         { label: "Unreal Studio Training", url: "/studiotraining" }
     ];
