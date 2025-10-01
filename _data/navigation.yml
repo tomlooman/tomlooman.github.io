@@ -16,13 +16,7 @@ main:
 
 
 sidebar-main:
-  - title: "Unreal Engine Courses"
-    children:
-      - title: "C++ Game Development"
-        url: /courses/unrealengine-cpp/
-      - title: "Game Performance & Optimization"
-        url: /courses/unrealengine-Optimization
-  - title: "C++"
+  - title: "Unreal C++ Articles"
     children:
       - title: "Complete Guide"
         url: /unreal-engine-cpp-guide
@@ -44,3 +38,9 @@ sidebar-main:
         url: /unreal-engine-5-6-performance-highlights/
       - title: "UE 5.5 Performance Highlights"
         url: /unreal-engine-5-5-performance-highlights/
+  - title: "Unreal Engine Courses"
+    children:
+      - title: "C++ Game Development"
+        url: /courses/unrealengine-cpp/
+      - title: "Game Performance & Optimization"
+        url: /courses/unrealengine-Optimization
