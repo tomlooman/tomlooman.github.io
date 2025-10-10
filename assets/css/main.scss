@@ -15,6 +15,7 @@ $doc-font-size: 15px;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "overrides/variables";
 @import "minimal-mistakes"; // main partials
+@import "overrides/masthead";
 @import "overrides/syntax";
 
 #main {
@@ -62,6 +63,7 @@ a:hover {
 
 body {
   font-family: $typeface;
+  padding: 65px 0 0; // padding for sticky masthead
 }
 
 h1, h2, h3, h4, h5, h6 {
