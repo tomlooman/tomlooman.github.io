@@ -8,6 +8,8 @@ tags:
   - "performance"
   - "unreal-engine"
 coverImage: "Blog_56PerformanceHighlights.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 The release of Unreal Engine 5.6 brings a lot of incredible performance improvements to the engine. In this alternative release notes I have filtered the list down to the most interesting optimizations and performance related changes. Where appropriate I have added my own notes, to explain more clearly or give context as these notes can sometimes be rather vague or short.

@@ -10,6 +10,8 @@ tags:
   - "cpp"
 coverImage: "Blog_AnimatingCurves_Small.jpg"
 excerpt: Sometimes you only need a simple "tween" style animation in C++ to interpolate values or animate certain gameplay elements using Curves and Easing Functions.
+sidebar:
+  nav: sidebar-cpp
 ---
 
 There are plenty of ways to animate or interpolate things in Unreal Engine. The skeletal animation tools for example are incredibly powerful, but none of the available tools in Unreal are very lightweight or easy to use in C++. Especially for things that are not even skeletal meshes to begin with such as animating the radius of some gameplay ability, opening a treasure chest, or any other kind of value interpolation to use in your game code.
