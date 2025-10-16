@@ -2,14 +2,12 @@
 title: "Journey into Utility AI with Unreal Engine"
 date: 2018-11-04
 categories: 
-  - "bp"
-  - "ai"
+  - "game-ai"
 tags: 
-  - "ai"
+  - "game-ai"
   - "behavior-trees"
   - "unreal-engine"
   - "utility-ai"
-  - "utility-systems"
 coverImage: "UtilityAI_FeaturedImage_01.jpg"
 ---
 

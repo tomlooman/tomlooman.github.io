@@ -5,9 +5,7 @@ categories:
   - "cpp"
 tags: 
   - "cpp"
-  - "downloads"
   - "project-template"
-  - "ue4"
   - "unreal-engine"
 coverImage: "Thumb_FPSTemplate2_small.jpg"
 ---

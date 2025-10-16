@@ -2,10 +2,10 @@
 title: "Textured Shadows Trick in Unreal Engine"
 date: 2017-03-12
 categories: 
-  - "materials"
   - "rendering"
 tags: 
-  - "experimental"
+  - "materials"
+  - "rendering"
 coverImage: "disney_shadowman_ue4_small.jpg"
 redirect_from:
   - /unreal-engine-shadows-outline/

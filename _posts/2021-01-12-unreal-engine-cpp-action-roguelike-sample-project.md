@@ -6,11 +6,9 @@ categories:
   - "cpp"
 tags: 
   - "cpp"
-  - "materials"
-  - "project-template"
-  - "tutorial"
-  - "ue4"
-  - "ue5"
+  - "unreal-engine"
+  - "github"
+  - "sample-project"
 coverImage: "actionroguelike_ue4_combatsample-copy.jpg"
 ---
 

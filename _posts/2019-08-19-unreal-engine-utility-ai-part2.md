@@ -2,15 +2,12 @@
 title: "Journey into Utility AI for Unreal Engine (Part Two)"
 date: 2019-08-19
 categories: 
-  - "bp"
-  - "ai"
+  - "game-ai"
 tags: 
-  - "ai"
+  - "game-ai"
   - "behavior-trees"
-  - "blueprints"
   - "unreal-engine"
   - "utility-ai"
-  - "utility-systems"
 coverImage: "UtilityAI_FeaturedImage_Part2.jpg"
 ---
 

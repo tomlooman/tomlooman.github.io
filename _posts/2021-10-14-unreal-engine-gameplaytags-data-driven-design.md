@@ -1,18 +1,13 @@
 ---
 title: "Why you should be using GameplayTags in Unreal Engine"
 date: 2021-10-14
-categories: 
-  - "bp"
+categories:
   - "cpp"
 tags: 
-  - "blueprints"
   - "cpp"
-  - "gameplay-framework"
-  - "gameplayabilities"
-  - "gameplaytags"
-  - "tutorial"
-  - "ue4"
+  - "gameplay"
   - "unreal-engine"
+  - "gameplaytags"
 coverImage: "Thumb_GameplayTags2.jpg"
 ---
 

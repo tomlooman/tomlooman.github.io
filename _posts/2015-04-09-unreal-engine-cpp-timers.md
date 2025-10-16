@@ -4,6 +4,8 @@ date: 2015-04-09
 last_modified_at: 03-09-2025
 categories: 
   - "cpp"
+tags:
+  - "cpp"
   - "gameplay"
 coverImage: "Thumb_CPPTimers.jpg"
 ---

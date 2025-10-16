@@ -3,6 +3,10 @@ title: "UE4 UFUNCTION Keywords Explained"
 date: 2016-09-22
 categories: 
   - "cpp"
+tags:
+  - "cpp"
+  - "editor"
+  - "bp"
 coverImage: "ue4_ufunction_thumb02.png"
 ---
 

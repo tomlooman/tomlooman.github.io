@@ -6,7 +6,6 @@ categories:
   - "cpp"
 tags: 
   - "cpp"
-  - "tutorial"
   - "unreal-engine"
 coverImage: "Blog_Banner_CPPCompleteGuide_770.jpg"
 ---

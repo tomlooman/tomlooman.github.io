@@ -2,9 +2,7 @@
 title: "Async Blueprint Nodes (to fetch JSON data)"
 date: 2021-04-19
 categories: 
-  - "bp"
   - "cpp"
-  - "umg"
 tags: 
   - "blueprints"
   - "cpp"

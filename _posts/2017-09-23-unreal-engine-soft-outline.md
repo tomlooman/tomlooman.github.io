@@ -1,13 +1,10 @@
 ---
 title: "Rendering Soft outlines in Unreal Engine"
 date: 2017-09-23
-categories: 
-  - "materials"
+categories:
   - "rendering"
 tags: 
-  - "customdepth"
-  - "downloads"
-  - "experimental"
+  - "custom-depth"
   - "materials"
   - "outlines"
   - "post-process"

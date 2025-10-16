@@ -3,16 +3,12 @@ title: "Multi-color Outline Post Process in Unreal Engine"
 date: 2015-10-21
 last_modified_at: 2025-08-17
 categories: 
-  - "materials"
   - "rendering"
 tags: 
-  - "customdepth"
-  - "downloads"
+  - "custom-depth"
   - "materials"
   - "outlines"
   - "post-process"
-  - "tutorial"
-  - "unreal-engine"
 coverImage: "ue4_multicoloredoutlines.jpg"
 redirect_from:
   - /ue4-evolves-outline-post-effect

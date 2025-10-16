@@ -6,10 +6,9 @@ categories:
   - "unreal-nugget"
 tags: 
   - "cpp"
-  - "gameplay-framework"
+  - "gameplay"
   - "tips-tricks"
-  - "tutorial"
-  - "ue4"
+  - "unreal-engine"
 coverImage: "ue4_pausedscreen.jpg"
 ---
 

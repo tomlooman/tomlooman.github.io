@@ -1,11 +1,11 @@
 ---
 title: "Rendering Wounds on Characters"
 date: 2017-08-14
-categories: 
+categories:
+  - "rendering"
+tags:
   - "materials"
   - "rendering"
-tags: 
-  - "experimental"
 coverImage: "ue4_hitmask_damageexample.jpg"
 ---
 

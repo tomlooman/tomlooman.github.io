@@ -6,7 +6,6 @@ categories:
 tags: 
   - "performance"
   - "rendering"
-  - "ue4"
   - "unreal-engine"
 coverImage: "ue4_survivalgame_dlss_header2.jpg"
 ---

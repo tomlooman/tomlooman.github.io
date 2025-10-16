@@ -7,6 +7,7 @@ categories:
 tags: 
   - "performance"
   - "unreal-engine"
+  - "performance-highlights"
 coverImage: "Blog_56PerformanceHighlights.jpg"
 sidebar:
     nav: sidebar-optimization

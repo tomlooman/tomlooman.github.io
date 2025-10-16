@@ -6,8 +6,6 @@ categories:
 tags: 
   - "performance"
   - "rendering"
-  - "tutorial"
-  - "ue5"
   - "unreal-engine"
 coverImage: "Thumb_psocaching.jpg"
 ---
