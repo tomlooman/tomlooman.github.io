@@ -20,9 +20,9 @@ main:
 sidebar-main:
   - title: "Unreal Engine Courses"
     children:
-      - title: "C++ Game Development"
+      - title: "- Professional Game Development in C++ & Unreal Engine 5"
         url: /courses/unrealengine-cpp/
-      - title: "Game Performance & Optimization"
+      - title: "- Complete Game Optimization for Unreal Engine 5"
         url: /courses/unrealengine-Optimization
 
 sidebar-cpp:
@@ -56,5 +56,5 @@ sidebar-optimization:
         url: /unreal-engine-5-5-performance-highlights/
   - title: "Unreal Engine Course"
     children:
-      - title: "- Complete Game Optimization"
+      - title: "- Complete Game Optimization for Unreal Engine 5"
         url: /courses/unrealengine-Optimization
