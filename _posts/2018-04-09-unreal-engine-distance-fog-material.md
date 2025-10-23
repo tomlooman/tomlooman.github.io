@@ -2,14 +2,11 @@
 title: "Distance Fog Post-Process Material"
 date: 2018-04-09
 categories: 
-  - "materials"
   - "rendering"
 tags: 
-  - "downloads"
   - "materials"
   - "post-process"
   - "rendering"
-  - "tutorial"
   - "unreal-engine"
 coverImage: "Thumb_DepthFog.jpg"
 ---

@@ -2,15 +2,12 @@
 title: "Asset Manager for Data Assets & Async Loading"
 date: 2020-12-17
 categories: 
-  - "bp"
   - "cpp"
 tags: 
   - "asset-manager"
-  - "blueprints"
   - "cpp"
-  - "programming"
-  - "tutorial"
-  - "ue4"
+  - "asset-loading"
+  - "unreal-engine"
 coverImage: "Blog_Thumb_AssetManager.jpg"
 ---
 

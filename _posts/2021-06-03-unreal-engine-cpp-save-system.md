@@ -6,9 +6,7 @@ categories:
 tags: 
   - "cpp"
   - "savegame"
-  - "tutorial"
-  - "ue4"
-  - "ue5"
+  - "gameplay"
   - "unreal-engine"
 coverImage: "bonfire_blog_header-1.jpg"
 ---

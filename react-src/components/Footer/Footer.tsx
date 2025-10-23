@@ -23,11 +23,12 @@ const Footer = () => {
     ];*/
 
     const links: FooterLink[] = [
-        { label: "C++ Tutorials", url: "/unreal-engine-cpp-tutorials" },
-        { label: "Unreal Engine Bookmarks", url: "/unreal-engine-resources" },
-        { label: "Action Roguelike (Open Source)", url: "https://github.com/tomlooman/ActionRoguelike/" },
+        { label: "Login (Course Access)", url: "https://courses.tomlooman.com/sign_in" },
+        { label: "GitHub Projects (Open Source)", url: "https://github.com/tomlooman/ActionRoguelike/" },
+        { label: "Unreal Engine Training for Studios", url: "/studiotraining" },
         { label: "Contact", url: "/contact" },
-        { label: "Unreal Studio Training", url: "/studiotraining" }
+        { label: "Terms of Use", url: "https://courses.tomlooman.com/p/terms" },
+        { label: "Privacy Policy", url: "https://courses.tomlooman.com/p/privacy" }
     ];
 
     return (

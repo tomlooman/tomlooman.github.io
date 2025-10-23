@@ -2,11 +2,10 @@
 title: "Circular Progress Bar for UMG"
 date: 2015-08-19
 categories: 
+  - "umg"
+tags:
   - "materials"
   - "umg"
-tags: 
-  - "downloads"
-  - "materials"
 coverImage: "circularprogress_header.jpg"
 ---
 

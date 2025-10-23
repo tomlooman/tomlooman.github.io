@@ -3,15 +3,12 @@ title: "Custom Depth in Unreal Engine"
 date: 2014-09-14
 last_modified_at: 30-08-2025
 categories: 
-  - "materials"
   - "rendering"
 tags: 
-  - "customdepth"
-  - "downloads"
+  - "custom-depth"
+  - "materials"
   - "outlines"
   - "post-process"
-  - "tutorial"
-  - "unreal-engine"
 coverImage: "ue4_customdepth_featured.png"
 ---
 

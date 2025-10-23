@@ -3,14 +3,13 @@ title: "Mesh Outlines Without Post-Processing in Unreal Engine"
 date: 2019-06-04
 last_modified_at: 30-08-2025
 categories: 
-  - "materials"
   - "rendering"
 tags: 
-  - "customdepth"
+  - "custom-depth"
   - "outlines"
   - "rendering"
-  - "tutorial"
   - "unreal-engine"
+  - "materials"
 coverImage: "ue4_outlineheader-copy.jpg"
 ---
 

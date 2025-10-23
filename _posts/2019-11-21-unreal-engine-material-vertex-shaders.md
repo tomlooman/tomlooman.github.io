@@ -6,8 +6,7 @@ categories:
   - "rendering"
 tags: 
   - "materials"
-  - "tutorial"
-  - "ue4"
+  - "performance"
 coverImage: "ws_station_900p.jpg"
 ---
 

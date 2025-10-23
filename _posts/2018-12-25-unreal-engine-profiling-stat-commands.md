@@ -3,11 +3,10 @@ title: "Adding Stat Traces (Stat Commands) in Unreal Engine"
 date: 2018-12-25
 categories: 
   - "cpp"
-  - "rendering"
 tags: 
   - "performance"
   - "profiling"
-  - "programming"
+  - "cpp"
 coverImage: "StatCommands_FeaturedImage.jpg"
 ---
 

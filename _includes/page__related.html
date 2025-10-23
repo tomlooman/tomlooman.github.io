@@ -1,11 +1,146 @@
-{% assign posts = include.posts | where_exp: "post", "post.hidden != true" %}
-<div class="page__related">
-  {% include before-related.html %}
-  <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You Might Find Useful" }}</h2>
-  <div class="grid__wrapper">
-    {% for post in posts limit:3 %}
-      {% if post.id == page.id %}{% continue %}{% endif %}
-      {% include archive-single.html type="grid" %}
+{% comment %} Minimum number of tags a page needs in common with this one to be related. {% endcomment %}
+{% assign minCommonTags = 1 %}
+
+{% comment %} Relative weight given to common tags over post recency. {% endcomment %}
+{% assign commonTagsWeight = 90 %}
+
+{% comment %} Pages don't have a post date. This is their default age (common tags will boost their relevance). {% endcomment %}
+{% assign defaultAge = 32 %}
+
+{% comment %} Maximum number of related pages to display. {% endcomment %}
+{% assign maxRelated = 3 %}
+
+{% comment %} Get all pages & collection posts (including blog posts) that are not from the current page's collection unless it is a blog post. {% endcomment %}
+{% assign posts = site.pages %}
+{% for collection in site.collections %}
+  {% assign pageCollection = collection.docs | where: 'url', page.url | size %}
+  {% unless pageCollection > 0 and collection.label != 'posts' %}
+    {% assign posts = posts | concat: collection.docs %}
+  {% endunless %}{% endfor %}
+
+{% comment %} We're going to log-scale & normalize the common tag count, so we need to track its max value. {% endcomment %}
+{% assign maxLogCommonTags = 1 %}
+
+{% comment %} Iterate over these comparison pages & capture the relevant ones. {% endcomment %}
+{% assign relevantPosts = "" | split: "" %}{% assign now = 'now' | date: '%s' | plus: 0 %}
+{% for post in posts %}
+  {% comment %} Ignore the current page, hidden pages & redirects. {% endcomment %}
+  {% unless post.url == page.url or post.hidden or post.redirect_to %}
+    {% comment %} Create a list of tags on the comparison page. {% endcomment %}
+  {% assign tags = post.tags | uniq %}
+
+    {% comment %} If some post redirected to this page, include its tags too. {% endcomment %}
+    {% assign sourcePost = posts | where: 'redirect_to', post.url | first %}
+    {% if sourcePost %}
+      {% assign tags = tags | concat: sourcePost.tags | uniq %}
+  {% endif %}
+
+    {% comment %} Count the tags the comparison page has in common with this page. {% endcomment %}
+    {% assign commonTags = 0 %}
+    {% for tag in tags %}
+      {% if page.tags contains tag %}
+        {% assign commonTags = commonTags | plus: 1 %}
+      {% endif %}
     {% endfor %}
+
+    {% comment %} Ignore comparison pages without enough common tags. {% endcomment %}
+    {% if commonTags >= minCommonTags %}
+      {% comment %} Log-scale the common tag count & update the max value. {% endcomment %}
+      {% capture logCommonTags %}
+        {% include log2.html value=commonTags %}
+    {% endcapture %}
+      {% assign logCommonTags = logCommonTags | times: 1.0 %}
+      {% if logCommonTags > maxLogCommonTags %}
+        {% assign maxLogCommonTags = logCommonTags %}
+    {% endif %}
+
+      {% comment %} Create a reference array with the comparison page url & log-scaled common tag count. {% endcomment %}
+      {% assign post_data = "" | split: "" %}
+      {% assign post_data = post_data | push: post.url | push: logCommonTags %}
+      {% assign relevantPosts = relevantPosts | push: post_data %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+
+{% comment %} If no comparison pages had enough tags, stop. {% endcomment %}
+{% if relevantPosts.size > 0 %}
+  {% comment %} Initialize an array for scored posts. {% endcomment %}
+  {% assign scoredPosts = "" | split: "" %}
+
+  {% comment %} Iterate over the reference array. {% endcomment %}
+  {% for item in relevantPosts %}
+    {% comment %} Extract the data. {% endcomment %}
+    {% assign post_url = item[0] %}
+  {% assign logCommonTags = item[1] | plus: 0.0 %}
+
+    {% comment %} Normalize the log-scaled common tag counts. {% endcomment %}
+  {% assign normLogCommonTags = logCommonTags | divided_by: maxLogCommonTags %}
+
+    {% comment %} Go get the post record. {% endcomment %}
+  {% assign post = posts | where: "url", post_url | first %}
+
+    {% comment %} Calculate the comparison page's age in days, applying the default when needed. {% endcomment %}
+    {% assign postDate = post.date | date: '%s' | plus: 0.0 %}
+    {% assign ageInSeconds = now | minus: postDate %}
+    {% if ageInSeconds < 60 %}
+      {% assign ageInDays = defaultAge %}
+    {% else %}
+      {% assign ageInDays = ageInSeconds | divided_by: 86400.0 %}
+    {% endif %}
+
+    {% comment %} Log-scale the comparison page age. {% endcomment %}
+    {% capture logAge %}
+        {% include log2.html value=ageInDays %}
+    {% endcapture %}
+  {% assign logAge = logAge | times: 1.0 %}
+
+    {% comment %} Calculate the relevance score. {% endcomment %}
+  {% assign relevance = normLogCommonTags | times: commonTagsWeight | minus: logAge | times: 1000 | plus: 50000 | round %}
+
+    {% comment %} Encode the data in a sortable format & push it to our scored posts array. {% endcomment %}
+    {% assign sort_key = relevance | append: "|" | append: post_url | append: "|" | append: normLogCommonTags | append: "|" | append: logAge %}
+    {% assign scoredPosts = scoredPosts | push: sort_key %}
+{% endfor %}
+
+  {% comment %} Sort the scored posts. {% endcomment %}
+  {% assign sorted_relevance_scores = scoredPosts | sort | reverse %}
+
+  {% comment %} Render the related-page HTML wrapper. {% endcomment %}
+  <div class='page__related'>
+    {% include before-related.html %}
+    <h2 class='page__related-title'>
+      {{ site.data['ui-text'][site.locale].related_label | default: 'You Might Find Useful' }}
+    </h2>
+    <div class='grid__wrapper'>
+
+      {% comment %} Create a counter & iterate over the sorted array. {% endcomment %}
+      {% assign maxRelatedCounter = 0 %}
+        {% for item in sorted_relevance_scores %}
+        {% comment %} Extract the data from the array. {% endcomment %}
+        {% assign parts = item | split: "|" %}
+        {% assign relevance = parts[0] %}
+        {% assign post_url = parts[1] %}
+        {% assign normLogCommonTags = parts[2] %}
+      {% assign logAge = parts[3] %}
+
+        {% comment %} Go get the post data. {% endcomment %}
+      {% assign post = posts | where: "url", post_url | first %}
+
+        {% comment %} Render some helpful comments. {% endcomment %}
+        <!-- post_url: {{ post_url }} -->
+        <!-- normLogCommonTags: {{ normLogCommonTags }} -->
+        <!-- logAge: {{ logAge }} -->
+        <!-- relevance: {{ relevance }} -->
+
+        {% comment %} Render the actual page link. {% endcomment %}
+      {% include archive-single.html type="grid" %}
+
+        {% comment %} Update the counter & break if we're done. {% endcomment %}
+        {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+        {% if maxRelatedCounter >= maxRelated %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
-</div>
+{% endif %}

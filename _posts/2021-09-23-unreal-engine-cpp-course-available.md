@@ -5,9 +5,8 @@ categories:
   - "cpp"
 tags: 
   - "cpp"
-  - "news"
-  - "ue4"
-  - "ue5"
+  - "course"
+  - "gameplay"
   - "unreal-engine"
 coverImage: "actionroguelike_ue4_combatsample5.jpg"
 redirect_from:

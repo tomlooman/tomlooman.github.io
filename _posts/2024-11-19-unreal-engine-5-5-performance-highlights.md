@@ -3,6 +3,10 @@ title: "Unreal Engine 5.5 Performance Highlights"
 date: 2024-11-19
 categories: 
   - "performance-optimization"
+tags:
+  - "performance"
+  - "performance-highlights"
+  - "unreal-engine"
 coverImage: "Blog_UE55ReleaseNotes.jpg"
 ---
 

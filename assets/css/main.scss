@@ -104,6 +104,7 @@ p > img + em {
   color: #fff;
 }
 
+
 /* text wrapping on big code blocks */
 pre {
   white-space: pre-wrap;
@@ -173,11 +174,14 @@ p {
   border: 1px solid $color-orange;
   border-radius: 4px;
   background-color: #eaeff8;
+  padding-left: 5px;
+  padding-bottom: 12px;
 }
 
 .nav__sub-title {
   font-family: $typeface;
   margin: 0.25em;
+  font-weight: 900;
 }
 
 .nav__list .nav__items a {
@@ -206,6 +210,16 @@ p {
 
 .masthead__menu-item {
   font-size: 16px;
+}
+
+
+/* sidebar padding for sticky masthead */
+.sidebar__right.sticky {
+  top: 4em;
+}
+
+.sidebar .nav__list {
+  top: 4em;
 }
 
 .greedy-nav .hidden-links {

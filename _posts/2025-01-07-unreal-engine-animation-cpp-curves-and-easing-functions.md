@@ -4,12 +4,14 @@ date: 2025-01-07
 last_modified_at: 2025-05-20
 categories: 
   - "cpp"
-  - "gameplay"
 tags: 
   - "animation"
   - "cpp"
+  - "gameplay"
 coverImage: "Blog_AnimatingCurves_Small.jpg"
 excerpt: Sometimes you only need a simple "tween" style animation in C++ to interpolate values or animate certain gameplay elements using Curves and Easing Functions.
+sidebar:
+  nav: sidebar-cpp
 ---
 
 There are plenty of ways to animate or interpolate things in Unreal Engine. The skeletal animation tools for example are incredibly powerful, but none of the available tools in Unreal are very lightweight or easy to use in C++. Especially for things that are not even skeletal meshes to begin with such as animating the radius of some gameplay ability, opening a treasure chest, or any other kind of value interpolation to use in your game code.
@@ -145,7 +147,7 @@ Be sure to checkout the [Action Roguelike project on GitHub](https://github.com/
 ## References
 
 - [Implementation Example Source Code](https://github.com/tomlooman/ActionRoguelike/blob/89d1e3c5fd9915c3739f944c6fffd744ffc5758a/Source/ActionRoguelike/World/RogueTreasureChest.cpp#L62) available on GitHub
-- [Math for Game Programmers: Fast and Funky 1D Nonlinear Transformations](https://www.youtube.com/watch?v=mr5xkf6zSzk) Love talks by Squirrel, this one gives a lot of insight of using curves from math for animating stuff in game
-- [Easing Functions Cheat Sheet](https://easings.net/) It helps to visualize those easing functions
+- [Math for Game Programmers: Fast and Funky 1D Nonlinear Transformations](https://www.youtube.com/watch?v=mr5xkf6zSzk) Love talks by Squirrel, this talk gives insight into using curves from math for animating things in-game
+- [Easing Functions Cheat Sheet](https://easings.net/) helps to visualize those easing functions
 - [Huge resource on Easing function implementations](https://github.com/Michaelangel007/easing) if you wish to deep dive easing functions
-- [Fresh Cooked Tweens - GitHub project by Jared Cook](https://github.com/jdcook/fresh_cooked_tweens) Excellent resource to look for a more complete implementation
+- [Fresh Cooked Tweens - GitHub project by Jared Cook](https://github.com/jdcook/fresh_cooked_tweens) excellent resource to look for a more complete implementation

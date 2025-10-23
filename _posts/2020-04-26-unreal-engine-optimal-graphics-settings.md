@@ -8,8 +8,6 @@ tags:
   - "performance"
   - "profiling"
   - "rendering"
-  - "tutorial"
-  - "ue4"
   - "unreal-engine"
 coverImage: "ue4_runhardwarebenchmark.jpg"
 ---
