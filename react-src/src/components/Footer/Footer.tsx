@@ -1,5 +1,5 @@
 import React from 'react';
-import arrowSvg from '../../assets/triangles_6_non_filled_orange.svg';
+import arrowSvg from '../../../public/assets/triangles_6_non_filled_orange.svg';
 import SingleInputForm from '../Forms/SigleInputForm';
 import style from './Footer.module.scss';
 

@@ -14,6 +14,7 @@
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
+    "@types/node": "^24.9.2",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "@vitejs/plugin-react": "^4.5.0",
@@ -26,8 +27,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "start": "vite build && bundle exec jekyll serve",
+    "build": "vite build --config react-src/vite.config.ts",
+    "start": "vite build --config react-src/vite.config.ts && bundle exec jekyll serve",
     "predeploy": "yarn build",
     "deploy": "bundle exec jekyll build"
   }

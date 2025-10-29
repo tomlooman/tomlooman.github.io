@@ -1,15 +1,16 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import ListItem from './components/ListItem';
-import CoursesBanner from './components/CoursesBanner';
-import EmailSignUp from './components/EmailSignUp';
-import CoursesMainIntroduction from './components/CoursesMainIntroduction';
-import Reviews from './components/Reviews';
-import Pricing from './components/Pricing';
-import LinkButton from './components/LinkButton';
-import LatestBlogs from './components/LatestBlogs';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
+import ListItem from './src/components/ListItem';
+import CoursesBanner from './src/components/CoursesBanner';
+import EmailSignUp from './src/components/EmailSignUp';
+import CoursesMainIntroduction from './src/components/CoursesMainIntroduction';
+import Reviews from './src/components/Reviews';
+import Pricing from './src/components/Pricing';
+import LinkButton from './src/components/LinkButton';
+import LatestBlogs from './src/components/LatestBlogs';
+import StudioLogos from './src/components/StudioLogos';
+import FAQ from './src/components/FAQ';
+import Footer from './src/components/Footer';
 
 const listItems = document.getElementsByClassName('list-item');
 if (listItems.length) {
@@ -58,6 +59,11 @@ if (seeAllPostsButton) {
   const url = seeAllPostsButton.getAttribute('data-url');
 
   createRoot(seeAllPostsButton).render(<LinkButton text={text} url={url} />);
+}
+
+const studioLogos = document.getElementById('studio-logos');
+if (studioLogos) {
+  createRoot(studioLogos).render(<StudioLogos />);
 }
 
 const faq = document.getElementById('faq');

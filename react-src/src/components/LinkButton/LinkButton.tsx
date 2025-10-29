@@ -1,5 +1,5 @@
 import React from "react";
-import rightArrowSvg from "../../assets/arrow_right.svg";
+import rightArrowSvg from "../../../public/assets/arrow_right.svg";
 import style from "./LinkButton.module.scss";
 
 interface LinkButtonProps {

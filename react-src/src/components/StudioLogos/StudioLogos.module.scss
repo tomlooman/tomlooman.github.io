@@ -1,0 +1,30 @@
+@use '/react-src/styles/colors.scss' as colors;
+@use '/react-src/styles/breakpoints.scss' as breakpoints;
+
+.studioLogos {
+  text-align: center;
+  background-color: colors.$gray;
+  padding: 1rem 0;
+
+  h2 {
+    margin: 0 0 1rem;
+  }
+
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+
+    @media screen and (max-width: breakpoints.$breakpoint-md) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    img {
+      max-width: 100px;
+      max-height: 70px;
+      display: block;
+    }
+  }
+}

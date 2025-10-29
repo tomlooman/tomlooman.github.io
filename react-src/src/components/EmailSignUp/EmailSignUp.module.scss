@@ -1,7 +1,7 @@
 @use '/react-src/styles/colors.scss' as colors;
 
 .emailSignUpBanner {
-    background-image: url('../../assets/banner_full_gray.svg');
+    background-image: url('../../../public/assets/banner_full_gray.svg');
     background-repeat: no-repeat;
     background-size: calc(100% + 150px); // Zoom in slightly to hide right 150px
     background-position: left center;
