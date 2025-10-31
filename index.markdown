@@ -29,7 +29,7 @@ some text here some text here some text here some text here some text here...
 
 <br />
 
-<div class="wide-content"><div id="studio-logos"></div></div>
+<div class="wide-content"><div id="studio-logos"  data-course-id="1"></div></div>
 
 <br />
 

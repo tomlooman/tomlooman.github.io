@@ -1,24 +1,18 @@
 import React from "react";
+import { logos } from "./constants/Logos";
 import styles from "./StudioLogos.module.scss";
 
-const logoFiles = [
-  "Behaviour_interactive.png",
-  "Epic_Games-Logo.wine.png",
-  "MPG.png",
-  "JetBrains_Logo_2016_250.png",
-  "Black_Forest_Games_250.png",
-  "lucid-logo.png",
-  "Sparx_Logo_Red_PNG_FINAL.png",
-  "Wargaming_Logo.png",
-];
+interface StudioLogosProps {
+  courseId: number;
+}
 
-const StudioLogos = () => {
+const StudioLogos: React.FC<StudioLogosProps> = ({ courseId }) => {
 
   return (
     <div className={styles.studioLogos}>
       <h2>My students work at game studios across the globe</h2>
       <div className={styles.logos}>
-         {logoFiles.map((src, i) => (
+         {logos[courseId]?.map((src: string, i: number) => (
         <img key={i} src={`/assets/images/studio_logos/${src}`} alt={`Studio logo ${i}`} className={styles.logo} />
       ))}
       </div>

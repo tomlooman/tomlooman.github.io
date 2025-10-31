@@ -63,7 +63,8 @@ if (seeAllPostsButton) {
 
 const studioLogos = document.getElementById('studio-logos');
 if (studioLogos) {
-  createRoot(studioLogos).render(<StudioLogos />);
+  const courseId = reviews.getAttribute('data-course-id');
+  createRoot(studioLogos).render(<StudioLogos courseId={Number(courseId)} />);
 }
 
 const faq = document.getElementById('faq');
