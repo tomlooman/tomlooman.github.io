@@ -5,7 +5,7 @@ export const Prices = {
         INDIE_BASIC_DISCOUNTED: 295, // Change to null to remove discount
         INDIE_PAYMENT_PLAN: 85, // Price per month
         INDIE_PAYMENT_PLAN_DISCOUNTED: 65,
-        INDIE_COUPON_CODE: null,
+        INDIE_COUPON_CODE: null, // e.g. "ARUNIVERSITY30"
         PRO: 795,
         PRO_DISCOUNTED: null,
         PRO_COUPON_CODE: null,
