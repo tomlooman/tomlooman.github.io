@@ -56,6 +56,7 @@ const Pricing: React.FC<PricingProps> = ({ courseId }) => {
                                 id="indie-type"
                                 value={selectedIndieType}
                                 onChange={(event: SelectChangeEvent) => setSelectedIndieType(event.target.value as PriceItemType)}
+                                MenuProps={{ disableScrollLock: true}}
                             >
                                 <MenuItem value={PriceItemType.INDIE_BASIC} sx={{ fontSize: '0.9rem' }}>Single payment</MenuItem>
                                 <MenuItem value={PriceItemType.INDIE_PAYMENT_PLAN} sx={{ fontSize: '0.9rem' }}>Payment plan</MenuItem>
