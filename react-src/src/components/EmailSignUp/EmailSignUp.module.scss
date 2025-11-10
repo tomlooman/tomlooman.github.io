@@ -1,4 +1,5 @@
 @use '/react-src/styles/colors.scss' as colors;
+@use '/react-src/styles/breakpoints.scss' as breakpoints;
 
 .emailSignUpBanner {
     background-image: url('../../../public/assets/banner_full_gray.svg');
@@ -11,6 +12,10 @@
         align-items: center;
         justify-content: space-between;
         padding: 1rem 100px;
+
+        @media screen and (max-width: breakpoints.$breakpoint-md) {
+            padding: 1rem 50px;
+        }
 
         b {
             color: colors.$orange;
