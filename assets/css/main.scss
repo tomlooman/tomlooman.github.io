@@ -11,6 +11,8 @@ $color-blue: #103D59;
 $color-orange: #ffa04a;
 $color-offwhite: #F2F4FA;
 $doc-font-size: 15px;
+$footer-height: 330px;
+$header-height: 57px;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "overrides/variables";
@@ -254,6 +256,12 @@ p {
 
 .site-logo img {
     max-height: 3em;
+}
+
+.initial-content {
+  > #main {
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
+  }
 }
 
 /* END TITLE BAR */

@@ -3,18 +3,26 @@
 
 .singleInputFormWrapper {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    border: solid .5px white;
+    border-radius: 5px;
 
     .textFieldRoot {
-        height: 40px;
 
         > div {
             border-radius: 5px 0 0 5px;
             background-color: colors.$white;
-            height: 100%;;
+            height: 100%;
         }
 
-        * { font-size: .75rem; }
+        * {
+            font-size: .75rem;
+
+            > input {
+                height: 40px;
+                box-sizing: border-box;
+            }
+        }
     }
 
     .signUpButton {
@@ -26,6 +34,7 @@
         border-radius: 0 5px 5px 0;
         font-size: .75rem;
         height: 40px;
+        white-space: nowrap;
 
         &:hover {
             background-color: color.scale(colors.$orange, $lightness: -20%);

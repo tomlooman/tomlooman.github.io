@@ -49,13 +49,25 @@
                 justify-content: space-between;
                 height: 100%;
 
+                .priceAmount {
+                    display: flex;
+                    align-items: end;
+                    flex-wrap: wrap;
+
+                    > * {
+                        margin-right: .5rem;
+                    }
+                }
+
                 .priceAdditionalInfo {
                     font-size: .75rem;
                     height: 1.5rem
                 }
 
-                > div > h1 {
-                    margin: 1rem 0 0;
+                > .priceAmount > h1 {
+                    margin: 0 .5rem 0 0;
+                    display: flex;
+                    align-items: center;
 
                     > span {
                         font-size: 1rem;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import upArrowSvg from "../../../../assets/faq_arrow_up.svg";
-import downArrowSvg from "../../../../assets/faq_arrow_down.svg";
-import rightArrowSvg from "../../../../assets/faq_arrow_right.svg";
+import upArrowSvg from "../../../../../public/assets/faq_arrow_up.svg";
+import downArrowSvg from "../../../../../public/assets/faq_arrow_down.svg";
+import rightArrowSvg from "../../../../../public/assets/faq_arrow_right.svg";
 import style from "./FaqItem.module.scss";
 
 interface FaqItemProps {

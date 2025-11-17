@@ -29,4 +29,8 @@ some text here some text here some text here some text here some text here...
 
 <br />
 
+<div class="wide-content"><div id="studio-logos"  data-course-id="1"></div></div>
+
+<br />
+
 <div id="faq" data-course-id="1"></div>
