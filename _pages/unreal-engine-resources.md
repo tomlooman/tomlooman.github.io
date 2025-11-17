@@ -84,9 +84,14 @@ Check out the [Game Development Resource](https://www.tomlooman.com/gamedev-lear
 - [Expert's Guide To Unreal Engine Performance](https://dev.epicgames.com/community/learning/tutorials/3o6/expert-s-guide-to-unreal-engine-performance)  
    List style article with brief insights into different considerations to make to reach your target framerates.
 
+## Collision & Physics
+
+- [Tech Artist Playbook for Chaos Performance](https://dev.epicgames.com/community/learning/tutorials/KWeX/unreal-engine-a-tech-artist-s-playbook-for-chaos-performance)
+   Valuable and practical insight into optimizing Collision & Physics.
+
 ## Performance Fun Reads
 
-- [Speeding up the Unreal Editor launch by … not spawning 38000 tooltips?](https://larstofus.com/2025/09/02/speeding-up-the-unreal-editor-launch-by-not-spawning-38000-tooltips/)  
+- [Speeding up the Unreal Editor launch by not spawning 38000 tooltips?](https://larstofus.com/2025/09/02/speeding-up-the-unreal-editor-launch-by-not-spawning-38000-tooltips/)  
    The Editor & Project settings menus may slow down editor starts. An interesting read about the editor performance.
 
 ## Materials (Shaders)
