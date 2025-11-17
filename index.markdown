@@ -15,8 +15,7 @@ Master Unreal Engine C++ Game Development with this university-grade course.
 <h2>What can you expect</h2>
 {: .text-center}
 
-some text here some text here some text here some text here some text here some text here. 
-some text here some text here some text here some text here some text here...
+My Unreal Engine tutorials and courses have been adopted by hundreds of AAA and indie development studios across the globe!
 {: .text-center}
 
 <br />

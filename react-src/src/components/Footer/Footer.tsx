@@ -48,7 +48,7 @@ const Footer = () => {
                 </div>
                 <div className={style.newsLetter}>
                     <h2>Join my Newsletter</h2>
-                    <p>Join over 5000 other Unreal Developers and receive Unreal Engine insights in your inbox!</p>
+                    <p>Join over 5000 fellow developers and receive Unreal Engine insights in your inbox!</p>
                     {/* TODO: change onSubmit to use a proper email signup function */}
                     <SingleInputForm
                         label="Email address"
