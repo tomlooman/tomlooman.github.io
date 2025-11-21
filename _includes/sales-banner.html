@@ -1,0 +1,57 @@
+<div id="sales-banner" class="sales-banner">
+  <div>
+    <span>🔥 Black Friday! Save 30% — Ends soon!</span>
+    <!-- sale end date format YYYY-MM-DD -->
+    <div id="sales-banner-timer" data-sale-end-date="2025-11-21"></div>
+  </div>
+  <button id="sales-banner-close" aria-label="Close">×</button>
+</div>
+
+<script>
+(function () {
+    const banner = document.getElementById("sales-banner");
+    const timer = document.getElementById("sales-banner-timer");
+    const close = document.getElementById("sales-banner-close");
+
+    if (!banner || !timer) return;
+
+    const saleEndDateStr = timer.getAttribute("data-sale-end-date");
+    if (!saleEndDateStr) return;
+
+    // Parse YYYY-MM-DD to UTC midnight end-of-day (23:59:59 UTC)
+    const [y, m, d] = saleEndDateStr.split("-").map(Number);
+    const saleEndDateUTC = new Date(Date.UTC(y, m - 1, d, 23, 59, 59));
+
+    const nowUTC = new Date();
+
+    // If expired, remove the banner entirely
+    if (nowUTC > saleEndDateUTC) {
+        banner.remove();
+        return;
+    }
+
+    // --- Still active → continue normal logic ----
+
+    const STORAGE_KEY = "salesBannerClosedOn";
+    const closedOn = localStorage.getItem(STORAGE_KEY);
+
+    function getDayString(date) {
+        return date.toISOString().slice(0, 10);
+    }
+
+    const today = getDayString(new Date());
+
+    // If closed today → remove instead of hide
+    if (closedOn === today) {
+        banner.remove();
+        return;
+    }
+
+    // User manually closes it
+    close?.addEventListener("click", () => {
+        localStorage.setItem(STORAGE_KEY, today);
+        banner.remove();
+    });
+
+})();
+</script>
