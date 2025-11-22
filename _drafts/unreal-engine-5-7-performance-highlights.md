@@ -28,8 +28,8 @@ This article is part of my efforts of keeping Unreal Engine developers informed 
 
 ## Nanite
 
-Added a new culling check that can improve Nanite culling speed and reduce the amount of memory needed for candidate clusters (`r.Nanite.Culling.MinLOD` enabled by default).
-My understanding of this culling is that it can skip child clusters during culling, the bottomline is
+Added a new culling check that can improve Nanite culling speed and reduce the amount of memory needed for candidate clusters (`r.Nanite.Culling.MinLOD` enabled by default, turn off for testing only).
+My understanding of this culling is that it can skip child clusters during culling, simply put, we get faster culling that's enabled by default.
 
 Added experimental and optional passes to **prime the HZB** before VisBuffer rendering if the HZB is missing (e.g., due to a camera cut), see cvar `r.Nanite.PrimeHZB` et al.
 - The main idea is to draw a lower resolution (HZB or lower) and lower detail (by using LOD bias and/or drawing only ray tracing far field scene geometry).
