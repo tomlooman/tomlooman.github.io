@@ -10,9 +10,13 @@ $typeface-heading: "Manrope", "Roboto", "Arial", sans-serif;
 $color-blue: #103D59;
 $color-orange: #ffa04a;
 $color-offwhite: #F2F4FA;
+$color-lightgray: #eaeff8;
 $doc-font-size: 15px;
 $footer-height: 330px;
-$header-height: 57px;
+$header-height-small: 51px;
+$header-height: 62px;
+$breakpoint-text-size-change: 1024px;
+$breakpoint-text-size-change-large: 1280px;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "overrides/variables";
@@ -65,7 +69,11 @@ a:hover {
 
 body {
   font-family: $typeface;
-  padding: 65px 0 0; // padding for sticky masthead
+  padding: $header-height 0 0; // padding for sticky masthead
+
+  @media  screen and (max-width: $breakpoint-text-size-change) {
+    padding: $header-height-small 0 0; // padding for sticky masthead
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -140,10 +148,6 @@ p {
   font-size: 0.9em;
 }
 
-.page__footer { 
-  display: none; 
-}
-
 .archive__subtitle {
   border-bottom: none;
   font-size: 1.25em;
@@ -203,6 +207,11 @@ p {
 
 .masthead {
   background-color: $color-blue;
+  height: $header-height;
+
+  @media  screen and (max-width: $breakpoint-text-size-change) {
+    height: $header-height-small;
+  }
 }
 
 .masthead__inner-wrap {
@@ -261,7 +270,41 @@ p {
 .initial-content {
   > #main {
     min-height: calc(100vh - #{$header-height} - #{$footer-height});
+
+      @media  screen and (max-width: $breakpoint-text-size-change) {
+      min-height: calc(100vh - #{$header-height-small} - #{$footer-height});
+    }
   }
+}
+
+.sales-banner {
+  position: sticky;
+  top:$header-height;
+  z-index: 100;
+  background: $color-lightgray;
+  color: $color-blue;
+  padding: 8px 16px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media  screen and (max-width: $breakpoint-text-size-change) {
+    top: $header-height-small;
+  }
+
+  > div {
+    display: flex;
+  }
+}
+
+.sales-banner button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 12px;
+  cursor: pointer;
 }
 
 /* END TITLE BAR */
