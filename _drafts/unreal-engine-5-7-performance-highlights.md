@@ -17,7 +17,7 @@ It is time for another Unreal Engine 5.7 Performance Highlights post! I have com
 
 As usual I approached this list from the game development perspective. Focusing on runtime performance of the game, profiling capabilities, bugs that affected performance, new CVARs for quality/performance tuning and some of the editor iteration performance as those have some notable changes.
 
-Overall the performance improvements are not as strong as in 5.6, but there are some major systems like a new Nanite Foliage system using Voxels which is a game changer and a much needed improvement. Lumen is clearly moving away from Software ray-tracing (SWRT) by deprecating their "SWRT detail traces" render path already in 5.6. The good thing about this is a unified lighting pipeline that we can work against rather than having to pick one and hoping for the best or spending the extra time supporting both. Their continued performance improvements to Lumen Hardware Raytracing (HWRT) should allow higher quality and more stable lighting that no longer relies of any simplified Distance Field representations.
+Overall the performance improvements may not be as strong as in 5.6, but there are some major systems like a new Nanite Foliage system using Voxels which is a game changer and a much desired improvement on foliage rendering. Lumen continues moving away from Software ray-tracing (SWRT) by deprecating their "SWRT detail traces" render path. The good thing about this is a unified lighting pipeline that we can work against rather than having to pick one and hoping for the best or spending the extra time supporting both. Their continued performance improvements to Lumen Hardware Raytracing (HWRT) should allow higher quality and more stable lighting that no longer relies of any simplified Distance Field representations.
 
 There are other important changes and improvements hidden in the incredibly long list of changes, so let's dive in!
 
@@ -44,7 +44,7 @@ Exposed `NanitePixelProgrammableDistance` for Nanite skinned meshes to enable fo
 
 Nanite Foliage is a huge step forward for performant foliage rendering with Nanite. You will now build foliage from building blocks (like a variety of branch meshes to build a tree) instead of importing a single tree or chunk of grass.
 
-This foliage is now animated using Skinning rather than WPO (world position offset) which has poor Nanite support (WPO is generally not suitable for Nanite due to its increased rendering cost).
+Nanite foliage is now animated using Skinning rather than WPO (world position offset) which has poor Nanite support (WPO is generally not suitable for Nanite due to its increased rendering cost).
 
 This primarily added the following features:
 
