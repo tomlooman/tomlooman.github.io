@@ -14,6 +14,8 @@ redirect_from:
 
 <div id="reviews" data-course-id="2"></div>
 
+<div class="wide-content"><div id="studio-logos"  data-course-id="1"></div></div>
+
 <br />
 
 <div id="faq" data-course-id="2"></div>

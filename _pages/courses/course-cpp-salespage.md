@@ -17,6 +17,8 @@ Professional Game Development in C++ and Unreal Engine
 
 Master Unreal Engine C++ Game Development with this university-grade course.
 
+<div class="wide-content"><div id="studio-logos"  data-course-id="1"></div></div>
+
 ## Introducing: Unreal Engine C++ Pro Course
 
 Hands-on game development course in C++ with Unreal Engine. A step-by-step guided (self-paced) course where you build a third-person action game and gain a solid understanding of the Unreal Engine C++ game development architecture that will boost your game development career!
