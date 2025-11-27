@@ -8,6 +8,9 @@ redirect_from:
 #    - https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15
 ---
 
+
+ {% include bio.html %}
+
 <div id="pricing" data-course-id="2"></div>
 
 <br />

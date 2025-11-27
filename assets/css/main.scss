@@ -308,3 +308,28 @@ p {
 }
 
 /* END TITLE BAR */
+
+
+.bio-block {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+@media (max-width: $max-width) {
+  .bio-block {
+    flex-direction: column;
+  }
+}
+
+.bio-block p {
+  font-size: 16px;
+}
+
+.bio-picture {
+  border-radius: 25px;
+  max-width: 250px;
+  height:fit-content;
+  margin-right: 40px;
+}

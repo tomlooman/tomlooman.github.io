@@ -5,6 +5,8 @@ permalink: /contact/
 search: false
 ---
 
+{% include bio.html %}
+
 Please use the form below or email me directly via [info@tomlooman.com](mailto:info@tomlooman.com)
 
 {% include contact-form.html %}
