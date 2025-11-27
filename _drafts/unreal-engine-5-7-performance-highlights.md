@@ -8,7 +8,7 @@ tags:
   - "performance"
   - "unreal-engine"
   - "performance-highlights"
-coverImage: "placeholder.jpg"
+coverImage: "Thumb_Blog_57Highlights.jpg"
 sidebar:
     nav: sidebar-optimization
 ---
@@ -17,11 +17,7 @@ It is time for another Unreal Engine 5.7 Performance Highlights post! I have com
 
 As usual I approached this list from the game development perspective. Focusing on runtime performance of the game, profiling capabilities, bugs that affected performance, new CVARs for quality/performance tuning and some of the editor iteration performance as those have some notable changes.
 
-Overall the performance improvements may not be as strong as in 5.6, but there are some major systems like a new Nanite Foliage system using Voxels which is a game changer and a much desired improvement on foliage rendering. Lumen continues moving away from Software ray-tracing (SWRT) by deprecating their "SWRT detail traces" render path. The good thing about this is a unified lighting pipeline that we can work against rather than having to pick one and hoping for the best or spending the extra time supporting both. Their continued performance improvements to Lumen Hardware Raytracing (HWRT) should allow higher quality and more stable lighting that no longer relies of any simplified Distance Field representations.
-
-There are other important changes and improvements hidden in the incredibly long list of changes, so let's dive in!
-
-Read the original full release notes here (https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-7-release-notes)
+There are some major improvements like a new **Nanite Foliage** system using voxels which is a game changer and a much desired improvement for foliage rendering. Lumen continues moving away from Software ray-tracing (SWRT) by deprecating their "SWRT detail traces" render path and focusing on getting hardware raytracing to run at 60hz. **MegaLights** is moving into Beta, we can now inject **Custom HLODs** to give us greater control for distant geometry and more unusual changes such as optimizations to Windows high-precision mouse handling. Read the original full release notes [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-7-release-notes)
 
 {: .notice--info }
 This article is part of my efforts of keeping Unreal Engine developers informed about Game Optimization! For that I have a in-depth [Game Optimization Course for Unreal Engine 5](https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15) to train engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
@@ -57,7 +53,7 @@ Again Epic demo'd this during [The Witcher 4 talk here](https://youtu.be/ji0Hfis
 
 ## Lumen
 
-Lumen Continues to move toward a single rendering path with HWRT (Hardware raytracing) at 60hz. Epic already deprecated the SWRT detail tracing in 5.6 and continues their efforts on the HWRT side.
+Lumen Continues to move toward a single rendering path with HWRT (Hardware raytracing) at 60hz. Epic already deprecated the SWRT detail tracing in 5.6 and continues their efforts on the HWRT side. The good thing about this is a unified lighting solution that we can work against rather than having to pick one and hoping for the best or spending the extra time supporting both. Their continued performance improvements to Lumen Hardware Raytracing (HWRT) should allow higher quality and more stable lighting that no longer relies on any simplified Distance Field representations
 
 Enabled half res integration on High scalability (`r.Lumen.ScreenProbeGather.StochasticInterpolation 2`).
 - This can soften normals in indirect lighting, and make GI a bit more noisy.
@@ -76,6 +72,23 @@ Screen tile marking optimizations, which speed up reflections, GI, and water ref
 ## MegaLights
 
 MegaLights has now entered Beta, instead of Experimental. From the release notes this appears to mostly mean reduction in noise and overall performance improvements.
+
+Implemented MegaLights-driven Virtual Shadow Mapping marking to only mark VSM pages that MegaLights has selected samples for.
+
+Added the `r.MegaLights.DownsampleCheckerboard`, which can run sampling/tracing at half res (every other pixel). It's a good middle ground between default quarter res sampling and option full resolution sampling.
+
+Merged downsample factor / checkerboard CVars into a single `r.MegaLights.DownsampleMode` CVar.
+
+Exposed `r.MegaLights.HardwareRayTracing.ForceTwoSided`, which allows to flip between matching raster behavior and forcing two-sided on all geometries in order to speedup tracing.
+
+Now always vectorize shading samples. This saves on average 0.1-0.2ms in complex content on current gen consoles.
+
+Now uses downsampled neighborhood for temporal accumulation. Interpolated pixels don't add much to neighborhood stats, so we can skip them, improving quality by effectively using a wider neighborhood filter. This also improves performance of the temporal accumulation pass, as it now can load less data into LDS.
+
+Now merge identical rays in order to avoid overhead of duplicated traces. Duplicated rays happen with strong point lights, where we may send a few identical rays to the same light doing unnecessary work.
+
+Now require ray tracing platform support, in order to skip compiling and cooking MegaLights shaders on certain platforms.
+
 
 ## Custom HLODs
 
@@ -271,24 +284,6 @@ Added a new debug artifact (`ShaderTypeStats.csv`), dumped by default for all co
 - This CSV file contains permutation counts/code sizes for all shaders in the shader library, grouped by shader type.
 - Note that this is not directly representative of final shader memory usage since it doesn't account for potential duplication of bytecode introduced by the pak chunking step (where shaders used in multiple pakfiles will have a copy in each).
 - This is only intended to be used as a tool for tracking and comparing shader growth over time or between cooks.
-
-## MegaLights
-
-Implemented MegaLights-driven Virtual Shadow Mapping marking to only mark VSM pages that MegaLights has selected samples for.
-
-Added the `r.MegaLights.DownsampleCheckerboard`, which can run sampling/tracing at half res (every other pixel). It's a good middle ground between default quarter res sampling and option full resolution sampling.
-
-Merged downsample factor / checkerboard CVars into a single `r.MegaLights.DownsampleMode` CVar.
-
-Exposed `r.MegaLights.HardwareRayTracing.ForceTwoSided`, which allows to flip between matching raster behavior and forcing two-sided on all geometries in order to speedup tracing.
-
-Now always vectorize shading samples. This saves on average 0.1-0.2ms in complex content on current gen consoles.
-
-Now uses downsampled neighborhood for temporal accumulation. Interpolated pixels don't add much to neighborhood stats, so we can skip them, improving quality by effectively using a wider neighborhood filter. This also improves performance of the temporal accumulation pass, as it now can load less data into LDS.
-
-Now merge identical rays in order to avoid overhead of duplicated traces. Duplicated rays happen with strong point lights, where we may send a few identical rays to the same light doing unnecessary work.
-
-Now require ray tracing platform support, in order to skip compiling and cooking MegaLights shaders on certain platforms.
 
 ## Niagara
 
