@@ -5,17 +5,17 @@
 layout: custom-home
 ---
 
-<h2>Unreal Engine 5 Courses</h2>
+<h2>Master Unreal Engine 5 with these Courses</h2>
 <div id="courses-banner"></div>
-Master Unreal Engine C++ Game Development with this university-grade course.
+Fast-track your Unreal Engine experience with my Unreal Engine 5 courses for C++ and Game Optimization!
 <br />
 
 <div class="wide-content"><div id="email-sign-up"></div></div>
 
-<h2>What can you expect</h2>
+<h2>Clear. Concise. Comprehensive.</h2>
 {: .text-center}
 
-My Unreal Engine tutorials and courses have been adopted by hundreds of AAA and indie development studios across the globe!
+Truly Learn Unreal Engine the Epic™ Way through my free tutorials and premium Courses on C++ and Game Optimization.
 {: .text-center}
 
 <br />
