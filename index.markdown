@@ -7,7 +7,7 @@ layout: custom-home
 
 <h2>Master Unreal Engine 5 with these Courses</h2>
 <div id="courses-banner"></div>
-Fast-track your Unreal Engine experience with my Unreal Engine 5 courses for C++ and Game Optimization!
+Fast-track your Unreal Engine experience with my Unreal Engine 5 courses for C++ (Engineers) and Game Optimization (Tech Artists & Engineers)!
 <br />
 
 <div class="wide-content"><div id="email-sign-up"></div></div>

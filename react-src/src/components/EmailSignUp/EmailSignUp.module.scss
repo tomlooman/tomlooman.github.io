@@ -5,7 +5,7 @@
     background-image: url('../../../public/assets/banner_full_gray.svg');
     background-repeat: no-repeat;
     background-size: calc(100% + 150px); // Zoom in slightly to hide right 150px
-    background-position: left center;
+    background-position: right center;
 
     .emailSignUpContent {
         display: flex;
@@ -19,7 +19,7 @@
 
         b {
             color: colors.$orange;
-            font-size: .75rem;
+            font-size: .85rem;
             width: 50%;
         }
     }

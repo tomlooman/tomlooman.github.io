@@ -23,7 +23,7 @@ const Footer = () => {
     ];*/
 
     const links: FooterLink[] = [
-        { label: "Login (Course Access)", url: "https://courses.tomlooman.com/sign_in" },
+        { label: "Login (Courses)", url: "https://courses.tomlooman.com/sign_in" },
         { label: "GitHub Projects (Open Source)", url: "https://github.com/tomlooman/ActionRoguelike/" },
         { label: "Unreal Engine Training for Studios", url: "/studiotraining" },
         { label: "Contact", url: "/contact" },

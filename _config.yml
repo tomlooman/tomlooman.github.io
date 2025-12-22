@@ -52,6 +52,8 @@ include:
   - _pages
 #exclude:
 #  - runlocal
+#exclude:
+#  - /react_src/src/
 
 defaults:
   # _pages

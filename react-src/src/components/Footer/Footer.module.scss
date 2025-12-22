@@ -27,7 +27,7 @@
             > a {
                 color: colors.$white;
                 text-decoration: none;
-                font-size: .875rem;
+                font-size: .75rem;
                 
                 > i {
                     margin-right: .5rem;
@@ -54,7 +54,7 @@
                 clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
                 background-color: colors.$orange-light; // todo: replace with actual image
                 background-image: url('../images/faces/profile_tom_looman_2024_1.jpg');
-                background-size: 100% auto;
+                background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
             }

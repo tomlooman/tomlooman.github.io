@@ -11,7 +11,7 @@ main:
 #    url: /studiotraining/
   - title: "Contact"
     url: "/contact/"
-  - title: "Login (Course Access)"
+  - title: "Login (Courses)"
     url: "https://courses.tomlooman.com/sign_in"
   #- title: "Nuggets"
   #  url: "/nuggets/"
