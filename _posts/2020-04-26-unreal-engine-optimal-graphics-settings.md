@@ -10,6 +10,8 @@ tags:
   - "rendering"
   - "unreal-engine"
 coverImage: "ue4_runhardwarebenchmark.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 Unreal Engine can auto-detect 'optimal' (graphical) settings per player based on a quick CPU and GPU benchmark. The functions are available in Blueprint to hook up into your game's options menu.

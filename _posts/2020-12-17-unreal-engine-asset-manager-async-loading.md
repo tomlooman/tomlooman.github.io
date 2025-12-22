@@ -9,6 +9,8 @@ tags:
   - "asset-loading"
   - "unreal-engine"
 coverImage: "Blog_Thumb_AssetManager.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 ## What is Asset Manager?

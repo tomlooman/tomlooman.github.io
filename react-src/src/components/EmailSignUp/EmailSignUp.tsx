@@ -9,7 +9,7 @@ const EmailSignUp = () => {
     return (
         <div className={style.emailSignUpBanner}>
             <div className={style.emailSignUpContent}>
-                <b>Join thousands of game devs – get regular Unreal Engine insights in your inbox!</b>
+                <b>Join thousands of game developers and get Unreal Engine C++ & Optimization insights in your inbox!</b>
                 {/* TODO: Change onSubmit to use a proper email signup function */}
                 <SingleInputForm placeholder="Enter your email" label="Email" onSubmit={(value) => console.log(value)} submitText="Sign me up" />
             </div>

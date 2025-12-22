@@ -11,6 +11,8 @@ tags:
   - "unreal-engine"
 coverImage: "Thumb_JetBrainsPerfTalk-1.jpg"
 last-modified-at: 18-08-2025
+sidebar:
+    nav: sidebar-optimization
 ---
 
 For the JetBrains GameDev Day, I was invited to give a talk about Unreal Engine. I decided to create one for game optimization in Unreal Engine. It's a topic I've been spending a lot of time with recently and wanted to share some tips and tricks. The slot of 45 minutes had only room for so much...so expect more performance-oriented blog posts from me soon!

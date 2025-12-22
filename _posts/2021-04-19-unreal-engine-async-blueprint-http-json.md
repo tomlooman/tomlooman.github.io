@@ -8,6 +8,8 @@ tags:
   - "cpp"
   - "unreal-engine"
 coverImage: "ws_mainmenu_motd.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 For my upcoming game [_WARPSQUAD_](https://store.steampowered.com/app/764710), I was curious how easy it is to fetch data from a web service to be displayed in-game. The initial use case is a simple Message of the Day (MOTD) to be displayed in the main menu. Allowing for easy communication with players during playtests or (service) issues. You could use such web interfacing for posting in-game feedback too or whatever data you want to keep outside of the game executable to update on the fly.

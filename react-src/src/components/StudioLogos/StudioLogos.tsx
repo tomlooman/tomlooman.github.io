@@ -10,7 +10,7 @@ const StudioLogos: React.FC<StudioLogosProps> = ({ courseId }) => {
 
   return (
     <div className={styles.studioLogos}>
-      <h2>My students work at game studios across the globe</h2>
+      <h2>Companies using my Unreal Engine Courses</h2>
       <div className={styles.logos}>
          {logos[courseId]?.map((src: string, i: number) => (
         <img key={i} src={`/assets/images/studio_logos/${src}`} alt={`Studio logo ${i}`} className={styles.logo} />

@@ -11,6 +11,8 @@ tags:
 coverImage: "actionroguelike_ue4_combatsample5.jpg"
 redirect_from:
   - /ue4-course-cpp-out-now
+sidebar:
+    nav: sidebar-cpp
 ---
 
 > Master Unreal Engine C++ Game Development with this university-grade course.

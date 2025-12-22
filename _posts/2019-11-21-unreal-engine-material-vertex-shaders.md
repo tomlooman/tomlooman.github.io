@@ -8,6 +8,8 @@ tags:
   - "materials"
   - "performance"
 coverImage: "ws_station_900p.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 Rotating (ambient) meshes in your world adds a dynamic element, but doing this on the CPU and having to pass it to the GPU each frame is a relatively slow operation. Without realizing you may be updating your collision every tick too, causing overlap updates and hurting performance even more.

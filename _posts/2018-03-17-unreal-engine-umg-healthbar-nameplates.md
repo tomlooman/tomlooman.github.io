@@ -9,6 +9,8 @@ tags:
   - "umg"
   - "unreal-engine"
 coverImage: "Thumb_WorldWidgets-copy.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 Today I'd like to quickly show how you can add UI for things like **health bars, nameplates, interaction prompts and more in Unreal Engine**. It's quite simple to do, and I hear a lot of questions about this, so today I'll share you some tricks to make this even easier. The sample code is done in **C++**, but keep reading as I show you a quick **and** easy **Blueprint**\-only trick too! The following guide explains the concept of how to be able to fetch the information you desire for your in-world widgets such as health, player names, etc., you don't need to follow this to the letter, so long as you understand the concept, and implement what suits your own projects best.

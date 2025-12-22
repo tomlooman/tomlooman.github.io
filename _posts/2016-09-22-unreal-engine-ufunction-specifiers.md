@@ -8,6 +8,8 @@ tags:
   - "editor"
   - "bp"
 coverImage: "ue4_ufunction_thumb02.png"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 In this post I will be covering the common keywords used with the UFUNCTION macro in Unreal Engine 4. Each of the keywords covered include a practical code sample and a look at how it compiles into Blueprint nodes.  I left out the networking specific keywords as they deserve a separate post on networking in Unreal Engine 4 and instead I focus on the different keywords used for exposing your C++ to Blueprint.

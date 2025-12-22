@@ -8,6 +8,8 @@ tags:
   - "project-template"
   - "unreal-engine"
 coverImage: "Thumb_FPSTemplate2_small.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 As I have been preparing some Unreal Engine C++ tutorials, I wanted to use the Built-in C++ FPS Template that ships with the engine as a base project and found it has VR and Touch-input code in the character class which don't serve any purpose unless you are interested in VR and/or mobile. Since I needed a super simple C++ template to not scare people away from learning this language, I decided to create a simplified version with only the essentials for non-VR projects (That's what you have the [VR Template](https://www.tomlooman.com/vrtemplate/) for these days) and make it available to all on [GitHub](https://github.com/tomlooman/SimpleFPSTemplate).

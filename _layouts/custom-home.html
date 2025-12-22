@@ -5,7 +5,6 @@ layout: archive
 {{ content }}
 
 <br />
-<br />
 
 <h2 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Latest Unreal Engine articles" }}</h2>
 
@@ -15,7 +14,7 @@ layout: archive
   {% assign posts = site.posts %}
 {% endif %}
 
-{% assign latest_posts = site.posts | slice: 0, 4 %}
+{% assign latest_posts = site.posts | slice: 0, 6 %}
 
 {% capture post_data_json %}
 [
@@ -35,7 +34,6 @@ layout: archive
 
 <div id="see-all-posts-button" data-text="See all posts" data-url="/blog"></div>
 
-<br />
 <br />
 
 <div class="wide-content">

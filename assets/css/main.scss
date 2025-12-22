@@ -32,6 +32,7 @@ $breakpoint-text-size-change-large: 1280px;
   .archive {
     padding: 0;
     margin: 0;
+    margin-top: 20px;
     width: 100%;
     box-sizing: border-box;
 
@@ -309,6 +310,9 @@ p {
 
 /* END TITLE BAR */
 
+#see-all-posts-button {
+  margin-top: 1em;
+}
 
 .bio-block {
   text-align: center;

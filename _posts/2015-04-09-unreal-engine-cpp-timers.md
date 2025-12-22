@@ -8,6 +8,8 @@ tags:
   - "cpp"
   - "gameplay"
 coverImage: "Thumb_CPPTimers.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 Timers are incredibly helpful for gameplay programming in Unreal Engine. However, the syntax can be a little tricky if you're unfamiliar with C++. This blog post will cover all the essential features and syntax for using C++ timers effectively in your game.

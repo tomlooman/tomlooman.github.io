@@ -7,6 +7,8 @@ tags:
   - "rendering"
   - "distance-fields"
 coverImage: "DF_featured_03.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 Unreal Engine leverages the power of Signed Distance Fields for Ambient Occlusion and more recently added Ray Traced Distance Field Soft Shadows. I will briefly discuss and demonstrate both effects as a result of some early research to consider using these techniques for our game. Since the core of Switch's design hinges on fully dynamic levels, we simply cannot bake down any lighting. As a result we have to look out for a better approach to create scene definition and toning that is both fully dynamic and lightweight enough to run on a wide range of PCs.

@@ -9,6 +9,8 @@ tags:
   - "gameplay"
   - "unreal-engine"
 coverImage: "bonfire_blog_header-1.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 For your game, you will eventually need to write some kind of save system. To store player information, unlocks, achievements, etc. In some cases, you will need to save the world state such as looted chests, unlocked doors, dropped player items, etc.

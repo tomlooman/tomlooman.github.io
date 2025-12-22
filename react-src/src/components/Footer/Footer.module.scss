@@ -53,6 +53,10 @@
             > div.image {
                 clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
                 background-color: colors.$orange-light; // todo: replace with actual image
+                background-image: url('../images/faces/profile_tom_looman_2024_1.jpg');
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                background-position: center;
             }
         }
 

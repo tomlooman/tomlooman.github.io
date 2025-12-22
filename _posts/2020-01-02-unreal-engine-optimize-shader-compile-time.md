@@ -11,6 +11,8 @@ tags:
   - "tips-tricks"
   - "unreal-engine"
 coverImage: "ue4_compileshaders-1.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 Unreal Engine **Project Settings** allow a major reduction (up to 50%) of shader permutations affecting shader compile times, package size, and load times. You can find the options under the **Engine \> Rendering \> Shader Permutation Reduction** Category. Which settings you can disable will depend on your project’s rendering requirements.

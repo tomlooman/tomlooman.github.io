@@ -9,6 +9,8 @@ tags:
   - "tips-tricks"
   - "editor"
 coverImage: "blog_header_developersettings_4.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 You might be placing all your settings and tweakable options in Blueprints or even hard-coded in C++. Unreal Engine does have the option to easily add more configuration settings in the INI config file system using the Developer Settings class. You are probably familiar with the existence of these configuration INI files already. DefaultGame.ini, DefaultEngine.ini, etc. are built using this class and the Unreal Editor's Project Settings and Editor Settings use this system.

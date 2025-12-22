@@ -9,6 +9,8 @@ tags:
   - "cpp"
   - "gameplay"
 coverImage: "GF_INTRO_THUMB-copy.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 The Gameplay Framework of Unreal Engine provides a powerful set of classes to build your game. Your game can be a shooter, farm simulator, a deep RPG, it doesn't matter. The framework is very flexible and does some heavy lifting and sets some standards. It has a pretty deep integration with the engine so my immediate advice is to stick to these classes instead of trying to 'roll your own' game framework as you might with engines like Unity. Understanding this framework is critical in being successful and efficient in building your projects.

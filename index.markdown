@@ -12,15 +12,11 @@ Fast-track your Unreal Engine experience with my Unreal Engine 5 courses for C++
 
 <div class="wide-content"><div id="email-sign-up"></div></div>
 
-<h2>Clear. Concise. Comprehensive.</h2>
+<h2>Teaching Unreal Engine 5 to Indies & AAA</h2>
 {: .text-center}
 
-Truly Learn Unreal Engine the Epic™ Way through my free tutorials and premium Courses on C++ and Game Optimization.
+Truly Learn Unreal Engine the Epic™ Way through my free tutorials and premium courses on C++ and Game Optimization.
 {: .text-center}
-
-<br />
-
-<div class="wide-content"><div id="courses-main-introduction"></div></div>
 
 <br />
 
@@ -29,7 +25,3 @@ Truly Learn Unreal Engine the Epic™ Way through my free tutorials and premium 
 <br />
 
 <div class="wide-content"><div id="studio-logos"  data-course-id="1"></div></div>
-
-<br />
-
-<div id="faq" data-course-id="1"></div>

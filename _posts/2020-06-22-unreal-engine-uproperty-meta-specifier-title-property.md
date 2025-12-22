@@ -11,6 +11,8 @@ tags:
   - "unreal-engine"
   - "editor"
 coverImage: "ue4_titleproperty_metaspecifier.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 Editing Arrays containing Structs in Unreal Engine has some bad UX. Especially for arrays with many entries as each element provides no context to its contents until you expand each element in the UI to inspect the contents. There is a way to make this look better using the _TitleProperty_ [meta-specifier](https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/Reference/Metadata/index.html)! This trick is only available to arrays created in C++ that are exposed to be viewed in the Unreal Editor.

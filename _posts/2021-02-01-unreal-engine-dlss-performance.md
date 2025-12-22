@@ -8,6 +8,8 @@ tags:
   - "rendering"
   - "unreal-engine"
 coverImage: "ue4_survivalgame_dlss_header2.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 Last year Nvidia announced DLSS 2.0 with the ability to open this new anti-aliasing solution for all games. The game-specific deep learning is no longer required as it was with prior iterations. For an indie dev that is especially exciting as the chance of getting onto Nvidia's SuperComputer was pretty slim. It's now easier than ever to add DLSS support to your Unreal Engine title!

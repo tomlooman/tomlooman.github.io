@@ -8,6 +8,8 @@ tags:
   - "performance-highlights"
   - "unreal-engine"
 coverImage: "Blog_UE55ReleaseNotes.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 The following Highlights are taken from the [Unreal Engine 5.5 Release Notes](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5.5-release-notes) and focus primarily on real-time game performance on PC and consoles. My personal highlights have some commentary on them and at the bottom you'll find a raw list of changes that I found notable. There were so many changes that even at the bottom I choose not to include everything, especially if the release notes were vague on their benefit or actual improvement.

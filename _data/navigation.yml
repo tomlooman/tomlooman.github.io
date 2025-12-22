@@ -30,8 +30,8 @@ sidebar-main:
         url: /unreal-engine-cpp-guide
       - title: "- Naming Convention Guide"
         url: /unreal-engine-naming-convention-guide
-      - title: "- UE 5.6 Performance Highlights"
-        url: /unreal-engine-5-6-performance-highlights/
+      - title: "- UE 5.7 Performance Highlights"
+        url: /unreal-engine-5-7-performance-highlights/
       - title: "- Unreal Engine Optimization on a Budget"
         url: /unreal-engine-optimization-talk
       - title: "- PSO Pre-caching & Bundled PSOs"
@@ -62,6 +62,8 @@ sidebar-optimization:
         url: /unreal-engine-optimization-talk
       - title: "- PSO Precaching & Bundled PSOs"
         url: /psocaching-unreal-engine/
+      - title: "- UE 5.7 Performance Highlights"
+        url: /unreal-engine-5-7-performance-highlights/
       - title: "- UE 5.6 Performance Highlights"
         url: /unreal-engine-5-6-performance-highlights/
       - title: "- UE 5.5 Performance Highlights"

@@ -11,6 +11,8 @@ tags:
   - "unreal-engine"
   - "materials"
 coverImage: "ue4_outlineheader-copy.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 Some time ago I saw a neat solution by [Cory Spooner](https://twitter.com/TheRealSpoonDog/status/951223934480871424) on outlining meshes using particle sprites. The concept has been done before - but it's interesting enough to cover it regardless for Unreal Engine specifically. We render the outline on a translucent cube or sphere that is tightly fitted around the desired mesh. We apply the outline material to this cube instead of a post-process chain. This let's us affect only small portions of the screen rather then pay the full-screen cost.

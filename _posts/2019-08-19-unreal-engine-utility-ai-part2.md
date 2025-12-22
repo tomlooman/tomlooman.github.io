@@ -9,6 +9,8 @@ tags:
   - "unreal-engine"
   - "utility-ai"
 coverImage: "UtilityAI_FeaturedImage_Part2.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 Since the last time I wrote about Utility AI for Unreal Engine 4, it has been stream-lined and so has the Action System it's built on. The Action System is quite similar to Unreal's Gameplay Ability System for those familiar. Towards the end I'll tease a few other AI related concepts I've been working on. [Here is part one in case you missed it.](https://www.tomlooman.com/journey-into-utility-ai-ue4/)

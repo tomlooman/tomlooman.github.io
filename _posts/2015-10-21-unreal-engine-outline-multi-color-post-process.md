@@ -14,6 +14,8 @@ redirect_from:
   - /ue4-evolves-outline-post-effect
   - /ue4-outline-post-process
   - /outline-effect-in-unreal-engine-4
+sidebar:
+    nav: sidebar-optimization
 ---
 
 With some of the recent changes to Unreal Engine 4, rendering multi-color outlines is now possible! This is done through the use of Custom Stencil, a new buffer similar to Custom Depth - but allowing meshes to render as integer values. This provides us with a 1-255 range of indices that can be used to apply different outline colors to meshes and even combine multiple features such as the decal x-ray shown below by using a different stencil index.

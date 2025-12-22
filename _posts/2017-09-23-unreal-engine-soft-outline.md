@@ -9,6 +9,8 @@ tags:
   - "outlines"
   - "post-process"
 coverImage: "Thumb_SoftOutlines_small.jpg"
+sidebar:
+    nav: sidebar-optimization
 ---
 
 Ever since I first wrote about creating mesh outlines in Unreal Engine I have wondered if it was possible to render them as soft outlines instead of harsh binary lines. A good example of soft outlines can be found in Valve's games like Left 4 Dead or CS:GO.

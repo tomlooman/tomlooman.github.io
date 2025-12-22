@@ -9,6 +9,8 @@ tags:
   - "unreal-engine"
   - "utility-ai"
 coverImage: "UtilityAI_FeaturedImage_01.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 Unreal Engine comes with several AI features built-in ([Behavior Trees, Blackboards](https://www.youtube.com/watch?v=tq-ULFuNyig), Navigation Mesh and Environment Query System) but hasn't seen many improvements in this area since the launch of 4.0 several years ago. With mixed results in our projects using Behavior Trees we decided to look at alternatives. [Oz](https://twitter.com/ozmant) pointed me to Utility AI as a system for setting up AI behaviors, I have since been fascinated by the simplicity of the concept to replace Behavior Trees in our projects.

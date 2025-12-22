@@ -10,6 +10,8 @@ tags:
   - "github"
   - "sample-project"
 coverImage: "actionroguelike_ue4_combatsample-copy.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 For the [Stanford University Fall Curriculum](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), I built a small game project using C++ mixed with some Blueprint in Unreal Engine. It has since been converted into an online course that anyone can participate in. It has been used by dozens of industry leading game studios to train their employees for C++ with Unreal Engine on top of thousands of indie developers.

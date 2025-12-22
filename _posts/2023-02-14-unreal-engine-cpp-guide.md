@@ -8,6 +8,8 @@ tags:
   - "cpp"
   - "unreal-engine"
 coverImage: "Blog_Banner_CPPCompleteGuide_770.jpg"
+sidebar:
+    nav: sidebar-cpp
 ---
 
 Getting started with Unreal Engine C++ can be a bit of a struggle. The resources online have no clear path to follow or fail to explain the _Unrealisms_ you'll encounter. In this article, I'll attempt to give you an overview of many unique aspects of Unreal's C++ and briefly go over some of the native C++ features and how they are used in the context of Unreal Engine. It's a compilation of the many different concepts that you will face when working in C++ and Unreal Engine specifically.
