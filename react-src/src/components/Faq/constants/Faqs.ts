@@ -3,7 +3,7 @@ import { Faq } from "../models/Faq";
 const commonFaq: Faq[] = [
     {
         question: "For how long will this course be updated and supported?",
-        answer: "Support and updates will continue for many years. There is no scheduled end-of-life and as Unreal Engine changes, so will this course to ensure compatibility."
+        answer: "Q&A Support and lesson updates will continue for years. There is no scheduled end-of-life and as Unreal Engine changes, so will this course to ensure compatibility."
     },
     {
         question: "When does the course start and finish?",
@@ -22,12 +22,8 @@ const commonFaq: Faq[] = [
         answer: "Yes, I am available to help you throughout the course! You can ask questions with each lesson and find previously answered questions or helpful tips from fellow students."
     },
     {
-        question: "Are Captions/Subtitles available?",
-        answer: "Yes! All lessons include multiple language subtitles. Including English, Korean, and Simplified Chinese"
-    },
-    {
-        question: "I'm interested in your course, but the exchange rate is too high for me. Is there anything you can do?",
-        answer: "Please don't hesitate to reach out directly via info@tomlooman.com to discuss regional discounts. We want to make sure that our course is accessible to everyone."
+        question: "Are Subtitles available?",
+        answer: "Yes! All lessons include multi-language subtitles. Including English, Korean, and Simplified Chinese."
     }
 ];
 
@@ -61,20 +57,7 @@ export const FAQs: { [key: number]: Faq[] } = {
         ...commonFaq,
         {
             question: "Which version of Unreal Engine was this course created with?",
-            answer: "At this time, most lessons were recorded with UE 5.4 or above. New content will always be recorded with the latest release. Information on older versions will remain available to maintain compatibility with projects that are running older versions of UE5."
-        },
-        {
-            question: "Can this course be used with Unreal Engine 4 instead of the latest UE5?",
-            answer: "Yes! While Unreal Engine 5 has introduced many amazing new features and optimizations...a lot of topics we covered already existed in UE4. A lot of projects are still in production using older versions, the course remains compatible to cater to this audience as well."
-        },
-        {
-            question: "What does Early Access mean for this Course?",
-            answer: "The Early Access Program allows me to get you a large amount of completed content right now and informs me of the student desires for additional content. With potentially hundreds of videos to make, I want to ensure I spent the time wisely and make the videos with the highest demand first."
-        },
-        {
-            question: "",
-            answer: ""
+            answer: "At this time, most lessons are recorded with UE 5.4 and above. New content will always be recorded with the latest release. Information on older versions will remain available to maintain compatibility with projects that are running older versions of UE5."
         }
-
     ]
 };
