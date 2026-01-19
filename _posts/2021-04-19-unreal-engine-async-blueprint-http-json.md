@@ -1,5 +1,5 @@
 ---
-title: "Async Blueprint Nodes (to fetch JSON data)"
+title: "Creating Latent Blueprint Nodes"
 date: 2021-04-19
 categories: 
   - "cpp"

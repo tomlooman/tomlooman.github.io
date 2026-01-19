@@ -9,8 +9,9 @@ redirect_from:
     - /ue4-cpp-multiplayer-course/
     - /pro-course-github/
     - /unreal-engine-cpp-course
-# redirect_to: # temporary redirect until this landing page is finished
-#    - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15
+    - /unreal-engine-cpp-course-available/
+redirect_to: # temporary redirect until this landing page is finished
+    - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15
 ---
 
 Master Unreal Engine C++ Game Development with this university-grade course.

@@ -63,6 +63,9 @@ defaults:
     values:
       layout: single
       css: main
+      toc: true
+      toc_sticky: true
+      related: true
   # courses
   - scope:
       path: "_pages/courses"

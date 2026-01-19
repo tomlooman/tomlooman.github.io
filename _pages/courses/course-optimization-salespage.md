@@ -4,8 +4,8 @@ title: "Course: Complete Game Optimization for Unreal Engine 5"
 permalink: /courses/unrealengine-optimization/
 redirect_from:
     - /unreal-engine-course-optimization/
-# redirect_to: # temporary until we finished this landing page
-#    - https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15
+redirect_to: # temporary until we finished this landing page
+    - https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15
 ---
 
 

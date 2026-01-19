@@ -1,5 +1,5 @@
 ---
-title: "UE4 UFUNCTION Keywords Explained"
+title: "Unreal Engine UFUNCTION specifiers Explained"
 date: 2016-09-22
 categories: 
   - "cpp"
