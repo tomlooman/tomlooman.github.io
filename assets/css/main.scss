@@ -360,22 +360,96 @@ p {
   text-align: center;
   display: flex;
   justify-content: center;
-  margin: 50px;
+  align-items: center;
+  margin: 50px 0 50px 0;
 }
 
-@media (max-width: $max-width) {
-  .bio-block {
-    flex-direction: column;
-  }
+.bio-block .bio-textblock {
+  padding-left: 40px;
+  text-align: left;
 }
 
 .bio-block p {
   font-size: 16px;
 }
 
+@media (max-width: $max-width) {
+  .bio-block {
+    flex-direction: column;
+  }
+  .bio-block .bio-textblock {
+    text-align: center;
+  }
+}
+
 .bio-picture {
   border-radius: 25px;
   max-width: 250px;
   height:fit-content;
-  margin-right: 40px;
+}
+
+
+/* Contact Forms */
+
+.contact-form {
+  max-width: 100%;
+  margin-top: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.contact-form input[type="email"],
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  background-color: #fff;
+
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #f26a3d;
+}
+
+.contact-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.85rem 1rem;
+
+  background-color: #f26a3d;
+  color: #fff;
+
+  font-size: 1.0rem;
+  font-weight: 600;
+  text-align: center;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: background-color 0.15s ease-in-out;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #e35f35;
 }
