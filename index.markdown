@@ -14,10 +14,10 @@ Boost your team's Unreal Engine skills with my <strong>Unreal Engine 5 Courses</
 
 <div class="wide-content"><div id="email-sign-up"></div></div>
 
-<h2>Teaching Unreal Engine 5 to Indies & AAA</h2>
+<h2>Teaching Unreal Engine 5 to AAA & Indies</h2>
 {: .text-center}
 
-Truly Learn Unreal Engine the Epic™ Way through my free tutorials and premium courses on C++ and Game Optimization.
+Truly Learn Unreal Engine the Epic™ Way through my free tutorials and professional courses on C++ and Game Optimization.
 {: .text-center}
 
 <br />
