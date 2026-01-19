@@ -1,5 +1,6 @@
 ---
 title: "Unreal Engine Naming Convention Guide"
+permalink: unreal-engine-naming-convention-guide
 date: 2014-04-03
 last_modified_at: 30-08-2025
 coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
@@ -138,9 +139,16 @@ For this list I stick mainly to the commonly used types and those that are used 
 
 #### Textures
 
-Texture types all use the T_ prefix.
+Texture types all use the **T_** prefix.
 
-Texture type, Suffix Diffuse/Color Map, _D Normal Map, _N Emissive Map, _E Mask Map, _M Roughness Map, _R Metallic Map, _MT Specular, _S Displacement, _DP Ambient Occlusion, _AO Height Map, _H Flow Map, _F Light Map (custom), _L
+Texture type, Suffix 
+Diffuse/Color Map, _D 
+Normal Map, _N 
+Emissive Map, _E 
+Mask Map, _M 
+Roughness Map, _R 
+Metallic Map, _MT 
+Ambient Occlusion, _AO
 
 ### Animation
 
@@ -166,4 +174,4 @@ These types have no prefix. These names are pretty standard to how the engine au
 | B_ | All other blueprints such as pawn types, item spawners, etc. |
 
 ## References
-- [Recommended Asset Naming Conventions | Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects)
+- [Recommended Asset Naming Conventions (Unreal Docs)](https://dev.epicgames.com/documentation/en-us/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects)
