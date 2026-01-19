@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Unreal Engine Optimization Course
+title: "Course: Complete Game Optimization for Unreal Engine 5"
 permalink: /courses/unrealengine-optimization/
 redirect_from:
     - /unreal-engine-course-optimization/

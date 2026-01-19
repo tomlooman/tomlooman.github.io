@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Unreal Engine C++ Course
+title: "Course: Professional Game Development in C++ and Unreal Engine 5"
 permalink: /courses/unrealengine-cpp/
 redirect_from:
     - /stanford-cs193u/
@@ -12,8 +12,6 @@ redirect_from:
 # redirect_to: # temporary redirect until this landing page is finished
 #    - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15
 ---
-
-Professional Game Development in C++ and Unreal Engine
 
 Master Unreal Engine C++ Game Development with this university-grade course.
 

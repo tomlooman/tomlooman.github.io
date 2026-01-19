@@ -7,7 +7,9 @@ layout: custom-home
 
 <h2>Master Unreal Engine 5 with these Courses</h2>
 <div id="courses-banner"></div>
-Fast-track your Unreal Engine experience with my Unreal Engine 5 courses for C++ (Engineers) and Game Optimization (Tech Artists & Engineers)!
+{: .text-center}
+Boost your team's Unreal Engine skills with my <strong>Unreal Engine 5 Courses</strong> on <a href="courses/unrealengine-cpp">Game Development with C++</a>for Engineers and <a href="courses/unrealengine-optimization">Game Optimization</a> for Engineers & (Tech) Artists!
+{: .text-center}
 <br />
 
 <div class="wide-content"><div id="email-sign-up"></div></div>
