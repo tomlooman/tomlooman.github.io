@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from "react";
 import arrowSvg from '../../../public/assets/triangles_6_non_filled_orange.svg';
 import SingleInputForm from '../Forms/SigleInputForm';
 import style from './Footer.module.scss';
+
 
 interface SocialLink {
     label: string;
@@ -31,6 +32,25 @@ const Footer = () => {
         { label: "Privacy Policy", url: "https://courses.tomlooman.com/p/privacy" }
     ];
 
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+
+    const submitEmail = async (email: string) => {
+        setLoading(true);
+
+        const formData = new FormData();
+        formData.append("email_address", email);
+
+        await fetch("https://app.kit.com/forms/8905753/subscriptions", {
+            method: "POST",
+            mode: "no-cors", // important for static sites
+            body: formData,
+        });
+
+        setLoading(false);
+        setSuccess(true);
+    };
+
     return (
         <div className={style.footer}>
             <img className={style.topImage} src={arrowSvg} alt="arrow banner" />
@@ -49,11 +69,15 @@ const Footer = () => {
                 <div className={style.newsLetter}>
                     <h2>Join my Newsletter</h2>
                     <p>Join over 5000 fellow developers and receive Unreal Engine insights in your inbox!</p>
-                    {/* TODO: change onSubmit to use a proper email signup function */}
+                    
+                    
+                {success ? (
+                    <p>Check your email to confirm your subscription.</p>
+                ) : (
                     <SingleInputForm
-                        label="Email address"
-                        onSubmit={(value) => console.log(value)}
-                        submitText="Subscribe"
+                        label="Email"
+                        onSubmit={submitEmail}
+                        submitText={loading ? "Submitting..." : "Sign me up"}
                         inputLabelProps={{
                             sx: {
                                 '&.Mui-focused': {
@@ -71,6 +95,7 @@ const Footer = () => {
                             },
                         }}
                     />
+                )}
                 </div>
             </div>
         </div>
