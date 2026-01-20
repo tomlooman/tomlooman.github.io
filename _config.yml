@@ -31,8 +31,9 @@ github_username:  tomlooman
 logo: "/assets/site_logo_whiteorange.webp"
 
 # Build settings
-theme: minimal-mistakes-jekyll
+remote_theme: minimal-mistakes-jekyll
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-include-cache
