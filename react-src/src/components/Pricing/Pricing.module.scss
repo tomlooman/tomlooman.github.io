@@ -1,0 +1,83 @@
+@use '/react-src/styles/colors.scss' as colors;
+
+.wrapper {
+    > h2 {
+        text-align: center;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+       .priceItem {
+            border-radius: .5rem;
+            border: solid 1px colors.$navy;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .priceTitle {
+                display: flex;
+                align-items: center;
+                padding: 1rem .5rem;
+                border-bottom: solid 1px colors.$orange;
+                height: 100px;
+
+                > h5 {
+                    margin: 0;
+                }
+
+                .indieTypeSelect {
+                    height: 1.5rem;
+                    margin: 0 0 0 .5rem;;
+
+                    > div {
+                        height: 100%;
+
+                        > div {
+                            font-size: .9rem;
+                        }
+                    }
+                }
+            } 
+
+            .priceDescription {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+
+                .priceAmount {
+                    display: flex;
+                    align-items: end;
+                    flex-wrap: wrap;
+
+                    > * {
+                        margin-right: .5rem;
+                    }
+                }
+
+                .priceAdditionalInfo {
+                    font-size: .75rem;
+                    height: 1.5rem
+                }
+
+                > .priceAmount > h1 {
+                    margin: 0 .5rem 0 0;
+                    display: flex;
+                    align-items: center;
+
+                    > span {
+                        font-size: 1rem;
+                        text-decoration: line-through;
+                        margin-left: .5rem;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+
+}

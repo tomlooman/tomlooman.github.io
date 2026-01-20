@@ -1,0 +1,43 @@
+@use 'sass:color';
+@use '/react-src/styles/colors.scss' as colors;
+
+.singleInputFormWrapper {
+    display: flex;
+    align-items: stretch;
+    border: solid .5px white;
+    border-radius: 5px;
+
+    .textFieldRoot {
+
+        > div {
+            border-radius: 5px 0 0 5px;
+            background-color: colors.$white;
+            height: 100%;
+        }
+
+        * {
+            font-size: .75rem;
+
+            > input {
+                height: 40px;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    .signUpButton {
+        background-color: colors.$orange;
+        color: colors.$white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 0 5px 5px 0;
+        font-size: .75rem;
+        height: 40px;
+        white-space: nowrap;
+
+        &:hover {
+            background-color: color.scale(colors.$orange, $lightness: -20%);
+        }
+    }
+}

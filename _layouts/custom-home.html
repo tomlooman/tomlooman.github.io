@@ -1,0 +1,41 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+<br />
+
+<h2 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Latest Unreal Engine articles" }}</h2>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% assign latest_posts = site.posts | slice: 0, 6 %}
+
+{% capture post_data_json %}
+[
+  {% for post in latest_posts %}
+    {
+      "title": "{{ post.title | escape }}",
+      "url": "{{ post.url | relative_url }}",
+      "coverImage": "{{ post.coverImage | relative_url | remove_first: '/' }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+{% endcapture %}
+
+<div id="latest-blogs" data-posts='{{ post_data_json | strip_newlines | escape }}'></div>
+
+{% include paginator.html %}
+
+<div id="see-all-posts-button" data-text="See all posts" data-url="/blog"></div>
+
+<br />
+
+<div class="wide-content">
+  <div id="footer"></div>
+</div>

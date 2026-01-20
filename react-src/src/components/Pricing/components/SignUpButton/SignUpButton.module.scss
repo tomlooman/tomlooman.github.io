@@ -1,0 +1,18 @@
+@use '/react-src/styles/colors.scss' as colors;
+@use 'sass:color';
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+
+    .signUpButton {
+    margin-top: 1rem !important;
+    background-color: colors.$orange !important;
+    color: colors.$white !important;
+    border: none !important;
+
+    &:hover {
+        background-color: color.scale(colors.$orange, $lightness: -20%) !important;
+    }
+}
+}

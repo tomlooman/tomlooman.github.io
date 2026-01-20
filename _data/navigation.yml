@@ -1,0 +1,74 @@
+main:
+  - title: "Blog"
+    url: /blog/
+  - title: "C++ Tutorials"
+    url: /unreal-engine-cpp-tutorials
+  - title: "Unreal Engine C++ Course"
+    url: /courses/unrealengine-cpp/
+  - title: "Unreal Engine Optimization Course"
+    url: /courses/unrealengine-optimization/
+#  - title: "Training For Teams"
+#    url: /studiotraining/
+  - title: "Contact"
+    url: "/contact/"
+  - title: "Login (Courses)"
+    url: "https://courses.tomlooman.com/sign_in"
+  #- title: "Nuggets"
+  #  url: "/nuggets/"
+
+
+sidebar-main:
+  - title: "Unreal Engine Courses"
+    children:
+      - title: "- Professional Game Development in C++ & Unreal Engine 5"
+        url: /courses/unrealengine-cpp/
+      - title: "- Complete Game Optimization for Unreal Engine 5"
+        url: /courses/unrealengine-Optimization
+  - title: "Top Articles"
+    children:
+      - title: "- Complete C++ Guide"
+        url: /unreal-engine-cpp-guide
+      - title: "- Naming Convention Guide"
+        url: /unreal-engine-naming-convention-guide
+      - title: "- UE 5.7 Performance Highlights"
+        url: /unreal-engine-5-7-performance-highlights/
+      - title: "- Unreal Engine Optimization on a Budget"
+        url: /unreal-engine-optimization-talk
+      - title: "- PSO Pre-caching & Bundled PSOs"
+        url: /psocaching-unreal-engine/
+
+sidebar-cpp:
+  - title: "More C++ Articles"
+    children:
+      - title: "- Complete C++ Guide"
+        url: /unreal-engine-cpp-guide
+      - title: "- Gameplay Framework Classes"
+        url: /unreal-engine-gameplay-framework
+      - title: "- Animating in C++"
+        url: /unreal-engine-animation-cpp-curves-and-easing-functions/
+      - title: "- Using C++ Timers"
+        url: /unreal-engine-cpp-timers
+      - title: "- Save Game System"
+        url: /unreal-engine-cpp-save-system
+  - title: "Unreal Engine Course"
+    children:
+      - title: "Professional Game Development in C++ & Unreal Engine"
+        url: /courses/unrealengine-cpp/
+
+sidebar-optimization:
+  - title: "More Optimization Articles"
+    children:
+      - title: "- Game Optimization on a Budget"
+        url: /unreal-engine-optimization-talk
+      - title: "- PSO Precaching & Bundled PSOs"
+        url: /psocaching-unreal-engine/
+      - title: "- UE 5.7 Performance Highlights"
+        url: /unreal-engine-5-7-performance-highlights/
+      - title: "- UE 5.6 Performance Highlights"
+        url: /unreal-engine-5-6-performance-highlights/
+      - title: "- UE 5.5 Performance Highlights"
+        url: /unreal-engine-5-5-performance-highlights/
+  - title: "Unreal Engine Course"
+    children:
+      - title: "- Complete Game Optimization for Unreal Engine 5"
+        url: /courses/unrealengine-Optimization

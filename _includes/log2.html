@@ -1,0 +1,31 @@
+{% assign value = include.value | plus: 0 %}
+
+{% if value <= 1 %}
+  {{ 0.0 }}
+{% elsif value <= 2 %}
+  {{ value | minus: 1 }}
+{% elsif value <= 4 %}
+  {{ value | minus: 2 | divided_by: 2.0 | plus: 1 }}
+{% elsif value <= 8 %}
+  {{ value | minus: 4 | divided_by: 4.0 | plus: 2 }}
+{% elsif value <= 16 %}
+  {{ value | minus: 8 | divided_by: 8.0 | plus: 3 }}
+{% elsif value <= 32 %}
+  {{ value | minus: 16 | divided_by: 16.0 | plus: 4 }}
+{% elsif value <= 64 %}
+  {{ value | minus: 32 | divided_by: 32.0 | plus: 5 }}
+{% elsif value <= 128 %}
+  {{ value | minus: 64 | divided_by: 64.0 | plus: 6 }}
+{% elsif value <= 256 %}
+  {{ value | minus: 128 | divided_by: 128.0 | plus: 7 }}
+{% elsif value <= 512 %}
+  {{ value | minus: 256 | divided_by: 256.0 | plus: 8 }}
+{% elsif value <= 1024 %}
+  {{ value | minus: 512 | divided_by: 512.0 | plus: 9 }}
+{% elsif value <= 2048 %}
+  {{ value | minus: 1024 | divided_by: 1024.0 | plus: 10 }}
+{% elsif value <= 4096 %}
+  {{ value | minus: 2048 | divided_by: 2048.0 | plus: 11 }}
+{% else %}
+  {{ 12.0 }}
+{% endif %}

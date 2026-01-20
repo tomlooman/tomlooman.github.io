@@ -1,0 +1,455 @@
+---
+  # Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+$max-width: 1400px;
+$typeface: "Manrope", "Roboto", "Arial", sans-serif;
+$typeface-heading: "Manrope", "Roboto", "Arial", sans-serif;
+$color-blue: #103D59;
+$color-orange: #ffa04a;
+$color-offwhite: #F2F4FA;
+$color-lightgray: #eaeff8;
+$doc-font-size: 15px;
+$footer-height: 330px;
+$header-height-small: 51px;
+$header-height: 62px;
+$breakpoint-text-size-change: 1024px;
+$breakpoint-text-size-change-large: 1280px;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "overrides/variables";
+@import "minimal-mistakes"; // main partials
+@import "overrides/masthead";
+@import "overrides/syntax";
+
+#main {
+  padding-inline: 0;
+  max-width: unset;
+  margin: 0;
+
+  .archive {
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+    > *:not(.wide-content) {
+      padding: 0 200px;
+    }
+
+    @media screen and (max-width: 992px) {
+      > *:not(.wide-content) {
+        padding: 0 100px;
+      } 
+    }
+
+    @media screen and (max-width: 768px) {
+      > *:not(.wide-content) {
+        padding: 0 2rem;
+      }
+      
+    }
+  }
+}
+
+a {
+  color: $color-orange;
+  font-weight: 500;
+}
+
+a:hover {
+  color: $color-blue;
+}
+
+* {
+  font-family: $typeface;
+}
+
+body {
+  font-family: $typeface;
+  padding: $header-height 0 0; // padding for sticky masthead
+
+  @media  screen and (max-width: $breakpoint-text-size-change) {
+    padding: $header-height-small 0 0; // padding for sticky masthead
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $typeface;
+}
+
+h2 {
+  margin-top: 1em;
+}
+
+.page__title a {
+  font-weight: bolder;
+}
+
+.page__content h2 {
+  border-bottom: none;
+  padding-bottom: 0.2em;
+}
+
+.page__content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* captions below images inside of blogs, marked as EM by adding * around the text */
+p > img + em {
+  display: block;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+/* inline code, similar to epic's docs */
+.page__content :not(pre) > code {
+  border-radius: 6px;
+  border: .0625rem solid #404044;
+  background: #263238c0;
+  color: #fff;
+}
+
+
+/* text wrapping on big code blocks */
+pre {
+  white-space: pre-wrap;
+}
+
+div.highlighter-rouge, figure.highlight {
+  border-radius: 6px;
+  border: .0625rem solid #404044;
+}
+
+/* For blog stuff */
+
+.layout--single .page__inner-wrap {
+  max-width: 1100px;
+}
+
+p {
+  font-size: .9em;
+}
+
+.page__content p {
+  font-size: .85em;
+}
+
+.page__content li {
+  font-size: 0.85em;
+  margin-bottom: 0.1em;
+}
+
+.page-meta {
+  font-size: 0.9em;
+}
+
+.archive__subtitle {
+  border-bottom: none;
+  font-size: 1.25em;
+  color: unset;
+  text-align: center;
+}
+
+.grid__item .archive__item-teaser {
+  max-height: 100%; /* allow full height thumbnails */
+}
+
+/* /blog post items in list view */
+
+.post__item .archive__item {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1em;
+}
+
+.post__item .archive__item-teaser {
+  flex: 0 0 auto;
+}
+
+.post__item .archive__item-teaser img {
+  max-height: 180px;
+  width: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.post__item .archive__item-title,
+.post__item .archive__item-excerpt {
+  margin-top: 0;
+}
+
+.post__item .archive__item-body {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .post__item .archive__item {
+    flex-direction: column;
+  }
+
+  .post__item .archive__item-teaser img {
+    max-height: none;
+    width: 100%;
+  }
+}
+
+/* end of /blog post items */
+
+.toc {
+  font-family: $typeface;
+  border: 1px solid $color-orange;
+  border-radius: 4px;
+  background-color: #eaeff8;
+}
+
+.toc .nav__title {
+  color: #7a8288;
+  background-color: #eaeff8;;
+}
+
+.toc .active a {
+  color: $color-orange;
+}
+
+.nav__list .nav__items {
+  margin-left: 20px;
+  border: 1px solid $color-orange;
+  border-radius: 4px;
+  background-color: #eaeff8;
+  padding-left: 5px;
+  padding-bottom: 12px;
+}
+
+.nav__sub-title {
+  font-family: $typeface;
+  margin: 0.25em;
+  font-weight: 900;
+}
+
+.nav__list .nav__items a {
+  font-weight: 400;
+  margin: 0.5em;
+}
+
+.nav__list .nav__items .active {
+    margin-inline-start: 0em;
+}
+
+/* TOP TITLE BAR*/
+
+.site-title {
+  text-transform: uppercase;
+}
+
+.masthead {
+  background-color: $color-blue;
+  height: $header-height;
+
+  @media  screen and (max-width: $breakpoint-text-size-change) {
+    height: $header-height-small;
+  }
+}
+
+.masthead__inner-wrap {
+  font-family: $typeface;
+  padding: 0em;
+}
+
+.masthead__menu-item {
+  font-size: 16px;
+}
+
+
+/* sidebar padding for sticky masthead */
+.sidebar__right.sticky {
+  top: 4em;
+}
+
+.sidebar .nav__list {
+  top: 4em;
+}
+
+.greedy-nav .hidden-links {
+  background: $color-blue;
+}
+
+.greedy-nav {
+  background: inherit;
+}
+
+.greedy-nav a {
+  color: $color-offwhite;
+}
+
+.greedy-nav a:hover {
+    color: #FFF;
+}
+
+.search__toggle {
+  color: $color-offwhite;
+}
+
+.navicon {
+  background: $color-offwhite;
+}
+
+/* underline for the menu items */
+.greedy-nav .visible-links a:before {
+  background: #FFF;
+  height: 2px;
+}
+
+.site-logo img {
+    max-height: 3em;
+}
+
+.initial-content {
+  > #main {
+    min-height: calc(100vh - #{$header-height} - #{$footer-height});
+
+      @media  screen and (max-width: $breakpoint-text-size-change) {
+      min-height: calc(100vh - #{$header-height-small} - #{$footer-height});
+    }
+  }
+}
+
+.sales-banner {
+  position: sticky;
+  top:$header-height;
+  z-index: 100;
+  background: $color-lightgray;
+  color: $color-blue;
+  padding: 8px 16px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media  screen and (max-width: $breakpoint-text-size-change) {
+    top: $header-height-small;
+  }
+
+  > div {
+    display: flex;
+  }
+}
+
+.sales-banner button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+/* END TITLE BAR */
+
+#see-all-posts-button {
+  margin-top: 1em;
+}
+
+.bio-block {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+
+.bio-block .bio-textblock {
+  padding-left: 40px;
+  text-align: left;
+}
+
+.bio-block p {
+  font-size: 16px;
+}
+
+@media (max-width: $max-width) {
+  .bio-block {
+    flex-direction: column;
+  }
+  .bio-block .bio-textblock {
+    text-align: center;
+  }
+}
+
+.bio-picture {
+  border-radius: 25px;
+  max-width: 250px;
+  height:fit-content;
+}
+
+
+/* Contact Forms */
+
+.contact-form {
+  max-width: 100%;
+  margin-top: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.contact-form input[type="email"],
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  background-color: #fff;
+
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #f26a3d;
+}
+
+.contact-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.85rem 1rem;
+
+  background-color: #f26a3d;
+  color: #fff;
+
+  font-size: 1.0rem;
+  font-weight: 600;
+  text-align: center;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: background-color 0.15s ease-in-out;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #e35f35;
+}

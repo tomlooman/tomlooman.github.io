@@ -1,0 +1,59 @@
+@use '/react-src/styles/colors.scss' as colors;
+
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.left,
+.middle,
+.right {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.left {
+  background-color: colors.$orange-light;
+  clip-path: polygon(0 0, 45% 0, 60% 100%, 0 100%);
+  background-image: url('../images/tfw_herobanner.jpg');
+}
+
+.middle {
+  background-color: colors.$navy;
+  clip-path: polygon(45% 0, 55% 0, 70% 100%, 60% 100%);
+}
+
+.right {
+  background-color: colors.$white;
+  clip-path: polygon(55% 0, 100% 0, 100% 100%, 70% 100%);
+  position: relative;
+
+  > div {
+    position: absolute;
+
+    &:first-of-type {
+      top: 0;
+      left: 60%;
+      width: 40%;
+      height: 33%;
+    }
+
+    &:nth-of-type(2) {
+      top: 33%;
+      left: 65%;
+      width: 35%;
+      height: 33%;
+    }
+
+    &:last-of-type {
+      top: 66%;
+      left: 70%;
+      width: 30%;
+      height: 34%;
+    }
+  }
+}
