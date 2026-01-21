@@ -21,9 +21,9 @@
 title: Tom Looman
 subtitle: Unreal Engine Tutorials
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Unreal Engine 5 Courses & Tutorials by Tom Looman. 
+  Game Development Resources for AAA and Indies.
+  Specializing in C++, Graphics, Performance and Game Optimization.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://tomlooman.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: t_looman
