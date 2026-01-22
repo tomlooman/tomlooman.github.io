@@ -140,9 +140,9 @@ Keep in mind that you'll need to change the animation system slightly as it curr
 
 ## Closing
 
-There is a lot more to implement in this current version such as looping, ping-pong playback, different value types (such as supporting Vectors and Colors). I will leave that up to you for now, maybe if you see this article in the future the subsystem will have be expanded already! The subsystem is good enough to handle my use case which is to animate the opening of a treasure chest using C++. I've applied it to a few other places as well to test it further such as growing and shrinking the black hole projectile's radius of influence.
+You now have a strong basis for creating animations in C++, driving a wide variety of systems. There is certainly more to implement such as looping, ping-pong playback, different value types (eg. Vectors and Colors). I will leave that up to you for now, maybe if you see this article in the future the subsystem will have be expanded already! You can find the source and other interesting C++ systems in the [Action Roguelike project on GitHub](https://github.com/tomlooman/ActionRoguelike).
 
-Be sure to checkout the [Action Roguelike project on GitHub](https://github.com/tomlooman/ActionRoguelike) as it contains a lot more interesting C++ based systems to explore! If you’re interested to learn C++ game programming from me, check out my [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)! And don’t forget to subscribe to my newsletter below for more Unreal Engine articles.
+To be notified of more C++ articles like this one, subscribe to the newsletter below.
 
 ## References
 

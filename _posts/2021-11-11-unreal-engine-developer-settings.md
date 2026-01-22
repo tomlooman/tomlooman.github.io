@@ -1,6 +1,7 @@
 ---
-title: "Adding Custom 'Project Settings' to Unreal Engine (DeveloperSettings)"
+title: "Adding 'Project Settings' to Unreal Engine (DeveloperSettings)"
 date: 2021-11-11
+excerpt: "There is a better way to store and modify your project wide settings than using Blueprints or hard-coded C++. Learn how to use the Developer Settings class."
 categories: 
   - "cpp"
 tags: 
@@ -155,6 +156,6 @@ This new addition can be quite nice to easily set defaults in your project setti
 
 ## Closing
 
-For more details and examples we're using Developer Settings to configure a [SaveGame system](https://www.tomlooman.com/unreal-engine-cpp-save-system/) in my [**Unreal Engine C++ Pro Course**](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15). The project source is available to browse on [GitHub](https://github.com/tomlooman/ActionRoguelike). Make sure you check it out!
+You now know how to create additional Project Settings, you may continue exploring Developer Settings and other C++ systems in the [Action Roguelike project on GitHub](https://github.com/tomlooman/ActionRoguelike). Look for classes `RogueDeveloperSettings.h` and `RogueDeveloperLocalSettings.h` on how this can be used in your project.
 
-[Follow me on Twitter](https://www.tomlooman.com/unreal-engine-optimal-graphics-settings/) for more Unreal-related content or have a look at my other [C++ Tutorials](https://www.tomlooman.com/unreal-engine-cpp-tutorials/) and tricks such as an easy way to [Auto-detect optimal graphics settings.](https://www.tomlooman.com/auto-detect-graphics-settings-ue4/)
+To be notified of more articles like this one, subscribe to the newsletter below.
