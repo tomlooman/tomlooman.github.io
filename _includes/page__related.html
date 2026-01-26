@@ -133,7 +133,7 @@
         <!-- relevance: {{ relevance }} -->
 
         {% comment %} Render the actual page link. {% endcomment %}
-      {% include archive-single.html type="grid" %}
+      {% include archive-single-related.html type="grid" %}
 
         {% comment %} Update the counter & break if we're done. {% endcomment %}
         {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
