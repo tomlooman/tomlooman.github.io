@@ -9,10 +9,10 @@ main:
     url: /courses/unrealengine-optimization/
 #  - title: "Training For Teams"
 #    url: /studiotraining/
+  - title: "Courses Login"
+    url: "https://courses.tomlooman.com/sign_in"
   - title: "Contact"
     url: "/contact/"
-  - title: "Login (Courses)"
-    url: "https://courses.tomlooman.com/sign_in"
   #- title: "Nuggets"
   #  url: "/nuggets/"
 

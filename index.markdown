@@ -8,7 +8,7 @@ layout: custom-home
 <h2>Master Unreal Engine 5 with these Courses</h2>
 <div id="courses-banner"></div>
 {: .text-center}
-Boost your team's Unreal Engine skills with my <strong>Unreal Engine 5 Courses</strong> on <a href="courses/unrealengine-cpp">Game Development with C++</a>for Engineers and <a href="courses/unrealengine-optimization">Game Optimization</a> for Engineers & (Tech) Artists!
+Boost your team's Unreal Engine skills with my <strong>Unreal Engine 5 Courses</strong> on <a href="courses/unrealengine-cpp">Game Development with C++</a> for Engineers and <a href="courses/unrealengine-optimization">Game Optimization</a> for Engineers & (Tech) Artists!
 {: .text-center}
 <br />
 
@@ -17,7 +17,7 @@ Boost your team's Unreal Engine skills with my <strong>Unreal Engine 5 Courses</
 <h2>Teaching Unreal Engine 5 to AAA & Indies</h2>
 {: .text-center}
 
-Truly Learn Unreal Engine the Epic™ Way through my free tutorials and professional courses on C++ and Game Optimization.
+Truly Master Unreal Engine the Epic™ Way through my free tutorials and professional courses on C++ and Game Optimization.
 {: .text-center}
 
 <br />

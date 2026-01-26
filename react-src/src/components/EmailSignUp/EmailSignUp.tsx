@@ -27,8 +27,7 @@ const EmailSignUp = () => {
         <div className={style.emailSignUpBanner}>
             <div className={style.emailSignUpContent}>
                 <b>
-                    Join thousands of game developers and get Unreal Engine C++ &
-                    Optimization insights in your inbox!
+                    Join thousands of game developers and get Unreal Engine insights in your inbox!
                 </b>
 
                 {success ? (
