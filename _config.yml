@@ -19,13 +19,14 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Tom Looman
+title_separator : "-"
 subtitle: Unreal Engine Tutorials
 description: >- # this means to ignore newlines until "baseurl:"
   Unreal Engine 5 Courses & Tutorials by Tom Looman. 
   Game Development Resources for AAA and Indies.
   Specializing in C++, Graphics, Performance and Game Optimization.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tomlooman.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tomlooman.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: t_looman
 github_username:  tomlooman
 logo: "/assets/site_logo_whiteorange.webp"
@@ -38,6 +39,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-include-cache
   - jekyll-redirect-from
+
+after_footer_scripts:
+  - /assets/js/custom.js
 
 
 search                   : true
@@ -87,8 +91,6 @@ defaults:
       read_time: false
       share: false
       permalink: /:title/
-      sidebar:
-        nav: "sidebar-main"
   # _nuggets
   - scope:
       path: "_nuggets"
@@ -106,6 +108,23 @@ collections:
 
 analytics:
   provider: custom
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path>/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
 
 # Exclude from processing.
@@ -127,3 +146,15 @@ analytics:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
