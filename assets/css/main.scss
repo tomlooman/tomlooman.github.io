@@ -55,6 +55,9 @@ $breakpoint-text-size-change-large: 1280px;
   }
 }
 
+/* when loading urls with an anchor included, offset for sticky menu */
+:target { scroll-margin-top: 80px; }
+
 
 /* HIDE the sidebar until I get rid of it definitely */
 .sidebar.sticky {
