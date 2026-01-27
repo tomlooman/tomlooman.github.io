@@ -1,5 +1,5 @@
 ---
-title: "Journey into Utility AI with Unreal Engine"
+title: "Journey into Utility AI with Unreal Engine (Part 1)"
 date: 2018-11-04
 categories: 
   - "game-ai"
