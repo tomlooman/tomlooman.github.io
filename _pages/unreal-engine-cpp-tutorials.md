@@ -39,28 +39,10 @@ For many more C++ content available by others in the community, check out my [**
 
 ## Latest C++ Content
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+{% assign all_posts = site.posts | sort: "date" | reverse %}
+{% assign cpp_posts = all_posts | where: "categories", "cpp" %}
 
-{% assign latest_posts = site.posts | where: "categories", "cpp" | slice: 0, 4 %}
 
-{% capture post_data_json %}
-[
-  {% for post in latest_posts %}
-    {
-      "title": "{{ post.title | escape }}",
-      "url": "{{ post.url | relative_url }}",
-      "coverImage": "{{ post.coverImage | relative_url | remove_first: '/' }}"
-    }{% unless forloop.last %},{% endunless %}
-  {% endfor %}
-]
-{% endcapture %}
-
-<div id="latest-blogs" data-posts='{{ post_data_json | strip_newlines | escape }}'></div>
-
-{% include paginator.html %}
-
-<div id="see-all-posts-button" data-text="See all posts" data-url="/blog"></div>
+{% for post in cpp_posts %}
+  {% include archive-single.html type="post" %}
+{% endfor %}
