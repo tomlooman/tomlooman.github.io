@@ -246,7 +246,7 @@ print(TimeVar); // This would print out: 1.0f - because we passed in the origina
 
 ### Address Operator
 
-Another important use is the _address operator_, which even lets us pass functions as parameters into other functions. This is very useful for binding user input and [setting timers](https://www.tomlooman.com/unreal-engine-cpp-timers/) to trigger specific functions.
+Another important use is the _address operator_, which even lets us pass functions as parameters into other functions. This is very useful for binding user input and [setting timers](/unreal-engine-cpp-timers/) to trigger specific functions.
 
 The `BindAxis()` function in the example below needs to know which function to call when the mapped input is triggered. We pass in the function and use the _address operator (&)_.
 
@@ -539,7 +539,7 @@ In the example above we create a new Delegate variable and fill it with variable
 void ARogueGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
 ```
 
-Another example of using delegates/callbacks is with Timers. We don't need to specify our own delegate first and can directly pass in the function address so long as it has no parameters. It's possible to use timers with parameters as well. To learn more you can check out my blog post on [Using C++ Timers](https://www.tomlooman.com/unreal-engine-cpp-timers/).
+Another example of using delegates/callbacks is with Timers. We don't need to specify our own delegate first and can directly pass in the function address so long as it has no parameters. It's possible to use timers with parameters as well. To learn more you can check out my blog post on [Using C++ Timers](/unreal-engine-cpp-timers/).
 
 There is a lot more to talk about, but this should provide a core understanding from which to build. There are many more variants to the macros and different ways to bind...which could be a whole article on its own.
 
@@ -605,7 +605,7 @@ Ints are special in that you are not supposed to use "int" in serialized UProper
 There are three types of 'strings' in Unreal Engine that are used for distinctly different things. It's important to select the right type for the job or you'll suffer later. The most common problem is using `FString` for UI text instead of `FText`, this will be a huge headache later if you plan to do any sort of localization.
 
 - `FString` The base representation for strings in Unreal Engine. Used often when debugging and logging information or passing raw string information between systems (such as REST APIs). Can be easily manipulated.
-- `FName` Essentially hashed strings that allow much faster comparisons between two FNames. (they don't change once created) and are used often for look-ups such as socket names on a Skeletal Mesh and as [GameplayTags](https://www.tomlooman.com/unreal-engine-gameplaytags-data-driven-design/).
+- `FName` Essentially hashed strings that allow much faster comparisons between two FNames. (they don't change once created) and are used often for look-ups such as socket names on a Skeletal Mesh and as [GameplayTags](/unreal-engine-gameplaytags-data-driven-design/).
 - `FText` Front-end text to display to the user. Can be localized into many languages. All your front-facing text should *always* be `FText` for this reason.
 
 Here is a piece of [Documentation on String handling](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/StringHandling/) including how to convert between the different types.
@@ -655,7 +655,7 @@ The ALL CAPS _preprocessor directives_ are used by the compiler to 'unfold' into
 
 Allows extra markup on functions, and exposes it to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose functions to Blueprint. Sometimes required by the engine to bind functions to delegates (eg. binding a timer to call a function).
 
-Here is [additional information in a blog post](https://www.tomlooman.com/ue4-ufunction-keywords-explained/) on the available keywords within `UFUNCTION()` and how to use them. There are a lot of [function specifiers](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Functions/Specifiers/) worth checking out, and [BenUI](https://benui.ca/unreal/ufunction/) does a great job of detailing what's available.
+Here is [additional information in a blog post](/ue4-ufunction-keywords-explained/) on the available keywords within `UFUNCTION()` and how to use them. There are a lot of [function specifiers](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Functions/Specifiers/) worth checking out, and [BenUI](https://benui.ca/unreal/ufunction/) does a great job of detailing what's available.
 
 ```cpp
 // Can be called by Blueprint
@@ -799,7 +799,7 @@ _Class Default Object_ is the default instance of a class in Unreal Engine. This
 
 You can easily get the CDO in C++ via [GetDefault\<T\>](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/CoreUObject/UObject/GetDefault/1). You should take care to not accidentally make changes to the CDO as this will bleed over into any new instance created for that class.
 
-Below is one example from [SaveGameSubsystem](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/SaveSystem/RogueSaveGameSubsystem.cpp) using the '_class default object'_ to access [DeveloperSettings](https://www.tomlooman.com/unreal-engine-developer-settings/) (Which can contain Project & Editor Settings to access in your game code) without first creating a new instance.
+Below is one example from [SaveGameSubsystem](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/SaveSystem/RogueSaveGameSubsystem.cpp) using the '_class default object'_ to access [DeveloperSettings](/unreal-engine-developer-settings/) (Which can contain Project & Editor Settings to access in your game code) without first creating a new instance.
 
 ```cpp
 // Example from: SSaveGameSubsystem.cpp (in Initialize())
@@ -866,7 +866,7 @@ Things that didn't quite make it in yet or require a more detailed explanation i
 
 - [Laura's C++ Speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html)
 - [Why C++ In Unreal Engine Isn't That Scary?](https://dev.epicgames.com/community/learning/tutorials/Ml0p/why-c-in-unreal-engine-isn-t-that-scary)
-- [Gameplay Framework Primer](https://www.tomlooman.com/ue4-gameplay-framework/)
+- [Gameplay Framework Primer](/unreal-engine-gameplay-framework/)
 - [Introduction to Unreal C++ Programming](https://docs.unrealengine.com/en-us/Programming/Introduction)
 - [Gameplay Framework Documentation](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Classes/index.html)
 - [Gameplay Programming Documentation](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/index.html)

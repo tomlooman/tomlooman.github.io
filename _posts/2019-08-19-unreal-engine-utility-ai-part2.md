@@ -13,7 +13,7 @@ sidebar:
     nav: sidebar-cpp
 ---
 
-Since the last time I wrote about Utility AI for Unreal Engine 4, it has been stream-lined and so has the Action System it's built on. The Action System is quite similar to Unreal's Gameplay Ability System for those familiar. Towards the end I'll tease a few other AI related concepts I've been working on. [Here is part one in case you missed it.](https://www.tomlooman.com/journey-into-utility-ai-ue4/)
+Since the last time I wrote about Utility AI for Unreal Engine 4, it has been stream-lined and so has the Action System it's built on. The Action System is quite similar to Unreal's Gameplay Ability System for those familiar. Towards the end I'll tease a few other AI related concepts I've been working on. [Here is part one in case you missed it.](/journey-into-utility-ai-ue4/)
 
 This post is mainly going to be a walkthrough of what I've been experimenting with and how the overall structure is shaping up. I'd like to add more practical guides in future parts including some more gameplay footage of the AI in action.
 
@@ -98,7 +98,7 @@ Since then I moved over to embedding the scoring functions in the AI tasks thems
 
 AI is somewhat on the back-burner for my project as it's working as intended. Providing decent gameplay challenges for the player as-is. I do eventually require 3D Pathfinding & Spatial Reasoning. I intend to completely replace all aspects of Unreal's AI Module eventually (including navigation mesh).
 
-**As always, be sure to** [**follow me on Twitter**](https://twitter.com/t_looman) **or check out my** [**previous posts on AI**](https://www.tomlooman.com/ue4/ai/)**.**
+You can [follow me on Twitter](https://twitter.com/t_looman) or check out some of my other articles below.
 
 ## References
 

@@ -449,7 +449,7 @@ This is part of an ongoing development to provide built-in functionality in Hord
 
 This time around I omitted a lot more of the smaller performance wins to keep it a bit shorter and focus on the most impactful changes and the changes you should be aware of when upgrading engine versions.
 
-If you are you interesting in learning more about game performance optimization, I have a professional training course used by dozens of AAA studios. Get more information [HERE](https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15) or [reach out directly](https://www.tomlooman.com/contact/) for more information about team enrollment and studio training.
+If you are you interesting in learning more about game performance optimization, I have a professional training course used by dozens of AAA studios. Get more information [here](https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15) or [reach out directly](/contact/) for more information about team enrollment and studio training.
 
 
-As always, follow me on [Twitter/X](https://x.com/t_looman), or [LinkedIn](https://www.linkedin.com/in/tomlooman/) for everything UE5 performance related!
+You may follow me on [Twitter/X](https://x.com/t_looman), or [LinkedIn](https://www.linkedin.com/in/tomlooman/) for everything Unreal Engine performance related!

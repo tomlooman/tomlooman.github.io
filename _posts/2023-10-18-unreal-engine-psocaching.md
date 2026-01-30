@@ -295,7 +295,7 @@ Engine/PSOPrecache.cpp
 
 **Niagara** has its own logic and control CVARs for PSOs such as `fx.Niagara.Emitter.ComputePSOPrecacheMode` but I have not worked with any of those settings at this time.
 
-**For UE4 Developers:** Niagara lacks some support for proper PSO coverage. I've been told some users had to backport several commits to improve this PSO handling for UE4.27. For your info and further investigation here are those commits (must be logged in to view):
+**For UE4.27 Developers:** Niagara lacks some support for proper PSO coverage. I've been told some users had to backport several commits to improve this PSO handling for UE4.27. For your info and further investigation here are those commits (must be logged in to view):
 
 - [https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce](https://github.com/EpicGames/UnrealEngine/commit/15ceb1985fe60b6a0260967511223efc0392bbce)
 - [https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c](https://github.com/EpicGames/UnrealEngine/commit/b6449bb472ed040924b84394d2ffc427cc407b4c)

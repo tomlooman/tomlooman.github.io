@@ -102,7 +102,7 @@ For your C++ game code, it can be valuable to include additional profiling detai
 - Add profiling detail to your game code
 - Track as “stat _YourCategory_” in the viewport or via Insights.
 
-I previously wrote about this topic before in [Profiling Stats (Stat Commands)](https://www.tomlooman.com/unreal-engine-profiling-stat-commands/).
+I previously wrote about this topic before in [Profiling Stats (Stat Commands)](/unreal-engine-profiling-stat-commands/).
 
 ![](/assets/images/insight_statcyclecounter.png)
 
@@ -392,7 +392,7 @@ The ACL plugin is built in with Unreal Engine 5.3+. Existing projects that migra
 
 Scalability is a critical concept to allow your game to run on a wide range of devices. The hardware benchmark tool helps you evaluate the power of the machine the game is running on and apply a base layer of scalability (Low to Epic in the available categories such as Shadow Rendering, View Distance, etc.).
 
-I wrote a blog post about applying [Hardware Benchmark for default scalability](https://www.tomlooman.com/unreal-engine-optimal-graphics-settings/).
+I wrote a blog post about applying [Hardware Benchmark for default scalability](/unreal-engine-optimal-graphics-settings/).
 
 - Run CPU/GPU benchmark and apply Scalability Settings
 - Returns “score” with 100 baseline for Avg. CPU/GPU

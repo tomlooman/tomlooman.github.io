@@ -15,7 +15,7 @@ Unreal Engine leverages the power of Signed Distance Fields for Ambient Occlusio
 
 ## Distance Field Ambient Occlusion
 
-The Unreal 4.3 release introduced [Distance Field Ambient Occlusion](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html) using a Signed Distance Field. The basic principle of a distance field is that it represents the distance from the object to the point in the the grid. [ByteWrangler](http://bytewrangler.blogspot.nl/2011/10/signed-distance-fields.html) has a nice and simple explanation on distance field in 2d if you'd like to know more. To better understand how DFAO can be of use for [Switch](https://www.tomlooman.com/category/switch/) I did some setup & research using the Unreal examples and some of the meshes we currently have available for our project.
+The Unreal 4.3 release introduced [Distance Field Ambient Occlusion](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html) using a Signed Distance Field. The basic principle of a distance field is that it represents the distance from the object to the point in the the grid. [ByteWrangler](http://bytewrangler.blogspot.nl/2011/10/signed-distance-fields.html) has a nice and simple explanation on distance field in 2d if you'd like to know more. To better understand how DFAO can be of use for my games, I did some setup & research using the Unreal examples and some of the meshes we currently have available for our project.
 
 ###### Unreal 4 Mobile Demo Scene
 

@@ -19,7 +19,7 @@ You might be placing all your settings and tweakable options in Blueprints or ev
 {: .notice--info }
 New in **Unreal Engine 5** is `DeveloperSettingsBackedByCVars` which adds easy binding with Console Variables (CVars) and project/editor settings. I'm explaining this new feature at the bottom of this post.
 
-This system requires some simple [C++](https://www.tomlooman.com/unreal-engine-cpp-tutorials/) to define the variables, so even without programming experience, it's relatively easy to use.
+This system requires some simple [C++](/unreal-engine-cpp-tutorials/) to define the variables, so even without programming experience, it's relatively easy to use.
 
 ## Setting up Developer Settings & Configuration Files
 
