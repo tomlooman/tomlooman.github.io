@@ -2,10 +2,10 @@
 title: "Setting up PSO Precaching & Bundled PSOs for Unreal Engine"
 date: 2023-10-18
 categories: 
-  - "rendering"
+  - "Rendering"
 tags: 
   - "performance"
-  - "rendering"
+  - "Rendering"
   - "unreal-engine"
 coverImage: "Thumb_psocaching.jpg"
 sidebar:

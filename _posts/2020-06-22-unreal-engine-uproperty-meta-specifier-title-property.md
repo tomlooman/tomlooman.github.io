@@ -2,8 +2,7 @@
 title: "Making C++ Arrays with Structs more readable in Unreal Editor"
 date: 2020-06-22
 categories: 
-  - "cpp"
-  - "unreal-nugget"
+  - "C++ Programming"
 tags: 
   - "cpp"
   - "quality-of-life"

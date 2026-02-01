@@ -2,8 +2,7 @@
 title: "Rotating meshes using Vertex Shaders"
 date: 2019-11-21
 categories: 
-  - "materials"
-  - "rendering"
+  - "Rendering"
 tags: 
   - "materials"
   - "performance"

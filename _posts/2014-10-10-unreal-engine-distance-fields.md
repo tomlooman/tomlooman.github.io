@@ -2,9 +2,9 @@
 title: "Distance Fields in Unreal Engine"
 date: 2014-10-10
 categories: 
-  - "rendering"
+  - "Rendering"
 tags:
-  - "rendering"
+  - "Rendering"
   - "distance-fields"
 coverImage: "DF_featured_03.jpg"
 sidebar:

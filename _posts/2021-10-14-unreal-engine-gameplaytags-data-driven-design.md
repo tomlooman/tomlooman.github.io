@@ -2,7 +2,7 @@
 title: "Why you should be using GameplayTags in Unreal Engine"
 date: 2021-10-14
 categories:
-  - "cpp"
+  - "C++ Programming"
 tags: 
   - "cpp"
   - "gameplay"

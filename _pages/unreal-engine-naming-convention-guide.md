@@ -5,7 +5,7 @@ date: 2014-04-03
 last_modified_at: 30-08-2025
 coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 categories:
-  - "cpp"
+  - "C++ Programming"
 tags:
   - "unreal-engine"
   - "cpp"

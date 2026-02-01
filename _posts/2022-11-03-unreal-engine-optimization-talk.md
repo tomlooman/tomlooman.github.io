@@ -3,11 +3,11 @@ title: "Unreal Engine Game Optimization on a Budget"
 date: 2022-11-03
 last_modified_at: 30-08-2025
 categories: 
-  - "performance-optimization"
+  - "Performance & Optimization"
 tags: 
   - "profiling"
   - "performance"
-  - "rendering"
+  - "Rendering"
   - "unreal-engine"
 coverImage: "Thumb_JetBrainsPerfTalk-1.jpg"
 last-modified-at: 18-08-2025

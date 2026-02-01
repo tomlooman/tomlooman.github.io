@@ -2,12 +2,11 @@
 title: "Auto-apply optimal Scalability Settings for Unreal Engine"
 date: 2020-04-26
 categories: 
-  - "rendering"
-  - "unreal-nugget"
+  - "Rendering"
 tags: 
   - "performance"
   - "profiling"
-  - "rendering"
+  - "Rendering"
   - "unreal-engine"
 coverImage: "ue4_runhardwarebenchmark.jpg"
 sidebar:

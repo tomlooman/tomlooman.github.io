@@ -2,7 +2,7 @@
 title: "Asset Manager for Data Assets & Async Loading"
 date: 2020-12-17
 categories: 
-  - "cpp"
+  - "C++ Programming"
 tags: 
   - "asset-manager"
   - "cpp"

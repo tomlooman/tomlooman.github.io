@@ -2,10 +2,10 @@
 title: "Exploring DLSS 2.0 in Unreal Engine"
 date: 2021-02-01
 categories: 
-  - "rendering"
+  - "Rendering"
 tags: 
   - "performance"
-  - "rendering"
+  - "Rendering"
   - "unreal-engine"
 coverImage: "ue4_survivalgame_dlss_header2.jpg"
 sidebar:

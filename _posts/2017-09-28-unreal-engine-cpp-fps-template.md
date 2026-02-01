@@ -2,7 +2,8 @@
 title: "Simple C++ FPS Template for Unreal Engine"
 date: 2017-09-28
 categories: 
-  - "cpp"
+  - "C++ Programming"
+  - "Sample Projects"
 tags: 
   - "cpp"
   - "project-template"

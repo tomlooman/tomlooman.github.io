@@ -2,7 +2,7 @@
 title: "Unreal Engine 5.5 Performance Highlights"
 date: 2024-11-19
 categories: 
-  - "performance-optimization"
+  - "Performance & Optimization"
 tags:
   - "performance"
   - "performance-highlights"

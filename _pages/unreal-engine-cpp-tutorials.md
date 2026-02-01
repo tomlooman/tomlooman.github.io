@@ -40,7 +40,7 @@ For many more C++ content available by others in the community, check out my [**
 ## Latest C++ Content
 
 {% assign all_posts = site.posts | sort: "date" | reverse %}
-{% assign cpp_posts = all_posts | where: "categories", "cpp" %}
+{% assign cpp_posts = all_posts | where: "categories", "C++ Programming" %}
 
 
 {% for post in cpp_posts %}

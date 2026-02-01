@@ -2,12 +2,11 @@
 title: "Healthbars and Nameplate Widgets with UMG"
 date: 2018-03-17
 categories: 
-  - "cpp"
-  - "umg-ui"
+  - "C++ Programming"
+  - "User Interface"
 tags: 
   - "cpp"
-  - "umg"
-  - "unreal-engine"
+  - "UMG"
 coverImage: "Thumb_WorldWidgets-copy.jpg"
 sidebar:
     nav: sidebar-optimization

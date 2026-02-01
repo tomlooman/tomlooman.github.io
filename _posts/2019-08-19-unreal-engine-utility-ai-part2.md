@@ -2,7 +2,7 @@
 title: "Journey into Utility AI for Unreal Engine (Part Two)"
 date: 2019-08-19
 categories: 
-  - "game-ai"
+  - "Game AI"
 tags: 
   - "game-ai"
   - "behavior-trees"

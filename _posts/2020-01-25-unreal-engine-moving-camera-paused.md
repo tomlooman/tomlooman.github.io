@@ -2,8 +2,7 @@
 title: "Moving Unreal Engine Camera While Game Is Paused"
 date: 2020-01-25
 categories: 
-  - "rendering"
-  - "unreal-nugget"
+  - "Rendering"
 tags: 
   - "cpp"
   - "gameplay"

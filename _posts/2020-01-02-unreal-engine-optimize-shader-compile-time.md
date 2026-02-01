@@ -2,12 +2,11 @@
 title: "Optimize Shader Compilation & Package Sizes"
 date: 2020-01-02
 categories: 
-  - "rendering"
-  - "unreal-nugget"
+  - "Rendering"
 tags: 
   - "materials"
   - "performance"
-  - "rendering"
+  - "Rendering"
   - "tips-tricks"
   - "unreal-engine"
 coverImage: "ue4_compileshaders-1.jpg"

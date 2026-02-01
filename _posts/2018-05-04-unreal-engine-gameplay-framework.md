@@ -3,7 +3,7 @@ title: "Unreal Gameplay Framework Guide for C++"
 date: 2018-05-04
 last_modified_at: 14-09-2025
 categories: 
-  - "cpp"
+  - "C++ Programming"
 tags: 
   - "blueprints"
   - "cpp"

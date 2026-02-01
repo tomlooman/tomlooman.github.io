@@ -3,7 +3,7 @@ title: "Unreal Engine 5.6 Performance Highlights"
 date: 2025-07-16
 last_modified_at: 30-08-2025
 categories: 
-  - "performance-optimization"
+  - "Performance & Optimization"
 tags: 
   - "performance"
   - "unreal-engine"

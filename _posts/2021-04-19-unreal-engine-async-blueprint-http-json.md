@@ -2,7 +2,7 @@
 title: "Creating Latent Blueprint Nodes"
 date: 2021-04-19
 categories: 
-  - "cpp"
+  - "C++ Programming"
 tags: 
   - "blueprints"
   - "cpp"

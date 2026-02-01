@@ -2,8 +2,7 @@
 title: "Unreal Engine Lighting Masterclass"
 date: 2017-10-28
 categories: 
-  - "materials"
-  - "rendering"
+  - "Rendering"
 tags:
   - "lighting"
 coverImage: "ue4_lightingexample_thumb.jpg"

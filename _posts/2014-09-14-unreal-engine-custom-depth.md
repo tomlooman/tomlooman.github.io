@@ -3,7 +3,7 @@ title: "Custom Depth in Unreal Engine"
 date: 2014-09-14
 last_modified_at: 30-08-2025
 categories: 
-  - "rendering"
+  - "Rendering"
 tags: 
   - "custom-depth"
   - "materials"

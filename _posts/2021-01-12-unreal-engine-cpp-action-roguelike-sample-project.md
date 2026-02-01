@@ -3,7 +3,8 @@ title: "New 'Action Roguelike' C++ Project on GitHub"
 date: 2021-01-12
 last_modified_at: 09-09-2025
 categories: 
-  - "cpp"
+  - "C++ Programming"
+  - "Sample Projects"
 tags: 
   - "cpp"
   - "unreal-engine"
