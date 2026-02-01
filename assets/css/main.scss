@@ -25,6 +25,39 @@ $breakpoint-text-size-change-large: 1280px;
 @import "overrides/syntax";
 
 #main {
+  .archive, article.page {
+    float: left;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* WITHOUT the left sidebar, we properly "center" the contents */
+/*article.page, .layout--categories .archive, .layout--tags .archive {
+  float: left;
+  width: 100%
+}*/
+
+
+.archive {
+  margin-bottom: 0;
+}
+
+.wide-content {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* avoid tiny horizontal scrolls due the above full width settings */
+html {
+    overflow-x: clip;
+}
+
+/*.layout--custom-home #main {
   padding-inline: 0;
   max-width: unset;
   margin: 0;
@@ -53,16 +86,16 @@ $breakpoint-text-size-change-large: 1280px;
       
     }
   }
-}
+}*/
 
 /* when loading urls with an anchor included, offset for sticky menu */
 :target { scroll-margin-top: 80px; }
 
 
 /* HIDE the sidebar until I get rid of it definitely */
-.sidebar.sticky {
+/*.sidebar.sticky {
   display: none;
-}
+}*/
 
 a {
   color: $color-orange;
@@ -165,48 +198,50 @@ p {
   text-align: center;
 }
 
+/* page related */
 .grid__item .archive__item-teaser {
   max-height: 100%; /* allow full height thumbnails */
 }
 
-/* /blog post items in list view */
-
-.archive__item {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 1em;
-}
-
-.archive__item-teaser {
-  flex: 0 0 auto;
-}
-
-.archive__item-teaser img {
-  max-height: 180px;
-  max-width: 400px;
-  width: auto;
-  object-fit: cover;
-  display: block;
-}
-
-.archive__item-title,
-.archive__item-excerpt {
-  margin-top: 0;
-}
-
-.archive__item-body {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (max-width: 768px) {
+/* /blog post items in list view (/blog /categories /tags and custom pages like cpp tutorials landing page */
+.post__item, .list__item {
   .archive__item {
-    flex-direction: column;
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1em;
+  }
+
+  .archive__item-teaser {
+    flex: 0 0 auto;
   }
 
   .archive__item-teaser img {
-    max-height: none;
-    width: 100%;
+    max-height: 180px;
+    max-width: 400px;
+    width: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  .archive__item-title,
+  .archive__item-excerpt {
+    margin-top: 0;
+  }
+
+  .archive__item-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    .archive__item {
+      flex-direction: column;
+    }
+
+    .archive__item-teaser img {
+      max-height: none;
+      width: 100%;
+    }
   }
 }
 

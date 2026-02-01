@@ -7,6 +7,7 @@ permalink: /unreal-engine-cpp-tutorials/
 coverImage: "launchpad_small.jpg"
 redirects_from:
     - /ue4-cpp-tutorials/
+toc: false
 
 ---
 
@@ -14,7 +15,7 @@ A collection of Unreal Engine C++ Tutorials that I have created over the years. 
 
 ## Getting Started with C++
 
-Start with my long form [**Complete Guide to Unreal Engine C++**](/unreal-engine-cpp-guide/) article.
+Start with my long form [**Complete Guide to Unreal Engine C++**](/unreal-engine-cpp-guide/) article. The C++ Guide covers many of the essential programming concepts you will use day to day in Unreal Engine.
 
 [![](/assets/images/Blog_Banner_CPPCompleteGuide_770.jpg)](/unreal-engine-cpp-guide/)
 
