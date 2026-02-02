@@ -5,7 +5,7 @@ categories:
   - "C++ Programming"
   - "User Interface"
 tags: 
-  - "cpp"
+  - "C++"
   - "UMG"
 coverImage: "Thumb_WorldWidgets-copy.jpg"
 sidebar:

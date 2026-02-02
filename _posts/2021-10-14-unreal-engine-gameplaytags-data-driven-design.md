@@ -4,10 +4,10 @@ date: 2021-10-14
 categories:
   - "C++ Programming"
 tags: 
-  - "cpp"
-  - "gameplay"
-  - "unreal-engine"
-  - "gameplaytags"
+  - "C++"
+  - "Data-driven Programming"
+  - "GameplayTags"
+  - "Action Roguelike"
 coverImage: "Thumb_GameplayTags2.jpg"
 sidebar:
     nav: sidebar-cpp

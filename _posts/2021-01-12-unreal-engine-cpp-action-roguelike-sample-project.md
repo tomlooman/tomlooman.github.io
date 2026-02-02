@@ -6,10 +6,10 @@ categories:
   - "C++ Programming"
   - "Sample Projects"
 tags: 
-  - "cpp"
-  - "unreal-engine"
-  - "github"
-  - "sample-project"
+  - "C++"
+  - "Sample Project"
+  - "GameplayTags"
+  - "Action Roguelike"
 coverImage: "actionroguelike_ue4_combatsample-copy.jpg"
 sidebar:
     nav: sidebar-cpp

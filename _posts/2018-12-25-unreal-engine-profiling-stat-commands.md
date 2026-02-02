@@ -4,9 +4,9 @@ date: 2018-12-25
 categories: 
   - "C++ Programming"
 tags: 
-  - "performance"
-  - "profiling"
-  - "cpp"
+  - "Performance"
+  - "Profiling"
+  - "C++"
 coverImage: "StatCommands_FeaturedImage.jpg"
 sidebar:
     nav: sidebar-optimization

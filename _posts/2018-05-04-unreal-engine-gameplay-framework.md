@@ -5,9 +5,9 @@ last_modified_at: 14-09-2025
 categories: 
   - "C++ Programming"
 tags: 
-  - "blueprints"
-  - "cpp"
-  - "gameplay"
+  - "Blueprint"
+  - "C++"
+  - "Gameplay Framework"
 coverImage: "GF_INTRO_THUMB-copy.jpg"
 sidebar:
     nav: sidebar-cpp

@@ -5,9 +5,8 @@ categories:
   - "C++ Programming"
   - "Sample Projects"
 tags: 
-  - "cpp"
-  - "project-template"
-  - "unreal-engine"
+  - "C++"
+  - "Sample Project"
 coverImage: "Thumb_FPSTemplate2_small.jpg"
 sidebar:
     nav: sidebar-cpp

@@ -5,16 +5,17 @@ categories:
   - "Rendering"
 tags: 
   - "materials"
-  - "performance"
+  - "Performance"
   - "Rendering"
   - "tips-tricks"
-  - "unreal-engine"
 coverImage: "ue4_compileshaders-1.jpg"
 sidebar:
     nav: sidebar-optimization
 ---
 
 Unreal Engine **Project Settings** allow a major reduction (up to 50%) of shader permutations affecting shader compile times, package size, and load times. You can find the options under the **Engine \> Rendering \> Shader Permutation Reduction** Category. Which settings you can disable will depend on your project’s rendering requirements.
+
+## Project Settings
 
 - **Stationary Skylight** Stationary skylight requires permutations of the basepass shaders. You can disable this when never using a Stationary Skylight as the name implies.
 - **Low-Quality Lightmap shader permutations** The mobile renderer requires low-quality lightmaps, disabling this setting is not recommended for mobile titles using static lighting."
@@ -31,4 +32,4 @@ These options are enabled by default, especially stylized games that don't rely 
 
 Changing any of these settings requires all shaders to be recompiled. This may take a long time depending on your project size. For teams using a shared [Derived Data Cache](https://docs.unrealengine.com/4.27/en-US/ProductionPipelines/DerivedDataCache/) I'd recommend looking into the _\-fill_ command line option to have the shaders back in the DDC more easily (without having to load each level).
 
-Another nice effect when turning off these shader permutations is optimized package size and load times. Reducing these permutations will reduce the total size of your materials once cooked.
+Another side effect by turning off these settings is reduced package size and load times. Reducing shader permutations will reduce the total size of your materials once cooked.

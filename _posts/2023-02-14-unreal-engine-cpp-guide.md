@@ -5,8 +5,9 @@ last_modified_at: 30-08-2025
 categories: 
   - "C++ Programming"
 tags: 
-  - "cpp"
-  - "unreal-engine"
+  - "C++"
+  - "Delegates"
+  - "Action Roguelike"
 coverImage: "Blog_Banner_CPPCompleteGuide_770.jpg"
 sidebar:
     nav: sidebar-cpp

@@ -7,7 +7,6 @@ tags:
   - "materials"
   - "post-process"
   - "Rendering"
-  - "unreal-engine"
 coverImage: "Thumb_DepthFog.jpg"
 sidebar:
     nav: sidebar-optimization

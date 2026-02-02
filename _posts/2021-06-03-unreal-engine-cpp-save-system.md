@@ -4,10 +4,9 @@ date: 2021-06-03
 categories: 
   - "C++ Programming"
 tags: 
-  - "cpp"
-  - "savegame"
-  - "gameplay"
-  - "unreal-engine"
+  - "C++"
+  - "Persistence"
+  - "Action Roguelike"
 coverImage: "bonfire_blog_header-1.jpg"
 sidebar:
     nav: sidebar-cpp

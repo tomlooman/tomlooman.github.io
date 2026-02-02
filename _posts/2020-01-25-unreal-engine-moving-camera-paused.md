@@ -4,10 +4,9 @@ date: 2020-01-25
 categories: 
   - "Rendering"
 tags: 
-  - "cpp"
-  - "gameplay"
+  - "C++"
+  - "Cameras"
   - "tips-tricks"
-  - "unreal-engine"
 coverImage: "ue4_pausedscreen.jpg"
 sidebar:
     nav: sidebar-cpp

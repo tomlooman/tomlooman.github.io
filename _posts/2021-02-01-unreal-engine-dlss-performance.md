@@ -4,9 +4,8 @@ date: 2021-02-01
 categories: 
   - "Rendering"
 tags: 
-  - "performance"
+  - "Performance"
   - "Rendering"
-  - "unreal-engine"
 coverImage: "ue4_survivalgame_dlss_header2.jpg"
 sidebar:
     nav: sidebar-optimization

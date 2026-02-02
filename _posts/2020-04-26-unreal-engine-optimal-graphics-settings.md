@@ -4,10 +4,9 @@ date: 2020-04-26
 categories: 
   - "Rendering"
 tags: 
-  - "performance"
-  - "profiling"
+  - "Performance"
+  - "Scalability"
   - "Rendering"
-  - "unreal-engine"
 coverImage: "ue4_runhardwarebenchmark.jpg"
 sidebar:
     nav: sidebar-optimization

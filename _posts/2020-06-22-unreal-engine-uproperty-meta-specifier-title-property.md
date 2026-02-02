@@ -4,11 +4,9 @@ date: 2020-06-22
 categories: 
   - "C++ Programming"
 tags: 
-  - "cpp"
-  - "quality-of-life"
+  - "C++"
   - "tips-tricks"
-  - "unreal-engine"
-  - "editor"
+  - "Unreal Editor"
 coverImage: "ue4_titleproperty_metaspecifier.jpg"
 sidebar:
     nav: sidebar-cpp

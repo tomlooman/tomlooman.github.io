@@ -5,10 +5,10 @@ excerpt: "There is a better way to store and modify your project wide settings t
 categories: 
   - "C++ Programming"
 tags: 
-  - "cpp"
-  - "quality-of-life"
+  - "C++"
   - "tips-tricks"
-  - "editor"
+  - "Unreal Editor"
+  - "Action Roguelike"
 coverImage: "blog_header_developersettings_4.jpg"
 sidebar:
     nav: sidebar-cpp

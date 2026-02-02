@@ -4,9 +4,8 @@ date: 2021-04-19
 categories: 
   - "C++ Programming"
 tags: 
-  - "blueprints"
-  - "cpp"
-  - "unreal-engine"
+  - "Blueprint"
+  - "C++"
 coverImage: "ws_mainmenu_motd.jpg"
 sidebar:
     nav: sidebar-cpp

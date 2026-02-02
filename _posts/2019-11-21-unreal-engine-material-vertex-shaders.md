@@ -5,7 +5,7 @@ categories:
   - "Rendering"
 tags: 
   - "materials"
-  - "performance"
+  - "Performance"
 coverImage: "ws_station_900p.jpg"
 sidebar:
     nav: sidebar-optimization

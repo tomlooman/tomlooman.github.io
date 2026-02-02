@@ -4,9 +4,8 @@ date: 2024-11-19
 categories: 
   - "Performance & Optimization"
 tags:
-  - "performance"
+  - "Performance"
   - "performance-highlights"
-  - "unreal-engine"
 coverImage: "Blog_UE55ReleaseNotes.jpg"
 sidebar:
     nav: sidebar-optimization

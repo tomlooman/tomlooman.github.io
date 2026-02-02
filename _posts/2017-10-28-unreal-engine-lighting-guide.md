@@ -4,7 +4,7 @@ date: 2017-10-28
 categories: 
   - "Rendering"
 tags:
-  - "lighting"
+  - "Rendering"
 coverImage: "ue4_lightingexample_thumb.jpg"
 sidebar:
     nav: sidebar-optimization

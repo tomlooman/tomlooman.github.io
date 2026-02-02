@@ -5,10 +5,12 @@ last_modified_at: 30-08-2025
 categories: 
   - "Performance & Optimization"
 tags: 
-  - "profiling"
-  - "performance"
+  - "Profiling"
+  - "Performance"
   - "Rendering"
-  - "unreal-engine"
+  - "Nanite"
+  - "Console Commands"
+  - "Tech Talk"
 coverImage: "Thumb_JetBrainsPerfTalk-1.jpg"
 last-modified-at: 18-08-2025
 sidebar:

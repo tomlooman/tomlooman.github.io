@@ -7,10 +7,10 @@ coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 categories:
   - "C++ Programming"
 tags:
-  - "unreal-engine"
-  - "cpp"
-  - "bp"
-  - "editor"
+  - "C++ Programming"
+  - "Blueprint"
+  - "Unreal Editor"
+  - "Action Roguelike"
 layout: single
 sidebar:
     nav: sidebar-cpp

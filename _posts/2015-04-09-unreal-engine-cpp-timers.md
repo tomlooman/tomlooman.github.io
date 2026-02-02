@@ -5,8 +5,11 @@ last_modified_at: 03-09-2025
 categories: 
   - "C++ Programming"
 tags:
-  - "cpp"
-  - "gameplay"
+  - "C++"
+  - "Timers"
+  - "Delegates"
+  - "Performance"
+  - "Action Roguelike"
 coverImage: "Thumb_CPPTimers.jpg"
 sidebar:
     nav: sidebar-cpp

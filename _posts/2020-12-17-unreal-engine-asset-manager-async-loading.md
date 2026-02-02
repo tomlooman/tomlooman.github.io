@@ -4,10 +4,9 @@ date: 2020-12-17
 categories: 
   - "C++ Programming"
 tags: 
-  - "asset-manager"
-  - "cpp"
-  - "asset-loading"
-  - "unreal-engine"
+  - "C++"
+  - "Asset Loading"
+  - "Action Roguelike"
 coverImage: "Blog_Thumb_AssetManager.jpg"
 sidebar:
     nav: sidebar-cpp

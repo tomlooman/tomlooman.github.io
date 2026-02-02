@@ -4,10 +4,8 @@ date: 2018-11-04
 categories: 
   - "Game AI"
 tags: 
-  - "game-ai"
-  - "behavior-trees"
-  - "unreal-engine"
-  - "utility-ai"
+  - "Game AI"
+  - "Utility AI"
 coverImage: "UtilityAI_FeaturedImage_01.jpg"
 sidebar:
     nav: sidebar-cpp

@@ -8,7 +8,6 @@ tags:
   - "custom-depth"
   - "outlines"
   - "Rendering"
-  - "unreal-engine"
   - "materials"
 coverImage: "ue4_outlineheader-copy.jpg"
 sidebar:

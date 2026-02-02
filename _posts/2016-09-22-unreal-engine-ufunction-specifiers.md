@@ -4,9 +4,9 @@ date: 2016-09-22
 categories: 
   - "C++ Programming"
 tags:
-  - "cpp"
-  - "editor"
-  - "bp"
+  - "C++"
+  - "Unreal Editor"
+  - "Blueprint"
 coverImage: "ue4_ufunction_thumb02.png"
 sidebar:
     nav: sidebar-cpp

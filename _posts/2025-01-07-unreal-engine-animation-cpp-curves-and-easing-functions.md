@@ -6,9 +6,11 @@ categories:
   - "C++ Programming"
 tags: 
   - "animation"
-  - "cpp"
-  - "gameplay"
+  - "C++"
+  - "Action Roguelike"
 coverImage: "Blog_AnimatingCurves_Small.jpg"
+header:
+  teaser: "assets/images/Blog_AnimatingCurves_Small.jpg"
 excerpt: Sometimes you only need a simple "tween" style animation in C++ to interpolate values or animate certain gameplay elements using Curves and Easing Functions.
 ---
 
