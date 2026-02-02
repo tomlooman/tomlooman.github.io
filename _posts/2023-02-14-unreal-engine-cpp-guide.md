@@ -22,7 +22,7 @@ _**Disclaimer**: this guide is **not exhaustive in teaching you programming from
 
 This guide is extensive, don't forget to bookmark it!
 
-# C++ vs. Blueprints
+## C++ vs. Blueprints
 
 Before we begin, a quick word on C++ vs. Blueprint. It's the most common discussion in the community. I love C++ and Blueprint and heavily use both. Building a solid foundation in C++ (your _framework_) and creating small game-specific 'scripts' on top using Blueprint is an extremely powerful combination.
 
@@ -34,13 +34,13 @@ Building the foundational systems (eg. inventory system, world interaction, etc.
 
 **Alex Forsythe has a great video explaining [how C++ and Blueprint fit together](https://www.youtube.com/watch?v=VMZftEVDuCE)** and why you should use both instead of evangelizing one and dismissing the other.
 
-# C++ Syntax & Symbols
+## C++ Syntax & Symbols
 
 Throughout the article, I'll be using code snippets as concrete examples. You can find the reference [game example project](https://github.com/tomlooman/ActionRoguelike) over on GitHub. You can freely browse this repository to see more examples of how C++ is used with Unreal Engine.
 
 While looking at C++ tutorials, you may be wondering about a few common symbols. I will explain their meaning and use cases without going too deep into their technical details. I'll explain how they are most commonly used _within_ Unreal Engine gameplay programming, not C++ programming in general.
 
-## Asterisk '\*' (Pointers)
+### Asterisk '\*' (Pointers)
 
 Commonly known as "pointers", they may sound scarier than they actually are within Unreal Engine, as _most_ memory management is being taken care of while we're dealing with gameplay programming. Most commonly used to **access objects like Actors in your level** and **references to assets** in your content folders such as sound effects or particle systems.
 
@@ -69,13 +69,16 @@ if (FocusedActor)
 }
 ```
 
-It's important to check if pointers are not "null" (also written as `nullptr` in code, meaning not pointing to anything) before attempting to call functions or change its variables, or the engine will crash when executing that piece of code. So you will use the above if-statement often.
+#### Defensive Programming
 
-**Perhaps even more important than knowing when to check for nullptr's, is when NOT to include nullptr checks.**
+It's important to check if pointers are not "null" (also written as `nullptr` in code, meaning not pointing to anything in memory) before attempting to call functions or change its variables, or the engine will crash when executing that piece of code. So you will use the above if-statement often.
 
-You should generally only check for `nullptr` if it's likely and acceptable that a pointer is in fact null and continue execution of the rest of the game regardless. In the above code example, the `FocusedActor*` is going to be `nullptr` in many cases, whenever there is no interactable Actor under the player's crosshair.
+{: .notice--info }
+**Perhaps even more important than knowing when to check for nullptr, is when NOT to include nullptr checks.**
 
-Now imagine in the example below we return a `nullptr` from `GetPlayerController()` and (quietly) skip the if-statement where we would otherwise add an item to inventory. Further down the line, you will scratch your head wondering why you didn't receive this item. Having no player controller is unlikely enough in most cases that when it does happen, you may be better off failing entirely as the state of the game is already broken.
+You should generally only check for `nullptr` if it's likely and expected that a pointer is null and continue execution of the game regardless. In the above code example, `FocusedActor` is going to be `nullptr` any time there is no interactable Actor under the player's crosshair.
+
+Now imagine in the example below we return a `nullptr` from `GetPlayerController()` and (quietly) skip the if-statement where we would otherwise add an item to inventory. You will scratch your head while playing wondering why you did not receive this item. Having no player controller during gameplay is unexpected and not a valid state of the game, we should not allow to (silently) continue. We either crash the game entirely or at the very least include an [Assert](#asserts-debugging) to be immediately informed about this corrupt/broken state of the code.
 
 ```cpp
 APlayerController* PC = GetWorld()->GetPlayerController();
@@ -287,7 +290,7 @@ public:
   void SetMyInt(int32 NewInt);
 ```
 
-# Forward Declaring Classes
+## Forward Declaring Classes
 
 Forward declaring C++ classes is done in header files and is done instead of including the full files via `#include`. The purpose of forward declaring is to reduce compile times and dependencies between classes compared to including the .h file.
 
@@ -314,7 +317,7 @@ Here is the [character class](https://github.com/tomlooman/ActionRoguelike/blob/
 
 Forward Declaration is mentioned in [Epic's Coding Standards](https://dev.epicgames.com/documentation/en-us/unreal-engine/epic-cplusplus-coding-standard-for-unreal-engine/#physicaldependencies) as well. _"If you can use forward declarations instead of including a header, do so."_
 
-# Casting (Cast\<T\>)
+## Casting (Cast\<T\>)
 
 _Casting_ to specific classes is something you'll use all the time. Casting pointers in Unreal Engine is a bit different from 'raw C++' in that it's safe to cast to types that might not be valid, your code won't crash and instead just returns a `nullptr` (null pointer).
 
@@ -342,7 +345,7 @@ Since all C++ classes will be loaded into memory at startup regardless, the main
 
 One way to reduce class dependencies is through interfaces...so that's what we will talk about next.
 
-# Interfaces
+## Interfaces
 
 [Interfaces](https://dev.epicgames.com/documentation/en-us/unreal-engine/interfaces-in-unreal-engine) are a great way to add functions to multiple classes without specifying any actual functionality yet (implementation). Your player might be able to interact with a large variety of different Actors in the level, each with a different reaction/implementation. A lever might animate, a door could open or a key gets picked up and added to the inventory.
 
@@ -410,13 +413,13 @@ However, if you want to share functionality between Actors but don't want to use
 
 [Steve Streeting](https://www.stevestreeting.com/2020/11/02/ue4-c-interfaces-hints-n-tips/) has more details on using Interfaces which I recommend checking out. There is a code example in the Action Roguelike project as well using [RogueGameplayInterface](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameplayInterface.h) used by [InteractionComponent](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Player/RogueInteractionComponent.cpp) to call `Interact()` on any Actor implementing the interface.
 
-# Delegates (Events)
+## Delegates
 
 Delegates (also known as Events) allow code to call one or multiple _bound_ functions when triggered. Sometimes you'll see this referred to as Callbacks. For example, It can be incredibly helpful to bind/listen to a delegate and be notified when a value (such as character health) changes. This can be a lot more efficient than polling whether something changes during `Tick()`.
 
 There are several types of these delegates/events. I'll explain the most commonly used ones for game code using practical examples rather than low-level language details. I'm also not covering all the different ways of binding (only focusing on the more practical ways instead) or niche use cases, you can find more details on the [official documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/delegates-and-lambda-functions-in-unreal-engine) for those.
 
-## Declaring and Using Delegates
+### Declaring and Using Delegates
 
 You start by declaring the delegate with a MACRO. There are variants available to allow passing in parameters, these have the following suffix. \_OneParam, \_TwoParams, \_ThreeParams, etc. You define these in the header file, ideally, above the class where you want to call them.
 
@@ -428,7 +431,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams()
 
 We'll start by showing the process of declaring and using delegates in detail with a commonly used type, and then explain the other types more briefly as they share the same concepts.
 
-## Multicast Dynamic
+### Multicast Dynamic
 
 One of the most used types of delegate in your game code as they can be exposed to Blueprint to bind and receive callbacks.
 
@@ -546,15 +549,17 @@ There is a lot more to talk about, but this should provide a core understanding 
 
 To read more about delegates I recommend BenUI's [Intro to Delegates](https://benui.ca/unreal/delegates-intro/) and [Advanced Delegates in C++](https://benui.ca/unreal/delegates-advanced/).
 
-# Public/Private Folders
+## Public/Private Folders
 
-Public and private folders define which files are available to use in other modules. Generally, your header files are placed in the Public folder so other modules can gain access and the cpp files are in the Private folder. Headers that are not meant to be used directly by other modules can go into the Private folder as well.
+The Unreal Engine class wizard gives you the option to add new classes in the project root to split the header and code files into `/public/YourClass.h` and `/private/YourClass.cpp` folders.
 
-Your primary game module doesn't need this public/private structure if you don't intend to have other modules depend on it.
+Public and private folders define which files are available to use in other modules. Generally, your header files (`YourClass.h`) are placed in the Public folder so other modules can gain access and the code files (`YourClass.cpp`) are in the Private folder. Headers that are not meant to be used directly by other modules can go into the Private folder as well.
+
+Your primary game module doesn't need this public/private structure if you don't intend to have other [Modules](#modules) depend on it.
 
 I recommend checking out [Ari's talk on modules](https://dev.epicgames.com/community/learning/tutorials/xJ/improving-code-structure-with-unreal-engine-s-c-modules) for more information on Modules and how to use them.
 
-# Class Prefixes (F, A, U, E, G, T, ...)
+## Class Prefixes (F, A, U, E, G, T, ...)
 
 Classes in Unreal have a prefix, for example, the class 'Actor' is named 'AActor' when seen in C++.  These are helpful in telling you more about the type of object. Here are a few important examples.
 
@@ -595,13 +600,13 @@ Projects in Unreal should use their own (unique) prefix to signify their origin.
 
 In the many code examples in this guide, I used "Rogue" as the prefix. The code examples in this guide are taken from the [Action Roguelike](https://github.com/tomlooman/ActionRoguelike/) project.
 
-# Common Engine Types
+## Common Engine Types
 
 Besides the standard types like `float`, `int32`, `bool`, which I won't cover as there is nothing too special to them within Unreal Engine - Unreal has built-in classes to handle very common logic that you will use a lot throughout your programming. Here are a few of the most commonly seen types from Unreal that you will use. Luckily the official documentation has some information on these types, so I will be referring to that a lot.
 
 Ints are special in that you are not supposed to use "int" in serialized UProperties as the size of int can change per platform. That's why Unreal uses its own sized int16, int32, uint16, etc. - [Source](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DevelopmentSetup/CodingStandard/#portablec++code)
 
-## FString, FName, FText
+### FString, FName, FText
 
 There are three types of 'strings' in Unreal Engine that are used for distinctly different things. It's important to select the right type for the job or you'll suffer later. The most common problem is using `FString` for UI text instead of `FText`, this will be a huge headache later if you plan to do any sort of localization.
 
@@ -611,7 +616,7 @@ There are three types of 'strings' in Unreal Engine that are used for distinctly
 
 Here is a piece of [Documentation on String handling](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/StringHandling/) including how to convert between the different types.
 
-## FVector, FRotator, FTransform (FQuat)
+### FVector, FRotator, FTransform (FQuat)
 
 Used to specify the location, rotation, and scale of things in the World. A line trace for example needs two FVectors (Locations) to specify the start and end of the line. Every Actor has an FTransform that contains Location, Rotation, and Scale to give it a place in the world.
 
@@ -620,7 +625,7 @@ Used to specify the location, rotation, and scale of things in the World. A line
 - `FTransform` consists of FVector (Location), FRotator (Rotation) and FVector (Scale in 3-axis).
 - `FQuat` another variable that can specify a rotation also known by its full name as [Quaternion](https://en.wikipedia.org/wiki/Quaternion), you will mostly use FRotator in game-code however, FQuat is less used outside the engine modules although it can prevent [Gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock). (It's also not exposed to Blueprint)
 
-## TArray, TMap, TSet
+### TArray, TMap, TSet
 
 Basically variations of lists of objects/values. Array is a simple list that you can add/remove items to and from. [TMap](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TMap/index.html) are dictionaries, meaning they have Keys and Values (where the Key must always be unique) eg. `TMap<int32, Actor>` where a bunch of Actors are mapped to unique integers. And finally, [TSet](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TSet/index.html) which is an optimized (hashed) version of [TArray](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TArrays/index.html), requires items in the list to be unique. Can be great for certain performance scenarios, but typically you use `TArray`.
 
@@ -648,11 +653,11 @@ GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
 
 - [Documentation on TSubclassOf\<T\>](https://dev.epicgames.com/documentation/en-us/unreal-engine/typed-object-pointer-properties-in-unreal-engine)
 
-# C++ MACROS (& Unreal Property System)
+## C++ MACROS (& Unreal Property System)
 
 The ALL CAPS _preprocessor directives_ are used by the compiler to 'unfold' into (large) pieces of code. In Unreal Engine, it's most often used by the _[Unreal Property System](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection)_ and to add boilerplate code to our class headers. These examples are all macros, but Macros can be used for a lot more than shown below.
 
-## UFUNCTION()
+### UFUNCTION
 
 Allows extra markup on functions, and exposes it to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose functions to Blueprint. Sometimes required by the engine to bind functions to delegates (eg. binding a timer to call a function).
 
@@ -668,7 +673,7 @@ UFUNCTION(BlueprintNativeEvent, Category = "Action")
 void StartAction(AActor* Instigator);
 ```
 
-## UPROPERTY()
+### UPROPERTY
 
 Allows marking-up variables, and exposing them to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose your C++ to Blueprint but it can do a lot more using this large list of [property specifiers](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-uproperties). Again, it's worth checking out [Unreal Garden's article](https://unreal-garden.com/docs/uproperty/) on UPROPERTY specifiers.
 
@@ -682,7 +687,7 @@ UPROPERTY(Replicated)
 URogueActionComponent* ActionComp;
 ```
 
-## GENERATED\_BODY()
+### GENERATED\_BODY
 
 At the top of classes and structs and used by Unreal to add boilerplate code required by the engine.
 
@@ -690,7 +695,7 @@ At the top of classes and structs and used by Unreal to add boilerplate code req
 GENERATED_BODY()
 ```
 
-## USTRUCT, UCLASS, UENUM
+### USTRUCT, UCLASS, UENUM
 
 These macros are required when defining new classes, structs, and enums in Unreal Engine. When you create your new class, this is already added for you in the Header. By default, they will be empty like `UCLASS()` but can be used to add additional markup to an object for example
 
@@ -701,7 +706,7 @@ struct FMyStruct
 }
 ```
 
-## UE\_LOG (Logging)
+### UE\_LOG (Logging)
 
 Macro to easily log information including a category (eg. LogAI, LogGame, LogEngine) and a severity (eg. Log, Warning, Error, or Verbose) and can be an incredibly valuable tool to verify your code by printing out some data while playing your game much like _PrintString_ in Blueprint.
 
@@ -714,7 +719,7 @@ UE_LOG(LogAI, Warning, TEXT("X went wrong in Actor %s"), *GetName());
 
 The above syntax may look a bit scary. The third parameter is a string we can fill with useful data, in the above case we print the name of the object so we know in which instance this happened. The asterisk (\*) before `GetName()` is used to convert the return value to the correct type (from `FString` returned by the function to `Char[]` for the macro). The Unreal Wiki has a lot more [detailed explanation on logging](https://unrealcommunity.wiki/logging-lgpidy6i).
 
-# Modules
+## Modules
 
 Unreal Engine consists of a large number (1000+) of individual modules. Your game code is contained in one or multiple modules. You can place your game-specific logic in one module, and your more generic framework logic for multiple games in another to keep a separation of dependencies.
 
@@ -732,7 +737,7 @@ You can include additional modules through the [.uproject](https://github.com/to
 
 Ari from Epic Games has a great talk on Modules that I recommend checking out and is linked below. I've added a few takeaways from his talk.
 
-## Why use modules?
+### Why use modules?
 
 - Better code practices/encapsulation of functionality
 - Re-use code easily between projects
@@ -742,7 +747,7 @@ Ari from Epic Games has a great talk on Modules that I recommend checking out an
 
 Ari from Epic Games has a great video on the subject of [Modules in Unreal Engine](https://www.youtube.com/watch?v=DqqQ_wiWYOw).
 
-# Garbage Collection (Memory Management)
+## Garbage Collection (Memory Management)
 
 Unreal Engine has a built-in [garbage collection](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Objects/Optimizations/#garbagecollection) that greatly reduces our need to manually manage object lifetime. You'll still need to take some steps to ensure this goes smoothly, but it's easier than you'd think. Garbage collection occurs every 60 seconds by default and will clean up all unreferenced objects.
 
@@ -794,7 +799,7 @@ if (Ability)
 - [Soft & Weak Object Pointers (Ari Arnbjörnsson)](https://www.notion.so/Soft-Weak-Pointers-2347eefb694b49fb8314fdd71ca83065#e499f9b4c5694bfdb8c9148039205590)
 - [Even more technical, on Smart Pointers in Unreal](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/SmartPointerLibrary/index.html)
 
-# Class Default Object
+## Class Default Object
 
 _Class Default Object_ is the default instance of a class in Unreal Engine. This instance is automatically created and used to quickly instantiate new instances. You can use this CDO in other ways too to avoid having to manually create and maintain an instance.
 
@@ -811,7 +816,7 @@ const URogueSaveGameSettings* Settings = GetDefault<URogueSaveGameSettings>();
 CurrentSlotName = Settings->SaveSlotName;
 ```
 
-# Asserts (Debugging)
+## Asserts (Debugging)
 
 If you really need to be sure if something is not `nullptr` or a specific (if-)statement is _true_ and want the code to tell you if it isn't, then you can use [Asserts](https://dev.epicgames.com/documentation/en-us/unreal-engine/asserts-in-unreal-engine). Asserts are great as additional checks in code where if it were to silently fail, code later down the line may fail too (which may then take a while to debug and find the origin).
 
@@ -833,13 +838,13 @@ It's good to know that Asserts are compiled out of shipping builds by default an
 
 By adding these asserts you are immediately notified of the (coding) error. One tip I would give here is to only use it for potential coder mistakes and perhaps don't use it when a piece of content isn't assigned by a designer (having them run into asserts isn't as useful as to them it will look like a crash (unless they have an IDE attached) or stall the editor for a bit (as a minidump is created) and not provide a valuable piece of information). For them might be better of using logs and prints on the screen to tell them what they did not set up properly. I sometimes still add in asserts for content mistakes as this is very useful in solo or small team projects.
 
-# Core Redirects
+## Core Redirects
 
 [Core Redirects](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/ProgrammingWithCPP/Assets/CoreRedirects/) are a refactoring tool. They let you redirect pretty much any class, function, name, etc. after your C++ has changed via the configuration files (.ini). This can be incredibly helpful in reducing the massive headache of updating your Blueprints after a C++ change.
 
 The official documentation (above) does a pretty good job of explaining how to set this up. It's one of those things that's good to know before you need it. Modern IDEs with proper Unreal Engine support such as [JetBrains Rider](https://www.jetbrains.com/rider/) even have support for creating these redirects when you refactor your Blueprint exposed C++ code.
 
-# Closing
+## Closing
 
 I hope this article provided you with some new insight into C++ and how it's used in Unreal Engine. This article has mainly focused on the uncommon aspects that are unique to Unreal Engine and how they apply within that context rather than C++ or programming in general.
 
@@ -848,7 +853,7 @@ I hope this article provided you with some new insight into C++ and how it's use
 
 As always, [follow me on Twitter/X](https://twitter.com/t_looman) for more Unreal Engine insights!
 
-# On The Horizon...
+## On The Horizon...
 
 Things that didn't quite make it in yet or require a more detailed explanation in the current sections. Leave your suggestions in the comments!
 
@@ -863,11 +868,11 @@ Things that didn't quite make it in yet or require a more detailed explanation i
 - 'const' keyword & const correctness
 - Operator Overloading (examples of where Unreal has done so, eg. with FString when used with logging)
 
-# References & Further Reading
+## References & Further Reading
 
 - [Laura's C++ Speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html)
 - [Why C++ In Unreal Engine Isn't That Scary?](https://dev.epicgames.com/community/learning/tutorials/Ml0p/why-c-in-unreal-engine-isn-t-that-scary)
-- [Gameplay Framework Primer](/unreal-engine-gameplay-framework/)
-- [Introduction to Unreal C++ Programming](https://docs.unrealengine.com/en-us/Programming/Introduction)
-- [Gameplay Framework Documentation](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/Reference/Classes/index.html)
-- [Gameplay Programming Documentation](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/index.html)
+- [Gameplay Framework Classes Primer](/unreal-engine-gameplay-framework/)
+- [Introduction to Unreal C++ Programming](https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-with-cplusplus-in-unreal-engine)
+- [Gameplay Framework Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-classes-in-unreal-engine)
+- [Gameplay Programming Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-in-the-unreal-engine-architecture)
