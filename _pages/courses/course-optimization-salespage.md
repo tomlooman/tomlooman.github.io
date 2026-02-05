@@ -2,6 +2,7 @@
 layout: single
 title: "Course: Complete Game Optimization for Unreal Engine 5"
 permalink: /courses/unrealengine-optimization/
+coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 redirect_from:
     - /unreal-engine-course-optimization/
 redirect_to: # temporary until we finished this landing page

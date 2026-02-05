@@ -2,6 +2,7 @@
 layout: single
 title: "Course: Professional Game Development in C++ and Unreal Engine 5"
 permalink: /courses/unrealengine-cpp/
+coverImage: "Thumb_Course_CPP_HeroVariant_4.jpg"
 redirect_from:
     - /stanford-cs193u/
     - /cpp-activedeal/
