@@ -2,12 +2,12 @@
 title: "Unreal Engine C++ Tutorials"
 date: 2017-12-08
 layout: single
-last_modified_at: 31-08-2025
+last_modified_at: 05-02-2026
 permalink: /unreal-engine-cpp-tutorials/
-coverImage: "launchpad_small.jpg"
+coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 redirects_from:
     - /ue4-cpp-tutorials/
-toc: false
+toc: true
 
 ---
 
@@ -15,9 +15,9 @@ A collection of Unreal Engine C++ Tutorials that I have created over the years. 
 
 ## Getting Started with C++
 
-Start with my long form [**Complete Guide to Unreal Engine C++**](/unreal-engine-cpp-guide/) article. The C++ Guide covers many of the essential programming concepts you will use day to day in Unreal Engine.
+Start with my long form [**Complete Guide to Unreal Engine C++**](/unreal-engine-cpp-guide/) article. The C++ Guide covers many of the essential programming concepts you will use day to day in Unreal Engine. I recommend bookmarking it to keep as reference guide when watching programming tutorials or following my C++ Course.
 
-[![](/assets/images/Blog_Banner_CPPCompleteGuide_770.jpg)](/unreal-engine-cpp-guide/)
+[![](/assets/images/Blog_Banner_CPPCompleteGuide.jpg)](/unreal-engine-cpp-guide/)
 
 Learning C++ programming for Unreal Engine can be daunting for beginners and even those with prior programming experience. I've created a [structured in-depth course curriculum](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15) to guide you through this process. I had the opportunity to teach this Unreal Engine C++ Game Development at **Stanford University and is now available as a [full 25-hour C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15) to everyone!**
 
