@@ -27,7 +27,7 @@ const Footer = () => {
         { label: "Courses Login", url: "https://courses.tomlooman.com/sign_in" },
         { label: "GitHub Projects", url: "https://github.com/tomlooman/ActionRoguelike/" },
         { label: "Training for Studios", url: "/studiotraining" },
-        { label: "Posts by Topic", url: "/topics" },
+        { label: "Posts by Tag", url: "/tags" },
         { label: "Contact", url: "/contact" },
         { label: "Terms of Use", url: "https://courses.tomlooman.com/p/terms" },
         { label: "Privacy Policy", url: "https://courses.tomlooman.com/p/privacy" }
