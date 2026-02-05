@@ -621,7 +621,7 @@ Here is a piece of [Documentation on String handling](https://docs.unrealengine.
 Used to specify the location, rotation, and scale of things in the World. A line trace for example needs two FVectors (Locations) to specify the start and end of the line. Every Actor has an FTransform that contains Location, Rotation, and Scale to give it a place in the world.
 
 - `FVector` 3-axis as XYZ where Z is up. specifies either a Location or a direction much like common [Vector-math](https://www.mathsisfun.com/algebra/vectors.html).
-- `FRotator` 3 params [Pitch, Yaw and Roll](http://howthingsfly.si.edu/flight-dynamics/roll-pitch-and-yaw) to give it a rotation value.
+- `FRotator` 3 params [Pitch, Yaw and Roll](https://howthingsfly.si.edu/flight-dynamics/roll-pitch-and-yaw) to give it a rotation value.
 - `FTransform` consists of FVector (Location), FRotator (Rotation) and FVector (Scale in 3-axis).
 - `FQuat` another variable that can specify a rotation also known by its full name as [Quaternion](https://en.wikipedia.org/wiki/Quaternion), you will mostly use FRotator in game-code however, FQuat is less used outside the engine modules although it can prevent [Gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock). (It's also not exposed to Blueprint)
 

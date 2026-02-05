@@ -101,6 +101,6 @@ As previously mentioned, for our game _Switch_ we used Custom Depth for a number
 
 ## References
 
-- [Outlines Materials Pack](http://courses.tomlooman.com/p/object-outline-materials-unreal-engine)
+- [Outlines Materials Pack](https://courses.tomlooman.com/p/object-outline-materials-unreal-engine)
 - [Multi-color Outline Effect](/multi-color-outline-post-process-in-unreal-engine-4/)
 - [Rendering Soft Outlines in Unreal Engine](/soft-outlines-in-ue4/)

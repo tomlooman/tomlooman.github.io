@@ -31,7 +31,7 @@ You can get access to the material files [here](https://courses.tomlooman.com/p/
 
 ## Fill-rate Reduction
 
-A quick check using an [Image Color Extract Tool](http://www.coolphptools.com/color_extract#demo) tells me that roughly **66%** of the above image contains the brightest green. (Screenshot taken from the Shader Complexity visualizer in the editor) This means it performed zero evaluations of our outline material! In a normal post-processing scenario, 100% of our pixels would need to be evaluated.
+A quick check using an [Image Color Extract Tool](https://www.coolphptools.com/color_extract#demo) tells me that roughly **66%** of the above image contains the brightest green. (Screenshot taken from the Shader Complexity visualizer in the editor) This means it performed zero evaluations of our outline material! In a normal post-processing scenario, 100% of our pixels would need to be evaluated.
 
 ![](/assets/images/imagecolorextracttool1.jpg)
 

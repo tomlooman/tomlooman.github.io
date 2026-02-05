@@ -436,7 +436,7 @@ Additional changes I found:
 
 ### **Compile Time Improvements**
 
-- Add support for debugging optimized code with MSVC. Please see [http://aka.ms/vcdd](http://aka.ms/vcdd) for more details
+- Add support for debugging optimized code with MSVC. Please see [https://aka.ms/vcdd](https://aka.ms/vcdd) for more details
 - ICX 2025.1 and Microsoft Clang 19 HWPGO integrations
 
 ## Desktop

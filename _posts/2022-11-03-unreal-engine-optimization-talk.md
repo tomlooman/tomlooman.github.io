@@ -79,7 +79,7 @@ Some common trace channels to use on your game executable or in Standalone. `sta
 - `-trace=log,cpu,gpu,frame,bookmark,loadtime,file,memory,net`
 - `-statnamedevents`
 
-[Full list of Trace Channels](http://docs.unrealengine.com/5.0/en-US/unreal-insights-reference-in-unreal-engine-5)
+[Full list of Trace Channels](https://docs.unrealengine.com/5.0/en-US/unreal-insights-reference-in-unreal-engine-5)
 
 ![](/assets/images/pie_standalone_arguments.png)
 

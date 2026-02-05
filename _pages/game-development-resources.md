@@ -29,7 +29,7 @@ Check out the [Unreal Engine Bookmarks](/unreal-engine-resources/) page!
     Beautifully made interactive article on probability about rolling dice.
 - [Normal Distribution](https://www.mathsisfun.com/data/standard-normal-distribution.html) - Math Is Fun  
     Bell curves will be valuable asset in your designer/programmer tool belt.
-- [Keys to Combat: Anatomy of an Attack](http://gdkeys.com/keys-to-combat-design-1-anatomy-of-an-attack/) - GD Keys  
+- [Keys to Combat: Anatomy of an Attack](https://gdkeys.com/keys-to-combat-design-1-anatomy-of-an-attack/) - GD Keys  
     Breaking down the elements of enemy attacks telegraphing and case studies.
 - [Approaches to designing projectiles for players and AI - Chris Proctor | Bungie](https://youtu.be/g1vwKC_cYmw?si=TaPweO_4Z9WGs6YJ)  
     Deep dive talk in the projectiles of Destiny.
@@ -38,7 +38,7 @@ Check out the [Unreal Engine Bookmarks](/unreal-engine-resources/) page!
 
 - [Math for Game Programmers: Noise-Based RNG](https://www.youtube.com/watch?v=LWFzPP8ZbdU) - GDC  
     "Squirrel Eiserloh discuss RNGs vs. noise functions, and shows how the latter can replace the former in your math library..."
-- [Advanced Randomness Techniques for Game AI](http://www.gameaipro.com/GameAIPro/GameAIPro_Chapter03_Advanced_Randomness_Techniques_for_Game_AI.pdf)  
+- [Advanced Randomness Techniques for Game AI](https://www.gameaipro.com/GameAIPro/GameAIPro_Chapter03_Advanced_Randomness_Techniques_for_Game_AI.pdf)  
     GameAIPro article covering Gaussian Randomness, Filtered Randomness, and Perlin Noise
 
 ## Procedural Generation
@@ -104,7 +104,7 @@ Check out the [Unreal Engine Bookmarks](/unreal-engine-resources/) page!
     "You've found a rare treasure trove of readable, thoughtful essays on game design theory, art and the business of design."
 - [Simon schreibt.](https://simonschreibt.de/)  
     Blog on re-creating many impressive game art (rendering) tricks.
-- [Soren Johnson \[Designer Notes\]](http://www.designer-notes.com/)  
+- [Soren Johnson \[Designer Notes\]](https://www.designer-notes.com/)  
     Includes Podcast-style interviews with fellow game developers.
 - [GDKeys](https://gdkeys.com/)  
     Variety of insightful articles on game development.

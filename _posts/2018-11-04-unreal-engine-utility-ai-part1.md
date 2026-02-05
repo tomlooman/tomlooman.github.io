@@ -76,5 +76,5 @@ The next major step is to try out more AI variations to mature the implementatio
 ## References & Additional Reading
 
 - [Video Introduction into UE4 Behavior Trees](https://www.youtube.com/watch?v=tq-ULFuNyig)
-- [42 Tips from Halo's AI](http://aigamedev.com/open/review/halo-ai/)
+- [42 Tips from Halo's AI](https://aigamedev.com/open/review/halo-ai/)
 - [Gameplay Framework Primer (Guide)](/unreal-engine-gameplay-framework)
