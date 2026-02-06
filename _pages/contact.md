@@ -4,7 +4,6 @@ title: "Get In Touch!"
 permalink: /contact/
 search: false
 ---
-
 {% include bio.html %}
 
 {: .text-center}
