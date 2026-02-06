@@ -37,6 +37,11 @@ $breakpoint-text-size-change-large: 1280px;
   }
 }
 
+// hide the homepage title
+.layout--custom-home .page__title {
+  display: none;
+}
+
 /* HIDE the sidebar until I get rid of it definitely */
 .sidebar.sticky {
   display: none;
