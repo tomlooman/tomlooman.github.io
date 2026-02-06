@@ -1,13 +1,13 @@
 ---
 title: "Setting up your C++ Unreal Engine development environment"
-date: 2025-05-21
-last_modified_at: 2025-05-21
+date: 2026-02-06
+last_modified_at: 2026-02-06
 categories: 
   - "C++ Programming"
 tags:
     - "C++"
 coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
-excerpt: ""
+excerpt: "Installing and configuring JetBrains Rider for Unreal Engine C++ programming requires a very specific set of components. This guide will help you make this setup process go smoothly."
 layout: single
 ---
 

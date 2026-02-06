@@ -25,18 +25,16 @@ $breakpoint-text-size-change-large: 1280px;
 @import "overrides/syntax";
 
 #main {
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
   .archive, article.page {
     float: left;
-    width: 100%;
     padding: 0;
   }
 }
-
-/* WITHOUT the left sidebar, we properly "center" the contents */
-/*article.page, .layout--categories .archive, .layout--tags .archive {
-  float: left;
-  width: 100%
-}*/
 
 /* HIDE the sidebar until I get rid of it definitely */
 .sidebar.sticky {
@@ -108,6 +106,10 @@ h2 {
   margin-left: auto;
   margin-right: auto;
 }
+
+/*.page__related {
+  float: left;
+}*/
 
 /* captions below images inside of blogs, marked as EM by adding * around the text */
 p > img + em {
