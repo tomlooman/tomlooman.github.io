@@ -3,6 +3,7 @@ layout: single
 title: "Get In Touch!"
 permalink: /contact/
 search: false
+toc: false
 ---
 {% include bio.html %}
 
