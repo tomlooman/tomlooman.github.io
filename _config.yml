@@ -53,6 +53,17 @@ lunr:
 # SEO Related
 google_site_verification : "" # Replace this with your ID, or delete
 
+og_image: /assets/images/Blog_MainHeroThumbnail_Logo.jpg
+
+author:
+  name: "Tom Looman"
+
+social:
+  links:
+    - https://x.com/t_looman
+    - https://github.com/tomlooman
+    - https://www.linkedin.com/in/tomlooman/
+
 include:
   - _pages
 #exclude:
