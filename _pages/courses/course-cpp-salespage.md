@@ -21,13 +21,17 @@ Master Unreal Engine C++ Game Development with this university-grade course.
 
 {% include bio.html %}
 
-## Introducing: Unreal Engine C++ Pro Course
+## Introducing: Professional Game Development in C++ and Unreal Engine 5
 
-Hands-on game development course in C++ with Unreal Engine. A step-by-step guided (self-paced) course where you build a third-person action game and gain a solid understanding of the Unreal Engine C++ game development architecture that will boost your game development career!
+This Course is hands-on game development in C++ with Unreal Engine 5. A step-by-step guided (self-paced) course where you build a third-person action game and master the critical foundational understanding of the Unreal Engine C++ game development architecture and best practices.
 
-Whether you have been programming for a decade or barely a year...we will master the Unreal Engine C++ together! The course has been designed to onboard those with some basic programming skills so you can get up to speed quickly to the most exciting parts of game programming!
+During the course we will cover every aspect of game programming including designing a good framework, debugging, optimization. You will build the confidence to continue on your own after this course has completed. No more tutorial hell. Through building the game during the course you will be introduced to all the need-to-know programming concepts and standards you need in day-to-day game development.
 
-Even today there is very little solid tutorialized information for Unreal Engine C++ available. This course packs every bit of information I could possibly include from 10+ years of experience into a curated learning path for a wide range of students.
+Whether you have been programming for a decade or barely a year...my students discover what they need to know quickly and smoothly. You can rest assured that you will learn industry standards and best practices that you can take into your professional career as a game developer. During the lessons every programming decision will be explained, including alternative approaches, pitfalls and common mistakes. This way you can expertly reason about your own code after this course has finished. We will run into compiler errors and bugs and solve them together as that is what real game development is like.
+
+The course packs 15+ years of Unreal Engine experience into a course, fast-tracking your own skill set to hit the ground running. My courses have been adopted by many AAA game studios around the world for their onboarding and training needs.
+
+The original course was taught to Computer Science students at **Stanford University** (Video Game Development in C++ and Unreal Engine - class CS193U).
 
 ----- v1 ------
 
@@ -37,7 +41,11 @@ With a focus on hands-on learning, this course covers the essential concepts and
 
 With its powerful tools and advanced features, Unreal Engine is a popular choice for game developers. However, information about Unreal Engine C++ is often difficult to find. This course brings together the best of what I have learned from over 10 years of experience to provide you with a structured and engaging learning path. You will learn everything you need to know to start building your own games with C++ and Unreal Engine. Join me and let's master Unreal Engine together!
 
-This course was taught to Computer Science students at Stanford University (Video Game Development in C++ and Unreal Engine - CS193U).
+## Why take this course?
+
+Even today, well structured information for C++ in Unreal Engine is hard to come by. Especially for intermediate or above programmers. Many of the "unrealisms" take years to fully understand, this 
+
+Learning C++ on your own takes a lot of time. On top of that, Unreal Engine has a lot of unique "unrealisms", often poorly documented and held within large game studios as institutional knowledge. My course delivers all these years of learning into a well structured curriculum so you learn exactly what you need, rapidly and using best practices. 
 
 ## What You'll Learn
 
@@ -70,24 +78,21 @@ Besides the countless features listed above, the course contains so much more! I
 
 ## Is this course for you?
 
-You might be wondering if you are a good fit for this course. This course isn't for those without any programming skills whatsoever, there simply isn't time to teach general fundamentals of functions/variables and all the amazing intermediate/advanced content into a single course. You should have some basic foundational knowledge of programming, but it doesn't have to be C++. I went from C# into C++ myself pretty seamlessly, other languages like Java, Python, etc. will do just fine too!
+Whether you have been programming for only a few months or well over a decade, you will learn something new during this course. It is recommended to know the basic fundamentals of programming such as functions and variables, but no prior C++ experience is necessary. Even only knowing Unreal's Blueprint is enough to get started, any other programming language is enough as well.
 
 ### Here are some types of students that would be a great fit:
 
-- Students in computer science or game development
-- Studio employees just starting out with or on their way to mastering unreal engine C++
-- Any Programming Professionals seeking to re-train themselves in Unreal Engine
-- Intermediate Unreal Developers looking to improve their C++ skills and learn new features
-- Those that are serious about a career in Game Development (Hobbyists welcome too of course!)
-- Students/Programmers still wondering if Game Development is for them (This is a great look into what game programming is like)
-
-The original version of this course was taught to Computer Science students at **Stanford University** (Video Game Development in C++ and Unreal Engine - class CS193U).
+- Students in game development (or computer science)
+- Industry Professionals moving to Unreal from another engine
+- Any programming professionals seeking to re-train to Unreal Engine
+- Intermediate-level Unreal Developers looking to improve their C++ skills and learn new tricks
+- Tech artists looking to get into C++ game development
 
 ## Course Details
 
-In this course, I will be able to teach you game programming from the ground up. We will cover all the aspects required to start programming games in Unreal Engine. By skipping the basics of general programming we get to dive straight into the interesting parts of game programming and finish this course with a proper game filled with essential coding concepts and a well-designed game framework.
+In this course, I will be able to teach you game programming from the ground up. We will cover all the aspects required to start programming games in Unreal Engine. By skipping the basics of general programming we get to dive straight into the interesting parts of game programming and finish this course with a proper game filled with essential programming concepts and a well-designed game framework.
 
-### Coding your game foundation
+### Programming your game foundation
 
 You will learn how to properly build your game including a solid framework to write professional-grade code that can be applied to many genres and designs. The code you write will be invaluable regardless of your own game project's design as you learn to code games containing flexible coding principles that are widely applicable. This includes a 'Gameplay Ability System' style system we create from the ground up and event-based coding principles for efficient game code and UIs.
 
@@ -165,7 +170,7 @@ This course contains 10+ years of my Unreal Engine experience and I truly believ
 
 A lot of what you will learn here is simply not available elsewhere and certainly not in such a cohesive and structured learning experience. These are not one-off tutorials taking shortcuts while inadvertently teaching you bad habits...You will build a proper game and framework with solid foundational coding skills that you can take into your career as a game developer!
 
-My 4500+ students are from all backgrounds including veteran AAA studios, indie developers, and those just starting out in the industry!
+My 5000+ students are from various backgrounds including veteran AAA studios, indie developers, and those just starting out!
 
 ------ v1 end ------
 
@@ -173,7 +178,7 @@ My 4500+ students are from all backgrounds including veteran AAA studios, indie 
 ## GET STARTED NOW
 Prices include VAT/Sales Tax where applicable.
 
-Bulk Seating options (for Pro Studio) available! Please contact us directly to discuss options and save on bulk enrollment.
+Bulk Seating options (for Pro Studio) available! Reach out directly to discuss options and save on bulk enrollment.
 
 <div id="pricing" data-course-id="1"></div>
 
@@ -197,7 +202,7 @@ TODO: money back logo
 
 <div id="faq" data-course-id="1"></div>
 
-If you have any questions that are not listed above, feel free you reach out to me through my contact form or direct via info@tomlooman.com.
+If you have any questions, feel free you reach out directly through my contact form or info@tomlooman.com.
 
 ## Questions?
 
