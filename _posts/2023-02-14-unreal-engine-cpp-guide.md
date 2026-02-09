@@ -9,6 +9,7 @@ tags:
   - "Delegates"
   - "Action Roguelike"
 coverImage: "Blog_Banner_CPPCompleteGuide_770.jpg"
+excerpt: "The complete reference guide to C++ for Unreal Engine game development. Covering all the essential programming concepts you need to code effectively in Unreal Engine C++. It includes all the commonly used concepts such as pointers, references, interfaces, macros, delegates, modules and more... Use it alongside other learning resources to learn more about a specific C++ programming concept."
 sidebar:
     nav: sidebar-cpp
 ---

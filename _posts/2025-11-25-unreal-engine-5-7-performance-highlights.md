@@ -10,6 +10,7 @@ tags:
 coverImage: "Thumb_Blog_57Highlights.jpg"
 sidebar:
     nav: sidebar-optimization
+excerpt: "The release of Unreal Engine 5.7 includes many performance improvements and new optimization opportunities. They are mostly scattered throughout the release notes and can be vague and lacking context. This article highlights the most interesting improvements to the 5.7 release and provides annotations and clarifications to what certain optimizations or changes mean for you as a developer."
 ---
 
 It is time for another Unreal Engine 5.7 Performance Highlights post! I have compiled a list of most impactful changes which make it worthwhile to upgrade to 5.7. I trimmed the list more substantially this time around to make it more digestible and really highlight the most interesting areas while keeping the more minor changes out. **I have included annotations and clarifications not found in the original release notes.**
