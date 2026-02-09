@@ -289,11 +289,11 @@ p {
 
 /* sidebar padding for sticky masthead */
 .sidebar__right.sticky {
-  top: $header-height;
+  top: $header-height + 20;
 }
 
 .sidebar .nav__list {
-  top: $header-height;
+  top: $header-height + 20;
 }
 
 .greedy-nav .hidden-links {
