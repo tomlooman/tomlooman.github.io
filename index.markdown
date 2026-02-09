@@ -6,10 +6,10 @@ layout: custom-home
 title: Unreal Engine C++ Tutorials
 ---
 
-<h2>Unreal Engine 5 Courses for C++ developers and Technical Artists</h2>
+<h2>Unreal Engine 5 Courses for Programmers and Tech Artists</h2>
 <div id="courses-banner"></div>
 {: .text-center}
-Boost your team's Unreal Engine skills with my <strong>Unreal Engine 5 Courses</strong> on <a href="courses/unrealengine-cpp">Game Development with C++</a> for Engineers and <a href="courses/unrealengine-optimization">Game Optimization</a> for Engineers & (Tech) Artists!
+Boost your Unreal Engine skills with my <strong>Unreal Engine 5 Courses</strong> on <a href="courses/unrealengine-cpp">Game Development with C++</a> for Engineers and <a href="courses/unrealengine-optimization">Game Optimization</a> for Engineers & (Tech) Artists!
 {: .text-center}
 <br />
 

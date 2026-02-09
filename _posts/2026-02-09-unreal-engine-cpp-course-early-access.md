@@ -1,5 +1,5 @@
 ---
-title: "Unreal Engine 5 C++ Course Major Update"
+title: "C++ Course receiving major update for Unreal Engine 5 (Early Access)"
 date: 2026-02-09
 last_modified_at: 2026-02-09
 categories: 
