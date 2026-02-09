@@ -2,4 +2,9 @@
 
 .countdownWrapper {
     margin: 0 1rem;
+
+    > span {
+        font-size: large;
+        font-weight: bold;
+    }
 }

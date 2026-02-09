@@ -43,7 +43,7 @@ const Countdown: React.FC<CountdownProps> = ({ endDate }) => {
   const { days, hours, minutes, seconds } = timeLeft;
 
   return (
-    <div>
+    <div className={style.countdownWrapper}>
       <span>
         {pad(days)}d {pad(hours)}h {pad(minutes)}m {pad(seconds)}s
       </span>

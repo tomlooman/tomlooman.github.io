@@ -363,13 +363,20 @@ p {
 
   > div {
     display: flex;
+    width: 100%;
+    align-items: center;
+
+    > * {
+      width: 50%;
+      text-align: left;
+    }
   }
 }
 
 .sales-banner button {
   background: transparent;
   border: none;
-  color: white;
+  color: $color-blue;
   font-size: 20px;
   margin-left: 12px;
   cursor: pointer;

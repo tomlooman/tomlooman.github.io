@@ -2,12 +2,13 @@
 @use '/react-src/styles/colors.scss' as colors;
 
 .singleInputFormWrapper {
-    display: flex;
-    align-items: stretch;
+    display: inline-flex;
     border: solid .5px white;
     border-radius: 5px;
+    width: fit-content;
 
     .textFieldRoot {
+        flex: 0 0 auto;
 
         > div {
             border-radius: 5px 0 0 5px;
