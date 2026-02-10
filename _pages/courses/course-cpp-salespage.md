@@ -15,7 +15,7 @@ redirect_to: # temporary redirect until this landing page is finished
     - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15
 ---
 
-Master Unreal Engine C++ Game Development with this university-grade course.
+![](/assets/images/Thumb_Course_CPP_HeroVariant_4.jpg)
 
 ## Introducing: Professional Game Development in C++ and Unreal Engine 5
 
@@ -37,7 +37,19 @@ The course is used by game studios of all sizes - from small indies to the large
 
 ## Why take this course?
 
-Well structured and reliable information for C++ in Unreal Engine is hard to come by. Especially for intermediate and above programmers. Many of the "unrealisms" take years to fully understand, this course curriculum fast-tracks your entry into Unreal Engine by covering every programming concepts you need to know in day-to-day development. Safe yourself hundreds of hours by learning it the right way today.
+The course solves most of the big problems C++ developer face when getting into Unreal Engine. A lack of clear documentation, no learning path to follow, free tutorials teaching bad habits and shortcuts that do not hold up an any real production environment. You may be lacking confidence to explore the massive engine on your own, this course will fix that.
+
+### Structured & reliable
+
+Well structured and reliable information for C++ in Unreal Engine is hard to come by. More so for intermediate and above programming topics. Many of the "Unrealisms" take years to discover or fully understand, this course curriculum fast-tracks your entry into Unreal Engine by covering every programming concepts you need to know in day-to-day development. Safe yourself hundreds of hours by learning it the right way immediately.
+
+### Learn development the Epic way
+
+With over 15 years of experience in Unreal Engine, including some time at Epic Games, I know what it takes to build a reliable game framework and keep code simple and easy to maintain. Having encountered all the obscure issues, bugs and mistakes - I will guide you through it all and fast track your mastery of Unreal Engine 5.
+
+### Gain independence, escape tutorial hell
+
+We encounter compile issues and bugs during the course and solve them together. You complete challenging assignments to reinforce you new skills and gain new ones by having to explore on your own. Build and use debugging tools and stay ahead of problems through asserts, verification and logging. Every step building to your independence as a programmer. You can confidently continue building games after completing this course.
 
 ## What You'll Learn
 
@@ -94,9 +106,17 @@ The total lessons are approximately 25 hours in length. On top of that we offer 
 
 There is a certificate of completion provided upon finishing this course.
 
+### Long Term Support
+
+My courses are built for long-term, multi year support. As Unreal Engine changes, so does the course. Your questions will be answered even if you return to the course years later.
+
 ### Open Source on Github
 
 The code is available on GitHub as an ongoing open-source developed game project. With every lessons the specific code commit is included so you can compare the changes side by side to quickly resolve any issues you may have encountered.
+
+### Unreal Engine 4 & 5
+
+When enrolling into the course you receive both the original course recorded in Unreal Engine 4 and the latest major upgrade fully recorded using Unreal Engine 5.6.
 
 ### Contents & Features
 
@@ -117,13 +137,16 @@ Prices include VAT/Sales Tax where applicable.
 
 <div id="pricing" data-course-id="1"></div>
 
+{: .text-center}
 ## Want to enroll your team?
 
-Bulk licenses and alternative payment options are available for teams! Please contact me using this form or directly via [info@tomlooman.com](mailto:info@tomlooman.com) to discuss options and save on bulk enrollment.
+{: .text-center}
+**Bulk licenses and flexible payment options are available for teams!** Please contact me using [this form](/contact) or directly via [info@tomlooman.com](mailto:info@tomlooman.com) to discuss options and save on bulk enrollment.
 
-Need a single license for someone on the team? During checkout you have the option to purchase for someone else.
+{: .text-center}
+**Need a single license for someone on the team?** During checkout you have the option to purchase for someone else.
 
-TODO: money back logo
+![](/assets/images/courses/moneyback_logo_small.png)
 
 <br />
 
