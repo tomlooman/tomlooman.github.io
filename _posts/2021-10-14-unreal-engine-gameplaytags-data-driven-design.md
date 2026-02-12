@@ -11,6 +11,8 @@ tags:
 coverImage: "Thumb_GameplayTags2.jpg"
 sidebar:
     nav: sidebar-cpp
+redirect_from:
+  - /data-driven-design-gameplaytags/
 ---
 
 You may or may not be familiar with GameplayTags in Unreal Engine. It's heavily used in Unreal's [Gameplay Ability System](https://www.youtube.com/watch?v=Tu5AJKNe1Ok), but can be used stand-alone in your game framework. In this article, I will introduce [GameplayTags](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/Tags/index.html) and how they can be used in your game, even if you choose not to use GAS.
