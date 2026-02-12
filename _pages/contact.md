@@ -4,6 +4,8 @@ title: "Get In Touch!"
 permalink: /contact/
 search: false
 toc: false
+redirect_from:
+    - /author/tomlooman/
 ---
 {% include bio.html %}
 
