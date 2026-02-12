@@ -5,6 +5,8 @@ last_modified_at: 12-09-2025
 permalink: unreal-engine-bookmarks
 coverImage: "epicparty_dannyoakes_01.jpg"
 layout: resourcecollection
+redirect_from:
+   - /unreal-engine-resources/
 ---
 
 You've stumbled upon my collection of Unreal Engine resources and tutorials created by people from the Unreal Engine community. These are resources I sought out and stumbled upon while learning and creating with Unreal for the past few years.
