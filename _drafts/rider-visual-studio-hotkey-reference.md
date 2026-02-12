@@ -1,7 +1,7 @@
 ---
 title: "Hotkey Reference for JetBrains Rider & Visual Studio"
 date: 2026-02-11
-last_modified_at: 2026-02-011
+last_modified_at: 2026-02-11
 categories: 
   - "C++ Programming"
 tags:

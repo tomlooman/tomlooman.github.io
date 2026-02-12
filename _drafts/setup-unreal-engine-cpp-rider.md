@@ -1,11 +1,16 @@
 ---
 title: "Setting up your C++ Unreal Engine development environment"
-date: 2026-02-06
-last_modified_at: 2026-02-06
+date: 2026-02-11
+last_modified_at: 2026-02-11
 categories: 
   - "C++ Programming"
 tags:
     - "C++"
+    - "Tutorial"
+    - "JetBrains Rider"
+    - "Courses"
+    - "Getting Started"
+    - "Beginner"
 coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 excerpt: "Installing and configuring JetBrains Rider for Unreal Engine C++ programming requires a very specific set of components. This guide will help you make this setup process go smoothly."
 layout: single
@@ -16,6 +21,8 @@ In this article we will install **JetBrains Rider** for use with **Unreal Engine
 {: .notice--info }
 **Note:** The steps demonstrated are for Windows & JetBrains Rider. **Please read this article carefully** as each component requires specific versions depending on the Unreal Engine version you are using. Any wrong version or missing component and the code will fail to compile.
 
+![](/assets/images/jetbrains_rider_logo_250.png){: .align-right }
+
 ## Required Software
 
 - [JetBrains Rider](https://www.jetbrains.com/rider/download/?section=windows)
@@ -24,9 +31,7 @@ In this article we will install **JetBrains Rider** for use with **Unreal Engine
 
 ## Installing JetBrains Rider
 
-Get the latest version of [Rider for Windows](https://www.jetbrains.com/rider/download/?section=windows) on JetBrains website.
-
-You can use the **default settings** during installation. The most important steps are during the **Visual Studio Build Tools** installation below.
+Get the latest version of [Rider for Windows](https://www.jetbrains.com/rider/download/?section=windows) on JetBrains website. You can use the **default settings** during installation. The most important steps are during the **Visual Studio Build Tools** installation below.
 
 If you are installing JetBrains Rider to follow along with my [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), you can select the Free license ("Rider Non-commercial") as you are a student using it for educational purposes.
 
@@ -101,6 +106,18 @@ Ensure windows defender exclusion are used. The pop-up will appear in bottom-rig
 ![](/assets/images/jetbrainsrider_exclusionrules.jpg)
 *If you previously ignored the pop-up, you can still find it inside the Notifications Tab in the top-right.*
 
+## Optional: Installing Editor Symbols for debugging
+
+In order to debug and use breakpoints in the **engine source code** (You don't need this to debug your own game code) you need to install the **Editor Symbols for debugging in the Epic Games Launcher**.
+
+In the Epic Games Launcher, go to `Unreal Engine > Library` and click the arrow next to launch to select Options. From there you can enable the "Editor symbols for debugging". It takes up a large amount of disk space so you may keep this for another time.
+
+![](/assets/images/epicgameslauncher_installationoptions.png)
+*The options can be used to modify your engine installation.*
+
+![](/assets/images/epicgameslauncher_installationoptions_editorsymbols.png)
+*Debugging Symbols can take up to 50GB of disk space (download size is significantly less).*
+
 ## Optional: Recommended Rider Settings
 
 The following settings are recommended personally. They are not required to compile or use Unreal Engine and you should first check to see if you like to keep any of these settings enabled.
@@ -119,7 +136,7 @@ Note: We will browse plugins during the C++ course to find out how certain featu
 ![](/assets/images/jetbrainsrider_nonindexplugins.png)
 *Without Plugin indexing, certain parts of the engine won't have any highlighting and do not show up in searches.*
 
-### Reduce Parameter Popup Delay
+### Preference: Reduce Parameter Popup Delay
 
 By default the function parameter info popup is delayed by 1000ms. I find this too slow and can actually be changed. Tune this to something that feels more responsive.
 
@@ -129,33 +146,33 @@ By default the function parameter info popup is delayed by 1000ms. I find this t
 ![](/assets/images/jetbrainsrider_parameterinfodelay.png)
 *Change it to something less than 1000ms. All the way down to 0ms if you prefer no delay at all.*
 
-### Turn off "Reader Mode"
+### Preference: Turn off "Reader Mode"
 
 Reader Mode enables "rendered comments" which does provide much nicer looking function comments in header files. The problem is they can take a bit of time to actually render as intended, showing the standard comments when first opening the file. I prefer this off, keeping it consistent and not popping halfway through reading a comment. For Unreal Engine this applies only to the engine source, your own code does not apply the reader mode.
 
 ![](/assets/images/jetbrainsrider_readermode_renderedcomments.png)
 
-### Turn off "Code Folding" on Imports
+### Preference: Turn off "Code Folding" on Imports
 
 Code folding can automatically collapse the list of #includes ("Imports") at the top of the file. You may like it, but I prefer to see this at all times. Especially to make sure its visible during the course lessons to students, but also to keep an eye on no longer used includes so I can remove them (Rider will render them as Grey when nothing uses the include).
 
-### Turn off Full Line completion suggestions
+### Preference: Turn off Full Line completion suggestions
 
 Full line code completions could be very useful, but personally I prefer not to have added cognitive load of checking the suggestions constantly and reasoning whether that's what I intended. More so to avoid any distractions for recording tutorial/course content. Try it out and see whether you like it. Otherwise, you can easily disable it in Rider.
 
 ![](/assets/images/jetbrainsrider_inlinecodesuggestions.jpg)
 
-### Turn off Hard Wrap Visual Guide
+### Preference: Turn off Hard Wrap Visual Guide
 
 You can turn off the white line in the text editor that is called the Hard Wrap. This is where code will wrap during formatting and code generation. You can turn off the visual style under Editor > General > Appearance > "show hard wrap and visual guides". To actually disable the hard wrap behavior itself, it can be found in the Code Style as "Hard Wrap".
 
-### Removing buttons from the Toolbar
+### Preference: Removing buttons from the Toolbar
 
 To keep a clean an minimalist UI I prefer to remove any buttons I won't be using. In my case that includes things like JetBrains AI and Code with Me. But you may of course wish to keep those and remove some others. You can simply right-click the toolbar and click "Customize Toolbar".
 
 ### Setting your HotKeys & Theme
 
-During my tutorials and courses I use the Visual Assist keymap and visual theme. You are of course free to pick whatever you are most comfortable with coming from any particular source code editor prior to using Rider.
+During my tutorials and courses I use the **Visual Assist keymap** and visual theme. You are of course free to pick whatever you are most comfortable with coming from any particular source code editor prior to using Rider.
 
 ## Errors & Troubleshooting
 
@@ -199,18 +216,9 @@ More errors may occur if you once again try to launch already. "Install a versio
 - Go to Individual Components
 - Search for ".NET Framework 4.8.1 SDK"
 
-## Optional: Installing Editor Symbols for debugging
-
-In order to debug and use breakpoints in the **engine source code** (You don't need this to debug your own game code) you need to install the **Editor Symbols for debugging** in the Epic Launcher. You don't need this to debug your own code.
-
-In the Epic Games Launcher, go to `Unreal Engine > Library` and click the arrow next to launch to select Options. From there you can enable the "Editor symbols for debugging". It takes up a large amount of disk space so you may keep this for another time.
-
-![](/assets/images/epicgameslauncher_installationoptions.png)
-*The options can be used to modify your engine installation.*
-
-![](/assets/images/epicgameslauncher_installationoptions_editorsymbols.png)
-*Debugging Symbols can take up to 50GB of disk space (download size is significantly less).*
-
 ## Closing
 
-You are now ready to follow along with my [C++ course for Unreal Engine](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)!
+{: .notice--danger }
+Having Trouble? If you had any issues during the setup process that were unclear or not covered in this article. Let me know through my [contact form](/contact) and I will update the article.
+
+If you are a student, you are now ready to follow along with my [C++ course for Unreal Engine](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)! You might also be interested in checking out my [Complete Guide to Unreal Engine C++](/unreal-engine-cpp-guide) article as a companion reference and introductory guide to many of the important concepts to programming within Unreal Engine 5.
