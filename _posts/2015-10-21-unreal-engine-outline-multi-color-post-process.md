@@ -14,6 +14,8 @@ redirect_from:
   - /ue4-evolves-outline-post-effect
   - /ue4-outline-post-process
   - /outline-effect-in-unreal-engine-4
+  - /multi-color-outline-post-process-in-unreal-engine-4/
+  - /unreal-engine-outline-shader/
 sidebar:
     nav: sidebar-optimization
 ---

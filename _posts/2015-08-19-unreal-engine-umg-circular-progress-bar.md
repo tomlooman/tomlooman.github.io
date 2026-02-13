@@ -9,6 +9,8 @@ tags:
 coverImage: "circularprogress_header.jpg"
 sidebar:
     nav: sidebar-optimization
+redirect_from:
+  - /circular-progress-bar-for-umg/
 ---
 
 We recently added a new locking feature to Switch for which we needed to have progress feedback. For this I built a circular progress bar in UMG. I'm giving away the material to use in your own projects. The download link is at the bottom. If you wish to learn more about the effect, keep reading - otherwise you can simply scroll down and download the material outright and explore it on your own. Enjoy!

@@ -10,6 +10,8 @@ tags:
 coverImage: "Blog_Thumb_AssetManager.jpg"
 sidebar:
     nav: sidebar-cpp
+redirect_from:
+    - /asset-manager-ue4/
 ---
 
 ## What is Asset Manager?

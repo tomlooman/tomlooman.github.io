@@ -13,7 +13,7 @@ coverImage: "ue4_customdepth_featured.png"
 sidebar:
     nav: sidebar-optimization
 redirect_from:
-  - the-many-uses-of-custom-depth-in-unreal-4/
+  - /the-many-uses-of-custom-depth-in-unreal-4/
 ---
 
 Unreal Engine 4 introduced a new depth buffer along with its PBR rendering system. It's called "Custom Depth" and can be used for effects like the selection outline that is built-in in the Editor, rendering of occluded meshes, or custom culling of transparency. I will discuss some of the basics of using this buffer in the material editor and explain some of the features I used it for in my own projects.
