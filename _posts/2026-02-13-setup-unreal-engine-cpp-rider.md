@@ -1,7 +1,7 @@
 ---
 title: "Setting up your C++ Unreal Engine development environment"
-date: 2026-02-11
-last_modified_at: 2026-02-11
+date: 2026-02-13
+last_modified_at: 2026-02-13
 categories: 
   - "C++ Programming"
 tags:
@@ -11,9 +11,8 @@ tags:
     - "Courses"
     - "Getting Started"
     - "Beginner"
-coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
+coverImage: "Thumb_Blog_SetupCPPRider.jpg"
 excerpt: "Installing and configuring JetBrains Rider for Unreal Engine C++ programming requires a very specific set of components. This guide will help you make this setup process go smoothly."
-layout: single
 ---
 
 In this article we will install **JetBrains Rider** for use with **Unreal Engine 5** to setup your **C++ development environment**. These steps are for a fresh machine, with Unreal Engine 5.6 installed. It should work with older and newer versions too, at certain moments Epic will bump the required versions of dependencies that we install today.
@@ -219,6 +218,6 @@ More errors may occur if you once again try to launch already. "Install a versio
 ## Closing
 
 {: .notice--danger }
-Having Trouble? If you had any issues during the setup process that were unclear or not covered in this article. Let me know through my [contact form](/contact) and I will update the article.
+**Having Trouble?** If you had any issues during the setup process that were unclear or not covered in this article. Let me know through my [contact form](/contact) and I will see if I can update the article.
 
-If you are a student, you are now ready to follow along with my [C++ course for Unreal Engine](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)! You might also be interested in checking out my [Complete Guide to Unreal Engine C++](/unreal-engine-cpp-guide) article as a companion reference and introductory guide to many of the important concepts to programming within Unreal Engine 5.
+If you are one of my students, you are now ready to follow along with my [Unreal Engine C++ course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)! You might also be interested in checking out my [Complete Guide to Unreal Engine C++](/unreal-engine-cpp-guide) article as a companion reference and introductory guide to many of the important concepts to programming within Unreal Engine 5.
