@@ -7,7 +7,7 @@ categories:
 tags: 
   - "Performance"
   - "performance-highlights"
-coverImage: "Thumb_Blog_57Highlights.jpg"
+coverImage: "Thumb_Blog_57Highlights_600.jpg"
 sidebar:
     nav: sidebar-optimization
 excerpt: "The release of Unreal Engine 5.7 includes many performance improvements and new optimization opportunities. They are mostly scattered throughout the release notes and can be vague and lacking context. This article highlights the most interesting improvements to the 5.7 release and provides annotations and clarifications to what certain optimizations or changes mean for you as a developer."

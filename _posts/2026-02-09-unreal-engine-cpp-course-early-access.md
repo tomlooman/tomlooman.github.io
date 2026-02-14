@@ -9,7 +9,7 @@ tags:
     - "C++"
     - "Courses"
     - "Action Roguelike"
-coverImage: "Thumb_Course_CPP_BlogAnnounce.jpg"
+coverImage: "Thumb_Course_CPP_BlogAnnounce_600.jpg"
 excerpt: "The Unreal Engine 5 refresh of the Professional Game Development in C++ and Unreal Engine course has entered early access. Completely re-recording the entire course and improving every aspect of the code, best practices and curriculum."
 ---
 
