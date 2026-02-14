@@ -92,5 +92,4 @@ Whether or not this technique is practical for your project depends entirely on 
 
 #### Other Posts on the Subject
 
-- [Rendering Soft Outlines](/unreal-engine-soft-outline/)
 - [Multi-color Outline Post Process](/unreal-engine-outline-multi-color-post-process/)

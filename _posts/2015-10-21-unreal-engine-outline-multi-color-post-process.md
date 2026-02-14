@@ -26,7 +26,7 @@ With some of the recent changes to Unreal Engine 4, rendering multi-color outlin
 
 ## The Original Custom Depth
 
-The original outline material I made last year was based on Custom Depth, before Custom Stencil was available. This meant there was no way to determine the mesh type after it was drawn into the buffer as single channel depth value. More info on the effect and other uses for Custom Depth are available in my of [my earlier posts](/the-many-uses-of-custom-depth-in-unreal-4/). The original effect uses fewer instructions (97 vs. 144 of the new material) so if you don't require multiple colors in your game you can consider sticking to the old effect.
+The original outline material I made last year was based on Custom Depth, before Custom Stencil was available. This meant there was no way to determine the mesh type after it was drawn into the buffer as single channel depth value. More info on the effect and other uses for Custom Depth are available in my of [my earlier posts](/unreal-engine-custom-depth). The original effect uses fewer instructions (97 vs. 144 of the new material) so if you don't require multiple colors in your game you can consider sticking to the old effect.
 
 The new effect is still using Custom Depth to determine the (optional) occlusion which adds the faint overlay color adjusted by tweaking the _FillAlpha_ parameter in the post process. This occlusion can be turned off in the material by unchecking _FillOcclusion_ in the material instance.
 
@@ -74,5 +74,4 @@ You can get access to the material files [**here**](https://courses.tomlooman.co
 
 ## References
 
-- [The many uses of Custom Depth](/the-many-uses-of-custom-depth-in-unreal-4/)
-- [Hologram Material](/ue4-hologram-material/)
+- [The many uses of Custom Depth](/unreal-engine-custom-depth)

@@ -5,6 +5,7 @@ permalink: /courses/unrealengine-optimization/
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 redirect_from:
     - /unreal-engine-course-optimization/
+    - /performance-optimization/
 redirect_to: # temporary until we finished this landing page
     - https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15
 ---

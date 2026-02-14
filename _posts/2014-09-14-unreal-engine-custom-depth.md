@@ -20,7 +20,7 @@ Unreal Engine 4 introduced a new depth buffer along with its PBR rendering syste
 
 When using Custom Depth it's important to read through the _Issues & Limitations_ at the bottom of the page to prevent unnecessary debugging.
 
-[![ue4_coloredoutlines01_small](/assets/images/ue4_coloredoutlines01_small.jpg)](/multi-color-outline-post-process-in-unreal-engine-4/)
+[![ue4_coloredoutlines01_small](/assets/images/ue4_coloredoutlines01_small.jpg)](/unreal-engine-outline-multi-color-post-process)
 
 ## Custom Depth 101
 
@@ -104,5 +104,4 @@ As previously mentioned, for our game _Switch_ we used Custom Depth for a number
 ## References
 
 - [Outlines Materials Pack](https://courses.tomlooman.com/p/object-outline-materials-unreal-engine)
-- [Multi-color Outline Effect](/multi-color-outline-post-process-in-unreal-engine-4/)
-- [Rendering Soft Outlines in Unreal Engine](/soft-outlines-in-ue4/)
+- [Multi-color Outline Effect](/unreal-engine-outline-multi-color-post-process)

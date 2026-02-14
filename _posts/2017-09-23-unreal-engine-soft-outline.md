@@ -17,7 +17,7 @@ Ever since I first wrote about creating mesh outlines in Unreal Engine I have wo
 
 I have several tutorials on different approaches to rendering outlines. There is one for [multi-color using a post processing](/unreal-engine-outline-multi-color-post-process/) and another using a translucent mesh material to [locally render the outline](/unreal-engine-mesh-outline-material/). The latter can improve performance as a much smaller area on screen runs the material shader. As a bit of a joke I even wrote one blog on [rendering outlines for shadows](/unreal-engine-shadows-outline/). In this article however I'll focus on the experiment to create blurred soft-edge outlines.
 
-The basis for all these effects rely on [Custom Depth](/the-many-uses-of-custom-depth-in-unreal-4/), which is a special depth render buffer where we selectively render meshes into. We use this scene depth data to then figure out mesh edges.
+The basis for all these effects rely on [Custom Depth](/unreal-engine-custom-depth), which is a special depth render buffer where we selectively render meshes into. We use this scene depth data to then figure out mesh edges.
 
 ## Blurring the Outline
 
@@ -31,7 +31,7 @@ Looks pretty decent, right? The effect is more expensive than the binary outline
 
 ## The Material Graph
 
-Unfortunately, I couldn't find any official UE4 documentation on the Spiral Blur node, there is a [wiki page on how to use the material node](https://wiki.unrealengine.com/How_To_Use_The_Spiral_Blur_Material_Node). The built-in implementation takes the scene textures and over several iterations creates....a spiral blur. The default settings are at about 128 iterations, which is pretty heavy! I've used this node as a reference to create my own, which samples the [Custom Depth](/the-many-uses-of-custom-depth-in-unreal-4/) buffer instead of the scene color.
+Unfortunately, I couldn't find any official UE4 documentation on the Spiral Blur node, there is a [wiki page on how to use the material node](https://wiki.unrealengine.com/How_To_Use_The_Spiral_Blur_Material_Node). The built-in implementation takes the scene textures and over several iterations creates....a spiral blur. The default settings are at about 128 iterations, which is pretty heavy! I've used this node as a reference to create my own, which samples the [Custom Depth](/unreal-engine-custom-depth) buffer instead of the scene color.
 
 The node graph for it is reasonably simple and most of the logic happens inside the custom node which I added as a code sample below.
 
@@ -93,5 +93,5 @@ To conclude, the answer is yes! It's entirely possible to make soft outlines in 
 
 ## References
 
-- [Custom Depth in Unreal Engine](the-many-uses-of-custom-depth-in-unreal-4/)
-- [Multi-color outline material](multi-color-outline-post-process-in-unreal-engine-4/)
+- [Custom Depth in Unreal Engine](/unreal-engine-custom-depth)
+- [Multi-color outline material](/unreal-engine-outline-multi-color-post-process)
