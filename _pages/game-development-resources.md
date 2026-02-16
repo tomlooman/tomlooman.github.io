@@ -2,7 +2,7 @@
 title: "Game Development Learning Resources"
 permalink: game-development-bookmarks
 date: 2021-01-31
-last_modified_at: 12-09-2025
+last_modified_at: 16-02-2026
 layout: resourcecollection
 redirect_from:
     - /game-development-learning-resources/
@@ -43,6 +43,12 @@ Check out the [Unreal Engine Bookmarks](/unreal-engine-resources) page!
     "Squirrel Eiserloh discuss RNGs vs. noise functions, and shows how the latter can replace the former in your math library..."
 - [Advanced Randomness Techniques for Game AI](https://www.gameaipro.com/GameAIPro/GameAIPro_Chapter03_Advanced_Randomness_Techniques_for_Game_AI.pdf)  
     GameAIPro article covering Gaussian Randomness, Filtered Randomness, and Perlin Noise
+- [Data Oriented Design (Or Why You Might Be Shooting Yourself in The Foot With OOP)](https://gamesfromwithin.com/data-oriented-design)
+    A nice introduction of some advantages of DoD compared to the standard Object-oriented programming. Gets you started on the journey of DoD for performance and code simplicity.
+- [Book: Data Oriented Design](https://www.dataorienteddesign.com/dodbook/)
+    Insightful book about programming with a data first approach to help CPU performance. Linked the digital version, I recommend grabbing the physical book if you are into DoD.
+- [Data-oriented Design Resources](https://github.com/dbartolini/data-oriented-design?tab=readme-ov-file)
+    Large collection of DoD resources to really dig into this subject.
 
 ## Procedural Generation
 
