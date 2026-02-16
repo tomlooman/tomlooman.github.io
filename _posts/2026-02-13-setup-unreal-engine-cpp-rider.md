@@ -125,11 +125,9 @@ Settings can be accessed in the top-left under **File > Settings**.
 
 ### Indexing Plugins
 
-By default "Plugins" may not be indexed. Once you get deeper into the engine source I would recommend to enable this or they won't show up in searches either. I find myself often browsing the engine source code, and even modules such as Niagara particle system is a Plugin and therefore not indexed by default. This does add processing overhead, but it should be worthwhile. 
+By default "Plugins" may not be indexed. Once you get deeper into the engine source I would recommend to enable this or they won't show up in searches either. I find myself often browsing the engine source code, and even modules such as Niagara particle system is a Plugin and therefore not indexed by default. This does add processing overhead, but it should be worthwhile.
 
-Note: We will browse plugins during the C++ course to find out how certain features should be used.
-
-![](/assets/images/jetbrainsrider_nonindexplugins.png)
+![](/assets/images/jetbrainsrider_indexplugins.png)
 *Enable indexing of Plugins for have better coverage of the engine source code.*
 
 ![](/assets/images/jetbrainsrider_nonindexplugins.png)
@@ -139,7 +137,7 @@ Note: We will browse plugins during the C++ course to find out how certain featu
 
 By default the function parameter info popup is delayed by 1000ms. I find this too slow and can actually be changed. Tune this to something that feels more responsive.
 
-![](/assets/images/jetbrainsrider_parameterinfodelay.png)
+![](/assets/images/jetbrains_functionparameterinfo.png)
 *The parameter info popup is this little window when you start typing function parameters.*
 
 ![](/assets/images/jetbrainsrider_parameterinfodelay.png)
@@ -153,21 +151,25 @@ Reader Mode enables "rendered comments" which does provide much nicer looking fu
 
 ### Preference: Turn off "Code Folding" on Imports
 
-Code folding can automatically collapse the list of #includes ("Imports") at the top of the file. You may like it, but I prefer to see this at all times. Especially to make sure its visible during the course lessons to students, but also to keep an eye on no longer used includes so I can remove them (Rider will render them as Grey when nothing uses the include).
+Code folding can automatically **collapse the list of #includes** ("Imports") at the top of the file. You may like it, but I prefer to see this at all times. Especially to make sure its visible during the course lessons to students, but also to keep an eye on no longer used includes so I can remove them (Rider will render them as Grey when nothing uses the include).
+
+**Editor > General > Code Folding > "Imports"**
 
 ### Preference: Turn off Full Line completion suggestions
 
 Full line code completions could be very useful, but personally I prefer not to have added cognitive load of checking the suggestions constantly and reasoning whether that's what I intended. More so to avoid any distractions for recording tutorial/course content. Try it out and see whether you like it. Otherwise, you can easily disable it in Rider.
 
+**Editor > General > Inline Completion > "Enable local Full Line completion suggestions"**
+
 ![](/assets/images/jetbrainsrider_inlinecodesuggestions.jpg)
 
 ### Preference: Turn off Hard Wrap Visual Guide
 
-You can turn off the white line in the text editor that is called the Hard Wrap. This is where code will wrap during formatting and code generation. You can turn off the visual style under Editor > General > Appearance > "show hard wrap and visual guides". To actually disable the hard wrap behavior itself, it can be found in the Code Style as "Hard Wrap".
+You can turn off the white line in the text editor that is called the Hard Wrap. This is where code will wrap during formatting and code generation. You can turn off the visual style under **Editor > General > Appearance > "show hard wrap and visual guides"**. To actually disable the hard wrap behavior itself, it can be found in the Code Style as "Hard Wrap".
 
 ### Preference: Removing buttons from the Toolbar
 
-To keep a clean an minimalist UI I prefer to remove any buttons I won't be using. In my case that includes things like JetBrains AI and Code with Me. But you may of course wish to keep those and remove some others. You can simply right-click the toolbar and click "Customize Toolbar".
+To keep a clean an minimalist UI I prefer to remove any buttons I won't be using. In my case that includes things like JetBrains AI and Code with Me. But you may of course wish to keep those and remove some others. You can simply **right-click the toolbar and click "Customize Toolbar".**
 
 ### Setting your HotKeys & Theme
 
