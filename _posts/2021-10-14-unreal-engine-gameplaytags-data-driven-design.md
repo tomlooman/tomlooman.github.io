@@ -271,4 +271,4 @@ As always don't forget to follow me on [Twitter](https://twitter.com/t_looman) a
 ## References
 
 - [Using GameplayTags to Label and Organise Content (Official Blog)](https://www.unrealengine.com/en-US/tech-blog/using-gameplay-tags-to-label-and-organize-your-content-in-ue4)
-- [GameplayTags (Official Documentation)](https://docs.unrealengine.com/en-US/gameplay-framework-in-unreal-engine/)
+- [GameplayTags (Official Documentation)](https://docs.unrealengine.com/en-US/gameplay-framework-in-unreal-engine)

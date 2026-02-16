@@ -4,12 +4,15 @@ permalink: game-development-bookmarks
 date: 2021-01-31
 last_modified_at: 12-09-2025
 layout: resourcecollection
+redirect_from:
+    - /game-development-learning-resources/
+    - /game-development-resources/
 ---
 
 Over the years I've collected hundreds of game development resources, talks, and tutorials in my personal bookmarks. Many of these I stumbled upon and may be difficult to find on your own. This list intends to provide a large number of learning resources to everyone in a single convenient place - biased to topics I found most interesting myself at the time.
 
 {: .notice--info }
-Check out the [Unreal Engine Bookmarks](/unreal-engine-resources/) page!
+Check out the [Unreal Engine Bookmarks](/unreal-engine-resources) page!
 
 ## Game Design
 

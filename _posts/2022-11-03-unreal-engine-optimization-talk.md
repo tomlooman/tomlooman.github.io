@@ -396,7 +396,7 @@ The ACL plugin is built in with Unreal Engine 5.3+. Existing projects that migra
 
 Scalability is a critical concept to allow your game to run on a wide range of devices. The hardware benchmark tool helps you evaluate the power of the machine the game is running on and apply a base layer of scalability (Low to Epic in the available categories such as Shadow Rendering, View Distance, etc.).
 
-I wrote a blog post about applying [Hardware Benchmark for default scalability](/unreal-engine-optimal-graphics-settings/).
+I wrote a blog post about applying [Hardware Benchmark for default scalability](/unreal-engine-optimal-graphics-settings).
 
 - Run CPU/GPU benchmark and apply Scalability Settings
 - Returns “score” with 100 baseline for Avg. CPU/GPU

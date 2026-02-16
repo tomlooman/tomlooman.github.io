@@ -51,7 +51,7 @@ I skipped over most of the implementation details - if you have any questions fe
 
 ## Multi-Color Outline Effect
 
-A few engine versions ago **Stencil Index buffer** was added alongside Custom Depth. This enables us to create multi-colored outlines among many other cool new tricks! **[Click here](/multi-color-outline-post-process-in-unreal-engine-4/)** to read about this new effect and how to use it.
+A few engine versions ago **Stencil Index buffer** was added alongside Custom Depth. This enables us to create multi-colored outlines among many other cool new tricks! **[Click here](/unreal-engine-outline-multi-color-post-process)** to read about this new effect and how to use it.
 
 ## Visualizing Custom Depth at Runtime
 

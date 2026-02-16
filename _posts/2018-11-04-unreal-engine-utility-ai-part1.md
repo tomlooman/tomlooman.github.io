@@ -71,7 +71,7 @@ The core concept of utility scoring can be used for other features too, for exam
 
 The next major step is to try out more AI variations to mature the implementation. I'm excited to see how far Utility AI will go and if it's a long term replacement for Behavior Trees in our projects. Dave Mark's explorations so far have proven the system works, along with several successful commercial titles. So it's a matter of finding a smooth integration into Unreal Engine without over-engineering a big framework around it. With that, I hope to share my future explorations in this area with more concrete gameplay examples and code.
 
-**If you've enjoyed this read, be sure to** [**check out part two!**](/utility-ai-ue4-2/)
+**If you've enjoyed this read, be sure to** [**check out part two!**](/unreal-engine-utility-ai-part2)
 
 ## References & Additional Reading
 

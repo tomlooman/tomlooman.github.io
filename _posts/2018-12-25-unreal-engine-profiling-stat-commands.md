@@ -145,7 +145,7 @@ bool URogueActionComponent::StartActionByName(AActor* Instigator, FName ActionNa
 
 Stat commands are incredibly useful if used pragmatically and provide a quick insight in your game's performance. Make sure you add stats conservatively, as they are only valuable if you get actionable statistics to potentially optimize. They add a small performance hit themselves and any stat that is useless just adds to your code base and pollutes your stats view.
 
-**Don't forget to check out** [**my other C++ Content**](/unreal-engine-cpp-tutorials/) **or** [**follow me on Twitter!**](https://twitter.com/t_looman)
+**Don't forget to check out** [**my other C++ Content**](/unreal-engine-cpp-tutorials) **or** [**follow me on Twitter!**](https://twitter.com/t_looman)
 
 ## References
 

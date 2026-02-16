@@ -12,7 +12,7 @@ redirect_from:
 You've stumbled upon my collection of Unreal Engine resources and tutorials created by people from the Unreal Engine community. These are resources I sought out and stumbled upon while learning and creating with Unreal for the past few years.
 
 {: .notice--info }
-Check out the [Game Development Resource](/game-development-resources/) Page!
+Check out the [Game Development Resource](/game-development-resources) Page!
 
 ## Getting Started
 
@@ -23,7 +23,7 @@ Check out the [Game Development Resource](/game-development-resources/) Page!
 
 ## Programming (C++)
 
-- [C++ Complete Guide](/unreal-engine-cpp-guide/)  
+- [C++ Complete Guide](/unreal-engine-cpp-guide)  
    Comprehensive reference guide for Unreal Engine C++.
 - [Professional Game Development in C++ and Unreal Engine](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)  
    My Unreal Engine C++ Course for those looking to start or improve their C++ skills. Taught at Stanford University
@@ -52,7 +52,7 @@ Check out the [Game Development Resource](/game-development-resources/) Page!
 
 - [The Unreal Engine Game Framework: From int main() to BeginPlay](https://www.youtube.com/watch?v=IaU2Hue-ApI)  
    Very insightful video, will greatly improve your understanding of how and when the game framework runs.
-- [Unreal Gameplay Framework Guide for C++](/unreal-engine-gameplay-framework/)  
+- [Unreal Gameplay Framework Guide for C++](/unreal-engine-gameplay-framework)  
    Primer to understanding Unreal's gameplay classes such as Pawn, Components, GameMode, etc.
 - [Actor's Lifecycle](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Actors/ActorLifecycle/index.html)  
    A look into how and when Actors get created and which functions get called to make that happen.
@@ -65,9 +65,9 @@ Check out the [Game Development Resource](/game-development-resources/) Page!
    Joe Wintergreen's page dedicated to converting from Unity to Unreal.
 - [Unreal Engine for Unity Developers](https://docs.unrealengine.com/en-US/unreal-engine-for-unity-developers/) - Epic Games  
    Absolutely worth a read to understand the differences and similarities before heading out on your own.
-- [C++ Complete Guide](/unreal-engine-cpp-guide/) - Tom Looman  
+- [C++ Complete Guide](/unreal-engine-cpp-guide) - Tom Looman  
    Comprehensive reference guide for Unreal Engine C++. Read it, Bookmark it and use as reference.
-- [Unreal Gameplay Framework Guide for C++](/unreal-engine-gameplay-framework/) - Tom Looman  
+- [Unreal Gameplay Framework Guide for C++](/unreal-engine-gameplay-framework) - Tom Looman  
    Unreal has a built-in Gameplay Framework which you really should be using. It's important to understand the core classes and their intended usage.
 - [Things I wish I knew coming to Unreal from Unity](https://benui.ca/unreal/unreal-from-unity/) - BenUI  
    Some transition tips from BenUI.
