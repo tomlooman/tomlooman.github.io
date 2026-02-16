@@ -121,7 +121,7 @@ Another error you may receive if you try to run the project is "No available Win
 - Search for: Windows 10 or 11 SDK (10.0.18362 or Newer)
     - See the [documentation page on which SDK version](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine) is required for your Unreal Engine version.
 
-## Error: Install a version of .NET Framework SDK at 4.6.0 or higher
+### Error: Install a version of .NET Framework SDK at 4.6.0 or higher
 
 More errors may occur if you once again try to launch already. "Install a version of .NET Framework SDK at 4.6.0 or higher", Generating Rider project files will fail with several module errors which all mention to install the .NET Framework SDK.
 
