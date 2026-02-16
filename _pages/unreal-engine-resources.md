@@ -56,7 +56,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
    Primer to understanding Unreal's gameplay classes such as Pawn, Components, GameMode, etc.
 - [Actor's Lifecycle](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Actors/ActorLifecycle/index.html)  
    A look into how and when Actors get created and which functions get called to make that happen.
-- [C++ Save System](/unreal-engine-cpp-save-system/)  
+- [C++ Save System](/unreal-engine-cpp-save-system)  
    Eventually you'll need to store player progress. This tutorial will get you started writing your own powerful savegame framework.
 
 ## For Unity Developers
@@ -152,7 +152,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 
 ## Loading, Saving & Streaming
 
-- [Asset Manager for Data Assets & Async Loading](/unreal-engine-asset-manager-async-loading/)  
+- [Asset Manager for Data Assets & Async Loading](/unreal-engine-asset-manager-async-loading)  
    Asset Manager provides additional control to loading your content on-demand.
 - [Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/)  
    "Compendium for traveling, disconnecting, and persisting data across such scenarios"

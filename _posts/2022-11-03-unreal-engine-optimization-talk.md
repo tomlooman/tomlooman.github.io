@@ -106,7 +106,7 @@ For your C++ game code, it can be valuable to include additional profiling detai
 - Add profiling detail to your game code
 - Track as “stat _YourCategory_” in the viewport or via Insights.
 
-I previously wrote about this topic before in [Profiling Stats (Stat Commands)](/unreal-engine-profiling-stat-commands/).
+I previously wrote about this topic before in [Profiling Stats (Stat Commands)](/unreal-engine-profiling-stat-commands).
 
 ![](/assets/images/insight_statcyclecounter.png)
 

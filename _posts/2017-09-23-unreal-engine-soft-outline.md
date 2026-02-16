@@ -15,7 +15,7 @@ sidebar:
 
 Ever since I first wrote about creating mesh outlines in Unreal Engine I have wondered if it was possible to render them as soft outlines instead of harsh binary lines. A good example of soft outlines can be found in Valve's games like Left 4 Dead or CS:GO.
 
-I have several tutorials on different approaches to rendering outlines. There is one for [multi-color using a post processing](/unreal-engine-outline-multi-color-post-process/) and another using a translucent mesh material to [locally render the outline](/unreal-engine-mesh-outline-material/). The latter can improve performance as a much smaller area on screen runs the material shader. As a bit of a joke I even wrote one blog on [rendering outlines for shadows](/unreal-engine-shadows-outline/). In this article however I'll focus on the experiment to create blurred soft-edge outlines.
+I have several tutorials on different approaches to rendering outlines. There is one for [multi-color using a post processing](/unreal-engine-outline-multi-color-post-process) and another using a translucent mesh material to [locally render the outline](/unreal-engine-mesh-outline-material/). The latter can improve performance as a much smaller area on screen runs the material shader. As a bit of a joke I even wrote one blog on [rendering outlines for shadows](/unreal-engine-shadows-outline/). In this article however I'll focus on the experiment to create blurred soft-edge outlines.
 
 The basis for all these effects rely on [Custom Depth](/unreal-engine-custom-depth), which is a special depth render buffer where we selectively render meshes into. We use this scene depth data to then figure out mesh edges.
 

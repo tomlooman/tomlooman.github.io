@@ -20,6 +20,6 @@ To give you an idea of the changes I made, the Character class is about 1/3 the 
 
 [**Project Source at GitHub**](https://github.com/tomlooman/SimpleFPSTemplate)
 
-You may also be interested in some of my other [C++ Tutorials](/unreal-engine-cpp-tutorials) such as [Using Timers in C++](/unreal-engine-cpp-timers) or my [C++ Complete Guide](/unreal-engine-cpp-guide/)!
+You may also be interested in some of my other [C++ Tutorials](/unreal-engine-cpp-tutorials) such as [Using Timers in C++](/unreal-engine-cpp-timers) or my [C++ Complete Guide](/unreal-engine-cpp-guide)!
 
 [![](/assets/images/Thumb_FPSTemplate2.jpg)](https://github.com/tomlooman/SimpleFPSTemplate)
