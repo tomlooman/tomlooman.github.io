@@ -26,16 +26,16 @@ In this article we will install **JetBrains Rider** for use with **Unreal Engine
 
 - [JetBrains Rider](https://www.jetbrains.com/rider/download/?section=windows)
 - [Epic Games Launcher](https://www.unrealengine.com/en-US/download) and Unreal Engine 5.0+ installed
-- [Visual Studio Build Tools (MSBuild)](https://visualstudio.microsoft.com/downloads/) or [direct link to vs_BuildTools.exe](https://aka.ms/vs/17/release/vs_BuildTools.exe)
+- [Visual Studio Build Tools (MSBuild)](https://visualstudio.microsoft.com/downloads/) or [direct link to VS_BuildTools.exe](https://aka.ms/vs/17/release/vs_BuildTools.exe)
 
 ## Installing JetBrains Rider
 
 Get the latest version of [Rider for Windows](https://www.jetbrains.com/rider/download/?section=windows) on JetBrains website. You can use the **default settings** during installation. The most important steps are during the **Visual Studio Build Tools** installation below.
 
-If you are installing JetBrains Rider to follow along with my [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), you can select the Free license ("Rider Non-commercial") as you are a student using it for educational purposes.
+After installing the Epic Games Launcher, I recommend **running Unreal Engine** from the Launcher **at least once so it can install any prerequisites** before moving on. Simply click "Launch" on your installed version and let it do its thing. You don't need to keep it open afterwards.
 
 {: .notice--info }
-I recommend **running Unreal Engine** from the Epic Games Launcher **at least once so it can install any prerequisites** before moving on. Simply click "Launch" on your installed version and let it do its thing. You don't need to keep it open afterwards.
+If you are installing JetBrains Rider to follow along with my [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), you can select the Free license ("Rider Non-commercial") as you are a student using it for educational purposes.
 
 ## Installing Visual Studio Build Tools
 
@@ -48,9 +48,9 @@ https://aka.ms/vs/17/release/vs_BuildTools.exe) or scroll down on the page to lo
 
 ### Required Individual Components
 
-Unreal Engine C++ build pipeline **requires a very specific set of components to be installed.** Please follow the instructions below carefully. I have also listed some possible errors you may encounter if you did not select the correct components.
+Unreal Engine C++ build pipeline **requires a very specific set of components to be installed.** Please follow the instructions below carefully. I have also listed some possible errors you may encounter if you did not select the correct components. Selecting the wrong version of a component can cause your project to fail compilation.
 
-For a list of recommended components to install, Epic maintains a list [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine). I will list all the versions below for Unreal Engine 5.6.
+For a list of recommended components to install, Epic maintains a list [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine). I will list all the versions below for Unreal Engine 5.6. Every few releases of Unreal these are bumped to a more recent component version.
 
 ![](/assets/images/visualstudioinstaller_individualcomponents.png)
 *A very specific set of components in their correct version must be selected for Unreal Engine to compile correctly.*
@@ -65,7 +65,7 @@ The above versions are for UE 5.6, if you are using a different version check th
 
 ## Creating a C++ Unreal Engine Project
 
-If you don't have a Unreal Engine C++ project yet, you can create one via the **Unreal Project Browser**. A blank C++ project is enough, that is what we will use as a starting point for the [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15). Try compiling the blank project inside Rider to see if everything is set up correctly.
+If you do not have an Unreal Engine C++ project yet, you can create one via the **Unreal Project Browser**. A blank C++ project is enough to validate your installation.
 
 - **Games > Blank > C++ (right panel)**
 
@@ -73,10 +73,10 @@ If you don't have a Unreal Engine C++ project yet, you can create one via the **
 
 ## Opening your C++ Project in Rider
 
-You can open your unreal engine `MyProject.uproject` file directly into Rider. Either drag-drop the `.uproject` file into the Rider App or Browse directly to the file from inside rider by clicking "Open" in the main window. 
+You can open your unreal engine `MyProject.uproject` file directly into Rider. Either drag-drop the `.uproject` file into the Rider App or Browse directly to the file from inside rider by clicking "Open" in the main window of Rider. 
 
 {: .notice--info }
-**Note:** You don't need to use any generated solution files (.sln) as with Visual Studio. It is recommended to only use the uproject file for Rider as this causes fewer issues and automatically syncs any changes made to project structure.
+**Note:** You don't need to use any generated solution files (`.sln`) as with Visual Studio. It is recommended to only use the `.uproject` file for Rider as this causes fewer issues and automatically syncs any changes made to project structure.
 
 After opening the project, Rider will generate the  "Unreal Engine Project Model" in the background. You should give Rider some time to process and index the engine files. This may take a while and the indexing will help the autocompletion and navigation of the source files.
 
