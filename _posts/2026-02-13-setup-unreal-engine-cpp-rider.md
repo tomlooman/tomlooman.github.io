@@ -1,5 +1,5 @@
 ---
-title: "Setting up your C++ Unreal Engine development environment"
+title: "Setting up Rider for C++ and Unreal Engine"
 date: 2026-02-13
 last_modified_at: 2026-02-13
 categories: 
