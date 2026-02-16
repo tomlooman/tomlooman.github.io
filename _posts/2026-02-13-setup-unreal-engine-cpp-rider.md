@@ -39,7 +39,9 @@ I recommend **running Unreal Engine** from the Epic Games Launcher **at least on
 
 ## Installing Visual Studio Build Tools
 
-You can either install full Visual Studio IDE, but since you want to use Rider for your source code editing you are better off only installing **Visual Studio Build Tools** instead.
+To compile C++ projects for Unreal Engine you need the build tools from Microsoft even when not using Visual Studio.
+
+You can either install full Visual Studio IDE, but since you want to use Rider for your source code editing you can install the **Visual Studio Build Tools** instead which include the minimum set of components required for compilation.
 
 You can use this [direct link to download Visual Studio Build Tools](
 https://aka.ms/vs/17/release/vs_BuildTools.exe) or scroll down on the page to look for [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/) under "Tools for Visual Studio" (scroll down quite a bit).
@@ -90,6 +92,21 @@ Try to compile your project to ensure all components are installed correctly. In
 ![](/assets/images/jetbrainsrider_mainmenu_buildproject.png)
 *Select Build Startup Project (which should be your game project) to verify the installation has succeeded.*
 
+## Installing RiderLink
+
+You will be prompted when launching Rider with an Unreal Engine project to install RiderLink.
+
+I recommend Installing RiderLink plugin to the Engine. This is a super powerful tool to view information on how your project and Blueprint is using your C++ code such as knowing which Blueprint has changed a variable default or overrides a function.
+
+Find the Notifications tab on the top-right to install RiderLink to Engine (recommended)
+
+## Windows Defender Exclusions
+
+Ensure windows defender exclusion are used. The pop-up will appear in bottom-right on first launch. This avoids overhead from Defender constantly scanning your files. Do so at your own risk, but you should have clear control over your own build output.
+
+![](/assets/images/jetbrainsrider_exclusionrules.jpg)
+*If you previously ignored the pop-up, you can still find it inside the Notifications Tab in the top-right.*
+
 ## Errors & Troubleshooting
 
 The following errors all require the **Visual Studio Installer** and selecting the specified components under "Modify". These errors will not happen if you selected the correct component versions during the initial installation steps.
@@ -131,21 +148,6 @@ More errors may occur if you once again try to launch already. "Install a versio
 - Click "Modify" in the Visual Studio Installer, see screenshot above.
 - Go to Individual Components
 - Search for ".NET Framework 4.8.1 SDK"
-
-## Installing RiderLink
-
-You will be prompted when launching Rider with an Unreal Engine project to install RiderLink.
-
-I recommend Installing RiderLink plugin to the Engine. This is a super powerful tool to view information on how your project and Blueprint is using your C++ code such as knowing which Blueprint has changed a variable default or overrides a function.
-
-Find the Notifications tab on the top-right to install RiderLink to Engine (recommended)
-
-## Windows Defender Exclusions
-
-Ensure windows defender exclusion are used. The pop-up will appear in bottom-right on first launch. This avoids overhead from Defender constantly scanning your files. Do so at your own risk, but you should have clear control over your own build output.
-
-![](/assets/images/jetbrainsrider_exclusionrules.jpg)
-*If you previously ignored the pop-up, you can still find it inside the Notifications Tab in the top-right.*
 
 ## Installing Editor Symbols for debugging (Optional)
 
