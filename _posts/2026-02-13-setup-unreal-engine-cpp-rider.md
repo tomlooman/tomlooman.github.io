@@ -90,7 +90,49 @@ Try to compile your project to ensure all components are installed correctly. In
 ![](/assets/images/jetbrainsrider_mainmenu_buildproject.png)
 *Select Build Startup Project (which should be your game project) to verify the installation has succeeded.*
 
-## Recommended: Installing RiderLink
+## Errors & Troubleshooting
+
+The following errors all require the **Visual Studio Installer** and selecting the specified components under "Modify". These errors will not happen if you selected the correct component versions during the initial installation steps.
+
+![](/assets/images/visualstudioinstaller.png)
+*Even when installing JetBrains Rider, the Visual Studio installer is still an important part of the overall setup.*
+
+### Error: No valid Visual C++ toolchain was found
+
+Error message: *"No valid Visual C++ toolchain was found (minimum version 14.38.33130, preferred version 14.38.33130). Please download and install Visual Studio 2022 17.8 or later and verify that the "MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)" component is selected in the Visual Studio 2022 installation options."*
+
+**Steps:**
+
+- Go back into your Visual Studio Installer (same name if you have installed Build Tools instead of full Visual Studio).
+- Click "Modify" in the Visual Studio Installer, see screenshot above.
+- Go to Individual Components
+- Search for "MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)".
+    - Read your error message, earlier or later versions of Unreal Engine might require a different version.
+
+### Error: No available Windows SDKs found
+
+Another error you may receive if you try to run the project is "No available Windows SDKs found", "Windows SDK must be installed in order to build this target.".
+
+**Steps:**
+
+- Go back into your Visual Studio Installer (same name if you have installed Build Tools instead of full Visual Studio).
+- Click "Modify" in the Visual Studio Installer, see screenshot above.
+- Go to 'Individual Components'
+- Search for: Windows 10 or 11 SDK (10.0.18362 or Newer)
+    - See the [documentation page on which SDK version](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine) is required for your Unreal Engine version.
+
+## Error: Install a version of .NET Framework SDK at 4.6.0 or higher
+
+More errors may occur if you once again try to launch already. "Install a version of .NET Framework SDK at 4.6.0 or higher", Generating Rider project files will fail with several module errors which all mention to install the .NET Framework SDK.
+
+**Steps:**
+
+- Go back into your Visual Studio Installer (same name if you have installed Build Tools instead of full Visual Studio).
+- Click "Modify" in the Visual Studio Installer, see screenshot above.
+- Go to Individual Components
+- Search for ".NET Framework 4.8.1 SDK"
+
+## Installing RiderLink
 
 You will be prompted when launching Rider with an Unreal Engine project to install RiderLink.
 
@@ -98,14 +140,14 @@ I recommend Installing RiderLink plugin to the Engine. This is a super powerful 
 
 Find the Notifications tab on the top-right to install RiderLink to Engine (recommended)
 
-## Recommended: Windows Defender Exclusions
+## Windows Defender Exclusions
 
 Ensure windows defender exclusion are used. The pop-up will appear in bottom-right on first launch. This avoids overhead from Defender constantly scanning your files. Do so at your own risk, but you should have clear control over your own build output.
 
 ![](/assets/images/jetbrainsrider_exclusionrules.jpg)
 *If you previously ignored the pop-up, you can still find it inside the Notifications Tab in the top-right.*
 
-## Optional: Installing Editor Symbols for debugging
+## Installing Editor Symbols for debugging (Optional)
 
 In order to debug and use breakpoints in the **engine source code** (You don't need this to debug your own game code) you need to install the **Editor Symbols for debugging in the Epic Games Launcher**.
 
@@ -174,48 +216,6 @@ To keep a clean an minimalist UI I prefer to remove any buttons I won't be using
 ### Setting your HotKeys & Theme
 
 During my tutorials and courses I use the **Visual Assist keymap** and visual theme. You are of course free to pick whatever you are most comfortable with coming from any particular source code editor prior to using Rider.
-
-## Errors & Troubleshooting
-
-The following errors all require the **Visual Studio Installer** and selecting the specified components under "Modify". These errors will not happen if you selected the correct component versions during the initial installation steps.
-
-![](/assets/images/visualstudioinstaller.png)
-*Even when installing JetBrains Rider, the Visual Studio installer is still an important part of the overall setup.*
-
-### Error: No valid Visual C++ toolchain was found
-
-Error message: *"No valid Visual C++ toolchain was found (minimum version 14.38.33130, preferred version 14.38.33130). Please download and install Visual Studio 2022 17.8 or later and verify that the "MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)" component is selected in the Visual Studio 2022 installation options."*
-
-**Steps:**
-
-- Go back into your Visual Studio Installer (same name if you have installed Build Tools instead of full Visual Studio).
-- Click "Modify" in the Visual Studio Installer, see screenshot above.
-- Go to Individual Components
-- Search for "MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)".
-    - Read your error message, earlier or later versions of Unreal Engine might require a different version.
-
-### Error: No available Windows SDKs found
-
-Another error you may receive if you try to run the project is "No available Windows SDKs found", "Windows SDK must be installed in order to build this target.".
-
-**Steps:**
-
-- Go back into your Visual Studio Installer (same name if you have installed Build Tools instead of full Visual Studio).
-- Click "Modify" in the Visual Studio Installer, see screenshot above.
-- Go to 'Individual Components'
-- Search for: Windows 10 or 11 SDK (10.0.18362 or Newer)
-    - See the [documentation page on which SDK version](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine) is required for your Unreal Engine version.
-
-## Error: Install a version of .NET Framework SDK at 4.6.0 or higher
-
-More errors may occur if you once again try to launch already. "Install a version of .NET Framework SDK at 4.6.0 or higher", Generating Rider project files will fail with several module errors which all mention to install the .NET Framework SDK.
-
-**Steps:**
-
-- Go back into your Visual Studio Installer (same name if you have installed Build Tools instead of full Visual Studio).
-- Click "Modify" in the Visual Studio Installer, see screenshot above.
-- Go to Individual Components
-- Search for ".NET Framework 4.8.1 SDK"
 
 ## Closing
 
