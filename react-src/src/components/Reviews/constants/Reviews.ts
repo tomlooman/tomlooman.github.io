@@ -8,7 +8,7 @@ export const reviews: { [key: string]: Review[] } = {
       name: "Anthony G",
       jobTitle: "Staff Engineer",
       company: "Riot",
-      text: "\"I think it's very rare to take a course that is 100% applicable to your professional work. After taking this course, I feel like I've accessed the matrix and downloaded the Unreal codex straight into my brain. Three months ago I had 0 Unreal knowledge and was really struggling to get my footing.<br /><br />Now, upon course completion, it's like a film has been lifted from my vision and I understand all the fundamentals of the engine that I'm required to work with on a day-to-day basis. I cannot overstate how grateful I am to have been able to take this course. Thank you Tom!\"",
+      text: "\"I think <strong>it's very rare to take a course that is 100% applicable to your professional work. After taking this course, I feel like I've accessed the matrix and downloaded the Unreal codex straight into my brain.</strong> Three months ago I had 0 Unreal knowledge and was really struggling to get my footing.<br /><br />Now, upon course completion, it's like a film has been lifted from my vision and I understand all the fundamentals of the engine that I'm required to work with on a day-to-day basis. I cannot overstate how grateful I am to have been able to take this course. Thank you Tom!\"",
       imageUrl: "/assets/images/faces/anthony_profile.jpg"
     },
     {
@@ -40,7 +40,7 @@ export const reviews: { [key: string]: Review[] } = {
       name: "Sebastián Pérez O",
       jobTitle: "Game Developer",
       company: "",
-      text: "\"Super useful! I already have +3 years of Unreal Engine experience only with Blueprints, and I know a little of C++ before this course, but the way that the instructor explains everything is super easy to follow!<br />I especially like the assignments, I think it's the best way to learn. 100% recommended!\"",
+      text: "\"Super useful! I already have +3 years of Unreal Engine experience only with Blueprints, and I know a little of C++ before this course, but <strong>the way that the instructor explains everything is super easy to follow!<br />I especially like the assignments</strong>, I think it's the best way to learn. 100% recommended!\"",
       imageUrl: "/assets/images/faces/default_profile.jpg"
     },
     {
@@ -50,6 +50,14 @@ export const reviews: { [key: string]: Review[] } = {
       company: "",
       text: "\"This is the first game dev tutorial I've found that finally caters to people who already have programming experience in other fields. This is exactly what I needed.\"",
       imageUrl: "/assets/images/faces/jeroen_profile.png"
+    },
+    {
+      id: 7,
+      name: "Ian",
+      jobTitle: "Technical Leader",
+      company: "",
+      text: "\"Excellent course so far! First of all <strong>Tom has an excellent way of presenting the material, being both engaging and informative</strong> (a difficult combination to get right!).<br/><br/>Personally, I really enjoy how Tom humors the <strong>occasional short detour to explain a tangential concept or feature of the engine. It's those kinds of things that make this course so valuable</strong>, encouraging me to look into and learn every nook and cranny I run into. In my past experience, there's really no substitute for learning a system besides chasing curiosity. It's refreshing to see Tom exemplify that in his lectures. <br/><br/>I also think it is crucial to have exercises/assignments in any learning material, and <strong>Tom does an excellent job of introducing challenges that are substantial yet achievable.</strong> He clearly designs his assignments to leverage all the concepts he has taught so far, without leaving me to 'fend for myself' too much.\"",
+      imageUrl: "/assets/images/faces/default_profile.jpg"
     }
   ],
   // Optimization Course
