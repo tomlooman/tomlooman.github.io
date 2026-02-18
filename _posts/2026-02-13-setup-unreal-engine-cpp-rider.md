@@ -92,6 +92,12 @@ Try to compile your project to ensure all components are installed correctly. In
 ![](/assets/images/jetbrainsrider_mainmenu_buildproject.png)
 *Select Build Startup Project (which should be your game project) to verify the installation has succeeded.*
 
+## Configuring Rider as the "Source code editor" in Unreal Editor
+
+You should set Rider as the **Source Code Editor** in Unreal Editor so that your Blueprint can immediately jump to C++ code when you double click the nodes or when you right-click "Go to Definition".
+
+In the **Editor Preferences > General > Source Code > Source Code Editor** set it to **"Rider uproject"**
+
 ## Installing RiderLink
 
 You will be prompted when launching Rider with an Unreal Engine project to install RiderLink.
