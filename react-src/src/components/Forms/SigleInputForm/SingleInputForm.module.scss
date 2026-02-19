@@ -1,11 +1,16 @@
 @use 'sass:color';
 @use '/react-src/styles/colors.scss' as colors;
+@use '/react-src/styles/breakpoints.scss' as breakpoints;
 
 .singleInputFormWrapper {
     display: inline-flex;
     border: solid .5px white;
     border-radius: 5px;
     width: fit-content;
+
+    @media (max-width: breakpoints.$breakpoint-md) {
+        flex-direction: column;
+    }
 
     .textFieldRoot {
         flex: 0 0 auto;
@@ -14,6 +19,10 @@
             border-radius: 5px 0 0 5px;
             background-color: colors.$white;
             height: 100%;
+
+            @media (max-width: breakpoints.$breakpoint-md) {
+                border-radius: 5px 5px 0 0;
+            }
         }
 
         * {
@@ -36,6 +45,10 @@
         font-size: .75rem;
         height: 40px;
         white-space: nowrap;
+
+        @media (max-width: breakpoints.$breakpoint-md) {
+            border-radius: 0 0 5px 5px;
+        }
 
         &:hover {
             background-color: color.scale(colors.$orange, $lightness: -20%);

@@ -12,14 +12,10 @@
 
   .logos {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 1rem;
     justify-items: center;
     align-items: center;
-
-    @media screen and (max-width: breakpoints.$breakpoint-md) {
-      grid-template-columns: repeat(4, 1fr);
-    }
 
     img {
       max-width: 100px;
