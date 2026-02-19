@@ -5,13 +5,21 @@
 layout: custom-home
 title: Unreal Engine C++ Tutorials
 ---
-
-<h2>Unreal Engine 5 Courses for C++ developers and Technical Artists</h2>
 <div id="courses-banner"></div>
-{: .text-center}
-Boost your team's Unreal Engine skills with my <strong>Unreal Engine 5 Courses</strong> on <a href="courses/unrealengine-cpp">Game Development with C++</a> for Engineers and <a href="courses/unrealengine-optimization">Game Optimization</a> for Engineers & (Tech) Artists!
-{: .text-center}
-<br />
+**Unreal Engine 5 Courses for Programmers and Tech Artists.** Boost your Unreal Engine skills with my Unreal Engine 5 Courses on <a href="courses/unrealengine-cpp">Game Development with C++</a> for Engineers and <a href="courses/unrealengine-optimization">Game Optimization</a> for Engineers & (Tech) Artists!
+<h2>Featured Posts</h2>
+Some popular pages you may be interested in! Looking for a specific post? Try searching in the top-right or [Browse Posts by Category](/categories) instead.
+<section class="featured-posts">
+  {% assign featured_urls = 
+    "/unreal-engine-cpp-guide/,/unreal-engine-5-7-performance-highlights/,/unreal-engine-cpp-course-early-access/" | split: "," %}
+
+  {% for url in featured_urls %}
+    {% assign post = site.posts | where: "url", url | first %}
+    {% if post %}
+      {% include archive-single.html type="post" %}
+    {% endif %}
+  {% endfor %}
+</section>
 
 <div class="wide-content"><div id="email-sign-up"></div></div>
 
@@ -20,8 +28,6 @@ Boost your team's Unreal Engine skills with my <strong>Unreal Engine 5 Courses</
 
 Truly Master Unreal Engine the Epic™ Way through my free tutorials and professional courses on C++ and Game Optimization.
 {: .text-center}
-
-<br />
 
 <div id="reviews" data-course-id="1"></div>
 

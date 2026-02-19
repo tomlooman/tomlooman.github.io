@@ -30,14 +30,15 @@
 
 .cPlusPlus {
   background-color: colors.$orange;
-  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+  clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
   background-image: url('../images/Home_Course_CPP_Hero.jpg');
-  background-position: right bottom;
+  background-position: left top;
 }
+
 
 .optimisation {
   background-color: colors.$orange-light;
-  clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
   background-image: url('../images/Home_Course_Optim_Hero.jpg');
-  background-position: left top;
+  background-position: right bottom;
 }

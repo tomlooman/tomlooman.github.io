@@ -11,7 +11,7 @@ sidebar:
     nav: sidebar-cpp
 ---
 
-Since the last time I wrote about Utility AI for Unreal Engine 4, it has been stream-lined and so has the Action System it's built on. The Action System is quite similar to Unreal's Gameplay Ability System for those familiar. Towards the end I'll tease a few other AI related concepts I've been working on. [Here is part one in case you missed it.](/journey-into-utility-ai-ue4/)
+Since the last time I wrote about Utility AI for Unreal Engine 4, it has been stream-lined and so has the Action System it's built on. The Action System is quite similar to Unreal's Gameplay Ability System for those familiar. Towards the end I'll tease a few other AI related concepts I've been working on. [Here is part one in case you missed it.](/unreal-engine-utility-ai-part1)
 
 This post is mainly going to be a walkthrough of what I've been experimenting with and how the overall structure is shaping up. I'd like to add more practical guides in future parts including some more gameplay footage of the AI in action.
 

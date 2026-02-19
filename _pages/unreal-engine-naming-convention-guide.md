@@ -14,13 +14,17 @@ tags:
 layout: single
 sidebar:
     nav: sidebar-cpp
+redirect_from:
+    - /unreal-engine-naming-convention-guide/
+    - /ue4-naming-convention/
 ---
 
 The goal of this document is to share my internal naming conventions with the community as used by the [Action Roguelike GitHub](https://github.com/tomlooman/ActionRoguelike) project and the [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp) to give everyone something to start out with. Using and getting comfortable with a naming convention is essential before your projects grow beyond thousands of files.
 
-First, consider how you are accessing your assets. The Content Browser in Unreal Engine has powerful filter features making pre-fixes and suffixes less critical compared to older Unreal Engine editions. However, this same level of filtering doesn't apply to the simpler drop-down selection UI for picking class variables, etc. The same can happen when logging asset names in which 'assetName something error' occurred, bad naming can make it difficult to track down the origin.
+First consider how you are accessing your assets. The Content Browser in Unreal Engine has powerful filter features making pre-fixes and suffixes less critical compared to older Unreal Engine editions. However, this same level of filtering doesn't apply to the simpler drop-down selection UI for picking class variables, etc. The same can happen when logging asset names in which 'assetName something error' occurred, bad naming can make it difficult to track down the origin.
 
-Note: The most complete style guide is [available on GitHub by Allar](https://github.com/Allar/ue4-style-guide). Allar's guide has a ton of depth and additional information you can apply if you see fit.
+{: .notice--info }
+**Note:** The most complete style guide is [available on GitHub by Allar](https://github.com/Allar/ue4-style-guide). Allar's guide has a ton of depth and additional information you can apply as you see fit.
 
 ## C++ Coding Standards
 

@@ -6,7 +6,7 @@ categories:
 tags:
   - "Performance"
   - "performance-highlights"
-coverImage: "Blog_UE55ReleaseNotes.jpg"
+coverImage: "Blog_UE55ReleaseNotes_600.jpg"
 sidebar:
     nav: sidebar-optimization
 ---

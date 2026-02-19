@@ -10,6 +10,8 @@ tags:
 coverImage: "Thumb_psocaching.jpg"
 sidebar:
     nav: sidebar-optimization
+redirect_from:
+  - /psocaching-unreal-engine/
 ---
 
 **In recent years DirectX 12 games have gotten a bad rep for shader stutters. The most common issue we see discussed at launch is due to a lack of pre-compiling _Pipeline State Objects_. These PSOs (required by the GPU) need to be compiled on the CPU if not already cached on the local machine and will cause hitches as they may cost anywhere from a few milliseconds to several hundreds of milliseconds to compile before we may continue execution.**

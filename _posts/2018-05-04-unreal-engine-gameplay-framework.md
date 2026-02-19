@@ -11,6 +11,8 @@ tags:
 coverImage: "GF_INTRO_THUMB-copy.jpg"
 sidebar:
     nav: sidebar-cpp
+redirect_from:
+  - /ue4-gameplay-framework/
 ---
 
 The Gameplay Framework of Unreal Engine provides a powerful set of classes to build your game. Your game can be a shooter, farm simulator, a deep RPG, it doesn't matter. The framework is very flexible and does some heavy lifting and sets some standards. It has a pretty deep integration with the engine so my immediate advice is to stick to these classes instead of trying to 'roll your own' game framework as you might with engines like Unity. Understanding this framework is critical in being successful and efficient in building your projects.
@@ -20,7 +22,7 @@ The Gameplay Framework of Unreal Engine provides a powerful set of classes to bu
 Anyone who is interesting in building games with Unreal, specifically those in C++, and would like to learn more about Unreal's Gameplay Framework. This post walks through the core classes you will use from the Gameplay Framework and explains their use, how they get instantiated by the engine and how to access each of those classes from other parts of your game code. Most of the information presented applies to Blueprint as well.
 
 {: .notice--info }
-I have written [Complete Guide to Unreal C++](/unreal-engine-cpp-guide/) that works well together with this article. Another incredibly powerful game programming feature is [GameplayTags, and I explain why you should be using them](/unreal-engine-gameplaytags-data-driven-design/).
+I have written [Complete Guide to Unreal C++](/unreal-engine-cpp-guide) that works well together with this article. Another incredibly powerful game programming feature is [GameplayTags, and I explain why you should be using them](/unreal-engine-gameplaytags-data-driven-design).
 
 # Gameplay Framework Classes
 
@@ -307,4 +309,4 @@ Some further recommended reading for the gameplay framework and programming with
 
 - [Gameplay Programming Documentation](https://docs.unrealengine.com/en-US/programming-in-the-unreal-engine-architecture/)
 - [Actor Lifecycle Documentation](https://docs.unrealengine.com/en-US/unreal-engine-actor-lifecycle/)
-- [Unreal Engine C++ Complete Guide](/unreal-engine-cpp-guide/)
+- [Unreal Engine C++ Complete Guide](/unreal-engine-cpp-guide)

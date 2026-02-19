@@ -8,6 +8,8 @@ tags:
 coverImage: "ue4_lightingexample_thumb.jpg"
 sidebar:
     nav: sidebar-optimization
+redirect_from:
+  - /lighting-with-unreal-engine-jerome/ 
 ---
 
 Unreal Engine posted an excellent MasterClass talk by Jerome Platteaux on Lighting during **[Unreal Dev Day Montreal 2017](https://www.unrealengine.com/en-US/blog/unreal-dev-day-montreal-presentations-released)**. The video is worth a full watch, it contains tons of interesting practical tips and explains many of the **[Lightmass](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/Lightmass/index.html)** features of Unreal Engine 4. I am writing this post to create a personal reference of all the useful data contained in this video without having to scroll through the video every time I am looking for some information. I mostly focused on the Lightmass information given during the talk, there is a lot more information that's worthwhile, so I recommend watching the whole thing. I hope this helps you too, let's dive in!

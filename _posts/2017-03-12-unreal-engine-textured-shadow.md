@@ -11,6 +11,8 @@ redirect_from:
   - /unreal-engine-shadows-outline/
 sidebar:
     nav: sidebar-optimization
+redirect_from:
+  - /disneyfaciliershadow/
 ---
 
 This weekend I stumbled upon a [reddit post](https://www.reddit.com/r/movies/comments/5yvf23/in_disneys_the_princess_and_the_frog_the_shadow/) about Dr. Facilier's interesting shadow in The Princess and the Frog and it inspired me to experiment with Forward shading in Unreal Engine 4 to re-create a similar effect in real-time shading. OP pointed out that The Shadow Man's shadow changes the wallpaper his shadow is cast on. A subtle but quite interesting effect!
@@ -49,7 +51,7 @@ This LightAttenuationTexture may not be the perfect source for detailed lighting
 
 ## Outlined Shadows
 
-I’ve done multiple blog posts about rendering [outlines in Unreal Engine](/multi-color-outline-post-process-in-unreal-engine-4/) in the past. So when I had this idea of **outlining shadows** instead of objects, I figured it would be fun to build it as a quick experiment.
+I’ve done multiple blog posts about rendering [outlines in Unreal Engine](/unreal-engine-outline-multi-color-post-process) in the past. So when I had this idea of **outlining shadows** instead of objects, I figured it would be fun to build it as a quick experiment.
 
 To figure out where to draw the outline I use an approach very similar to my prior outline implementation, instead I sample the LightAttenuation buffer instead of the CustomDepth buffer and compare it to the light attenuation value or nearby pixel. This effect does NOT work in Deferred rendering!
 

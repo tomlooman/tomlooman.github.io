@@ -191,8 +191,7 @@ p {
   }
 
   .archive__item-teaser img {
-    max-height: 180px;
-    max-width: 400px;
+    max-width: 300px;
     width: auto;
     object-fit: cover;
     display: block;
@@ -289,11 +288,11 @@ p {
 
 /* sidebar padding for sticky masthead */
 .sidebar__right.sticky {
-  top: $header-height;
+  top: $header-height + 20;
 }
 
 .sidebar .nav__list {
-  top: $header-height;
+  top: $header-height + 20;
 }
 
 .greedy-nav .hidden-links {

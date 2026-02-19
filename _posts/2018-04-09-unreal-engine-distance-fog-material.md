@@ -10,6 +10,8 @@ tags:
 coverImage: "Thumb_DepthFog.jpg"
 sidebar:
     nav: sidebar-optimization
+redirect_from:
+  - /distance-fog-material/
 ---
 
 In this post I will discuss depth (or distance) fog and the things I did to improve on the original basic effect while keeping this simple and light-weight. It's not a step-by-step tutorial, but explains the core concepts behind the effect including a download link at the end.

@@ -49,7 +49,7 @@ The AI Tools do come with some powerful behavior debugging tools such as [Gamepl
 
 So how should we go about implementing this system in Unreal Engine? In [Dave Mark's talk for Guild Wars 2](https://www.gdcvault.com/play/1021848/Building-a-Better-Centaur-AI) they use many C++ written evaluators that can be stacked together to create complex evaluations for each task. Having tried something similar, it proved to be too cumbersome for my specific needs and required a similar amount of jumping around like with the Behavior Tree assets. Blueprint graphs are incredibly powerful, so I implemented this in bespoke graphs and functions. After-all, it's unlikely Guild Wars has such a powerful tool as Blueprint.
 
-Unreal ships with a [Gameplay Framework](/unreal-engine-gameplay-framework/) which implores you to put any AI logic inside [AIController](/unreal-engine-gameplay-framework/#AIController) derived classes. The custom AIController has a set of functions that calculate the score for each of the available tasks given. A _Task_ in this context is an UObject that will make the AI Pawn do things like moving to a location or firing at a target much like _GameplayTasks_.
+Unreal ships with a [Gameplay Framework](/unreal-engine-gameplay-framework) which implores you to put any AI logic inside [AIController](/unreal-engine-gameplay-framework/#AIController) derived classes. The custom AIController has a set of functions that calculate the score for each of the available tasks given. A _Task_ in this context is an UObject that will make the AI Pawn do things like moving to a location or firing at a target much like _GameplayTasks_.
 
 All tasks are evaluated every few seconds in the AIController and the highest scoring task is selected and executed. Only if the running task can be cancelled and aren't already running that task. A Task can start and complete in a single frame or run for however long it needs (eg. a MoveTo task will keep running until the destination is reached)
 
@@ -71,7 +71,7 @@ The core concept of utility scoring can be used for other features too, for exam
 
 The next major step is to try out more AI variations to mature the implementation. I'm excited to see how far Utility AI will go and if it's a long term replacement for Behavior Trees in our projects. Dave Mark's explorations so far have proven the system works, along with several successful commercial titles. So it's a matter of finding a smooth integration into Unreal Engine without over-engineering a big framework around it. With that, I hope to share my future explorations in this area with more concrete gameplay examples and code.
 
-**If you've enjoyed this read, be sure to** [**check out part two!**](/utility-ai-ue4-2/)
+**If you've enjoyed this read, be sure to** [**check out part two!**](/unreal-engine-utility-ai-part2)
 
 ## References & Additional Reading
 

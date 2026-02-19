@@ -12,13 +12,15 @@ tags:
 coverImage: "ue4_customdepth_featured.png"
 sidebar:
     nav: sidebar-optimization
+redirect_from:
+  - /the-many-uses-of-custom-depth-in-unreal-4/
 ---
 
 Unreal Engine 4 introduced a new depth buffer along with its PBR rendering system. It's called "Custom Depth" and can be used for effects like the selection outline that is built-in in the Editor, rendering of occluded meshes, or custom culling of transparency. I will discuss some of the basics of using this buffer in the material editor and explain some of the features I used it for in my own projects.
 
 When using Custom Depth it's important to read through the _Issues & Limitations_ at the bottom of the page to prevent unnecessary debugging.
 
-[![ue4_coloredoutlines01_small](/assets/images/ue4_coloredoutlines01_small.jpg)](/multi-color-outline-post-process-in-unreal-engine-4/)
+[![ue4_coloredoutlines01_small](/assets/images/ue4_coloredoutlines01_small.jpg)](/unreal-engine-outline-multi-color-post-process)
 
 ## Custom Depth 101
 
@@ -49,7 +51,7 @@ I skipped over most of the implementation details - if you have any questions fe
 
 ## Multi-Color Outline Effect
 
-A few engine versions ago **Stencil Index buffer** was added alongside Custom Depth. This enables us to create multi-colored outlines among many other cool new tricks! **[Click here](/multi-color-outline-post-process-in-unreal-engine-4/)** to read about this new effect and how to use it.
+A few engine versions ago **Stencil Index buffer** was added alongside Custom Depth. This enables us to create multi-colored outlines among many other cool new tricks! **[Click here](/unreal-engine-outline-multi-color-post-process)** to read about this new effect and how to use it.
 
 ## Visualizing Custom Depth at Runtime
 
@@ -102,5 +104,4 @@ As previously mentioned, for our game _Switch_ we used Custom Depth for a number
 ## References
 
 - [Outlines Materials Pack](https://courses.tomlooman.com/p/object-outline-materials-unreal-engine)
-- [Multi-color Outline Effect](/multi-color-outline-post-process-in-unreal-engine-4/)
-- [Rendering Soft Outlines in Unreal Engine](/soft-outlines-in-ue4/)
+- [Multi-color Outline Effect](/unreal-engine-outline-multi-color-post-process)

@@ -4,8 +4,11 @@ date: 2019-11-21
 categories: 
   - "Rendering"
 tags: 
-  - "materials"
+  - "Materials"
   - "Performance"
+  - "Rendering"
+  - "Animation"
+  - "tips-tricks"
 coverImage: "ws_station_900p.jpg"
 sidebar:
     nav: sidebar-optimization
@@ -13,7 +16,7 @@ sidebar:
 
 Rotating (ambient) meshes in your world adds a dynamic element, but doing this on the CPU and having to pass it to the GPU each frame is a relatively slow operation. Without realizing you may be updating your collision every tick too, causing overlap updates and hurting performance even more.
 
-https://youtu.be/ijvH58g-sUg
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ijvH58g-sUg?si=PfqQ4FcPyYAHmaIC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 There is an old trick to instead rotate all vertices on the GPU directly using the vertex shader, completely omitting the CPU. Keep in mind that this does not update the rotation of the mesh collision. You should either disable collision or consider using a simple collision shape that doesn't need to rotate and handles approximate collision regardless of the rotation.
 

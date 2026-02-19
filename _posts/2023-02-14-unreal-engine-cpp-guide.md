@@ -9,6 +9,7 @@ tags:
   - "Delegates"
   - "Action Roguelike"
 coverImage: "Blog_Banner_CPPCompleteGuide_770.jpg"
+excerpt: "The complete reference guide to C++ for Unreal Engine game development. Covering all the essential programming concepts you need to code effectively in Unreal Engine C++. It includes all the commonly used concepts such as pointers, references, interfaces, macros, delegates, modules and more... Use it alongside other learning resources to learn more about a specific C++ programming concept."
 sidebar:
     nav: sidebar-cpp
 ---
@@ -250,7 +251,7 @@ print(TimeVar); // This would print out: 1.0f - because we passed in the origina
 
 ### Address Operator
 
-Another important use is the _address operator_, which even lets us pass functions as parameters into other functions. This is very useful for binding user input and [setting timers](/unreal-engine-cpp-timers/) to trigger specific functions.
+Another important use is the _address operator_, which even lets us pass functions as parameters into other functions. This is very useful for binding user input and [setting timers](/unreal-engine-cpp-timers) to trigger specific functions.
 
 The `BindAxis()` function in the example below needs to know which function to call when the mapped input is triggered. We pass in the function and use the _address operator (&)_.
 
@@ -543,7 +544,7 @@ In the example above we create a new Delegate variable and fill it with variable
 void ARogueGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
 ```
 
-Another example of using delegates/callbacks is with Timers. We don't need to specify our own delegate first and can directly pass in the function address so long as it has no parameters. It's possible to use timers with parameters as well. To learn more you can check out my blog post on [Using C++ Timers](/unreal-engine-cpp-timers/).
+Another example of using delegates/callbacks is with Timers. We don't need to specify our own delegate first and can directly pass in the function address so long as it has no parameters. It's possible to use timers with parameters as well. To learn more you can check out my blog post on [Using C++ Timers](/unreal-engine-cpp-timers).
 
 There is a lot more to talk about, but this should provide a core understanding from which to build. There are many more variants to the macros and different ways to bind...which could be a whole article on its own.
 
@@ -661,7 +662,7 @@ The ALL CAPS _preprocessor directives_ are used by the compiler to 'unfold' into
 
 Allows extra markup on functions, and exposes it to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose functions to Blueprint. Sometimes required by the engine to bind functions to delegates (eg. binding a timer to call a function).
 
-Here is [additional information in a blog post](/ue4-ufunction-keywords-explained/) on the available keywords within `UFUNCTION()` and how to use them. There are a lot of [function specifiers](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Functions/Specifiers/) worth checking out, and [BenUI](https://benui.ca/unreal/ufunction/) does a great job of detailing what's available.
+Here is [additional information in a blog post](/ue4-ufunction-keywords-explained) on the available keywords within `UFUNCTION()` and how to use them. There are a lot of [function specifiers](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Functions/Specifiers/) worth checking out, and [BenUI](https://benui.ca/unreal/ufunction/) does a great job of detailing what's available.
 
 ```cpp
 // Can be called by Blueprint
@@ -805,7 +806,7 @@ _Class Default Object_ is the default instance of a class in Unreal Engine. This
 
 You can easily get the CDO in C++ via [GetDefault\<T\>](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/CoreUObject/UObject/GetDefault/1). You should take care to not accidentally make changes to the CDO as this will bleed over into any new instance created for that class.
 
-Below is one example from [SaveGameSubsystem](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/SaveSystem/RogueSaveGameSubsystem.cpp) using the '_class default object'_ to access [DeveloperSettings](/unreal-engine-developer-settings/) (Which can contain Project & Editor Settings to access in your game code) without first creating a new instance.
+Below is one example from [SaveGameSubsystem](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/SaveSystem/RogueSaveGameSubsystem.cpp) using the '_class default object'_ to access [DeveloperSettings](/unreal-engine-developer-settings) (Which can contain Project & Editor Settings to access in your game code) without first creating a new instance.
 
 ```cpp
 // Example from: SSaveGameSubsystem.cpp (in Initialize())
@@ -872,7 +873,7 @@ Things that didn't quite make it in yet or require a more detailed explanation i
 
 - [Laura's C++ Speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html)
 - [Why C++ In Unreal Engine Isn't That Scary?](https://dev.epicgames.com/community/learning/tutorials/Ml0p/why-c-in-unreal-engine-isn-t-that-scary)
-- [Gameplay Framework Classes Primer](/unreal-engine-gameplay-framework/)
+- [Gameplay Framework Classes Primer](/unreal-engine-gameplay-framework)
 - [Introduction to Unreal C++ Programming](https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-with-cplusplus-in-unreal-engine)
 - [Gameplay Framework Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-classes-in-unreal-engine)
 - [Gameplay Programming Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/programming-in-the-unreal-engine-architecture)
