@@ -7,7 +7,7 @@ const commonFaq: Faq[] = [
     },
     {
         question: "When does the course start and finish?",
-        answer: "You can watch the pre-recorded lessons at your own pace."
+        answer: "You can follow the entire course at your own pace."
     },
     {
         question: "How long do I have access to the course?",
@@ -30,26 +30,14 @@ const commonFaq: Faq[] = [
 export const FAQs: { [key: number]: Faq[] } = {
     // C++ Course
     1: [
-        ...commonFaq,       
-        {
-            question: "Is this course compatible with Unreal Engine 5?",
-            answer: "Yes, the course works for any version Unreal Engine 4.25+ and the latest version of 5! The Unreal C++ concepts have remained the same, there are only minor differences for us between both versions. Where necessary, lectures will include the changes."
-        },
-        {
-            question: "Can I follow along on Mac and/or Visual Studio alternative?",
-            answer: "Yes. It works on platforms other than Windows, and Visual Studio isn't required either! You can use apps like Rider, Visual Studio Code, or XCode. Some code editor features may look a little different. We write exactly the same code and use the same workflow regardless of IDE/OS you wish to use."
-        },
+        ...commonFaq,
         {
             question: "What level of programming know-how is expected before starting?",
-            answer: "The course is challenging and assumes some basic programming experience. While knowing basic C++ is ideal, other programming languages like C#, Java, etc. work fine too as they all share the same core principles we need to write games with Unreal Engine."
+            answer: "The course is challenging and assumes some basic programming or scripting experience. Knowing C++ is not a requirement, any programming languages such as C#, Python, Unreal's Blueprint, etc. is enough."
         },
         {
             question: "Is this an official Stanford University course?",
             answer: "No, while this course curriculum has been taught to Computer Science students at Stanford University it is not affiliated nor owned/managed by the university in any capacity. Therefore, enrolling in this course does not make you a Stanford student, but the quality of the course should speak for itself!"
-        },
-        {
-            question: "I am transitioning from Unity, is this course a good fit for me?",
-            answer: "Absolutely! Unreal's C++ isn't as scary as you might think coming from C#. I was in the same boat many years ago with a C# background myself."
         }
     ],
     // Optimization Course

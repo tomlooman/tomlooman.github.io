@@ -27,6 +27,14 @@ export const reviews: { [key: string]: Review[] } = {
       text: "\"As someone who had some prior experience with game development, I was initially concerned that the course might be basic for me. However, I was pleasantly surprised by the depth and quality of the content.<br /><br />The course managed to cover the fundamentals while delving into advanced topics that kept me engaged and eager to learn more.<br />Furthermore, the course shed light on those sometimes neglected but really useful details and features that may make a huge difference in efficient Unreal Engine development.\"",
       imageUrl: "/assets/images/faces/mohamadshaaban.jpg"
     },
+    /*{
+      id: 4,
+      name: "Ian",
+      jobTitle: "Technical Leader",
+      company: "",
+      text: "\"Excellent course so far! First of all <strong>Tom has an excellent way of presenting the material, being both engaging and informative</strong> (a difficult combination to get right!).<br/><br/>Personally, I really enjoy how Tom humors the <strong>occasional short detour to explain a tangential concept or feature of the engine. It's those kinds of things that make this course so valuable</strong>, encouraging me to look into and learn every nook and cranny I run into. In my past experience, there's really no substitute for learning a system besides chasing curiosity. It's refreshing to see Tom exemplify that in his lectures. <br/><br/>I also think it is crucial to have exercises/assignments in any learning material, and <strong>Tom does an excellent job of introducing challenges that are substantial yet achievable.</strong> He clearly designs his assignments to leverage all the concepts he has taught so far, without leaving me to 'fend for myself' too much.\"",
+      imageUrl: "/assets/images/faces/default_profile.jpg"
+    },*/
     {
       id: 4,
       name: "Youngwook Yang",
@@ -50,14 +58,6 @@ export const reviews: { [key: string]: Review[] } = {
       company: "",
       text: "\"This is the first game dev tutorial I've found that finally caters to people who already have programming experience in other fields. This is exactly what I needed.\"",
       imageUrl: "/assets/images/faces/jeroen_profile.png"
-    },
-    {
-      id: 7,
-      name: "Ian",
-      jobTitle: "Technical Leader",
-      company: "",
-      text: "\"Excellent course so far! First of all <strong>Tom has an excellent way of presenting the material, being both engaging and informative</strong> (a difficult combination to get right!).<br/><br/>Personally, I really enjoy how Tom humors the <strong>occasional short detour to explain a tangential concept or feature of the engine. It's those kinds of things that make this course so valuable</strong>, encouraging me to look into and learn every nook and cranny I run into. In my past experience, there's really no substitute for learning a system besides chasing curiosity. It's refreshing to see Tom exemplify that in his lectures. <br/><br/>I also think it is crucial to have exercises/assignments in any learning material, and <strong>Tom does an excellent job of introducing challenges that are substantial yet achievable.</strong> He clearly designs his assignments to leverage all the concepts he has taught so far, without leaving me to 'fend for myself' too much.\"",
-      imageUrl: "/assets/images/faces/default_profile.jpg"
     }
   ],
   // Optimization Course

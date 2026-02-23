@@ -10,7 +10,7 @@ const SignUpButton = ({url}: SignUpButtonProps) => {
     return (
         <div className={style.wrapper}>
             <Button variant="contained" classes={{ root: style.signUpButton }} href={url}>
-                Sign Up
+                Buy Now
             </Button>
         </div>
     );

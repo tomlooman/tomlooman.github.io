@@ -11,7 +11,7 @@ const Faq = ({ courseId }: FaqProps) => {
     console.log(FAQs);
     return (
         <div className={style.faqWrapper}>
-            <h2>FAQ</h2>
+            <h2>Frequently Asked Questions</h2>
             <div>
                 {FAQs[courseId].map((faq, index) => (
                     <FaqItem key={index} question={faq.question} answer={faq.answer} />

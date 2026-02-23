@@ -10,7 +10,6 @@ interface ReviewsProps {
 const Reviews = ({ courseId }: ReviewsProps) => {
   return (
     <div className={style.reviewsWrapper}>
-      <h2>What my students say</h2>
       <div className={style.reviews}>
         {reviews[courseId].map((review) => (
           <ReviewItem key={review.id} review={review} />

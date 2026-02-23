@@ -12,7 +12,7 @@
 
        .priceItem {
             border-radius: .5rem;
-            border: solid 1px colors.$navy;
+            border: solid 4px colors.$navy;
             padding: 1rem;
             display: flex;
             flex-direction: column;
@@ -22,7 +22,7 @@
                 display: flex;
                 align-items: center;
                 padding: 1rem .5rem;
-                border-bottom: solid 1px colors.$orange;
+                border-bottom: solid 2px colors.$orange;
                 height: 100px;
 
                 > h5 {
@@ -48,6 +48,7 @@
                 flex-direction: column;
                 justify-content: space-between;
                 height: 100%;
+                padding-top: 1em;
 
                 .priceAmount {
                     display: flex;
@@ -68,6 +69,7 @@
                     margin: 0 .5rem 0 0;
                     display: flex;
                     align-items: center;
+                    font-size: 2.75em;
 
                     > span {
                         font-size: 1rem;

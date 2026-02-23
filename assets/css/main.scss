@@ -6,7 +6,7 @@
 
 $max-width: 1400px;
 $typeface: "Manrope", "Roboto", "Arial", sans-serif;
-$typeface-heading: "Manrope", "Roboto", "Arial", sans-serif;
+$typeface-heading: "Inter Tight", "Manrope", "Roboto", "Arial", sans-serif;
 $color-blue: #103D59;
 $color-orange: #ffa04a;
 $color-offwhite: #F2F4FA;
@@ -71,6 +71,7 @@ html {
 a {
   color: $color-orange;
   font-weight: 500;
+  font-family: $typeface-heading;
 }
 
 a:hover {
@@ -91,11 +92,44 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $typeface;
+  font-family: $typeface-heading;
+  font-weight: 700;
 }
 
 h2 {
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.4em;
   margin-top: 1em;
+}
+
+h3 {
+  margin-top: 0.8em;
+}
+
+.page__content p, p {
+  font-family: $typeface;
+  font-size: .85em;
+  font-weight: 350;
+}
+
+.page__content li, ul li {
+  font-size: 0.85em;
+  margin-bottom: 0.15em;
+}
+
+.toc li {
+  font-size: 0.95em;
+}
+
+.page-meta {
+  font-size: 0.9em;
 }
 
 .page__title a {
@@ -111,6 +145,13 @@ h2 {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.notice--info {
+  background-color: $color-lightgray;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $color-orange;
 }
 
 /*.page__related {
@@ -149,23 +190,6 @@ div.highlighter-rouge, figure.highlight {
   max-width: 1100px;
 }
 
-p {
-  font-size: .9em;
-}
-
-.page__content p {
-  font-size: .85em;
-}
-
-.page__content li {
-  font-size: 0.85em;
-  margin-bottom: 0.1em;
-}
-
-.page-meta {
-  font-size: 0.9em;
-}
-
 .archive__subtitle {
   border-bottom: none;
   font-size: 1.25em;
@@ -200,6 +224,10 @@ p {
   .archive__item-title,
   .archive__item-excerpt {
     margin-top: 0;
+  }
+
+  .archive__item a {
+    font-weight: 700;
   }
 
   .archive__item-body {

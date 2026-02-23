@@ -16,12 +16,8 @@ sidebar:
 
 Getting started with Unreal Engine C++ can be a bit of a struggle. The resources online have no clear path to follow or fail to explain the _Unrealisms_ you'll encounter. In this article, I'll attempt to give you an overview of many unique aspects of Unreal's C++ and briefly go over some of the native C++ features and how they are used in the context of Unreal Engine. It's a compilation of the many different concepts that you will face when working in C++ and Unreal Engine specifically.
 
-This article can be used as a reference guide in your Unreal Engine C++ journey and as a companion to the official documentation and [C++ courses](https://courses.tomlooman.com/p/unrealengine-cpp) out there.
-
 {: .notice--info }
-_**Disclaimer**: this guide is **not exhaustive in teaching you programming from the ground up**. This guide should help you **understand the specifics of C++ within Unreal Engine**. To have a starting point and reference guide while diving into the hands-on tutorials that demonstrate the practical use of C++ for your game._
-
-This guide is extensive, don't forget to bookmark it!
+**Note**: This guide should help you **understand the specifics of C++ within Unreal Engine**. To have a starting point and reference guide while diving into the hands-on tutorials that demonstrate the practical use of C++ for your game. **This guide is extensive, don't forget to bookmark it!**
 
 ## C++ vs. Blueprints
 
@@ -31,7 +27,7 @@ While Blueprint in Unreal Engine is a powerful scripting tool for anyone looking
 
 "In the early days, I went deep into C++ and tried to do pretty much everything with it, disregarding the power of Blueprint. In hindsight, this made my code more rigid than it needed to be and removed some flexibility for others to make adjustments without C++ knowledge. I later focused more on a healthy balance to great effect."
 
-Building the foundational systems (eg. inventory system, world interaction, etc.) in C++ and using these systems in Blueprint to tie it all together. This is now a large focus of my [course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), where we build the foundational game framework and ability system to allow flexible and small Blueprints to be created on top for individual features/abilities, etc.
+Building the foundational systems (ability systems, inventories, world interaction, etc.) in C++ and expanding these systems in Blueprint to tie it all together to actual gameplay. This is something we dive into during my [C+ course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15) as well, where we build the game framework and ability system to enable small but powerful Blueprints to be created on top to define specific abilities, items, interactions, etc.
 
 **Alex Forsythe has a great video explaining [how C++ and Blueprint fit together](https://www.youtube.com/watch?v=VMZftEVDuCE)** and why you should use both instead of evangelizing one and dismissing the other.
 
@@ -416,7 +412,7 @@ However, if you want to share functionality between Actors but don't want to use
 
 ## Delegates
 
-Delegates (also known as Events) allow code to call one or multiple _bound_ functions when triggered. Sometimes you'll see this referred to as Callbacks. For example, It can be incredibly helpful to bind/listen to a delegate and be notified when a value (such as character health) changes. This can be a lot more efficient than polling whether something changes during `Tick()`.
+Delegates (also known as Events) allow code to call one or multiple _bound_ functions when triggered. Sometimes you'll see this referred to as Callbacks. For example, It can be incredibly helpful to bind/listen to a delegate and be notified when a value (such as character health) changes. This can be a lot more efficient than polling whether something changed every frame using `Tick()`.
 
 There are several types of these delegates/events. I'll explain the most commonly used ones for game code using practical examples rather than low-level language details. I'm also not covering all the different ways of binding (only focusing on the more practical ways instead) or niche use cases, you can find more details on the [official documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/delegates-and-lambda-functions-in-unreal-engine) for those.
 
@@ -436,6 +432,7 @@ We'll start by showing the process of declaring and using delegates in detail wi
 
 One of the most used types of delegate in your game code as they can be exposed to Blueprint to bind and receive callbacks.
 
+{: .notice--info }
 Note: _Dynamic Multicast Delegates_ are also known as _Event Dispatchers_ in Blueprint.
 
 The macros take at least one parameter, which defines their name. eg. _FOnAttributeChanged_ could be a name we use as our Delegate to execute whenever an attribute such as Health changes.

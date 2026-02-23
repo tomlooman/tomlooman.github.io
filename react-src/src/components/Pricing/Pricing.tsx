@@ -46,11 +46,10 @@ const Pricing: React.FC<PricingProps> = ({ courseId }) => {
 
     return (
         <div className={style.wrapper}>
-            <h2>Get Started Today!</h2>
             <div className={style.content}>
                 <div className={style.priceItem}>
                     <div className={style.priceTitle}>
-                        <h5>Indie</h5>
+                        <h3>INDIE</h3>
                         <FormControl sx={{ m: 1, minWidth: 120 }} size="small" classes={{ root: style.indieTypeSelect }}>
                             <Select
                                 id="indie-type"
@@ -64,7 +63,7 @@ const Pricing: React.FC<PricingProps> = ({ courseId }) => {
                         </FormControl>
                     </div>
                     <div className={style.priceDescription}>
-                        <p>Single User License. For individuals, educators and studios with less than $1M in yearly revenue/funding.</p>
+                        <p>For individuals, educators and studios with less than $1M in yearly revenue/funding.<br/><br/>Single User License.</p>
                         <div className={style.priceAmount}>
                             {selectedIndieType === PriceItemType.INDIE_PAYMENT_PLAN && <div className={style.priceAdditionalInfo}>5 payments of</div>}
                             <h1>{`$${indieDiscountedPrice || indieOriginalPrice}`} {!!indieDiscountedPrice && <span>{`$${indieOriginalPrice}`}</span>}</h1>
@@ -75,13 +74,13 @@ const Pricing: React.FC<PricingProps> = ({ courseId }) => {
                 </div>
                 <div className={style.priceItem}>
                     <div className={style.priceTitle}>
-                        <h5>Pro (Studio)</h5>
+                        <h3>PRO</h3>
                     </div>
                     <div className={style.priceDescription}>
-                        <p>Single User License. For users within studios with over $1M in yearly revenue/funding.</p>
+                        <p>For students from studios with over $1M in yearly revenue/funding.<br/><br/>Single User License.</p>
                         <div className={style.priceAmount}>
                             <h1>{`$${Prices[courseId].PRO_DISCOUNTED || Prices[courseId].PRO}`} {!!Prices[courseId].PRO_DISCOUNTED && <span>{`$${Prices[courseId].PRO}`}</span>}</h1>
-                            <div className={style.priceAdditionalInfo} />
+                            <div className={style.priceAdditionalInfo}> per user</div>
                         </div>
                     </div>
                     <SignUpButton url={courseUrlForPro} />
