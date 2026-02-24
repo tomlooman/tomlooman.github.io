@@ -70,7 +70,7 @@ if (seeAllPostsButton) {
 
 const studioLogos = document.getElementById('studio-logos');
 if (studioLogos) {
-  const courseId = reviews.getAttribute('data-course-id');
+  const courseId = studioLogos.getAttribute('data-course-id');
   createRoot(studioLogos).render(<StudioLogos courseId={Number(courseId)} />);
 }
 
