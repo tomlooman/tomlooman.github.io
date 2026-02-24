@@ -5,11 +5,12 @@ import style from "./LinkButton.module.scss";
 interface LinkButtonProps {
     text: string;
     url: string;
+    openInNewTab?: boolean;
 }
 
-const LinkButton = ({ text, url }: LinkButtonProps) => {
+const LinkButton = ({ text, url, openInNewTab }: LinkButtonProps) => {
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" className={style.linkButton}>
+    <a href={url} target={openInNewTab ? "_blank" : "_self"} rel="noopener noreferrer" className={style.linkButton}>
         <img src={rightArrowSvg} alt="right arrow icon" />
         <span>{text}</span>
     </a>
