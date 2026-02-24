@@ -4,8 +4,18 @@
 .emailSignUpBanner {
     background-image: url('../../../public/assets/banner_full_gray.svg');
     background-repeat: no-repeat;
-    background-size: calc(100% + 150px); // Zoom in slightly to hide right 150px
+    background-size: cover;
     background-position: right center;
+
+    @media screen and (max-width: breakpoints.$breakpoint-md) {
+        background-position: right 5px;
+    }
+
+    width: 100%;
+    aspect-ratio: 1920 / 150;
+
+    display: flex;
+    align-items: center;
 
     .emailSignUpContent {
         display: flex;
@@ -13,8 +23,12 @@
         justify-content: space-between;
         padding: 1rem 200px;
 
+        @media screen and (max-width: breakpoints.$breakpoint-lg) {
+            padding: 1rem 100px;
+        }
+
         @media screen and (max-width: breakpoints.$breakpoint-md) {
-            padding: 1rem 50px;
+            padding: calc(1rem + 5px) 50px 1rem;
         }
 
         b {
