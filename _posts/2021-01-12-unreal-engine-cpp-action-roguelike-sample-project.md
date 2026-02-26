@@ -16,7 +16,9 @@ sidebar:
 redirect_from:
     - /unreal-engine-cpp-survival-sample-game/
     - /unreal-engine-cpp-survival-sample-game/section-three/
-
+    - /teambased-ai-in-unreal-engine-4/
+    - /tutorial-multiplayer-supported-usableactor-system-in-blueprint/
+    - /unreal-engine-blueprint-inventory-system/
 ---
 
 For the [Stanford University Fall Curriculum](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), I built a small game project using C++ mixed with some Blueprint in Unreal Engine. It has since been converted into an online course that anyone can participate in. It has been used by dozens of industry leading game studios to train their employees for C++ with Unreal Engine on top of thousands of indie developers.

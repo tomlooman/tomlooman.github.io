@@ -10,6 +10,8 @@ tags:
 coverImage: "StatCommands_FeaturedImage.jpg"
 sidebar:
     nav: sidebar-optimization
+redirect_from:
+  - /stat-commands-ue4/
 ---
 
 The only sane way to optimize your game is by having good profiling metrics. Unreal Engine comes packed with several good profiling tools and "stat commands" is one such feature. It allows us to measure pieces of our (C++) code in different ways. In this short article I explain how you can use this to your advantage.

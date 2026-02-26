@@ -10,6 +10,8 @@ tags:
 coverImage: "ue4_pausedscreen.jpg"
 sidebar:
     nav: sidebar-cpp
+redirect_from:
+  - /moving-camera-paused-ue4/
 ---
 
 You can continue to move/rotate your camera while game logic is PAUSED in Unreal Engine. Unfortunately, it's a little obscure to set up so here is a quick overview with C++.
