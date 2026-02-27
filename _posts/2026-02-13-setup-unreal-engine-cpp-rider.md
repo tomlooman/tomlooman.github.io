@@ -20,7 +20,7 @@ In this article we will install **JetBrains Rider** for use with **Unreal Engine
 {: .notice--info }
 **Note:** The steps demonstrated are for Windows & JetBrains Rider. **Please read this article carefully** as each component requires specific versions depending on the Unreal Engine version you are using. Any wrong version or missing component and the code will fail to compile.
 
-![](/assets/images/jetbrains_rider_logo_250.png){: .align-right }
+![](/assets/images/studio_logos/Rider_440.png){: .align-right }
 
 ## Required Software
 
@@ -167,7 +167,7 @@ In the Epic Games Launcher, go to `Unreal Engine > Library` and click the arrow 
 ![](/assets/images/epicgameslauncher_installationoptions_editorsymbols.png)
 *Debugging Symbols can take up to 50GB of disk space (download size is significantly less).*
 
-## Optional: Recommended Rider Settings
+## Recommended Rider Settings
 
 The following settings are recommended personally. They are not required to compile or use Unreal Engine and you should first check to see if you like to keep any of these settings enabled.
 
@@ -175,7 +175,7 @@ Settings can be accessed in the top-left under **File > Settings**.
 
 ### Indexing Plugins
 
-By default "Plugins" may not be indexed. Once you get deeper into the engine source I would recommend to enable this or they won't show up in searches either. I find myself often browsing the engine source code, and even modules such as Niagara particle system is a Plugin and therefore not indexed by default. This does add processing overhead, but it should be worthwhile.
+By default "Plugins" will not be indexed and many common modules of the engine are considered Plugins by Rider including Enhanced Input and Niagara. I would recommend to enable this or they won't show up in autocompletion and code searches.
 
 ![](/assets/images/jetbrainsrider_indexplugins.png)
 *Enable indexing of Plugins for have better coverage of the engine source code.*
