@@ -16,8 +16,10 @@ sidebar:
 
 Getting started with Unreal Engine C++ can be a bit of a struggle. The resources online have no clear path to follow or fail to explain the _Unrealisms_ you'll encounter. In this article, I'll attempt to give you an overview of many unique aspects of Unreal's C++ and briefly go over some of the native C++ features and how they are used in the context of Unreal Engine. It's a compilation of the many different concepts that you will face when working in C++ and Unreal Engine specifically.
 
+Throughout the article, I will be using code snippets from ["Project Orion" a Co-op Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike). You can browse the source code on [GitHub](https://github.com/tomlooman/ActionRoguelike).
+
 {: .notice--info }
-**Note**: This guide should help you **understand the specifics of C++ within Unreal Engine**. To have a starting point and reference guide while diving into the hands-on tutorials that demonstrate the practical use of C++ for your game. **This guide is extensive, don't forget to bookmark it!**
+**Note**: This guide should help you understand the specifics of C++ within Unreal Engine. To have a starting point and reference guide while diving into the hands-on tutorials that demonstrate the practical use of C++ for your game. **This guide is extensive, don't forget to bookmark it!**
 
 ## C++ vs. Blueprints
 
@@ -32,8 +34,6 @@ Building the foundational systems (ability systems, inventories, world interacti
 **Alex Forsythe has a great video explaining [how C++ and Blueprint fit together](https://www.youtube.com/watch?v=VMZftEVDuCE)** and why you should use both instead of evangelizing one and dismissing the other.
 
 ## C++ Syntax & Symbols
-
-Throughout the article, I'll be using code snippets as concrete examples. You can find the reference [game example project](https://github.com/tomlooman/ActionRoguelike) over on GitHub. You can freely browse this repository to see more examples of how C++ is used with Unreal Engine.
 
 While looking at C++ tutorials, you may be wondering about a few common symbols. I will explain their meaning and use cases without going too deep into their technical details. I'll explain how they are most commonly used _within_ Unreal Engine gameplay programming, not C++ programming in general.
 

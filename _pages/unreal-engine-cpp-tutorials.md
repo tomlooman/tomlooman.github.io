@@ -17,23 +17,23 @@ A collection of Unreal Engine C++ Tutorials that I have created over the years. 
 
 Start with my long form [Complete Guide to Unreal Engine C++](/unreal-engine-cpp-guide) article. The C++ Guide covers many of the essential programming concepts you will use day to day in Unreal Engine. I recommend bookmarking it to keep as reference guide when watching programming tutorials or following my C++ Course.
 
-## C++ Gameplay Framework Guide
+## Co-op Action Roguelike Sample Game
 
-Essential knowledge for Unreal Engine is the built-in [Gameplay Framework](/unreal-engine-gameplay-framework) (`Actor`, `Pawn`, `GameMode`, etc.) as you will be dealing with these core classes constantly. It is written from a C++ perspective, but even for Blueprint it's highly relevant.
-
-## Action Roguelike C++ Project
-
-The Action Roguelike Game project is the most advanced and complete sample project I have built for Unreal Engine so far. It comes with a large number of features you need to build games including a framework with an Ability System. You can find the full list of features on the [GitHub Project Page](https://github.com/tomlooman/ActionRoguelike) along with the full source code.
+The Co-op Action Roguelike Sample Game (Codenamed "Project Orion") is **open-source on GitHub and the most advanced and complete sample project I have built for Unreal Engine** over the years. It comes with a large number of features you need to build games including a framework with a custom Ability System, enemy AI, full multiplayer support and a range of optimization tricks. You can find the [full breakdown on the new Orion Sample Game project page](/unreal-engine-sample-game-action-roguelike) along with the full source code.
 
 {: .notice--info }
-This game project is what you will build in my **Unreal Engine C++ Course**. If you want to learn exactly how to write it, why the code is written this way, and tons of more tips and tricks we cover along the way, [click here](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)!
+This is what you will build in my **Unreal Engine C++ Course** (minus some of the later additions and experiments found on the Main Branch in GitHub). If you want to learn exactly how to build it, the reasoning behind every line of code, and tons of more tips and tricks we cover along the way, **[click here](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)**!
 
-![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)
+[![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)](/unreal-engine-sample-game-action-roguelike)
 *Left: Combat with Enemy AI, Buffs, Abilities, and multiplayer support. Right: Blackhole Ability sucking up the environment.*
 
-## Bookmarks
+## C++ Gameplay Framework Guide
 
-For many more C++ content created by others in the community, check out my [Unreal Engine Bookmarks](/unreal-engine-resources) page containing a bunch more C++ related content.
+Essential knowledge for Unreal Engine is the built-in [Gameplay Framework](/unreal-engine-gameplay-framework) (`Actor`, `Pawn`, `GameMode`, etc.) as you will be dealing with these core classes constantly. It is written from a C++ perspective, but even for Blueprint users it's highly relevant as you extend from the same classes.
+
+## Unreal Engine Bookmarks Collection
+
+For many more C++ content created by others in the community, check out my [Unreal Engine Bookmarks](/unreal-engine-resources) page.
 
 ## Latest C++ Content
 

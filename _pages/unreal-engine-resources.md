@@ -172,12 +172,12 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 
 ## Sample Projects
 
-- [Action Roguelike](https://github.com/tomlooman/ActionRoguelike)  
-   Comprehensive C++ action rpg/roguelike game. Project source for my Unreal Engine C++ Course.
+- [Co-op Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike)  
+   Comprehensive C++ action rpg/roguelike game supporting multiplayer.
 
 ## Localization
 
-- [Unreal UIs and Localization](https://benui.ca/unreal/ui-localization/) \- Ben UI  
+- [Unreal UIs and Localization](https://benui.ca/unreal/ui-localization/) - Ben UI  
    Ben prepares you for localizing your game to prevent future headaches.
 - [Industries of Titan Localization Lessons](https://benui.ca/unreal/industries-titan-localization/) - Ben UI  
    Lessons learned from Titan of Industries localization efforts.
