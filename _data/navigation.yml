@@ -5,7 +5,7 @@ main:
   - title: "C++ Tutorials"
     url: /unreal-engine-cpp-tutorials
     description: "Collection of my C++ Tutorials, Projects and Articles"
-  - title: "Project Orion"
+  - title: "Orion Sample Game"
     url: /unreal-engine-sample-game-action-roguelike
     description: "Co-op Action Roguelike Sample Game built in C++ & Unreal Engine 5"
   - title: "C++ Course"
