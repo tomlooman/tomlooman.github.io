@@ -86,6 +86,8 @@ Check out the [Game Development Resource](/game-development-resources) Page!
    "Take a look back at Matt Oztalay's series of talks on how he and the team at Quixel optimized the Medieval Game Environment."
 - [Expert's Guide To Unreal Engine Performance](https://dev.epicgames.com/community/learning/tutorials/3o6/expert-s-guide-to-unreal-engine-performance)  
    List style article with brief insights into different considerations to make to reach your target framerates.
+- [User Interfaces Optimization Guidelines](https://dev.epicgames.com/documentation/en-us/unreal-engine/optimization-guidelines-for-umg-in-unreal-engine)
+   Best practices guide by Epic for UMG and Slate UI.
 
 ## Collision & Physics
 
