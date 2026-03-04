@@ -6,6 +6,13 @@ last_modified_at: 04-03-2026
 permalink: /unreal-engine-sample-game-action-roguelike
 coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 excerpt: "The co-op Action Roguelike sample game is made in Unreal Engine 5 with C++ and is my most complete and advanced sample game available."
+redirect_from:
+    - /unreal-engine-cpp-survival-sample-game/
+    - /unreal-engine-cpp-survival-sample-game/section-three/
+    - /teambased-ai-in-unreal-engine-4/
+    - /tutorial-multiplayer-supported-usableactor-system-in-blueprint/
+    - /unreal-engine-blueprint-inventory-system/
+    - /unreal-engine-cpp-action-roguelike-sample-project
 ---
 
 ![](/assets/images/coursecpp_banner_widenarrow-3.png)
@@ -15,7 +22,7 @@ excerpt: "The co-op Action Roguelike sample game is made in Unreal Engine 5 with
 The core framework is built in C++ to show off how a game can be built for Unreal Engine 5. The game uses "Risk of Rain 2" as a common point of design reference.
 
 {: .notice--info }
-**Note:** This page is a work in progress documenting all the features and code samples available.
+**Note:** This page is a work in progress documenting all the features and code samples available. If you are looking for the **Survival Sample Game**, that has been deprecated in favor of continued support for this project.
 
 ## Get The Project Source
 
@@ -58,9 +65,6 @@ Apply console variable `game.drawdebugmelee 1` to visualize the overlap shape du
 ## Save Game System
 
 The game includes the core implementation of a save game system storing the world state and player information such as their current location, earned credits etc. You can [read a full breakdown of the Save Game system](/unreal-engine-cpp-save-system) on my blog.
-
-{: .notice--info }
-**Note:** The saving system is not set up with a "roguelike" design in mind, it was designed for educational purposes to apply to common game requirements that do store the world state beyond a single "run".
 
 ## Performance & Optimization
 
