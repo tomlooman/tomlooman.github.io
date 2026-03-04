@@ -2,7 +2,7 @@
 title: "Project Orion: Co-op Action Roguelike Sample in Unreal Engine"
 date: 2026-02-27
 layout: single
-last_modified_at: 27-02-2026
+last_modified_at: 04-03-2026
 permalink: /unreal-engine-sample-game-action-roguelike
 coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 excerpt: "The co-op Action Roguelike sample game is made in Unreal Engine 5 with C++ and is my most complete and advanced sample game available."
@@ -78,9 +78,15 @@ As the time of writing the projectiles are experimental and can be enabled by de
 
 When killing an enemy, a thousand little coins spawn around the corpse. These are entirely implemented using data-oriented principles instead of Actors. They render using a single `InstancedStaticMeshComponent` (Alternatively could be driven using Niagara). You can find more about this feature in `URoguePickupSubsystem`.
 
+### Object Pooling
+
+The project support **Object Pooling** which is a common optimization to avoid creating and destroying objects such as Actors and instead make them dormant and invisible until they are requested again. An example implementation can be found with the Monster Corpses (`ARogueMonsterCorpse`). A fixed amount of instances are spawned during the load screen and immediately parked for later use. Game code can request a pooled Actor instead of spawning new instances. This improves CPU performance as spawning is generally expensive, helps against memory fragmentation (and allocations) and reduces the CPU cost of destroying objects together with performing garbage collection.
+
+The code can be found inside `URogueActorPoolingSubsystem` and is at this time built specifically for Actors. The functions `ReleaseToPool` and `AcquireFromPool` manage the state of the pooled Actor.
+
 ### Significance Manager
 
-The Significance Manager is a framework to help **throttle and cull gameplay logic and related systems such as animations and VFX** to keep performance consistent regardless of how much is happening on or off screen. It can group Actors and other instances into "Buckets" with a maximum capacitity, allowing only X number of something to execute at the highest fidelity, throttling other "less significant" Actors.
+The Significance Manager is a framework to help **throttle and cull gameplay logic and related systems such as animations and VFX** to keep performance consistent regardless of how much is happening on or off screen. It can group Actors and other instances into "Buckets" with a maximum capacity, allowing only X number of something to execute at the highest fidelity, throttling other "less significant" Actors.
 
 One example from Fornite is a maximum number of players running at "full fidelity" while forcing lower LODs and VFX on the remainder. Fortnite will prioritize your squadmembers and nearby players in view, while throttling any player that is offscreen and/or further away. Each platform, such as Mobile can have their own bucket size limits.
 
