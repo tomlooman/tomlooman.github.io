@@ -151,6 +151,6 @@ Stat commands are incredibly useful if used pragmatically and provide a quick in
 
 ## References
 
-- [Stat Commands | Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/stat-commands-in-unreal-engine)
-- [Stats System Overview | Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-stats-system-overview)
-- [Trace Developer Guide (Insights) | Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/developer-guide-to-tracing-in-unreal-engine)
+- [Stat Commands - Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/stat-commands-in-unreal-engine)
+- [Stats System Overview - Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-stats-system-overview)
+- [Trace Developer Guide (Insights) - Unreal Docs](https://dev.epicgames.com/documentation/en-us/unreal-engine/developer-guide-to-tracing-in-unreal-engine)
