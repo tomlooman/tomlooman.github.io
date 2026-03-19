@@ -8,7 +8,7 @@ tags:
   - "Performance"
   - "Profiling"
   - "C++"
-coverImage: "StatCommands_FeaturedImage.jpg"
+coverImage: "Thumb_Blog_StatsTracesInsights.jpg"
 redirect_from:
   - /stat-commands-ue4/
 ---
