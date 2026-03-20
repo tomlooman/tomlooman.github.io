@@ -28,6 +28,10 @@ The core framework is built in C++ to show off how a game can be built for Unrea
 
 You can browse or download the project on the [GitHub Repository](https://github.com/tomlooman/ActionRoguelike).
 
+## Enabling Experimental Features
+
+The project contains work in progress features that showcase experimental features such as **Data-oriented Design** for Projectiles or **Deferred Tasks** for improved frame pacing. You can find and toggle these in `ActionRoguelike.h` and turn them on by setting the `#define` to 1.
+
 ## Action System (Abilities, Buffs, Attributes)
 
 The game features a custom Ability System (dubbed the "Action System") with support for RPG-style Attributes, Abilities and Buffs/Debuffs.
