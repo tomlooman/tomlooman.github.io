@@ -1,5 +1,5 @@
 ---
-title: "C++ Course receiving major update for Unreal Engine 5 (Early Access)"
+title: "C++ Course Completely Rebuilt for Unreal Engine 5 (Early Access)"
 date: 2026-02-09
 last_modified_at: 2026-02-09
 categories: 
@@ -13,20 +13,20 @@ coverImage: "Thumb_Course_CPP_BlogAnnounce_600.jpg"
 excerpt: "The Unreal Engine 5 refresh of the Professional Game Development in C++ and Unreal Engine course has entered early access. Completely re-recording the entire course and improving every aspect of the code, best practices and curriculum."
 ---
 
-**The [Professional Game Development in C++ and Unreal Engine](/courses/unrealengine-cpp) has received the first 12+ hours of major overhaul content (total course length expected roughly 25 hours) to bring it up to Unreal Engine 5.6 and above!** This refresh is a complete re-recording of the original course for Unreal Engine C++ development following roughly the same project's design. The course includes further streamlining of the curriculum and covering both big and small features of Unreal Engine 5 such as Enhanced Input, Niagara (for gameplay), InstancedStructs, Data-oriented Programming, and lots more...
+**The [Professional Game Development in C++ and Unreal Engine](/courses/unrealengine-cpp) has received the first 12+ hours of major overhaul content (total course length expected roughly 25 hours) to bring it up to Unreal Engine 5.6 and above!** The course is being completely rebuilt and re-recorded from the ground up. The course includes further streamlining of the curriculum and covering both big and small features of Unreal Engine 5 such as Enhanced Input, Niagara (for gameplay), InstancedStructs, Data-oriented design, and lots more...
 
 ![](/assets/images/Thumb_Course_CPP_BlogAnnounce_narrow.jpg)
 
 ## Free Upgrade
 
-This **Unreal Engine 5 version is a FREE upgrade for all current students**. It has taken many months of work and I am doing everything I can to make it more than a simple re-recording of the exact same content. Instead every single line of code has been reviewed and considered. This resulted in streamlined lesson plan and a chance to swap out some repetitive bits of the original with more exciting concepts either new to UE5 or that simply did not make it into the original curriculum for any number of reasons.
+This **Unreal Engine 5 version is a FREE upgrade for all current students**. It has taken many months of work and it is far more than a re-recording of the original. Instead every single line of code has been reviewed and considered with some content getting cut and replaced. This resulted in streamlined lesson plan and a chance to swap out some repetitive bits of the original with more exciting concepts either new to UE5 or that simply did not make it into the original curriculum for any number of reasons.
 
 {: .notice--info }
 You are automatically enrolled into the Early Access Refresh when purchasing the original course. The landing pages will be swapped out once the refresh hits the full "v2.0" launch.
 
 ## What's Changed?
 
-Every lesson is re-recorded and revisited. The overall structure of the lessons has improved. Certain (gameplay) mechanics have been swapped out to allow more interesting programming concepts to be covered instead.
+Every lesson is re-recorded and redesigned. The overall structure of the lessons has improved. Certain (gameplay) mechanics have been swapped out to allow more interesting programming concepts to be covered instead.
 
 Not only does it refresh the content for Unreal Engine 5, it will include additional programming concepts such as Data Oriented Programming, which is an alternative to the usual OOP (Object Oriented Programming) using objects such as Actors and instead focusing on data first. This allows for significantly higher performance in certain scenarios and can often keep code simpler at the same time!
 
