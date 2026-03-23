@@ -56,8 +56,16 @@ export const reviews: { [key: string]: Review[] } = {
       name: "Jeroen Oostdam",
       jobTitle: ".Net Developer",
       company: "",
-      text: "\"This is the first game dev tutorial I've found that finally caters to people who already have programming experience in other fields. This is exactly what I needed.\"",
+      text: "\"This is the first game dev tutorial I've found that finally <strong>caters to people who already have programming experience in other fields.</strong> This is exactly what I needed.\"",
       imageUrl: "/assets/images/faces/jeroen_profile.png"
+    },
+    {
+      id: 7,
+      name: "Saro",
+      jobTitle: "",
+      company: "",
+      text: "\"I found this course <strong>incredibly valuable</strong>. I constantly refer back to it in my own projects, and it <strong>continues to be a reliable technical resource</strong>.<br />The <strong>explanations are clear, practical, and production-oriented</strong>, making complex topics easy to apply in real-world scenarios.<br /><strong>I highly recommend this material</strong> to anyone serious about improving their skills.\"",
+      imageUrl: "/assets/images/faces/profile_rosario.png"
     }
   ],
   // Optimization Course
