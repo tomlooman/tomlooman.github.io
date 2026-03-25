@@ -40,13 +40,17 @@ If you just want to use the counters for Insights and not the viewport stats the
 
 Adding new Counters for Unreal Insights is very simple, define the following counter at the top of your cpp file:
 
-`TRACE_DECLARE_INT_COUNTER(CoinPickupCount, TEXT("Game/ActiveCoins"));`
+```cpp
+TRACE_DECLARE_INT_COUNTER(CoinPickupCount, TEXT("Game/ActiveCoins"));
+```
 
 You can replace `INT` with `FLOAT` (`TRACE_DECLARE_FLOAT_COUNTER`) if you need decimal precision. You can now modify the defined Counter in game code with the following macros:
 
-`TRACE_COUNTER_SET(CoinPickupCount, CoinLocations.Num());`
-`TRACE_COUNTER_ADD(CoinPickupCount, SomeNumber);`
-`TRACE_COUNTER_SUBTRACT(CoinPickupCount, SomeNumber);`
+```cpp
+TRACE_COUNTER_SET(CoinPickupCount, CoinLocations.Num());
+TRACE_COUNTER_ADD(CoinPickupCount, SomeNumber);
+TRACE_COUNTER_SUBTRACT(CoinPickupCount, SomeNumber);
+```
 
 The counters can be viewed in the Counters tab of Insights. Keep in mind you need to use the `-trace=counters` trace channel for this data to be available.
 
@@ -54,7 +58,9 @@ The counters can be viewed in the Counters tab of Insights. Keep in mind you nee
 
 For the older Stats System is works slightly different since it requires a StatGroup under which to be displayed (eg. `STATGROUP_Game`). These stat groups are how stats are organized, you can type console command `stat game` to show everything listed in the `STATGROUP_GAME`, or `stat anim` for everything under `STATGROUP_Anim`. Define your own stat group by changing the following Macro:
 
-`DECLARE_STATS_GROUP(TEXT("My Group Name"), STATGROUP_MyGroupName, STATCAT_Advanced);`
+```cpp
+DECLARE_STATS_GROUP(TEXT("My Group Name"), STATGROUP_MyGroupName, STATCAT_Advanced);
+```
 
 As an example, I track how many Actors get spawned during a session, so I added a counter to the ActorSpawned delegate available in UWorld.
 
