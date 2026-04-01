@@ -1,6 +1,7 @@
 ---
 title: "Rotating meshes using Vertex Shaders"
 date: 2019-11-21
+last_modified_at: 02-03-2026
 categories: 
   - "Rendering"
 tags: 

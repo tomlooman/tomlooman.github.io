@@ -1,6 +1,7 @@
 ---
 title: "Optimize Shader Compilation & Package Sizes"
 date: 2020-01-02
+last_modified_at: 02-03-2026
 categories: 
   - "Rendering"
 tags: 
