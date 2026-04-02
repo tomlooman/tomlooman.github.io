@@ -1,7 +1,7 @@
 ---
-title: "Using C++ Timers in Unreal Engine"
+title: "Unreal Engine 5 C++ Timers: SetTimer, FTimerHandle & Delegates Guide"
 date: 2015-04-09
-last_modified_at: 03-09-2025
+last_modified_at: 03-04-2026
 categories: 
   - "C++ Programming"
 tags:
@@ -11,38 +11,38 @@ tags:
   - "Performance"
   - "Action Roguelike"
 coverImage: "Thumb_CPPTimers.jpg"
-sidebar:
-    nav: sidebar-cpp
+excerpt: "Find out how to use timers in Unreal Engine 5 C++ including delegates, passing parameters and FTimerHandles."
 ---
 
 Timers are incredibly helpful for gameplay programming in Unreal Engine. However, the syntax can be a little tricky if you're unfamiliar with C++. This blog post will cover all the essential features and syntax for using C++ timers effectively in your game.
 
-For code examples of timers, check out my [C++ Action Roguelike](https://github.com/tomlooman/ActionRoguelike) - I will use this project source in a variety of examples below. Timers as part of game performance are covered in my game optimization course. More on that later.
+{: .notice--info }
+Throughout the article, I will be using code snippets from ["Project Orion" a Co-op Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike). You can browse the source code on [GitHub](https://github.com/tomlooman/ActionRoguelike).
 
 ## Set Timer
 
-You set timers through the global timer manager which is available through `GetWorld()->GetTimerManager()` or the shorthand available in any Actor, `GetWorldTimerManager()` which returns the same timer manager. There are a couple of overloads (function variations) available to pass the function to execute, the interval between triggers (if looped), a flag to enable looping, and the optional first delay. You can also set a timer to run the next frame by calling `SetTimerForNextTick()`.
+You set timers through the global timer manager which is available through `GetWorld()->GetTimerManager()` or the shorthand available in any `Actor`, `GetWorldTimerManager()` which returns the same timer manager. There are a couple of overloads (same function name, different set of parameters) available to pass the function to execute. The interval between triggers (if looped), a flag to enable looping, and the optional first delay. You can set a timer to run the next frame by calling `SetTimerForNextTick(...)`.
 
 Setting a timer can be pretty straightforward. Here is an example from an [Explosive Barrel](https://github.com/tomlooman/ActionRoguelike/blob/487fc2d6cae913f488deae544b1f49af65b5decf/Source/ActionRoguelike/World/RogueExplosiveBarrel.cpp#L73) class to delay the explosion after getting hit by a projectile:
 
 ```cpp
-/* Activate the fuze to explode the bomb after several seconds */
+/* Activate the fuze to explode the barrel after several seconds */
 void ARogueExplosiveBarrel::OnHealthAttributeChanged(...)
 {
 		GetWorldTimerManager().SetTimer(
-      DelayedExplosionHandle, // timer handle in case we want to pause or cancel
+      DelayedExplosionHandle, // FTimerHandle in case we want to pause or cancel
       this, // owning object, we clear the timer when this object is destroyed
-      &ThisClass::Explode, // function to call when time elapsed
-      ExplosionDelayTime // looping?
+      &ThisClass::Explode, // function to call when time elapsed, no parameters
+      ExplosionDelayTime, // interval between calls to Explode()
+      false // optional parameter to loop or not (defaults to false)
       );
 }
-```
 
-In the example, the `FTimerHandle` is defined in the header file. You are not required to keep a reference to the handle, but keep a reference to it when you need to pause or cancel the timer.
+// -- Header -- 
 
-```cpp
 /* Handle to manage the timer */
 FTimerHandle DelayedExplosionHandle;
+
 ```
 
 The function `Explode()` has no parameters in this example. To pass along parameters on timer elapsed, there is a different way to bind the function...
