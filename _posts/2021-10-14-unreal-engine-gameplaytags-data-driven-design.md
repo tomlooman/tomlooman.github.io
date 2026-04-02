@@ -1,6 +1,7 @@
 ---
 title: "Why you should be using GameplayTags in Unreal Engine"
 date: 2021-10-14
+last_modified_at: 17-03-2026
 categories:
   - "C++ Programming"
 tags: 
@@ -260,7 +261,7 @@ Sometimes the best way to learn is by example. **My [open-source Action Roguelik
 
 This project is part of my new **Unreal Engine C++ Course** where I talk more in depth about GameplayTags and tons of other essential skills for Unreal C++ Game Programming!
 
-**[Unreal Engine C++ Pro Course (Full Details)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)**
+**[Unreal Engine C++ Pro Course (Full Details)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE)**
 
 ## Closing
 

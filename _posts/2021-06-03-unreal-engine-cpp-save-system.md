@@ -1,6 +1,7 @@
 ---
 title: "Unreal Engine C++ Save System"
 date: 2021-06-03
+last_modified_at: 02-03-2026
 categories: 
   - "C++ Programming"
 tags: 
@@ -16,7 +17,7 @@ For your game, you will eventually need to write some kind of save system. To st
 
 In this article we go through the setup of your very own C++ SaveGame system. Different types of games will have their own specific serialization needs. Use this article and code as a starting point for whatever game you're building. You should to be fairly familiar with Unreal Engine C++ to build this system.
 
-This won't be a step-by-step tutorial. Instead, it's more of a system breakdown with explanations. The [full source code is available](https://github.com/tomlooman/ActionRoguelike) for the entire project. If you do wish for a more guided approach, I teach this concept and many others in my **[Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15).**
+This won't be a step-by-step tutorial. Instead, it's more of a system breakdown with explanations. The [full source code is available](https://github.com/tomlooman/ActionRoguelike) for the entire project. If you do wish for a more guided approach, I teach this concept and many others in my **[Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE).**
 
 We'll be creating a save system similar to _Dark Souls_ with a bonfire interaction that saves the world state. We will be saving a few actors and some player information. The bonfire itself is a thematic interaction, with the real interesting bits being the actual world state that we save/load. Such as the moved item locations, previously opened treasure chests, and obtained credits (aka "Souls").
 
@@ -27,7 +28,7 @@ We'll be creating a save system similar to _Dark Souls_ with a bonfire interacti
 
 **The entire project is available through [GitHub](https://github.com/tomlooman/ActionRoguelike)!** I recommend you download that and browse through it. It includes additional details such as the required #includes for each class used.
 
-This project was created for **[Stanford University Computer Science classes (CS193U)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)** that I taught in late 2020. It is the reference project used in my **Unreal Engine C++ online course!**
+This project was created for **[Stanford University Computer Science classes (CS193U)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE)** that I taught in late 2020. It is the reference project used in my **Unreal Engine C++ online course!**
 
 ## SaveGame System Design
 
@@ -447,7 +448,7 @@ Also, don't forget to sign-up for **my newsletter below** for any new content I 
 ## References & Further Reading
 
 - [**Serialization Best Practices and Techniques - UnrealFest '23**](https://dev.epicgames.com/community/learning/talks-and-demos/4ORW/unreal-engine-serialization-best-practices-and-techniques)
-- [**My Unreal C++ Course handles Saving & Loading in more detail**](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)
+- [**My Unreal C++ Course handles Saving & Loading in more detail**](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE)
 - [Saving and Loading your game (Docs BP / C++)](https://dev.epicgames.com/documentation/en-us/unreal-engine/saving-and-loading-your-game-in-unreal-engine)
 - [Saving/Loading Array of Object (Answerhub)](https://forums.unrealengine.com/t/what-is-the-best-way-to-handle-saving-loading-an-array-of-objects/281775)
 - [SPUD: Steve's Persistent Unreal Data library (Complete Save System Plugin)](https://github.com/sinbad/SPUD)
