@@ -1,7 +1,7 @@
 ---
-title: "Unreal Engine C++ Complete Guide"
+title: "Unreal Engine 5 C++ Guide: Pointers, Macros, Delegates & More"
 date: 2023-02-14
-last_modified_at: 06-02-2026
+last_modified_at: 03-04-2026
 categories: 
   - "C++ Programming"
 tags: 
@@ -10,11 +10,10 @@ tags:
   - "Action Roguelike"
 coverImage: "Blog_Banner_CPPCompleteGuide_770.jpg"
 excerpt: "The complete reference guide to C++ for Unreal Engine game development. Covering all the essential programming concepts you need to code effectively in Unreal Engine C++. It includes all the commonly used concepts such as pointers, references, interfaces, macros, delegates, modules and more... Use it alongside other learning resources to learn more about a specific C++ programming concept."
-sidebar:
-    nav: sidebar-cpp
+
 ---
 
-Getting started with Unreal Engine C++ can be a bit of a struggle. The resources online have no clear path to follow or fail to explain the _Unrealisms_ you'll encounter. In this article, I'll attempt to give you an overview of many unique aspects of Unreal's C++ and briefly go over some of the native C++ features and how they are used in the context of Unreal Engine. It's a compilation of the many different concepts that you will face when working in C++ and Unreal Engine specifically.
+Getting started with Unreal Engine C++ can be a bit of a struggle. The resources online have no clear path to follow or fail to explain the _Unrealisms_ you'll encounter. In this article, I'll attempt to give you an overview of many unique aspects of Unreal's C++ (TObjectPtr, Delegates, etc.) and briefly go over some of the native C++ features (pointers, macros, interfaces) and how they are used in the context of Unreal Engine. It's a compilation of the many different concepts that you will face when working in C++ and Unreal Engine on a daily basis.
 
 Throughout the article, I will be using code snippets from ["Project Orion" a Co-op Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike). You can browse the source code on [GitHub](https://github.com/tomlooman/ActionRoguelike).
 
@@ -803,7 +802,7 @@ _Class Default Object_ is the default instance of a class in Unreal Engine. This
 
 You can easily get the CDO in C++ via [GetDefault\<T\>](https://dev.epicgames.com/documentation/en-us/unreal-engine/API/Runtime/CoreUObject/UObject/GetDefault/1). You should take care to not accidentally make changes to the CDO as this will bleed over into any new instance created for that class.
 
-Below is one example from [SaveGameSubsystem](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/SaveSystem/RogueSaveGameSubsystem.cpp) using the '_class default object'_ to access [DeveloperSettings](/unreal-engine-developer-settings) (Which can contain Project & Editor Settings to access in your game code) without first creating a new instance.
+Below is one example from [SaveGameSubsystem](/unreal-engine-cpp-save-system/) using the '_class default object'_ to access [DeveloperSettings](/unreal-engine-developer-settings) (Which can contain Project & Editor Settings to access in your game code) without first creating a new instance.
 
 ```cpp
 // Example from: SSaveGameSubsystem.cpp (in Initialize())
