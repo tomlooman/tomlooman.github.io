@@ -388,16 +388,28 @@ div.highlighter-rouge, figure.highlight {
     top: $header-height-small;
   }
 
+  > p {
+    flex: 1;
+    margin: 0;
+  }
+
   > div {
     display: flex;
     width: 100%;
     align-items: center;
 
-    > * {
-      width: 50%;
-      text-align: left;
-    }
   }
+}
+
+.sales-banner-inner {
+  max-width: 1200px; /* match your site content width */
+  margin: 0 auto;
+  padding: 0 16px; /* keeps spacing on small screens */
+}
+
+#sales-banner-timer {
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 .sales-banner button {
