@@ -7,7 +7,7 @@ redirect_from:
     - /unreal-engine-course-optimization/
     - /performance-optimization/
 redirect_to: # temporary until we finished this landing page
-    - https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15
+    - https://courses.tomlooman.com/p/unrealperformance?coupon_code=INDIESALE
 ---
 
 

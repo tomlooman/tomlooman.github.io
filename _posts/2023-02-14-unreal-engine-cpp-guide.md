@@ -29,7 +29,7 @@ While Blueprint in Unreal Engine is a powerful scripting tool for anyone looking
 
 "In the early days, I went deep into C++ and tried to do pretty much everything with it, disregarding the power of Blueprint. In hindsight, this made my code more rigid than it needed to be and removed some flexibility for others to make adjustments without C++ knowledge. I later focused more on a healthy balance to great effect."
 
-Building the foundational systems (ability systems, inventories, world interaction, etc.) in C++ and expanding these systems in Blueprint to tie it all together to actual gameplay. This is something we dive into during my [C+ course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15) as well, where we build the game framework and ability system to enable small but powerful Blueprints to be created on top to define specific abilities, items, interactions, etc.
+Building the foundational systems (ability systems, inventories, world interaction, etc.) in C++ and expanding these systems in Blueprint to tie it all together to actual gameplay. This is something we dive into during my [C+ course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE) as well, where we build the game framework and ability system to enable small but powerful Blueprints to be created on top to define specific abilities, items, interactions, etc.
 
 **Alex Forsythe has a great video explaining [how C++ and Blueprint fit together](https://www.youtube.com/watch?v=VMZftEVDuCE)** and why you should use both instead of evangelizing one and dismissing the other.
 

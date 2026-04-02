@@ -24,7 +24,7 @@ For a simple use case like opening of a treasure chest, we don't want to use adv
 ![](/assets/images/anim_cpp_treasurechest.gif)
 
 
-In this article I demonstrate a simple animation system implementation that you can expand on with additional features. The source code is available in my [Action Roguelike project](https://github.com/tomlooman/ActionRoguelike) on GitHub ([Direct Link to Implementation Example](https://github.com/tomlooman/ActionRoguelike/blob/89d1e3c5fd9915c3739f944c6fffd744ffc5758a/Source/ActionRoguelike/World/RogueTreasureChest.cpp#L62)). This project is part of my [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), however its source code is open to everyone.
+In this article I demonstrate a simple animation system implementation that you can expand on with additional features. The source code is available in my [Action Roguelike project](https://github.com/tomlooman/ActionRoguelike) on GitHub ([Direct Link to Implementation Example](https://github.com/tomlooman/ActionRoguelike/blob/89d1e3c5fd9915c3739f944c6fffd744ffc5758a/Source/ActionRoguelike/World/RogueTreasureChest.cpp#L62)). This project is part of my [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE), however its source code is open to everyone.
 
 {: .notice--info }
 **Note:** This is not a step-by-step tutorial to code along. Instead this article explains the difficulties of animating in C++, proposes a solution and provides a walkthrough of the source code which is available on GitHub as part of the Action Roguelike project.

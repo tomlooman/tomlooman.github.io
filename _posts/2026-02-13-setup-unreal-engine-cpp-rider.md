@@ -35,7 +35,7 @@ Get the latest version of [Rider for Windows](https://www.jetbrains.com/rider/do
 After installing the Epic Games Launcher, I recommend **running Unreal Engine** from the Launcher **at least once so it can install any prerequisites** before moving on. Simply click "Launch" on your installed version and let it do its thing. You don't need to keep it open afterwards.
 
 {: .notice--info }
-If you are installing JetBrains Rider to follow along with my [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15), you can select the Free license ("Rider Non-commercial") as you are a student using it for educational purposes.
+If you are installing JetBrains Rider to follow along with my [Unreal Engine C++ Course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE), you can select the Free license ("Rider Non-commercial") as you are a student using it for educational purposes.
 
 ## Installing Visual Studio Build Tools
 
@@ -230,4 +230,4 @@ During my tutorials and courses I use the **Visual Assist keymap** and visual th
 {: .notice--danger }
 **Having Trouble?** If you had any issues during the setup process that were unclear or not covered in this article. Let me know through my [contact form](/contact) and I will see if I can update the article.
 
-If you are one of my students, you are now ready to follow along with my [Unreal Engine C++ course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)! You might also be interested in checking out my [Complete Guide to Unreal Engine C++](/unreal-engine-cpp-guide) article as a companion reference and introductory guide to many of the important concepts to programming within Unreal Engine 5.
+If you are one of my students, you are now ready to follow along with my [Unreal Engine C++ course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE)! You might also be interested in checking out my [Complete Guide to Unreal Engine C++](/unreal-engine-cpp-guide) article as a companion reference and introductory guide to many of the important concepts to programming within Unreal Engine 5.

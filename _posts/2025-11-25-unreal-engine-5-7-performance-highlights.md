@@ -20,7 +20,7 @@ As usual I approached this list from the game development perspective. Focusing 
 There are some major improvements like a new **Nanite Foliage** system using voxels which is a game changer and a much desired improvement for foliage rendering. Lumen continues moving away from Software ray-tracing (SWRT) by deprecating their "SWRT detail traces" render path and focusing on getting hardware raytracing to run at 60hz. **MegaLights** is moving into Beta, we can now inject **Custom HLODs** to give us greater control for distant geometry and more unusual changes such as optimizations to Windows high-precision mouse handling. Read the original full release notes [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-7-release-notes)
 
 {: .notice--info }
-This article is part of my efforts of keeping Unreal Engine developers informed about Game Optimization! For that I have a in-depth [Game Optimization Course for Unreal Engine 5](https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15) to train engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
+This article is part of my efforts of keeping Unreal Engine developers informed about Game Optimization! For that I have a in-depth [Game Optimization Course for Unreal Engine 5](https://courses.tomlooman.com/p/unrealperformance?coupon_code=INDIESALE) to train engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
 
 ## Nanite
 
@@ -449,7 +449,7 @@ This is part of an ongoing development to provide built-in functionality in Hord
 
 This time around I omitted a lot more of the smaller performance wins to keep it a bit shorter and focus on the most impactful changes and the changes you should be aware of when upgrading engine versions.
 
-If you are you interesting in learning more about game performance optimization, I have a professional training course used by dozens of AAA studios. Get more information [here](https://courses.tomlooman.com/p/unrealperformance?coupon_code=COMMUNITY15) or [reach out directly](/contact/) for more information about team enrollment and studio training.
+If you are you interesting in learning more about game performance optimization, I have a professional training course used by dozens of AAA studios. Get more information [here](https://courses.tomlooman.com/p/unrealperformance?coupon_code=INDIESALE) or [reach out directly](/contact/) for more information about team enrollment and studio training.
 
 
 You may follow me on [Twitter/X](https://x.com/t_looman), or [LinkedIn](https://www.linkedin.com/in/tomlooman/) for everything Unreal Engine performance related!

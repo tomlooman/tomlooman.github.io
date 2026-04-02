@@ -297,9 +297,9 @@ Filled with useful functions, and a must-know class when making any game. Defini
 
 # Looking for a guided Unreal C++ Learning Experience?
 
-Check out my **[Professional Game Development in C++ and Unreal Engine](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)** course! Taking you from setting up basic character movement all the way to building an ability system, framework design, AI, multiplayer, performance profiling and so much more!
+Check out my **[Professional Game Development in C++ and Unreal Engine](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE)** course! Taking you from setting up basic character movement all the way to building an ability system, framework design, AI, multiplayer, performance profiling and so much more!
 
-[![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)
+[![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE)
 
 # References
 

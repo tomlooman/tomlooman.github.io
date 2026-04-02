@@ -22,7 +22,7 @@ Start with my long form [Complete Guide to Unreal Engine C++](/unreal-engine-cpp
 The Co-op Action Roguelike Sample Game (Codenamed "Project Orion") is **open-source on GitHub and the most advanced and complete sample project I have built for Unreal Engine** over the years. It comes with a large number of features you need to build games including a framework with a custom Ability System, enemy AI, full multiplayer support and a range of optimization tricks. You can find the [full breakdown on the new Orion Sample Game project page](/unreal-engine-sample-game-action-roguelike) along with the full source code.
 
 {: .notice--info }
-This is what you will build in my **Unreal Engine C++ Course** (minus some of the later additions and experiments found on the Main Branch in GitHub). If you want to learn exactly how to build it, the reasoning behind every line of code, and tons of more tips and tricks we cover along the way, **[click here](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)**!
+This is what you will build in my **Unreal Engine C++ Course** (minus some of the later additions and experiments found on the Main Branch in GitHub). If you want to learn exactly how to build it, the reasoning behind every line of code, and tons of more tips and tricks we cover along the way, **[click here](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE)**!
 
 [![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)](/unreal-engine-sample-game-action-roguelike)
 *Left: Combat with Enemy AI, Buffs, Abilities, and multiplayer support. Right: Blackhole Ability sucking up the environment.*
