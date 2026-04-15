@@ -1,6 +1,7 @@
 ---
 title: "Unreal Engine 5.5 Performance Highlights"
 date: 2024-11-19
+last_modified_at: 15-04-2026
 categories: 
   - "Performance & Optimization"
 tags:
@@ -35,9 +36,7 @@ To kick off I'm starting with some lesser known changes which include some aweso
 
 ## Gameplay
 
-- Add a new **Tick Batching system** for actors and components which can be enabled by setting the `tick.AllowBatchedTicks` cvar. When enabled, this will group together the execution of similar actor and component ticks which improves game thread performance. Also added options like ForEachNestedTick to TickFunction to better support manual tick batching (which can be faster than the new automated batching)
-    - This is awesome and overdue for years. This can greatly improve GT performance by better using the CPU cache by ticking all actors/components of the same class together.
-    - The ForEachNestedTick can further reduce individual tick overhead by letting you run through a simple loop and run your tick logic for all objects directly in the single function.
+- Add a new **Tick Batching system** for actors and components which can be enabled by setting the `tick.AllowBatchedTicks` cvar. When enabled, this will group together the execution of similar actor and component ticks which improves game thread performance by **reducing the TaskGraph overhead**. Also added options like ForEachNestedTick to TickFunction to better support manual tick batching (which can be faster than the new automated batching)
 
 ## Rendering
 
