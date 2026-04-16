@@ -1,7 +1,7 @@
 ---
 title: "Adding Counters & Traces to Unreal Insights & Stats System"
 date: 19-03-2026
-last_modified_at: 19-03-2026
+last_modified_at: 16-04-2026
 categories: 
   - "Performance & Optimization"
 tags: 
@@ -14,7 +14,7 @@ redirect_from:
   - /stat-commands-ue4/
 ---
 
-The only sane way to optimize your game is by having good profiling metrics in game code. Unreal Engine comes packed with several good profiling tools and the **Stats System** (controlled by Stat Commands) along with **Unreal Insights** is what I will be covering today. It allows us to measure pieces of our game in different ways. I will demonstrate how you can use these metrics to your advantage, the macros are slightly different for the Stats System vs. Unreal Insights and we will cover both.
+The only sane way to optimize your game is by adding sensible profiling metrics in your (C++) game code. Unreal Engine comes packed with several good profiling tools and the **Stats System** (controlled by Stat Commands) along with **Unreal Insights** is what I will be covering in this article. It allows us to measure pieces of our game in different ways. I will demonstrate how you can use these metrics to your advantage, the macros are slightly different for the Stats System vs. Unreal Insights and we will cover both.
 
 It is good practice to add metrics to certain areas of your code early. As features may perform fine initially, but may degrade as content or code changes. Having profiling stats in place enables you to quickly understand what's going on.
 
@@ -124,7 +124,7 @@ Toggling of these stats can be done per StatGroup and multiple can be on screen 
 
 ## Adding new profiling metrics to your game
 
-As you can see it only takes a few Macros to set up your own metrics. The one missing piece is how to define your own StatGroup if you want to have a custom view for your stats using the Stats System.
+As you can see it only takes a few C++ Macros to set up your own metrics. The one missing piece is how to define your own StatGroup if you want to have a custom view for your stats using the Stats System.
 
 ```cpp
 DECLARE_STATS_GROUP(TEXT("LODZERO_Game"), STATGROUP_LODZERO, STATCAT_Advanced); 
