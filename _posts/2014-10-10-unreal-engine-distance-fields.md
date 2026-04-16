@@ -45,16 +45,6 @@ The editor supports some cool visualizations, be sure to check the "_Mesh Distan
 
 ![DF_Menuoptions](/assets/images/DF_Menuoptions.jpg)
 
-## Limitations
-
-The official documentation lists several [limitations](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html#limitations) and future improvements for DFAO. What struck me the most is the current GPU cost of the technique, 4.5ms vs. 0.6 ms of SSAO on a 7970 at 1080p. This is fairly high and I did notice an immediate drop in performance when doing some initial tests on Switch. With the effect being used in Epic's very own Fortnite I hope they will continue to improve upon the technique and hopefully find some performance gains along the way.
-
-The Ambient Occlusion technique does not work flawlessly for all situations and models, I recommend giving it a try when you have a good representation of your final geometric style and see if this technique is well-suited. The same seems true for Soft Shadows and I've found a few cases that yielded undesirable results. The angel figure in the Mobile demo is a good example where Soft Shadows did not yield the expected results. Skeletal Meshes do not work with soft shadows and as a result don't display a shadow at all (You may notice that they will not show up in the Mesh DistanceField visualizer either)
-
-![SoftShadows_Artifacts_Comparison](/assets/images/SoftShadows_Artifacts_Comparison.jpg)
-
-**Update: To resolve the shadowing issues above the distance field resolution map should be increased. More info on the [official docs page](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html#limitations).**
-
 ## Further Reading
 
 - [ByteWrangler](https://bytewrangler.blogspot.nl/2011/10/signed-distance-fields.html) has a nice and simple explanation of Signed Distance Fields (2D) with text rendering as example.
