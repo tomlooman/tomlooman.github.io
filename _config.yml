@@ -39,6 +39,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-include-cache
   - jekyll-redirect-from
+  - jekyll-seo-tag
 
 after_footer_scripts:
   - /assets/js/custom.js
