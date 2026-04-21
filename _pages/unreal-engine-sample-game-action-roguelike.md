@@ -13,6 +13,8 @@ redirect_from:
     - /tutorial-multiplayer-supported-usableactor-system-in-blueprint/
     - /unreal-engine-blueprint-inventory-system/
     - /unreal-engine-cpp-action-roguelike-sample-project
+    - /unreal-engine-gameplay-ability-system-action-rpg/
+    - /survival-sample-game-for-ue4/
 ---
 
 ![](/assets/images/coursecpp_banner_widenarrow-3.png)
