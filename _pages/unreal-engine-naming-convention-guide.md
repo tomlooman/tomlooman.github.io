@@ -1,6 +1,6 @@
 ---
 title: "Unreal Engine Naming Convention Guide"
-permalink: /unreal-engine-naming-convention-guide/
+permalink: unreal-engine-naming-convention-guide/
 date: 2014-04-03
 last_modified_at: 30-08-2025
 coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
