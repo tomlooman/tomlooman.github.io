@@ -261,7 +261,7 @@ Sometimes the best way to learn is by example. **My [open-source Action Roguelik
 
 This project is part of my new **Unreal Engine C++ Course** where I talk more in depth about GameplayTags and tons of other essential skills for Unreal C++ Game Programming!
 
-**[Unreal Engine C++ Pro Course (Full Details)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE)**
+**[Unreal Engine C++ Pro Course (Full Details)](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)**
 
 ## Closing
 
