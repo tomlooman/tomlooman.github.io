@@ -1,5 +1,5 @@
 ---
-title: "Optimizing GPU Performance for \“Far Far West\""
+title: "Optimizing GPU Performance for Far Far West"
 date: 2026-04-30
 last_modified_at: 30-04-2026
 categories:
@@ -9,10 +9,12 @@ tags:
   - "Performance"
   - "Nanite"
   - "Distance Fields"
-coverImage: ""
+coverImage: "Thumb_YT_FarFarWestOptims_600.jpg"
 ---
 
 This is the written Companion Guide to "Optimizing GPU Performance for “Far Far West". We go through the project in Unreal Engine 5.7 and explore opportunities for improving the GPU performance, especially for lower spec PCs.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3qgd4glfIR0?si=EIetDNavVYiMWzUr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 {: .notice--info }
 Certain links in this article redirect to my paid [Complete Game Optimization for Unreal Engine 5](https://tomlooman.com/courses/unrealengine-optimization) course. These lessons provide additional detail on specific topics that we covered during the video. All info and CVARs mentioned during the video are included in this article directly.
