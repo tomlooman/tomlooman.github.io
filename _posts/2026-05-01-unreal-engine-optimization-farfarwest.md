@@ -1,5 +1,5 @@
 ---
-title: "Optimizing GPU Performance for Far Far West"
+title: "GPU Profiling in Unreal Engine 5.7 for Far Far West"
 date: 2026-04-30
 last_modified_at: 30-04-2026
 categories:
