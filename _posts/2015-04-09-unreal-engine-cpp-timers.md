@@ -122,7 +122,7 @@ If you are updating many of the same objects using the TickManager using individ
 
 Timers are great for triggering delayed events and handling other time-based events that you may be inclined to put in your Tick() function instead. Be mindful to not abuse this convenient solution in places where you really need a more well considered system.
 
-Interested to learn more in-depth about **performance & optimization** concepts like **timers, tickgroups, frame pacing, cpu cache**, and many more? I just launched my [**Complete Game Optimization Course for Unreal Engine 5**](https://courses.tomlooman.com/p/unrealperformance)!
+Interested to learn more in-depth about **performance & optimization** concepts like **timers, tickgroups, frame pacing, cpu cache**, and many more? I just launched my [**Complete Game Optimization Course for Unreal Engine 5**](https://tomlooman.com/courses/unrealengine-optimization/)!
 
 Check out the API for [FTimerManager](https://docs.unrealengine.com/latest/INT/API/Runtime/Engine/FTimerManager/index.html) API Documentation for more useful functions on timers. Including time remaining, finding the tick rate, active timers, pause/continue, etc.
 

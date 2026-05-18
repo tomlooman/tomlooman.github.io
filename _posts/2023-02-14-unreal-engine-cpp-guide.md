@@ -28,7 +28,7 @@ While Blueprint in Unreal Engine is a powerful scripting tool for anyone looking
 
 "In the early days, I went deep into C++ and tried to do pretty much everything with it, disregarding the power of Blueprint. In hindsight, this made my code more rigid than it needed to be and removed some flexibility for others to make adjustments without C++ knowledge. I later focused more on a healthy balance to great effect."
 
-Building the foundational systems (ability systems, inventories, world interaction, etc.) in C++ and expanding these systems in Blueprint to tie it all together to actual gameplay. This is something we dive into during my [C++ course](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15) as well, where we build the game framework and ability system to enable small but powerful Blueprints to be created on top to define specific abilities, items, interactions, etc.
+Building the foundational systems (ability systems, inventories, world interaction, etc.) in C++ and expanding these systems in Blueprint to tie it all together to actual gameplay. This is something we dive into during my [Unreal Engine C++ course](https://tomlooman.com/courses/unrealengine-cpp/) as well, where we build the game framework and ability system to enable small but powerful Blueprints to be created on top to define specific abilities, items, interactions, etc.
 
 **Alex Forsythe has a great video explaining [how C++ and Blueprint fit together](https://www.youtube.com/watch?v=VMZftEVDuCE)** and why you should use both instead of evangelizing one and dismissing the other.
 
@@ -846,7 +846,7 @@ The official documentation (above) does a pretty good job of explaining how to s
 I hope this article provided you with some new insight into C++ and how it's used in Unreal Engine. This article has mainly focused on the uncommon aspects that are unique to Unreal Engine and how they apply within that context rather than C++ or programming in general.
 
 {: .notice--info }
-**Why stop here? Dive deeper into the world of C++ and Unreal Engine with [my industry proven course](https://courses.tomlooman.com/p/unrealengine-cpp)!** Used by thousands of Indie & AAA developers around the world!
+**Why stop here? Dive deeper into the world of C++ and Unreal Engine with [my industry proven course](https://tomlooman.com/courses/unrealengine-cpp/)!** Used by thousands of Indie & AAA developers around the world!
 
 As always, [follow me on Twitter/X](https://twitter.com/t_looman) for more Unreal Engine insights!
 

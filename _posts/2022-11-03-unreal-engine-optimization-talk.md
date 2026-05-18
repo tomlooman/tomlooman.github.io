@@ -455,6 +455,6 @@ I found myself often using this panel to investigate opportunities for memory an
 
 ## Closing
 
-**Eager to learn more about [Game Optimization in Unreal Engine](https://courses.tomlooman.com/p/unrealperformance)?** I got you covered with a complete course to guide you and your team through the entire process of performance optimization for games. It coveres a wide range of topics including Unreal Insights and specific CPU, GPU and memory optimizations.
+**Eager to learn more about [Game Optimization in Unreal Engine](https://tomlooman.com/courses/unrealengine-optimization/)?** I got you covered with a complete course to guide you and your team through the entire process of performance optimization for games. It coveres a wide range of topics including Unreal Insights and specific CPU, GPU and memory optimizations.
 
 To stay up-to-date with any new optimization articles sign up for my Newsletter below and [follow me on Twitter](https://twitter.com/t_looman)!

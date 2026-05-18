@@ -14,7 +14,7 @@ sidebar:
 
 The following Highlights are taken from the [Unreal Engine 5.5 Release Notes](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5.5-release-notes) and focus primarily on real-time game performance on PC and consoles. My personal highlights have some commentary on them and at the bottom you'll find a raw list of changes that I found notable. There were so many changes that even at the bottom I choose not to include everything, especially if the release notes were vague on their benefit or actual improvement.
 
-I will include a lot of the amazing new features and improvements in my [Game Optimization Course](https://courses.tomlooman.com/p/unrealperformance)!
+I will include a lot of the amazing new features and improvements in my [Game Optimization Course](https://tomlooman.com/courses/unrealengine-optimization/)!
 
 To kick off I'm starting with some lesser known changes which include some awesome additions like batched ticks and better profiling of input latency!
 
@@ -252,4 +252,4 @@ Lumen received a lot of performance changes, they are pretty technical and mostl
 
 **Note**: There are even more release notes available that would fall under the performance or optimization umbrella but that lacked proper context and/or are too niche to be notable.
 
-And finally, be sure to check out my [Game Optimization Course](https://courses.tomlooman.com/p/unrealperformance) for a huge list of lessons on optimization tricks while guiding you through the process of profiling and optimizing your game projects! There I will have a change to go into much greater detail on all these improvements and features in video lessons and detailed text explanations...
+And finally, be sure to check out my [Game Optimization Course](https://tomlooman.com/courses/unrealengine-optimization/) for a huge list of lessons on optimization tricks while guiding you through the process of profiling and optimizing your game projects! There I will have a change to go into much greater detail on all these improvements and features in video lessons and detailed text explanations...

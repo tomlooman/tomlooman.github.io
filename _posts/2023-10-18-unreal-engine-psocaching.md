@@ -17,7 +17,7 @@ redirect_from:
 **In recent years DirectX 12 games have gotten a bad rep for shader stutters. The most common issue we see discussed at launch is due to a lack of pre-compiling _Pipeline State Objects_. These PSOs (required by the GPU) need to be compiled on the CPU if not already cached on the local machine and will cause hitches as they may cost anywhere from a few milliseconds to several hundreds of milliseconds to compile before we may continue execution.**
 
 {: .notice--info }
-**Update:** A detailed video section on PSO gathering and project configuration is available in my [**Complete Game Optimization for Unreal Engine 5 Course**](https://courses.tomlooman.com/p/unrealperformance)! Feel free to use the written article below or check out the course which covers PSOs and MANY more essential topics for good game performance.
+**Update:** A detailed video section on PSO gathering and project configuration is available in my [**Complete Game Optimization for Unreal Engine 5 Course**](https://tomlooman.com/courses/unrealengine-optimization/)! Feel free to use the written article below or check out the course which covers PSOs and MANY more essential topics for good game performance.
 
 In short, a "PSO" tells the GPU exactly what state is must set itself to before executing certain operations such as drawcalls. This PSO needs to be _compiled_ and is GPU dependent and therefore can't be done ahead of time on certain platforms such as PC. For platforms like Xbox and PlayStation this can be done during Cooking of the project as the hardware is known ahead of time. This explains why certain game releases only suffer from hitch related issues on PC and not consoles.
 
