@@ -13,7 +13,7 @@ redirect_from:
     - /unreal-engine-cpp-course-available/
     - /unrealengine-cpp-course-available/
 redirect_to: # temporary redirect until this landing page is finished
-    - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15
+    - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE
 ---
 
 ![](/assets/images/coursecpp_banner_widenarrow-3.png)
