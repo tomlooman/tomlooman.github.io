@@ -764,15 +764,12 @@ UPROPERTY()
 TObjectPtr<AActor> FocusedActor;
 ```
 
-"Destroyed actors don’t have references to them nulled until they’re actually garbage collected. That's what _IsValid(yourobject)_ is used for checking." - [Ari Arnbj\örnsson](https://www.notion.so/Soft-Weak-Pointers-2347eefb694b49fb8314fdd71ca83065)
+"Destroyed actors don’t have references to them nulled until they’re actually garbage collected. That's what _IsValid(yourobject)_ is used for checking." - [Ari Arnbjörnsson](https://www.notion.so/Soft-Weak-Pointers-2347eefb694b49fb8314fdd71ca83065)
 
-You can read more about [automatic updating of references](https://docs.unrealengine.com/5.1/en-US/unreal-object-handling-in-unreal-engine/#automaticupdatingofreferences) on the official docs. The thing to keep in mind is that it only works for Actor and ActorComponent derived classes.
-
-
-In UE5 the behavior for automatically clearing RawPtrs / ObjectPtrs will change.
+You can read more about [automatic updating of references](https://docs.unrealengine.com/5.1/en-US/unreal-object-handling-in-unreal-engine/#automaticupdatingofreferences) on the official docs. The thing to keep in mind is that it only works for Actor and ActorComponent derived classes. In UE5 the behavior for automatically clearing RawPtrs / ObjectPtrs will change.
 
 {: .notice--info }
-"This will be changing a bit in UE5. The GC will no longer clear UPROPERTY + RawPtr/TObjectPtr references (even for Actors) but instead mark them as garbage (MarkAsGarbage()) and not GC them. The only way to clear the memory will be to null the reference or use weak pointers." - [Ari Arnbjörnsson](https://twitter.com/flassari/status/1528668001901617152). I will update this post once the new behavior has been enabled by default.
+__"This will be changing a bit in UE5. The GC will no longer clear UPROPERTY + RawPtr/TObjectPtr references (even for Actors) but instead mark them as garbage (MarkAsGarbage()) and not GC them. The only way to clear the memory will be to null the reference or use weak pointers."__ - [Ari Arnbjörnsson](https://twitter.com/flassari/status/1528668001901617152).
 
 ## TWeakObjPtr\<T\>
 
