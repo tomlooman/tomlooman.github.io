@@ -1,7 +1,7 @@
 ---
 title: "Every GPU Stat Explained for Unreal Engine 5"
 date: 2026-04-16
-last_modified_at: 16-04-2026
+last_modified_at: 2026-04-16
 categories:
   - "Performance & Optimization"
 tags:
@@ -9,7 +9,7 @@ tags:
   - "Performance"
   - "Nanite"
   - "Distance Fields"
-coverImage: ""
+coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 ---
 
 Unreal Engine 5 has a ton of different render passes which can be difficult to reason about how it scales in performance. This article is my attempt at covering the major GPU stats for Unreal Engine 5 rendering and give some insights into what they mean, how they scale in cost, and how to optimize them or turn them off entirely as not everything needs to be enabled.
@@ -60,13 +60,24 @@ You can read more about this on [the official docs](https://dev.epicgames.com/do
 
 ## Compute Volumetric Fog
 
-...
+The two primary variables to tune in `DefaultScalability.ini` are:
+
+- `r.VolumetricFog.GridPixelSize` - lower is more expensive & detailed
+- `r.VolumetricFog.GridSizeZ` - lower is cheaper as less detailed (depth)
+
+### Course Lessons
+- [Volumetric Fog Scalability - Case Study (The Forever Winter)](https://courses.tomlooman.com/courses/unrealperformance/lectures/63597213)
 
 ## CompositionBeforeBasePass
 
-This may be rendering Deferred Decals and Screen Space Ambient Occlusion.
+This will render **Deferred Decals** and Screen Space Ambient Occlusion (**SSAO**).
 
 ...
+
+### Course Lessons
+- [Deferred Decals (Component)](https://courses.tomlooman.com/courses/unrealperformance/lectures/55327738)
+- [Mesh Decals (Notes & Best Practices)](https://courses.tomlooman.com/courses/unrealperformance/lectures/55327751)
+- [Far Far West GPU Optimizations, Decals @ 38:08 Timestamp](https://courses.tomlooman.com/courses/unrealperformance/lectures/65604299)
 
 ## LightCompositionTasks_PreLighting
 
