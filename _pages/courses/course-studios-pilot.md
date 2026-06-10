@@ -12,22 +12,28 @@ A 30-day pilot lets your studio put the course in front of real developers, obse
 
 Want to review the content first as a team lead? Start with [Evaluation Access](/courses/unrealengine-courses-evaluation).
 
-## Use the Pilot to make One Decision
 
-**How broadly should we roll this out?**
+## Why studios choose a pilot
 
 Studios don’t run pilots to “try” the course. They run pilots to decide scope, timing, and seat count.
 
-The pilot helps you:
-- Confirm which roles benefit most
-- See real usage and value alongside production work
-- Avoid starting too small and expanding slowly
-- Roll out cleanly instead of renegotiating later
+**Avoid under-buying**
+See real demand signals before locking scope.
+
+**Align stakeholders early**
+Create space for developer input, lead review, and budget approval.
+
+**Roll out seamlessly**
+Avoid expanding in fragments and reduce internal churn.
+
+**Lock better pricing earlier**
+Reach discount tiers sooner with confident seat decisions.
+
+This isn’t about spending more. It’s about spending correctly.
 
 ## Put the course in real hands
 
 **The Pilot is for developers, not [evaluators](/courses/unrealengine-courses-evaluation).**
-
 
 Choose participants who reflect how the course will actually be used.
 
@@ -57,22 +63,6 @@ There’s no required pace or completion target for participants during the pilo
 **Seat status** — Flexible during the pilot, re-assign at any time.
 
 Developers learn at their own pace, alongside ongoing work.
-
-## Why studios choose a pilot
-
-**Avoid under-buying**
-See real demand signals before locking scope.
-
-**Align stakeholders early**
-Create space for developer input, lead review, and budget approval.
-
-**Roll out seamlessly**
-Avoid expanding in fragments and reduce internal churn.
-
-**Lock better pricing earlier**
-Reach discount tiers sooner with confident seat decisions.
-
-This isn’t about spending more. It’s about spending correctly.
 
 ## Pilot vs. Small rollout
 
@@ -117,7 +107,7 @@ On the call, you will:
 - Estimate seat count
 - Align on timing and next steps
 
-**Book a short call with Tom** (TODO: CALENDLY INTEGRATION)
+**Book a short call with Tom**
 
 **Prefer email?** You can also reach out at [info@tomlooman.com](mailto:info@tomlooman.com).
 
