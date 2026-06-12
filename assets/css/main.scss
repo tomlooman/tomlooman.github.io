@@ -530,3 +530,39 @@ div.highlighter-rouge, figure.highlight {
 .contact-form button[type="submit"]:hover {
   background-color: #e35f35;
 }
+
+/* Course Banner */
+
+#course-banner {
+  border: 1px solid rgba($color-blue, 0.5);
+}
+
+
+/* homepage call-out section */
+
+.intro-highlight {
+    position: relative;
+    margin: 20px 0 20px 0;
+    padding: 0px 40px 40px 40px;
+    background: $color-offwhite;
+    border: 1px solid rgba($color-blue, 0.5);
+    overflow: hidden;
+}
+
+.intro-highlight::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: $color-blue;
+}
+
+.intro-highlight p {
+    margin: 0;
+    font-size: 1.0em;
+    line-height: 1.7;
+    color: #3b3b3b;
+}
