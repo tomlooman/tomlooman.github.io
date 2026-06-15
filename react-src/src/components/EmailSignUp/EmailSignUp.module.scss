@@ -7,15 +7,15 @@
     background-size: cover;
     background-position: right center;
 
-    @media screen and (max-width: breakpoints.$breakpoint-md) {
-        background-position: right 5px;
-    }
-
     width: 100%;
     aspect-ratio: 1920 / 150;
 
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: breakpoints.$breakpoint-md) {
+        background-position: right 5px;
+    }
 
     .emailSignUpContent {
         display: flex;

@@ -1,6 +1,6 @@
-import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import SingleInputForm from "../Forms/SigleInputForm";
+import SendIcon from "@mui/icons-material/Send"
 import style from "./EmailSignUp.module.scss";
 
 const EmailSignUp = () => {
