@@ -15,7 +15,30 @@
     const timer = document.getElementById("sales-banner-timer");
     const close = document.getElementById("sales-banner-close");
 
-    if (!banner || !timer) return;
+    if (!banner) return;
+
+    const STORAGE_KEY = "salesBannerClosedOn";
+    const closedOn = localStorage.getItem(STORAGE_KEY);
+
+    function getDayString(date) {
+        return date.toISOString().slice(0, 10);
+    }
+
+    const today = getDayString(new Date());
+
+    // If closed today → remove the whole banner instead of hide
+    if (closedOn === today) {
+        banner.remove();
+        return;
+    }
+
+    // User manually closes it
+    close?.addEventListener("click", () => {
+        localStorage.setItem(STORAGE_KEY, today);
+        banner.remove();
+    });
+
+    if (!timer) return;
 
     const saleEndDateStr = timer.getAttribute("data-sale-end-date");
     if (!saleEndDateStr) return;
@@ -31,29 +54,5 @@
         banner.remove();
         return;
     }
-
-    // --- Still active → continue normal logic ----
-
-    const STORAGE_KEY = "salesBannerClosedOn";
-    const closedOn = localStorage.getItem(STORAGE_KEY);
-
-    function getDayString(date) {
-        return date.toISOString().slice(0, 10);
-    }
-
-    const today = getDayString(new Date());
-
-    // If closed today → remove instead of hide
-    if (closedOn === today) {
-        banner.remove();
-        return;
-    }
-
-    // User manually closes it
-    close?.addEventListener("click", () => {
-        localStorage.setItem(STORAGE_KEY, today);
-        banner.remove();
-    });
-
 })();
 </script>
