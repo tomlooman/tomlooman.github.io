@@ -12,7 +12,7 @@ tags:
 coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
 ---
 
-Unreal Engine 5 has a ton of different render passes which can be difficult to reason about how it scales in performance. This article is my attempt at covering the major GPU stats for Unreal Engine 5 rendering and give some insights into what they mean, how they scale in cost, and how to optimize them or turn them off entirely as not everything needs to be enabled.
+Unreal Engine 5 has many different render passes which can be a challenge to reason about how it scales in performance. This article is my attempt at covering the major GPU stats for Unreal Engine 5 rendering and give some insights into what they mean, how they scale in cost, and how to optimize them or turn them off entirely as not everything needs to be enabled.
 
 Unreal Engine does not do anything clever to know whether a certain render passes should actually run. Or at least, you cannot rely on this as I will show several examples that can often be turned off entirely depending in your content (something the engine itself wouldn't know ahead of time).
 
@@ -29,7 +29,7 @@ The engine is moving away from Lumen SWRT, focusing on a single HWRT render path
 
 Any time a mesh with DF enabled is added, moved or removed in the scene an update is triggered. This can be expensive depending on the size of the updated mesh. Mesh Distance Fields are mostly enabled by default even if they aren't contributing to the overall scene and must be manually reviewed and turned off.
 
-I have written more about profiling and figuring out which meshes are causing updates in my [Mesh Distance Fields article](https://tomlooman.com/unreal-engine-distance-fields/).
+I have written more about profiling and figuring out which meshes are causing updates in my [Mesh Distance Fields article](https://tomlooman.com/unreal-engine-distance-fields/). For students of my Game Optimization Course, I have a video lesson available on [auditing global distance fields updates](https://courses.tomlooman.com/courses/unrealperformance/lectures/66119464).
 
 
 ## SingleLayerWater
