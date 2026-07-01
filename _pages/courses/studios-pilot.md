@@ -1,6 +1,6 @@
 ---
 layout: salespage
-title: "30-Day Courses Pilot for Studio Teams"
+title: "30-Day Course Pilot for Studios"
 permalink: /courses/unrealengine-courses-pilot
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 last_modified_at: 02-04-2026
@@ -10,30 +10,30 @@ last_modified_at: 02-04-2026
 
 A 30-day pilot lets your studio put the course in front of real developers, observe how it is used during production, and decide how many seats to roll out without guessing.
 
-Want to review the content first as a team lead? Start with [Evaluation Access](/courses/unrealengine-courses-evaluation).
+**Want to review the content first as a team lead? Start with [Evaluation Access](/courses/studios-evaluation).**
 
 
 ## Why studios choose a pilot
 
 Studios don’t run pilots to “try” the course. They run pilots to decide scope, timing, and seat count.
 
-**Avoid under-buying**
+- **Avoid under-buying**
 See real demand signals before locking scope.
 
-**Align stakeholders early**
+- **Align stakeholders early**
 Create space for developer input, lead review, and budget approval.
 
-**Roll out seamlessly**
+- **Roll out seamlessly**
 Avoid expanding in fragments and reduce internal churn.
 
-**Lock better pricing earlier**
+- **Lock better pricing earlier**
 Reach discount tiers sooner with confident seat decisions.
 
 This isn’t about spending more. It’s about spending correctly.
 
 ## Put the course in real hands
 
-**The Pilot is for developers, not [evaluators](/courses/unrealengine-courses-evaluation).**
+**The Pilot is for developers, not [evaluators](/courses/studios-evaluation).**
 
 Choose participants who reflect how the course will actually be used.
 
@@ -78,7 +78,7 @@ You can start with a Pilot or immediately choose a small rollout. It all depends
 
 If seat count or scope is unclear, the pilot leads to a better outcome.
 
-## Turn usage into a decision
+## What happens
 
 Around day 25–30, we check in to:
 - Review how the course is being used
@@ -107,12 +107,10 @@ On the call, you will:
 - Estimate seat count
 - Align on timing and next steps
 
-**Book a short call with Tom**
-
-**Prefer email?** You can also reach out at [info@tomlooman.com](mailto:info@tomlooman.com).
+**[Book a short call with Tom](https://form.typeform.com/to/bvK1TReu)** - **Prefer email?** You can reach out directly at [info@tomlooman.com](mailto:info@tomlooman.com).
 
 ## One last thing
 
-The 30-day pilot isn’t a test. It’s your way to decide rollout scope once, with confidence.
+The 30-day pilot isn’t a test. It’s your way to decide rollout scope once, with confidence. If you’d prefer to test our courses first, check out our [Evaluation Access](/courses/studios-evaluation) page. 
 
 
