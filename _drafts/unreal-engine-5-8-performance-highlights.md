@@ -19,6 +19,8 @@ That brings the focus of 5.8 to stabilize and optimize existing features. Althou
 {: .notice--info }
 This article is part of my efforts of keeping Unreal Engine developers informed about Game Optimization! For that I have a in-depth [Game Optimization Course for Unreal Engine 5](https://tomlooman.com/courses/unrealengine-optimization/) to train engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
 
+Unreal Directive has a [Console Variables page](https://unrealdirective.com/resources/console-variables/?version=5.8&new=1) that shows **new CVARs added in 5.8** which is a good way to find out new ways to tune new or existing features. For example, you can see many `a.budget.*` CVARs are new and worth exploring if you use that feature.
+
 ## MegaLights
 
 MegaLights is now production ready. They greatly reduced the noise, overall performance to use this at 60hz. [View Docs](https://dev.epicgames.com/documentation/unreal-engine/megalights-in-unreal-engine)
