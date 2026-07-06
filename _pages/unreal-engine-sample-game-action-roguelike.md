@@ -1,5 +1,5 @@
 ---
-title: "Project Orion: Co-op Action Roguelike Sample in Unreal Engine"
+title: "Project Orion: Co-op Action Roguelike in Unreal Engine C++"
 date: 2026-02-27
 layout: single
 last_modified_at: 04-03-2026

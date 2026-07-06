@@ -4,7 +4,7 @@
 
 @charset "utf-8";
 
-$max-width: 1400px;
+$max-width: 1200px;
 $typeface: "Manrope", "Roboto", "Arial", sans-serif;
 $typeface-heading: "Inter Tight", "Manrope", "Roboto", "Arial", sans-serif;
 $color-blue: #103D59;
@@ -469,6 +469,19 @@ div.highlighter-rouge, figure.highlight {
   height:fit-content;
 }
 
+/* Tables */
+
+table {
+  border: 1px solid $color-orange;
+  border-radius: 8px;
+  width: fit-content;
+  background: $color-offwhite;
+}
+
+th {
+  background: $color-lightgray;
+}
+
 
 /* Contact Forms */
 
@@ -571,4 +584,115 @@ div.highlighter-rouge, figure.highlight {
     font-size: 1.0em;
     line-height: 1.7;
     color: #3b3b3b;
+}
+
+/* text + image feature block + reverse option */
+
+.feature-block {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    margin: 3rem 0;
+
+    &--reverse {
+        .feature-block__image {
+            order: 2;
+        }
+
+        .feature-block__content {
+            order: 1;
+        }
+    }
+
+    img {
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        border-radius: 8px;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 900px)
+{
+    .feature-block {
+        grid-template-columns: 1fr;
+
+        &--reverse {
+            .feature-block__image,
+            .feature-block__content {
+                order: initial;
+            }
+        }
+    }
+}
+
+
+.course-summary {
+    background: $color-offwhite;
+    border-radius: 8px;
+    padding: 2rem;
+    
+    width: fit-content;
+    float: right;
+
+    h3 {
+        margin: 0 0 1.75rem;
+        //font-size: 1rem;
+        font-weight: 700;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+
+        padding: .8rem 0;
+        //font-size: 1.15rem;
+        //line-height: 1.4;
+    }
+
+    li::before {
+        content: "✓";
+        color: $color-orange;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+}
+
+.check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        position: relative;
+        padding-left: 1.75rem;
+        margin-bottom: 0.75rem;
+
+        &::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 600;
+            color: $color-blue;
+        }
+    }
 }

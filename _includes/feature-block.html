@@ -1,0 +1,12 @@
+<div class="feature-block {% if include.reverse %}feature-block--reverse{% endif %}">
+    <div class="feature-block__image">
+        <img src="{{ include.image | relative_url }}"
+             alt="{{ include.alt }}">
+    </div>
+
+    <div class="feature-block__content">
+        <h3>{{ include.title }}</h3>
+
+        {{ include.content | markdownify }}
+    </div>
+</div>

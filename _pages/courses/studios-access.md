@@ -42,15 +42,15 @@ Without structured training, teams reinvent solutions, repeat avoidable mistakes
 
 ---
 
-# Two Proven Courses. Clear Outcomes. Lifetime Access.
+## Two Proven Courses. Clear Outcomes. Lifetime Access.
 
 One course builds strong Unreal C++ foundations. The other helps teams develop a shared approach to profiling and optimization.
 
 Both are designed to scale across projects and teams while giving every developer permanent access to the material.
 
-## C++ Foundations for Unreal
+### C++ Foundations for Unreal
 
-### Best suited for
+#### Best suited for
 
 - New hires from university or other game engines
 - Unity and proprietary engine developers transitioning to Unreal
@@ -59,7 +59,7 @@ Both are designed to scale across projects and teams while giving every develope
 - Teams wanting consistent Unreal engineering standards
 - Senior engineers looking for deeper architectural understanding
 
-### What your team gains
+#### What your team gains
 
 - A structured onboarding path for Unreal C++
 - Unique, permanent learner accounts with lifetime access
@@ -75,9 +75,9 @@ Both are designed to scale across projects and teams while giving every develope
 
 <!-- Unreal Optimization course continues in the next section -->
 
-## Unreal Optimization Track
+### Unreal Optimization Track
 
-### Best suited for
+#### Best suited for
 
 - Technical designers
 - Gameplay programmers
@@ -86,7 +86,7 @@ Both are designed to scale across projects and teams while giving every develope
 - Teams preparing for console certification or performance milestones
 - Studios where performance knowledge is concentrated in a single "performance guru"
 
-### What your team gains
+#### What your team gains
 
 - A shared performance framework across designers and engineers
 - Lifetime access so developers can revisit modules as new bottlenecks arise
@@ -102,7 +102,7 @@ Both are designed to scale across projects and teams while giving every develope
 
 ---
 
-# Trusted by Leading Studios, Universities & Engineering Teams
+## Trusted by Leading Studios, Universities & Engineering Teams
 
 <!-- Logo strip -->
 <!-- Stanford • Epic Games • Studio Logos -->
@@ -118,7 +118,7 @@ TODO: Add the testimonials block here...
 
 ---
 
-# See the Quality Before You Commit
+## See the Quality Before You Commit
 
 Take a closer look at the courses from the learner's perspective before making a decision.
 
@@ -145,7 +145,7 @@ If you'd like a deeper look before rolling training out to your team, **Evaluati
 
 ---
 
-# How We Make Rollout Simple
+## How We Make Rollout Simple
 
 Getting your team started is designed to be straightforward, with minimal administration on your side.
 
@@ -209,7 +209,7 @@ Everything runs directly in the browser through the learning portal—no softwar
 
 ---
 
-# Frequently Asked Questions
+## Frequently Asked Questions
 
 ## Finance & Procurement
 
