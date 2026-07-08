@@ -14,8 +14,8 @@ main:
   - title: "Game Optimization Course"
     url: /courses/unrealengine-optimization/
     description: "Course: Complete Game Optimization for Unreal Engine 5"
-#  - title: "Training For Teams"
-#    url: /studiotraining/
+#  - title: "Courses for Studios"
+#    url: /courses/studio-access/
   - title: "Course Login"
     url: "https://courses.tomlooman.com/sign_in"
     description: "Login Portal for All Unreal Engine Courses"

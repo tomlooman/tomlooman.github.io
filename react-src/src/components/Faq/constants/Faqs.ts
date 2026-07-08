@@ -3,7 +3,7 @@ import { Faq } from "../models/Faq";
 const commonFaq: Faq[] = [
     {
         question: "For how long will this course be updated and supported?",
-        answer: "Q&A Support and lesson updates will continue for years. There is no scheduled end-of-life and as Unreal Engine changes, so will this course to ensure compatibility."
+        answer: "Q&A support and course updates will continue for years. There is no planned end date for support, and as Unreal Engine evolves, the course will be updated to maintain compatibility with the latest versions whenever needed."
     },
     {
         question: "When does the course start and finish?",
@@ -11,7 +11,7 @@ const commonFaq: Faq[] = [
     },
     {
         question: "How long do I have access to the course?",
-        answer: "You have unlimited access to this course."
+        answer: "You have lifetime access to this course."
     },
     {
         question: "What if I am unhappy with the course?",
@@ -23,7 +23,7 @@ const commonFaq: Faq[] = [
     },
     {
         question: "Are Subtitles available?",
-        answer: "Yes! All lessons include multi-language subtitles. Including English, Korean, and Simplified Chinese."
+        answer: "Yes! All lessons include multi-language subtitles, including English, Korean (한국어), Simplified Chinese (中文, 简体), Portuguese (Português - Brazil), Japanese (日本語), and Turkish (Türkçe)."
     }
 ];
 
@@ -34,10 +34,6 @@ export const FAQs: { [key: number]: Faq[] } = {
         {
             question: "What level of programming know-how is expected before starting?",
             answer: "The course is challenging and assumes some basic programming or scripting experience. Knowing C++ is not a requirement, any programming languages such as C#, Python, Unreal's Blueprint, etc. is enough."
-        },
-        {
-            question: "Is this an official Stanford University course?",
-            answer: "No, while this course curriculum has been taught to Computer Science students at Stanford University it is not affiliated nor owned/managed by the university in any capacity. Therefore, enrolling in this course does not make you a Stanford student, but the quality of the course should speak for itself!"
         }
     ],
     // Optimization Course
