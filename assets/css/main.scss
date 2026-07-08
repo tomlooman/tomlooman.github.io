@@ -641,7 +641,8 @@ th {
 .course-summary {
     background: $color-offwhite;
     border-radius: 8px;
-    padding: 2rem;
+    padding: 1.5rem;
+    margin: 0 0 1rem 1rem;
     
     width: fit-content;
     float: right;
@@ -663,7 +664,7 @@ th {
         align-items: center;
         gap: .8rem;
 
-        padding: .8rem 0;
+        padding: .2rem 0;
         //font-size: 1.15rem;
         //line-height: 1.4;
     }
@@ -695,4 +696,31 @@ th {
             color: $color-blue;
         }
     }
+}
+
+
+.salesheader {
+  font-size: 35px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.partition_1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  padding: 0 10%;
+  height: 180px;
+  display: flow-root;
+}
+
+@media screen and (max-width: 550px) {
+  .partition_1 {
+    height: 220px;
+  }
+}
+
+.partition_1 p {
+  align-self: center;
+  font-size: 16px;
 }
