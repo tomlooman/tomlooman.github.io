@@ -11,24 +11,8 @@ export const reviews: { [key: string]: Review[] } = {
       text: "\"I think <strong>it's very rare to take a course that is 100% applicable to your professional work. After taking this course, I feel like I've accessed the matrix and downloaded the Unreal codex straight into my brain.</strong> Three months ago I had 0 Unreal knowledge and was really struggling to get my footing.<br /><br />Now, upon course completion, it's like a film has been lifted from my vision and I understand all the fundamentals of the engine that I'm required to work with on a day-to-day basis. I cannot overstate how grateful I am to have been able to take this course. Thank you Tom!\"",
       imageUrl: "/assets/images/faces/anthony_profile.jpg"
     },
-    /*{
+    {
       id: 2,
-      name: "Jackson Kraft",
-      jobTitle: "Game Developer",
-      company: "",
-      text: "\"As a student studying game development and computer science, this course has been absolutely perfect for helping me bridge the gap between blueprinting and general C++ application programming. I'm grateful for the challenges within the assignments, the speed at which content is covered is perfect, and I haven't felt lost at any point within the course so far.<br />Additionally, the format of this course makes it perfect for self-pacing around my other university classes, which is greatly appreciated.\"",
-      imageUrl: "/assets/images/faces/jackson_profile.jpg"
-    },*/
-    {
-      id: 3,
-      name: "Mohamad Shaaban",
-      jobTitle: "PhD in Robotics",
-      company: "",
-      text: "\"As someone who had some prior experience with game development, I was initially concerned that the course might be basic for me. However, I was pleasantly surprised by the depth and quality of the content.<br /><br />The course managed to cover the fundamentals while delving into advanced topics that kept me engaged and eager to learn more.<br />Furthermore, the course shed light on those sometimes neglected but really useful details and features that may make a huge difference in efficient Unreal Engine development.\"",
-      imageUrl: "/assets/images/faces/mohamadshaaban.jpg"
-    },
-    {
-      id: 4,
       name: "Ian",
       jobTitle: "Technical Leader",
       company: "",
@@ -36,7 +20,7 @@ export const reviews: { [key: string]: Review[] } = {
       imageUrl: "/assets/images/faces/default_profile.jpg"
     },
     {
-      id: 4,
+      id: 3,
       name: "Youngwook Yang",
       jobTitle: "Lead Engineer",
       company: "",
@@ -44,28 +28,52 @@ export const reviews: { [key: string]: Review[] } = {
       imageUrl: "/assets/images/faces/yang_profile.jpg"
     },
     {
-      id: 5,
-      name: "Sebastián Pérez O",
-      jobTitle: "Game Developer",
-      company: "",
-      text: "\"Super useful! I already have +3 years of Unreal Engine experience only with Blueprints, and I know a little of C++ before this course, but <strong>the way that the instructor explains everything is super easy to follow!<br />I especially like the assignments</strong>, I think it's the best way to learn. 100% recommended!\"",
-      imageUrl: "/assets/images/faces/default_profile.jpg"
-    },
-    /*{
-      id: 6,
-      name: "Jeroen Oostdam",
-      jobTitle: ".Net Developer",
-      company: "",
-      text: "\"This is the first game dev tutorial I've found that finally <strong>caters to people who already have programming experience in other fields.</strong> This is exactly what I needed.\"",
-      imageUrl: "/assets/images/faces/jeroen_profile.png"
-    },*/
-    {
-      id: 7,
-      name: "Saro",
+      id: 4,
+      name: "Julian Rijken",
       jobTitle: "",
       company: "",
-      text: "\"I found this course <strong>incredibly valuable</strong>. I constantly refer back to it in my own projects, and it <strong>continues to be a reliable technical resource</strong>.<br />The <strong>explanations are clear, practical, and production-oriented</strong>, making complex topics easy to apply in real-world scenarios.<br /><strong>I highly recommend this material</strong> to anyone serious about improving their skills.\"",
-      imageUrl: "/assets/images/faces/profile_rosario.png"
+      text: "\"The course has helped me a lot in progressing my studies in C++ and Unreal Engine. Tom gives great insight on how to use aspects of the engine in the correct way, showing the way the developers at Epic intended it and how to utilize those systems to the fullest. After trying to learn Unreal on my own for the past year, I wish I would have started with the course earlier. There are lots of things Tom shows that make developing in Unreal a lot easier. Tom doesn't only show how to make a feature work, but also explains why things are done that way.\"",
+      imageUrl: "/assets/images/faces/default_profile.jpg"
+    },
+    {
+      id: 5,
+      name: "Mark Agne",
+      jobTitle: "Unity Developer",
+      company: "",
+      text: "\"This is an excellent introduction to Unreal from an experienced instructor who's able to guide you around common pitfalls and provide extremely valuable perspective on software architecture. <br/>What I got out of this versus the myriad YouTube tutorials available is that <strong>I finally feel empowered to use the engine confidently</strong>.\"",
+      imageUrl: "/assets/images/faces/markagne.jpg"
+    },
+    {
+      id: 6,
+      name: "Marc Lamy",
+      jobTitle: "Senior Software Engineer",
+      company: "",
+      text: "\"Honestly one of the best online courses I have ever followed. <br/>Having to go through basic programming concepts over and over has always been frustrating. This course instead focuses on professional software engineering practices, separation of concerns, reusable code and avoiding the spaghetti code that's unfortunately common in game development courses.\"",
+      imageUrl: "/assets/images/faces/marclamy.jpg"
+    },
+    {
+      id: 7,
+      name: "Artem Smotrakov",
+      jobTitle: "Security Engineer",
+      company: "",
+      text: "Unreal isn't beginner friendly, and this course helps tremendously. Tom provides exactly the right amount of detail. The lectures give you enough understanding to confidently continue exploring on your own.",
+      imageUrl: "/assets/images/faces/artems.jpg"
+    },
+    {
+      id: 8,
+      name: "Ernest M.",
+      jobTitle: "Tools Programmer",
+      company: "",
+      text: "\"Excellent in-depth Unreal C++ course with comprehensive coverage across many Unreal Engine areas. The balance between lectures and assignments is perfect. The course mirrors real-world development by building something functional first and then teaching how to refactor and improve it using best practices.\"",
+      imageUrl: "/assets/images/faces/ernestm.jpg"
+    },
+    {
+      id: 9,
+      name: "Adam M.",
+      jobTitle: "Unity Developer",
+      company: "",
+      text: "\"I wish I had started with this course four years ago when I began learning Unreal with other resources. Even after four years of using Unreal, I still discovered valuable techniques and insights I hadn't come across before. Hands down, this is the best Unreal Engine course I know of.\"",
+      imageUrl: "/assets/images/faces/adamm.jpg"
     }
   ],
   // Optimization Course
