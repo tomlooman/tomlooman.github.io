@@ -14,6 +14,9 @@ title: Unreal Engine C++ Tutorials
         <a href="courses/unrealengine-optimization">Complete Game Optimization (CPU, Memory, & GPU)</a> for Engineers & Tech Artists!
     </p>
 </section>
+
+<div class="wide-content"><div id="email-sign-up"></div></div>
+
 <h2>Featured Posts</h2>
 Some popular pages you may be interested in! Looking for a specific post? Try searching in the top-right or [Browse Posts by Category](/categories) instead.
 <section class="featured-posts">
@@ -27,8 +30,6 @@ Some popular pages you may be interested in! Looking for a specific post? Try se
     {% endif %}
   {% endfor %}
 </section>
-
-<div class="wide-content"><div id="email-sign-up"></div></div>
 
 <h2>Teaching Unreal Engine 5 to AAA & Indies</h2>
 {: .text-center}
