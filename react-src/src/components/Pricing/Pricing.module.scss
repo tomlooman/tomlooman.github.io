@@ -1,4 +1,5 @@
 @use '/react-src/styles/colors.scss' as colors;
+@use '/react-src/styles/breakpoints.scss' as breakpoints;
 
 .wrapper {
     > h2 {
@@ -9,6 +10,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
+
+        @media screen and (max-width: breakpoints.$breakpoint-sm) {
+            grid-template-columns: unset;
+        }
 
        .priceItem {
             border-radius: .5rem;
@@ -21,7 +26,7 @@
             .priceTitle {
                 display: flex;
                 align-items: center;
-                padding: 1rem .5rem;
+                padding: 0 .5rem;
                 border-bottom: solid 2px colors.$orange;
                 height: 100px;
 
