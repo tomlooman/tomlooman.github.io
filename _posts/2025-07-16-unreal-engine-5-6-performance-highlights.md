@@ -2,6 +2,7 @@
 title: "Unreal Engine 5.6 Performance Highlights"
 date: 2025-07-16
 last_modified_at: 30-08-2025
+excerpt: "A curated look at Unreal Engine 5.6 performance updates, rendering improvements, and optimization takeaways."
 categories: 
   - "Performance & Optimization"
 tags: 
@@ -167,7 +168,7 @@ In Unreal Engine 5.6, Lumen Hardware Ray Tracing (HWRT) mode delivers even great
     - For scaling quality beyond SWRT global traces it is recommended to use HWRT path instead Firefly filtering is now more aggressive by default (`r.Lumen.ScreenProbeGather.MaxRayIntensity` 10 instead of 40).
     - This removes some interesting GI features, but also reduces noise, especially from things like small bright emissives.
 - Fixed async compute overlap when async Lumen reflections are enabled
-- Fixed Lumen Radiance Cache cache update time splicing causing major performance spikes on fast camera movement or disocclusion
+- Fixed Lumen Radiance Cache update time splicing causing major performance spikes on fast camera movement or disocclusion
 
 ## Nanite
 
@@ -256,7 +257,7 @@ Unreal Engine 5.6 provides out-of-the-box, up-to-date device profiles that refle
 
 ## **Procedural Content Generation (PCG)**
 
-There is a a lot of optimizations in the release notes that you may want to dive into ([See PCG Section](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-6-release-notes#proceduralcontentgeneration\(pcg\))) when you heavily use PCG.
+There are a lot of optimizations in the release notes that you may want to dive into ([See PCG Section](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-6-release-notes#proceduralcontentgeneration\(pcg\))) when you heavily use PCG.
 
 - Added fine grained time slicing to compute graph dispatch to help stay within execution budget.
 - Optimized dispatch of GPU graphs to reduce game thread cost.
