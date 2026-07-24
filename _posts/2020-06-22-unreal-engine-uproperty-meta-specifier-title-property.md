@@ -1,6 +1,8 @@
 ---
 title: "Making C++ Arrays with Structs more readable in Unreal Editor"
 date: 2020-06-22
+last_modified_at: 2026-04-10
+excerpt: "Improve Unreal Editor UX for C++ arrays of structs by using the TitleProperty metadata specifier."
 categories: 
   - "C++ Programming"
 tags: 

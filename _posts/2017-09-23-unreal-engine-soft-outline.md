@@ -1,6 +1,8 @@
 ---
 title: "Rendering Soft outlines in Unreal Engine"
 date: 2017-09-23
+last_modified_at: 2026-04-10
+excerpt: "An experiment in rendering soft, blurred outline effects in Unreal Engine using Custom Depth and post-process materials."
 categories:
   - "Rendering"
 tags: 

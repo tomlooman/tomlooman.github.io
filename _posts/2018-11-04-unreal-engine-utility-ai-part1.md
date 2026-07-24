@@ -1,6 +1,8 @@
 ---
 title: "Journey into Utility AI with Unreal Engine (Part 1)"
 date: 2018-11-04
+last_modified_at: 2026-04-10
+excerpt: "Introduction to Utility AI concepts and how to apply them in Unreal Engine as an alternative to Behavior Trees."
 categories: 
   - "Game AI"
 tags: 
@@ -19,7 +21,7 @@ Jakob Rasmussen has published '[Are Behavior Trees a thing of the past?](https:/
 
 ## What is Utility AI?
 
-The concept of **Utility AI** has been around around for years, and the great [Dave Mark](https://twitter.com/iadavemark?lang=en) has been talking about it on platforms such as _Game Developers Conference_ several times. He calls it 'Infinite Axis Utility System' and I highly recommend watching some of his talks about the subject.
+The concept of **Utility AI** has been around for years, and the great [Dave Mark](https://twitter.com/iadavemark?lang=en) has been talking about it on platforms such as _Game Developers Conference_ several times. He calls it 'Infinite Axis Utility System' and I highly recommend watching some of his talks about the subject.
 
 - [Improving AI Decision Modeling Through Utility Theory](https://www.gdcvault.com/play/1012410/Improving-AI-Decision-Modeling-Through)
 - [Building a Better Centaur: AI at Massive Scale](https://www.gdcvault.com/play/1021848/Building-a-Better-Centaur-AI)

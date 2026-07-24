@@ -2,6 +2,7 @@
 title: "Unreal Engine Game Optimization on a Budget"
 date: 2022-11-03
 last_modified_at: 30-08-2025
+excerpt: "Notes from an Unreal Engine optimization talk covering profiling, performance tuning, and low-cost workflow improvements."
 categories: 
   - "Performance & Optimization"
 tags: 
@@ -12,7 +13,6 @@ tags:
   - "Console Commands"
   - "Tech Talk"
 coverImage: "Thumb_JetBrainsPerfTalk-1.jpg"
-last-modified-at: 18-08-2025
 sidebar:
     nav: sidebar-optimization
 redirect_from:

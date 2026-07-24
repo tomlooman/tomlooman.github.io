@@ -1,6 +1,8 @@
 ---
 title: "Exploring DLSS 2.0 in Unreal Engine"
 date: 2021-02-01
+last_modified_at: 2026-04-10
+excerpt: "A practical Unreal Engine guide to DLSS 2.0, comparing quality, performance, and setup for UE4 projects."
 categories: 
   - "Rendering"
 tags: 
@@ -67,7 +69,7 @@ It's telling that often I had to double-check the screenshots to make sure I had
 ![](/assets/images/metro_test_fullres_35fps.png)![](/assets/images/metro_test_dlss_quality_64fps.png)
 *Left: 1440p TAA, Right: DLSS Quality-mode (Zoomed)*
 
-Nearly identical quality, slight error in the ceiling lights where a white line in the original texture got blown out by the upscaling algorithm causing a noticable stripe. I reckon this should be 'fixed' in the source texture instead.
+Nearly identical quality, slight error in the ceiling lights where a white line in the original texture got blown out by the upscaling algorithm causing a noticeable stripe. I reckon this should be 'fixed' in the source texture instead.
 
 ![](/assets/images/subway_raster_zoom_txaa.jpg)![](/assets/images/subway_raster_zoom_dlss_quality.jpg)
 *Left: TAA 1440p, Right: DLSS Quality-mode. (Zoomed)*

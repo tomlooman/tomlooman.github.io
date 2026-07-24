@@ -2,6 +2,7 @@
 title: "Why you should be using GameplayTags in Unreal Engine"
 date: 2021-10-14
 last_modified_at: 17-03-2026
+excerpt: "Why GameplayTags are valuable in Unreal Engine and how to use them for data-driven design and runtime decision-making."
 categories:
   - "C++ Programming"
 tags: 

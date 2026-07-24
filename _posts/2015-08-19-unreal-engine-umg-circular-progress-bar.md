@@ -1,6 +1,8 @@
 ---
 title: "Circular Progress Bar for UMG"
 date: 2015-08-19
+last_modified_at: 2026-04-10
+excerpt: "Build a circular progress bar in UMG with material-driven animation and texture setup for Unreal Engine UI."
 categories: 
   - "User Interface"
 tags:

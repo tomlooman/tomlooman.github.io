@@ -2,6 +2,7 @@
 title: "Custom Depth in Unreal Engine"
 date: 2014-09-14
 last_modified_at: 30-08-2025
+excerpt: "Learn how Unreal Engine's Custom Depth & Stencil buffer can drive outlines, occlusion effects, and other post processing tricks."
 categories: 
   - "Rendering"
 tags: 

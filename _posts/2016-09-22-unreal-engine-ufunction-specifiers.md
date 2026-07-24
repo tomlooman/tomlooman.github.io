@@ -1,6 +1,8 @@
 ---
 title: "Unreal Engine UFUNCTION specifiers Explained"
 date: 2016-09-22
+last_modified_at: 2026-04-10
+excerpt: "Explains common UFUNCTION specifiers in Unreal Engine and how they expose C++ functions to Blueprints."
 categories: 
   - "C++ Programming"
 tags:
@@ -38,7 +40,7 @@ Exposes the function as a node to Blueprint. Must be combined with the **Categor
 
 ##### const (C++ keyword)
 
-When using the "const" keyword on your function (see code sample), the Blueprint node will not have an execution line. 'const' promises the function will not change any data a thus the node will look like the GetMaxHealth node below. It's great for getter functions for example where you only want to get a value from C++.
+When using the `const` keyword on your function (see code sample), the Blueprint node will not have an execution line. `const` promises the function will not change any data, and thus the node will look like the GetMaxHealth node below. It's great for getter functions for example where you only want to get a value from C++.
 
 ```cpp
 	UFUNCTION(BlueprintCallable, Category = "Character")

@@ -1,6 +1,8 @@
 ---
 title: "Textured Shadows Trick in Unreal Engine"
 date: 2017-03-12
+last_modified_at: 2026-04-10
+excerpt: "Experimenting with textured shadow tricks in Unreal Engine 4 using Forward rendering and LightAttenuation buffers."
 categories: 
   - "Rendering"
 tags: 

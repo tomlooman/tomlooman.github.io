@@ -1,6 +1,8 @@
 ---
 title: "Asset Manager for Data Assets & Async Loading"
 date: 2020-12-17
+last_modified_at: 2026-04-10
+excerpt: "Guide to using Unreal Engine's Asset Manager for data assets and async loading with example workflows."
 categories: 
   - "C++ Programming"
 tags: 

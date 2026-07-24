@@ -1,6 +1,7 @@
 ---
 title: "Rendering Wounds on Characters"
 date: 2017-08-14
+last_modified_at: 2026-04-10
 categories:
   - "Rendering"
 tags:
@@ -41,7 +42,7 @@ This optimization eliminates some of the cost, but still I wasn't happy about ha
 
 ### Finding an alternative
 
-So I ditched render targets entirely to try out using just SphereMasks to do the effect. This puts a limit on the number of hits, since with each sphere mask you add, you add to the constant cost of the shader. There are some optimizations to be made here, like using branching to cut out the sphere mask cost if the shader has receive no hits yet or swapping out the shader until one hit is received. For now this is not necessary as the shader is still well within our "budget". I figured anything between 3-5 hits should be fine as any additional hits would surely already have killed the enemy in the first place (unless you're talking about some kind of boss character) regardless, this was just a stepping stone to have a starting point.
+So I ditched render targets entirely to try out using just SphereMasks to do the effect. This puts a limit on the number of hits, since with each sphere mask you add, you add to the constant cost of the shader. There are some optimizations to be made here, like using branching to cut out the sphere mask cost if the shader has received no hits yet or swapping out the shader until one hit is received. For now this is not necessary as the shader is still well within our budget. Anything between 3-5 hits should be fine as any additional hits would surely already have killed the enemy in the first place (unless you're talking about some kind of boss character). Regardless, this was just a stepping stone to have a starting point.
 
 Like the original RT effect, to have the sphere masks work consistently with an animated mesh we need to use the reference pose to place the sphere mask at. When hitting the character, we transform the world position of the hit into the reference pose position (using the BoneName info we get from point damage events) you can do so by first inverse transforming the hit location from the current transform of the bone we hit, and then transforming that location using the reference pose transform of that same bone.
 

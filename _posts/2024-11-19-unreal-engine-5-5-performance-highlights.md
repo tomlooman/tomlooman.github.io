@@ -1,7 +1,8 @@
 ---
 title: "Unreal Engine 5.5 Performance Highlights"
 date: 2024-11-19
-last_modified_at: 15-04-2026
+last_modified_at: 2026-04-10
+excerpt: "Highlights from Unreal Engine 5.5 release notes, with commentary on performance improvements and optimization opportunities."
 categories: 
   - "Performance & Optimization"
 tags:

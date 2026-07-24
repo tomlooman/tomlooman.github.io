@@ -1,6 +1,8 @@
 ---
 title: "Auto-apply optimal Scalability Settings for Unreal Engine"
 date: 2020-04-26
+last_modified_at: 2026-04-10
+excerpt: "Show how Unreal Engine can auto-apply scalability settings based on hardware benchmark results."
 categories: 
   - "Rendering"
 tags: 

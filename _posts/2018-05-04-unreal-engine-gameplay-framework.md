@@ -2,6 +2,7 @@
 title: "Unreal Gameplay Framework Guide for C++"
 date: 2018-05-04
 last_modified_at: 14-09-2025
+excerpt: "A guide to Unreal Engine's Gameplay Framework for C++ projects, covering Actors, components, and core game architecture."
 categories: 
   - "C++ Programming"
 tags: 

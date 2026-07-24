@@ -1,6 +1,8 @@
 ---
 title: "Unreal Engine Lighting Masterclass"
 date: 2017-10-28
+last_modified_at: 2026-04-10
+excerpt: "A personal reference to Unreal Engine lighting techniques from the 2017 MasterClass talk, with practical Lightmass setup and post-processing notes."
 categories: 
   - "Rendering"
 tags:

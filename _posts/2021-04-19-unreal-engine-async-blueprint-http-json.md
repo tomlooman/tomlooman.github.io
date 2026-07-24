@@ -1,6 +1,7 @@
 ---
 title: "Creating Latent Blueprint Nodes"
 date: 2021-04-19
+last_modified_at: 2026-04-10
 categories: 
   - "C++ Programming"
 tags: 
@@ -29,7 +30,7 @@ Here is an example JSON in the simplest format, a single key-value pair.
 }
 ```
 
-This should be hosted somewhere on your web service such as "_https://tomlooman.com/games/YourGame.json_". Use the same URL in-game to retrieve the data.
+This should be hosted somewhere on your web service such as `https://tomlooman.com/games/YourGame.json`. Use the same URL in-game to retrieve the data.
 
 ## Prepare your Project
 

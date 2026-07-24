@@ -1,7 +1,8 @@
 ---
 title: "Mesh Distance Fields in Unreal Engine 5"
 date: 2014-10-10
-last_modified_at: 13-04-2026
+last_modified_at: 2026-04-13
+excerpt: "Practical Unreal Engine guide to Signed Distance Fields for ambient occlusion, soft shadows, and runtime rendering effects."
 categories: 
   - "Rendering"
 tags:

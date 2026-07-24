@@ -2,6 +2,7 @@
 title: "Rotating meshes using Vertex Shaders"
 date: 2019-11-21
 last_modified_at: 02-03-2026
+excerpt: "Showcases how to rotate meshes on the GPU in Unreal Engine using vertex shaders for performance-friendly animation."
 categories: 
   - "Rendering"
 tags: 
