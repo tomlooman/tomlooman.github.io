@@ -225,6 +225,13 @@ To keep a clean an minimalist UI I prefer to remove any buttons I won't be using
 
 During my tutorials and courses I use the **Visual Assist keymap** and visual theme. You are of course free to pick whatever you are most comfortable with coming from any particular source code editor prior to using Rider.
 
+### Using Rider With UnrealGameSync
+
+"For those using UnrealGameSync (which many professional studios use) it can be handy to know that the "Visual Studio" button in the UI actually uses the default program to open your solution.
+
+Which means if you set Rider as the default app:
+right click your __.sln -> open with -> choose another app -> JetBrains Rider__ (Choose 'Always' to make this the default app). Then anytime after that if you click the Visual Studio link in UGS it'll just open up Rider for you instead." Thanks to Gaethan Bracke for the suggestion.
+
 ## Closing
 
 {: .notice--danger }
