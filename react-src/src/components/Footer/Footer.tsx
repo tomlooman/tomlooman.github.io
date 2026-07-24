@@ -26,7 +26,7 @@ const Footer = () => {
     const links: FooterLink[] = [
         { label: "Courses Login", url: "https://courses.tomlooman.com/sign_in" },
         { label: "GitHub Projects", url: "https://github.com/tomlooman/ActionRoguelike/" },
-        /*{ label: "Training for Studios", url: "/studiotraining" },*/
+        /*{ label: "Courses for Studios", url: "/courses/studio-access" },*/
         { label: "Search by Tag", url: "/tags" },
         { label: "Contact", url: "/contact" },
         { label: "Terms of Use", url: "https://courses.tomlooman.com/p/terms" },
@@ -69,7 +69,7 @@ const Footer = () => {
                 </div>
                 <div className={style.newsLetter}>
                     <h2>Join my Newsletter</h2>
-                    <p>Join over 5000 fellow developers and receive Unreal Engine insights in your inbox!</p>
+                    <p>Learn the Unreal Engine techniques used by AAA studios and experienced indie developers. Join 5,000+ developers receiving my latest articles, optimization tips, and course updates.</p>
                     
                     
                 {success ? (

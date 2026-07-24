@@ -1,7 +1,7 @@
 ---
-title: "Rotating meshes using Vertex Shaders"
+title: "Rotating meshes using World Position Offset in Unreal Engine"
 date: 2019-11-21
-last_modified_at: 02-03-2026
+last_modified_at: 28-05-2026
 excerpt: "Showcases how to rotate meshes on the GPU in Unreal Engine using vertex shaders for performance-friendly animation."
 categories: 
   - "Rendering"
@@ -12,19 +12,17 @@ tags:
   - "Animation"
   - "tips-tricks"
 coverImage: "ws_station_900p.jpg"
-sidebar:
-    nav: sidebar-optimization
 ---
 
-Rotating (ambient) meshes in your world adds a dynamic element, but doing this on the CPU and having to pass it to the GPU each frame is a relatively slow operation. Without realizing you may be updating your collision every tick too, causing overlap updates and hurting performance even more.
+Animating or simply rotating environmental meshes in your world adds a dynamic element, the obvious way of handling this is adding rotation to the SceneComponent which runs on the CPU (GameThread) and having the engine to pass the new transform to the GPU. This is relatively slow and unnecessary since we can run the entire animation directly on the GPU instead.
+
+There is an old trick to instead rotate all vertices on the GPU directly using World Position Offset, which runs as a the vertex shader, completely skipping the CPU. Keep in mind that this does not update the rotation of the mesh collision. You should either disable collision or consider using a simple collision shape that doesn't need to rotate and handles approximate collision regardless of the rotation.
+
+While this trick is pretty common I was surprised to not find clear information on it for Unreal Engine. Especially on fixing the normals on the vertices after moving the vertices around. So this post should serve as a complete tutorial on how to rotate meshes on the GPU within Unreal Engine.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ijvH58g-sUg?si=PfqQ4FcPyYAHmaIC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-There is an old trick to instead rotate all vertices on the GPU directly using the vertex shader, completely omitting the CPU. Keep in mind that this does not update the rotation of the mesh collision. You should either disable collision or consider using a simple collision shape that doesn't need to rotate and handles approximate collision regardless of the rotation.
-
-While this trick is pretty common I was surprised to not find clear information on it for UE4. Especially on fixing the normals after moving the vertices around. So this post should serve as a complete tutorial on how to rotate meshes on the GPU within Unreal Engine.
-
-_In case you're wondering, the planet's mesh in the background isn't rotating since it's just a sphere. Instead, you simply add a UV-panner to the texture._
+_The planet's mesh in the background isn't rotating the mesh since it's just a sphere. Instead, you simply add a UV-panner to the texture in the Planet's Material._
 
 ## Rotating Vertices on Axis
 

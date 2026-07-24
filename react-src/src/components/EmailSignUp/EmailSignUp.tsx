@@ -1,6 +1,6 @@
-import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import SingleInputForm from "../Forms/SigleInputForm";
+import SendIcon from "@mui/icons-material/Send"
 import style from "./EmailSignUp.module.scss";
 
 const EmailSignUp = () => {
@@ -27,7 +27,7 @@ const EmailSignUp = () => {
         <div className={style.emailSignUpBanner}>
             <div className={style.emailSignUpContent}>
                 <b>
-                    Join thousands of game developers and get Unreal Engine insights in your inbox!
+                    Learn the Unreal Engine techniques used by AAA studios and experienced indie developers.<br/>Join 5,000+ developers receiving my latest articles, optimization tips, and course updates.
                 </b>
 
                 {success ? (

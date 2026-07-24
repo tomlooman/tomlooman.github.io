@@ -1,0 +1,11 @@
+<div class="course-summary">
+    {% if include.title %}
+        <h3>{{ include.title }}</h3>
+    {% endif %}
+
+    <ul>
+        {% for item in include.items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</div>

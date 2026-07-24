@@ -1,8 +1,16 @@
 ---
 layout: salespage
-title: "Course: Professional Game Development in C++ and Unreal Engine 5"
+title: "Professional Game Development in C++ and Unreal Engine 5"
 permalink: /courses/unrealengine-cpp/
 coverImage: "Thumb_Course_CPP_HeroVariant_4.jpg"
+excerpt: "Master Unreal Engine C++ with a learning path trusted by developers - from beginners to AAA studios."
+header:
+  overlay_image: "assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg"
+  actions:
+    - label: "See Pricing"
+      url: "/courses/unrealengine-cpp/#pricing-options"
+tagline: "Master Unreal Engine C++ with a learning path trusted by developers - from beginners to AAA studios."
+#overlay_filter: 0.5
 redirect_from:
     - /stanford-cs193u/
     - /cpp-activedeal/
@@ -12,108 +20,160 @@ redirect_from:
     - /unreal-engine-cpp-course/
     - /unreal-engine-cpp-course-available/
     - /unrealengine-cpp-course-available/
-redirect_to: # temporary redirect until this landing page is finished
-    - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=INDIESALE
+#redirect_to: # temporary redirect until this landing page is finished
+#    - https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=SUMMERSALE
 ---
 
-![](/assets/images/coursecpp_banner_widenarrow-3.png)
+{% assign summary = "
+30+ Hours of C++ Lessons|
+7 Programming Assignments|
+Compatible with UE 5.8 |
+Lifetime Access|
+Instructor Support|
+Completion Certificate|
+Subtitles in 5 Languages"
+| split:"|" %}
 
-Whether you want to fast-track your onboarding into Unreal Engine C++ or get out of tutorial hell, this course will guide you through it all with industry best practices and teaches you the skills and confidence to continue programming on your own after completing this course.
+{% include course-summary.html
+title="Course at a Glance"
+items=summary %}
 
-In this course we build a small game and touch on hundreds of fundamental concepts (including building a good framework, debugging and optimization) both for C++ and Unreal Engine specifics that would normally require endless trial and error to figure out on your own.
+Learning Unreal Engine C++ is harder than it should be. Documentation is scattered, tutorials often teach bad habits, and it's difficult to know what professional Unreal code should actually look like. This course gives you a structured roadmap through Unreal Engine C++, teaching industry best practices, engineering principles, and debugging skills you need to confidently continue building games long after the course has finished.
 
-Whether you have been programming for a decade or are only just getting started...as one of my students you will learn everything you need to succeed in programming with Unreal Engine. **You will be taught industry standards and best practices that you can take into your professional career as a game developer.** During the lessons every programming decision will be explained, including alternative approaches, pitfalls and common mistakes. This way you can expertly reason about your own code after this course has finished. During the lessons, We will naturally run into compiler errors and bugs and solve them together as that is what real game development is like.
+> **Every system demystified. Every decision explained. Every lesson builds your confidence.**
 
-The course has around 25 hours of lesson content and packs **15+ years of Unreal Engine experience** into a structured learning path. Besides the lessons there are 7 assignments to complete. Each assignment reinforces the systems used and asks the student to explore the engine on their own. This truly builds the required skills to become a competent developer with the engine. As a result my courses have been adopted by dozens of AAA game studios around the world for their onboarding and training needs.
+Throughout the course you'll build a complete third-person action game while learning the core Unreal Engine and C++ concepts used in professional development. From architecture and gameplay systems to debugging and optimization, each topic is introduced in context so you understand not only how it works, but why it matters.
 
-The original course was taught to Computer Science students at **Stanford University** in 2020 ("Video Game Development in C++ and Unreal Engine" - Class CS193U) and has since been remastered and improved for Unreal Engine 5.
+Whether you have been programming for a decade or are only just getting started...as one of my students you will learn everything you need to succeed in programming with Unreal Engine. **You will be taught industry standards and best practices that you can take into your professional career as a game developer.** During the lessons **every programming decision will be explained, including alternative approaches, pitfalls and common mistakes**. This way you can confidently reason about your own code after this course has finished. We don't hide compiler errors, crashes or bugs - we solve them together. That's what real game development looks like, and learning how to debug is just as important as learning how to write code.
+
+The course packs **15+ years of Unreal Engine C++ experience** into a structured and industry-proven learning path. Besides the lessons there are 7 challenging assignments to complete. Each assignment reinforces the concepts covered in the lessons and asks the student to explore the engine on their own. This truly builds the required skills to become a competent developer with the engine. As a result my courses have been adopted by dozens of AAA game studios around the world for their onboarding and training needs.
+
 
 <div class="wide-content" id="studio-logos"  data-course-id="1"></div>
 
-## Why take this course?
+## What makes this course different?
 
-The course solves the big problems C++ developer face when getting into Unreal Engine. A lack of clear documentation, no structured learning path to follow, and free tutorials teaching bad habits or shortcuts that do not hold up an any real production environment. You may be intimidated to explore this massive engine on your own, this course will fix that.
+### Every decision explained
 
-### Structured & reliable
+Understand not only what we're building, but why every programming decision is made, including alternative approaches and common pitfalls.
 
-Well structured and reliable information for C++ in Unreal Engine is hard to come by. More so for intermediate and above programming topics. Many of the "Unrealisms" take years to discover or fully understand, this course curriculum fast-tracks your entry into Unreal Engine by covering every programming concepts you need to know in day-to-day development. Safe yourself hundreds of hours by learning it the right way immediately.
+### Learn Through Real Development
 
-### Learn development the Epic way
+Build a complete game while solving compiler errors, debugging crashes, and designing systems exactly as you would in a real production environment.
 
-With over 15 years of experience in Unreal Engine, including some time at Epic Games, I know what it takes to build a proper game framework and keep code simple and easy to maintain. Having encountered and solved hundreds the obscure issues, bugs and mistakes - I will guide you through it all and teach you Unreal Engine 5 the Epic way.
+### Become an Independent Developer
 
-### Gain independence, escape tutorial hell
-
-Throughout the course lessons We encounter compile issues and bugs during the course and solve them together. You complete challenging assignments to reinforce you new skills and gain new ones by having to explore on your own. Build and use debugging tools and stay ahead of problems through asserts, verification and logging. Every step building to your independence as a programmer. You can confidently continue building games after completing this course.
+Every lesson builds your confidence until you can continue building Unreal Engine projects without relying on tutorials.
 
 ## Is this course for you?
 
 Whether you have only just started programming or well over a decade, you will learn something new during this course. It is recommended to know the basic fundamentals of programming such as functions and variables, but no prior C++ experience is necessary. Knowing the basics of any other programming language or even just Blueprints is enough to get started.
 
-You are guaranteed to learn something new, even as a multi-year veteran of the industry of the Unreal Engine itself.
+Even experienced Unreal developers discover new techniques and best practices throughout the course.
 
 **The Ideal Student:**
 
-- Any programming professionals seeking to re-train to Unreal Engine
+- Experienced programmers transitioning to Unreal Engine.
 - Intermediate-level Unreal Developers looking to improve their C++ skills and learn new tricks
 - Programmers moving from another engine to Unreal Engine
 - Students in game development (or computer science)
-- Tech artists looking to get into C++ game development
+- Technical artists who want to confidently work in Unreal Engine C++.
+
+<div class="wide-content">
+  <section 
+    class="partition_1"
+    style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
+    >
+    <p>
+      <h1 class="salesheader" style="text-align: center;"><strong>SUMMER SALE IS NOW!</strong></h1>
+      <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-cpp/#pricing-options">SUMMERSALE</a> at checkout for $100 discount!</strong></p>
+    </p>
+  </section>
+</div>
+
+## Built Around Professional Development
+
+If you've ever felt overwhelmed by Unreal Engine, unsure which tutorials to trust, or frustrated that every resource teaches a different approach, you're not alone. This course fixes those problems with a structured roadmap built on 15+ years of professional Unreal Engine development experience.
+
+### Structured & Industry-proven
+
+Well-structured, up-to-date, and reliable information for C++ in Unreal Engine is hard to come by. Many programming concepts will take years to discover or fully understand on your own. This course curriculum fast-tracks your entry into Unreal Engine by covering every programming concept you need to know in day-to-day development. Save yourself hundreds of hours by learning Unreal C++ the right way from day one.
+
+### Learn development the Epic way
+
+Learn how professional Unreal Engine code is structured, why systems are built the way they are, and how to write code that's easy to maintain as your projects grow. Built on over 15 years of Unreal Engine experience, including time at Epic Games.
+
+### Gain independence, escape tutorial hell
+
+Throughout the course lessons we encounter compilation issues and bugs, and solve them together. You'll complete challenging assignments that reinforce what you've learned while encouraging you to explore the engine independently. Along the way you'll learn to use debugging tools, asserts, verification, and logging to stay ahead of problems. Every lesson builds your independence as a programmer.
+
+## Why This Course Exists
+
+This course exists because I spent years learning Unreal Engine the hard way. Good documentation was difficult to find, many public resources were outdated or incomplete, and it was often unclear why Unreal Engine worked the way it did. **I built the course I wish I'd had when I started learning Unreal Engine C++.** One that explains not only what to do, but why every decision is made and helping you understand the deeper fundamentals.
+
+Too much of the information available online is fragmented, outdated, or teaches shortcuts that don't hold up in professional development. That makes it difficult to build a solid foundation and even harder to know which advice you can trust. Instead of piecing together dozens of tutorials, this course gives you a structured learning experience built on industry best practices and years of real Unreal Engine development.
+
+My goal isn't simply to teach you how to build the game you'll create in this course. It's to help you understand Unreal Engine well enough that you can confidently build the next one on your own. Every lesson is designed to develop your reasoning as a programmer so you can evaluate different approaches, debug problems effectively, and make sound engineering decisions long after the course has finished.
 
 ## Your Instructor : Tom Looman
 {% include bio.html %}
 
-## Why you will love this course
-
-This course contains 15+ years of my Unreal Engine experience and I truly believe it is something you will love to take part in! I have managed to pack so much of what I had to learn the hard way and can now guide you through this in an easy to follow curriculum.
-
-A lot of what you will learn here is simply not available elsewhere and certainly not in such a cohesive and structured learning experience. These are not one-off tutorials taking shortcuts while teaching you bad habits...You will build a proper game and framework with solid foundational coding skills that you can take into your career as a game developer!
-
-My 5000+ students are from all backgrounds including AAA studios, indie developers, and those just starting out in the industry! Many AAA studios have been using this course to train new and current employees in Unreal Engine C++.
-
-## Training For Studios
-
-Save time and money by offering your new hires a structured and industry proven curriculum to onboard them efficiently into any team using Unreal Engine C++.
-
-The course has been used by game studios of all sizes for many years - from small indies to the largest studios in the world. We offer flexible enrollment to fit your needs on top of discounted prices on bulk enrollment. You can reach out directly through [info@tomlooman.com](mailto:info@tomlooman.com) for more information.
-
 <br />
 
 {: .text-center}
-<h2>What my Students say</h2>
+<h2>What Students Are Saying</h2>
 
 {: .text-center}
-Loved by 5000+ students, from those just starting out all the way to Principle Engineers at some of the largest studios in the world!
+Trusted by 5,000+ Unreal Engine developers - from first-time programmers to Principal Engineers at some of the world's leading game studios.
 
 <div id="reviews" data-course-id="1"></div>
+
+<br/>
+
+<div class="wide-content">
+  <section 
+    class="partition_1"
+    style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
+    >
+    <p>
+      <h1 class="salesheader" style="text-align: center;"><strong>SUMMER SALE IS NOW!</strong></h1>
+      <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-cpp/#pricing-options">SUMMERSALE</a> at checkout for $100 discount!</strong></p>
+    </p>
+  </section>
+</div>
+
+<a name="pricing-options"></a>
+
+{: .text-center}
+![](/assets/images/courses/moneyback_logo_small.png)
 
 {: .text-center}
 ## Get Started Today
 
 {: .text-center}
-Prices include VAT/Sales Tax where applicable.
+Prices include VAT/Sales tax where applicable.
 
 <div id="pricing" data-course-id="1"></div>
 
-{: .text-center}
-## Need to enroll your team?
+<br />
 
 {: .text-center}
-**Bulk order discounts** and **flexible payment options** are available for teams. Please get in touch using [this form](/contact) or directly via [info@tomlooman.com](mailto:info@tomlooman.com).
+## Training For Studios
+
+{: .text-center}
+Save time and money by offering your new hires a structured and industry-proven curriculum to onboard them efficiently into any team using Unreal Engine C++.
+
+{: .text-center}
+The course has been used by game studios of all sizes for many years. We offer flexible enrollment to fit your needs on top of discounted pricing for bulk enrollment. You can reach out directly through [info@tomlooman.com](mailto:info@tomlooman.com) for more information.
 
 {: .text-center}
 **Need a single license for someone on your team?** During checkout you have the option to purchase for someone else.
-
-{: .text-center}
-![](/assets/images/courses/moneyback_logo_small.png)
 
 <br />
 
 <div id="faq" data-course-id="1"></div>
 
-{: .text-center}
-If you have any questions, feel free you reach out directly through my contact form or [info@tomlooman.com](mailto:info@tomlooman.com).
-
 ## Questions?
+Feel free to reach out through the contact form below or directly at [info@tomlooman.com](mailto:info@tomlooman.com).
 
 {% include contact-form.html %}

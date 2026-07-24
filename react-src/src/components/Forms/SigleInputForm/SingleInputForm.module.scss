@@ -7,22 +7,13 @@
     border: solid .5px white;
     border-radius: 5px;
     width: fit-content;
-
-    @media (max-width: breakpoints.$breakpoint-md) {
-        flex-direction: column;
-    }
+    padding: 0;
 
     .textFieldRoot {
-        flex: 0 0 auto;
-
         > div {
             border-radius: 5px 0 0 5px;
             background-color: colors.$white;
             height: 100%;
-
-            @media (max-width: breakpoints.$breakpoint-md) {
-                border-radius: 5px 5px 0 0;
-            }
         }
 
         * {
@@ -39,19 +30,28 @@
         background-color: colors.$orange;
         color: colors.$white;
         border: none;
-        padding: 10px 20px;
+        padding: 10px;
         cursor: pointer;
         border-radius: 0 5px 5px 0;
         font-size: .75rem;
         height: 40px;
         white-space: nowrap;
+        text-transform: none;
 
-        @media (max-width: breakpoints.$breakpoint-md) {
-            border-radius: 0 0 5px 5px;
+        @media (max-width: breakpoints.$breakpoint-sm) {
+            width: 100px;
         }
 
         &:hover {
             background-color: color.scale(colors.$orange, $lightness: -20%);
+        }
+
+        &.Mui-disabled {
+            background-color: colors.$orange;
+            color: colors.$white;
+            opacity: 0.7; // subtle hint
+            cursor: not-allowed;
+            pointer-events: auto;
         }
     }
 }

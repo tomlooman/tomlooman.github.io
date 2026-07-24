@@ -1,10 +1,10 @@
 <div id="sales-banner" class="sales-banner">
   <div class="sales-banner-inner">
     <div>
-    <p id="sales-banner-text">🔥 <strong>UNREAL ENGINE COURSES INDIE SALE!</strong> Save $100 on <a href="https://tomlooman.com/courses/unrealengine-cpp">Unreal Engine C++</a> and <a href="https://tomlooman.com/courses/unrealengine-optimization">Unreal Game Optimization</a> Courses — Ends soon!</p>
+    <p id="sales-banner-text">🔥 <strong>UNREAL ENGINE SUMMER SALE!</strong> Save $100 on <a href="https://tomlooman.com/courses/unrealengine-cpp">Unreal Engine C++</a> and <a href="https://tomlooman.com/courses/unrealengine-optimization">Unreal Game Optimization</a> Courses!</p>
     </div>
     <!-- sale end date format YYYY-MM-DD -->
-    <div id="sales-banner-timer" data-sale-end-date="2026-05-31"></div>
+    <!--<div id="sales-banner-timer" data-sale-end-date="2026-05-31"></div>-->
   </div>
   <button id="sales-banner-close" aria-label="Close">x</button>
 </div>
@@ -15,7 +15,30 @@
     const timer = document.getElementById("sales-banner-timer");
     const close = document.getElementById("sales-banner-close");
 
-    if (!banner || !timer) return;
+    if (!banner) return;
+
+    const STORAGE_KEY = "salesBannerClosedOn";
+    const closedOn = localStorage.getItem(STORAGE_KEY);
+
+    function getDayString(date) {
+        return date.toISOString().slice(0, 10);
+    }
+
+    const today = getDayString(new Date());
+
+    // If closed today → remove the whole banner instead of hide
+    if (closedOn === today) {
+        banner.remove();
+        return;
+    }
+
+    // User manually closes it
+    close?.addEventListener("click", () => {
+        localStorage.setItem(STORAGE_KEY, today);
+        banner.remove();
+    });
+
+    if (!timer) return;
 
     const saleEndDateStr = timer.getAttribute("data-sale-end-date");
     if (!saleEndDateStr) return;
@@ -31,29 +54,5 @@
         banner.remove();
         return;
     }
-
-    // --- Still active → continue normal logic ----
-
-    const STORAGE_KEY = "salesBannerClosedOn";
-    const closedOn = localStorage.getItem(STORAGE_KEY);
-
-    function getDayString(date) {
-        return date.toISOString().slice(0, 10);
-    }
-
-    const today = getDayString(new Date());
-
-    // If closed today → remove instead of hide
-    if (closedOn === today) {
-        banner.remove();
-        return;
-    }
-
-    // User manually closes it
-    close?.addEventListener("click", () => {
-        localStorage.setItem(STORAGE_KEY, today);
-        banner.remove();
-    });
-
 })();
 </script>

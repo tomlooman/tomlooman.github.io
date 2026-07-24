@@ -7,9 +7,7 @@ toc: false
 redirect_from:
     - /author/tomlooman/
 ---
-{: .text-center}
 Please use the form below or email me directly via [info@tomlooman.com](mailto:info@tomlooman.com)
-{: .text-center}
 
 {% include contact-form.html %}
 

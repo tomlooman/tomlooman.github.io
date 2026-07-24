@@ -7,21 +7,23 @@
     background-size: cover;
     background-position: right center;
 
-    @media screen and (max-width: breakpoints.$breakpoint-md) {
-        background-position: right 5px;
-    }
-
     width: 100%;
     aspect-ratio: 1920 / 150;
 
     display: flex;
     align-items: center;
 
+    @media screen and (max-width: breakpoints.$breakpoint-md) {
+        background-position: right 5px;
+    }
+
+
     .emailSignUpContent {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 1rem 200px;
+        flex: 1;
 
         @media screen and (max-width: breakpoints.$breakpoint-lg) {
             padding: 1rem 100px;
@@ -35,6 +37,19 @@
             color: colors.$orange;
             font-size: .85rem;
             width: 50%;
+        }
+    }
+
+    @media (max-width: breakpoints.$breakpoint-sm) {
+        background-image: none;
+        background-color: colors.$gray;
+
+        .emailSignUpContent {
+            flex-direction: column;
+            b {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
         }
     }
 }
