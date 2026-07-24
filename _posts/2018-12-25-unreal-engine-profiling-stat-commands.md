@@ -2,6 +2,7 @@
 title: "Adding Counters & Traces to Unreal Insights & Stats System"
 date: 19-03-2026
 last_modified_at: 16-04-2026
+excerpt: "How to add counters and trace metrics in Unreal Insights and the Stats system to improve profiling and performance analysis."
 categories: 
   - "Performance & Optimization"
 tags: 
