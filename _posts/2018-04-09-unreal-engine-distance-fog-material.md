@@ -16,7 +16,7 @@ redirect_from:
 
 In this post I will discuss depth (or distance) fog and the things I did to improve on the original basic effect while keeping this simple and light-weight. It's not a step-by-step tutorial, but explains the core concepts behind the effect including a download link at the end.
 
-Back in the forward rendering days you would get distance fog basically for free in your standard materials (specifically referring to XNA) and now in the age of deferred renderers we have all sorts of different - more advanced - fog types built-in to Unreal (eg. Atmospheric, Exponential Height fog). While those are great for certain types of scenery, I still find myself needing the classic fog style to not only add atmosphere but hide distance gameplay objects or simply focus the player's vision more on the near range rather than the horizon. This is where the built-in fog types fail; luckily, it's really easy to build your own.
+Back in the forward rendering days you would get distance fog basically for free in your standard materials (specifically referring to XNA) and now in the age of deferred renderers we have all sorts of different - more advanced - fog types built-in to Unreal (eg. Atmospheric, Exponential Height fog). While those are great for certain types of scenery, I still find myself needing the classic fog style to not only add atmosphere but hide distance gameplay objects or simply focus the player's vision more on the near range rather than the horizon. This is where the built-in fog types fail. luckily, it's really easy to build your own.
 
 ![](/assets/images/Thumb_DepthFog.jpg)
 
