@@ -130,6 +130,8 @@ Trusted by 5,000+ Unreal Engine developers - from first-time programmers to Prin
 
 <br/>
 
+<a name="pricing-options"></a>
+
 <div class="wide-content">
   <section 
     class="partition_1"
@@ -141,11 +143,6 @@ Trusted by 5,000+ Unreal Engine developers - from first-time programmers to Prin
     </p>
   </section>
 </div>
-
-<a name="pricing-options"></a>
-
-{: .text-center}
-![](/assets/images/courses/moneyback_logo_small.png)
 
 {: .text-center}
 ## Get Started Today
@@ -168,6 +165,9 @@ The course has been used by game studios of all sizes for many years. We offer f
 
 {: .text-center}
 **Need a single license for someone on your team?** During checkout you have the option to purchase for someone else.
+
+{: .text-center}
+![](/assets/images/courses/moneyback_logo_small.png)
 
 <br />
 
