@@ -30,19 +30,3 @@ Some popular pages you may be interested in! Looking for a specific post? Try se
     {% endif %}
   {% endfor %}
 </section>
-
-<h2>Teaching Unreal Engine 5 to AAA & Indies</h2>
-{: .text-center}
-
-Truly Master Unreal Engine the Epic™ Way through my free tutorials and professional courses on C++ and Game Optimization.
-{: .text-center}
-
-
-{: .text-center}
-## What My Students Say
-
-<div id="reviews" data-course-id="1"></div>
-
-<br />
-
-<div class="wide-content"><div id="studio-logos"  data-course-id="1"></div></div>

@@ -32,7 +32,7 @@ sidebar-main:
       - title: "- Professional Game Development in C++ & Unreal Engine 5"
         url: /courses/unrealengine-cpp/
       - title: "- Complete Game Optimization for Unreal Engine 5"
-        url: /courses/unrealengine-Optimization
+        url: /courses/unrealengine-optimization
   - title: "Top Articles"
     children:
       - title: "- Complete C++ Guide"
