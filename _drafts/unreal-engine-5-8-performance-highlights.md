@@ -13,7 +13,11 @@ excerpt: ""
 
 It is time again for possibly the last Performance Highlights overview for Unreal Engine 5. The release of UE 5.8 marks the final release before Epic Games is moving development efforts to Unreal Engine 6.
 
+**Share this article with everyone on your team!** This way everyone is informed on the most important changes to 5.8 without having to spend hours digging through the exceedingly long release notes.
+
 That brings the focus of 5.8 to stabilize and optimize existing features. Although new experimental features such as Mesh Terrain have still been added. A couple of major performance oriented improvements include MegaLights turning production ready and Lumen receiving a new Lite-mode for better scalability across devices. You can find the full release notes [here](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes), but let's first dive into the most interesting improvements made that focus on Performance & Optimization. As usual I add my own remarks to the release notes and clarify changes where necessary.
+
+Some optimization trends you see across rendering features include overall image quality and stability (Lumen, VSM, MegaLights), and reduced shader permutations across many shaders used in a variety of passes (Volumetric fog, VSM, Substrate, MegaLights, Lumen, etc.). These are mostly automatic wins for your project, sometimes with CVARs to control behavior or exclusions.
 
 
 {: .notice--info }
@@ -23,21 +27,44 @@ Unreal Directive has a [Console Variables page](https://unrealdirective.com/reso
 
 ## MegaLights
 
-MegaLights is now production ready. They greatly reduced the noise, overall performance to use this at 60hz. [View Docs](https://dev.epicgames.com/documentation/unreal-engine/megalights-in-unreal-engine)
+MegaLights is now production ready. They greatly reduced the noise, overall performance to use this at 60hz. [View Docs](https://dev.epicgames.com/documentation/unreal-engine/megalights-in-unreal-engine) and see the [MegaLights section](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#megalights-2) of the release notes for the full list. There are many improvements surrounding quality, and below are some of the most meaningful performance changes:
 
-## Lumen Lite
+No longer traces multiple rays towards the same light if it's not in a penumbra. This greatly improves performance (0.3-1ms on console, depending on the scene).
+
+Added `r.MegaLights.ScreenTraces.Quality` which allows to tweak screen space trace quality for scalability.
+
+Early cull lights by light power and falloff. This allows it to quickly skip lights, which don't contribute to the final pixels and reduces light sampling by ~20% in Firefly without adding any measurable cost to light grid culling. This heuristic isn't entirely correct, as it assumes a pure diffuse surface. For example, light specular (shape) is visible infinitely far away in a perfect mirror, but this change will cut it off. Still in practice it works really well and it's hard to spot any missing energy. r.MegaLights.LightAttenuationFalloff 0 can be used to disable it.
+
+Added `r.MegaLights.Supported` which allows to remove all MegaLights shader compilation overhead if it's not used in project.
+
+Deprecated **SSGI (Screen Space Global Illumination)**. SSGI is superseded by Lumen GI. // The intend is most likely to just use Lumen Lite now instead of SSGI as this relied too much on screen space information and was not a full solution in itself.
+
+## Lumen
+
+Lumen gets a lot of improvements this release. The most important being **Lumen Lite** which is enabled on "Medium" Scalability for Global Illumination. Standard Lumen is also receiving many improvements including better disocclussion, denoising and quality during motion. Less memory usage, fewer shader permutations. Too many to copy over, so look for the [Lumen section](](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#lumen)) in the full release notes if you want to read the rest. Below are some highlights that are relevant for most people to know.
+
+### Lumen Lite
 
 "Lumen Lite is a new medium-quality setting for Global Illumination using Irradiance Fields with Probe Occlusion supported by Lumen. It's twice as fast as Lumen high quality - which targets 60fps on PlayStation 5, while maintaining the art direction for games that rely on Global Illumination. This path is the new default for current-generation handheld consoles, where it can be used at 60fps, and it is supported on PC as well."
 
 This new mode allows for better scalability which has been a problem to maintain with Lumen. The docs have been updated with [Lumen Lite](https://dev.epicgames.com/documentation/unreal-engine/lumen-performance-guide-for-unreal-engine). Epic still labels this as Beta.
 
+New Lumen Medium Quality, which is 2x faster than Lumen on High Quality, while maintaining art direction for lighting. Lumen Medium Quality is targeted at low end PC and handhelds.
+- Enabled by setting GI and Reflection Quality to Medium (sg.globalilluminationquality 1 + sg.reflectionquality 1 console commands in game).
+- Lumen Medium Quality is 4 components: Faster opaque GI through Irradiance Field Gather, faster reflections, faster GI on transparency / fog and faster Lumen Scene.
 
-## Lumen
+Some CVARs mentioned in the release notes to play around with:
+
+Remove `r.Lumen.ScreenProbeGather.IntegrateDownsampleFactor 2` from High scalability as it was generating too much noise and softening normals. This has to be now manually tweaked per title for a more explicit tradeoff.
+
+Less aggressive culling of small objects from Lumen Scene on Epic and Cinematic GI quality. Reduces pops in emissive lighting and black spots in reflections from small objects.
+- Reduced `r.LumenScene.SurfaceCache.CardMinResolution` from 4 to 2.
+
+Added `r.Lumen.ScreenProbeGather.ScreenTraces.HZBTraversal.SkipUnlitHits`, which allows to skip unlit shading model hits. This allows to work around GI noise from tiny emissives.
 
 Enabled Lumen applying height fog to reflection ray hits by default (`r.Lumen.HeightFog 1`).
-- Cost is about.03ms on High GI settings on 2080 at 1080p.
-
-Deprecated SSGI (Screen Space Global Illumination). SSGI is superseded by Lumen GI. // The intend is most likely to just use Lumen Lite now instead of SSGI as this relied too much on screen space information and was not a full solution in itself.
+- Reduces the mismatch between screen traces and other trace types in heavily fogged scenes (but screen traces are still fogged incorrectly).
+- However `r.Lumen.HeightFogOnGI` is still 0 to save a little perf (missing out on fog inscattering in heavily fogged scenes).
 
 ## Rendering
 
@@ -298,10 +325,39 @@ Significantly improved performance of the CreateShadingRateImage pass. (That is 
 
 ## Nanite
 
+Significantly improved performance of Nanite rasterization & culling on handheld platforms.
+
+Reuse Nanite readback buffers to avoid reallocation.
+
+Added new console variables for the ability to disable **Nanite Tessellation in Virtual Shadow Maps** at run time for scalability/performance reasons:
+- `r.Shadow.Virtual.Nanite.AllowTessellationDirectional` can be used to toggle Nanite Tessellation in directional light shadows.
+- `r.Shadow.Virtual.Nanite.AllowTessellationLocal` can be used to toggle Nanite Tessellation in local light shadows.
+
+Added "Nanite Pixel Programmable Distance" property to **foliage types**. // This is excellent and something I was missing in the [Unreal GPU Optimization video](https://www.youtube.com/watch?v=3qgd4glfIR0) I made for Far Far West.
+
 Implemented the following Nanite- and WPO-related features for skinned meshes to match their Static Mesh counterparts:
 - World Position Offset Disable Distance.
 - Evaluate World Position Offset.
 - Disallow Nanite.
+
+Fixed bug resulting in Nanite HZB occlusion not working when `r.HZB.BuildUseCompute` was disabled.
+
+Fixed culling bug when running with `r.Nanite.Culling.MinLOD` and reenabled it.
+
+## Niagara
+
+Add GPU Bitonic Sort algorithm for **Particles sorting**, the default (configurable) heuristic will choose Bitonic over Radix for particle count under a certain threshold for better GPU performance.
+
+## TSR (Temporal Super Resolution) & Postprocessing
+
+TSR adds several Thin Geometry optimizations that are worth diving into if you are using that in your project. Read it [here](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#postprocessing).
+
+Set Early translucency velocity pass to after volumetric cloud reconstruction (`r.Translucency.EarlyVelocityPass 2`) by default. TSR async pass can now overlap with passes after volumetric cloud reconstruction. The more complex those passes the more saving. The default location is after volumetric fog. Other locations are after deferred lighting, and before translucency.
+
+Moved CombineLUTs to async compute.
+
+TSR: Fix memory spike at camera cut and teleport. It is caused by the texture 2d array size mismatch of history color at the time. A new texture needs to be allocated while the old one still exists.
+
 
 ## Single Layer Warer
 
@@ -333,4 +389,75 @@ Added OverrideVirtualTextureThrottle option to scene capture component. That all
 
 Workaround for incorrect view distance scale being captured in the GPU scene primitive data for InstanceDrawDistance, InstanceWorldPositionOffsetDisableDistance and PixelProgrammableDistance. The GPU scene now tracks the value of `r.ViewDistanceScale` and triggers a full upload if it changes. This behavior can be disabled by `r.GPUScene.ViewDistanceScaleWorkaround`.
 
-Fix incorrect culling of hidden line in ShaderPrint when `r.ShaderPrint.DrawOccludedLines` is enabled.
+
+Now **DumpGPUViewer** can inspect the referenced uniform buffer if `r.RHI.UniformBufferContentMap.Enable` is set to true.
+
+Dump GPU: Add CVar `r.DumpGPU.RedumpInputs` (0, default off) to enable re-dump of inputs at each pass. This fixes the lost of input resource's intermediate update if it was already dumped previously but the intermediate passes written to it was filtered out. Enable it will increase the memory footage.
+
+Added `r.MeshSortingMethodWithoutEarlyZ` to allow sorting meshes front to back to reduce overdraw even when not using the mobile renderer.
+
+Replaced CVar `r.TextureGroup.OptionalQualityLevel` with new device profile property `UTextureLODSettings::TextureGroupOptionalQualityLevel` to specify the value for Windows without propagating to other platforms just because the cooking editor runs on Windows.
+
+Allow Shader PSO precache to fail gracefully if shader data is not available yet.
+
+New BP function on `AGameUserSettings: IsGlobalIlluminationAllowed` which can be used by a game's Blueprints to set the PPVolume depending on whether GI is enabled.
+
+Allow distance fields to run on `GRHIDeviceIsIntegrated`. This check was added a decade ago to prevent issues on some outdated drivers, but nowadays it prevents some pretty capable SM5 GPUs to run distance field features.
+
+Fixed pooled buffer and texture memory leaks in **GlobalDistanceField** when changing global distance field resolution at runtime.
+
+Fixed an issue where **Variable Rate Shading** was not properly applied to the **ReflectionEnvironmentAndSky** pass even when `r.VRS.ReflectionEnvironmentSky` was enabled.
+
+## Materials & Shaders
+
+The release of 5.8 made a lot of improvements for reducing shader counts and permutations. You can find mentions of this spread throughout the release notes. This is good news as this will reduce the impact of PSO shader compilation for everyone.
+
+Shader layout is now determined using translation output, instead of conservative Material Asset based heuristics. This leads to a decrease in shader counts and can be toggled using `r.Material.UseShaderCompilationParameters`.
+
+**Default Textures Memory Optimization**. Even if referenced by the base Material, all default material textures which are not used for rendering are now not loaded at runtime. This can be toggled using `r.Material.StripUnusedDefaultTextures`. // This is great and a very old problem. Any texture you referenced in your Master Material would still be loaded into memory even if all Material Instances changed those textures to something else. A workaround was using very small default materials (like a tiny solid white texture, and mini normal map, etc.)
+
+Add permutation count to the `recompileshaders listtypes` command Looks like this: 
+  `ShaderTypeName, Filename, PermutationCount FBufferTextureMappedCopyCS, /NNEDenoiserShaders/NNEDenoiserShadersMappedCopy.usf, 125 FTextureBufferMappedCopyCS, /NNEDenoiserShaders/NNEDenoiserShadersMappedCopy.usf, 125 FStochasticLightingTileClassificationMarkCS, /Engine/Private/StochasticLighting/StochasticLightingTileClassification.usf, 3072`
+
+**Display Total Shaders** as a SNotificationBackground as an overlay in the bottom right hand corner of the **Material Editor and Material Instance Editor** Viewport.
+  The goal here is prominently display the number of shaders that this material has. That way as a user modifies the material they can see live the impact of their changes when changing usage flags, or plugging in WPO.
+  // This can be valuable to better understand how your material changes impact the total shader count of your project. And more easily see materials that historically are bloating your project.
+
+Added **UMaterialEditingLibrary::ListShaders** which will return an array of all shaders that material will compile.
+
+Fix translucent materials not showing up in shader complexity view mode.
+
+## RHI (Rendering)
+
+Dynamic Resolution support is enabled for PC on both DX12 and Vulkan RHIs.
+
+**ProfileGPU** log output now includes Graphics pipe wait times, which greatly improves Frame GPU time accuracy with async compute, and shows where on the graphics pipe the waits were.
+
+More compact log formatting option for **ProfileGPU**.
+- Added `r.ProfileGPU.TableFormatting`, which can be disabled to get indentation based formatting that's easier to read. 
+- Fixed `r.profilegpu.thresholdpercent` being relative to the current root, it's supposed to be relative to the total frame time.
+
+`stat unit` console command shows **GPU VRam Used** and Budget debug information on discrete GPUs.
+
+Additional asynchronous pool allocation strategy for **D3D12 buffer allocators** (Upload heap and Default buffer pools). The implementation pre-allocates "Overflow" pools on a background thread in order to reduce allocation hitches on the critical path that occur when existing pools become full and new pools must be created synchronously.
+
+## Substrate
+
+Not a lot of improvements called out explicitly for Substrate, but I could find the following:
+
+Enable Substrate's classification stencil writing during the indirect lighting pass for better performance.
+
+## Ray Tracing
+
+Adding support for Linear Swept Spheres (LSS) for ray tracing of hair strands Raytracing of hair strands will take advantage of LSS primitives on nVidia Blackwell GPUs, reducing memory usage and improving performance compared to the intersection shader based implementation.
+
+## Networked Physics
+
+There are more [networked physics optimizations](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#networkedphysics) but mainly for those already deep into the subject.
+
+Optimize network overhead for replicated Input and State properties via the "legacy" RepGraph or Iris Last Resort replication in NetworkPhysicsComponent.
+- Remove Owner* replication (24+8 reduced to 0 bits).
+- Replace DeltaSourceFrame with DeltaSourceIndex (16 or 24 reduced to 2 bits).
+- Clamp NumFrames (8 reduced to 4 bits).
+- Send data array ordered to improve ServerFrame delta serialization (18 bits reduced to 1 bit on arrays larger than 1).
+
