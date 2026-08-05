@@ -21,9 +21,9 @@ Some other optimization trends you see across rendering features include overall
 **Share this article with everyone on your team!** This way everyone is informed on the most important changes to 5.8 without having to spend hours digging through the exceedingly long release notes.
 
 {: .notice--info }
-This article is part of my efforts of keeping Unreal Engine developers informed about Game Optimization! For that I have a in-depth [Game Optimization Course for Unreal Engine 5](https://tomlooman.com/courses/unrealengine-optimization/) to train engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
+This article is part of my efforts of keeping Unreal Engine developers informed about Performance & Optimization! For that I have a in-depth [Complete Game Optimization Course for Unreal Engine 5](https://tomlooman.com/courses/unrealengine-optimization/) to train engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
 
-Unreal Directive has a [Console Variables page](https://unrealdirective.com/resources/console-variables/?version=5.8&new=1) that shows **new CVARs added in 5.8** which is a good way to find out new ways to tune new or existing features. For example, you can see many `a.budget.*` CVARs (**Animation Budgeter Plugin**) are new and worth exploring if you use that feature. These new CVARs are often not called out in the release notes.
+**Note:** Unreal Directive has a [Console Variables page](https://unrealdirective.com/resources/console-variables/?version=5.8&new=1) that shows **new CVARs added in 5.8** which is a good way to find out new ways to tune new or existing features. For example, you can see many `a.budget.*` CVARs (**Animation Budgeter Plugin**) are new and worth exploring if you use that feature. These new CVARs are often not called out in the release notes.
 
 ## Unreal Insights
 
@@ -47,6 +47,10 @@ Added "snapshot hitches" feature. This feature relies on the stats system to det
 
 Adds a 2D view of your world with valuable insights! Worth checking out right away if your project relies on World Partition.
 
+### Mass Trace
+
+Add missing trace events for archetype creation and entity moves during archetype splitting in MassEntity Introduce a batch `UE_TRACE_MASS_ENTITIES_MOVED` macro to trace multiple entity handles in a single call.
+
 ## Profiling Tools
 
 **ProfileGPU** log output now includes Graphics pipe wait times, which greatly improves Frame GPU time accuracy with async compute, and shows where on the graphics pipe the waits were.
@@ -57,19 +61,9 @@ More compact log formatting option for **ProfileGPU**.
 
 `stat unit` console command shows **GPU VRam Used** and Budget debug information on discrete GPUs.
 
-## MegaLights
+Added `stat thermals` command to display the thermal state of the device. Currently only available on Android/iOS. (Exposed CPUTemp and ThermalStatus CSV metrics to other platforms than Android)
 
-MegaLights is now production ready. They greatly reduced the noise, overall performance to use this at 60hz. [View Docs](https://dev.epicgames.com/documentation/unreal-engine/megalights-in-unreal-engine) and see the [MegaLights section](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#megalights-2) of the release notes for the full list. There are many improvements surrounding quality, and below are some of the most meaningful performance changes:
-
-No longer traces multiple rays towards the same light if it's not in a penumbra. This greatly improves performance (0.3-1ms on console, depending on the scene).
-
-Early cull lights by light power and falloff. This allows it to quickly skip lights, which don't contribute to the final pixels and reduces light sampling by ~20% in Firefly without adding any measurable cost to light grid culling. This heuristic isn't entirely correct, as it assumes a pure diffuse surface. For example, light specular (shape) is visible infinitely far away in a perfect mirror, but this change will cut it off. Still in practice it works really well and it's hard to spot any missing energy. r.MegaLights.LightAttenuationFalloff 0 can be used to disable it.
-
-Added `r.MegaLights.ScreenTraces.Quality` which allows to tweak screen space trace quality for scalability.
-
-Added `r.MegaLights.Supported` which allows to remove all MegaLights shader compilation overhead if it's not used in project.
-
-Deprecated **SSGI (Screen Space Global Illumination)**. SSGI is superseded by Lumen GI. // The intend is most likely to just use Lumen Lite now instead of SSGI as this relied too much on screen space information and was not a full solution in itself.
+Asset Size Map: Added support for displaying external packages (editor) and generated packages (cook).
 
 ## Lumen
 
@@ -109,29 +103,36 @@ Distance Fields: Remove distance field shader permutations when distance fields 
 
 Fixed pooled buffer and texture memory leaks in GlobalDistanceField when changing global distance field resolution at runtime.
 
-## Variable Rate Shading
+## MegaLights
 
-Fixed an issue where Variable Rate Shading was not properly applied to the ReflectionEnvironmentAndSky pass even when `r.VRS.ReflectionEnvironmentSky` was enabled.
+MegaLights is now production ready. They greatly reduced the noise, overall performance to use this at 60hz. [View Docs](https://dev.epicgames.com/documentation/unreal-engine/megalights-in-unreal-engine) and see the [MegaLights section](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#megalights-2) of the release notes for the full list. There are many improvements surrounding quality, and below are some of the most meaningful performance changes:
 
-## Mutable
+No longer traces multiple rays towards the same light if it's not in a penumbra. This greatly improves performance (0.3-1ms on console, depending on the scene).
 
-Mutable is now considered Production Ready: "We made performance improvements across the board, including parallel updates to boost generation throughput for crowds, reduced game thread workload, and optimized mesh and texture operations."
+Early cull lights by light power and falloff. This allows it to quickly skip lights, which don't contribute to the final pixels and reduces light sampling by ~20% in Firefly without adding any measurable cost to light grid culling. This heuristic isn't entirely correct, as it assumes a pure diffuse surface. For example, light specular (shape) is visible infinitely far away in a perfect mirror, but this change will cut it off. Still in practice it works really well and it's hard to spot any missing energy. r.MegaLights.LightAttenuationFalloff 0 can be used to disable it.
 
-## MetaHuman Crowd (Experimental)
+Added `r.MegaLights.ScreenTraces.Quality` which allows to tweak screen space trace quality for scalability.
 
-A new experimental plugin to use [MetaHumans in crowds](https://dev.epicgames.com/documentation/metahuman/metahuman-crowds-in-unreal-engine) that should scale to thousands of characters.
+Added `r.MegaLights.Supported` which allows to remove all MegaLights shader compilation overhead if it's not used in project.
+
+Deprecated **SSGI (Screen Space Global Illumination)**. SSGI is superseded by Lumen GI. // The intend is most likely to just use Lumen Lite now instead of SSGI as this relied too much on screen space information and was not a full solution in itself.
+
+## Garbage Collection
+
+GC: Add the option to GC based on pending actors to unload (in addition to existing mechanism that uses number of levels) for finer control (disabled by default). Number of levels can be inaccurate given the discrepancies between level counts and memory impact. across main grid / data layers Add the option to GC based on pending actors to unload (in addition to existing mechanism that uses number of levels) for finer control (disabled by default). 
+
+Controlled via `s.ContinuouslyIncrementalGCWhileActorsPendingPurge`/ `s.LevelStreamingLowMemoryActorsPendingPurgeCount` and `wp.Runtime.LevelStreamingContinuouslyIncrementalGCWhileActorsPendingPurgeForWP` (for partitioned worlds).
+
+## Core
+
+- Enabled **MallocBinned3** by default for Windows for improved speed over MallocBinned2.
+- Changed **MallocBinned3** max small bin config to 14kb by default as it offers better performance\memory in our testing.
+- Asset registry cache will now memory-map its tag data storage, **reducing RAM footprint by GBs** in large projects (in editor).
+- **LightWeightInstances** code marked as deprecated. // This was supposed to be a static swap-in replacement for the full functionality Actors but never took off.
 
 ## Fast Geometry Streaming Plugin
 
 Fast Geometry Streaming is still marked Experimental in 5.8 but continues to receive wider support ("Added decal, point, spot and rect lights components support.") to make this more valuable to avoid any streaming related hitches.
-
-## Mass Framework Refactor
-
-[Mass Framework](https://dev.epicgames.com/documentation/unreal-engine/mass-entity-in-unreal-engine) received a major overhaul.
-
-"Mass Signals are now part of the core engine, and entities can be created off the game thread thanks to archetype-based, lock-free scheduling. A new sparse/virtual fragment system reduces memory use and allows optional fragments and tags to be added or removed without triggering costly archetype changes."
-
-"We completely overhauled Mass processor execution and dependency resolution to better take advantage of multi-core CPUs, resulting in safer and faster execution on modern hardware. This is supported by more granular scheduling and thread-safe observer notifications."
 
 ## Horde - Performance Reporting (Experimental)
 
@@ -150,6 +151,14 @@ Sandboxes provide an isolated workspace where you can experiment without affecti
 
 {: .notice--info }
 While not directly performance related, it is an very interesting workflow improvement to experiment with changes to the world, materials, etc that affect performance in unknown ways.
+
+## Mass Framework Refactor
+
+[Mass Framework](https://dev.epicgames.com/documentation/unreal-engine/mass-entity-in-unreal-engine) received a major overhaul.
+
+"Mass Signals are now part of the core engine, and entities can be created off the game thread thanks to archetype-based, lock-free scheduling. A new sparse/virtual fragment system reduces memory use and allows optional fragments and tags to be added or removed without triggering costly archetype changes."
+
+"We completely overhauled Mass processor execution and dependency resolution to better take advantage of multi-core CPUs, resulting in safer and faster execution on modern hardware. This is supported by more granular scheduling and thread-safe observer notifications."
 
 ## Chaos Visual Debugger
 
@@ -178,22 +187,15 @@ Not specified by how much, but faster is always a win.
 
 ## Mobile Renderer
 
+- Added CVar `r.Mobile.Upscale.Quality` by merging Add control over mobile upscaling method.
 - Multi-pass deferred rendering as the default path across mobile platforms (with forward rendering still available as an opt-in).
 - Mobile support for SSAO, SSR, deferred decals, contact shadows, and higher-quality water rendering.
 
 In UE 5.8 introduces half-precision (FP16) shader usage in targeted materials and global shader passes, improving performance while preserving visual quality.
 
-## Garbage Collection
+## Blueprint
 
-GC: Add the option to GC based on pending actors to unload (in addition to existing mechanism that uses number of levels) for finer control (disabled by default). Number of levels can be inaccurate given the discrepancies between level counts and memory impact. across main grid / data layers Add the option to GC based on pending actors to unload (in addition to existing mechanism that uses number of levels) for finer control (disabled by default). 
-
-Controlled via `s.ContinuouslyIncrementalGCWhileActorsPendingPurge`/ `s.LevelStreamingLowMemoryActorsPendingPurgeCount` and `wp.Runtime.LevelStreamingContinuouslyIncrementalGCWhileActorsPendingPurgeForWP` (for partitioned worlds).
-
-## Core
-
-Changed **MallocBinned3** max small bin config to 14kb by default as it offers better performance\memory in our testing.
-
-Asset registry cache will now memory-map its tag data storage, **reducing RAM footprint by GBs** in large projects (in editor).
+Added simple counter to ensure if too many Blueprint async actions are created. The number of allowed actions can be set using the console variable `bp.MaxAsyncActionCount`. Set the number to <= 0 to disable the ensure.
 
 ## Streamable Manager
 
@@ -213,27 +215,11 @@ Opt-in by setting bUseJustInTimeAsyncLoader=true or if batching is enabled globa
 
 Added FrameNum and UTC time to `stat unit` so we have a way to match up video captures with logs, etc. Requires setting "stats.UnitTimestamp" cvar to enable.
 
-## Framework
-
-**LightWeightInstances** code marked as deprecated. // This was supposed to be a static swap-in replacement for the full functionality Actors but never took off.
-
 ## Nav Mesh
 
-Optimized Detour navmesh link memory by sizing the base link pool to actual usage (~30 MB savings on large maps); exposed bMinimizeLinkPoolSize and added link utilization stats to DumpNavMeshMemory.
-
-Optimized navmesh vertex storage by packing vertices as tile-local float offsets (~50% memory reduction on vertex data); navmesh version bumped to 28 with automatic legacy-format upgrade on load.
-
-Optimized FRecastNavMeshGenerator::RemoveTiles to reduce a hang when many tiles are dirty simultaneously.
-
-## Blueprint
-
-Added simple counter to ensure if too many Blueprint async actions are created. The number of allowed actions can be set using the console variable `bp.MaxAsyncActionCount`. Set the number to <= 0 to disable the ensure.
-
-## Mass
-
-### Mass Trace
-
-Add missing trace events for archetype creation and entity moves during archetype splitting in MassEntity Introduce a batch UE_TRACE_MASS_ENTITIES_MOVED macro to trace multiple entity handles in a single call.
+- Optimized Detour navmesh link memory by sizing the base link pool to actual usage (~30 MB savings on large maps); exposed `bMinimizeLinkPoolSize` and added link utilization stats to DumpNavMeshMemory.
+- Optimized navmesh vertex storage by packing vertices as tile-local float offsets (~50% memory reduction on vertex data).
+- Optimized `FRecastNavMeshGenerator::RemoveTiles` to reduce a hang when many tiles are dirty simultaneously.
 
 ## PCG
 
@@ -264,28 +250,10 @@ World Streaming Insights (Experimental): Added an Unreal Insights workflow for a
 
 A new `wp.Editor.ExportMinimapForInsights` editor console command - exports the current World Partition minimap as a PNG plus sidecar JSON of world bounds. Load the PNG as the Spatial Profiler background to give the spatial view geographic context. A new wp.Editor.ExportMinimapForInsights editor console command - exports the current World Partition minimap as a PNG plus sidecar JSON of world bounds. Load the PNG as the Spatial Profiler background to give the spatial view geographic context. 
 
-## Editor
-
-Asset Size Map: Added support for displaying external packages (editor) and generated packages (cook).
-
-## Mobile
-
-Added CVar `r.Mobile.Upscale.Quality` by merging Add control over mobile upscaling method.
-
-Added the `stat thermals` command to display the thermal state of the device. Currently only available on Android/iOS. (Exposed CPUTemp and ThermalStatus CSV metrics to other platforms than Android)
-
-## Platforms
-
-Enabled MallocBinned3 by default for Windows for improved speed over MallocBinned2.
-
-## Rendering
-
-### Virtual Shadow Mapping
+## Virtual Shadow Mapping
 
 - Added throttle for the invalidation triggered from `r.Nanite.VSMInvalidateOnLODDelta` such that it can be turned on without causing large performance regressions. The budget is set via `r.Shadow.Virtual.DeferredInvalidationBudget` (defaults to infinite).
-
 - "Prefiltered Distant" experimental implementation. This adds support for drawing distant shadow casters into the clipmap at much lower resolution, while using prefiltering and temporal reprojection to produce a smooth result that often matched ground truth better than SMRT.
-
 - Added `r.Shadow.Virtual.PrefilteredDistant.ProjectEnable` to gate the pre-filtered distant feature (shaders in particular) behind.
 
 ## Depth of Field
@@ -294,13 +262,14 @@ Added `r.DOF.PreferLowerBitDepth`. When enabled, the bit depth of intermediary b
 
 ## Variable Rate Shading
 
-Significantly improved performance of the CreateShadingRateImage pass. (That is the texture created each frame for "Tier 2 VRS").
+Significantly improved performance of the `CreateShadingRateImage` pass. // That is the texture created each frame for "Tier 2 VRS" to determine which pixels to render are a reduced shading rate.
+
+Fixed an issue where Variable Rate Shading was not properly applied to the ReflectionEnvironmentAndSky pass even when `r.VRS.ReflectionEnvironmentSky` was enabled.
 
 ## Nanite
 
-Significantly improved performance of Nanite rasterization & culling on handheld platforms.
-
-Reuse Nanite readback buffers to avoid reallocation.
+- Significantly improved performance of Nanite rasterization & culling on handheld platforms.
+- Reuse Nanite readback buffers to avoid reallocation.
 
 Added new console variables for the ability to disable **Nanite Tessellation in Virtual Shadow Maps** at run time for scalability/performance reasons:
 - `r.Shadow.Virtual.Nanite.AllowTessellationDirectional` can be used to toggle Nanite Tessellation in directional light shadows.
@@ -313,9 +282,8 @@ Implemented the following Nanite- and WPO-related features for skinned meshes to
 - Evaluate World Position Offset.
 - Disallow Nanite.
 
-Fixed bug resulting in Nanite HZB occlusion not working when `r.HZB.BuildUseCompute` was disabled.
-
-Fixed culling bug when running with `r.Nanite.Culling.MinLOD` and reenabled it.
+- Fixed bug resulting in Nanite HZB occlusion not working when `r.HZB.BuildUseCompute` was disabled.
+- Fixed culling bug when running with `r.Nanite.Culling.MinLOD` and reenabled it.
 
 ## Niagara
 
@@ -330,12 +298,6 @@ Set Early translucency velocity pass to after volumetric cloud reconstruction (`
 Moved CombineLUTs to async compute.
 
 TSR: Fix memory spike at camera cut and teleport. It is caused by the texture 2d array size mismatch of history color at the time. A new texture needs to be allocated while the old one still exists.
-
-## Single Layer Water
-
-Move velocity write from base pass to depth prepass Move Single Layer Water velocity output from the SLW base pass (via GBL_ForceVelocity GBuffer layout) to the SLW depth prepass (via velocity shaders).
-
-A new CVar is added `r.Water.SingleLayer.VelocityOutputPass` to control the fallback. it has also been added to project setting. When `r.Water.SingleLayer.VelocityOutputPass=0`, no velocity written. When `r.Water.SingleLayer.VelocityOutputPass=1` (default), all SLW materials use velocity shaders in the depth prepass. The base pass uses GBL_Default (no velocity RT). MVWO (Motion Vector World Offset) is only supported when PrepassVelocity=0. When `r.Water.SingleLayer.VelocityOutputPass=2` (fallback), legacy behavior is preserved: Base pass writes velocity via GBL_ForceVelocity, prepass is depth-only. This CVar deprecates `r.Water.SingleLayer.ForceVelocity`.
 
 ## Materials & Shaders
 
@@ -357,6 +319,8 @@ Added **UMaterialEditingLibrary::ListShaders** which will return an array of all
 Fix translucent materials not showing up in shader complexity view mode.
 
 ## Rendering
+
+**Dynamic Resolution support** is enabled for PC on both DX12 and Vulkan RHIs.
 
 "Mask material only in early Z-pass" renderer setting is now enabled by default.
 
@@ -392,10 +356,6 @@ Replaced CVar `r.TextureGroup.OptionalQualityLevel` with new device profile prop
 
 Allow Shader PSO precache to fail gracefully if shader data is not available yet.
 
-## RHI (Rendering)
-
-**Dynamic Resolution support** is enabled for PC on both DX12 and Vulkan RHIs.
-
 Additional asynchronous pool allocation strategy for **D3D12 buffer allocators** (Upload heap and Default buffer pools). The implementation pre-allocates "Overflow" pools on a background thread in order to reduce allocation hitches on the critical path that occur when existing pools become full and new pools must be created synchronously.
 
 ## Substrate
@@ -403,6 +363,12 @@ Additional asynchronous pool allocation strategy for **D3D12 buffer allocators**
 Not a lot of improvements called out explicitly for Substrate, but I could find the following:
 
 Enable Substrate's classification stencil writing during the indirect lighting pass for better performance.
+
+## Single Layer Water
+
+Move velocity write from base pass to depth prepass Move Single Layer Water velocity output from the SLW base pass (via GBL_ForceVelocity GBuffer layout) to the SLW depth prepass (via velocity shaders).
+
+A new CVar is added `r.Water.SingleLayer.VelocityOutputPass` to control the fallback. it has also been added to project setting. When `r.Water.SingleLayer.VelocityOutputPass=0`, no velocity written. When `r.Water.SingleLayer.VelocityOutputPass=1` (default), all SLW materials use velocity shaders in the depth prepass. The base pass uses GBL_Default (no velocity RT). MVWO (Motion Vector World Offset) is only supported when PrepassVelocity=0. When `r.Water.SingleLayer.VelocityOutputPass=2` (fallback), legacy behavior is preserved: Base pass writes velocity via GBL_ForceVelocity, prepass is depth-only. This CVar deprecates `r.Water.SingleLayer.ForceVelocity`.
 
 ## Ray Tracing
 
@@ -421,6 +387,14 @@ Optimize network overhead for replicated Input and State properties via the "leg
 - Replace DeltaSourceFrame with DeltaSourceIndex (16 or 24 reduced to 2 bits).
 - Clamp NumFrames (8 reduced to 4 bits).
 - Send data array ordered to improve ServerFrame delta serialization (18 bits reduced to 1 bit on arrays larger than 1).
+
+## Mutable
+
+Mutable is now considered Production Ready: "We made performance improvements across the board, including parallel updates to boost generation throughput for crowds, reduced game thread workload, and optimized mesh and texture operations."
+
+## MetaHuman Crowd (Experimental)
+
+A new experimental plugin to use [MetaHumans in crowds](https://dev.epicgames.com/documentation/metahuman/metahuman-crowds-in-unreal-engine) that should scale to thousands of characters.
 
 ## XR
 
