@@ -1,29 +1,61 @@
 ---
 title: "Unreal Engine 5.8 Performance Highlights"
-date: 18-06-2026
-last_modified_at: 18-06-2026
+date: 05-08-2026
+last_modified_at: 05-08-2026
+layout: single
 categories: 
   - "Performance & Optimization"
 tags: 
   - "Performance"
   - "performance-highlights"
-coverImage: ""
-excerpt: ""
+coverImage: "Thumb_Blog_58Highlights.jpg"
+excerpt: "Discover the most important Unreal Engine 5.8 performance and optimization improvements, including MegaLights, Lumen Lite, shader reductions, and rendering enhancements."
 ---
 
-It is time again for possibly the last Performance Highlights overview for Unreal Engine 5. The release of UE 5.8 marks the final release before Epic Games is moving development efforts to Unreal Engine 6.
+It is time again for possibly the last **Performance Highlights overview for Unreal Engine 5**. The release of UE 5.8 marks the final release before Epic Games is moving development efforts to Unreal Engine 6.
+
+That brings the focus of 5.8 to stabilize and optimize existing features. Although new experimental features such as Mesh Terrain have still been added. A couple of major performance oriented improvements include MegaLights turning production ready and Lumen receiving a new Lite-mode for better scalability across devices. You can find the full release notes [here](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes), but let's first dive into the most interesting improvements made that focus on Performance & Optimization. As usual I add my own remarks to the release notes and clarify the changes where necessary.
+
+Some other optimization trends you see across rendering features include overall **image quality and stability** (Lumen, VSM, MegaLights), and **reduced shader permutations** across many shaders used in a variety of passes (Volumetric fog, VSM, Substrate, MegaLights, Lumen, etc.). These are mostly automatic wins for your project, sometimes with CVARs to control behavior or exclusions.
 
 **Share this article with everyone on your team!** This way everyone is informed on the most important changes to 5.8 without having to spend hours digging through the exceedingly long release notes.
-
-That brings the focus of 5.8 to stabilize and optimize existing features. Although new experimental features such as Mesh Terrain have still been added. A couple of major performance oriented improvements include MegaLights turning production ready and Lumen receiving a new Lite-mode for better scalability across devices. You can find the full release notes [here](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes), but let's first dive into the most interesting improvements made that focus on Performance & Optimization. As usual I add my own remarks to the release notes and clarify changes where necessary.
-
-Some optimization trends you see across rendering features include overall image quality and stability (Lumen, VSM, MegaLights), and reduced shader permutations across many shaders used in a variety of passes (Volumetric fog, VSM, Substrate, MegaLights, Lumen, etc.). These are mostly automatic wins for your project, sometimes with CVARs to control behavior or exclusions.
-
 
 {: .notice--info }
 This article is part of my efforts of keeping Unreal Engine developers informed about Game Optimization! For that I have a in-depth [Game Optimization Course for Unreal Engine 5](https://tomlooman.com/courses/unrealengine-optimization/) to train engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
 
-Unreal Directive has a [Console Variables page](https://unrealdirective.com/resources/console-variables/?version=5.8&new=1) that shows **new CVARs added in 5.8** which is a good way to find out new ways to tune new or existing features. For example, you can see many `a.budget.*` CVARs are new and worth exploring if you use that feature.
+Unreal Directive has a [Console Variables page](https://unrealdirective.com/resources/console-variables/?version=5.8&new=1) that shows **new CVARs added in 5.8** which is a good way to find out new ways to tune new or existing features. For example, you can see many `a.budget.*` CVARs (**Animation Budgeter Plugin**) are new and worth exploring if you use that feature. These new CVARs are often not called out in the release notes.
+
+## Unreal Insights
+
+Added "UObject Count" trace counter. // use 'counters' trace channel. This is helpful to keep an eye on your total objects count which directly affects garbage collection performance (and memory in general).
+
+Add bandwidth and percent value types for graphs and counter stats.
+
+### Add Annotations inside a trace
+
+Unreal Insights users can now create time, time range, and event-based annotations in Unreal Insight traces. The annotation data is saved in a sidecar.ini file that can be shared. This feature is to help individuals and teams with the performance analysis of trace files.
+
+I have found Annotations immediately very valuable as I often return to traces later and this helps locating previous findings and adding context that you would otherwise forget.
+
+## Hitch snapshots
+
+Added "snapshot hitches" feature. This feature relies on the stats system to detect hitches. When a hitch is detected a trace snapshot and screenshot is written to the Saved/Profiling/Hitches directory. Frames are dumped into a directory for each process instance. Start tracking hitches by using in-game console command `snapshothitches -start` and disable by using `snapshothitches -stop`. Requires some stat group to be active, like `stat default`.
+
+### World Partition
+
+"We added world partition streaming debugging tools to Unreal Insights and Unreal Editor, making possible per-cell analysis and sessions playback." 
+
+Adds a 2D view of your world with valuable insights! Worth checking out right away if your project relies on World Partition.
+
+## Profiling Tools
+
+**ProfileGPU** log output now includes Graphics pipe wait times, which greatly improves Frame GPU time accuracy with async compute, and shows where on the graphics pipe the waits were.
+
+More compact log formatting option for **ProfileGPU**.
+- Added `r.ProfileGPU.TableFormatting`, which can be disabled to get indentation based formatting that's easier to read. 
+- Fixed `r.profilegpu.thresholdpercent` being relative to the current root, it's supposed to be relative to the total frame time.
+
+`stat unit` console command shows **GPU VRam Used** and Budget debug information on discrete GPUs.
 
 ## MegaLights
 
@@ -31,9 +63,9 @@ MegaLights is now production ready. They greatly reduced the noise, overall perf
 
 No longer traces multiple rays towards the same light if it's not in a penumbra. This greatly improves performance (0.3-1ms on console, depending on the scene).
 
-Added `r.MegaLights.ScreenTraces.Quality` which allows to tweak screen space trace quality for scalability.
-
 Early cull lights by light power and falloff. This allows it to quickly skip lights, which don't contribute to the final pixels and reduces light sampling by ~20% in Firefly without adding any measurable cost to light grid culling. This heuristic isn't entirely correct, as it assumes a pure diffuse surface. For example, light specular (shape) is visible infinitely far away in a perfect mirror, but this change will cut it off. Still in practice it works really well and it's hard to spot any missing energy. r.MegaLights.LightAttenuationFalloff 0 can be used to disable it.
+
+Added `r.MegaLights.ScreenTraces.Quality` which allows to tweak screen space trace quality for scalability.
 
 Added `r.MegaLights.Supported` which allows to remove all MegaLights shader compilation overhead if it's not used in project.
 
@@ -43,34 +75,29 @@ Deprecated **SSGI (Screen Space Global Illumination)**. SSGI is superseded by Lu
 
 Lumen gets a lot of improvements this release. The most important being **Lumen Lite** which is enabled on "Medium" Scalability for Global Illumination. Standard Lumen is also receiving many improvements including better disocclussion, denoising and quality during motion. Less memory usage, fewer shader permutations. Too many to copy over, so look for the [Lumen section](](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#lumen)) in the full release notes if you want to read the rest. Below are some highlights that are relevant for most people to know.
 
-### Lumen Lite
+New BP function on `AGameUserSettings: IsGlobalIlluminationAllowed` which can be used by a game's Blueprints to set the PPVolume depending on whether GI is enabled.
+
+### Lumen Lite (The New "Medium")
+
+![](https://dev.epicgames.com/community/api/documentation/image/92725b02-d1f1-43d7-89ad-91c26fc1bcce)
 
 "Lumen Lite is a new medium-quality setting for Global Illumination using Irradiance Fields with Probe Occlusion supported by Lumen. It's twice as fast as Lumen high quality - which targets 60fps on PlayStation 5, while maintaining the art direction for games that rely on Global Illumination. This path is the new default for current-generation handheld consoles, where it can be used at 60fps, and it is supported on PC as well."
 
 This new mode allows for better scalability which has been a problem to maintain with Lumen. The docs have been updated with [Lumen Lite](https://dev.epicgames.com/documentation/unreal-engine/lumen-performance-guide-for-unreal-engine). Epic still labels this as Beta.
 
 New Lumen Medium Quality, which is 2x faster than Lumen on High Quality, while maintaining art direction for lighting. Lumen Medium Quality is targeted at low end PC and handhelds.
-- Enabled by setting GI and Reflection Quality to Medium (sg.globalilluminationquality 1 + sg.reflectionquality 1 console commands in game).
+- Enabled by setting GI and Reflection Quality to Medium (`sg.globalilluminationquality 1` + `sg.reflectionquality 1` console commands in game).
 - Lumen Medium Quality is 4 components: Faster opaque GI through Irradiance Field Gather, faster reflections, faster GI on transparency / fog and faster Lumen Scene.
 
 Some CVARs mentioned in the release notes to play around with:
-
-Remove `r.Lumen.ScreenProbeGather.IntegrateDownsampleFactor 2` from High scalability as it was generating too much noise and softening normals. This has to be now manually tweaked per title for a more explicit tradeoff.
-
-Less aggressive culling of small objects from Lumen Scene on Epic and Cinematic GI quality. Reduces pops in emissive lighting and black spots in reflections from small objects.
+- Remove `r.Lumen.ScreenProbeGather.IntegrateDownsampleFactor 2` from High scalability as it was generating too much noise and softening normals. This has to be now manually tweaked per title for a more explicit tradeoff.
+- Less aggressive culling of small objects from Lumen Scene on Epic and Cinematic GI quality. Reduces pops in emissive lighting and black spots in reflections from small objects.
 - Reduced `r.LumenScene.SurfaceCache.CardMinResolution` from 4 to 2.
+- Added `r.Lumen.ScreenProbeGather.ScreenTraces.HZBTraversal.SkipUnlitHits`, which allows to skip unlit shading model hits. This allows to work around GI noise from tiny emissives.
 
-Added `r.Lumen.ScreenProbeGather.ScreenTraces.HZBTraversal.SkipUnlitHits`, which allows to skip unlit shading model hits. This allows to work around GI noise from tiny emissives.
-
-Enabled Lumen applying height fog to reflection ray hits by default (`r.Lumen.HeightFog 1`).
+Enabled Lumen **applying height fog to reflection ray hits** by default (`r.Lumen.HeightFog 1`).
 - Reduces the mismatch between screen traces and other trace types in heavily fogged scenes (but screen traces are still fogged incorrectly).
 - However `r.Lumen.HeightFogOnGI` is still 0 to save a little perf (missing out on fog inscattering in heavily fogged scenes).
-
-## Rendering
-
-Reduced the CPU cost of `CreateCommittedResource` and reducing memory pressure by keeping unreferenced resources out of **VRAM**. Controlled by read-only CVar `D3D12.ResourcesStartResident`, by default Off.
-
-If it is desired, a licensee can enable mimalloc via `UE_APPLE_USE_MIMALLOC_MIN_FREE_RAM_MB` project define at a cost of a significant memory footprint. The define sets a minimal free RAM threshold that is checked on startup and if the device has free memory above that limit, it will instantiate mimalloc.
 
 ## Lighting
 
@@ -78,63 +105,39 @@ If it is desired, a licensee can enable mimalloc via `UE_APPLE_USE_MIMALLOC_MIN_
 
 Allow distance fields to run on `GRHIDeviceIsIntegrated`. This check was added a decade ago to prevent issues on some outdated drivers, but nowadays it prevents some pretty capable SM5 GPUs to run distance field features. // This seems great for integrated GPUs that can now use SDFs for lighting features such as DF shadows, DF ambient occlusion or even Lumen's Software Raytracing.
 
-Distance Fields: Remove distance field shader permutations when distance fields are disabled in project settings. // more projects are able to disable SDFs entirely, this helps reducing the overall shader permutations which is always a win.
+Distance Fields: Remove distance field shader permutations when distance fields are disabled in project settings. // more projects are able to disable SDFs entirely, this helps reducing the overall shader permutations which is always a win. We see shader permutation reductions across many rendering features in 5.8
 
 Fixed pooled buffer and texture memory leaks in GlobalDistanceField when changing global distance field resolution at runtime.
 
 ## Variable Rate Shading
 
-Fixed an issue where Variable Rate Shading was not properly applied to the ReflectionEnvironmentAndSky pass even when r.VRS.ReflectionEnvironmentSky was enabled.
+Fixed an issue where Variable Rate Shading was not properly applied to the ReflectionEnvironmentAndSky pass even when `r.VRS.ReflectionEnvironmentSky` was enabled.
 
 ## Mutable
 
-...production ready
-
-"We made performance improvements across the board, including parallel updates to boost generation throughput for crowds, reduced game thread workload, and optimized mesh and texture operations."
+Mutable is now considered Production Ready: "We made performance improvements across the board, including parallel updates to boost generation throughput for crowds, reduced game thread workload, and optimized mesh and texture operations."
 
 ## MetaHuman Crowd (Experimental)
 
-A new experimental plugin to use MetaHumans in crowds that should scale to thousands of characters.
-
-https://dev.epicgames.com/documentation/metahuman/metahuman-crowds-in-unreal-engine
+A new experimental plugin to use [MetaHumans in crowds](https://dev.epicgames.com/documentation/metahuman/metahuman-crowds-in-unreal-engine) that should scale to thousands of characters.
 
 ## Fast Geometry Streaming Plugin
 
 Fast Geometry Streaming is still marked Experimental in 5.8 but continues to receive wider support ("Added decal, point, spot and rect lights components support.") to make this more valuable to avoid any streaming related hitches.
 
-
-## World Partition
-
-Unreal Insights: "We added world partition streaming debugging tools to Unreal Insights and Unreal Editor, making possible per-cell analysis and sessions playback."
-
 ## Mass Framework Refactor
 
-Mass Framework received a major overhaul.
+[Mass Framework](https://dev.epicgames.com/documentation/unreal-engine/mass-entity-in-unreal-engine) received a major overhaul.
 
 "Mass Signals are now part of the core engine, and entities can be created off the game thread thanks to archetype-based, lock-free scheduling. A new sparse/virtual fragment system reduces memory use and allows optional fragments and tags to be added or removed without triggering costly archetype changes."
 
 "We completely overhauled Mass processor execution and dependency resolution to better take advantage of multi-core CPUs, resulting in safer and faster execution on modern hardware. This is supported by more granular scheduling and thread-safe observer notifications."
-
-https://dev.epicgames.com/documentation/unreal-engine/mass-entity-in-unreal-engine
 
 ## Horde - Performance Reporting (Experimental)
 
 "Improvements to Horde Analytics tooling continues in UE 5.8 as an Experimental feature with improvements to dashboard UX for job steps (CPU, memory usage) and job health observability."
 
 "We've also introduced a new view in Horde which shows runtime trends outputted from the Automated Performance Tests framework (APT) and the Perf Report Tool (csvprofilers), highlighting key metrics such as GPU/CPU times, peak memory usage and hitch reports so regressions can be spotted. This currently relies on users having their own database store model."
-
-link to Matt's talk abouts this recently?
-
-## Mobile Renderer
-
-- Multi-pass deferred rendering as the default path across mobile platforms (with forward rendering still available as an opt-in).
-- Mobile support for SSAO, SSR, deferred decals, contact shadows, and higher-quality water rendering.
-
-In UE 5.8 introduces half-precision (FP16) shader usage in targeted materials and global shader passes, improving performance while preserving visual quality.
-
-## FBX Importer
-
-uFBX library (Experimental) noticeably reduces import import times especially on heavy `.fbx` files containing large meshes. Users with multi-core CPUs will also notice improvement for files with a large number of meshes.
 
 ## Sandboxes
 
@@ -145,7 +148,7 @@ Sandboxes provide an isolated workspace where you can experiment without affecti
 - Persist only the changes you want to keep in your project
 - Export a sandbox to share with a teammate, or import one to pick up where they left off
 
-// notice info
+{: .notice--info }
 While not directly performance related, it is an very interesting workflow improvement to experiment with changes to the world, materials, etc that affect performance in unknown ways.
 
 ## Chaos Visual Debugger
@@ -173,22 +176,12 @@ Reduced linking time on clang with LTO (Link-Time Optimization) by disabling deb
 
 Not specified by how much, but faster is always a win.
 
-## Unreal Insights
+## Mobile Renderer
 
-Added "UObject Count" trace counter. // use 'counters' trace channel. This is helpful to keep an eye on your total objects count which directly affects garbage collection performance (and memory in general).
+- Multi-pass deferred rendering as the default path across mobile platforms (with forward rendering still available as an opt-in).
+- Mobile support for SSAO, SSR, deferred decals, contact shadows, and higher-quality water rendering.
 
-Add bandwidth and percent value types for graphs and counter stats.
-
-### Add Annotations inside a trace
-
-Unreal Insights users can now create time, time range, and event-based annotations in Unreal Insight traces. The annotation data is saved in a sidecar.ini file that can be shared. This feature is to help individuals and teams with the performance analysis of trace files.
-
-## hitch snapshots
-
-Added "snapshot hitches" feature. This feature relies on the stats system to detect hitches. When a hitch is detected a trace snapshot and screenshot is written to the Saved/Profiling/Hitches directory. Frames are dumped into a directory for each process instance. Start tracking hitches by using in-game console command `snapshothitches -start` and disable by using `snapshothitches -stop`. Requires some stat group to be active, like `stat default`.
-
-
-
+In UE 5.8 introduces half-precision (FP16) shader usage in targeted materials and global shader passes, improving performance while preserving visual quality.
 
 ## Garbage Collection
 
@@ -196,19 +189,11 @@ GC: Add the option to GC based on pending actors to unload (in addition to exist
 
 Controlled via `s.ContinuouslyIncrementalGCWhileActorsPendingPurge`/ `s.LevelStreamingLowMemoryActorsPendingPurgeCount` and `wp.Runtime.LevelStreamingContinuouslyIncrementalGCWhileActorsPendingPurgeForWP` (for partitioned worlds).
 
-## Oodle
-
-Oodle updated to 2.9.16.
-
-https://www.radgametools.com/oodlehist.htm
-
 ## Core
 
-Changed MallocBinned3 max small bin config to 14kb by default as it offers better performance\memory in our testing.
+Changed **MallocBinned3** max small bin config to 14kb by default as it offers better performance\memory in our testing.
 
-Added IsLockedByCurrentThread() to the recursive mutex types.
-
-Asset registry cache will now memory-map its tag data storage, reducing RAM footprint by GBs in large projects.
+Asset registry cache will now memory-map its tag data storage, **reducing RAM footprint by GBs** in large projects (in editor).
 
 ## Streamable Manager
 
@@ -228,13 +213,9 @@ Opt-in by setting bUseJustInTimeAsyncLoader=true or if batching is enabled globa
 
 Added FrameNum and UTC time to `stat unit` so we have a way to match up video captures with logs, etc. Requires setting "stats.UnitTimestamp" cvar to enable.
 
-
-
-// I STOPPED AT "FRAMEWORK" header just below the "INSIGHTS" header. first line start with "level streaming persistence".
-
 ## Framework
 
-LightWeightInstances code marked as deprecated. // This was supposed to be a static swap-in replacement for the full functionality Actors but never took off.
+**LightWeightInstances** code marked as deprecated. // This was supposed to be a static swap-in replacement for the full functionality Actors but never took off.
 
 ## Nav Mesh
 
@@ -253,10 +234,6 @@ Added simple counter to ensure if too many Blueprint async actions are created. 
 ### Mass Trace
 
 Add missing trace events for archetype creation and entity moves during archetype splitting in MassEntity Introduce a batch UE_TRACE_MASS_ENTITIES_MOVED macro to trace multiple entity handles in a single call.
-
-## Iris Networking
-
-Added API for network HandlerComponents to indicate support for being run in parallel. Enabled `NET_ANALYTICS_MULTITHREADING` so that `OodleNetworkAnalytics` can run in parallel Network HandlerComponents can indicate support for running in parallel per-connection. Enabled `NET_ANALYTICS_MULTITHREADING` by default.
 
 ## PCG
 
@@ -300,10 +277,6 @@ Added the `stat thermals` command to display the thermal state of the device. Cu
 ## Platforms
 
 Enabled MallocBinned3 by default for Windows for improved speed over MallocBinned2.
-
-## XR
-
-Disable chunked PSO cache on Quest devices. The chunked PSO cache has the following tradeoffs: Pro: Drivers which fully serialize access to their PSO caches get better concurrency Pro: Drivers which don't scale well to large PSO caches get faster lookups Con: Drivers which can reuse cached information for pipelines which are different but similar may have cache misses due to the pipelines being in different chunks Con: Drivers which can reuse cached information for pipelines which are different but similar may use extra memory storing multiple copies of this information in different chunks On Quest devices, the driver doesn't benefit much from the Pros, and is hindered by the Cons. It's better to turn this feature off.
 
 ## Rendering
 
@@ -358,55 +331,11 @@ Moved CombineLUTs to async compute.
 
 TSR: Fix memory spike at camera cut and teleport. It is caused by the texture 2d array size mismatch of history color at the time. A new texture needs to be allocated while the old one still exists.
 
-
-## Single Layer Warer
+## Single Layer Water
 
 Move velocity write from base pass to depth prepass Move Single Layer Water velocity output from the SLW base pass (via GBL_ForceVelocity GBuffer layout) to the SLW depth prepass (via velocity shaders).
 
 A new CVar is added `r.Water.SingleLayer.VelocityOutputPass` to control the fallback. it has also been added to project setting. When `r.Water.SingleLayer.VelocityOutputPass=0`, no velocity written. When `r.Water.SingleLayer.VelocityOutputPass=1` (default), all SLW materials use velocity shaders in the depth prepass. The base pass uses GBL_Default (no velocity RT). MVWO (Motion Vector World Offset) is only supported when PrepassVelocity=0. When `r.Water.SingleLayer.VelocityOutputPass=2` (fallback), legacy behavior is preserved: Base pass writes velocity via GBL_ForceVelocity, prepass is depth-only. This CVar deprecates `r.Water.SingleLayer.ForceVelocity`.
-
-## Misc
-
-Optimized reflection capture updates for deferred shading.
-
-Fixed spikes when loading maps with large HISMs that were introduced as part of a fix for a different issue. This new fix is narrower in scope and should only cause rebuilds when ApplyComponentInstanceData is called.
-
-Exposed StaticMesh accessor methods GetNumTexCoords, GetNumNaniteVertices, and GetNumNaniteTriangles to Blueprint.
-
-Added detailed Insights trace to FRuntimeVirtualTextureFinalizer::RenderFinalize in order to better assess RVT perf (useful in case of large page invalidations in particular).
-
-Deprecated and disabled the r.SkipRedundantTransformUpdate feature and associated API as it leads to inconsistencies, ASAN warnings and is of doubtful performance value (possibly detriment).
-
-Enabled Reserved Resources for GPU Scene to reduce hitches on resize and peak GPU memory use by eliminating the need to double buffer during the copy.
-
-Implemented hierarchical CPU Instance Culling for non-Nanite ISM and similar. Controlled by `r.SceneCulling.HierarchicalCPUCulling` (runtime, default off) and `r.SceneCulling.HierarchicalCPUCulling.ProjectEnabled` (offline, default on).
-
-"Mask material only in early Z-pass" renderer setting is now enabled by default.
-
-Removed inline allocation for dynamic RT meshes, saving up to ~2k bytes per SM proxy (reducing size by 2/3).
-
-Added OverrideVirtualTextureThrottle option to scene capture component. That allows to remove all sorts of throttling on the RVT system for the duration of the capture. This has a performance cost but can ensure that textures are not blurry if the scene capture renders a region that requires a lot of RVT pages to be locked or rendered to. This does *not* perform any kind of warmup, though, so only the existing RVT page requests will be processed during the capture when this option is on. Another capture has to be performed prior to this in order to generate the appropriate requests.
-
-Workaround for incorrect view distance scale being captured in the GPU scene primitive data for InstanceDrawDistance, InstanceWorldPositionOffsetDisableDistance and PixelProgrammableDistance. The GPU scene now tracks the value of `r.ViewDistanceScale` and triggers a full upload if it changes. This behavior can be disabled by `r.GPUScene.ViewDistanceScaleWorkaround`.
-
-
-Now **DumpGPUViewer** can inspect the referenced uniform buffer if `r.RHI.UniformBufferContentMap.Enable` is set to true.
-
-Dump GPU: Add CVar `r.DumpGPU.RedumpInputs` (0, default off) to enable re-dump of inputs at each pass. This fixes the lost of input resource's intermediate update if it was already dumped previously but the intermediate passes written to it was filtered out. Enable it will increase the memory footage.
-
-Added `r.MeshSortingMethodWithoutEarlyZ` to allow sorting meshes front to back to reduce overdraw even when not using the mobile renderer.
-
-Replaced CVar `r.TextureGroup.OptionalQualityLevel` with new device profile property `UTextureLODSettings::TextureGroupOptionalQualityLevel` to specify the value for Windows without propagating to other platforms just because the cooking editor runs on Windows.
-
-Allow Shader PSO precache to fail gracefully if shader data is not available yet.
-
-New BP function on `AGameUserSettings: IsGlobalIlluminationAllowed` which can be used by a game's Blueprints to set the PPVolume depending on whether GI is enabled.
-
-Allow distance fields to run on `GRHIDeviceIsIntegrated`. This check was added a decade ago to prevent issues on some outdated drivers, but nowadays it prevents some pretty capable SM5 GPUs to run distance field features.
-
-Fixed pooled buffer and texture memory leaks in **GlobalDistanceField** when changing global distance field resolution at runtime.
-
-Fixed an issue where **Variable Rate Shading** was not properly applied to the **ReflectionEnvironmentAndSky** pass even when `r.VRS.ReflectionEnvironmentSky` was enabled.
 
 ## Materials & Shaders
 
@@ -427,17 +356,45 @@ Added **UMaterialEditingLibrary::ListShaders** which will return an array of all
 
 Fix translucent materials not showing up in shader complexity view mode.
 
+## Rendering
+
+"Mask material only in early Z-pass" renderer setting is now enabled by default.
+
+Reduced the CPU cost of `CreateCommittedResource` and reducing memory pressure by keeping unreferenced resources out of **VRAM**. Controlled by read-only CVar `D3D12.ResourcesStartResident`, by default Off.
+
+If it is desired, a licensee can enable mimalloc via `UE_APPLE_USE_MIMALLOC_MIN_FREE_RAM_MB` project define at a cost of a significant memory footprint. The define sets a minimal free RAM threshold that is checked on startup and if the device has free memory above that limit, it will instantiate mimalloc.
+
+Optimized reflection capture updates for deferred shading.
+
+Fixed spikes when loading maps with large HISMs that were introduced as part of a fix for a different issue. This new fix is narrower in scope and should only cause rebuilds when ApplyComponentInstanceData is called.
+
+Added detailed Insights trace to `FRuntimeVirtualTextureFinalizer::RenderFinalize` in order to better assess RVT perf (useful in case of large page invalidations in particular).
+
+Deprecated and disabled the `r.SkipRedundantTransformUpdate` feature and associated API as it leads to inconsistencies, ASAN warnings and is of doubtful performance value (possibly detriment).
+
+Enabled Reserved Resources for GPU Scene to reduce hitches on resize and peak GPU memory use by eliminating the need to double buffer during the copy.
+
+Implemented hierarchical CPU Instance Culling for non-Nanite ISM and similar. Controlled by `r.SceneCulling.HierarchicalCPUCulling` (runtime, default off) and `r.SceneCulling.HierarchicalCPUCulling.ProjectEnabled` (offline, default on).
+
+Removed inline allocation for dynamic RT meshes, saving up to ~2k bytes per SM proxy (reducing size by 2/3).
+
+Added `OverrideVirtualTextureThrottle` option to scene capture component. That allows to remove all sorts of throttling on the RVT system for the duration of the capture. This has a performance cost but can ensure that textures are not blurry if the scene capture renders a region that requires a lot of RVT pages to be locked or rendered to. This does *not* perform any kind of warmup, though, so only the existing RVT page requests will be processed during the capture when this option is on. Another capture has to be performed prior to this in order to generate the appropriate requests.
+
+Workaround for incorrect view distance scale being captured in the GPU scene primitive data for InstanceDrawDistance, InstanceWorldPositionOffsetDisableDistance and PixelProgrammableDistance. The GPU scene now tracks the value of `r.ViewDistanceScale` and triggers a full upload if it changes. This behavior can be disabled by `r.GPUScene.ViewDistanceScaleWorkaround`.
+
+Now **DumpGPUViewer** can inspect the referenced uniform buffer if `r.RHI.UniformBufferContentMap.Enable` is set to true.
+
+Dump GPU: Add CVar `r.DumpGPU.RedumpInputs` (0, default off) to enable re-dump of inputs at each pass. This fixes the lost of input resource's intermediate update if it was already dumped previously but the intermediate passes written to it was filtered out. Enable it will increase the memory footage.
+
+Added `r.MeshSortingMethodWithoutEarlyZ` to allow sorting meshes front to back to reduce overdraw even when not using the mobile renderer.
+
+Replaced CVar `r.TextureGroup.OptionalQualityLevel` with new device profile property `UTextureLODSettings::TextureGroupOptionalQualityLevel` to specify the value for Windows without propagating to other platforms just because the cooking editor runs on Windows.
+
+Allow Shader PSO precache to fail gracefully if shader data is not available yet.
+
 ## RHI (Rendering)
 
-Dynamic Resolution support is enabled for PC on both DX12 and Vulkan RHIs.
-
-**ProfileGPU** log output now includes Graphics pipe wait times, which greatly improves Frame GPU time accuracy with async compute, and shows where on the graphics pipe the waits were.
-
-More compact log formatting option for **ProfileGPU**.
-- Added `r.ProfileGPU.TableFormatting`, which can be disabled to get indentation based formatting that's easier to read. 
-- Fixed `r.profilegpu.thresholdpercent` being relative to the current root, it's supposed to be relative to the total frame time.
-
-`stat unit` console command shows **GPU VRam Used** and Budget debug information on discrete GPUs.
+**Dynamic Resolution support** is enabled for PC on both DX12 and Vulkan RHIs.
 
 Additional asynchronous pool allocation strategy for **D3D12 buffer allocators** (Upload heap and Default buffer pools). The implementation pre-allocates "Overflow" pools on a background thread in order to reduce allocation hitches on the critical path that occur when existing pools become full and new pools must be created synchronously.
 
@@ -451,6 +408,10 @@ Enable Substrate's classification stencil writing during the indirect lighting p
 
 Adding support for Linear Swept Spheres (LSS) for ray tracing of hair strands Raytracing of hair strands will take advantage of LSS primitives on nVidia Blackwell GPUs, reducing memory usage and improving performance compared to the intersection shader based implementation.
 
+## Iris Networking
+
+Added API for network HandlerComponents to indicate support for being run in parallel. Enabled `NET_ANALYTICS_MULTITHREADING` so that `OodleNetworkAnalytics` can run in parallel Network HandlerComponents can indicate support for running in parallel per-connection. Enabled `NET_ANALYTICS_MULTITHREADING` by default.
+
 ## Networked Physics
 
 There are more [networked physics optimizations](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#networkedphysics) but mainly for those already deep into the subject.
@@ -460,4 +421,24 @@ Optimize network overhead for replicated Input and State properties via the "leg
 - Replace DeltaSourceFrame with DeltaSourceIndex (16 or 24 reduced to 2 bits).
 - Clamp NumFrames (8 reduced to 4 bits).
 - Send data array ordered to improve ServerFrame delta serialization (18 bits reduced to 1 bit on arrays larger than 1).
+
+## XR
+
+Disable chunked PSO cache on Quest devices. The chunked PSO cache has the following tradeoffs: Pro: Drivers which fully serialize access to their PSO caches get better concurrency Pro: Drivers which don't scale well to large PSO caches get faster lookups Con: Drivers which can reuse cached information for pipelines which are different but similar may have cache misses due to the pipelines being in different chunks Con: Drivers which can reuse cached information for pipelines which are different but similar may use extra memory storing multiple copies of this information in different chunks On Quest devices, the driver doesn't benefit much from the Pros, and is hindered by the Cons. It's better to turn this feature off.
+
+## FBX Importer
+
+uFBX library (Experimental) noticeably reduces import import times especially on heavy `.fbx` files containing large meshes. Users with multi-core CPUs will also notice improvement for files with a large number of meshes.
+
+## Oodle
+
+Oodle Compression updated to [2.9.16](https://www.radgametools.com/oodlehist.htm). 
+
+## Closing
+
+There were *many* more interesting optimizations implemented for the release of UE 5.8. But I did my best to trim the list to the most broadly relevant or interesting changes that may directly impact your project.
+
+**Please consider sharing this article a colleague!** Keeping everyone on your team informed about the latest improvements when it's time to upgrade to UE5.8.
+
+You can subscribe to my newsletter below to stay informed about Unreal Engine 5 and beyond.
 
