@@ -41,11 +41,13 @@ I have found Annotations immediately very valuable as I often return to traces l
 
 Added "snapshot hitches" feature. This feature relies on the stats system to detect hitches. When a hitch is detected a trace snapshot and screenshot is written to the Saved/Profiling/Hitches directory. Frames are dumped into a directory for each process instance. Start tracking hitches by using in-game console command `snapshothitches -start` and disable by using `snapshothitches -stop`. Requires some stat group to be active, like `stat default`.
 
-### World Partition
+### World Partition Insights (Experimental)
 
 "We added world partition streaming debugging tools to Unreal Insights and Unreal Editor, making possible per-cell analysis and sessions playback." 
 
-Adds a 2D view of your world with valuable insights! Worth checking out right away if your project relies on World Partition.
+Added an Unreal Insights workflow for analyzing World Partition streaming behavior over time. Placed in a new "Spatial Profiler" tab in Unreal Insights.
+
+Adds a 2D view of your world with valuable insights! Worth checking out right away if your project relies on World Partition. The trace channel to enable this should be under `WorldStreaming` (not mentioned anywhere in the release notes)
 
 ### Mass Trace
 
@@ -59,11 +61,10 @@ More compact log formatting option for **ProfileGPU**.
 - Added `r.ProfileGPU.TableFormatting`, which can be disabled to get indentation based formatting that's easier to read. 
 - Fixed `r.profilegpu.thresholdpercent` being relative to the current root, it's supposed to be relative to the total frame time.
 
-`stat unit` console command shows **GPU VRam Used** and Budget debug information on discrete GPUs.
-
-Added `stat thermals` command to display the thermal state of the device. Currently only available on Android/iOS. (Exposed CPUTemp and ThermalStatus CSV metrics to other platforms than Android)
-
-Asset Size Map: Added support for displaying external packages (editor) and generated packages (cook).
+- `stat unit` console command shows **GPU VRam Used** and Budget debug information on discrete GPUs.
+- Added FrameNum and UTC time to `stat unit` so we have a way to match up video captures with logs, etc. Requires setting "stats.UnitTimestamp" cvar to enable.
+- Added `stat thermals` command to display the thermal state of the device. Currently only available on Android/iOS. (Exposed CPUTemp and ThermalStatus CSV metrics to other platforms than Android)
+- Asset Size Map: Added support for displaying external packages (editor) and generated packages (cook).
 
 ## Lumen
 
@@ -199,21 +200,12 @@ Added simple counter to ensure if too many Blueprint async actions are created. 
 
 ## Streamable Manager
 
-Streamable Manager:
-
-Added a mechanism to just-in-time trickle async load requests on a streamable handle.
-
-Added a mechanism to batch/trickle async load requests on a streamable handle.
-
-Opt-in (enabled via UE_ENABLE_STREAMABLE_JIT_ASYNC_LOADING=1) and by setting bUseJustInTimeAsyncLoader=true or if batching is enabled globally (s.StreamableEnableJITAsyncLoadingGlobally).
-
-The initial batch size is set as per s.StreamableJITAsyncLoadingInitialBatchingFactor which is a factor of the total number of requests queued for a streamable handle (default is 0.25).
-
-This can be used to cancel or queue subsequent async load requests at updated priorities (see FStreamableHandle::SetPriority) which would get picked up when subsequent requests are queued.
-
-Opt-in by setting bUseJustInTimeAsyncLoader=true or if batching is enabled globally (s.StreamableEnableJITAsyncLoadingGlobally).
-
-Added FrameNum and UTC time to `stat unit` so we have a way to match up video captures with logs, etc. Requires setting "stats.UnitTimestamp" cvar to enable.
+- Added a mechanism to just-in-time trickle async load requests on a streamable handle.
+- Added a mechanism to batch/trickle async load requests on a streamable handle.
+- Opt-in (enabled via UE_ENABLE_STREAMABLE_JIT_ASYNC_LOADING=1) and by setting bUseJustInTimeAsyncLoader=true or if batching is enabled globally (s.StreamableEnableJITAsyncLoadingGlobally).
+- The initial batch size is set as per s.StreamableJITAsyncLoadingInitialBatchingFactor which is a factor of the total number of requests queued for a streamable handle (default is 0.25).
+- This can be used to cancel or queue subsequent async load requests at updated priorities (see FStreamableHandle::SetPriority) which would get picked up when subsequent requests are queued.
+- Opt-in by setting bUseJustInTimeAsyncLoader=true or if batching is enabled globally (s.StreamableEnableJITAsyncLoadingGlobally).
 
 ## Nav Mesh
 
@@ -243,10 +235,6 @@ Editor: Optimized HLOD in editor visibility updates For large worlds containing 
 New perceptual diff feature to avoid HLOD rebuilds when no significant visual changes are detected. Added concept of HLOD Rebuild Policies. One of the HLOD rebuild policies is a "Image Compare": Fuzzy image comparison (using SSIM) → Takes screen captures of the SOURCE actors of an HLOD, over multiple angles (and for different GBuffer properties) → It will then perform an SSIM evaluation in order to assess if there is a significant visual change between the old and new data set.
 
 Editor: HLOD Setup and actor-deletion steps now batch their source control operations, significantly reducing source-control overhead during HLOD builds.
-
-SimpleStreamableAssetManager - SSAM is now fully thread-safe. // is this at all related to hlod?
-
-World Streaming Insights (Experimental): Added an Unreal Insights workflow for analyzing World Partition streaming behavior over time. Placed in a new "Spatial Profiler" tab in Unreal Insights. // Looks like the trace channel for this is `WorldStreaming`
 
 A new `wp.Editor.ExportMinimapForInsights` editor console command - exports the current World Partition minimap as a PNG plus sidecar JSON of world bounds. Load the PNG as the Spatial Profiler background to give the spatial view geographic context. A new wp.Editor.ExportMinimapForInsights editor console command - exports the current World Partition minimap as a PNG plus sidecar JSON of world bounds. Load the PNG as the Spatial Profiler background to give the spatial view geographic context. 
 
