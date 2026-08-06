@@ -403,6 +403,3 @@ There were *many* more interesting optimizations implemented for the release of 
 **Please consider sharing this article with a colleague!** Keeping everyone on your team informed about the latest improvements when it's time to upgrade to UE5.8.
 
 You can subscribe to my newsletter below to stay informed about Unreal Engine 5 and beyond.
-
-<script async data-uid="b66de8ac67" src="https://tomlooman.kit.com/b66de8ac67/index.js"></script>
-
