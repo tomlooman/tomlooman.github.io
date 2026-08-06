@@ -400,7 +400,9 @@ Oodle Compression updated to [2.9.16](https://www.radgametools.com/oodlehist.htm
 
 There were *many* more interesting optimizations implemented for the release of UE 5.8. But I did my best to trim the list to the most broadly relevant or interesting changes that may directly impact your project.
 
-**Please consider sharing this article a colleague!** Keeping everyone on your team informed about the latest improvements when it's time to upgrade to UE5.8.
+**Please consider sharing this article with a colleague!** Keeping everyone on your team informed about the latest improvements when it's time to upgrade to UE5.8.
 
 You can subscribe to my newsletter below to stay informed about Unreal Engine 5 and beyond.
+
+<script async data-uid="b66de8ac67" src="https://tomlooman.kit.com/b66de8ac67/index.js"></script>
 
