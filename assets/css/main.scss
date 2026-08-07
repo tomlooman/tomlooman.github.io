@@ -298,6 +298,7 @@ div.highlighter-rouge, figure.highlight {
 .masthead {
   background-color: $color-blue;
   height: $header-height;
+  z-index: 101; // above sales banner
 
   @media  screen and (max-width: $breakpoint-text-size-change) {
     height: $header-height-small;
@@ -329,6 +330,7 @@ div.highlighter-rouge, figure.highlight {
 
 .greedy-nav {
   background: inherit;
+  z-index: 102; // above sales banner
 }
 
 .greedy-nav a {
