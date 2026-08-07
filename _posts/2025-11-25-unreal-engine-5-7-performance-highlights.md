@@ -6,7 +6,7 @@ categories:
   - "Performance & Optimization"
 tags: 
   - "Performance"
-  - "performance-highlights"
+  - "Performance Highlights"
 coverImage: "Thumb_Blog_57Highlights_600.jpg"
 sidebar:
     nav: sidebar-optimization

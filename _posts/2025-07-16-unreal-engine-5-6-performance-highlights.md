@@ -7,7 +7,7 @@ categories:
   - "Performance & Optimization"
 tags: 
   - "Performance"
-  - "performance-highlights"
+  - "Performance Highlights"
 coverImage: "Blog_56PerformanceHighlights.jpg"
 sidebar:
     nav: sidebar-optimization

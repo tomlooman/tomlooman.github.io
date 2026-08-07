@@ -5,15 +5,18 @@ main:
   - title: "C++ Tutorials"
     url: /unreal-engine-cpp-tutorials
     description: "Collection of my C++ Tutorials, Projects and Articles"
-  - title: "Orion Sample Game"
-    url: /unreal-engine-sample-game-action-roguelike
-    description: "Co-op Action Roguelike Sample Game built in C++ & Unreal Engine 5"
+  - title: "Optimization Tutorials"
+    url: /unreal-engine-optimization-tutorials
+    description: "Collection of my Profiling & Optimization Tutorials, Projects and Articles"
   - title: "C++ Course"
     url: /courses/unrealengine-cpp/
     description: "Course: Professional Game Development in C++ and Unreal Engine 5"
   - title: "Game Optimization Course"
     url: /courses/unrealengine-optimization/
     description: "Course: Complete Game Optimization for Unreal Engine 5"
+  - title: "\"Project Orion\" Sample Game"
+    url: /unreal-engine-sample-game-action-roguelike
+    description: "Co-op Action Roguelike Sample Game built in C++ & Unreal Engine 5"
 #  - title: "Courses for Studios"
 #    url: /courses/studio-access/
   - title: "Course Login"

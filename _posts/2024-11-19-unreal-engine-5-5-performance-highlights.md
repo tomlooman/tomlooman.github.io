@@ -7,7 +7,7 @@ categories:
   - "Performance & Optimization"
 tags:
   - "Performance"
-  - "performance-highlights"
+  - "Performance Highlights"
 coverImage: "Blog_UE55ReleaseNotes_600.jpg"
 sidebar:
     nav: sidebar-optimization
