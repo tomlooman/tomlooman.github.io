@@ -1,14 +1,15 @@
 ---
-title: "Auto-apply optimal Scalability Settings for Unreal Engine"
+title: "Determine Optimal Scalability Settings for Players Hardware"
 date: 2020-04-26
 last_modified_at: 2026-04-10
-excerpt: "Show how Unreal Engine can auto-apply scalability settings based on hardware benchmark results."
+excerpt: "Learn how Unreal Engine can automatically apply scalability settings based on player hardware benchmark results."
 categories: 
-  - "Rendering"
+  - "Performance & Optimization"
 tags: 
   - "Performance"
   - "Scalability"
   - "Rendering"
+  - "Tutorial"
 coverImage: "ue4_runhardwarebenchmark.jpg"
 sidebar:
     nav: sidebar-optimization

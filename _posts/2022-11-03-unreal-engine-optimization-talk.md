@@ -12,6 +12,7 @@ tags:
   - "Nanite"
   - "Console Commands"
   - "Tech Talk"
+  - "Tutorial"
 coverImage: "Thumb_JetBrainsPerfTalk-1.jpg"
 sidebar:
     nav: sidebar-optimization

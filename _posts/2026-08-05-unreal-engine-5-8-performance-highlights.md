@@ -169,7 +169,7 @@ The Chaos Visual Debugger (CVD) provides Unreal Engine users with a way to effec
 - A camera tracking system.
 - The geometry visualization panel.
 - Multi-select support.
-- A trimesh complexity view.
+- A triangle mesh complexity view.
 
 I love this cool to get insights into how the collision/physics scene is constructed as it's such a common cause of performance issues. Bloated physics scenes affect streaming performance and memory cost. On top of more expensive collision/trace queries for all your game code.
 

@@ -9,6 +9,7 @@ tags:
   - "Performance"
   - "Nanite"
   - "Distance Fields"
+  - "Tutorial"
 coverImage: "Thumb_YT_FarFarWestOptims_600.jpg"
 ---
 

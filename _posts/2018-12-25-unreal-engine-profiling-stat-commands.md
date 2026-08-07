@@ -10,6 +10,7 @@ tags:
   - "Profiling"
   - "C++"
   - "Unreal Insights"
+  - "Tutorial"
 coverImage: "Thumb_Blog_StatsTracesInsights.jpg"
 redirect_from:
   - /stat-commands-ue4/

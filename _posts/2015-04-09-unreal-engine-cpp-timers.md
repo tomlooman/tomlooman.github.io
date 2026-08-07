@@ -10,6 +10,7 @@ tags:
   - "Delegates"
   - "Performance"
   - "Action Roguelike"
+  - "Tutorial"
 coverImage: "Thumb_CPPTimers.jpg"
 excerpt: "Find out how to use timers in Unreal Engine 5 C++ including delegates, passing parameters and FTimerHandles."
 ---

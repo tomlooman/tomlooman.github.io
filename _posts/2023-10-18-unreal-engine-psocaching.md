@@ -4,11 +4,12 @@ date: 2023-10-18
 last_modified_at: 2026-04-10
 excerpt: "Guide to PSO precaching and bundled PSOs in Unreal Engine to reduce shader hitching and improve rendering performance."
 categories: 
-  - "Rendering"
+  - "Performance & Optimization"
 tags: 
   - "Performance"
   - "Rendering"
   - "Action Roguelike"
+  - "Tutorial"
 coverImage: "Thumb_psocaching.jpg"
 sidebar:
     nav: sidebar-optimization
