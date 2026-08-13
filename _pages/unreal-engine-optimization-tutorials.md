@@ -51,12 +51,6 @@ A sample of the optimization concepts in this project include:
 
 There is a LOT to explore in this project, visit the [Project Overview page](/unreal-engine-sample-game-action-roguelike#performance--optimization) for more details on these optimizations. I am constantly expanding the game and it will continue to receive more optimizations.
 
-<!-->
-## Unreal Engine Bookmarks Collection
-
-For many more profiling and optimization content created by others in the community, check out my [Unreal Engine Bookmarks](/unreal-engine-resources) page.
--->
-
 {% assign all_posts = site.posts | sort: "date" | reverse %}
 
 ## A Selection of 'Profiling & Optimization' Tutorials
