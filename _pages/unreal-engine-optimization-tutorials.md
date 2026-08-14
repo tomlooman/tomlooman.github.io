@@ -21,8 +21,14 @@ A lot of what I learn from optimizing games in production is fed back into my '[
 
 Long-form optimization videos from my [YouTube channel](https://www.youtube.com/channel/UCnO-xQvmsO1WwKFq-5Pvj0Q). This is where I will continue posting many more real-world optimization examples that showcase the entire process of profiling, analyzing and optimizing games.
 
+### The Optimization Journey of 'Far Far West' (so far) w/ Tom Looman & Ari Arnbjörnsson | Inside Unreal
+
+I was live on Inside Unreal together with Ari talking about profiling & optimization on Far Far West. We talk about Nanite, Insights, Lighting, VFX and more...
+
 {: .notice--info }
-**Coming Soon:** Epic Games Livestream, showcasing the optimization journey of Far Far West!
+**Follow Up:** I am planning a more **detailed follow-up for many of the things covered** as pre-recorded videos. I didn't get to visually SHOW everything I wanted and it deserves another look with before/after examples!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kJPqrvB0fdo?si=IAYCmtUGx1gu5irB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### 1-hour of GPU profiling and optimization of Dark Ruins Sample
 
