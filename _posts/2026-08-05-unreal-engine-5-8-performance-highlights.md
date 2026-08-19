@@ -171,7 +171,8 @@ The Chaos Visual Debugger (CVD) provides Unreal Engine users with a way to effec
 - Multi-select support.
 - A triangle mesh complexity view.
 
-I love this cool to get insights into how the collision/physics scene is constructed as it's such a common cause of performance issues. Bloated physics scenes affect streaming performance and memory cost. On top of more expensive collision/trace queries for all your game code.
+I love this tool to get insights into how the collision/physics scene is constructed as it's such a common cause of performance issues. Bloated physics scenes affect streaming performance and memory cost. On top of more expensive collision/trace queries for all your game code. I show it in practice in the recent livestream **[
+The Optimization Journey of 'Far Far West' (so far) | Inside Unreal](https://www.youtube.com/live/kJPqrvB0fdo?si=KliCQwM5L-UJM4jC&t=5117)**.
 
 ## Chaos Caching
 
@@ -203,10 +204,10 @@ Added simple counter to ensure if too many Blueprint async actions are created. 
 
 - Added a mechanism to just-in-time trickle async load requests on a streamable handle.
 - Added a mechanism to batch/trickle async load requests on a streamable handle.
-- Opt-in (enabled via UE_ENABLE_STREAMABLE_JIT_ASYNC_LOADING=1) and by setting bUseJustInTimeAsyncLoader=true or if batching is enabled globally (s.StreamableEnableJITAsyncLoadingGlobally).
-- The initial batch size is set as per s.StreamableJITAsyncLoadingInitialBatchingFactor which is a factor of the total number of requests queued for a streamable handle (default is 0.25).
-- This can be used to cancel or queue subsequent async load requests at updated priorities (see FStreamableHandle::SetPriority) which would get picked up when subsequent requests are queued.
-- Opt-in by setting bUseJustInTimeAsyncLoader=true or if batching is enabled globally (s.StreamableEnableJITAsyncLoadingGlobally).
+- Opt-in (enabled via `UE_ENABLE_STREAMABLE_JIT_ASYNC_LOADING=1`) and by setting `bUseJustInTimeAsyncLoader=true` or if batching is enabled globally (`s.StreamableEnableJITAsyncLoadingGlobally`).
+- The initial batch size is set as per `s.StreamableJITAsyncLoadingInitialBatchingFactor` which is a factor of the total number of requests queued for a streamable handle (default is 0.25).
+- This can be used to cancel or queue subsequent async load requests at updated priorities (see `FStreamableHandle::SetPriority`) which would get picked up when subsequent requests are queued.
+- Opt-in by setting `bUseJustInTimeAsyncLoader=true` or if batching is enabled globally (`s.StreamableEnableJITAsyncLoadingGlobally`).
 
 ## Nav Mesh
 
