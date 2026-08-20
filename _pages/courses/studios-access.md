@@ -3,10 +3,15 @@ layout: salespage
 title: "Unreal Engine Courses for Studio Training"
 permalink: /courses/studio-access
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
+header:
+  overlay_image: "assets/images/Course_HeroBanner_TwoSplit_Large.jpg"
+  actions:
+    - label: "Get In Touch"
+      url: "/courses/studio-access/#book-a-call"
+tagline: "Standardized Unreal Engine training your team can rely on."
 last_modified_at: 20-08-2026
 toc: true
 ---
-
 *Related Pages: [Evaluation Access](/courses/studio-evaluation) - [Pilot Access](/courses/studio-pilot) - [Course Pricing & Partner Tiers](/courses/studio-pricing)*
 
 **Standardized Unreal Engine training your team can rely on.**

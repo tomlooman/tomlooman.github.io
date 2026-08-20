@@ -1,7 +1,4 @@
 main:
-  - title: "Blog"
-    url: /blog/
-    description: "Browse all my articles and tutorials"
   - title: "C++ Tutorials"
     url: /unreal-engine-cpp-tutorials
     description: "Collection of my C++ Tutorials, Projects and Articles"
@@ -11,14 +8,15 @@ main:
   - title: "C++ Course"
     url: /courses/unrealengine-cpp/
     description: "Course: Professional Game Development in C++ and Unreal Engine 5"
-  - title: "Game Optimization Course"
+  - title: "Optimization Course"
     url: /courses/unrealengine-optimization/
     description: "Course: Complete Game Optimization for Unreal Engine 5"
+  - title: "Courses for Teams"
+    url: /courses/studio-access/
+    description: "Unreal Engine training for teams, with evaluation access, pilots and volume pricing"
   - title: "\"Project Orion\" Sample Game"
     url: /unreal-engine-sample-game-action-roguelike
     description: "Co-op Action Roguelike Sample Game built in C++ & Unreal Engine 5"
-#  - title: "Courses for Studios"
-#    url: /courses/studio-access/
   - title: "Course Login"
     url: "https://courses.tomlooman.com/sign_in"
     description: "Login Portal for All Unreal Engine Courses"
