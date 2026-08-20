@@ -1,17 +1,19 @@
 ---
 layout: salespage
 title: "30-Day Course Pilot for Studios"
-permalink: /courses/unrealengine-courses-pilot
+permalink: /courses/studio-pilot
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
-last_modified_at: 02-04-2026
+last_modified_at: 20-08-2026
+toc: true
 ---
+
+*Related Pages: [Studio Course Access](/courses/studio-access) - [Evaluating Courses](/courses/studio-evaluation) - [Course Pricing & Partner Tiers](/courses/studio-pricing)*
 
 ## Decide how to roll out Unreal training with confidence
 
 A 30-day pilot lets your studio put the course in front of real developers, observe how it is used during production, and decide how many seats to roll out without guessing.
 
-**Want to review the content first as a team lead? Start with [Evaluation Access](/courses/studios-evaluation).**
-
+**Want to review the content first as a team lead? Start with [Evaluation Access](/courses/studio-evaluation).**
 
 ## Why studios choose a pilot
 
@@ -33,7 +35,7 @@ This isn’t about spending more. It’s about spending correctly.
 
 ## Put the course in real hands
 
-**The Pilot is for developers, not [evaluators](/courses/studios-evaluation).**
+**The Pilot is for developers, not [evaluators](/courses/studio-evaluation).**
 
 Choose participants who reflect how the course will actually be used.
 
@@ -111,6 +113,10 @@ On the call, you will:
 
 ## One last thing
 
-The 30-day pilot isn’t a test. It’s your way to decide rollout scope once, with confidence. If you’d prefer to test our courses first, check out our [Evaluation Access](/courses/studios-evaluation) page. 
+The 30-day pilot isn’t a test. It’s your way to decide rollout scope once, with confidence. If you’d prefer to test our courses first, check out our [Evaluation Access](/courses/studio-evaluation) page. 
 
 
+## Questions?
+Feel free to reach out through the contact form below or directly at [info@tomlooman.com](mailto:info@tomlooman.com).
+
+{% include contact-form.html %}

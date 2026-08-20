@@ -1,10 +1,13 @@
 ---
 layout: salespage
-title: "Course Evaluation Access for Studios"
-permalink: /courses/unrealengine-courses-evaluation
+title: "Course Evaluation Access for Studio Training"
+permalink: /courses/studio-evaluation
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
-last_modified_at: 02-04-2026
+last_modified_at: 20-08-2026
+toc: true
 ---
+
+*Related Pages: [Studio Course Access](/courses/studio-access) - [Pilot Access](/courses/studio-pilot) - [Course Pricing & Partner Tiers](/courses/studio-pricing)*
 
 *A focused way to assess whether a course fits your studio—without disrupting your team or production schedule.*
 
@@ -14,13 +17,11 @@ Studios often want a closer look at the training before deciding whether to roll
 **Evaluation Access is not a trial for your whole team.**
 It is a short, focused review intended to help you make an informed internal recommendation.
 
-If your goal is to observe how developers use the course in practice, a **30-Day Pilot** is the better option. **→ [Learn about the 30-Day Pilot](/courses/studios-pilot)**
-
----
+If your goal is to observe how developers use the course in practice, a **30-Day Pilot** is the better option. **→ [Learn about the 30-Day Pilot](/courses/studio-pilot)**
 
 ## What Evaluation Access Is (and Isn't)
 
-If you're looking to evaluate adoption across a development team rather than assess the course itself, a **[30-Day Pilot](/courses/studios-pilot)** is the recommended next step.
+If you're looking to evaluate adoption across a development team rather than assess the course itself, a **[30-Day Pilot](/courses/studio-pilot)** is the recommended next step.
 
 ### ✔ What it is
 
@@ -41,17 +42,13 @@ If you're looking to evaluate adoption across a development team rather than ass
 - Intended for developer onboarding
 - Automatically converted into paid seats
 
----
-
 ## Who Evaluation Access Is For
 
 Evaluation Access is intended for the people responsible for recommending or approving training—not necessarily the developers who will eventually complete the course.
 
 The ideal evaluator depends on which course you're reviewing.
 
----
-
-## Evaluating C++ Foundations for Unreal
+## Evaluating 'Professional Game Development in C++ and Unreal Engine 5'
 
 ### Best suited for
 
@@ -70,7 +67,7 @@ The ideal evaluator depends on which course you're reviewing.
 {: .notice--info }
 **Note**: If your work is primarily focused on engine systems, rendering, tools, or pipelines, this course may not reflect your day-to-day responsibilities.
 
-## Evaluating Unreal Optimization
+## Evaluating 'Complete Game Optimization for Unreal Engine 5'
 
 ### Best suited for
 
@@ -108,8 +105,6 @@ You **do not** need to:
 
 The goal is insight — not completion.
 
----
-
 ## What You'll Be Able to Evaluate
 
 By the end of the evaluation, you should have clear answers to questions like:
@@ -120,8 +115,6 @@ By the end of the evaluation, you should have clear answers to questions like:
 - Should we move forward with a pilot or a full rollout?
 
 The goal of Evaluation Access isn't course completion—it's confidence in your decision.
-
----
 
 ## Around Day 25
 
@@ -156,3 +149,8 @@ If you decide to move forward, we'll ask for:
 Complete the form below to request Evaluation Access.
 
 <div data-tf-live="01KWEJTX5T3FSGG1N61DXHD4XR"></div><script src="//embed.typeform.com/next/embed.js"></script>
+
+## Questions?
+Feel free to reach out through the contact form below or directly at [info@tomlooman.com](mailto:info@tomlooman.com).
+
+{% include contact-form.html %}

@@ -3,10 +3,11 @@ layout: salespage
 title: "Unreal Engine Course Pricing & Partner Tiers for Studios"
 permalink: /courses/studio-pricing/
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
-last_modified_at: 01-07-2026
+last_modified_at: 20-08-2026
+toc: true
 ---
 
-**Related Pages: [Studio Course Access](/courses/studio-access) - [Evaluating Courses](/courses/studio-evaluation) - [Pilot Access](/courses/studio-pilot)**
+*Related Pages: [Studio Course Access](/courses/studio-access) - [Evaluating Courses](/courses/studio-evaluation) - [Pilot Access](/courses/studio-pilot)*
 
 **One-time purchase. Lifetime course access. No annual renewals.**
 
@@ -188,3 +189,8 @@ Our pricing model is designed to be:
 - Scalable as your team grows
 
 Whether you're starting with a pilot, purchasing directly, or expanding an existing rollout, the commercial terms remain straightforward and consistent.
+
+## Questions?
+Feel free to reach out through the contact form below or directly at [info@tomlooman.com](mailto:info@tomlooman.com).
+
+{% include contact-form.html %}
