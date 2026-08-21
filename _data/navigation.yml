@@ -12,7 +12,7 @@ main:
     url: /courses/unrealengine-optimization/
     description: "Course: Complete Game Optimization for Unreal Engine 5"
   - title: "Courses for Teams"
-    url: /courses/studio-access/
+    url: /courses/studio-access
     description: "Unreal Engine training for teams, with evaluation access, pilots and volume pricing"
   - title: "\"Project Orion\" Sample Game"
     url: /unreal-engine-sample-game-action-roguelike
