@@ -1,7 +1,7 @@
 ---
 layout: salespage
 title: "30-Day Course Pilot for Studios"
-permalink: /courses/studio-pilot
+permalink: /courses/studio-pilot/
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 last_modified_at: 20-08-2026
 toc: true
