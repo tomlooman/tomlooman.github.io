@@ -21,6 +21,12 @@ A lot of what I learn from optimizing games in production is fed back into my '[
 
 Long-form optimization videos from my [YouTube channel](https://www.youtube.com/channel/UCnO-xQvmsO1WwKFq-5Pvj0Q). This is where I will continue posting many more real-world optimization examples that showcase the entire process of profiling, analyzing and optimizing games.
 
+### Practical UE5 Lighting & Shadow Optimizations
+
+We take a look at the process of auditing lights & shadows in Unreal Engine 5 using 'Far Far West' as a real-world example.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1uFR9lXrpyQ?si=ipdQp0AvfBa4lODi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### The Optimization Journey of 'Far Far West' (so far) w/ Tom Looman & Ari Arnbjörnsson | Inside Unreal
 
 I was live on Inside Unreal together with Ari talking about profiling & optimization on Far Far West. We talk about Nanite, Insights, Lighting, VFX and more...
