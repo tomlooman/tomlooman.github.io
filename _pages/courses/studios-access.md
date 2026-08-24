@@ -1,7 +1,7 @@
 ---
 layout: salespage
 title: "Unreal Engine Courses for Studio Training"
-permalink: /courses/studio-access
+permalink: /courses/studio-access/
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 header:
   overlay_image: "assets/images/Course_HeroBanner_TwoSplit_Large.jpg"
