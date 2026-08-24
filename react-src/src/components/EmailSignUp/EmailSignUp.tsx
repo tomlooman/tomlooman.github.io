@@ -27,7 +27,7 @@ const EmailSignUp = () => {
         <div className={style.emailSignUpBanner}>
             <div className={style.emailSignUpContent}>
                 <b>
-                    Learn the Unreal Engine techniques used by AAA studios and experienced indie developers.<br/>Join 5,000+ developers receiving my latest articles, optimization tips, and course updates.
+                    Learn the Unreal Engine techniques used by AAA studios and experienced indie developers.<br/>Join 8000+ developers receiving my latest articles, optimization tips, and course updates.
                 </b>
 
                 {success ? (

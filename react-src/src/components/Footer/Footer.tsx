@@ -69,7 +69,7 @@ const Footer = () => {
                 </div>
                 <div className={style.newsLetter}>
                     <h2>Join my Newsletter</h2>
-                    <p>Learn the Unreal Engine techniques used by AAA studios and experienced indie developers. Join 5,000+ developers receiving my latest articles, optimization tips, and course updates.</p>
+                    <p>Learn the Unreal Engine techniques used by AAA studios and experienced indie developers. Join 8000+ developers receiving my latest articles, optimization tips, and course updates.</p>
                     
                     
                 {success ? (
