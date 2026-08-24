@@ -21,21 +21,6 @@ A lot of what I learn from optimizing games in production is fed back into my '[
 
 Long-form optimization videos from my [YouTube channel](https://www.youtube.com/channel/UCnO-xQvmsO1WwKFq-5Pvj0Q). This is where I will continue posting many more real-world optimization examples that showcase the entire process of profiling, analyzing and optimizing games.
 
-### Practical UE5 Lighting & Shadow Optimizations
-
-We take a look at the process of auditing lights & shadows in Unreal Engine 5 using 'Far Far West' as a real-world example.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1uFR9lXrpyQ?si=ipdQp0AvfBa4lODi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-### The Optimization Journey of 'Far Far West' (so far) w/ Tom Looman & Ari Arnbjörnsson | Inside Unreal
-
-I was live on Inside Unreal together with Ari talking about profiling & optimization on Far Far West. We talk about Nanite, Insights, Lighting, VFX and more...
-
-{: .notice--info }
-**Follow Up:** I am planning a more **detailed follow-up for many of the things covered** as pre-recorded videos. I didn't get to visually SHOW everything I wanted and it deserves another look with before/after examples!
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kJPqrvB0fdo?si=IAYCmtUGx1gu5irB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ### 1-hour of GPU profiling and optimization of Dark Ruins Sample
 
 We take Epic Games's Dark Ruins Sample and dissect ways to optimize this scene including Nanite, Virtual Shadow Mapping, Lights, and more... (Timestamps available in video description)
@@ -47,6 +32,18 @@ We take Epic Games's Dark Ruins Sample and dissect ways to optimize this scene i
 In this video we optimize a real game currently in Early Access ("Far Far West")! We dive into a variety of Nanite optimizations, foliage, decal rendering, Distance Fields, and Single Layer Water. (Timestamps available in video description)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3qgd4glfIR0?si=8yFlqEqlFpkIzSld" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### The Optimization Journey of 'Far Far West' (so far) w/ Tom Looman & Ari Arnbjörnsson | Inside Unreal
+
+I was live on Inside Unreal together with Ari talking about profiling & optimization on Far Far West. We talk about Nanite, Insights, Lighting, VFX and more...
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kJPqrvB0fdo?si=IAYCmtUGx1gu5irB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Practical UE5 Lighting & Shadow Optimizations
+
+We take a look at the process of auditing lights & shadows in Unreal Engine 5 using 'Far Far West' as a real-world example. A follow-up the the "Inside Unreal" livestream I did together with Ari from Epic Games!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1uFR9lXrpyQ?si=ipdQp0AvfBa4lODi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## "Project Orion" a Multiplayer Optimization Sample Game
 
