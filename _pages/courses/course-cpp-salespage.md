@@ -124,7 +124,7 @@ My goal isn't simply to teach you how to build the game you'll create in this co
 <h2>What Students Are Saying</h2>
 
 {: .text-center}
-Trusted by 5,000+ Unreal Engine developers - from first-time programmers to Principal Engineers at some of the world's leading game studios.
+Trusted by 6000+ Unreal Engine developers - from first-time programmers to Principal Engineers at some of the world's leading game studios.
 
 <div id="reviews" data-course-id="1"></div>
 

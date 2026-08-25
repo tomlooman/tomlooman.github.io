@@ -28,9 +28,9 @@ This article is part of my efforts of keeping Unreal Engine developers informed 
 
 ## Unreal Insights
 
-Added "UObject Count" trace counter. // use 'counters' trace channel. This is helpful to keep an eye on your total objects count which directly affects garbage collection performance (and memory in general).
+Added "UObject Count" trace counter. <span class="text-comment">// use `counters` trace channel. This is helpful to keep an eye on your total objects count which directly affects garbage collection performance (and memory in general).</span>
 
-Add bandwidth and percent value types for graphs and counter stats.
+Added bandwidth and percent value types for graphs and counter stats.
 
 ### Add Annotations inside a trace
 
@@ -99,9 +99,9 @@ Enabled Lumen **applying height fog to reflection ray hits** by default (`r.Lume
 
 ### Distance Fields
 
-Allow distance fields to run on `GRHIDeviceIsIntegrated`. This check was added a decade ago to prevent issues on some outdated drivers, but nowadays it prevents some pretty capable SM5 GPUs to run distance field features. // This seems great for integrated GPUs that can now use SDFs for lighting features such as DF shadows, DF ambient occlusion or even Lumen's Software Raytracing.
+Allow distance fields to run on `GRHIDeviceIsIntegrated`. This check was added a decade ago to prevent issues on some outdated drivers, but nowadays it prevents some pretty capable SM5 GPUs to run distance field features.<span class="text-comment">// This seems great for integrated GPUs that can now use SDFs for lighting features such as DF shadows, DF ambient occlusion or even Lumen's Software Raytracing.</span>
 
-Distance Fields: Remove distance field shader permutations when distance fields are disabled in project settings. // more projects are able to disable SDFs entirely, this helps reducing the overall shader permutations which is always a win. We see shader permutation reductions across many rendering features in 5.8
+Distance Fields: Remove distance field shader permutations when distance fields are disabled in project settings.<span class="text-comment">// more projects are able to disable SDFs entirely, this helps reducing the overall shader permutations which is always a win. We see shader permutation reductions across many rendering features in 5.8</span>
 
 Fixed pooled buffer and texture memory leaks in GlobalDistanceField when changing global distance field resolution at runtime.
 
@@ -117,7 +117,7 @@ Added `r.MegaLights.ScreenTraces.Quality` which allows to tweak screen space tra
 
 Added `r.MegaLights.Supported` which allows to remove all MegaLights shader compilation overhead if it's not used in project.
 
-Deprecated **SSGI (Screen Space Global Illumination)**. SSGI is superseded by Lumen GI. // The intend is most likely to just use Lumen Lite now instead of SSGI as this relied too much on screen space information and was not a full solution in itself.
+Deprecated **SSGI (Screen Space Global Illumination)**. SSGI is superseded by Lumen GI.<span class="text-comment">// The intend is most likely to just use Lumen Lite now instead of SSGI as this relied too much on screen space information and was not a full solution in itself.</span>
 
 ## Garbage Collection
 
@@ -130,7 +130,7 @@ Controlled via `s.ContinuouslyIncrementalGCWhileActorsPendingPurge`/ `s.LevelStr
 - Enabled **MallocBinned3** by default for Windows for improved speed over MallocBinned2.
 - Changed **MallocBinned3** max small bin config to 14kb by default as it offers better performance\memory in our testing.
 - Asset registry cache will now memory-map its tag data storage, **reducing RAM footprint by GBs** in large projects (in editor).
-- **LightWeightInstances** code marked as deprecated. // This was supposed to be a static swap-in replacement for the full functionality Actors but never took off.
+- **LightWeightInstances** code marked as deprecated.<span class="text-comment">// This was supposed to be a static swap-in replacement for the full functionality Actors but never took off.</span>
 
 ## Fast Geometry Streaming Plugin
 
@@ -252,7 +252,7 @@ Added `r.DOF.PreferLowerBitDepth`. When enabled, the bit depth of intermediary b
 
 ## Variable Rate Shading
 
-Significantly improved performance of the `CreateShadingRateImage` pass. // That is the texture created each frame for "Tier 2 VRS" to determine which pixels to render are a reduced shading rate.
+Significantly improved performance of the `CreateShadingRateImage` pass.<span class="text-comment">// That is the texture created each frame for "Tier 2 VRS" to determine which pixels to render are a reduced shading rate.</span>
 
 Fixed an issue where Variable Rate Shading was not properly applied to the ReflectionEnvironmentAndSky pass even when `r.VRS.ReflectionEnvironmentSky` was enabled.
 
@@ -265,7 +265,7 @@ Added new console variables for the ability to disable **Nanite Tessellation in 
 - `r.Shadow.Virtual.Nanite.AllowTessellationDirectional` can be used to toggle Nanite Tessellation in directional light shadows.
 - `r.Shadow.Virtual.Nanite.AllowTessellationLocal` can be used to toggle Nanite Tessellation in local light shadows.
 
-Added "Nanite Pixel Programmable Distance" property to **foliage types**. // This is excellent and something I was missing in the [Unreal GPU Optimization video](https://www.youtube.com/watch?v=3qgd4glfIR0) I made for Far Far West.
+Added "Nanite Pixel Programmable Distance" property to **foliage types**.<span class="text-comment">// This is excellent and something I was missing in the [Unreal GPU Optimization video](https://www.youtube.com/watch?v=3qgd4glfIR0) I made for Far Far West.</span>
 
 Implemented the following Nanite- and WPO-related features for skinned meshes to match their Static Mesh counterparts:
 - World Position Offset Disable Distance.
@@ -295,14 +295,14 @@ The release of 5.8 made a lot of improvements for reducing shader counts and per
 
 Shader layout is now determined using translation output, instead of conservative Material Asset based heuristics. This leads to a decrease in shader counts and can be toggled using `r.Material.UseShaderCompilationParameters`.
 
-**Default Textures Memory Optimization**. Even if referenced by the base Material, all default material textures which are not used for rendering are now not loaded at runtime. This can be toggled using `r.Material.StripUnusedDefaultTextures`. // This is great and a very old problem. Any texture you referenced in your Master Material would still be loaded into memory even if all Material Instances changed those textures to something else. A workaround was using very small default materials (like a tiny solid white texture, and mini normal map, etc.)
+**Default Textures Memory Optimization**. Even if referenced by the base Material, all default material textures which are not used for rendering are now not loaded at runtime. This can be toggled using `r.Material.StripUnusedDefaultTextures`.<span class="text-comment">// This is great and a very old problem. Any texture you referenced in your Master Material would still be loaded into memory even if all Material Instances changed those textures to something else. A workaround was using very small default materials (like a tiny solid white texture, and mini normal map, etc.)</span>
 
 Add permutation count to the `recompileshaders listtypes` command Looks like this: 
   `ShaderTypeName, Filename, PermutationCount FBufferTextureMappedCopyCS, /NNEDenoiserShaders/NNEDenoiserShadersMappedCopy.usf, 125 FTextureBufferMappedCopyCS, /NNEDenoiserShaders/NNEDenoiserShadersMappedCopy.usf, 125 FStochasticLightingTileClassificationMarkCS, /Engine/Private/StochasticLighting/StochasticLightingTileClassification.usf, 3072`
 
 **Display Total Shaders** as a SNotificationBackground as an overlay in the bottom right hand corner of the **Material Editor and Material Instance Editor** Viewport.
   The goal here is prominently display the number of shaders that this material has. That way as a user modifies the material they can see live the impact of their changes when changing usage flags, or plugging in WPO.
-  // This can be valuable to better understand how your material changes impact the total shader count of your project. And more easily see materials that historically are bloating your project.
+ <span class="text-comment">// This can be valuable to better understand how your material changes impact the total shader count of your project. And more easily see materials that historically are bloating your project.</span>
 
 Added **UMaterialEditingLibrary::ListShaders** which will return an array of all shaders that material will compile.
 
