@@ -11,82 +11,14 @@ toc: true
 
 **One-time purchase. Lifetime course access. No annual renewals.**
 
-This page explains how payments, pricing, and **Partner Tiers** work for studio training rollouts - including pilots, direct rollouts, and future expansions. It is intended as a reference for engineering managers, studio leadership, finance teams, and procurement.
+This page explains how payments, pricing, and **Partner Tiers** work for studio training.
 
 ## Pricing at a Glance
-
-These are the core rules that everything else on this page builds upon.
 
 - Pricing is **per seat**
 - Seats are assigned to **individual developers**
 - Every seat includes **lifetime access**
-- There are **no subscriptions**
-- There are **no renewal fees**
 - Discounts are applied through **Partner Tiers**
-
-{: .notice--info }
-**In short:** purchase once, assign seats to individual developers, and receive bulk discounts as your studio grows.
-
-## Paying for a 30-Day Pilot
-
-Pilot seats are purchased on a per-seat basis and include full course access.
-
-During the pilot:
-
-- Seats remain flexible throughout the 30-day period
-- Seat purchases are not refundable
-- Final seat holders are confirmed at the end of the pilot
-
-A pilot gives your studio the opportunity to determine:
-
-- Which developers benefit most
-- How many seats are appropriate
-- Whether a broader rollout makes sense
-
-**→ [Learn more about 30-Day Pilots](/pilot/)**
-
-{: .notice--info }
-**Retroactive Discounts During a Pilot:** The pilot is the only stage where discounts are applied retroactively.
-
-When additional seats are added at the end of a pilot, the final Partner Tier is calculated **as though all seats were purchased together**.
-
-### Discount Example
-
-| Stage | Seats |
-|-------|------:|
-| Pilot begins | 5 |
-| Added after pilot | +15 |
-| **Final total** | **20** |
-
-Because the final purchase totals **20 seats**, the **20-seat Partner Tier discount** is applied to the entire purchase.
-
-This allows studios to:
-
-- Start with a small pilot
-- Expand based on real usage
-- Receive the same pricing as if the full rollout had been purchased from the beginning
-
-## What Happens at the End of a Pilot
-
-After the pilot, you'll have a 7-day window to confirm your final seat assignments.
-
-- ✓ Final seat holders are confirmed
-- ✓ Seats become lifetime licenses
-- ✓ A single consolidated invoice is issued
-- ✓ The appropriate Partner Tier discount is applied
-
-There are no renewal fees or ongoing licensing costs after purchase.
-
-## Paying for a Direct Rollout
-
-Some studios choose to skip the pilot, typically after completing an [Evaluation Access](/courses/studio-evaluation) review or because they're already familiar with our courses.
-
-For direct rollouts:
-
-- Seats are purchased upfront
-- Invoices are issued after access has been granted, developers do not have to wait on any paperwork
-- Seat assignments remain flexible for the first 30 days
-- Final seat holders are confirmed after that period
 
 ## Partner Tiers & Bulk Pricing
 
@@ -96,24 +28,22 @@ Partner Tiers are volume discounts for studios that purchase multiple course sea
 
 |Tier #| Seats | Discount |
 |-----|-------:|---------:|
-| Tier 1 | 5–9 | 10% |
-| Tier 2 | 10–14 | 15% |
-| Tier 3 | 15–19 | 20% |
-| Tier 4 | 20–49 | 25% |
-| Tier 5 | 50+ | 30% |
+| Tier 1 | 3–9 | 10% |
+| Tier 2 | 10–19 | 15% |
+| Tier 3 | 20–29 | 20% |
+| Tier 4 | 30–39 | 25% |
+| Tier 5 | 40–49 | 30% |
+| Tier 6 | 50+ | 35% |
 
-Partner Tiers are designed to reward larger studio rollouts while keeping pricing predictable and easy to understand.
+Partner Tiers are designed to reward larger and consistent studio rollouts while keeping pricing predictable and easy to understand.
 
 ### Maintaining Your Partner Tier
 
-Partner Tiers are based on the total number of seats your studio purchases over a rolling 12-month period.
-
-Once your Partner Tier has been established:
+Your Partner Tier is based on the total number of seats your studio purchases. Your tier remains active for 12 months after your most recent purchase.
 
 - Future purchases receive the same discount
 - Higher seat totals automatically move your studio into the next tier
-- Previous invoices are **not** recalculated
-- The only exception is during a 30-Day Pilot (see above)
+- Previous invoices are **not** recalculated (the only exception is during a [30-Day Pilot](/courses/studio-pilot))
 
 If your studio makes no additional purchases for **12 months**, your Partner Tier resets and future purchases are assessed from the standard pricing.
 
@@ -161,9 +91,8 @@ If those developers later become part of a studio rollout, we're happy to discus
 For studios requiring procurement or finance information:
 
 - Invoices are issued in **USD** ($) or **EURO** (€)
-- Reverse charge mechanism is applied in regions where this is applicable (This means no VAT/Tax is added to the invoice)
 - Vendor registration can be completed if required
-- Standard payment is by invoice and bank transfer (Credit card payment is available if required)
+- Standard payment is by invoice and bank transfer (Credit card payment is available if desired)
 
 ## Simple, predictable licensing
 
@@ -178,17 +107,6 @@ Every studio operates a little differently. If your organization has requirement
 - Non-standard rollout timelines
 
 we're happy to discuss them during an introductory call or by email.
-
-## Summary
-
-Our pricing model is designed to be:
-
-- Predictable
-- Transparent
-- Easy to explain internally
-- Scalable as your team grows
-
-Whether you're starting with a pilot, purchasing directly, or expanding an existing rollout, the commercial terms remain straightforward and consistent.
 
 ## Questions?
 Feel free to reach out through the contact form below or directly at [info@tomlooman.com](mailto:info@tomlooman.com).
