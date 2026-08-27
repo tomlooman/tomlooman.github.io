@@ -1,7 +1,7 @@
 ---
 title: "Unreal Engine 5.8 Performance Highlights"
 date: 05-08-2026
-last_modified_at: 05-08-2026
+last_modified_at: 27-08-2026
 layout: single
 categories: 
   - "Performance & Optimization"
@@ -307,6 +307,14 @@ Add permutation count to the `recompileshaders listtypes` command Looks like thi
 Added **UMaterialEditingLibrary::ListShaders** which will return an array of all shaders that material will compile.
 
 Fix translucent materials not showing up in shader complexity view mode.
+
+The following changes should allow a reduction in overall shader permutations in our projects:
+- Added ubershader permutation to VirtualShadowMap projection shader.
+- Add uber shader permutation for VolumetricFog.
+- Added ubershader permutation to FDeferredLightPS.
+- Removed distance field shader permutations when distance fields are disabled in project settings.
+- Translucent Materials no long compile the non-skylight version of base pass pixel shader to reduce shader permutations and instead always use the skylight version w/ a dynamic branch.
+- (From Lumen Section) Remove surface cache opacity to save 16mb of memory and remove lots of shader permutations.
 
 ## Rendering
 
