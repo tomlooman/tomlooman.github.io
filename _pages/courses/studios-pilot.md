@@ -109,14 +109,13 @@ On the call, you will:
 - Estimate seat count
 - Align on timing and next steps
 
-**[Book a short call with Tom](https://form.typeform.com/to/bvK1TReu)** - **Prefer email?** You can reach out directly at [info@tomlooman.com](mailto:info@tomlooman.com).
+**[Book a short call with Tom](#get-in-touch)**
 
 ## One last thing
 
 The 30-day pilot isn’t a test. It’s your way to decide rollout scope once, with confidence. If you’d prefer to test our courses first, check out our [Evaluation Access](/courses/studio-evaluation) page. 
 
-
-## Questions?
-Feel free to reach out through the contact form below or directly at [info@tomlooman.com](mailto:info@tomlooman.com).
+## Get In Touch
+Feel free to reach out through the contact form below or directly at [info@tomlooman.com](mailto:info@tomlooman.com). We can schedule a quick call to discuss all your questions, or use email if that's preferred.
 
 {% include contact-form.html %}

@@ -3,7 +3,7 @@ import { Faq } from "../models/Faq";
 const commonFaq: Faq[] = [
     {
         question: "For how long will this course be updated and supported?",
-        answer: "Q&A support and course updates will continue for years. There is no planned end date for support, and as Unreal Engine evolves, the course will be updated to maintain compatibility with the latest versions whenever needed."
+        answer: "The course will be updated to maintain compatibility with the latest engine versions. In 2026 the entire course has been upgraded to Unreal Engine 5.6 and compatible with 5.8. Q&A support is an ongoing part of the course, and there are no plans to discontinue it."
     },
     {
         question: "When does the course start and finish?",

@@ -5,12 +5,14 @@ permalink: /courses/unrealengine-cpp/
 coverImage: "Thumb_Course_CPP_HeroVariant_4.jpg"
 excerpt: "Master Unreal Engine C++ with a learning path trusted by developers - from beginners to AAA studios."
 header:
-  overlay_image: "assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg"
+  overlay_image: "assets/images/courses/CourseCPP_HeroBanner_2.jpg"
   actions:
     - label: "See Pricing"
       url: "/courses/unrealengine-cpp/#pricing-options"
+    - label: "View Curriculum"
+      url: "https://courses.tomlooman.com/courses/game-development-in-cpp-unreal-engine-5/lectures/62227301"
+  overlay_filter: 0.3
 tagline: "Master Unreal Engine C++ with a learning path trusted by developers - from beginners to AAA studios."
-#overlay_filter: 0.5
 redirect_from:
     - /stanford-cs193u/
     - /cpp-activedeal/
@@ -25,7 +27,7 @@ redirect_from:
 ---
 
 {% assign summary = "
-30+ Hours of C++ Lessons|
+[30+ Hours of C++ Lessons](https://courses.tomlooman.com/courses/game-development-in-cpp-unreal-engine-5/lectures/62227301)|
 7 Programming Assignments|
 Compatible with UE 5.8 |
 Lifetime Access|
@@ -64,6 +66,19 @@ Build a complete game while solving compiler errors, debugging crashes, and desi
 ### Become an Independent Developer
 
 Every lesson builds your confidence until you can continue building Unreal Engine projects without relying on tutorials.
+
+{% capture feature-upgradedrecording %}
+The course was originally recorded in 2021 for Unreal Engine 4. Five years later, I’ve completely re-recorded and rebuilt it for Unreal Engine 5.6 and above, bringing the content up to date with modern best practices, and changes in C++ and Unreal Engine 5 over the years.
+
+This upgrade took over a year of work to complete. **Every existing student received the full upgrade for FREE**.
+{% endcapture %}
+
+{% include feature-block.html
+    title="Completely Rebuilt - From UE4 to Unreal Engine 5.6+"
+    image="/assets/images/courses/course_cpp_upgraded56_2.jpg"
+    alt="Unreal Insights"
+    content=feature-upgradedrecording
+%}
 
 ## Is this course for you?
 

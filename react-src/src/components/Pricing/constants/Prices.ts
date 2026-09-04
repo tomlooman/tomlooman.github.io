@@ -7,8 +7,8 @@ export const Prices = {
         INDIE_PAYMENT_PLAN_DISCOUNTED: 55,
         INDIE_COUPON_CODE: "SUMMERSALE", // e.g. "ARUNIVERSITY30"
         PRO: 695,
-        PRO_DISCOUNTED: 595,
-        PRO_COUPON_CODE: "SUMMERSALE",
+        PRO_DISCOUNTED: null,
+        PRO_COUPON_CODE: "",
     },
     // Optimisation Course
     2: {
@@ -18,8 +18,8 @@ export const Prices = {
         INDIE_PAYMENT_PLAN_DISCOUNTED: 65,
         INDIE_COUPON_CODE: "SUMMERSALE",
         PRO: 795,
-        PRO_DISCOUNTED: 695,
-        PRO_COUPON_CODE: "SUMMERSALE",
+        PRO_DISCOUNTED: null,
+        PRO_COUPON_CODE: "",
     }
 };
 

@@ -4,10 +4,11 @@ title: "Unreal Engine Courses for Studio Training"
 permalink: /courses/studio-access/
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 header:
-  overlay_image: "assets/images/Course_HeroBanner_TwoSplit_Large.jpg"
+  overlay_image: "assets/images/courses/CourseCPP_HeroBanner_2.jpg"
   actions:
     - label: "Get In Touch"
-      url: "/courses/studio-access/#book-a-call"
+      url: "/courses/studio-access/#get-in-touch"
+  overlay_filter: 0.3
 tagline: "Standardized Unreal Engine training your team can rely on."
 last_modified_at: 20-08-2026
 toc: true
@@ -65,7 +66,7 @@ Both are designed to scale across projects and teams while giving every develope
 - A professionally structured GitHub project reflecting real production workflows
 - Greater developer confidence and more independent problem solving
 
-**[See Full Course Details](/courses/course-cpp-salespage)** or browse the [C++ Course Curriculum](https://courses.tomlooman.com/courses/game-development-in-cpp-unreal-engine-5/lectures/62227301)
+**[See Full Course Details](/courses/unrealengine-cpp/)** or browse the [C++ Course Curriculum](https://courses.tomlooman.com/courses/game-development-in-cpp-unreal-engine-5/lectures/62227301)
 
 <!-- Unreal Optimization course continues in the next section -->
 
@@ -88,7 +89,7 @@ Both are designed to scale across projects and teams while giving every develope
 - Practical profiling workflows and optimization techniques based on production experience
 - A consistent approach to identifying and solving performance issues
 
-**[See Full Course Details](/courses/course-optimization-salespage)** or browse the [Optimization Course Curriculum](https://courses.tomlooman.com/courses/unrealperformance/lectures/48928023)
+**[See Full Course Details](/courses/unrealengine-optimization/)** or browse the [Optimization Course Curriculum](https://courses.tomlooman.com/courses/unrealperformance/lectures/48928023)
 
 Our courses have helped developers onboard faster, build confidence in Unreal Engine, and adopt production-ready engineering practices across teams.
 
@@ -139,7 +140,7 @@ Together we'll determine the best starting point for your team:
 
 Most studios leave this call with a recommended path, and it's also an opportunity to discuss any technical, procurement, or licensing questions.
 
-[**Start with a Quick Call**](https://form.typeform.com/to/bvK1TReu)
+[**Start with a Quick Call**](#get-in-touch)
 
 ### 2. Getting Aligned
 
@@ -169,7 +170,7 @@ Each learner receives:
 
 Everything runs directly in the browser through the learning portal. No software installation or IT setup required.
 
-[**Start with a Quick Call**](https://form.typeform.com/to/bvK1TReu)
+[**Start with a Quick Call**](#get-in-touch)
 
 ## Frequently Asked Questions
 
@@ -229,11 +230,8 @@ Up-skilling in Unreal doesn't need to be guesswork.
 
 Give your developers a **structured learning path**, **lifetime access**, and **direct guidance from an experienced Unreal engineer** so they can build better systems, solve problems more independently, and ship with greater confidence.
 
-## Book a Call
+## Get In Touch
 
-[**Book a Call with Tom**](https://form.typeform.com/to/bvK1TReu)
-
-## Questions?
-Feel free to reach out through the contact form below or directly at [info@tomlooman.com](mailto:info@tomlooman.com).
+Feel free to reach out through the contact form below or directly at [info@tomlooman.com](mailto:info@tomlooman.com). We can discuss all your questions through email or a quick call.
 
 {% include contact-form.html %}

@@ -25,7 +25,7 @@ redirect_to: # temporary until we finished this landing page
 {% capture insights %}
 Unreal Insights is quickly becoming the central profiling tool for Unreal Engine 5.
 
-We'll go far beyond the interface and use Insights throughout the course to understand CPU, GPU and rendering performance, identify bottlenecks and confidently optimize your projects.
+We go far beyond the basics and use Insights throughout the course to understand CPU, GPU and rendering performance, identify bottlenecks and confidently optimize your projects.
 {% endcapture %}
 
 {% include feature-block.html

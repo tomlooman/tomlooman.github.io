@@ -5,7 +5,7 @@
 
     <ul>
         {% for item in include.items %}
-            <li>{{ item }}</li>
+            <li>{{ item | markdownify | remove: "<p>" | remove: "</p>" }}</li>
         {% endfor %}
     </ul>
 </div>
