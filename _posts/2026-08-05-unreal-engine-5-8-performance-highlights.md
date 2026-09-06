@@ -9,7 +9,8 @@ tags:
   - "Performance"
   - "Performance Highlights"
 coverImage: "Thumb_Blog_58Highlights.jpg"
-og_image: "/assets/images/Thumb_Blog_58Highlights.jpg"
+header:
+  og_image: "/assets/images/Thumb_Blog_58Highlights.jpg"
 excerpt: "Discover the most important Unreal Engine 5.8 performance and optimization improvements, including MegaLights, Lumen Lite, shader reductions, and rendering enhancements."
 ---
 
