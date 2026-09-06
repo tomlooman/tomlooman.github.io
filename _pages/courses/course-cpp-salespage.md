@@ -5,7 +5,7 @@ permalink: /courses/unrealengine-cpp/
 coverImage: "Thumb_Course_CPP_HeroVariant_4.jpg"
 excerpt: "Master Unreal Engine C++ with a learning path trusted by developers - from beginners to AAA studios."
 header:
-  og_image: "assets/images/Thumb_Course_CPP_HeroVariant_4.jpg"
+  og_image: "/assets/images/Thumb_Course_CPP_HeroVariant_4.jpg"
   overlay_image: "assets/images/courses/CourseCPP_HeroBanner_2.jpg"
   actions:
     - label: "See Pricing"
