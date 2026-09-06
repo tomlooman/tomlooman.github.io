@@ -84,7 +84,7 @@ This new mode allows for better scalability which has been a problem to maintain
 
 New Lumen Medium Quality, which is 2x faster than Lumen on High Quality, while maintaining art direction for lighting. Lumen Medium Quality is targeted at low end PC and handhelds.
 - Enabled by setting GI and Reflection Quality to Medium (`sg.globalilluminationquality 1` + `sg.reflectionquality 1` console commands in game).
-- Lumen Medium Quality is 4 components: Faster opaque GI through Irradiance Field Gather, faster reflections, faster GI on transparency / fog and faster Lumen Scene.
+- Lumen Medium Quality is 4 components: Faster opaque GI through Irradiance Field Gather, faster reflections (falling back to non-Lumen, SSR reflections), faster GI on transparency / fog and faster Lumen Scene.
 
 Some CVARs mentioned in the release notes to play around with:
 - Remove `r.Lumen.ScreenProbeGather.IntegrateDownsampleFactor 2` from High scalability as it was generating too much noise and softening normals. This has to be now manually tweaked per title for a more explicit tradeoff.
