@@ -354,7 +354,7 @@ Interfaces are a little odd at first in C++ as they require two classes with dif
 ```cpp
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
-class USGameplayInterface : public UInterface
+class URogueGameplayInterface : public UInterface
 {
   GENERATED_BODY()
 };
