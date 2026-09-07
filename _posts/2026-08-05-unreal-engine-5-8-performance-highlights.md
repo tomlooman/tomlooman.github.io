@@ -70,7 +70,7 @@ More compact log formatting option for **ProfileGPU**.
 
 ## Lumen
 
-Lumen gets a lot of improvements this release. The most important being **Lumen Lite** which is enabled on "Medium" Scalability for Global Illumination. Standard Lumen is also receiving many improvements including better disocclussion, denoising and quality during motion. Less memory usage, fewer shader permutations. Too many to copy over, so look for the [Lumen section](](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#lumen)) in the full release notes if you want to read the rest. Below are some highlights that are relevant for most people to know.
+Lumen gets a lot of improvements this release. The most important being **Lumen Lite** which is enabled on "Medium" Scalability for Global Illumination. Standard Lumen is also receiving many improvements including better disocclussion, denoising and quality during motion. Less memory usage, fewer shader permutations. Too many to copy over, so look for the [Lumen section](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#lumen) in the full release notes if you want to read the rest. Below are some highlights that are relevant for most people to know.
 
 New BP function on `AGameUserSettings: IsGlobalIlluminationAllowed` which can be used by a game's Blueprints to set the PPVolume depending on whether GI is enabled.
 
