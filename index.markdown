@@ -7,7 +7,7 @@ title: Unreal Engine C++ Tutorials
 ---
 <div id="courses-banner"></div>
 <section class="intro-highlight">
-    <h2>Unreal Engine 5 Courses for Programmers and Tech Artists.</h2>
+    <h2>Unreal Engine 5 Tutorials & Courses for Programmers and (Tech) Artists.</h2>
     <p>
         Level-up your Unreal Engine skills with my Unreal Engine 5 Courses on
         <a href="courses/unrealengine-cpp">Professional Game Development with C++</a> and

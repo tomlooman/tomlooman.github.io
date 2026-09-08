@@ -25,8 +25,8 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 
 - [C++ Complete Guide](/unreal-engine-cpp-guide)  
    Comprehensive reference guide for Unreal Engine C++.
-- [Professional Game Development in C++ and Unreal Engine](https://courses.tomlooman.com/p/unrealengine-cpp?coupon_code=COMMUNITY15)  
-   My Unreal Engine C++ Course for those looking to start or improve their C++ skills. Taught at Stanford University
+- [Course: Professional Game Development in C++ and Unreal Engine 5](https://tomlooman.com/courses/unrealengine-cpp/)  
+   My Unreal Engine C++ Course for those looking to start or improve their C++ skills. Originally taught at Stanford University
 - [Laura's C++ Speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html) (NEW)  
    Good list of things to be aware of when starting out in Unreal's C++ environment. Assumes C++ knowledge, just touching on the Unreal specifics.
 - [Why C++ In Unreal Engine Isn't That Scary?](https://dev.epicgames.com/community/learning/tutorials/Ml0p/why-c-in-unreal-engine-isn-t-that-scary)  

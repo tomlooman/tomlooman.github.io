@@ -15,25 +15,26 @@ coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 ---
 
 Unreal Engine 5 performance has been a hot topic for years and there is not a lot of learning material available. I do a lot of research in optimizing games and work with studios to help optimize their UE5 titles. On this page I have collected some of my public works around profiling, performance, and optimization for Unreal Engine. 
+
 A lot of what I learn from optimizing games in production is fed back into my '[Complete Game Optimization for Unreal Engine 5](/courses/unrealengine-optimization/)' course.
 
 ## Long-form YouTube Tutorials
 
 Long-form optimization videos from my [YouTube channel](https://www.youtube.com/channel/UCnO-xQvmsO1WwKFq-5Pvj0Q). This is where I will continue posting many more real-world optimization examples that showcase the entire process of profiling, analyzing and optimizing games.
 
-### 1-hour of GPU profiling and optimization of Dark Ruins Sample
+### 1-hour of GPU profiling and optimization of 'Dark Ruins Sample'
 
 We take Epic Games's Dark Ruins Sample and dissect ways to optimize this scene including Nanite, Virtual Shadow Mapping, Lights, and more... (Timestamps available in video description)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/c2MH20OPSw0?si=WG91ZicveVoleEGO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### Optimizing GPU Performance for Far Far West
+### Optimizing GPU Performance for 'Far Far West'
 
 In this video we optimize a real game currently in Early Access ("Far Far West")! We dive into a variety of Nanite optimizations, foliage, decal rendering, Distance Fields, and Single Layer Water. (Timestamps available in video description)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3qgd4glfIR0?si=8yFlqEqlFpkIzSld" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### The Optimization Journey of 'Far Far West' (so far) w/ Tom Looman & Ari Arnbjörnsson | Inside Unreal
+### Inside Unreal: The Optimization Journey of 'Far Far West' (so far)
 
 I was live on Inside Unreal together with Ari talking about profiling & optimization on Far Far West. We talk about Nanite, Insights, Lighting, VFX and more...
 

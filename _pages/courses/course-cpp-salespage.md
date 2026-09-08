@@ -2,10 +2,10 @@
 layout: salespage
 title: "Professional Game Development in C++ and Unreal Engine 5"
 permalink: /courses/unrealengine-cpp/
-coverImage: "Thumb_Course_CPP_HeroVariant_4.jpg"
+coverImage: "Thumb_Course_CPP_HeroVariant_2_UE5_900.jpg"
 excerpt: "Master Unreal Engine C++ with a learning path trusted by developers - from beginners to AAA studios."
 header:
-  og_image: "/assets/images/Thumb_Course_CPP_HeroVariant_4.jpg"
+  og_image: "/assets/images/Thumb_Course_CPP_HeroVariant_2_UE5_900.jpg"
   overlay_image: "assets/images/courses/CourseCPP_HeroBanner_2.jpg"
   actions:
     - label: "See Pricing"
