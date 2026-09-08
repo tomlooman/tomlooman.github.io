@@ -20,11 +20,15 @@ title: Unreal Engine C++ Tutorials
 <h2>Featured Posts</h2>
 Some popular pages you may be interested in! Looking for a specific post? Try searching in the top-right or [Browse Posts by Category](/categories) instead.
 <section class="featured-posts">
-  {% assign featured_urls = 
-    "/unreal-engine-cpp-guide/,/unreal-engine-5-8-performance-highlights/,/unreal-engine-cpp-course-early-access/" | split: "," %}
+  {% assign featured_urls =
+    "/unreal-engine-cpp-guide/,/unreal-engine-5-8-performance-highlights/,/unreal-engine-sample-game-action-roguelike" | split: ","
+  %}
+
+  {% assign featured_content = site.posts | concat: site.pages %}
 
   {% for url in featured_urls %}
-    {% assign post = site.posts | where: "url", url | first %}
+    {% assign post = featured_content | where: "url", url | first %}
+
     {% if post %}
       {% include archive-single.html type="post" %}
     {% endif %}
