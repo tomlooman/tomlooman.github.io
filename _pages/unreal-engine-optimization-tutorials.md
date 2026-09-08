@@ -11,7 +11,7 @@ tags:
   - "Nanite"
   - "Lumen"
   - "VSM"
-coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
+coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 ---
 
 Unreal Engine 5 performance has been a hot topic for years and there is not a lot of learning material available. I do a lot of research in optimizing games and work with studios to help optimize their UE5 titles. On this page I have collected some of my public works around profiling, performance, and optimization for Unreal Engine. 

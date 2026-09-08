@@ -4,7 +4,7 @@ date: 2017-12-08
 layout: single
 last_modified_at: 05-02-2026
 permalink: /unreal-engine-cpp-tutorials/
-coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
+coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 redirects_from:
     - /ue4-cpp-tutorials/
 toc: true

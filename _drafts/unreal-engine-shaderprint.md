@@ -10,7 +10,7 @@ tags:
   - "Nanite"
   - "Lumen"
   - "VSM"
-coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
+coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 ---
 
 ## What is ShaderPrint?

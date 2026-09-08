@@ -9,7 +9,7 @@ tags:
   - "Performance"
   - "Nanite"
   - "Distance Fields"
-coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
+coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 ---
 
 Unreal Engine 5 has many different render passes which can be a challenge to reason about how it scales in performance. This article is my attempt at covering the major GPU stats for Unreal Engine 5 rendering and give some insights into what they mean, how they scale in cost, and how to optimize them or turn them off entirely as not everything needs to be enabled.

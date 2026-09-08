@@ -3,7 +3,7 @@ title: "Unreal Engine Naming Convention Guide"
 permalink: /unreal-engine-naming-convention-guide/
 date: 2014-04-03
 last_modified_at: 30-08-2025
-coverImage: "Blog_MainHeroThumbnail_Logo.jpg"
+coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 categories:
   - "C++ Programming"
 tags:
