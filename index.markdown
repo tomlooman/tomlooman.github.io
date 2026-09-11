@@ -1,21 +1,18 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: custom-home
-title: Unreal Engine C++ Tutorials
+title: Unreal Engine C++ & Optimization Tutorials
 ---
 <div id="courses-banner"></div>
 <section class="intro-highlight">
     <h2>Unreal Engine 5 Tutorials & Courses for Programmers and (Tech) Artists.</h2>
     <p>
+        Learn Unreal Engine 5 through practical tutorials, production case studies, courses, and open-source sample projects. Explore C++, gameplay systems, multiplayer programming, profiling, and CPU/GPU optimization from a former Epic Games engineer.
+
         Level-up your Unreal Engine skills with my Unreal Engine 5 Courses on
         <a href="courses/unrealengine-cpp">Professional Game Development with C++</a> and
         <a href="courses/unrealengine-optimization">Complete Game Optimization (CPU, Memory, & GPU)</a> for Engineers & Tech Artists!
     </p>
 </section>
-
-<div class="wide-content"><div id="email-sign-up"></div></div>
 
 <h2>Featured Posts</h2>
 Some popular pages you may be interested in! Looking for a specific post? Try searching in the top-right or [Browse Posts by Category](/categories) instead.
@@ -34,3 +31,5 @@ Some popular pages you may be interested in! Looking for a specific post? Try se
     {% endif %}
   {% endfor %}
 </section>
+
+<div class="wide-content"><div id="email-sign-up"></div></div>

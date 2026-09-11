@@ -30,7 +30,9 @@ Five years of student questions helped me recognize where concepts could be expl
 
 The result is a densely packed 30-hour learning path built around modern Unreal Engine 5 development, with updated systems, clearer explanations, and considerably more advanced material than the original course.
 
-**It launches publicly on September 21, exactly five years after the original.** [Explore the Rebuilt C++ Course](/courses/unrealengine-cpp/)
+**It launches publicly on September 21, exactly five years after the original.** 
+
+[Explore the Rebuilt C++ Course](/courses/unrealengine-cpp/){: .btn .btn--info }
 
 ## More Than an Engine Upgrade
 
@@ -68,6 +70,8 @@ Developers from more than 50 game studios have now enrolled in my courses, using
 
 Studios interested in the rebuilt course can find the available evaluation, pilots, and team enrollment options on the [Studio Access](/courses/studio-access/) page or reach out directly [info@tomlooman.com](mailto:info@tomlooman.com).
 
+[Studio Access & Pricing](/courses/studio-access/){: .btn .btn--info }
+
 <div class="wide-content" id="studio-logos"  data-course-id="1"></div>
 
 ## What's Next? Multiplayer Programming
@@ -88,5 +92,4 @@ The rebuilt edition of 'Professional Game Development in C++ and Unreal Engine 5
 
 Whether you have been waiting for the Unreal Engine 5 rebuild, already own the original course, or are discovering it for the first time, this is the best version of the course I have created. I am very proud of the result and excited to finally share it.
 
-[Explore the C++ Course](/courses/unrealengine-cpp/)<br>
-[Student Dashboard Login](https://courses.tomlooman.com/sign_in)
+[Explore the C++ Course](/courses/unrealengine-cpp/){: .btn .btn--info }   [Student Login](https://courses.tomlooman.com/sign_in){: .btn .btn--info }

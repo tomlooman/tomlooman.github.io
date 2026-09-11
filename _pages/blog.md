@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "All Posts"
+title: "Unreal Engine Articles & Tutorials"
 permalink: /blog/
 author_profile: false
 entries_layout: list

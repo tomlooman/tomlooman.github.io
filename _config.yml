@@ -60,10 +60,12 @@ author:
   name: "Tom Looman"
 
 social:
+  type: Person
+  name: "Tom Looman"
   links:
-    - https://x.com/t_looman
-    - https://github.com/tomlooman
-    - https://www.linkedin.com/in/tomlooman/
+    - "https://x.com/t_looman"
+    - "https://github.com/tomlooman"
+    - "https://www.linkedin.com/in/tomlooman/"
 
 include:
   - _pages

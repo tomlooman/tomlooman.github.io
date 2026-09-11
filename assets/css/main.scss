@@ -188,6 +188,14 @@ div.highlighter-rouge, figure.highlight {
   border: .0625rem solid #404044;
 }
 
+.btn {
+  font-size: 1em;
+}
+
+.btn--info {
+  background-color: $color-blue;
+}
+
 /* For blog stuff */
 
 .layout--single .page__inner-wrap {
