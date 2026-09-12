@@ -62,6 +62,8 @@ Providing this upgrade at no additional cost is an important part of my commitme
 
 I made that promise years ago, and this rebuild delivers on it.
 
+If you have found the original course valuable, **I would really appreciate you sharing this announcement with a friend or colleague** who may benefit from the rebuilt curriculum.
+
 ## From Individuals to Large Game Studios
 
 When I released the original course, I did not anticipate it to become a training resource for so many professional teams. 
