@@ -44,7 +44,7 @@ This course gives you a structured approach to **profiling, diagnosing, and opti
 
 Optimization is always specific to your project, but the process should never rely on guesswork. The course teaches repeatable workflows, practical tools, and common performance issues seen in many of Unreal's built-in systems, so you can make informed decisions throughout development, not only when performance becomes a crisis near launch.
 
-<div class="wide-content" id="studio-logos" data-course-id="2"></div>
+<div class="wide-content" id="studio-logos" data-course-id="1"></div>
 
 ## What makes this course different?
 
