@@ -41,7 +41,11 @@ export const FAQs: { [key: number]: Faq[] } = {
         ...commonFaq,
         {
             question: "Which version of Unreal Engine was this course created with?",
-            answer: "At this time, most lessons are recorded with UE 5.4 and above. New content will always be recorded with the latest release. Information on older versions will remain available to maintain compatibility with projects that are running older versions of UE5."
+            answer: "Lessons are recorded with a mix of engine versions. Starting at UE 5.4 up to UE 5.8. New content will always be recorded with the latest release. Information on older versions will remain available to maintain compatibility with projects that are running older versions."
+        },
+        {
+            question: "What does 'Early Access' mean for this course?",
+            answer: "The Early Access Program allows me to get you a large amount of completed content today while I continue to build towards a V1.0 release. You receive all updates at no additional cost."
         }
     ]
 };

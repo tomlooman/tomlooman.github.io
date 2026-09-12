@@ -1,0 +1,79 @@
+{% assign curriculum = include.curriculum %}
+{% assign lesson_count = 0 %}
+{% for section in curriculum.sections %}
+  {% assign lesson_count = lesson_count | plus: section.lessons.size %}
+{% endfor %}
+
+<section class="course-curriculum" id="curriculum" aria-label="Course curriculum">
+  <div class="course-curriculum__toolbar">
+    <p>
+      <strong>{{ curriculum.sections | size }} sections</strong>
+      <span aria-hidden="true">·</span>
+      {{ lesson_count }} lessons and resources
+    </p>
+    <button class="course-curriculum__toggle" type="button" data-curriculum-toggle>
+      Expand all
+    </button>
+  </div>
+
+  {% for section in curriculum.sections %}
+    <details class="course-curriculum__section"{% if forloop.first %} open{% endif %}>
+      <summary>
+        <span class="course-curriculum__section-title">{{ section.title }}</span>
+        <span class="course-curriculum__count">
+          {{ section.lessons | size }}
+          {% if section.lessons.size == 1 %}lesson{% else %}lessons{% endif %}
+        </span>
+      </summary>
+
+      <ul class="course-curriculum__lessons">
+        {% for lesson in section.lessons %}
+          <li>
+            <a href="{{ lesson.url }}" target="_blank" rel="noopener">
+              <span class="course-curriculum__icon course-curriculum__icon--{{ lesson.type }}" aria-hidden="true">
+                {% case lesson.type %}
+                  {% when "video" %}▶
+                  {% when "downloads" %}↓
+                  {% else %}●
+                {% endcase %}
+              </span>
+
+              <span class="course-curriculum__lesson-title">{{ lesson.title }}</span>
+
+              {% if lesson.duration %}
+                <span class="course-curriculum__duration">{{ lesson.duration }}</span>
+              {% endif %}
+
+              {% if lesson.preview %}
+                <span class="course-curriculum__preview">Preview</span>
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </details>
+  {% endfor %}
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var curriculum = document.getElementById("curriculum");
+    if (!curriculum) return;
+
+    var toggle = curriculum.querySelector("[data-curriculum-toggle]");
+    var sections = curriculum.querySelectorAll("details");
+    if (!toggle || !sections.length) return;
+
+    toggle.addEventListener("click", function () {
+      var shouldOpen = Array.prototype.some.call(sections, function (section) {
+        return !section.open;
+      });
+
+      Array.prototype.forEach.call(sections, function (section) {
+        section.open = shouldOpen;
+      });
+
+      toggle.textContent = shouldOpen ? "Collapse all" : "Expand all";
+    });
+  });
+</script>

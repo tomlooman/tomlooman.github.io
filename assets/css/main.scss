@@ -746,3 +746,146 @@ th {
   align-self: center;
   font-size: 16px;
 }
+
+
+.course-curriculum {
+  margin: 2rem 0 3rem;
+}
+
+.course-curriculum__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.course-curriculum__toolbar p {
+  margin: 0;
+}
+
+.course-curriculum__toggle {
+  border: 1px solid #d7dce2;
+  border-radius: 0.35rem;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  color: inherit;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.course-curriculum__section {
+  margin: 0 0 0.65rem;
+  border: 1px solid #d7dce2;
+  border-radius: 0.35rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+.course-curriculum__section summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  background: #f5f6f7;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.course-curriculum__section summary:hover {
+  background: #eceff1;
+}
+
+.course-curriculum__section-title {
+  min-width: 0;
+  font-size: 0.8em;
+}
+
+.course-curriculum__count {
+  flex: 0 0 auto;
+  color: #687078;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.course-curriculum__lessons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-curriculum__lessons li {
+  margin: 0;
+  border-top: 1px solid #e7eaed;
+}
+
+.course-curriculum__lessons a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1.15rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.course-curriculum__lessons a:hover {
+  background: #fafafa;
+}
+
+.course-curriculum__icon {
+  flex: 0 0 1rem;
+  color: #7b838b;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.course-curriculum__icon--video {
+  color: #e05a47;
+}
+
+.course-curriculum__lesson-title {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.course-curriculum__duration {
+  flex: 0 0 auto;
+  color: #687078;
+  font-size: 0.8rem;
+}
+
+.course-curriculum__preview {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #e05a47;
+  padding: 0.2rem 0.55rem;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.course-curriculum__updated {
+  margin-top: 0.75rem;
+  color: #687078;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .course-curriculum__toolbar {
+    align-items: flex-start;
+  }
+
+  .course-curriculum__section summary,
+  .course-curriculum__lessons a {
+    padding-right: 0.85rem;
+    padding-left: 0.85rem;
+  }
+
+  .course-curriculum__duration {
+    display: none;
+  }
+}

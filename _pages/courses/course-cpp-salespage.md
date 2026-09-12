@@ -102,7 +102,7 @@ Even experienced Unreal developers discover new techniques and best practices th
     >
     <p>
       <h1 class="salesheader" style="text-align: center;"><strong>SUMMER SALE IS NOW!</strong></h1>
-      <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-cpp/#pricing-options">SUMMERSALE</a> at checkout for $100 discount!</strong></p>
+      <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-cpp/#pricing-options">SUMMERSALE</a> at checkout for $100 discount! Sale ends September 12th!</strong></p>
     </p>
   </section>
 </div>
