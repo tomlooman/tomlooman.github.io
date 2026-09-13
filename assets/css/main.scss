@@ -423,6 +423,8 @@ div.highlighter-rouge, figure.highlight {
     align-items: center;
 
   }
+
+  display: none;
 }
 
 .sales-banner-inner {
@@ -733,7 +735,8 @@ th {
   background-position: right;
   padding: 0 10%;
   height: 180px;
-  display: flow-root;
+  //display: flow-root;
+  display: none;
 }
 
 @media screen and (max-width: 550px) {

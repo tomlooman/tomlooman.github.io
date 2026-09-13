@@ -17,8 +17,6 @@ tagline: "Learn how to find performance bottlenecks, understand what causes them
 redirect_from:
   - /unreal-engine-course-optimization/
   - /performance-optimization/
-# redirect_to: # temporary redirect until this landing page is finished
-#   - https://courses.tomlooman.com/p/unrealperformance?coupon_code=SUMMERSALE
 ---
 
 {% assign summary = "
