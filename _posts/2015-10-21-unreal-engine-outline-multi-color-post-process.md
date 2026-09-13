@@ -30,7 +30,7 @@ With some of the recent changes to Unreal Engine 4, rendering multi-color outlin
 
 ## The Original Custom Depth
 
-The original outline material I made last year was based on Custom Depth, before Custom Stencil was available. This meant there was no way to determine the mesh type after it was drawn into the buffer as single channel depth value. More info on the effect and other uses for Custom Depth are available in my of [my earlier posts](/unreal-engine-custom-depth). The original effect uses fewer instructions (97 vs. 144 of the new material) so if you don't require multiple colors in your game you can consider sticking to the old effect.
+The original outline material I made last year was based on Custom Depth, before Custom Stencil was available. This meant there was no way to determine the mesh type after it was drawn into the buffer as a single-channel depth value. More info on the effect and other uses for Custom Depth are available in one of [my earlier posts](/unreal-engine-custom-depth). The original effect uses fewer instructions (97 vs. 144 of the new material) so if you don't require multiple colors in your game you can consider sticking to the old effect.
 
 The new effect is still using Custom Depth to determine the (optional) occlusion which adds the faint overlay color adjusted by tweaking the _FillAlpha_ parameter in the post process. This occlusion can be turned off in the material by unchecking _FillOcclusion_ in the material instance.
 
@@ -39,7 +39,7 @@ The new effect is still using Custom Depth to determine the (optional) occlusion
 
 ## Setup Instructions
 
-To enable the outline you need to place a **Post Process Volume**. Make sure you **set it to Unbound** so it's available regardless whether camera is inside the volume or not. With the post process volume selected, go to **Settings \> Blendables** and add the PPI\_OutlineColored as the first entry.
+To enable the outline you need to place a **Post Process Volume**. Make sure you **set it to Unbound** so it's available regardless of whether the camera is inside the volume or not. With the post process volume selected, go to **Settings \> Blendables** and add the PPI\_OutlineColored as the first entry.
 
 ## Enabling Custom Stencil
 

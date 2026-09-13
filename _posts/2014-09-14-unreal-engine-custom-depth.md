@@ -71,7 +71,7 @@ vis customdepth uv1 // fullscreen
 
 When using transparency on models like characters that have inner triangles (eyes, mouth, arm, or bit of armor sticking through) you will see a noticeable highlight in your material that attracts attention and simply doesn't look right. We can solve this issue using Custom Depth.
 
-By rendering our character into the Custom Depth buffer we can cull any pixels that are behind the outer shell of the mesh. A slight depth offset should be added when comparing the depth of Scene and Custom to prevent too many pixels to be culled including the outer shell. The material setup for this is quite simple:
+By rendering our character into the Custom Depth buffer we can cull any pixels that are behind the outer shell of the mesh. A slight depth offset should be added when comparing the depth of Scene and Custom to prevent too many pixels from being culled including the outer shell. The material setup for this is quite simple:
 
 ![materialnodes_depthculling](/assets/images/materialnodes_depthculling.jpg)
 
@@ -85,7 +85,7 @@ I made a comparison of depth culling enabled and disabled in the setup below. Th
 
 For our game Switch, we used this culling technique on a stealth effect giving it a more consistent 'shell' and highlight on a mesh that has a lot of overlapping pixels.
 
-It's important to know that if multiple materials use this technique that only the object closest to the camera is culled correctly. In this image, you can see the errors can would occur if you have multiple meshes overlapping. This should be taken into consideration when considering this technique - it may never be an issue if you use this effect sparingly or in isolated scenarios.
+It's important to know that if multiple materials use this technique that only the object closest to the camera is culled correctly. In this image, you can see the errors that would occur if you have multiple meshes overlapping. This should be taken into consideration when considering this technique - it may never be an issue if you use this effect sparingly or in isolated scenarios.
 
 ![showing overlapping issue](/assets/images/showingoverlappingissue.jpg)
 

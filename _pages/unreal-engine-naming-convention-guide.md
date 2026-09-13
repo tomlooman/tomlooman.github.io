@@ -20,7 +20,7 @@ redirect_from:
 
 The goal of this document is to share my internal naming conventions with the community as used by the [Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike) project and the [Unreal Engine C++ Course](/courses/unrealengine-cpp) to give everyone something to start out with. Using and getting comfortable with a naming convention is essential before your projects grow beyond thousands of files.
 
-First consider how you are accessing your assets. The Content Browser in Unreal Engine has powerful filter features making pre-fixes and suffixes less critical compared to older Unreal Engine editions. However, this same level of filtering doesn't apply to the simpler drop-down selection UI for picking class variables, etc. The same can happen when logging asset names in which 'assetName something error' occurred, bad naming can make it difficult to track down the origin.
+First consider how you are accessing your assets. The Content Browser in Unreal Engine has powerful filter features making prefixes and suffixes less critical compared to older Unreal Engine editions. However, this same level of filtering doesn't apply to the simpler drop-down selection UI for picking class variables, etc. The same can happen when logging asset names in which 'assetName something error' occurred, bad naming can make it difficult to track down the origin.
 
 {: .notice--info }
 **Note:** The most complete style guide is [available on GitHub by Allar](https://github.com/Allar/ue4-style-guide). Allar's guide has a ton of depth and additional information you can apply as you see fit.
@@ -58,7 +58,7 @@ Assets generally follow the following file structure as described on [Epic's own
 
 ## Content Browser Tips
 
-You can include the asset type to your search query. eg. searching "player material" will search for assets named "ship" that may be of type material. This is powerful to nail down specific assets within a group of similar names. (Make sure "Search Asset Class Names" is enabled in the View Options of your Content Browser).
+You can include the asset type in your search query. eg. searching "player material" will search for assets named "ship" that may be of type material. This is powerful to nail down specific assets within a group of similar names. (Make sure "Search Asset Class Names" is enabled in the View Options of your Content Browser).
 
 Use **Ctrl+P** in the editor/viewport to open the Asset Panel to quickly search for assets without using the Content Browser. This is incredibly powerful when you have properly named your assets! So long as I roughly remember the asset name or partial name, I use this more often than the content browser.
 
@@ -86,14 +86,14 @@ When testing out local assets that are not ready to be used by other members of 
 | ../UI/Materials | UI-specific materials. |
 | ../UI/Fonts |  |
 | ../Actions | Example of Actions, similar to GAS Abilities. |
-| ../Expeditions | Example of major feature that deserves its own top-level folder. Mainly holds Blueprints. |
+| ../Expeditions | Example of a major feature that deserves its own top-level folder. Mainly holds Blueprints. |
 |  |  |
 
 ## Asset Naming
 
 ### Common Types
 
-For this list I stick mainly to the commonly used types and those that are used in the C++ Course material and my open-source projects on GitHub. They don't suffer much from [Epic's own Naming Convention Document](https://dev.epicgames.com/documentation/en-us/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects). 
+For this list I stick mainly to the commonly used types and those that are used in the C++ Course material and my open-source projects on GitHub. They don't differ much from [Epic's own Naming Convention Document](https://dev.epicgames.com/documentation/en-us/unreal-engine/recommended-asset-naming-conventions-in-unreal-engine-projects). 
 
 | Asset Type | Prefix | Comment |
 | --- | --- | ---|

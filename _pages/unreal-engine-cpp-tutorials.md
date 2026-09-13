@@ -15,14 +15,14 @@ A collection of Unreal Engine C++ Tutorials that I have created over the years. 
 
 ## Getting Started with C++
 
-Start with my long form [Complete Guide to Unreal Engine C++](/unreal-engine-cpp-guide) article. The C++ Guide covers many of the essential programming concepts you will use day to day in Unreal Engine. I recommend bookmarking it to keep as reference guide when watching programming tutorials or following my C++ Course.
+Start with my long form [Complete Guide to Unreal Engine C++](/unreal-engine-cpp-guide) article. The C++ Guide covers many of the essential programming concepts you will use day to day in Unreal Engine. I recommend bookmarking it to keep as a reference guide when watching programming tutorials or following my C++ Course.
 
 ## "Project Orion" a Multiplayer Action Roguelike Sample Game
 
 The Co-op Action Roguelike Sample Game (Codenamed "Project Orion") is **open-source on GitHub and the most advanced and complete sample project I have built for Unreal Engine** over the years. It comes with a large number of features you need to build games including a framework with a custom Ability System, enemy AI, full multiplayer support and a range of optimization tricks. You can find the [full breakdown on the new Orion Sample Game project page](/unreal-engine-sample-game-action-roguelike) along with the full source code.
 
 {: .notice--info }
-This project is what you build in the **Professional Game Development in C++ and Unreal Engine 5** Course (minus some of the later additions and experiments found on the Main Branch in GitHub). If you want to learn exactly how to build this, the reasoning behind every line of code, and tons of more tips and tricks we cover along the way, **[click here](https://tomlooman.com/courses/unrealengine-cpp/)**!
+This project is what you build in the **Professional Game Development in C++ and Unreal Engine 5** Course (minus some of the later additions and experiments found on the Main Branch in GitHub). If you want to learn exactly how to build this, the reasoning behind every line of code, and tons more tips and tricks we cover along the way, **[click here](https://tomlooman.com/courses/unrealengine-cpp/)**!
 
 [![](/assets/images/Course_HeroBanner_TwoSplit_Narrow_1200.jpg)](/unreal-engine-sample-game-action-roguelike)
 *Left: Combat with Enemy AI, Buffs, Abilities, and multiplayer support. Right: Blackhole Ability sucking up the environment.*
@@ -33,7 +33,7 @@ Essential knowledge for Unreal Engine is the built-in [Gameplay Framework](/unre
 
 ## Unreal Engine Bookmarks Collection
 
-For many more C++ content created by others in the community, check out my [Unreal Engine Bookmarks](/unreal-engine-resources) page.
+For much more C++ content created by others in the community, check out my [Unreal Engine Bookmarks](/unreal-engine-resources) page.
 
 ## Latest C++ Content
 

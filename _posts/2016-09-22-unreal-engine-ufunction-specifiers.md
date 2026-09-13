@@ -16,7 +16,7 @@ redirect_from:
   - /ue4-ufunction-keywords-explained/
 ---
 
-In this post I will be covering the common keywords used with the UFUNCTION macro in Unreal Engine 4. Each of the keywords covered include a practical code sample and a look at how it compiles into Blueprint nodes.  I left out the networking specific keywords as they deserve a separate post on networking in Unreal Engine 4 and instead I focus on the different keywords used for exposing your C++ to Blueprint.
+In this post I will be covering the common keywords used with the UFUNCTION macro in Unreal Engine 4. Each of the keywords covered includes a practical code sample and a look at how it compiles into Blueprint nodes.  I left out the networking specific keywords as they deserve a separate post on networking in Unreal Engine 4 and instead I focus on the different keywords used for exposing your C++ to Blueprint.
 
 \[toc\]
 
@@ -64,7 +64,7 @@ Used when Blueprint implements the logic of this function instead of C++. Can 
 
 ![ue4_ufunction_event](/assets/images/ue4_ufunction_event.jpg)
 
-An important note here is the difference between specifying 'void' or a return type (eg. bool) on the function. The above code sample is of type void, and therefore results in a Event node, where the sample below (with a bool as return type) will be overridable as a Function instead. This difference is not exclusive to this keyword.
+An important note here is the difference between specifying 'void' or a return type (eg. bool) on the function. The above code sample is of type void, and therefore results in an Event node, where the sample below (with a bool as return type) will be overridable as a Function instead. This difference is not exclusive to this keyword.
 
 ```cpp
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, Category = "Character")
@@ -156,7 +156,7 @@ Customize the message with helpful information for the designers. Such as which 
 
 > Specifies the category of the function when displayed in Blueprint editing tools.
 
-The category keyword is cosmetic only and is used to group functions (and properties) in the editor. See **BlueprintCallable** for usage example.
+The category keyword is cosmetic only and is used to group functions (and properties) in the editor. See **BlueprintCallable** for a usage example.
 
 ![ue4_function_category](/assets/images/ue4_function_category.jpg)
 
@@ -164,7 +164,7 @@ As you can see our functions show up under "Character" which we specified as the
 
 #### Exec
 
-> The function can be executed from the in-game console. Exec commands only function when declared within certain class.
+> The function can be executed from the in-game console. Exec commands only function when declared within certain classes.
 
 Using Exec on functions is great for (debug) commands such as giving health to a player or enabling god mode. You can provide one or multiple parameters which will be displayed via the in-game console (~ Tilde-key) as seen below.
 

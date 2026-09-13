@@ -78,7 +78,7 @@ No C++ experience is required for most of the course. Programming-focused lesson
     style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
   >
     <h1 class="salesheader" style="text-align: center;"><strong>SUMMER SALE IS NOW!</strong></h1>
-    <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-optimization/#pricing-options">SUMMERSALE</a> at checkout for $100 discount! Sale ends September 12th!</strong></p>
+    <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-optimization/#pricing-options">SUMMERSALE</a> at checkout for a $100 discount! Sale ends September 12th!</strong></p>
   </section>
 </div>
 
@@ -144,7 +144,7 @@ All lessons are divided into **Gameplay** and **Graphics** learning tracks to ma
 
 ## Continuously Updated for Unreal Engine 5 {#curriculum-overview}
 
-The course is available in **Early Access** and already contains a substantial curriculum. New lessons and production case studies continue to be added, with new material recorded using current Unreal Engine releases. You can browse the Curriculum below to see what is currently available and what is still up coming.
+The course is available in **Early Access** and already contains a substantial curriculum. New lessons and production case studies continue to be added, with new material recorded using current Unreal Engine releases. You can browse the Curriculum below to see what is currently available and what is still upcoming.
 
 {% include course-curriculum.html curriculum=site.data.course_curriculum_optimization %}
 
@@ -160,7 +160,7 @@ The course is available in **Early Access** and already contains a substantial c
     style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
   >
     <h1 class="salesheader" style="text-align: center;"><strong>SUMMER SALE IS NOW!</strong></h1>
-    <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-optimization/#pricing-options">SUMMERSALE</a> at checkout for $100 discount! Sale ends September 12th!</strong></p>
+    <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-optimization/#pricing-options">SUMMERSALE</a> at checkout for a $100 discount! Sale ends September 12th!</strong></p>
   </section>
 </div>
 

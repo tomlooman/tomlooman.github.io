@@ -31,7 +31,7 @@ Check out the [Unreal Engine Bookmarks](/unreal-engine-resources) page!
 - [Probability and Games: Damage Rolls](https://www.redblobgames.com/articles/probability/damage-rolls.html) - Red Blob Games  
     Beautifully made interactive article on probability about rolling dice.
 - [Normal Distribution](https://www.mathsisfun.com/data/standard-normal-distribution.html) - Math Is Fun  
-    Bell curves will be valuable asset in your designer/programmer tool belt.
+    Bell curves will be a valuable asset in your designer/programmer tool belt.
 - [Keys to Combat: Anatomy of an Attack](https://gdkeys.com/keys-to-combat-design-1-anatomy-of-an-attack/) - GD Keys  
     Breaking down the elements of enemy attacks telegraphing and case studies.
 - [Approaches to designing projectiles for players and AI - Chris Proctor | Bungie](https://youtu.be/g1vwKC_cYmw?si=TaPweO_4Z9WGs6YJ)  
@@ -55,7 +55,7 @@ Check out the [Unreal Engine Bookmarks](/unreal-engine-resources) page!
 - [Wave Function Collapse tips and tricks](https://www.boristhebrave.com/2020/02/08/wave-function-collapse-tips-and-tricks/) - Boristhebrave  
     A commonly applied (constrained-based) procedural algorithm to turn tile sets into levels.
 - [Dungeon Generation in Binding of Isaac](https://www.boristhebrave.com/2020/09/12/dungeon-generation-in-binding-of-isaac/) - Boristhebrave  
-    Detailed outsiders analysis of this Indie-gem roguelike's procedural world.
+    Detailed outsider's analysis of this Indie-gem roguelike's procedural world.
 - [Dungeon Generation in Enter The Gungeon](https://www.boristhebrave.com/2019/07/28/dungeon-generation-in-enter-the-gungeon/) - Boristhebrave  
     Another breakdown by boristhebrave, this time for the roguelike bullet hell 'Enter The Gungeon'.
 - [Tile-Based Procedural Terrain Generation](https://www.cg.tuwien.ac.at/research/publications/2019/scholz_2017_bac/scholz_2017_bac-thesis.pdf) - Dominik Scholz  

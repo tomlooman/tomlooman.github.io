@@ -29,7 +29,7 @@ This will render boxes around modified primitives or log names to the output win
 
 ## Distance Field Ambient Occlusion
 
-The Unreal 4.3 release introduced [Distance Field Ambient Occlusion](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html) using a Signed Distance Field. The basic principle of a distance field is that it represents the distance from the object to the point in the the grid. [ByteWrangler](https://bytewrangler.blogspot.nl/2011/10/signed-distance-fields.html) has a nice and simple explanation on distance field in 2d if you'd like to know more.
+The Unreal 4.3 release introduced [Distance Field Ambient Occlusion](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html) using a Signed Distance Field. The basic principle of a distance field is that it represents the distance from the object to the point in the grid. [ByteWrangler](https://bytewrangler.blogspot.nl/2011/10/signed-distance-fields.html) has a nice and simple explanation on distance field in 2d if you'd like to know more.
 
 ## Ray Traced Distance Field Soft Shadows
 
@@ -48,5 +48,5 @@ The editor supports some cool visualizations, be sure to check the "_Mesh Distan
 
 ## Further Reading
 
-- [ByteWrangler](https://bytewrangler.blogspot.nl/2011/10/signed-distance-fields.html) has a nice and simple explanation of Signed Distance Fields (2D) with text rendering as example.
+- [ByteWrangler](https://bytewrangler.blogspot.nl/2011/10/signed-distance-fields.html) has a nice and simple explanation of Signed Distance Fields (2D) with text rendering as an example.
 - [Unreal Engine - Distance Field Ambient Occlusion](https://docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/DistanceFieldAmbientOcclusion/index.html) details on setup, performance and limitations.

@@ -23,7 +23,7 @@ In the example above you may notice the circle starts at around 25% instead of a
 
 ## Material Breakdown
 
-The material progress is controlled by a single scalar parameter ("Alpha") moving from 0 to 1. This parameter determines the cut-off in the radial gradient. With two sphere gradient Material Functions (comes built-in with the engine) we can clip the radial gradient into a nice circular shape. You can tweak the thickness by changing the size of the two spheres.
+The material progress is controlled by a single scalar parameter ("Alpha") moving from 0 to 1. This parameter determines the cut-off in the radial gradient. With two sphere gradient Material Functions (which come built-in with the engine) we can clip the radial gradient into a nice circular shape. You can tweak the thickness by changing the size of the two spheres.
 
 ![](/assets/images/circularprogress_materialoverview.jpg)
 

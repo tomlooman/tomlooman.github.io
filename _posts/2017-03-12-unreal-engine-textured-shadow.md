@@ -29,7 +29,7 @@ This trick was made possible due to a graphics binding bug where the LightAttenu
 
 ![](/assets/images/ue4_shadowman_disney.gif)
 
-The implementation is really quite basic, I used the LightAttenuationTexture available only in Forward-rendering of the engine to find which part of affected by light. To access this buffer you need to use the Custom-node in the material editor, and apply the following code:
+The implementation is really quite basic, I used the LightAttenuationTexture available only in Forward-rendering of the engine to find which part is affected by light. To access this buffer you need to use the Custom-node in the material editor, and apply the following code:
 
 ```CPP
 return Square(Texture2DSampleLevel(LightAttenuationTexture, LightAttenuationTextureSampler, UV, 0));
@@ -43,7 +43,7 @@ Below is the crude sample of the material used in the GIF:
 
 ![](/assets/images/ue4_shadowman_materialgraph.png)
 
-There is not a whole lot going on, simply blending between the wallpaper and the skull pattern based on the light attenuation value of that pixel is screenspace. The texture samplers use my WorldUVs material function which I've posted about some time ago.
+There is not a whole lot going on, simply blending between the wallpaper and the skull pattern based on the light attenuation value of that pixel in screen space. The texture samplers use my WorldUVs material function which I've posted about some time ago.
 
 **The effect visualized with two-tone instead of textures:**
 
@@ -55,6 +55,6 @@ This LightAttenuationTexture may not be the perfect source for detailed lighting
 
 I’ve done multiple blog posts about rendering [outlines in Unreal Engine](/unreal-engine-outline-multi-color-post-process) in the past. So when I had this idea of **outlining shadows** instead of objects, I figured it would be fun to build it as a quick experiment.
 
-To figure out where to draw the outline I use an approach very similar to my prior outline implementation, instead I sample the LightAttenuation buffer instead of the CustomDepth buffer and compare it to the light attenuation value or nearby pixel. This effect does NOT work in Deferred rendering!
+To figure out where to draw the outline I use an approach very similar to my prior outline implementation, instead I sample the LightAttenuation buffer instead of the CustomDepth buffer and compare it to the light attenuation value of a nearby pixel. This effect does NOT work in Deferred rendering!
 
 ![](/assets/images/ue4_shadowedoutlines_01.gif)

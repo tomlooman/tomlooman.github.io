@@ -184,7 +184,7 @@ For studio purchases, we issue a single invoice with any applicable [Partner Tie
 
 ### Do you offer bulk pricing?
 
-Yes. Bulk discounts are available and based on number of seats purchased. You can read more about [pricing & partner tiers](/courses/studio-pricing).
+Yes. Bulk discounts are available and based on the number of seats purchased. You can read more about [pricing & partner tiers](/courses/studio-pricing).
 
 ### What about vendor registration?
 

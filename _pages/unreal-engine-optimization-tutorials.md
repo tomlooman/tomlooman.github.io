@@ -42,7 +42,7 @@ I was live on Inside Unreal together with Ari talking about profiling & optimiza
 
 ### Practical UE5 Lighting & Shadow Optimizations
 
-We take a look at the process of auditing lights & shadows in Unreal Engine 5 using 'Far Far West' as a real-world example. A follow-up the the "Inside Unreal" livestream I did together with Ari from Epic Games!
+We take a look at the process of auditing lights & shadows in Unreal Engine 5 using 'Far Far West' as a real-world example. A follow-up to the "Inside Unreal" livestream I did together with Ari from Epic Games!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1uFR9lXrpyQ?si=ipdQp0AvfBa4lODi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -50,7 +50,7 @@ We take a look at the process of auditing lights & shadows in Unreal Engine 5 us
 
 My open-source Sample Game on GitHub and the most advanced and complete sample project I have built for Unreal Engine over the years. It comes with a large number of concepts and features you need to build games including a framework with a custom Ability System, enemy AI, full multiplayer support and a range of optimization tricks. You can find the full breakdown on the new [Orion Sample Game project page](/unreal-engine-sample-game-action-roguelike) along with the full source code.
 
-A sample of the optimization concepts in this project include:
+A sample of the optimization concepts in this project includes:
 - Data-oriented Programming
 - Object Pooling
 - Deferred Tasks for frame pacing

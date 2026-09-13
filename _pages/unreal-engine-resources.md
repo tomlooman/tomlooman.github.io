@@ -66,7 +66,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 - [Unreal Engine for Unity Developers](https://docs.unrealengine.com/en-US/unreal-engine-for-unity-developers/) - Epic Games  
    Absolutely worth a read to understand the differences and similarities before heading out on your own.
 - [C++ Complete Guide](/unreal-engine-cpp-guide) - Tom Looman  
-   Comprehensive reference guide for Unreal Engine C++. Read it, Bookmark it and use as reference.
+   Comprehensive reference guide for Unreal Engine C++. Read it, Bookmark it and use it as a reference.
 - [Unreal Gameplay Framework Guide for C++](/unreal-engine-gameplay-framework) - Tom Looman  
    Unreal has a built-in Gameplay Framework which you really should be using. It's important to understand the core classes and their intended usage.
 - [Things I wish I knew coming to Unreal from Unity](https://benui.ca/unreal/unreal-from-unity/) - BenUI  
@@ -77,7 +77,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 - [Unreal Art Optimization](https://unrealartoptimization.github.io/book/)  
    Many chapters on profiling and optimizing your game.
 - [Aggregating Ticks to Manage Scale in Sea of Thieves](https://www.youtube.com/watch?v=CBP5bpwkO54)  
-   One of my favorites from Unreal Fest, show-casing techniques to improve CPU performance.
+   One of my favorites from Unreal Fest, showcasing techniques to improve CPU performance.
 - [Asset Reduction Tools and Optimization Tips for Load Times and GC](https://bebylon.dev/ue4guide/performance-optimization/asset-size-loading/)  
    Written form of the [Unreal Fest 2018 presentation](https://www.youtube.com/watch?v=Ln8PCZfO18Y) showing off many useful tips and tricks for optimizing your assets.
 - [Shader Performance Measurement (why Instruction Count is unreliable)](https://www.youtube.com/watch?v=E82XxlXMJs4)  
@@ -106,7 +106,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 - [Understanding Shader Permutations](https://udn.unrealengine.com/s/article/Understanding-Shader-Permutations)  
    UDN Article (Licensees only) Understanding shader permutations is essential for workflow and runtime performance.
 - [Your Guide to Texture Compression](https://www.techarthub.com/your-guide-to-texture-compression-in-unreal-engine/)  
-   It's important to know some basics about texture compression and how it affects performance and visuals, this guide with help you with exactly that.
+   It's important to know some basics about texture compression and how it affects performance and visuals, this guide will help you with exactly that.
 - [Understanding BCn Texture Compression Formats](https://www.reedbeta.com/blog/understanding-bcn-texture-compression-formats/)  
    I absolutely love this insight into BC texture formats as it helps demystify their differences.
 
@@ -137,7 +137,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 - [How to Understand Network Replication](https://www.youtube.com/watch?v=JOJP0CvpB8w)  
    Alex has some of the best videos, this one is about essential concepts for Multiplayer Programming.
 - [Accurately syncing Unreal’s network clock](https://medium.com/@invicticide/accurately-syncing-unreals-network-clock-87a3f9262594)  
-   Explains and attempts to reduce the inherit 'desync' of the server time clock due to latency.
+   Explains and attempts to reduce the inherent 'desync' of the server time clock due to latency.
 - [Reliable vs. Unreliable RPC performance and ordering](https://dev.epicgames.com/documentation/en-us/unreal-engine/replicated-object-execution-order-in-unreal-engine)  
    Just one of those things that's good to know about.
 - [Network Emulation - Bad Pings & Packet Loss](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-network-emulation-in-unreal-engine)  
@@ -162,7 +162,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 ## Editor Extensions
 
 - [GenericGraph - Data structure Plugin](https://github.com/jinyuliao/GenericGraph)  
-   Extend the editor for things like quests, dialogue, and progression systems. Provides starting point to build your own.
+   Extend the editor for things like quests, dialogue, and progression systems. Provides a starting point to build your own.
 - [Adding New Asset Types](https://gmpreussner.com/reference/adding-new-asset-types-to-ue4)  
    Extend your pipeline by supporting custom asset types.
 - [Custom Details Panels in Unreal Engine (FPropertyEditorModule)](https://codekittah.medium.com/custom-details-panels-in-unreal-engine-fpropertyeditormodule-6fe41ba7c339)  
@@ -182,7 +182,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 - [Unreal UIs and Localization](https://benui.ca/unreal/ui-localization/) - Ben UI  
    Ben prepares you for localizing your game to prevent future headaches.
 - [Industries of Titan Localization Lessons](https://benui.ca/unreal/industries-titan-localization/) - Ben UI  
-   Lessons learned from Titan of Industries localization efforts.
+   Lessons learned from Industries of Titan localization efforts.
 
 ## Niagara Particles
 
@@ -192,7 +192,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 ## Unreal Editor
 
 - [Content Browser 'Search' Syntax Cheat Sheet](https://www.unrealdirective.com/unreal-search-syntax/)  
-   The Context Browser allows for complex filtering in the search box.
+   The Content Browser allows for complex filtering in the search box.
 
 ## People Blogging about Unreal Engine
 

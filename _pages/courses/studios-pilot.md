@@ -50,10 +50,10 @@ For developers building gameplay and features in Unreal Engine with C++.
 ### Unreal Engine Optimization
 For developers responsible for performance and optimization.
 
-- Everyone on the team adding content and code shares some responsibility of performance.
+- Everyone on the team adding content and code shares some responsibility for performance.
 - Providing fundamental understanding of performance and profiling
 - Teams relying on one “performance expert”, get everyone involved
-- Shared understanding of performance pitfalls and opportunities across entire Team
+- Shared understanding of performance pitfalls and opportunities across the entire Team
 
 There’s no required pace or completion target for participants during the pilot. Just real usage, under real conditions in (pre-)production.
 
@@ -86,7 +86,7 @@ Around day 25–30, we check in to:
 - Review how the course is being used
 - Confirm which roles benefited most
 - Finalize seat holders
-- Decide whether to expand or lock-in held licenses 
+- Decide whether to expand or lock in held licenses 
 
 This checkpoint turns usage into a clear next step.
 
