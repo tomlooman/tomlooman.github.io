@@ -74,7 +74,7 @@ It's important to check if pointers are not "null" (also written as `nullptr` in
 
 You should generally only check for `nullptr` if it's likely and expected that a pointer is null and continue execution of the game regardless. In the above code example, `FocusedActor` is going to be `nullptr` any time there is no interactable Actor under the player's crosshair.
 
-Now imagine in the example below we return a `nullptr` from `GetPlayerController()` and (quietly) skip the if-statement where we would otherwise add an item to inventory. You will scratch your head while playing wondering why you did not receive this item. Having no player controller during gameplay is unexpected and not a valid state of the game, we should not allow to (silently) continue. We either crash the game entirely or at the very least include an [Assert](#asserts-debugging) to be immediately informed about this corrupt/broken state of the code.
+Now imagine in the example below we return a `nullptr` from `GetPlayerController()` and (quietly) skip the if-statement where we would otherwise add an item to inventory. You will scratch your head while playing wondering why you did not receive this item. Having no player controller during gameplay is unexpected and not a valid state of the game, we should not allow the game to (silently) continue. We either crash the game entirely or at the very least include an [Assert](#asserts-debugging) to be immediately informed about this corrupt/broken state of the code.
 
 ```cpp
 APlayerController* PC = GetWorld()->GetPlayerController();
@@ -347,7 +347,7 @@ One way to reduce class dependencies is through interfaces...so that's what we w
 
 Interfaces in Unreal are a bit different from normal programming interfaces in that in Unreal Engine you are not required to implement the function, it's optional.
 
-An alternative to interfaces is to create a single base class (as mentioned earlier) that contains a `Interact()` function that child classes can override to implement their own behavior. Having a single base class is not always ideal or even possible depending on your class hierarchy, and that's where _interfaces_ might solve your problem.
+An alternative to interfaces is to create a single base class (as mentioned earlier) that contains an `Interact()` function that child classes can override to implement their own behavior. Having a single base class is not always ideal or even possible depending on your class hierarchy, and that's where _interfaces_ might solve your problem.
 
 Interfaces are a little odd at first in C++ as they require two classes with different prefix letters. They are both used for different reasons but first, let's look at the header.
 
@@ -472,7 +472,7 @@ You should \*never\* bind your delegates in the constructor and choose either `A
 
 Since delegates are weakly referenced you often don't need to unbind delegates when destroying objects/actors unless you want to manually stop listening/reacting to specific events.
 
-You can bind to a delegate calling `.AddDynamic()`. The first parameter takes a `UObject` for which we can pass `this`. The second parameter types the address of the function (`YourClass::YourFunction`) which is why we pass the function with the ampersand (`&`) symbol which is the address operator.
+You can bind to a delegate calling `.AddDynamic()`. The first parameter takes a `UObject` for which we can pass `this`. The second parameter takes the address of the function (`YourClass::YourFunction`) which is why we pass the function with the ampersand (`&`) symbol which is the address operator.
 
 ```cpp
 void ARogueAICharacter::PostInitializeComponents()
@@ -508,7 +508,7 @@ Macro: `DECLARE_DELEGATE`, `DECLARE_DELEGATE_OneParam`
 
 When used only in C++ we can define delegates with an unspecified amount of parameters. In the following example, we'll use a more complex use case which is asynchronously loading game assets.
 
-The StreamableManager of Unreal defines a `FStreamableDelegate`.
+The StreamableManager of Unreal defines an `FStreamableDelegate`.
 
 ```cpp
 DECLARE_DELEGATE(FStreamableDelegate);
@@ -617,14 +617,14 @@ Here is a piece of [Documentation on String handling](https://docs.unrealengine.
 
 Used to specify the location, rotation, and scale of things in the World. A line trace for example needs two FVectors (Locations) to specify the start and end of the line. Every Actor has an FTransform that contains Location, Rotation, and Scale to give it a place in the world.
 
-- `FVector` 3-axis as XYZ where Z is up. specifies either a Location or a direction much like common [Vector-math](https://www.mathsisfun.com/algebra/vectors.html).
+- `FVector` 3-axis as XYZ where Z is up. Specifies either a Location or a direction much like common [Vector-math](https://www.mathsisfun.com/algebra/vectors.html).
 - `FRotator` 3 params [Pitch, Yaw and Roll](https://howthingsfly.si.edu/flight-dynamics/roll-pitch-and-yaw) to give it a rotation value.
 - `FTransform` consists of FVector (Location), FRotator (Rotation) and FVector (Scale in 3-axis).
 - `FQuat` another variable that can specify a rotation also known by its full name as [Quaternion](https://en.wikipedia.org/wiki/Quaternion), you will mostly use FRotator in game-code however, FQuat is less used outside the engine modules although it can prevent [Gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock). (It's also not exposed to Blueprint)
 
 ### TArray, TMap, TSet
 
-Basically variations of lists of objects/values. Array is a simple list that you can add/remove items to and from. [TMap](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TMap/index.html) are dictionaries, meaning they have Keys and Values (where the Key must always be unique) eg. `TMap<int32, Actor>` where a bunch of Actors are mapped to unique integers. And finally, [TSet](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TSet/index.html) which is an optimized (hashed) version of [TArray](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TArrays/index.html), requires items in the list to be unique. Can be great for certain performance scenarios, but typically you use `TArray`.
+Basically variations of lists of objects/values. Array is a simple list that you can add/remove items to and from. [TMaps](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TMap/index.html) are dictionaries, meaning they have Keys and Values (where the Key must always be unique) eg. `TMap<int32, Actor>` where a bunch of Actors are mapped to unique integers. And finally, [TSet](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TSet/index.html) which is an optimized (hashed) version of [TArray](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TArrays/index.html), requires items in the list to be unique. Can be great for certain performance scenarios, but typically you use `TArray`.
 
 - [TArray in Unreal Engine](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TArrays/index.html).
 - [TMap (aka Dictionaries)](https://docs.unrealengine.com/latest/INT/Programming/UnrealArchitecture/TMap/index.html)
@@ -656,7 +656,7 @@ The ALL CAPS _preprocessor directives_ are used by the compiler to 'unfold' into
 
 ### UFUNCTION
 
-Allows extra markup on functions, and exposes it to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose functions to Blueprint. Sometimes required by the engine to bind functions to delegates (eg. binding a timer to call a function).
+Allows extra markup on functions, and exposes them to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose functions to Blueprint. Sometimes required by the engine to bind functions to delegates (eg. binding a timer to call a function).
 
 Here is [additional information in a blog post](/ue4-ufunction-keywords-explained) on the available keywords within `UFUNCTION()` and how to use them. There are a lot of [function specifiers](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Functions/Specifiers/) worth checking out, and [BenUI](https://benui.ca/unreal/ufunction/) does a great job of detailing what's available.
 
@@ -780,7 +780,7 @@ _Weak Object Pointer_. This is similar to pointers like `UObject*`, except that 
 TWeakObjectPtr<UGameAbility> MyReferencedAbility;
 ```
 
-Now we don't try to hold onto the object explicitly and it can be garbage collected safely. Before accessing the object, we must call `.Get()` which will attempt to retrieve the object from the internal object array and makes sure it's valid. If it's no longer a valid object, a nullptr is returned instead.
+Now we don't try to hold onto the object explicitly and it can be garbage collected safely. Before accessing the object, we must call `.Get()` which will attempt to retrieve the object from the internal object array and make sure it's valid. If it's no longer a valid object, a nullptr is returned instead.
 
 ```cpp
 UGameAbility* Ability = MyReferencedAbility.Get();
@@ -830,7 +830,7 @@ if (ensure(MyActorPointer)) // non-fatal, execution is allowed to continue, usef
 
 It's good to know that Asserts are compiled out of shipping builds by default and so it won't negatively affect runtime performance for your end-user.
 
-By adding these asserts you are immediately notified of the (coding) error. One tip I would give here is to only use it for potential coder mistakes and perhaps don't use it when a piece of content isn't assigned by a designer (having them run into asserts isn't as useful as to them it will look like a crash (unless they have an IDE attached) or stall the editor for a bit (as a minidump is created) and not provide a valuable piece of information). For them might be better of using logs and prints on the screen to tell them what they did not set up properly. I sometimes still add in asserts for content mistakes as this is very useful in solo or small team projects.
+By adding these asserts you are immediately notified of the (coding) error. One tip I would give here is to only use it for potential coder mistakes and perhaps don't use it when a piece of content isn't assigned by a designer (having them run into asserts isn't as useful as to them it will look like a crash (unless they have an IDE attached) or stall the editor for a bit (as a minidump is created) and not provide a valuable piece of information). For them, it might be better to use logs and prints on the screen to tell them what they did not set up properly. I sometimes still add in asserts for content mistakes as this is very useful in solo or small team projects.
 
 ## Core Redirects
 

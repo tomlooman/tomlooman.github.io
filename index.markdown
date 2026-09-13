@@ -8,7 +8,7 @@ title: Unreal Engine C++ & Optimization Tutorials
     <p>
         Learn Unreal Engine 5 through practical tutorials, production case studies, courses, and open-source sample projects. Explore C++, gameplay systems, multiplayer programming, profiling, and CPU/GPU optimization from a former Epic Games engineer.
 
-        Level-up your Unreal Engine skills with my Unreal Engine 5 Courses on
+        Level up your Unreal Engine skills with my Unreal Engine 5 Courses on
         <a href="courses/unrealengine-cpp">Professional Game Development with C++</a> and
         <a href="courses/unrealengine-optimization">Complete Game Optimization (CPU, Memory, & GPU)</a> for Engineers & Tech Artists!
     </p>

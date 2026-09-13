@@ -100,7 +100,7 @@ If you want to store player configurable settings there is a different class ava
 
 ## DeveloperSettingsBackedByCVars
 
-`DeveloperSettingsBackedByCVars` adds binding editor/project settings with Console Variables (CVars).
+`DeveloperSettingsBackedByCVars` adds support for binding editor/project settings to Console Variables (CVars).
 
 This new class lets us bind _console variables_ to project settings and easily change and store defaults either per developer or project-wide. In practice this means we can define default values in the INI files and at runtime change them using console variables.
 
