@@ -54,7 +54,7 @@ If your studio makes no additional purchases for **12 months**, your Partner Tie
 | Purchase | Result |
 |----------|--------|
 | Initial rollout: 10 seats | 15% discount |
-| Later expansion: +10 seats | Expansion invoice receives the 25% Partner Tier discount |
+| Later expansion: +10 seats | Expansion invoice receives the 20% Partner Tier discount |
 
 ### Scenario 2 - Crossing a Tier Threshold
 
