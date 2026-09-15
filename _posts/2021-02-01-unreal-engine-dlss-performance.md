@@ -17,7 +17,7 @@ redirect_from:
 
 Last year Nvidia announced DLSS 2.0 with the ability to open this new anti-aliasing solution for all games. The game-specific deep learning is no longer required as it was with prior iterations. For an indie dev that is especially exciting as the chance of getting onto Nvidia's SuperComputer was pretty slim. It's now easier than ever to add DLSS support to your Unreal Engine title!
 
-Besides the new game agnostic algorithm, we also get much-improved anti-aliasing results which honestly looks pretty fantastic and somewhat unbelievable in games like Control (See [Digital Foundry's DLSS Comparison](https://www.youtube.com/watch?v=YWIKzRhYZm4)). You'll get a chance to see how DLSS performs in Unreal Engine through my own experiments below.
+Besides the new game agnostic algorithm, we also get much-improved anti-aliasing results which honestly look pretty fantastic and somewhat unbelievable in games like Control (See [Digital Foundry's DLSS Comparison](https://www.youtube.com/watch?v=YWIKzRhYZm4)). You'll get a chance to see how DLSS performs in Unreal Engine through my own experiments below.
 
 **Update: Since this article was posted it has become much easier to access the [DLSS Plugin for UE4](https://developer.nvidia.com/dlss/unreal-engine-4.26-plugin).**
 
@@ -142,7 +142,7 @@ Ray-tracing features appear to be working better with DLSS enabled from a visual
 
 Throughout my experiments, I've been super impressed with the results of DLSS 2.0. The fact that this magically works on any game out of the box without Nvidia SuperComputer pre-processing is impressive.
 
-The image quality remains high and sometimes even managed to be crisper than TAA. There are some artifacts I ran into, that were overall small compared to the large performance gains we saw across the board. I'd love to test this on a 4K Display which is where the tech can shine even more.
+The image quality remains high and sometimes even manages to be crisper than TAA. There are some artifacts I ran into, that were overall small compared to the large performance gains we saw across the board. I'd love to test this on a 4K Display which is where the tech can shine even more.
 
 If you want to see more, [follow me on Twitter](https://twitter.com/t_looman) and **Subscribe below** to receive new articles straight to your inbox!
 

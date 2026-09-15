@@ -20,7 +20,7 @@ Editing Arrays containing Structs in Unreal Engine has some bad UX. Especially f
 
 ## Defining the TitleProperty
 
-Here is an example of a custom struct that contains the variable we wish to display in editor UI:
+Here is an example of a custom struct that contains the variable we wish to display in the editor UI:
 
 ```cpp
 USTRUCT(BlueprintType)
@@ -42,7 +42,7 @@ UPROPERTY(VisibleAnywhere, meta = (TitleProperty = "TeamName"))
 TArray<FTeamInfo> DefaultTeams;
 ```
 
-The result of displaying this in the editor: ("Environment", "Players", "Pirates", etc. are the TeamNames now embedded and visible even with the struct view collapsed. Without this specifier, the UI would be blank and you need to expand each element.
+The result of displaying this in the editor: “Environment”, "Players", "Pirates", etc. are the TeamNames now embedded and visible even with the struct view collapsed. Without this specifier, the UI would be blank and you need to expand each element.
 
 ![](/assets/images/ue4_uproperty_metaspecifier_titleproperty.jpg)
 *Example of the TeamName displayed in the array list.*

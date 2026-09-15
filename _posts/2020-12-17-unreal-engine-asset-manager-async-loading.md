@@ -81,7 +81,7 @@ You can either use UPrimaryDataAsset or override GetPrimaryAssetId() in any UObj
 
 DataAsset class already set up to support Asset Manager. These assets will purely hold data and no functional logic. You can include Actor classes to spawn, Abilities to grant, UI names, Icons, etc.
 
-You can think of it as descriptors, to describe the AI minion (hitpoints, abilities to grant, actor class to spawn, behavior tree to use) rather than its actual logic and brains.
+You can think of it as a descriptor, to describe the AI minion (hitpoints, abilities to grant, actor class to spawn, behavior tree to use) rather than its actual logic and brains.
 
 ### PrimaryAssetId & PrimaryAssetType
 
@@ -153,7 +153,7 @@ Async loading is a bit easier in Blueprint as there is a neat little node availa
 
 ![](/assets/images/ue4_blueprintasyncload.jpg)
 
-The downside of async loading in Blueprint is that we can't pass in additional parameters in our own Delegate as easily as we did in C++ example above where we pass in the FVector for spawn location. You can pass in variables from other pins after the load has completed, but I'm unsure about how these variable values are 'captured' and so should be used with caution as they may have changed since you started the load request a few frames ago.
+The downside of async loading in Blueprint is that we can't pass in additional parameters in our own Delegate as easily as we did in the C++ example above where we pass in the FVector for spawn location. You can pass in variables from other pins after the load has completed, but I'm unsure about how these variable values are 'captured' and so should be used with caution as they may have changed since you started the load request a few frames ago.
 
 ### Asset Bundles
 
@@ -176,19 +176,19 @@ TSoftClassPtr ActorClass;
 
 The Asset Manager allows us to _Preload_ a set of assets before they are needed. One of the benefits of preloading these assets is so we don't end up with a visual delay due to the asynchronous load request if we need the asset to be shown right away. What's more interesting however is how this Preloading behaves compared to simply calling Load a little early. If we were to Load the assets early, and then lose the Handle to those assets, they will remain loaded indefinitely or until we explicitly unload them through the Asset Manager again (requiring that handle to do so).
 
-Preloading on the other hand, allows to bring the assets into memory just in case we'll need it soon. And when we don't, we can simply get rid of the handle and it'll automatically be unloaded again.
+Preloading on the other hand, allows us to bring the assets into memory just in case we'll need them soon. And when we don't, we can simply get rid of the handle and they'll automatically be unloaded again.
 
 - **Load** \- loads the asset and keeps it in memory until explicitly unloaded.
 
 - **Preload** \- loads the asset and unless you later call Load on those same assets, it'll automatically become unloaded if we lose the handle.
 
-The following is example paraphrased from Nick Darnell to explain this concept more clearly:
+The following is an example paraphrased from Nick Darnell to explain this concept more clearly:
 
 In the case of a Treasure Chest, you can _Preload_ all the things it would spawn when opened. If you never open it and it gets destroyed, the handle of the preloaded assets will die too. If they were _Loaded_ instead and the actor went away, it would be more difficult to decide to unload since we don't know whether something else needs those assets to still be loaded. The preload takes care of that and knows whether it can safely get rid of them by keeping those two concepts separate. If we decided not to preload nor load anything until opening of the chest, we might end up with a delay before we can visibly shoot out the loot like Fortnite does.
 
 ## Asset Manager Configuration
 
-After configuring your Asset Manager it will automatically discover new PrimaryAssets when added. You setup this configuration in the _Project Settings \> Asset Manager_.
+After configuring your Asset Manager it will automatically discover new PrimaryAssets when added. You set up this configuration in the _Project Settings \> Asset Manager_.
 
 ![](/assets/images/ue4_projectsettings_assetmanager.jpg)
 *Example Configuration from WARPSQUAD.*
@@ -199,9 +199,9 @@ Asset Manager wraps around the `FStreamableManager`, which is still a manager yo
 
 ## Auditing Assets
 
-Auditing Assets gives you more insight into how your Primary Assets are setup and used.
+Auditing Assets gives you more insight into how your Primary Assets are set up and used.
 
-right-click on an asset in the content browser lets you "Audit Assets...". This gives you some insight into the total size associated with an asset, how often it's used, Ids, Type, etc. Use the buttons at the top to easily filter based on certain criteria.
+Right-clicking on an asset in the content browser lets you "Audit Assets...". This gives you some insight into the total size associated with an asset, how often it's used, Ids, Type, etc. Use the buttons at the top to easily filter based on certain criteria.
 
 ![](/assets/images/ue4_auditassets.jpg)
 *Audit Assets Window*

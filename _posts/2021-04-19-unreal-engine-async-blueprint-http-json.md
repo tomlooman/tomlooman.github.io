@@ -48,7 +48,7 @@ For the HTTP request you'll need the following #includes in your newly created .
 
 ## The Code
 
-The node requires a few elements to function, with Unreal converting it to the complex node automatically. The _Activate()_ function performs the request and sets up the callback once our request has completed. The static function is the Blueprint node and instantiates a new _Action_ that handles the logic. Finally, the event delegate is required to create the async output wire in the blueprint node along with the data pins (in the example below its _FString MOTD_ and _bool bSuccess_ that are both created as output data pins)
+The node requires a few elements to function, with Unreal converting it to the complex node automatically. The _Activate()_ function performs the request and sets up the callback once our request has completed. The static function is the Blueprint node and instantiates a new _Action_ that handles the logic. Finally, the event delegate is required to create the async output wire in the blueprint node along with the data pins (in the example below it's _FString MOTD_ and _bool bSuccess_ that are both created as output data pins)
 
 Header:
 
@@ -152,6 +152,6 @@ That's it! This short tutorial is a bit of a two-in-one as both concepts (latent
 
 JSON is not Blueprint exposed by default in Unreal Engine, there are some (free) Plugins available ([here](https://www.unrealengine.com/marketplace/en-US/product/varest-plugin) and [here](https://www.unrealengine.com/marketplace/en-US/product/json-blueprint)) which can handle everything we just created and much more.
 
-On a localization side note: If you want to localize the (MOTD) text you can provide multiple Keys in your JSON for all supported languages and use the [active language](https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/Internationalization/GetCurrentLanguage/index.html) in the game to provide to grab the specific language string from the JSON.
+On a localization side note: If you want to localize the (MOTD) text you can provide multiple Keys in your JSON for all supported languages and use the [active language](https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/Internationalization/GetCurrentLanguage/index.html) in the game to grab the specific language string from the JSON.
 
 For more Unreal Engine Tutorials, [follow me on Twitter](https://twitter.com/t_looman) and subscribe below!
