@@ -19,7 +19,7 @@ redirect_from:
 
 There are plenty of ways to animate or interpolate things in Unreal Engine. The skeletal animation tools for example are incredibly powerful, but none of the available tools in Unreal are very lightweight or easy to use in C++. Especially for things that are not even skeletal meshes to begin with such as animating the radius of some gameplay ability, opening a treasure chest, or any other kind of value interpolation to use in your game code.
 
-For a simple use case like opening of a treasure chest, we don't want to use advanced animation tools such as Sequencer, Control Rig, skeletal mesh animations etc. We just want to interpolate between two values, ideally non-linear. For example, with a little bounce and the end or easing in/out of the transition. _(The wobble at the end may be a little subtle in the recording, but it does add a nice touch in-game)_
+For a simple use case like opening of a treasure chest, we don't want to use advanced animation tools such as Sequencer, Control Rig, skeletal mesh animations etc. We just want to interpolate between two values, ideally non-linearly. For example, with a little bounce at the end or easing in/out of the transition. _(The wobble at the end may be a little subtle in the recording, but it does add a nice touch in-game)_
 
 ![](/assets/images/anim_cpp_treasurechest.gif)
 
@@ -35,12 +35,12 @@ The main issue with animating in C++ is there is no lightweight and simple API t
 
 ## What about TimelineComponent?
 
-The TimelineComponent is a pretty cool implementation with a unique Blueprint Node that makes it very easy to setup curve animations in Blueprint. It is not nearly as nice to use in C++, but more importantly it has other issues which we can improve upon. A couple of problems:
+The TimelineComponent is a pretty cool implementation with a unique Blueprint Node that makes it very easy to set up curve animations in Blueprint. It is not nearly as nice to use in C++, but more importantly it has other issues which we can improve upon. A couple of problems:
 
 - ActorComponent based which adds memory overhead, spawn/initialization cost, and additional garbage collection pressure if you use these a lot
 - Registers one new tick per component
 - Much better UX for Blueprint usage than C++
-- Not available in every context, with it being an ActorComponent (eg. if you want to animate something inside an non-Actor class like a gameplay ability)
+- Not available in every context, with it being an ActorComponent (eg. if you want to animate something inside a non-Actor class like a gameplay ability)
 
 ![](/assets/images/anim_timeline.png)
 
@@ -54,7 +54,7 @@ All we need to do is have the (tickable) subsystem play the animation for us, pa
 
 ## Animating with Curves
 
-Using Curve Assets lets us trigger and control the animation logic in C++ while allowing a designer in the Unreal Editor to fine-tune the animation. Below is an usage example in the [RogueTreasureChest](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/World/RogueTreasureChest.cpp) to open the "LidMesh" based on the curve animation.
+Using Curve Assets lets us trigger and control the animation logic in C++ while allowing a designer in the Unreal Editor to fine-tune the animation. Below is a usage example in the [RogueTreasureChest](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/World/RogueTreasureChest.cpp) to open the "LidMesh" based on the curve animation.
 
 ```cpp
 URogueCurveAnimSubsystem* AnimSubsystem = GetWorld()->GetSubsystem<URogueCurveAnimSubsystem>();
@@ -82,7 +82,7 @@ You can create a Curve Asset by right-clicking your Content Browser and selectin
 
 To edit the curve, use middle mouse click to add new Keys.
 
-The animation subsystem will manage the updates and removes the animation once finished. This alleviates some manual bookkeeping headaches. If you wish to manually Tick the animation anyway, it’s very easy to do so with the following code snippet as an example (taken from [RogueTreasureChest.cpp](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/World/RogueTreasureChest.cpp)):
+The animation subsystem will manage the updates and remove the animation once finished. This alleviates some manual bookkeeping headaches. If you wish to manually Tick the animation anyway, it’s very easy to do so with the following code snippet as an example (taken from [RogueTreasureChest.cpp](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/World/RogueTreasureChest.cpp)):
 
 ```cpp
 // For manual ticking, you create the struct directly and keep it around, in FActiveCurveAnim* CurveAnimInst;
@@ -143,7 +143,7 @@ Keep in mind that you'll need to change the animation system slightly as it curr
 
 ## Closing
 
-You now have a strong basis for creating animations in C++, driving a wide variety of systems. There is certainly more to implement such as looping, ping-pong playback, different value types (eg. Vectors and Colors). I will leave that up to you for now, maybe if you see this article in the future the subsystem will have be expanded already! You can find the source and other interesting C++ systems in the [Action Roguelike project on GitHub](https://github.com/tomlooman/ActionRoguelike).
+You now have a strong basis for creating animations in C++, driving a wide variety of systems. There is certainly more to implement such as looping, ping-pong playback, different value types (eg. Vectors and Colors). I will leave that up to you for now, maybe if you see this article in the future the subsystem will have been expanded already! You can find the source and other interesting C++ systems in the [Action Roguelike project on GitHub](https://github.com/tomlooman/ActionRoguelike).
 
 To be notified of more C++ articles like this one, subscribe to the newsletter below.
 

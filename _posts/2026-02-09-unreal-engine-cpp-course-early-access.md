@@ -19,7 +19,7 @@ excerpt: "The Unreal Engine 5 refresh of the Professional Game Development in C+
 
 ## Free Upgrade
 
-This **Unreal Engine 5 version is a FREE upgrade for all current students**. It has taken many months of work and it is far more than a re-recording of the original. Instead every single line of code has been reviewed and considered with some content getting cut and replaced. This resulted in streamlined lesson plan and a chance to swap out some repetitive bits of the original with more exciting concepts either new to UE5 or that simply did not make it into the original curriculum for any number of reasons.
+This **Unreal Engine 5 version is a FREE upgrade for all current students**. It has taken many months of work and it is far more than a re-recording of the original. Instead every single line of code has been reviewed and considered with some content getting cut and replaced. This resulted in a streamlined lesson plan and a chance to swap out some repetitive bits of the original with more exciting concepts either new to UE5 or that simply did not make it into the original curriculum for any number of reasons.
 
 {: .notice--info }
 You are automatically enrolled into the Early Access Refresh when purchasing the original course. The landing pages will be swapped out once the refresh hits the full "v2.0" launch.
@@ -46,7 +46,7 @@ The general design of the game you will build during the course remains largely 
 - Assignment 3: Health Pickup
 - Enemy Monsters: building out AI using Behavior Trees (StateTrees used elsewhere)
 - Assignment 4: Flee & Heal behaviors for enemies
-- Action System: building our own [GAS](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine)-like including Actions, Buffs/debuffs, Attribute handling.
+- Action System: building our own [GAS](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-ability-system-for-unreal-engine)-like system including Actions, Buffs/debuffs, Attribute handling.
 - Using GameplayTags in-depth.
 - *...remaining lessons uploaded on a weekly schedule*
 
@@ -60,7 +60,7 @@ As a reminder, once the full refresh is completed, the price of the course will 
 
 ## Early Impressions from Students
 
-Feedback from students with early access have been overwhelmingly positive! This gave me the confidence I am on the right track for the remainder of the content. A few snippets below to give you an impression:
+Feedback from students with early access has been overwhelmingly positive! This gave me the confidence I am on the right track for the remainder of the content. A few snippets below to give you an impression:
 
 *"This has so far been the best course I have ever taken that is better than anything else I've seen. I have been working with UE since 4.26 and I was doubtful coming to this course that 'What if I already know this stuff' but oh my god. Since the first lecture I am learning bits and shortcuts for things I have used so much of my time on. From switching to Rider, to different implementation methods of BPs and callbacks, to debugging, with actual usage of assets rather than some UE_LOG with some numbers."* - Pouya N.
 

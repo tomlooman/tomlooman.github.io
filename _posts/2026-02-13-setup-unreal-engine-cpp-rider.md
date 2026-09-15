@@ -102,7 +102,6 @@ In the **Editor Preferences > General > Source Code > Source Code Editor** set i
 
 You will be prompted when launching Rider with an Unreal Engine project to install RiderLink.
 
-I recommend Installing RiderLink plugin to the Engine. This is a super powerful tool to view information on how your project and Blueprint is using your C++ code such as knowing which Blueprint has changed a variable default or overrides a function.
 
 Find the Notifications tab on the top-right to install RiderLink to Engine (recommended)
 

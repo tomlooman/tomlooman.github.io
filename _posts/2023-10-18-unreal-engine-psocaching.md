@@ -22,7 +22,7 @@ redirect_from:
 {: .notice--info }
 **Update:** A detailed video section on PSO gathering and project configuration is available in my [**Complete Game Optimization for Unreal Engine 5 Course**](https://tomlooman.com/courses/unrealengine-optimization/)! Feel free to use the written article below or check out the course which covers PSOs and MANY more essential topics for good game performance.
 
-In short, a "PSO" tells the GPU exactly what state is must set itself to before executing certain operations such as drawcalls. This PSO needs to be _compiled_ and is GPU dependent and therefore can't be done ahead of time on certain platforms such as PC. For platforms like Xbox and PlayStation this can be done during Cooking of the project as the hardware is known ahead of time. This explains why certain game releases only suffer from hitch related issues on PC and not consoles.
+In short, a "PSO" tells the GPU exactly what state it must set itself to before executing certain operations such as drawcalls. This PSO needs to be _compiled_ and is GPU dependent and therefore can't be done ahead of time on certain platforms such as PC. For platforms like Xbox and PlayStation this can be done during Cooking of the project as the hardware is known ahead of time. This explains why certain game releases only suffer from hitch related issues on PC and not consoles.
 
 _"Earlier graphics APIs, such as Direct3D 11, needed to make dozens of separate calls to configure GPU parameters on the fly before issuing draw calls. More recent graphics APIs, such as Direct3D 12 (D3D12), Vulkan, and Metal, support using packages of pre-configured GPU state information, called Pipeline State Objects (PSOs), to change GPU states more quickly._
 
@@ -38,7 +38,7 @@ The intent as stated by Epic Games is for the new **PSO Precaching** solution to
 
 This article will cover an [implementation using **Action Roguelike on GitHub**](https://github.com/tomlooman/ActionRoguelike) to give you the best starting position for your own project. I'll mostly skip what is already covered by the docs including things like the background information on PSOs and how other APIs and platforms handle this. So I'll be focusing on Windows DirectX 12. _You \*really\* should read the available documentation along with this article as it provides additional details on these systems._
 
-This screenshot (Unreal Insights) shows a game running without any handling of PSOs. The result is enormous frame spikes when objects are first seen on screen as the PSO compilation steps stalls the game until the PSO is ready to be sent to the GPU. Here that PSO took 54.1ms to compile, meanwhile the game cannot continue rendering.
+This screenshot (Unreal Insights) shows a game running without any handling of PSOs. The result is enormous frame spikes when objects are first seen on screen as the PSO compilation steps stall the game until the PSO is ready to be sent to the GPU. Here that PSO took 54.1ms to compile, meanwhile the game cannot continue rendering.
 
 ![](/assets/images/psocaching_hitches.jpg)
 *Unreal Insights without caching, major frame spikes (top) and compilation tasks stalling the game (bottom). Insights bookmarks display when a new PSO is discovered (and its type graphics/compute)*
@@ -47,12 +47,13 @@ This screenshot (Unreal Insights) shows a game running without any handling of P
 
 The naming of the two systems can be a bit confusing as it goes by a few names in the engine code. The "PSO Precaching" is used for the new automatic runtime "just-in-time" compilation of the PSOs. This system was introduced in 5.1 and is production ready with 5.3 and later.
 
+The original system that shipped for years with UE4 requires manual collection of PSOs by the developer; the PSOs are _bundled_ with the game executable. These bundled PSOs are then compiled when the game first launches, for example in the main menu. You can call these _Bundled PSOs_ or _Recorded PSOs_. In C++ you may often see it referenced as _ShaderPipelineCache_ in the engine source.
 
 I'll cover the configuration settings and my discoveries for both systems below.
 
 Note: Epic is no longer performing the manual recording step for their PSOs and rely entirely on Precaching. That said, their game has a lot of user generated content which can't use the bundled PSOs. They \*might\* still have their old recorded PSOs included with the installation (unconfirmed).
 
-Fornite's load screen is said to be about 15 seconds longer on first load due to Precaching. Keep in mind that otherwise you would have to compile the bundled PSOs in your main menu. So the moment of compilation has simply moved with Precaching. Precaching also only compiles the PSOs used by the level being loaded where bundled PSOs just compile the entire game unless you apply _[Masking](https://docs.unrealengine.com/en-US/manually-creating-bundled-pso-caches-in-unreal-engine/#partitioningthecache)_.
+Fortnite's load screen is said to be about 15 seconds longer on first load due to Precaching. Keep in mind that otherwise you would have to compile the bundled PSOs in your main menu. So the moment of compilation has simply moved with Precaching. Precaching also only compiles the PSOs used by the level being loaded where bundled PSOs just compile the entire game unless you apply _[Masking](https://docs.unrealengine.com/en-US/manually-creating-bundled-pso-caches-in-unreal-engine/#partitioningthecache)_.
 
 ## How does PSO Precaching work?
 
@@ -112,7 +113,7 @@ This stat command is only available in builds without `WITH_EDITOR` compile flag
 
 ### Precaching in Unreal Insights
 
-You can best see the compilation steps in the game's load screen using Unreal Insights. It adds a large number of tasks on worker threads during map loading and may increase the total time it takes when its first loaded by the player. These compiled PSOs do get stored by the GPU drivers meaning the next time you load this level, you won't suffer the same penalty.
+You can best see the compilation steps in the game's load screen using Unreal Insights. It adds a large number of tasks on worker threads during map loading and may increase the total time it takes when it's first loaded by the player. These compiled PSOs do get stored by the GPU drivers meaning the next time you load this level, you won't suffer the same penalty.
 
 To get proper stats here you do need to enable PSO Validation mentioned earlier. Don't forget about `-clearPSODriverCache` to have a clean cache every run.
 
@@ -126,7 +127,7 @@ While the new system is a great improvement for games running on DX12, it will n
 
 Combining both systems is what I am currently doing in the [Action Roguelike](https://github.com/tomlooman/ActionRoguelike) sample project for the best coverage. Without bundled PSOs I could not get a hitch free experience as of 5.3 since even basic components like DecalComponent are not supported at this time. In UE 5.6 (and possibly earlier versions) they have included additional coverage including UDecalComponent. You can find out by looking in code for things such as `UDecalComponent::PrecachePSOs()`.
 
-## How to setup Bundled PSOs?
+## How to set up Bundled PSOs?
 
 For [bundled PSOs the official documentation](https://docs.unrealengine.com/en-US/manually-creating-bundled-pso-caches-in-unreal-engine/) does a pretty decent job to get you started. I won't be repeating many of the things they already cover there and instead just elaborate on the CVARs I discovered, suggestions for capturing PSOs manually and my findings when trying out this system. I am using the same initial set up as the official docs, and modified from there. I'm keeping it brief as I don't want too much overlap.
 
@@ -174,7 +175,7 @@ ShaderStableInfo-Global-PCD3D_SM6.shk
 
 _(copying both \_SM5 and \_SM6 .shk files did crash for me when converting the recorded PSOs later in this process. Luckily we're just interested in setting up SM6 for this example)_
 
-You may need to copy the shader stable files again if you make adjustments to the project's enabled shader permutations. Keep this in mind if you recording conversion step fails at some point in development.
+You may need to copy the shader stable files again if you make adjustments to the project's enabled shader permutations. Keep this in mind if your recording conversion step fails at some point in development.
 
 ### Record (Some) PSOs
 
@@ -182,7 +183,7 @@ Now we will record some PSOs to file which we can later inject back into our nex
 
 To verify this process is working for you, remember what you did when "recording" so that you can repeat it at the end and confirm that section no longer stutters.
 
-Launch the packaged game with `-logPSO` as a launch parameter. simplest way is to make a shortcut and add this as in the Target field. I run all my executables with `-clearPSODriverCache` so that I can consistently see stutters and not accidentally use the GPU's driver cache which may contain compiled PSOs from an earlier run.
+Launch the packaged game with `-logPSO` as a launch parameter. The simplest way is to make a shortcut and add this in the Target field. I run all my executables with `-clearPSODriverCache` so that I can consistently see stutters and not accidentally use the GPU's driver cache which may contain compiled PSOs from an earlier run.
 
 Quit the game and find the `.rec.upipelinecache` file(s) in `Build/Windows/PipelineCaches/` each run with -logPSO will generate another file that can be copied into our `ActionRoguelike/CollectedPSOs` folder. You don't need to delete old recordings unless you want to start from scratch as they get merged together in the next step using the `ShaderPipelineCacheTools` commandlet.
 
@@ -214,11 +215,11 @@ Package the game again, the generated .spc will be included in the build.
 
 Can't stress this enough: When testing PSOs, ALWAYS run with `-clearPSODriverCache` as a launch parameter or you'll believe to have fixed the issue while it simply grabs cached files from the local GPU driver cache.
 
-To confirm caching has worked run the packaged game with Insights using `-trace=default -clearPSODriverCache` or "stat unitgraph" to visualize the stutters in-viewport. Within Insights you can check the Bookmarks or Log and see if there is any new PSOs encountered.
+To confirm caching has worked run the packaged game with Insights using `-trace=default -clearPSODriverCache` or "stat unitgraph" to visualize the stutters in-viewport. Within Insights you can check the Bookmarks or Log and see if there are any new PSOs encountered.
 
 If you load the same level and perform the same gameplay actions as the baseline before making any changes, there should no longer be any PSO related stutters.
 
-Keep in mind that the bundled PSOs need to compile once the game first boots. This starts pretty early in the process, but if you load directly into a level from launch it may not be ready by the time the load screen is complete. Best is to boot into the main menu and confirm the log that compilation started and finished. You can verify this is happening in the log:
+Keep in mind that the bundled PSOs need to compile once the game first boots. This starts pretty early in the process, but if you load directly into a level from launch it may not be ready by the time the load screen is complete. Best is to boot into the main menu and confirm in the log that compilation started and finished. You can verify this is happening in the log:
 
 ```
 LogRHI: FShaderPipelineCache::BeginNextPrecompileCacheTask() - ActionRoguelike begining compile.
@@ -260,7 +261,7 @@ bSharedMaterialNativeLibraries=True
 
 The `/CollectedPSOs/` folder in the project root contains the `Cmd_ConvertPSOs.bat` file to convert the collected `.rec.upipelinecache` files (can be multiple) and needs the .shk files copied from `Saved\Cooked\Windows\ActionRoguelike\Metadata\PipelineCaches` (requires at least one cook after enabling PSO CVARs)
 
-The folder will eventually contain many `.rec.upipelinecache` files as they can be aggregated together by the commandlet. This makes capturing much easier as you need don't run the full game every capture.
+The folder will eventually contain many `.rec.upipelinecache` files as they can be aggregated together by the commandlet. This makes capturing much easier as you don't need to run the full game every capture.
 
 The generated `PSO_ActionRoguelike_PCD3D_SM6.spc` file must be copied to `Build/Windows/PipelineCaches` every time it's generated by the commandlet.
 
@@ -270,7 +271,7 @@ You can of course modify your commands to properly automate this to avoid the mi
 
 Handling Bundled PSOs is a lot of work compared to the new PSO Precaching. Therefore we can only hope that it will eventually be replaced entirely saving everyone a ton of work. Until then I'd like to suggest some ideas for streamlining this process as implementing this falls out of the scope of this article.
 
-- Have QA or playtesters with the game with -logPSO, this would ideally automatically upload the generated file to a server to avoid manual work. Make sure they run on different scalability settings too as these will create different PSOs.
+- Have QA or playtesters run the game with -logPSO, this would ideally automatically upload the generated file to a server to avoid manual work. Make sure they run on different scalability settings too as these will create different PSOs.
 
 - Create a simple spline actor in every level that can do a flythrough to visit all locations. This might not cover everything so keep cinematics and spawnables in mind. Perhaps these cinematics can be triggered as part of the automation after the fly through has completed.
 
