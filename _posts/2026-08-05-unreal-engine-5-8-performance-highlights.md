@@ -23,13 +23,13 @@ Some other optimization trends you see across rendering features include overall
 **Share this article with everyone on your team!** This way everyone is informed on the most important changes to 5.8 without having to spend hours digging through the exceedingly long release notes.
 
 {: .notice--info }
-This article is part of my efforts of keeping Unreal Engine developers informed about Performance & Optimization! For that I have a in-depth [Complete Game Optimization Course for Unreal Engine 5](https://tomlooman.com/courses/unrealengine-optimization/) to train engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
+This article is part of my efforts of keeping Unreal Engine developers informed about Performance & Optimization! For that I have an in-depth [Complete Game Optimization Course for Unreal Engine 5](https://tomlooman.com/courses/unrealengine-optimization/) to teach engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
 
 **Note:** Unreal Directive has a [Console Variables page](https://unrealdirective.com/resources/console-variables/?version=5.8&new=1) that shows **new CVARs added in 5.8** which is a good way to find out new ways to tune new or existing features. For example, you can see many `a.budget.*` CVARs (**Animation Budgeter Plugin**) are new and worth exploring if you use that feature. These new CVARs are often not called out in the release notes.
 
 ## Unreal Insights
 
-Added "UObject Count" trace counter. <span class="text-comment">// use `counters` trace channel. This is helpful to keep an eye on your total objects count which directly affects garbage collection performance (and memory in general).</span>
+Added "UObject Count" trace counter. <span class="text-comment">// use `counters` trace channel. This is helpful to keep an eye on your total object count which directly affects garbage collection performance (and memory in general).</span>
 
 Added bandwidth and percent value types for graphs and counter stats.
 
@@ -37,7 +37,7 @@ Added bandwidth and percent value types for graphs and counter stats.
 
 Unreal Insights users can now create time, time range, and event-based annotations in Unreal Insight traces. The annotation data is saved in a sidecar.ini file that can be shared. This feature is to help individuals and teams with the performance analysis of trace files.
 
-I have found Annotations immediately very valuable as I often return to traces later and this helps locating previous findings and adding context that you would otherwise forget.
+I have found Annotations immediately very valuable as I often return to traces later and this helps locate previous findings and adding context that you would otherwise forget.
 
 ## Hitch snapshots
 
@@ -70,7 +70,7 @@ More compact log formatting option for **ProfileGPU**.
 
 ## Lumen
 
-Lumen gets a lot of improvements this release. The most important being **Lumen Lite** which is enabled on "Medium" Scalability for Global Illumination. Standard Lumen is also receiving many improvements including better disocclussion, denoising and quality during motion. Less memory usage, fewer shader permutations. Too many to copy over, so look for the [Lumen section](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#lumen) in the full release notes if you want to read the rest. Below are some highlights that are relevant for most people to know.
+Lumen gets a lot of improvements this release. The most important being **Lumen Lite** which is enabled on "Medium" Scalability for Global Illumination. Standard Lumen is also receiving many improvements including better disocclusion, denoising and quality during motion. Less memory usage, fewer shader permutations. Too many to copy over, so look for the [Lumen section](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes#lumen) in the full release notes if you want to read the rest. Below are some highlights that are relevant for most people to know.
 
 New BP function on `AGameUserSettings: IsGlobalIlluminationAllowed` which can be used by a game's Blueprints to set the PPVolume depending on whether GI is enabled.
 
@@ -102,7 +102,7 @@ Enabled Lumen **applying height fog to reflection ray hits** by default (`r.Lume
 
 Allow distance fields to run on `GRHIDeviceIsIntegrated`. This check was added a decade ago to prevent issues on some outdated drivers, but nowadays it prevents some pretty capable SM5 GPUs to run distance field features.<span class="text-comment">// This seems great for integrated GPUs that can now use SDFs for lighting features such as DF shadows, DF ambient occlusion or even Lumen's Software Raytracing.</span>
 
-Distance Fields: Remove distance field shader permutations when distance fields are disabled in project settings.<span class="text-comment">// more projects are able to disable SDFs entirely, this helps reducing the overall shader permutations which is always a win. We see shader permutation reductions across many rendering features in 5.8</span>
+Distance Fields: Remove distance field shader permutations when distance fields are disabled in project settings.<span class="text-comment">// more projects are able to disable SDFs entirely, this helps reduce the overall shader permutations which is always a win. We see shader permutation reductions across many rendering features in 5.8</span>
 
 Fixed pooled buffer and texture memory leaks in GlobalDistanceField when changing global distance field resolution at runtime.
 
@@ -118,7 +118,7 @@ Added `r.MegaLights.ScreenTraces.Quality` which allows to tweak screen space tra
 
 Added `r.MegaLights.Supported` which allows to remove all MegaLights shader compilation overhead if it's not used in project.
 
-Deprecated **SSGI (Screen Space Global Illumination)**. SSGI is superseded by Lumen GI.<span class="text-comment">// The intend is most likely to just use Lumen Lite now instead of SSGI as this relied too much on screen space information and was not a full solution in itself.</span>
+Deprecated **SSGI (Screen Space Global Illumination)**. SSGI is superseded by Lumen GI.<span class="text-comment">// The intent is most likely to just use Lumen Lite now instead of SSGI as this relied too much on screen space information and was not a full solution in itself.</span>
 
 ## Garbage Collection
 
@@ -153,7 +153,7 @@ Sandboxes provide an isolated workspace where you can experiment without affecti
 - Export a sandbox to share with a teammate, or import one to pick up where they left off
 
 {: .notice--info }
-While not directly performance related, it is an very interesting workflow improvement to experiment with changes to the world, materials, etc that affect performance in unknown ways.
+While not directly performance related, it is a very interesting workflow improvement to experiment with changes to the world, materials, etc that affect performance in unknown ways.
 
 ## Mass Framework Refactor
 
@@ -195,7 +195,7 @@ Not specified by how much, but faster is always a win.
 - Multi-pass deferred rendering as the default path across mobile platforms (with forward rendering still available as an opt-in).
 - Mobile support for SSAO, SSR, deferred decals, contact shadows, and higher-quality water rendering.
 
-In UE 5.8 introduces half-precision (FP16) shader usage in targeted materials and global shader passes, improving performance while preserving visual quality.
+UE 5.8 introduces half-precision (FP16) shader usage in targeted materials and global shader passes, improving performance while preserving visual quality.
 
 ## Blueprint
 
@@ -253,7 +253,7 @@ Added `r.DOF.PreferLowerBitDepth`. When enabled, the bit depth of intermediary b
 
 ## Variable Rate Shading
 
-Significantly improved performance of the `CreateShadingRateImage` pass.<span class="text-comment">// That is the texture created each frame for "Tier 2 VRS" to determine which pixels to render are a reduced shading rate.</span>
+Significantly improved performance of the `CreateShadingRateImage` pass.<span class="text-comment">// That is the texture created each frame for "Tier 2 VRS" to determine which pixels to render at a reduced shading rate.</span>
 
 Fixed an issue where Variable Rate Shading was not properly applied to the ReflectionEnvironmentAndSky pass even when `r.VRS.ReflectionEnvironmentSky` was enabled.
 
@@ -401,7 +401,7 @@ Disable chunked PSO cache on Quest devices. The chunked PSO cache has the follow
 
 ## FBX Importer
 
-uFBX library (Experimental) noticeably reduces import import times especially on heavy `.fbx` files containing large meshes. Users with multi-core CPUs will also notice improvement for files with a large number of meshes.
+uFBX library (Experimental) noticeably reduces import times especially on heavy `.fbx` files containing large meshes. Users with multi-core CPUs will also notice improvement for files with a large number of meshes.
 
 ## Oodle
 

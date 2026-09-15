@@ -13,9 +13,9 @@ sidebar:
     nav: sidebar-optimization
 ---
 
-The release of Unreal Engine 5.6 brings a lot of incredible performance improvements to the engine. In this alternative release notes I have filtered the list down to the most interesting optimizations and performance related changes. Where appropriate I have added my own notes, to explain more clearly or give context as these notes can sometimes be rather vague or short.
+The release of Unreal Engine 5.6 brings a lot of incredible performance improvements to the engine. In these alternative release notes I have filtered the list down to the most interesting optimizations and performance related changes. Where appropriate I have added my own notes, to explain more clearly or give context as these notes can sometimes be rather vague or short.
 
-This is not every single optimization that made it into 5.6, instead primarily those that I think you should be aware, might change previous assumptions or require manual changes or CVAR tuning. You can find the original full release notes [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-6-release-notes).
+This is not every single optimization that made it into 5.6, instead primarily those that I think you should be aware of, might change previous assumptions or require manual changes or CVAR tuning. You can find the original full release notes [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-6-release-notes).
 
 ## Summary
 
@@ -107,7 +107,7 @@ Render Thread performance is very often the limiting factor for UE titles. This 
 
 ## **Virtual Shadow Maps Optimizations**
 
-Virtual Shadow Maps in Unreal Engine 5.6 further improves on shadow performance and memory usage with optimized scene culling while increasing fidelity and artistic control.
+Virtual Shadow Maps in Unreal Engine 5.6 further improve on shadow performance and memory usage with optimized scene culling while increasing fidelity and artistic control.
 
 **Detailed Changes**
 
@@ -230,7 +230,7 @@ Unreal Engine 5.6 is production-ready and brings further optimizations in downsa
 - DX12: Fix a case where a temporary staging texture free wasn't being traced, which resulted in Memory Insights reporting ever-growing memory usage.
 - Fix memory leak due to unreleased ref. count on skeletal mesh LOD data.
 - PSO: Fixed a bug in PipelineStateCache::GetAndOrCreateComputePipelineState that would trigger an unnecessary stall on the render thread. Precached PSOs should not be added as a dispatch prerequisite on the RHI command list, since they aren't used for drawing.
-    - Additional PSO improvements have been made, but this mentioning fixing potential stalls sounded the most interesting.
+    - Additional PSO improvements have been made, but this mention of fixing potential stalls sounded the most interesting.
 
 ## Materials & Shaders
 
@@ -303,7 +303,7 @@ Epic worked on the following Core Solver optimizations:
 - Multithreaded island generation
 - Network physics development
 
-There wasn’t a lot of specific perf related details on the above improvements. Here are some misc. interesting notes I found:
+There weren’t a lot of specific perf related details on the above improvements. Here are some misc. interesting notes I found:
 
 - Added a cvar (`p.Chaos.PreviewWorld.DebugDraw.Enabled`) to allow enabling/disabling chaos debug draw on preview worlds
 - Added experimental asynchronous execution of Dataflow graphs (It can be toggled on from the Evaluation button options menu)
@@ -349,7 +349,7 @@ Mover 2.0 has other performance improvements in this release that I have omitted
     - _This system is intended not to batch the same tick functions, but instead batch tick functions inside single TaskGraph tasks to reduce the overhead of that system instead._
 - Change ticking to use ProcessUntilTasksComplete to periodically call an update function while waiting for tasks on other threads. Added tick.IdleTaskWorkMS cvar to control this, if \> 0 the game thread will spend that many milliseconds trying to process other work (like worker thread tasks) when the game thread is idle
 - Add an **optional deferred component move handler** (`s.GroupedComponentMovement.Enable`) on the UWorld to allow scene components to request movement to be propagated later on the frame as a larger group of updates to help improve performance.
-    - This sound incredibly useful to automatically defer FScopedMovementUpdate calls to be batched together later in the frame.
+    - This sounds incredibly useful to automatically defer FScopedMovementUpdate calls to be batched together later in the frame.
     - Character & Projectile Movement Components do not use this grouped update behavior at this time as it requires specifying the scoped movement with EScopedUpdate::DeferredGroupUpdates instead of the current EScopedUpdate::DeferredUpdates
 - Add LevelStreaming.VisibilityPrioritySort to change the order that it processes level streaming adds and removes
 - Added a new (experimental) TaskSyncManager to the engine which allows registration of globally accessible tick functions that can be used to synchronize different runtime systems and efficiently batch per-frame updates.
@@ -386,7 +386,7 @@ Mover 2.0 has other performance improvements in this release that I have omitted
 
 - Multithread access detection. Detect if 2 threads are accessing the same instance data. The validation can be deactivate with the cvar `StateTree.RuntimeValidation.MultithreadAccessDetector`
 - Async RunEnvQuery Task
-    - Sound like we can now run environment queries asynchronously in the State Trees.
+    - Sounds like we can now run environment queries asynchronously in the State Trees.
 
 ### **StateTree Scheduled Ticks and Performance**
 

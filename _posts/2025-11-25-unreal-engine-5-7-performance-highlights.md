@@ -13,14 +13,14 @@ sidebar:
 excerpt: "The release of Unreal Engine 5.7 includes many performance improvements and new optimization opportunities. They are mostly scattered throughout the release notes and can be vague and lacking context. This article highlights the most interesting improvements to the 5.7 release and provides annotations and clarifications to what certain optimizations or changes mean for you as a developer."
 ---
 
-It is time for another Unreal Engine 5.7 Performance Highlights post! I have compiled a list of most impactful changes which make it worthwhile to upgrade to 5.7. I trimmed the list more substantially this time around to make it more digestible and really highlight the most interesting areas while keeping the more minor changes out. **I have included annotations and clarifications not found in the original release notes.**
+It is time for another Unreal Engine 5.7 Performance Highlights post! I have compiled a list of the most impactful changes which make it worthwhile to upgrade to 5.7. I trimmed the list more substantially this time around to make it more digestible and really highlight the most interesting areas while keeping the more minor changes out. **I have included annotations and clarifications not found in the original release notes.**
 
 As usual I approached this list from the game development perspective. Focusing on runtime performance of the game, profiling capabilities, bugs that affected performance, new CVARs for quality/performance tuning and some of the editor iteration performance as those have some notable changes.
 
 There are some major improvements like a new **Nanite Foliage** system using voxels which is a game changer and a much desired improvement for foliage rendering. Lumen continues moving away from Software ray-tracing (SWRT) by deprecating their "SWRT detail traces" render path and focusing on getting hardware raytracing to run at 60hz. **MegaLights** is moving into Beta, we can now inject **Custom HLODs** to give us greater control for distant geometry and more unusual changes such as optimizations to Windows high-precision mouse handling. Read the original full release notes [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-7-release-notes)
 
 {: .notice--info }
-This article is part of my efforts of keeping Unreal Engine developers informed about Game Optimization! For that I have a in-depth [Game Optimization Course for Unreal Engine 5](https://tomlooman.com/courses/unrealengine-optimization/) to train engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
+This article is part of my efforts of keeping Unreal Engine developers informed about Game Optimization! For that I have an in-depth [Game Optimization Course for Unreal Engine 5](https://tomlooman.com/courses/unrealengine-optimization/) to teach engineers and tech artists everything they need for profiling, optimizations and understanding performance in UE5. 
 
 ## Nanite
 
@@ -164,7 +164,7 @@ Performance improvements: In this release, we continued working on improving CVD
 Improved batching of TEDS operations performed when new physics body data is loaded in the scene. This change, combined with some other improvements made in TEDS itself, resulted in ~75% reduction in the processing time when the first frame of a large CVD recording (+90.000 objects) is loaded. The stall in this particular case went down from ~12 seconds to ~3 seconds.
 
 Improved tracing performance by removing the need for locks (and reduced the contention of ones we could not remove) in some heavily multi threaded paths. Mostly in collision geometry and physics body metadata serialization paths.
-- I assume the mean "profile tracing" performance here and not any kind of collision traces...
+- I assume they mean "profile tracing" performance here and not any kind of collision traces...
 
 ## Slate UI
 
@@ -449,7 +449,7 @@ This is part of an ongoing development to provide built-in functionality in Hord
 
 This time around I omitted a lot more of the smaller performance wins to keep it a bit shorter and focus on the most impactful changes and the changes you should be aware of when upgrading engine versions.
 
-If you are you interesting in learning more about game performance optimization, I have a professional training course used by dozens of AAA studios. Get more information [here](https://tomlooman.com/courses/unrealengine-optimization/) or [reach out directly](/contact/) for more information about team enrollment and studio training.
+If you are interested in learning more about game performance optimization, I have a professional training course used by dozens of AAA studios. Get more information [here](https://tomlooman.com/courses/unrealengine-optimization/) or [reach out directly](/contact/) for more information about team enrollment and studio training.
 
 
 You may follow me on [Twitter/X](https://x.com/t_looman), or [LinkedIn](https://www.linkedin.com/in/tomlooman/) for everything Unreal Engine performance related!

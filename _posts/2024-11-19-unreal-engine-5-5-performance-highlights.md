@@ -22,7 +22,7 @@ To kick off I'm starting with some lesser known changes which include some aweso
 ## Unreal Insights
 
 - Preset for "light" memory tracing. In certain scenarios it can be useful to trace detailed allocations, but without paying the cost of recording callstacks and instead rely on tags for analysis. Enable light memory tracing by starting the process with `-trace=memory_light`.
-    - Memory tracing add a lot of overhead and data, this light mode seems to be the answer for many scenarios where you are not digging too deep but want some high level info about memory.
+    - Memory tracing adds a lot of overhead and data, this light mode seems to be the answer for many scenarios where you are not digging too deep but want some high level info about memory.
 - Added Trace.RegionBegin & Trace.RegionEnd commands
     - These commands allow developers to manually tag regions of insights traces with custom names.
     - These are now available as Blueprint nodes too which is great to add context to profiling your game code that runs across multiple frames. As an example Garbage Collection start/end is a timing region. Level streaming spread across multiple frames is also added to insights as a timing region.
@@ -52,7 +52,7 @@ To kick off I'm starting with some lesser known changes which include some aweso
 
 _“MegaLights is a new Experimental feature that allows artists to add hundreds of dynamic shadow-casting lights to their scenes. Artists can now light scenes playfully without constraints or impact on performance. With MegaLights, lighting artists, for the first time, can use textured area lights with soft shadows, lighting functions, media texture playback, and volumetric shadows on consoles and PC.”_
 
-This is very exciting and will explore this in detail in a _future_ release since it’s still so early in development. At first glance it \*might\* be their own implementation of ReSTIR by Nvidia and relies on ray tracing (although HWRT does seem to be optional, but recommended). Check out the [MegaLights documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/megalights-in-unreal-engine) as this already explains a lot more than I could here right now.
+This is very exciting and I will explore this in detail in a _future_ release since it’s still so early in development. At first glance it \*might\* be their own implementation of ReSTIR by Nvidia and relies on ray tracing (although HWRT does seem to be optional, but recommended). Check out the [MegaLights documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/megalights-in-unreal-engine) as this already explains a lot more than I could here right now.
 
 ## More Render Parallelization
 
@@ -66,7 +66,7 @@ This is a very welcome improvement as RenderThread and RHI Thread optimizations 
 
 ## Lumen Improvements
 
-As with nearly every release, we see further Lumen performance improvements. Their target appears (60hz) **hardware ray tracing** on consoles, which previously wasn’t viable unless you were targeting 30hz. So most games often opted for software ray tracing on consoles. Allowing HWRT is especially great for visual quality as software ray tracing is notoriously unstable visually in my experience.
+As with nearly every release, we see further Lumen performance improvements. Their target appears to be (60hz) **hardware ray tracing** on consoles, which previously wasn’t viable unless you were targeting 30hz. So most games often opted for software ray tracing on consoles. Allowing HWRT is especially great for visual quality as software ray tracing is notoriously unstable visually in my experience.
 
 ## Hardware Raytracing
 
@@ -74,7 +74,7 @@ HWRT in general has seen major improvements. Besides better translucency renderi
 
 ## Light Function Atlas
 
-Light Function Atlas is an improvement over the traditional light functions which were relatively costly (See below as to why), with this baked 'light function atlas' should see significant rendering improvements. There is some extensive documentation on this which is worth a read if you’re intending on using [light functions](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-light-functions-in-unreal-engine) in your project.
+Light Function Atlas is an improvement over the traditional light functions which were relatively costly (See below as to why), with this baked 'light function atlas' we should see significant rendering improvements. There is some extensive documentation on this which is worth a read if you’re intending on using [light functions](https://dev.epicgames.com/documentation/en-us/unreal-engine/using-light-functions-in-unreal-engine) in your project.
 
 _"Light functions can only be applied to lights with their mobility set to Movable or Stationary and cannot be baked into lightmaps. Light functions follow the same expensive rendering passes as lights that cast dynamic shadows, because the light function contribution needs to be accumulated in screen space first. The light function's second pass then evaluates the lighting in screen space. This is a sequential operation that happens on the GPU, and it takes more time due to resource synchronizations and cache flushes that happen."_ - The Docs.
 
@@ -102,7 +102,7 @@ _“Instanced Actors is a new feature designed to reduce the overhead of having 
 
 _"This works best when you have many actors using the same mesh, for example rocks and trees in large environments.”_
 
-Instanced Actors feature is potentially huge for many as high Actor counts in your level has all sorts of bad side effects (including the infamous traversal stutters during level streaming - I \*hope\* this can help reduce those but have yet to try this in production).
+Instanced Actors feature is potentially huge for many as high Actor counts in your level have all sorts of bad side effects (including the infamous traversal stutters during level streaming - I \*hope\* this can help reduce those but have yet to try this in production).
 
 In my understanding, this will (eventually) replace the [LightWeightActor](https://x.com/t_looman/status/1814216353374490895) which never got much attention since it was introduced in 5.0.
 
@@ -122,7 +122,7 @@ Where previously you needed to rely on Decals to get variation back into your le
 
 ## Misc. Changes
 
-There are so many more improvements and optimizations that I can't all be commenting on. Some of these are still very exciting improvements such as the improvements to task system, removing the random spikes or the improved async load flushing which I've seen is so often an issue with projects.
+There are so many more improvements and optimizations that I can't comment on individually. Some of these are still very exciting improvements such as the improvements to task system, removing the random spikes or the improved async load flushing which I've seen is so often an issue with projects.
 
 ### Core/Foundation
 
@@ -253,4 +253,4 @@ Lumen received a lot of performance changes, they are pretty technical and mostl
 
 **Note**: There are even more release notes available that would fall under the performance or optimization umbrella but that lacked proper context and/or are too niche to be notable.
 
-And finally, be sure to check out my [Game Optimization Course](https://tomlooman.com/courses/unrealengine-optimization/) for a huge list of lessons on optimization tricks while guiding you through the process of profiling and optimizing your game projects! There I will have a change to go into much greater detail on all these improvements and features in video lessons and detailed text explanations...
+And finally, be sure to check out my [Game Optimization Course](https://tomlooman.com/courses/unrealengine-optimization/) for a huge list of lessons on optimization tricks while guiding you through the process of profiling and optimizing your game projects! There I will have a chance to go into much greater detail on all these improvements and features in video lessons and detailed text explanations...
