@@ -14,9 +14,9 @@ tags:
 coverImage: "ws_station_900p.jpg"
 ---
 
-Animating or simply rotating environmental meshes in your world adds a dynamic element, the obvious way of handling this is adding rotation to the SceneComponent which runs on the CPU (GameThread) and having the engine to pass the new transform to the GPU. This is relatively slow and unnecessary since we can run the entire animation directly on the GPU instead.
+Animating or simply rotating environmental meshes in your world adds a dynamic element, the obvious way of handling this is adding rotation to the SceneComponent which runs on the CPU (GameThread) and having the engine pass the new transform to the GPU. This is relatively slow and unnecessary since we can run the entire animation directly on the GPU instead.
 
-There is an old trick to instead rotate all vertices on the GPU directly using World Position Offset, which runs as a the vertex shader, completely skipping the CPU. Keep in mind that this does not update the rotation of the mesh collision. You should either disable collision or consider using a simple collision shape that doesn't need to rotate and handles approximate collision regardless of the rotation.
+There is an old trick to instead rotate all vertices on the GPU directly using World Position Offset, which runs as the vertex shader, completely skipping the CPU. Keep in mind that this does not update the rotation of the mesh collision. You should either disable collision or consider using a simple collision shape that doesn't need to rotate and handles approximate collision regardless of the rotation.
 
 While this trick is pretty common I was surprised to not find clear information on it for Unreal Engine. Especially on fixing the normals on the vertices after moving the vertices around. So this post should serve as a complete tutorial on how to rotate meshes on the GPU within Unreal Engine.
 
@@ -28,7 +28,7 @@ _The planet's mesh in the background isn't rotating the mesh since it's just a s
 
 Rotating the vertices is luckily very easy as we have a ready-to-use material node available: **RotateAboutAxis**. We plug this into _World Position Offset_ with some simple inputs like Time to determine rotation angle, and the object's orientation for its rotation Axis.
 
-_Note: I used the ObjectPivotPoint, but keep in mind that its not available in the Pixel-shader. The "Normal"-pin runs on the pixel-shader while the "World Position Offset"-pin runs on the vertex shader_.
+_Note: I used the ObjectPivotPoint, but keep in mind that it's not available in the Pixel-shader. The "Normal"-pin runs on the pixel-shader while the "World Position Offset"-pin runs on the vertex shader_.
 
 ![](/assets/images/rotateaboutaxis.jpg)
 
@@ -36,11 +36,11 @@ _Note: I used the ObjectPivotPoint, but keep in mind that its not available in t
 
 ## Fixing Vertex Normals
 
-With the vertices moved around we need to fix the vertex normals as they still point the original direction, causing lighting issues. Again, we have a Material Function already available: **FixRotateAboutAxisNormals**.
+With the vertices moved around we need to fix the vertex normals as they still point in the original direction, causing lighting issues. Again, we have a Material Function already available: **FixRotateAboutAxisNormals**.
 
 ![](/assets/images/fixrotateaboutaxisnormals.jpg)
 
-I was able to directly plug this into the pixel shader which is the "Normal" pin. The recommended way (as mentioned in the Material Function's description) is to add CustomizedUVs (option in the Material properties itself) to the material and instead re-calculate the normals in the vertex shader and pass it as UVs to the pixel shader. This can heavily reduce the number of times you need to re-calculate normals. (equal to the number of vertices in your mesh instead of the number of pixels on-screen for that mesh) This is especially useful if your meshes have low vertex counts.
+I was able to directly plug this into the pixel shader which is the "Normal" pin. The recommended way (as mentioned in the Material Function's description) is to add CustomizedUVs (option in the Material properties itself) to the material and instead re-calculate the normals in the vertex shader and pass them as UVs to the pixel shader. This can heavily reduce the number of times you need to re-calculate normals. (equal to the number of vertices in your mesh instead of the number of pixels on-screen for that mesh) This is especially useful if your meshes have low vertex counts.
 
 ## Closing
 

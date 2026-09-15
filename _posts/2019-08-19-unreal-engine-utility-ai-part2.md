@@ -11,7 +11,7 @@ sidebar:
     nav: sidebar-cpp
 ---
 
-Since the last time I wrote about Utility AI for Unreal Engine 4, it has been stream-lined and so has the Action System it's built on. The Action System is quite similar to Unreal's Gameplay Ability System for those familiar. Towards the end I'll tease a few other AI related concepts I've been working on. [Here is part one in case you missed it.](/unreal-engine-utility-ai-part1)
+Since the last time I wrote about Utility AI for Unreal Engine 4, it has been streamlined and so has the Action System it's built on. The Action System is quite similar to Unreal's Gameplay Ability System for those familiar. Towards the end I'll tease a few other AI related concepts I've been working on. [Here is part one in case you missed it.](/unreal-engine-utility-ai-part1)
 
 This post is mainly going to be a walkthrough of what I've been experimenting with and how the overall structure is shaping up. I'd like to add more practical guides in future parts including some more gameplay footage of the AI in action.
 
@@ -31,11 +31,11 @@ Multiple tasks can now run at the same time, using _resource locking_ to prevent
 
 A pretty interesting feature from AITasks in Unreal's GAS is the concept of _claiming resources_. Such as claiming the _legs_ of a character. So that you don't attempt to run another task that requires the legs/movement. With the action system you assign which GameplayTags to apply to the owner on activation.
 
-_Example:_ A melee attack taking several seconds and locking the movement of the character. The action claims the resource _Movement_. A Dodge-roll task can no longer execute, as its set to require Movement to NOT exist on the AIController.
+_Example:_ A melee attack taking several seconds and locking the movement of the character. The action claims the resource _Movement_. A Dodge-roll task can no longer execute, as it's set to require Movement to NOT exist on the AIController.
 
 ## Runtime Blackboard
 
-While Unreal comes with a Blackboard feature built-in for its Behavior Trees it lacks a few things I really want such as adding keys at runtime. Some other things I wanted: GameplayTags as keys (avoid typo's, forgetting key names) Save Game support and possibly replication support. Replication is only relevant if Blackboards are used for things besides AI which I am still experimenting with.
+While Unreal comes with a Blackboard feature built-in for its Behavior Trees it lacks a few things I really want such as adding keys at runtime. Some other things I wanted: GameplayTags as keys (avoid typos, forgetting key names) Save Game support and possibly replication support. Replication is only relevant if Blackboards are used for things besides AI which I am still experimenting with.
 
 ![](/assets/images/ue4_blackboard_setfloat.jpg)
 
@@ -53,7 +53,7 @@ The query has a gather-step followed by a scoring-step similar to Utility-system
 
 ## Bonus: Auto-matching Task name with Scoring Function.
 
-For a while I used a C++ function that was able to run any Blueprint function by FName. This made it easy to setup tasks in Blueprint by name and match it to a scorer function in AIController. For example, my AI task _LaunchMissile_ would match to the Blueprint function named _Score\_LaunchMissile_ automatically.
+For a while I used a C++ function that was able to run any Blueprint function by FName. This made it easy to set up tasks in Blueprint by name and match it to a scorer function in AIController. For example, my AI task _LaunchMissile_ would match to the Blueprint function named _Score\_LaunchMissile_ automatically.
 
 ![](/assets/images/UtilityAI_ScoringFunc.jpg)
 *Can call Blueprint functions like Score\_MyTaskName and return the function return value (BP function must return one float)*

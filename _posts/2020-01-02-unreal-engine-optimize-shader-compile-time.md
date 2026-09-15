@@ -29,7 +29,7 @@ Unreal Engine **Project Settings** allow a major reduction (up to 50%) of shader
 
 ![](/assets/images/ue5_shaderpermutations.jpg)
 
-When your project is missing required shader permutations by the level it will tell you about it in the Viewport right next to the "Lighting needs to be rebuilt" message. This can be helpful to quickly realize that a level has changed such as a SkyAtmosphere actor being added later on and now requiring those permutations to be re-enabled.
+When your project is missing shader permutations required by the level it will tell you about it in the Viewport right next to the "Lighting needs to be rebuilt" message. This can be helpful to quickly realize that a level has changed such as a SkyAtmosphere actor being added later on and now requiring those permutations to be re-enabled.
 
 These options are enabled by default, especially stylized games that don't rely on PBR/realistic lighting may benefit. But many if not most projects may find that they can delete certain settings such as _LowQualityLightmaps_ which are targeting the Mobile renderer (HoloLens and certain other VR games might use the Mobile renderer as well).
 

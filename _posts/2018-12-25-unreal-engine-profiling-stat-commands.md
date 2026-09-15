@@ -25,7 +25,7 @@ To find code samples for each of these traces you can view the source code of [P
 
 ## Types of Trace Metrics
 
-The first available metric type is a **cycle counter**, it tracks how much time is spent in a certain function or "scope". The second metric type is a simply **counter**, this can be useful to track event frequencies or instance counts rather than a measure of time.
+The first available metric type is a **cycle counter**, it tracks how much time is spent in a certain function or "scope". The second metric type is a simple **counter**, this can be useful to track event frequencies or instance counts rather than a measure of time.
 
 You can find more macros in the following locations in the engine source:
 - Source/Runtime/Core/Public/ProfilingDebugging/**CountersTrace.h** (Counters for Unreal Insights)
@@ -58,7 +58,7 @@ The counters can be viewed in the Counters tab of Insights. Keep in mind you nee
 
 #### Counters for Stats System
 
-For the older Stats System is works slightly different since it requires a StatGroup under which to be displayed (eg. `STATGROUP_Game`). These stat groups are how stats are organized, you can type console command `stat game` to show everything listed in the `STATGROUP_GAME`, or `stat anim` for everything under `STATGROUP_Anim`. Define your own stat group by changing the following Macro:
+For the older Stats System it works slightly differently since it requires a StatGroup under which to be displayed (eg. `STATGROUP_Game`). These stat groups are how stats are organized, you can type console command `stat game` to show everything listed in the `STATGROUP_GAME`, or `stat anim` for everything under `STATGROUP_Anim`. Define your own stat group by changing the following Macro:
 
 ```cpp
 DECLARE_STATS_GROUP(TEXT("My Group Name"), STATGROUP_MyGroupName, STATCAT_Advanced);
@@ -114,7 +114,7 @@ AWSShipModule* AWSShip::GetModuleByClass(TSubclassOf<AWSShipModule> ModuleClass)
 }
 ```
 
-In the next section we'll go in how these stats can be displayed on-screen using the above two examples.
+In the next section we'll go into how these stats can be displayed on-screen using the above two examples.
 
 ## Showing metrics in-game (Stat Commands)
 
