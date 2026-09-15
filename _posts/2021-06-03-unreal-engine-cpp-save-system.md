@@ -15,7 +15,7 @@ sidebar:
 
 For your game, you will eventually need to write some kind of save system. To store player information, unlocks, achievements, etc. In some cases, you will need to save the world state such as looted chests, unlocked doors, dropped player items, etc.
 
-In this article we go through the setup of your very own C++ SaveGame system. Different types of games will have their own specific serialization needs. Use this article and code as a starting point for whatever game you're building. You should to be fairly familiar with Unreal Engine C++ to build this system.
+In this article we go through the setup of your very own C++ SaveGame system. Different types of games will have their own specific serialization needs. Use this article and code as a starting point for whatever game you're building. You should be fairly familiar with Unreal Engine C++ to build this system.
 
 This won't be a step-by-step tutorial. Instead, it's more of a system breakdown with explanations. The [full source code is available](https://github.com/tomlooman/ActionRoguelike) for the entire project. If you do wish for a more guided approach, I teach this concept and many others in my **[Unreal Engine C++ Course](https://tomlooman.com/courses/unrealengine-cpp/).**
 
@@ -183,13 +183,13 @@ void ARogueTreasureChest::OnRep_LidOpened()
 }
 ```
 
-That takes care of the Actor states, all that's left is to iterate PlayerState instances and let them store data as well. While PlayerState is derived from Actor and could in theory be saved during the iteration of all world actors, it's useful to do it separately so we can match them to Player ID's (eg. Steam user ID) instead of a constantly changing Actor name that we did not decide/control for this type of runtime spawned Actor.
+That takes care of the Actor states, all that's left is to iterate PlayerState instances and let them store data as well. While PlayerState is derived from Actor and could in theory be saved during the iteration of all world actors, it's useful to do it separately so we can match them to Player IDs (eg. Steam user ID) instead of a constantly changing Actor name that we did not decide/control for this type of runtime spawned Actor.
 
 ## Saving Player Data
 
 In my example I chose to fetch all data from PlayerState just before saving the game. We do so by calling `SavePlayerState(URogueSaveGame* SaveObject);` This lets us pass in whatever data is relevant into the SaveGame object, such as the PlayerId and Transform of the Pawn (if the player is currently alive)
 
-You \*could\* choose to utilize SaveGame properties here too and store **some** of that player data automatically by converting it to binary array just like we do with Actors instead of manually writing it into SaveGame, but you'd still need to manually handle the _PlayerID_ and _Pawn Transform_.
+You \*could\* choose to utilize SaveGame properties here too and store **some** of that player data automatically by converting it to a binary array just like we do with Actors instead of manually writing it into SaveGame, but you'd still need to manually handle the _PlayerID_ and _Pawn Transform_.
 
 ```cpp
 void ARoguePlayerState::SavePlayerState_Implementation(URogueSaveGame* SaveObject)
@@ -269,7 +269,7 @@ void ARogueGameModeBase::HandleStartingNewPlayer_Implementation(APlayerControlle
 
 As you can see it's even split up into two pieces. The main data is loaded and assigned as soon as possible to make sure it's ready for our UI (which is created during "BeginPlayingState" in our specific implementation inside of PlayerController) and wait for the Pawn to be spawned before we handle the location/rotation.
 
-This is where you could probably implement it so that during the creation of the Pawn you use the loaded data instead of looking for a PlayerStart (as if the default Unreal behavior) I chose to keep things simple.
+This is where you could probably implement it so that during the creation of the Pawn you use the loaded data instead of looking for a PlayerStart (as is the default Unreal behavior) I chose to keep things simple.
 
 ### GetPlayerData()
 
@@ -395,9 +395,9 @@ Now while loading a level you should pass in `?savegame=MySaveFile` in the optio
 
 ### Loading SaveGame before BeginPlay
 
-In the code example prior I showed loading the data during _InitGame()_ which happens pretty early during the loading phase. That means that we have our level data available and yet not called BeginPlay() yet on anything. That lets us deserialize variables and use BeginPlay() as a way to react as if those saved variables are their blueprint originals.
+In the code example prior I showed loading the data during _InitGame()_ which happens pretty early during the loading phase. That means that we have our level data available and have not called BeginPlay() yet on anything. That lets us deserialize variables and use BeginPlay() as a way to react as if those saved variables are their blueprint originals.
 
-This could be useful to initialize with the relevant saved data or skipping entire blocks of code in BeginPlay by saving a specific bool such as _bHasSpawnedLoot_ (make sure you mark this with SaveGame) to not accidentally re-run this logic if it has already done so in the previous session and should do so only once.
+This could be useful to initialize with the relevant saved data or skip entire blocks of code in BeginPlay by saving a specific bool such as _bHasSpawnedLoot_ (make sure you mark this with SaveGame) to not accidentally re-run this logic if it has already done so in the previous session and should do so only once.
 
 ## The Bonfire
 
@@ -409,15 +409,15 @@ Now to create the actual Bonfire in Blueprint it's super simple and fast to do b
 
 - New Actor Blueprint with a mesh and particle system (the fire)
 
-- Disable 'Auto Activate' on the particle system, we'll only turn it on after interacting with it once (and storing this as bool in the Actor for later loads)
+- Disable 'Auto Activate' on the particle system, we'll only turn it on after interacting with it once (and storing this as a bool in the Actor for later loads)
 
 - Add the Interface (GameplayInterface in our case) to mark it for the save system.
 
 - Add a bool bFireActive and mark it as SaveGame (find it in the variable details, you will need to open up the Advanced options - see below for image)
 
-- Setup the graph like below - we interact with the fire (Event Interact) which updates bFireActive and then saves the game. We then update the particle state.
+- Set up the graph like below - we interact with the fire (Event Interact) which updates bFireActive and then saves the game. We then update the particle state.
 
-Once interacted with once, the bFireActive is now saved into the bonfire and on the next game load the particle system will activate through OnActorLoaded (our own interface function) You can do the same through BeginPlay() as we'll have loaded our Actor data before that is called as mentioned earlier in this post.
+Once interacted with, the bFireActive is now saved into the bonfire and on the next game load the particle system will activate through OnActorLoaded (our own interface function) You can do the same through BeginPlay() as we'll have loaded our Actor data before that is called as mentioned earlier in this post.
 
 ![](/assets/images/ue4_bonfire_savesystem.jpg)
 *Bonfire Blueprint Graph*
@@ -443,7 +443,7 @@ It's a great idea to include a version number in your save file as a sort of hea
 
 That's all for the basics of your SaveGame system! This can be molded in all directions to fit your needs, and there is certainly a lot that can be added. I recommend checking out the additional resources below for more information on the subject.
 
-Also, don't forget to sign-up for **my newsletter below** for any new content I post! And **[follow me on Twitter](https://twitter.com/t_looman)!**
+Also, don't forget to sign up for **my newsletter below** for any new content I post! And **[follow me on Twitter](https://twitter.com/t_looman)!**
 
 ## References & Further Reading
 
