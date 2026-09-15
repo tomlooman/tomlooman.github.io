@@ -15,7 +15,7 @@ coverImage: "Thumb_Blog_SetupCPPRider.jpg"
 excerpt: "Installing and configuring JetBrains Rider for Unreal Engine C++ programming requires a very specific set of components. This guide will help you make this setup process go smoothly."
 ---
 
-In this article we will install **JetBrains Rider** for use with **Unreal Engine 5** to setup your **C++ development environment**. These steps are for a fresh machine, with Unreal Engine 5.6 installed. It should work with older and newer versions too, at certain moments Epic will bump the required versions of dependencies that we install today.
+In this article we will install **JetBrains Rider** for use with **Unreal Engine 5** to set up your **C++ development environment**. These steps are for a fresh machine, with Unreal Engine 5.6 installed. It should work with older and newer versions too, at certain moments Epic will bump the required versions of dependencies that we install today.
 
 {: .notice--info }
 **Note:** The steps demonstrated are for Windows & JetBrains Rider. **Please read this article carefully** as each component requires specific versions depending on the Unreal Engine version you are using. Any wrong version or missing component and the code will fail to compile.
@@ -82,7 +82,7 @@ After opening the project, Rider will generate the  "Unreal Engine Project Model
 
 ## Compile your project
 
-Try to compile your project to ensure all components are installed correctly. In any error occurs, check the **Troubleshooting section** below.
+Try to compile your project to ensure all components are installed correctly. If any error occurs, check the **Troubleshooting section** below.
 
 - **Main menu > Build > Build Startup Project**
 
@@ -102,12 +102,13 @@ In the **Editor Preferences > General > Source Code > Source Code Editor** set i
 
 You will be prompted when launching Rider with an Unreal Engine project to install RiderLink.
 
+I recommend Installing RiderLink plugin to the Engine. This is a super powerful tool to view information on how your project and Blueprint are using your C++ code such as knowing which Blueprint has changed a variable default or overrides a function.
 
 Find the Notifications tab on the top-right to install RiderLink to Engine (recommended)
 
 ## Windows Defender Exclusions
 
-Ensure windows defender exclusion are used. The pop-up will appear in bottom-right on first launch. This avoids overhead from Defender constantly scanning your files. Do so at your own risk, but you should have clear control over your own build output.
+Ensure Windows Defender exclusions are used. The pop-up will appear in bottom-right on first launch. This avoids overhead from Defender constantly scanning your files. Do so at your own risk, but you should have clear control over your own build output.
 
 ![](/assets/images/jetbrainsrider_exclusionrules.jpg)
 *If you previously ignored the pop-up, you can still find it inside the Notifications Tab in the top-right.*
@@ -174,17 +175,17 @@ Settings can be accessed in the top-left under **File > Settings**.
 
 ### Indexing Plugins
 
-By default "Plugins" will not be indexed and many common modules of the engine are considered Plugins by Rider including Enhanced Input and Niagara. I would recommend to enable this or they won't show up in autocompletion and code searches.
+By default "Plugins" will not be indexed and many common modules of the engine are considered Plugins by Rider including Enhanced Input and Niagara. I would recommend enabling this or they won't show up in autocompletion and code searches.
 
 ![](/assets/images/jetbrainsrider_indexplugins.png)
-*Enable indexing of Plugins for have better coverage of the engine source code.*
+*Enable indexing of Plugins to have better coverage of the engine source code.*
 
 ![](/assets/images/jetbrainsrider_nonindexplugins.png)
 *Without Plugin indexing, certain parts of the engine won't have any highlighting and do not show up in searches.*
 
 ### Preference: Reduce Parameter Popup Delay
 
-By default the function parameter info popup is delayed by 1000ms. I find this too slow and can actually be changed. Tune this to something that feels more responsive.
+By default the function parameter info popup is delayed by 1000ms. I find this too slow, and it can actually be changed. Tune this to something that feels more responsive.
 
 ![](/assets/images/jetbrains_functionparameterinfo.png)
 *The parameter info popup is this little window when you start typing function parameters.*
@@ -200,7 +201,7 @@ Reader Mode enables "rendered comments" which does provide much nicer looking fu
 
 ### Preference: Turn off "Code Folding" on Imports
 
-Code folding can automatically **collapse the list of #includes** ("Imports") at the top of the file. You may like it, but I prefer to see this at all times. Especially to make sure its visible during the course lessons to students, but also to keep an eye on no longer used includes so I can remove them (Rider will render them as Grey when nothing uses the include).
+Code folding can automatically **collapse the list of #includes** ("Imports") at the top of the file. You may like it, but I prefer to see this at all times. Especially to make sure it's visible during the course lessons to students, but also to keep an eye on no longer used includes so I can remove them (Rider will render them as Grey when nothing uses the include).
 
 **Editor > General > Code Folding > "Imports"**
 
@@ -218,7 +219,7 @@ You can turn off the white line in the text editor that is called the Hard Wrap.
 
 ### Preference: Removing buttons from the Toolbar
 
-To keep a clean an minimalist UI I prefer to remove any buttons I won't be using. In my case that includes things like JetBrains AI and Code with Me. But you may of course wish to keep those and remove some others. You can simply **right-click the toolbar and click "Customize Toolbar".**
+To keep a clean and minimalist UI I prefer to remove any buttons I won't be using. In my case that includes things like JetBrains AI and Code with Me. But you may of course wish to keep those and remove some others. You can simply **right-click the toolbar and click "Customize Toolbar".**
 
 ### Setting your HotKeys & Theme
 
@@ -234,6 +235,6 @@ right click your __.sln -> open with -> choose another app -> JetBrains Rider__ 
 ## Closing
 
 {: .notice--danger }
-**Having Trouble?** If you had any issues during the setup process that were unclear or not covered in this article. Let me know through my [contact form](/contact) and I will see if I can update the article.
+**Having Trouble?** If you had any issues during the setup process that were unclear or not covered in this article, let me know through my [contact form](/contact) and I will see if I can update the article.
 
 If you are one of my students, you are now ready to follow along with my [Unreal Engine C++ course](https://tomlooman.com/courses/unrealengine-cpp/)! You might also be interested in checking out my [Complete Guide to Unreal Engine C++](/unreal-engine-cpp-guide) article as a companion reference and introductory guide to many of the important concepts to programming within Unreal Engine 5.
