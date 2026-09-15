@@ -35,9 +35,9 @@ Settings are applied in _**../MyProject/Saved/Config/Windows/GameUserSettings.in
 
 **Advanced:** (Base)**Scalability**.ini has **PerfIndexThresholds\_**\* under \[**ScalabilitySettings**\] to customize index vs. quality-level per Group.
 
-This should be adjusted (towards the end of the project) to match your project's CPU/GPU demands vs. each of the Quality Settings (Low to Epic). It may require the help of QA with a variety of machines and configurations and retrieve their respective performance scores to match their targetted scalability. (eg. the min-spec machine's score should match the Low scalability threshold)
+This should be adjusted (towards the end of the project) to match your project's CPU/GPU demands vs. each of the Quality Settings (Low to Epic). It may require the help of QA with a variety of machines and configurations and retrieve their respective performance scores to match their targeted scalability. (eg. the min-spec machine's score should match the Low scalability threshold)
 
 ## References
 
-- [Mathew Wadstein has a video](https://www.youtube.com/watch?v=Czp4g3AFP_k) this benchmark utility.
+- [Mathew Wadstein has a video](https://www.youtube.com/watch?v=Czp4g3AFP_k) about this benchmark utility.
 - [Intel has a Plugin](https://software.intel.com/en-us/articles/cpu-capability-detect-using-unreal-engine-4-19) for more detailed CPU benchmarking using SynthBenchmark
