@@ -21,15 +21,15 @@ You may or may not be familiar with GameplayTags in Unreal Engine. It's heavily 
 
 ## What are GameplayTags?
 
-A `FGameplayTag` is essentially an [FName](https://docs.unrealengine.com/en-US/fname-in-unreal-engine/) that is defined in the game's project settings (or natively defined in C++). A major benefit of using these tags is that they allow for easy selection in the Editor's UI and don't have to type them out each time which is prone to user error. You also don't use `TArray` with `FGameplayTag`, instead you should always use the `FGameplayTagContainer` as this has helper functions to match one or multiple tags easily.
+An `FGameplayTag` is essentially an [FName](https://docs.unrealengine.com/en-US/fname-in-unreal-engine/) that is defined in the game's project settings (or natively defined in C++). A major benefit of using these tags is that they allow for easy selection in the Editor's UI and you don't have to type them out each time which is prone to user error. You also don't use `TArray` with `FGameplayTag`, instead you should always use the `FGameplayTagContainer` as this has helper functions to match one or multiple tags easily.
 
 ![](/assets/images/gameplaytags_editorselection.png)
-*GameplayTag selection menu for any FGameplayTag of FGameplayTagContainer variable.*
+*GameplayTag selection menu for any FGameplayTag or FGameplayTagContainer variable.*
 
 ![](/assets/images/gameplaytags_configsettings.png)
 *Gameplay Tag Manager in _Project Settings \> Project \> GameplayTags \> Manage Gameplay Tags_*
 
-Another powerful feature is the hierarchy to find exact tags or match based on their parent. This lets you create a tree of tags from broad to very narrow. some examples:
+Another powerful feature is the hierarchy to find exact tags or match based on their parent. This lets you create a tree of tags from broad to very narrow. Some examples:
 
 - _Damage.DoT.Fire_
 - _Location.Planet.Derelict_
@@ -54,7 +54,7 @@ It may be confusing that there are multiple tagging systems in Unreal. The basic
 
 ## Some practical use-cases
 
-One way to think about tags is having a big library of booleans. You can easily decorate your actors (and most other types of content for that matter) with a wide range of these 'bools' for the rest of your game code to read and react to. A major benefit here is when using an ActorComponent to hold these tags is that you don't need to cast to specific Actor classes as you would with regular bool variables. It's far more dynamic than if you had to compile 100s of bools into your classes too.
+One way to think about tags is having a big library of booleans. You can easily decorate your actors (and most other types of content for that matter) with a wide range of these 'bools' for the rest of your game code to read and react to. A major benefit of using an ActorComponent to hold these tags is that you don't need to cast to specific Actor classes as you would with regular bool variables. It's far more dynamic than if you had to compile 100s of bools into your classes too.
 
 I highly recommend looking into [Lyra Starter Game](https://docs.unrealengine.com/en-US/lyra-sample-game-in-unreal-engine/) (or the older [UE4 ActionRPG](https://docs.unrealengine.com/4.27/en-US/Resources/SampleGames/ARPG/)) to get some familiarity with the Gameplay Ability System and their use of GameplayTags. It uses a component added to gameplay Actors which you can load up with tags. My own [open-source project](https://github.com/tomlooman/ActionRoguelike) uses GameplayTags for a custom ability system as well.
 
@@ -66,7 +66,7 @@ You could start an ability by GameplayTag rather than calling Start() on it dire
 
 ### Gameplay Message Router (Lyra Plugin)
 
-Lyra has a plugin dedicated to this called _GameplayMessageRouter_ which I recommend digging into and consider for your gameplay framework. It essentially allows you to broadcast and listen for gameplay events by tag with a custom payload (struct) of choice.
+Lyra has a plugin dedicated to this called _GameplayMessageRouter_ which I recommend digging into and considering for your gameplay framework. It essentially allows you to broadcast and listen for gameplay events by tag with a custom payload (struct) of choice.
 
 ![](/assets/images/gameplaytags_messagerouter.png)
 *Send a message with tag Event.Module.Disabled for other game systems to listen to, with two parameters wrapped in a struct.*
@@ -123,7 +123,7 @@ An easy way to demonstrate GameplayTags and its hierarchical features is by usin
 
 ## GameplayTags as alternatives to Casting
 
-Casting and class references won't hit you as a problem until much later in the project. You will realize any class hard reference requires the referenced asset/class to be loaded and that may cause a cascade of additional assets to be loaded such as meshes or particle effects. You can (and should) use base classes that don't reference other assets as much as possible to reduce this problem. GameplayTags can help even more by allowing you to remove direct references between your assets all together.
+Casting and class references won't hit you as a problem until much later in the project. You will realize any class hard reference requires the referenced asset/class to be loaded and that may cause a cascade of additional assets to be loaded such as meshes or particle effects. You can (and should) use base classes that don't reference other assets as much as possible to reduce this problem. GameplayTags can help even more by allowing you to remove direct references between your assets altogether.
 
 The best way to check for references is by using the [Reference Viewer](https://docs.unrealengine.com/5.2/en-US/finding-asset-references-in-unreal-engine/) & [Size Map](https://dev.epicgames.com/community/learning/tutorials/r4y7/unreal-engine-size-map) tool. (Both available by right-clicking your asset in the Content Browser)
 

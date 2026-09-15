@@ -47,7 +47,6 @@ This screenshot (Unreal Insights) shows a game running without any handling of P
 
 The naming of the two systems can be a bit confusing as it goes by a few names in the engine code. The "PSO Precaching" is used for the new automatic runtime "just-in-time" compilation of the PSOs. This system was introduced in 5.1 and is production ready with 5.3 and later.
 
-The original system that shipped for years with UE4 requires manual collection of PSOs by the developer and are _bundled_ with the game executable. These bundled PSOs are then compiled when the game first launches, for example in the main menu. You can call these _Bundled PSOs_ or _Recorded PSOs_. In C++ you may often see it referenced as _ShaderPipelineCache_ in the engine source.
 
 I'll cover the configuration settings and my discoveries for both systems below.
 

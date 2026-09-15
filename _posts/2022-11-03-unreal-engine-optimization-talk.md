@@ -88,7 +88,7 @@ Some common trace channels to use on your game executable or in Standalone. `sta
 
 ### Bookmarks
 
-Bookmarks add contextual information about changes and transitions that happens during the profiling session. This includes streaming in new levels, executing console commands, starting a cinematic sequence, etc. You can easily add new bookmarks to your own game code to add more context. While profiling use `bookmark` trace channel.
+Bookmarks add contextual information about changes and transitions that happen during the profiling session. This includes streaming in new levels, executing console commands, starting a cinematic sequence, etc. You can easily add new bookmarks to your own game code to add more context. While profiling use `bookmark` trace channel.
 
 Bookmarks for context and transitions
 - GC (Garbage Collection)  
@@ -253,7 +253,7 @@ Note: As mentioned in the previous section. Nanite does not issue individual GPU
 
 Distance Culling is an effective way to reduce the cost of occlusion. Small props can be distance culled using a per-instance setting or using [Distance Cull Volume](https://docs.unrealengine.com/4.27/en-US/RenderingAndGraphics/VisibilityCulling/CullDistanceVolume/) to map an object Size with cull Distance. Objects culled this way don't need GPU occlusion queries, which can significantly cut cost.
 
-Distance Culling is not supported for Nanite. Non-nanite geometry such as translucent meshes still do.
+Distance Culling is not supported for Nanite. Non-nanite geometry such as translucent meshes still supports it.
 
 - PrimitiveComponent: Max/Min Draw Distance
     - Light Cones, Fog Volumes, Blueprint Components
@@ -301,7 +301,7 @@ FreezeRendering does not work with Nanite.
 
 ## Light Culling (Stationary & Movable)
 
-Lights can still add considerable cost to your render thread even if they aren't contributing much or anything at all. Fading them out at range can help, make sure they don't more or change unless they absolutely have to. Avoid overlapping too many stationary lights (Max 4) or one will be forced Movable, adding considerable cost to your frame.
+Lights can still add considerable cost to your render thread even if they aren't contributing much or anything at all. Fading them out at range can help, make sure they don't move or change unless they absolutely have to. Avoid overlapping too many stationary lights (Max 4) or one will be forced Movable, adding considerable cost to your frame.
 
 - Automatic ScreenSize culling is not strict enough
     - MinScreenRadiusForLights (0.03)
@@ -406,7 +406,7 @@ I wrote a blog post about applying [Hardware Benchmark for default scalability](
 
 Using Shadow Proxies is a manual process to reduce the often significant shadow rendering cost in your scene. You might have beautiful and modular buildings that cause a ton of draw calls and potentially millions of triangles for just shadow depth rendering. A big downside of this system is the manual and destructive workflow. I wanted to point this trick out regardless and with UE5's geometry script, it may be only a few nodes away from generating simplified mesh proxies on the fly!
 
-Your Mileage may very greatly for Nanite geometry. Requires additional testing is this is still a viable trick for certain Nanite geometry such as Foliage.
+Your Mileage may vary greatly for Nanite geometry. Requires additional testing to determine if this is still a viable trick for certain Nanite geometry such as Foliage.
 
 - Single low-poly silhouette mesh
     - RenderMainPass=False
@@ -423,7 +423,7 @@ Your Mileage may very greatly for Nanite geometry. Requires additional testing i
 
 ## SizeMap (Disk & Memory)
 
-SizeMap is a valuable tool to quickly find and address hard references in your content. This is an often hidden danger that can add considerable development cost and the end of your project once you're struggling with memory and load times.
+SizeMap is a valuable tool to quickly find and address hard references in your content. This is an often hidden danger that can add considerable development cost at the end of your project once you're struggling with memory and load times.
 
 - Find unexpected references and bloated content
 - Use on Blueprints and (sub)Levels early and often
@@ -456,6 +456,6 @@ I found myself often using this panel to investigate opportunities for memory an
 
 ## Closing
 
-**Eager to learn more about [Game Optimization in Unreal Engine](https://tomlooman.com/courses/unrealengine-optimization/)?** I got you covered with a complete course to guide you and your team through the entire process of performance optimization for games. It coveres a wide range of topics including Unreal Insights and specific CPU, GPU and memory optimizations.
+**Eager to learn more about [Game Optimization in Unreal Engine](https://tomlooman.com/courses/unrealengine-optimization/)?** I got you covered with a complete course to guide you and your team through the entire process of performance optimization for games. It covers a wide range of topics including Unreal Insights and specific CPU, GPU and memory optimizations.
 
 To stay up-to-date with any new optimization articles sign up for my Newsletter below and [follow me on Twitter](https://twitter.com/t_looman)!
