@@ -20,7 +20,7 @@ Earlier this week I tweeted about hit-masking characters to show dynamic blood a
 
 [![](/assets/images/etOcKPR.gif "source: imgur.com")](https://imgur.com/etOcKPR)
 
-We have a few decals types in our game like bullet impacts and blood splats we splat on walls behind damaged characters. These decals are attached to the component it hit, but if you were to attempt to do this on an animated mesh you'd notice the decal sliding over the surface which doesn't look too great. I noticed this kind of sliding in PlayerUnknown's Battlegrounds the other day, where they use traditional decals on characters, but a more stable solution is desirable especially for third person games where you constantly see your own characters body. It does the trick with small decals where the problem isn't as noticeable. Here is an exaggerated example of decal sliding:
+We have a few decal types in our game like bullet impacts and blood splats we splat on walls behind damaged characters. These decals are attached to the component they hit, but if you were to attempt to do this on an animated mesh you'd notice the decal sliding over the surface which doesn't look too great. I noticed this kind of sliding in PlayerUnknown's Battlegrounds the other day, where they use traditional decals on characters, but a more stable solution is desirable especially for third person games where you constantly see your own character's body. It does the trick with small decals where the problem isn't as noticeable. Here is an exaggerated example of decal sliding:
 
 [![](/assets/images/TWV2kvH.gif "source: imgur.com")](https://imgur.com/TWV2kvH)
 
@@ -28,9 +28,9 @@ I wanted to try and find a solution for this problem on our characters and I was
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Jz050a2OMXE?si=fuyi8Z4OhsIy1C__" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-The effect is a lot more expensive than we were looking to budget however. It requires two render targets (for each character in the scene!), a mesh with unique UVs (UE4's mannequin is not uniquely UV'ed for example, and requires modification outside of the engine to work) and have spiky performance costs at runtime due to rendering of TWO calls to render targets each time we hit the character which is an expensive operation (several milliseconds worth of spikiness). If you're wondering why it requires two calls, let me explain.
+The effect is a lot more expensive than we were looking to budget however. It requires two render targets (for each character in the scene!), a mesh with unique UVs (UE4's mannequin is not uniquely UV'ed for example, and requires modification outside of the engine to work) and has spiky performance costs at runtime due to rendering of TWO calls to render targets each time we hit the character which is an expensive operation (several milliseconds worth of spikiness). If you're wondering why it requires two calls, let me explain.
 
-The first call is straight forward, you want to render a splat into your character damage render target. To do so the material we render into this RT using a SphereMask to find the pixel we "hit", but this material has no idea of the pixel positions of the character compared to the "hit" location, so Ryan encodes the world position in each pixel for the animated character into a second render target which can be sampled while doing the sphere mask operation. The problem here being that world positions of the pixels change each frame, especially on a animated mesh, this means that on each new hit, we need to first re-render this secondary render target to update the world positions before we can splat into the final render target. This wasn't cost efficient enough for a purely visual gimmick in our case and needed to find a cheaper solution.
+The first call is straight forward, you want to render a splat into your character damage render target. To do so the material we render into this RT uses a SphereMask to find the pixel we "hit", but this material has no idea of the pixel positions of the character compared to the "hit" location, so Ryan encodes the world position in each pixel for the animated character into a second render target which can be sampled while doing the sphere mask operation. The problem here being that world positions of the pixels change each frame, especially on an animated mesh, this means that on each new hit, we need to first re-render this secondary render target to update the world positions before we can splat into the final render target. This wasn't cost efficient enough for a purely visual gimmick in our case and we needed to find a cheaper solution.
 
 ### Optimizing the render target approach
 
@@ -38,7 +38,7 @@ There is a way to optimize the technique, by using the fairly recently added [pr
 
 ![](/assets/images/ue4_uvunwrap_capture.gif)
 
-This optimization eliminates some of the cost, but still I wasn't happy about having a unique render target created for character (which can really add up if you're making a horde shooter for example) and using the costly DrawMaterialToRenderTarget operation on every hit. I measured performance hits of 1.6-4.5ms on my GTX 850M (Notebook), which is huge, especially when it's not in your control how many might happen in single frame. Remember that this effect is purely a cosmetic gimmick and shouldn't be a major cost in our rendering budget.
+This optimization eliminates some of the cost, but still I wasn't happy about having a unique render target created for each character (which can really add up if you're making a horde shooter for example) and using the costly DrawMaterialToRenderTarget operation on every hit. I measured performance hits of 1.6-4.5ms on my GTX 850M (Notebook), which is huge, especially when it's not in your control how many might happen in a single frame. Remember that this effect is purely a cosmetic gimmick and shouldn't be a major cost in our rendering budget.
 
 ### Finding an alternative
 
@@ -48,13 +48,13 @@ Like the original RT effect, to have the sphere masks work consistently with an 
 
 ![](/assets/images/ue4_hitmask_debuglines.jpg)
 
-Here you can see a visualization of the transform applied to the hit location (green) with the current pose transforms and the bone that was hit. And the blue lines the matching reference pose transformation. The purple line is to help indicate the difference.
+Here you can see a visualization of the transform applied to the hit location (green) with the current pose transforms and the bone that was hit. And the blue lines show the matching reference pose transformation. The purple line is to help indicate the difference.
 
 ![](/assets/images/ue4_hitmask_debuglines02.jpg)
 
 In the reference pose example (bottom of the two images), the hit location is already in the correct space, so you can see that the blue and green lines are overlapping and z-fighting even because they are at exactly the same offsets and there is no purple line because there is no difference in transforms to visualize.
 
-In the top image you can see how I transform from the original hit location into our reference pose location. Now we have a constant position that won't animate, we push this location into the shader which also used pre-skinned position to sphere mask against. To support multiple hits, we increment the param name each time when a new hit is applied, eg. HitLocation\_1, HitLocation\_2 (these must exist in the material before hand)
+In the top image you can see how I transform from the original hit location into our reference pose location. Now we have a constant position that won't animate, we push this location into the shader which also uses pre-skinned position to sphere mask against. To support multiple hits, we increment the param name each time when a new hit is applied, eg. HitLocation\_1, HitLocation\_2 (these must exist in the material beforehand)
 
 ### Animating the blood
 

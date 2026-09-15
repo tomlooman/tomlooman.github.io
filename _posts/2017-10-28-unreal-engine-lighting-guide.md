@@ -73,7 +73,7 @@ Users tend to go crazy and bounce up to 100 times, this doesn't affect the build
 
 #### Static Lighting Level Scale (20:20)
 
-Changes the scale of the level for lightmass, where lower scales results in more light evaluation detail. With fine details you will see them influence the scene more with a lower level-scale.
+Changes the scale of the level for lightmass, where lower scales result in more light evaluation detail. With fine details you will see them influence the scene more with a lower level-scale.
 
 ![](/assets/images/ue4_lightlevelscale_1.jpg)
 
@@ -123,7 +123,7 @@ The biggest setting before building light. Especially jumping from High to Produ
 
 #### Lighting Level Scale vs. Indirect Lighting Quality
 
-With lighting quality set to Production-level, you can use the below formula for as a reference to get good lighting results. The formula works in that since with a low level scale, you will introduce a lot of noise, increasing indirect lighting quality can offset this to reduce the artifacts.
+With lighting quality set to Production-level, you can use the below formula as a reference to get good lighting results. The formula works in that since with a low level scale, you will introduce a lot of noise, increasing indirect lighting quality can offset this to reduce the artifacts.
 
 _Static Lighting Level Scale X Indirect Lighting Quality = 1_
 
@@ -156,7 +156,7 @@ Broadens the shadow of the directional light for overcast like lighting scenario
 
 #### Contact Shadows
 
-Contact Shadows add shadows for little details on bigger geometry such as the lamps below. This feature is a little heavy (numbers missing) and personally (Tom, not Jerome), as of 4.17, I found it had some artifacts for these small objects in a distance and haven't used it much because of it. The value here is small, so start off with 0.1 and go from there.
+Contact Shadows add shadows for little details on bigger geometry such as the lamps below. This feature is a little heavy (numbers missing) and personally (Tom, not Jerome), as of 4.17, I found it had some artifacts for these small objects at a distance and haven't used it much because of it. The value here is small, so start off with 0.1 and go from there.
 
 ![](/assets/images/ue4_contactshadowlength.jpg)
 
