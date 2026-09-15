@@ -6,8 +6,9 @@ excerpt: "Practical Unreal Engine guide to Signed Distance Fields for ambient oc
 categories: 
   - "Rendering"
 tags:
-  - "Rendering"
-  - "Distance Fields"
+  - "distance-fields"
+  - "lighting"
+  - "shadows"
 coverImage: "DF_featured_03.jpg"
 sidebar:
     nav: sidebar-optimization

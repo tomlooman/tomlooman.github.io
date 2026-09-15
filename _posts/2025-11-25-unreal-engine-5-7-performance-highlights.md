@@ -4,9 +4,8 @@ date: 2025-11-12
 last_modified_at: 12-11-2025
 categories: 
   - "Performance & Optimization"
-tags: 
-  - "Performance"
-  - "Performance Highlights"
+tags:
+  - "engine-updates"
 coverImage: "Thumb_Blog_57Highlights_600.jpg"
 sidebar:
     nav: sidebar-optimization

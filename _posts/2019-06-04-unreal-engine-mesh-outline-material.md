@@ -4,11 +4,10 @@ date: 2019-06-04
 last_modified_at: 30-08-2025
 categories: 
   - "Rendering"
-tags: 
-  - "custom-depth"
+tags:
   - "outlines"
-  - "Rendering"
   - "materials"
+  - "gpu-optimization"
 coverImage: "ue4_outlineheader-copy.jpg"
 sidebar:
     nav: sidebar-optimization

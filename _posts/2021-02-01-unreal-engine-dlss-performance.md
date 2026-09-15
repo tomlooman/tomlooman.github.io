@@ -5,9 +5,11 @@ last_modified_at: 2026-04-10
 excerpt: "A practical Unreal Engine guide to DLSS 2.0, comparing quality, performance, and setup for UE4 projects."
 categories: 
   - "Rendering"
-tags: 
-  - "Performance"
-  - "Rendering"
+tags:
+  - "archive"
+  - "upscaling"
+  - "benchmarking"
+  - "gpu-optimization"
 coverImage: "ue4_survivalgame_dlss_header2.jpg"
 sidebar:
     nav: sidebar-optimization

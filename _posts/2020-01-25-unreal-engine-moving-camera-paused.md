@@ -5,10 +5,10 @@ last_modified_at: 2026-04-10
 excerpt: "How to keep the Unreal Engine camera movable while the game is paused, including the necessary C++ setup."
 categories: 
   - "Rendering"
-tags: 
-  - "C++"
-  - "Cameras"
-  - "tips-tricks"
+tags:
+  - "cameras"
+  - "gameplay-framework"
+  - "tick"
 coverImage: "ue4_pausedscreen.jpg"
 sidebar:
     nav: sidebar-cpp

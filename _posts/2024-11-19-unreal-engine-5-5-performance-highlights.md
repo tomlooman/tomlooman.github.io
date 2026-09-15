@@ -6,8 +6,7 @@ excerpt: "Highlights from Unreal Engine 5.5 release notes, with commentary on pe
 categories: 
   - "Performance & Optimization"
 tags:
-  - "Performance"
-  - "Performance Highlights"
+  - "engine-updates"
 coverImage: "Blog_UE55ReleaseNotes_600.jpg"
 sidebar:
     nav: sidebar-optimization

@@ -5,11 +5,10 @@ last_modified_at: 2026-04-10
 excerpt: "Learn how Unreal Engine can automatically apply scalability settings based on player hardware benchmark results."
 categories: 
   - "Performance & Optimization"
-tags: 
-  - "Performance"
-  - "Scalability"
-  - "Rendering"
-  - "Tutorial"
+tags:
+  - "scalability"
+  - "benchmarking"
+  - "gpu-optimization"
 coverImage: "ue4_runhardwarebenchmark.jpg"
 sidebar:
     nav: sidebar-optimization

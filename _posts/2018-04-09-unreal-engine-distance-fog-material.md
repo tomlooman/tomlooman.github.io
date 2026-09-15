@@ -3,10 +3,10 @@ title: "Distance Fog Post-Process Material"
 date: 2018-04-09
 categories: 
   - "Rendering"
-tags: 
+tags:
   - "materials"
   - "post-process"
-  - "Rendering"
+  - "fog"
 coverImage: "Thumb_DepthFog.jpg"
 sidebar:
     nav: sidebar-optimization

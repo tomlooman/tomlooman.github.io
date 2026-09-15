@@ -5,14 +5,13 @@ last_modified_at: 30-08-2025
 excerpt: "Notes from an Unreal Engine optimization talk covering profiling, performance tuning, and low-cost workflow improvements."
 categories: 
   - "Performance & Optimization"
-tags: 
-  - "Profiling"
-  - "Performance"
-  - "Rendering"
-  - "Nanite"
-  - "Console Commands"
-  - "Tech Talk"
-  - "Tutorial"
+tags:
+  - "profiling"
+  - "unreal-insights"
+  - "cpu-optimization"
+  - "gpu-optimization"
+  - "memory"
+  - "scalability"
 coverImage: "Thumb_JetBrainsPerfTalk-1.jpg"
 sidebar:
     nav: sidebar-optimization

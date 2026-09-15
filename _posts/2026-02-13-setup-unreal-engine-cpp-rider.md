@@ -5,12 +5,8 @@ last_modified_at: 2026-02-13
 categories: 
   - "C++ Programming"
 tags:
-    - "C++"
-    - "Tutorial"
-    - "JetBrains Rider"
-    - "Courses"
-    - "Getting Started"
-    - "Beginner"
+  - "cpp-fundamentals"
+  - "project-setup"
 coverImage: "Thumb_Blog_SetupCPPRider.jpg"
 excerpt: "Installing and configuring JetBrains Rider for Unreal Engine C++ programming requires a very specific set of components. This guide will help you make this setup process go smoothly."
 ---

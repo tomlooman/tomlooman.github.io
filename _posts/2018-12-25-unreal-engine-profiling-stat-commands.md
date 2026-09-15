@@ -5,12 +5,10 @@ last_modified_at: 16-04-2026
 excerpt: "How to add counters and trace metrics in Unreal Insights and the Stats system to improve profiling and performance analysis."
 categories: 
   - "Performance & Optimization"
-tags: 
-  - "Performance"
-  - "Profiling"
-  - "C++"
-  - "Unreal Insights"
-  - "Tutorial"
+tags:
+  - "profiling"
+  - "unreal-insights"
+  - "cpu-optimization"
 coverImage: "Thumb_Blog_StatsTracesInsights.jpg"
 redirect_from:
   - /stat-commands-ue4/

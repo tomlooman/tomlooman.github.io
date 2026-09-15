@@ -5,12 +5,10 @@ last_modified_at: 28-05-2026
 excerpt: "Showcases how to rotate meshes on the GPU in Unreal Engine using vertex shaders for performance-friendly animation."
 categories: 
   - "Rendering"
-tags: 
-  - "Materials"
-  - "Performance"
-  - "Rendering"
-  - "Animation"
-  - "tips-tricks"
+tags:
+  - "materials"
+  - "world-position-offset"
+  - "gpu-optimization"
 coverImage: "ws_station_900p.jpg"
 ---
 

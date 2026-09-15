@@ -5,12 +5,10 @@ last_modified_at: 03-04-2026
 categories: 
   - "C++ Programming"
 tags:
-  - "C++"
-  - "Timers"
-  - "Delegates"
-  - "Performance"
-  - "Action Roguelike"
-  - "Tutorial"
+  - "tick"
+  - "delegates"
+  - "cpu-optimization"
+  - "timers"
 coverImage: "Thumb_CPPTimers.jpg"
 excerpt: "Find out how to use timers in Unreal Engine 5 C++ including delegates, passing parameters and FTimerHandles."
 ---

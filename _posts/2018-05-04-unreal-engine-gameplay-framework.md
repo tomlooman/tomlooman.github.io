@@ -5,10 +5,10 @@ last_modified_at: 14-09-2025
 excerpt: "A guide to Unreal Engine's Gameplay Framework for C++ projects, covering Actors, components, and core game architecture."
 categories: 
   - "C++ Programming"
-tags: 
-  - "Blueprint"
-  - "C++"
-  - "Gameplay Framework"
+tags:
+  - "cpp-fundamentals"
+  - "gameplay-framework"
+  - "blueprint-integration"
 coverImage: "GF_INTRO_THUMB-copy.jpg"
 sidebar:
     nav: sidebar-cpp

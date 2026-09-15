@@ -5,9 +5,9 @@ last_modified_at: 2026-04-10
 excerpt: "Introduction to Utility AI concepts and how to apply them in Unreal Engine as an alternative to Behavior Trees."
 categories: 
   - "Game AI"
-tags: 
-  - "Game AI"
-  - "Utility AI"
+tags:
+  - "utility-ai"
+  - "ability-systems"
 coverImage: "UtilityAI_FeaturedImage_01.jpg"
 sidebar:
     nav: sidebar-cpp

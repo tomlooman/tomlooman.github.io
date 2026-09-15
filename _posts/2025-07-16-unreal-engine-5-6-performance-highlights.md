@@ -5,9 +5,8 @@ last_modified_at: 30-08-2025
 excerpt: "A curated look at Unreal Engine 5.6 performance updates, rendering improvements, and optimization takeaways."
 categories: 
   - "Performance & Optimization"
-tags: 
-  - "Performance"
-  - "Performance Highlights"
+tags:
+  - "engine-updates"
 coverImage: "Blog_56PerformanceHighlights.jpg"
 sidebar:
     nav: sidebar-optimization

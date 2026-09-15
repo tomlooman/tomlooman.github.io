@@ -4,10 +4,11 @@ date: 2021-06-03
 last_modified_at: 02-03-2026
 categories: 
   - "C++ Programming"
-tags: 
-  - "C++"
-  - "Persistence"
-  - "Action Roguelike"
+tags:
+  - "save-games"
+  - "serialization"
+  - "gameplay-framework"
+  - "reflection"
 coverImage: "bonfire_blog_header-1.jpg"
 sidebar:
     nav: sidebar-cpp

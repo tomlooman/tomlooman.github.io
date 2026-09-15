@@ -6,9 +6,9 @@ excerpt: "Explains common UFUNCTION specifiers in Unreal Engine and how they exp
 categories: 
   - "C++ Programming"
 tags:
-  - "C++"
-  - "Unreal Editor"
-  - "Blueprint"
+  - "cpp-fundamentals"
+  - "reflection"
+  - "blueprint-integration"
 coverImage: "ue4_ufunction_thumb02.png"
 sidebar:
     nav: sidebar-cpp

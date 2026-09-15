@@ -5,9 +5,8 @@ last_modified_at: 27-08-2026
 layout: single
 categories: 
   - "Performance & Optimization"
-tags: 
-  - "Performance"
-  - "Performance Highlights"
+tags:
+  - "engine-updates"
 coverImage: "Thumb_Blog_58Highlights.jpg"
 header:
   og_image: "/assets/images/Thumb_Blog_58Highlights.jpg"

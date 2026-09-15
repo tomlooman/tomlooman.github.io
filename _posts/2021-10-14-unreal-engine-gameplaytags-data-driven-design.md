@@ -5,11 +5,10 @@ last_modified_at: 17-03-2026
 excerpt: "Why GameplayTags are valuable in Unreal Engine and how to use them for data-driven design and runtime decision-making."
 categories:
   - "C++ Programming"
-tags: 
-  - "C++"
-  - "Data-driven Programming"
-  - "GameplayTags"
-  - "Action Roguelike"
+tags:
+  - "gameplay-tags"
+  - "ability-systems"
+  - "data-driven-design"
 coverImage: "Thumb_GameplayTags2.jpg"
 sidebar:
     nav: sidebar-cpp

@@ -5,11 +5,12 @@ last_modified_at: 30-04-2026
 categories:
   - "Performance & Optimization"
 tags:
-  - "Rendering"
-  - "Performance"
-  - "Nanite"
-  - "Distance Fields"
-  - "Tutorial"
+  - "gpu-optimization"
+  - "profiling"
+  - "nanite"
+  - "world-position-offset"
+  - "distance-fields"
+  - "scalability"
 coverImage: "Thumb_YT_FarFarWestOptims_600.jpg"
 ---
 

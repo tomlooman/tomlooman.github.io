@@ -6,9 +6,11 @@ excerpt: "A simplified Unreal Engine FPS template for C++ learners, removing VR/
 categories: 
   - "C++ Programming"
   - "Sample Projects"
-tags: 
-  - "C++"
-  - "Sample Project"
+tags:
+  - "archive"
+  - "cpp-fundamentals"
+  - "gameplay-framework"
+  - "project-setup"
 coverImage: "Thumb_FPSTemplate2_small.jpg"
 sidebar:
     nav: sidebar-cpp

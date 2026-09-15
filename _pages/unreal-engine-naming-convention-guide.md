@@ -7,10 +7,10 @@ coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 categories:
   - "C++ Programming"
 tags:
-  - "C++ Programming"
-  - "Blueprint"
-  - "Unreal Editor"
-  - "Action Roguelike"
+  - "naming-conventions"
+  - "project-setup"
+  - "editor-tools"
+  - "data-driven-design"
 layout: single
 sidebar:
     nav: sidebar-cpp

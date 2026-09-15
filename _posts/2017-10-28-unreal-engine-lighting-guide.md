@@ -6,7 +6,10 @@ excerpt: "A personal reference to Unreal Engine lighting techniques from the 201
 categories: 
   - "Rendering"
 tags:
-  - "Rendering"
+  - "archive"
+  - "lighting"
+  - "lightmass"
+  - "shadows"
 coverImage: "ue4_lightingexample_thumb.jpg"
 sidebar:
     nav: sidebar-optimization

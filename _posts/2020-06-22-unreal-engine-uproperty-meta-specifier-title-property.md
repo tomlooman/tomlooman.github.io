@@ -5,10 +5,10 @@ last_modified_at: 2026-04-10
 excerpt: "Improve Unreal Editor UX for C++ arrays of structs by using the TitleProperty metadata specifier."
 categories: 
   - "C++ Programming"
-tags: 
-  - "C++"
-  - "tips-tricks"
-  - "Unreal Editor"
+tags:
+  - "reflection"
+  - "editor-tools"
+  - "data-driven-design"
 coverImage: "ue4_titleproperty_metaspecifier.jpg"
 sidebar:
     nav: sidebar-cpp

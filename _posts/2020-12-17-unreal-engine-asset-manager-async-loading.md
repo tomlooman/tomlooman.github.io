@@ -5,10 +5,11 @@ last_modified_at: 2026-04-10
 excerpt: "Guide to using Unreal Engine's Asset Manager for data assets and async loading with example workflows."
 categories: 
   - "C++ Programming"
-tags: 
-  - "C++"
-  - "Asset Loading"
-  - "Action Roguelike"
+tags:
+  - "asset-loading"
+  - "data-driven-design"
+  - "memory"
+  - "delegates"
 coverImage: "Blog_Thumb_AssetManager.jpg"
 sidebar:
     nav: sidebar-cpp

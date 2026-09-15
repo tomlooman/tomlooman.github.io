@@ -4,10 +4,11 @@ date: 2023-02-14
 last_modified_at: 03-04-2026
 categories: 
   - "C++ Programming"
-tags: 
-  - "C++"
-  - "Delegates"
-  - "Action Roguelike"
+tags:
+  - "cpp-fundamentals"
+  - "reflection"
+  - "blueprint-integration"
+  - "delegates"
 coverImage: "Blog_Banner_CPPCompleteGuide_770.jpg"
 excerpt: "The complete reference guide to C++ for Unreal Engine game development. Covering all the essential programming concepts you need to code effectively in Unreal Engine C++. It includes all the commonly used concepts such as pointers, references, interfaces, macros, delegates, modules and more... Use it alongside other learning resources to learn more about a specific C++ programming concept."
 

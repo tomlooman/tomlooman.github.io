@@ -4,9 +4,11 @@ date: 2021-04-19
 last_modified_at: 2026-04-10
 categories: 
   - "C++ Programming"
-tags: 
-  - "Blueprint"
-  - "C++"
+tags:
+  - "blueprint-integration"
+  - "delegates"
+  - "async-actions"
+  - "http"
 coverImage: "ws_mainmenu_motd.jpg"
 sidebar:
     nav: sidebar-cpp

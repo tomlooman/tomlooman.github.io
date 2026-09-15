@@ -5,12 +5,9 @@ last_modified_at: 02-03-2026
 excerpt: "Reduce Unreal Engine shader compile times and package size with project settings and shader permutation optimizations."
 categories: 
   - "Performance & Optimization"
-tags: 
-  - "materials"
-  - "Performance"
-  - "Rendering"
-  - "tips-tricks"
-  - "Tutorial"
+tags:
+  - "shader-compilation"
+  - "packaging"
 coverImage: "ue4_compileshaders-1.jpg"
 sidebar:
     nav: sidebar-optimization

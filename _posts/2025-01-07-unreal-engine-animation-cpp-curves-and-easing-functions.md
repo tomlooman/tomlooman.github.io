@@ -4,10 +4,10 @@ date: 2025-01-07
 last_modified_at: 2025-05-20
 categories: 
   - "C++ Programming"
-tags: 
-  - "animation"
-  - "C++"
-  - "Action Roguelike"
+tags:
+  - "gameplay-animation"
+  - "tick"
+  - "delegates"
 coverImage: "Blog_AnimatingCurves_Small.jpg"
 header:
   teaser: "assets/images/Blog_AnimatingCurves_Small.jpg"

@@ -5,11 +5,11 @@ last_modified_at: 2026-04-10
 excerpt: "An experiment in rendering soft, blurred outline effects in Unreal Engine using Custom Depth and post-process materials."
 categories:
   - "Rendering"
-tags: 
+tags:
   - "custom-depth"
-  - "materials"
   - "outlines"
   - "post-process"
+  - "materials"
 coverImage: "Thumb_SoftOutlines_small.jpg"
 sidebar:
     nav: sidebar-optimization

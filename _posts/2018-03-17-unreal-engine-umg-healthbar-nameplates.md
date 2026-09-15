@@ -4,9 +4,10 @@ date: 2018-03-17
 categories: 
   - "C++ Programming"
   - "User Interface"
-tags: 
-  - "C++"
-  - "UMG"
+tags:
+  - "umg"
+  - "gameplay-ui"
+  - "blueprint-integration"
 coverImage: "Thumb_WorldWidgets-copy.jpg"
 sidebar:
     nav: sidebar-optimization

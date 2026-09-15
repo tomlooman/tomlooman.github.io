@@ -6,7 +6,8 @@ categories:
   - "Rendering"
 tags:
   - "materials"
-  - "Rendering"
+  - "render-targets"
+  - "character-effects"
 coverImage: "ue4_hitmask_damageexample.jpg"
 sidebar:
     nav: sidebar-optimization

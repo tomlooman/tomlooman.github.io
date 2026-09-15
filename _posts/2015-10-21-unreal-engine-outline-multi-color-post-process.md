@@ -5,11 +5,11 @@ last_modified_at: 2025-08-17
 excerpt: "Use Custom Stencil and Custom Depth in Unreal Engine to render multi-colored outline effects with post-process materials."
 categories: 
   - "Rendering"
-tags: 
+tags:
   - "custom-depth"
-  - "materials"
   - "outlines"
   - "post-process"
+  - "materials"
 coverImage: "ue4_multicoloredoutlines.jpg"
 redirect_from:
   - /ue4-evolves-outline-post-effect

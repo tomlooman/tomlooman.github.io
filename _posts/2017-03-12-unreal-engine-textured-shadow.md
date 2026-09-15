@@ -5,9 +5,11 @@ last_modified_at: 2026-04-10
 excerpt: "Experimenting with textured shadow tricks in Unreal Engine 4 using Forward rendering and LightAttenuation buffers."
 categories: 
   - "Rendering"
-tags: 
+tags:
+  - "archive"
+  - "lighting"
+  - "shadows"
   - "materials"
-  - "Rendering"
 coverImage: "disney_shadowman_ue4_small.jpg"
 redirect_from:
   - /unreal-engine-shadows-outline/

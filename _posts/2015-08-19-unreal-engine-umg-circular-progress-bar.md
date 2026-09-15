@@ -6,8 +6,9 @@ excerpt: "Build a circular progress bar in UMG with material-driven animation an
 categories: 
   - "User Interface"
 tags:
+  - "umg"
+  - "gameplay-ui"
   - "materials"
-  - "UMG"
 coverImage: "circularprogress_header.jpg"
 sidebar:
     nav: sidebar-optimization

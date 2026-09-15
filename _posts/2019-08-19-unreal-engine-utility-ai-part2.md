@@ -3,9 +3,9 @@ title: "Journey into Utility AI for Unreal Engine (Part Two)"
 date: 2019-08-19
 categories: 
   - "Game AI"
-tags: 
-  - "Game AI"
-  - "Utility AI"
+tags:
+  - "utility-ai"
+  - "ability-systems"
 coverImage: "UtilityAI_FeaturedImage_Part2.jpg"
 sidebar:
     nav: sidebar-cpp
