@@ -27,6 +27,9 @@ sections:
       - title: "5.7 Performance Highlights"
         url: "https://courses.tomlooman.com/courses/unrealperformance/lectures/64015426"
         type: "subject"
+      - title: "5.8 Performance Highlights"
+        url: "https://courses.tomlooman.com/courses/unrealperformance/lectures/66839095"
+        type: "subject"
   - title: "2.1 Performance Fundamentals"
     lessons:
       - title: "Frame Time (ms) vs. Frame Rate (fps)"
