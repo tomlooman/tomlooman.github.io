@@ -17,6 +17,7 @@ tagline: "Learn how to find performance bottlenecks, understand what causes them
 redirect_from:
   - /unreal-engine-course-optimization/
   - /performance-optimization/
+  - /course-game-optimization-unreal-engine-5/
 ---
 
 {% assign summary = "

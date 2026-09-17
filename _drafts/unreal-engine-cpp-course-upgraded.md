@@ -16,7 +16,7 @@ excerpt: ""
 layout: single
 ---
 
-Five years after the original C++ course launched, I have rebuilt it from the ground up in Unreal Engine 5.6, supporting newer versions including 5.8, an entirely new curriculum, and more than 30 hours of newly recorded lessons.
+Five years after the original C++ course launched, I have rebuilt it from the ground up in Unreal Engine 5.6, supporting newer versions including 5.8, a refined curriculum, and more than 30 hours of re-recorded lessons.
 
 In September 2021, I launched 'Professional Game Development in C++ and Unreal Engine', a project-based course built around everything I had learned from years of developing games and teaching Unreal Engine - it was originally taught at Stanford University. Exactly five years later, I have rebuilt the entire course for the latest versions of Unreal Engine 5. Every lesson has been re-recorded, the game project and code have been redesigned, and the curriculum has been expanded and reorganized around the way I teach professional Unreal Engine C++ today. It reflects current workflows, coding standards, and the practices I use in my own development work. 
 
