@@ -31,9 +31,8 @@ Partner Tiers are volume discounts for studios that purchase multiple course sea
 | Tier 1 | 3–9 | 10% |
 | Tier 2 | 10–19 | 15% |
 | Tier 3 | 20–29 | 20% |
-| Tier 4 | 30–39 | 25% |
-| Tier 5 | 40–49 | 30% |
-| Tier 6 | 50+ | 35% |
+| Tier 4 | 30–49 | 25% |
+| Tier 5 | 50+ | 30% |
 
 Partner Tiers are designed to reward larger and consistent studio rollouts while keeping pricing predictable and easy to understand.
 
