@@ -66,19 +66,6 @@ Build a complete game while solving compiler errors, debugging crashes, and desi
 
 Every lesson builds your confidence until you can continue building Unreal Engine projects without relying on tutorials.
 
-{% capture feature-upgradedrecording %}
-The course was originally recorded in 2021 for Unreal Engine 4. Five years later, I’ve completely re-recorded and rebuilt it for Unreal Engine 5.6 and above, bringing the content up to date with modern best practices, and changes in C++ and Unreal Engine 5 over the years.
-
-This upgrade took over a year of work to complete. **Every existing student received the full upgrade for FREE**.
-{% endcapture %}
-
-{% include feature-block.html
-    title="Completely Rebuilt - From UE4 to Unreal Engine 5.6+"
-    image="/assets/images/courses/course_cpp_upgraded56_2.jpg"
-    alt="Unreal Insights"
-    content=feature-upgradedrecording
-%}
-
 ## Is this course for you?
 
 Whether you have only just started programming or well over a decade, you will learn something new during this course. It is recommended to know the basic fundamentals of programming such as functions and variables, but no prior C++ experience is necessary. Knowing the basics of any other programming language or even just Blueprints is enough to get started.
@@ -128,6 +115,19 @@ This course exists because I spent years learning Unreal Engine the hard way. Go
 Too much of the information available online is fragmented, outdated, or teaches shortcuts that don't hold up in professional development. That makes it difficult to build a solid foundation and even harder to know which advice you can trust. Instead of piecing together dozens of tutorials, this course gives you a structured learning experience built on industry best practices and years of real Unreal Engine development.
 
 My goal isn't simply to teach you how to build the game you'll create in this course. It's to help you understand Unreal Engine well enough that you can confidently build the next one on your own. Every lesson is designed to develop your reasoning as a programmer so you can evaluate different approaches, debug problems effectively, and make sound engineering decisions long after the course has finished.
+
+{% capture feature-upgradedrecording %}
+The course was originally recorded in 2021 for Unreal Engine 4. Five years later, I’ve completely re-recorded and rebuilt it for Unreal Engine 5.6 and above, bringing the content up to date with modern best practices, and changes in C++ and Unreal Engine 5 over the years.
+
+This upgrade took over a year of work to complete. **Every existing student received the full upgrade for FREE**.
+{% endcapture %}
+
+{% include feature-block.html
+    title="Completely Rebuilt - From UE4 to Unreal Engine 5.6+"
+    image="/assets/images/courses/course_cpp_upgraded56_2.jpg"
+    alt="Unreal Insights"
+    content=feature-upgradedrecording
+%}
 
 ## Your Instructor : Tom Looman
 {% include bio.html %}
