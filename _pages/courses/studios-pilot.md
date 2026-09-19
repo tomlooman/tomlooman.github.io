@@ -2,6 +2,7 @@
 layout: salespage
 title: "30-Day Course Pilot for Studios"
 permalink: /courses/studio-pilot/
+excerpt: "Plan your studio’s Unreal Engine training with a paid 30-day pilot. Give developers full course access and confirm seat assignments before a wider rollout."
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 last_modified_at: 20-08-2026
 toc: true

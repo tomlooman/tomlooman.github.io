@@ -2,6 +2,7 @@
 layout: salespage
 title: "Unreal Engine Courses for Studio Training"
 permalink: /courses/studio-access/
+excerpt: "Unreal Engine C++ and optimization training for game studios. Give your team a structured learning path, lifetime access and direct support from Tom Looman."
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 header:
   overlay_image: "assets/images/courses/CourseCPP_HeroBanner_2.jpg"

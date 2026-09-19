@@ -2,6 +2,7 @@
 layout: salespage
 title: "Course Evaluation Access for Studio Training"
 permalink: /courses/studio-evaluation/
+excerpt: "Evaluate Tom Looman’s Unreal Engine courses with free 30-day access for 1–2 team leads. Review curated lessons for technical depth, teaching style and team fit."
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 last_modified_at: 20-08-2026
 toc: true

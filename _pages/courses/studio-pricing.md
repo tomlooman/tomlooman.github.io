@@ -2,6 +2,7 @@
 layout: salespage
 title: "Unreal Engine Course Pricing & Partner Tiers for Studios"
 permalink: /courses/studio-pricing/
+excerpt: "Explore studio pricing, volume discounts and Partner Tiers for Tom Looman’s Unreal Engine courses. One-time purchases with lifetime access per learner."
 coverImage: "Thumb_Course_Optim_Hero_5.jpg"
 last_modified_at: 20-08-2026
 toc: true
