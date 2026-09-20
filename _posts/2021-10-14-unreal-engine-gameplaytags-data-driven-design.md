@@ -20,25 +20,25 @@ You may or may not be familiar with GameplayTags in Unreal Engine. It's heavily 
 
 ## What are GameplayTags?
 
-An `FGameplayTag` is essentially an [FName](https://docs.unrealengine.com/en-US/fname-in-unreal-engine/) that is defined in the game's project settings (or natively defined in C++). A major benefit of using these tags is that they allow for easy selection in the Editor's UI and you don't have to type them out each time which is prone to user error. You also don't use `TArray` with `FGameplayTag`, instead you should always use the `FGameplayTagContainer` as this has helper functions to match one or multiple tags easily.
+An `FGameplayTag` is essentially an [`FName`](https://docs.unrealengine.com/en-US/fname-in-unreal-engine/) that is defined in the game's project settings (or natively defined in C++). A major benefit of using these tags is that they allow for easy selection in the Editor's UI and you don't have to type them out each time which is prone to user error. You also don't use `TArray` with `FGameplayTag`, instead you should always use the `FGameplayTagContainer` as this has helper functions to match one or multiple tags easily.
 
 ![](/assets/images/gameplaytags_editorselection.png)
-*GameplayTag selection menu for any FGameplayTag or FGameplayTagContainer variable.*
+*GameplayTag selection menu for any `FGameplayTag` or `FGameplayTagContainer` variable.*
 
 ![](/assets/images/gameplaytags_configsettings.png)
 *Gameplay Tag Manager in _Project Settings \> Project \> GameplayTags \> Manage Gameplay Tags_*
 
 Another powerful feature is the hierarchy to find exact tags or match based on their parent. This lets you create a tree of tags from broad to very narrow. Some examples:
 
-- _Damage.DoT.Fire_
-- _Location.Planet.Derelict_
-- _Action.Primary_
-- _Action.Secondary_
-- _Effect.Burning_
-- _Effect.UIHidden_
-- _DamageType.Energy_
-- _Attribute.Health_
-- _Terminal.Engineering_
+- `Damage.DoT.Fire`
+- `Location.Planet.Derelict`
+- `Action.Primary`
+- `Action.Secondary`
+- `Effect.Burning`
+- `Effect.UIHidden`
+- `DamageType.Energy`
+- `Attribute.Health`
+- `Terminal.Engineering`
 
 The above is a random selection of tags used in some of my own projects. The neat thing is you can use GameplayTags to specify something is a DamageType, and more specifically a DamageType.Fire, DamageType.Kinetic, etc.
 
@@ -59,7 +59,7 @@ I highly recommend looking into [Lyra Starter Game](https://docs.unrealengine.co
 
 ### Start Ability by Tag
 
-You could start an ability by GameplayTag rather than calling Start() on it directly by holding a hard reference to a specific ability class.
+You could start an ability by GameplayTag rather than calling `Start()` on it directly by holding a hard reference to a specific ability class.
 
 ![](/assets/images/gameplaytags_startaction.jpg)
 
@@ -76,7 +76,7 @@ Lyra has a plugin dedicated to this called _GameplayMessageRouter_ which I recom
 ### GameplayTag Add/Remove Events
 
 ![](/assets/images/ue_gameplaytags_taglistener.jpg)
-*Adding GameplayTag "listeners" is invaluable in building an event-driven gameplay framework. Here we listen for the Pawn to go into ADS (Aim down Sights) so we can run some logic in response. _(Note: AddGameplayTagListener is a function from my own project - similar functionality can be found in [GAS](https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/GameplayAbilitySystem/))_*
+*Adding GameplayTag "listeners" is invaluable in building an event-driven gameplay framework. Here we listen for the Pawn to go into ADS (Aim down Sights) so we can run some logic in response. _(Note: `AddGameplayTagListener` is a function from my own project - similar functionality can be found in [GAS](https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/GameplayAbilitySystem/))_*
 
 You want to wrap your custom `AddTag()` and `RemoveTag()` functions so you can broadcast an event/delegate.
 
@@ -130,7 +130,7 @@ The best way to check for references is by using the [Reference Viewer](https://
 
 ![](/assets/images/ue_gameplaytags_sizemaptool.jpg)
 
-In the example above I already see some references that shouldn't be there. We somehow end up referencing several classes such as _BaseShip_ and _TurretRotating_ class (left top) which are 30MB and 11MB in size and should have nothing to do with a Player Pawn. These problems will often occur during development, it's better to find these early as you may need to adjust your framework design or change your coding habits before it's too late in the project. This is not just for the final game product either, you are loading in these referenced assets any time you boot up the editor or load in a particular blueprint (and all its references) that you work on.
+In the example above I already see some references that shouldn't be there. We somehow end up referencing several classes such as `BaseShip` and `TurretRotating` class (left top) which are 30MB and 11MB in size and should have nothing to do with a Player Pawn. These problems will often occur during development, it's better to find these early as you may need to adjust your framework design or change your coding habits before it's too late in the project. This is not just for the final game product either, you are loading in these referenced assets any time you boot up the editor or load in a particular blueprint (and all its references) that you work on.
 
 Any assets referenced here will be loaded when the asset in question is used - unless you use soft references inside said asset. This is a silent killer as you won't notice until you have already added in a decent chunk of your content at which point it's expensive to re-design your framework.
 
@@ -151,7 +151,7 @@ GameplayTags can be replicated more efficiently by Unreal than `FName`. There ar
 
 ## GameplayTag Stack Container
 
-The default FGameplayTagContainer struct lacks one critical feature. And that's "Stacking" of tags, or keeping a count. Epic's Gameplay Ability System solves this through a `FGameplayTagCountContainer` which stores the number of instances.
+The default `FGameplayTagContainer` struct lacks one critical feature. And that's "Stacking" of tags, or keeping a count. Epic's Gameplay Ability System solves this through a `FGameplayTagCountContainer` which stores the number of instances.
 
 Lyra has `FGameplayStackContainer` which isn't coupled to the ability system and could be transferred to your own project.
 
@@ -221,7 +221,7 @@ void URogueAction::StartAction_Implementation(AActor* Instigator)
 }
 ```
 
-CanStart checks for any "illegal" tags present on the owner.
+`CanStart` checks for any "illegal" tags present on the owner.
 
 ```cpp
 bool URogueAction::CanStart_Implementation(AActor* Instigator)
@@ -240,7 +240,7 @@ bool URogueAction::CanStart_Implementation(AActor* Instigator)
 
 ### Defining Native GameplayTags
 
-Since 4.27 it's much easier to define GameplayTags directly in C++. This can be helpful if your framework requires certain tags to be present without having to define them elsewhere in your INI files. You then don't need to use the _RequestGameplayTag()_ function from earlier so long as you defined this tag in code and not the project settings.
+Since 4.27 it's much easier to define GameplayTags directly in C++. This can be helpful if your framework requires certain tags to be present without having to define them elsewhere in your INI files. You then don't need to use the `RequestGameplayTag()` function from earlier so long as you defined this tag in code and not the project settings.
 
 ```cpp
 // Macro in your CPP file, naming style is an example. First param is what you use to access this Tag in your C++.
@@ -257,11 +257,11 @@ UE_DECLARE_GAMEPLAY_TAG_EXTERN(TAG_Attribute_Health);
 UE_DEFINE_GAMEPLAY_TAG_STATIC(TAG_Attribute_Health, "Attribute.Health");
 ```
 
-With the tag defined above you can use the `TAG_Attribute_Health` elsewhere in your code which represents an FGameplayTag filled with "Attribute.Health".
+With the tag defined above you can use the `TAG_Attribute_Health` elsewhere in your code which represents an `FGameplayTag` filled with `Attribute.Health`.
 
 ## Project Example
 
-Sometimes the best way to learn is by example. **My [open-source Project Orion](https://github.com/tomlooman/ActionRoguelike) project uses GameplayTags for Actions and Buffs.** For example, while Sprinting a tag is applied that prevents the player from attacking. You can find this in the _URogueActionComponent_ class and the _URogueAction_ class.
+Sometimes the best way to learn is by example. **My [open-source Project Orion](https://github.com/tomlooman/ActionRoguelike) project uses GameplayTags for Actions and Buffs.** For example, while Sprinting a tag is applied that prevents the player from attacking. You can find this in the `URogueActionComponent` class and the `URogueAction` class.
 
 This project is part of my **[Unreal Engine C++ Course](https://tomlooman.com/courses/unrealengine-cpp/)** where we explore in detail how to think about and apply GameplayTags, among other essential C++ gameplay programming concepts.
 
