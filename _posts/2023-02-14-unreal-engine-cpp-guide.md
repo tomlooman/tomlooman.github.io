@@ -14,7 +14,7 @@ excerpt: "The complete reference guide to C++ for Unreal Engine game development
 
 ---
 
-Getting started with Unreal Engine C++ can be a bit of a struggle. The resources online have no clear path to follow or fail to explain the _Unrealisms_ you'll encounter. In this article, I'll attempt to give you an overview of many unique aspects of Unreal's C++ (TObjectPtr, Delegates, etc.) and briefly go over some of the native C++ features (pointers, macros, interfaces) and how they are used in the context of Unreal Engine. It's a compilation of the many different concepts that you will face when working in C++ and Unreal Engine on a daily basis.
+Getting started with Unreal Engine C++ can be a bit of a struggle. The resources online have no clear path to follow or fail to explain the _Unrealisms_ you'll encounter. In this article, I'll attempt to give you an overview of many unique aspects of Unreal's C++ (`TObjectPtr`, Delegates, etc.) and briefly go over some of the native C++ features (pointers, macros, interfaces) and how they are used in the context of Unreal Engine. It's a compilation of the many different concepts that you will face when working in C++ and Unreal Engine on a daily basis.
 
 Throughout the article, I will be using code snippets from ["Project Orion" a Co-op Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike). You can browse the source code on [GitHub](https://github.com/tomlooman/ActionRoguelike).
 
@@ -50,7 +50,7 @@ The first way you'll be using pointers is to access and track instances of your 
 APlayerController* PC = GetWorld()->GetPlayerController();
 ```
 
-After running this code, the "PC" variable is now pointing to the same place in memory as the player controller we retrieved from World. We didn't duplicate anything or create anything new, we just looked up where to find the object we need, and can now use it to do stuff for us such as calling functions on it or accessing its variables.
+After running this code, the `PC` variable is now pointing to the same place in memory as the player controller we retrieved from World. We didn't duplicate anything or create anything new, we just looked up where to find the object we need, and can now use it to do stuff for us such as calling functions on it or accessing its variables.
 
 ```cpp
 // Example function that tries to get the Actor underneath the player crosshair if there is any
@@ -71,7 +71,7 @@ if (FocusedActor)
 It's important to check if pointers are not "null" (also written as `nullptr` in code, meaning not pointing to anything in memory) before attempting to call functions or change its variables, or the engine will crash when executing that piece of code. So you will use the above if-statement often.
 
 {: .notice--info }
-**Perhaps even more important than knowing when to check for nullptr, is when NOT to include nullptr checks.**
+**Perhaps even more important than knowing when to check for `nullptr`, is when NOT to include `nullptr` checks.**
 
 You should generally only check for `nullptr` if it's likely and expected that a pointer is null and continue execution of the game regardless. In the above code example, `FocusedActor` is going to be `nullptr` any time there is no interactable Actor under the player's crosshair.
 
@@ -116,7 +116,7 @@ UPROPERTY(VisibleAnywhere)
 TObjectPtr<UCameraComponent> CameraComp;
 ```
 
-These benefits are for the editor only and in shipped builds it will function identically to raw pointers. You may continue to use raw pointers, but it's advised by Epic to move over to using TObjectPtr whenever possible.
+These benefits are for the editor only and in shipped builds it will function identically to raw pointers. You may continue to use raw pointers, but it's advised by Epic to move over to using `TObjectPtr` whenever possible.
 
 `TObjectPtr<T>` is only for the member properties in the headers, your C++ code in .cpp files continues to use raw pointers as there is no benefit to using `TObjectPtr<T>` in functions and short-lived scope.
 
@@ -145,11 +145,11 @@ Now in the [class file of the projectile attack](https://github.com/tomlooman/Ac
 UNiagaraFunctionLibrary::SpawnSystemAttached(CastingEffect, Character->GetMesh(), HandSocketName, FVector::ZeroVector, FRotator::ZeroRotator, EAttachLocation::SnapToTarget, true);
 ```
 
-Note: In this example, we didn't check whether _CastingEffect_ is a nullptr before attempting to use it, the SpawnEmitterAttached function already does that and won't crash if it wasn't assigned a valid particle system.
+Note: In this example, we didn't check whether `CastingEffect` is a `nullptr` before attempting to use it, the `SpawnEmitterAttached` function already does that and won't crash if it wasn't assigned a valid particle system.
 
 ## Period '.' and Arrow operator '->' (Accessing Variables/Functions)
 
-Used to **access Variables or call Functions** of objects. You can type in the period '.' and it automatically converts to '->' in source editors like Visual Studio when used on a pointer. While they are similar in use, the '.' is used on Value-types such as _structs_ (like FVector, FRotator, and FHitResult) and '->' is generally used on _classes_ that you access using _Pointers_, like Actor, GameMode, NiagaraSystem, etc.
+Used to **access Variables or call Functions** of objects. You can type in the period '.' and it automatically converts to '->' in source editors like Visual Studio when used on a pointer. While they are similar in use, the '.' is used on Value-types such as _structs_ (like `FVector`, `FRotator`, and `FHitResult`) and '->' is generally used on _classes_ that you access using _Pointers_, like Actor, GameMode, NiagaraSystem, etc.
 
 Examples:
 
@@ -215,7 +215,7 @@ void ChangeTime(float TimeToUpdate)
 }
 ```
 
-Now calling this function as seen in the example below will print out 0.0f at the end since the original _TimeVar_ was never actually changed.
+Now calling this function as seen in the example below will print out `0.0f` at the end since the original `TimeVar` was never actually changed.
 
 ```cpp
 float TimeVar = 0.0f;
@@ -235,7 +235,7 @@ void ChangeTime(float& TimeToUpdate)
 }
 ```
 
-Now if we use the same code as before, we get a different result: The printed value would now be 1.0f.
+Now if we use the same code as before, we get a different result: The printed value would now be `1.0f`.
 
 ```cpp
 float TimeVar = 0.0f;
@@ -277,7 +277,7 @@ These keywords can mark variables and functions in the header file to give or li
 - `protected:` it cannot be accessed from other classes but can be accessed in the derived class.
 - `public:` other classes have open access to the variable or function.
 
-Generally, you only want to expose what can be safely called/changed from the outside (other classes). You don't want to make your variables _public_ if they should trigger an event whenever they are changed. Instead, you mark the variable _protected_ or even _private_ and create a _public_ function instead which sets the variable and calls the desired event.
+Generally, you only want to expose what can be safely called/changed from the outside (other classes). You don't want to make your variables `public` if they should trigger an event whenever they are changed. Instead, you mark the variable `protected` or even `private` and create a `public` function instead which sets the variable and calls the desired event.
 
 ```cpp
 private:
@@ -308,7 +308,7 @@ class ACTIONROGUELIKE_API ARogueCharacter : public ACharacter
 // ...
 ```
 
-The `class` keyword provides the minimum the compiler requires to understand that word is in fact a _class_. If we included the .h file for the class instead this could negatively impact our compile times. Any changes to the included header (eg. including your MyCharacter.h elsewhere in your code) will cause the classes which include said header to re-compile too.
+The `class` keyword provides the minimum the compiler requires to understand that word is in fact a _class_. If we included the .h file for the class instead this could negatively impact our compile times. Any changes to the included header (eg. including your `MyCharacter.h` elsewhere in your code) will cause the classes which include said header to re-compile too.
 
 Here is the [character class](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Player/RoguePlayerCharacter.h) example that forward declares all the Components used in the header instead of including their .h files.
 
@@ -455,11 +455,11 @@ UPROPERTY(BlueprintAssignable, Category = "Attributes")
 FOnAttributeChanged OnHealthChanged;
 ```
 
-You may have noticed BlueprintAssignable, this is a powerful feature of the Dynamic delegates which can be exposed to Blueprint and used on the EventGraph.
+You may have noticed `BlueprintAssignable`, this is a powerful feature of the Dynamic delegates which can be exposed to Blueprint and used on the EventGraph.
 
 ### Executing Delegates
 
-Finally, to actually trigger the callback we call OnHealthChanged_.Broadcast()_ and pass in the expected parameters.
+Finally, to actually trigger the callback we call `OnHealthChanged.Broadcast()` and pass in the expected parameters.
 
 ```cpp
 OnHealthChanged.Broadcast(InstigatorActor, this, NewHealth, Delta);
@@ -484,7 +484,7 @@ void ARogueAICharacter::PostInitializeComponents()
 }
 ```
 
-The above OnHealthChanged function is declared with `UFUNCTION()` in the header.
+The above `OnHealthChanged` function is declared with `UFUNCTION()` in the header.
 
 ```cpp
 UFUNCTION()
@@ -535,7 +535,7 @@ if (UAssetManager* Manager = UAssetManager::GetIfValid())
 }
 ```
 
-In the example above we create a new Delegate variable and fill it with variables, in this case `MonsterId` and the first vector location from an array (`Locations[0]`). Once the LoadPrimaryAsset function from Unreal has finished, it will call the delegate `OnMonsterLoaded` with the provided parameters we passed into the CreateUObject function previously.
+In the example above we create a new Delegate variable and fill it with variables, in this case `MonsterId` and the first vector location from an array (`Locations[0]`). Once the `LoadPrimaryAsset` function from Unreal has finished, it will call the delegate `OnMonsterLoaded` with the provided parameters we passed into the `CreateUObject` function previously.
 
 ```cpp
 void ARogueGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
@@ -559,13 +559,13 @@ I recommend checking out [Ari's talk on modules](https://dev.epicgames.com/commu
 
 ## Class Prefixes (F, A, U, E, G, T, ...)
 
-Classes in Unreal have a prefix, for example, the class 'Actor' is named 'AActor' when seen in C++.  These are helpful in telling you more about the type of object. Here are a few important examples.
+Classes in Unreal have a prefix, for example, the class 'Actor' is named `AActor` when seen in C++.  These are helpful in telling you more about the type of object. Here are a few important examples.
 
-**A.** Actor derived classes (including Actor itself) have A as prefix, eg. APawn, AGameMode, AYourActorClass
+**A.** Actor derived classes (including Actor itself) have A as prefix, eg. `APawn`, `AGameMode`, `AYourActorClass`
 
-**U.** UObject derived classes, including `UBlueprintFunctionLibrary`, `UActorComponent` and `UGameplayStatics`. Yes, `AActor` derives from `UObject`, but it overrides it with its own A prefix.
+**U.** `UObject` derived classes, including `UBlueprintFunctionLibrary`, `UActorComponent` and `UGameplayStatics`. Yes, `AActor` derives from `UObject`, but it overrides it with its own A prefix.
 
-**F.** Structs, like FHitResult, FVector, FRotator, and your own structs should start with F.
+**F.** Structs, like `FHitResult`, `FVector`, `FRotator`, and your own structs should start with F.
 
 **E.** The convention for enum types. (`EEnvQueryStatus`, `EConstraintType`, ...)
 
@@ -588,7 +588,7 @@ TSubclassOf<AGameMode> SubclassOfActor;
 
 _"The ‘F’ prefix actually stands for “Float” (as in Floating Point.)_"
 
-_"Tim Sweeney wrote the original “FVector” class along with many of the original math classes, and the ‘F’ prefix was useful to distinguish from math constructs that would support either integers or doubles, even before such classes were written. Much of the engine code dealt with floating-point values, so the pattern spread quickly to other new engine classes at the time, then eventually became standard everywhere."_
+_"Tim Sweeney wrote the original “`FVector`” class along with many of the original math classes, and the ‘F’ prefix was useful to distinguish from math constructs that would support either integers or doubles, even before such classes were written. Much of the engine code dealt with floating-point values, so the pattern spread quickly to other new engine classes at the time, then eventually became standard everywhere."_
 
 _"This was in the mid-nineties sometime. Even though most of Unreal Engine has been rewritten a few times over since then, some of the original math classes still resemble their Unreal 1 counterparts, and certain idioms remain part of Epic’s coding standard today."_
 
@@ -602,7 +602,7 @@ In the many code examples in this guide, I used "Rogue" as the prefix. The code 
 
 Besides the standard types like `float`, `int32`, `bool`, which I won't cover as there is nothing too special to them within Unreal Engine - Unreal has built-in classes to handle very common logic that you will use a lot throughout your programming. Here are a few of the most commonly seen types from Unreal that you will use. Luckily the official documentation has some information on these types, so I will be referring to that a lot.
 
-Ints are special in that you are not supposed to use "int" in serialized UProperties as the size of int can change per platform. That's why Unreal uses its own sized int16, int32, uint16, etc. - [Source](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DevelopmentSetup/CodingStandard/#portablec++code)
+Ints are special in that you are not supposed to use `int` in serialized UProperties as the size of `int` can change per platform. That's why Unreal uses its own sized `int16`, `int32`, `uint16`, etc. - [Source](https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/DevelopmentSetup/CodingStandard/#portablec++code)
 
 ### FString, FName, FText
 
@@ -620,8 +620,8 @@ Used to specify the location, rotation, and scale of things in the World. A line
 
 - `FVector` 3-axis as XYZ where Z is up. Specifies either a Location or a direction much like common [Vector-math](https://www.mathsisfun.com/algebra/vectors.html).
 - `FRotator` 3 params [Pitch, Yaw and Roll](https://howthingsfly.si.edu/flight-dynamics/roll-pitch-and-yaw) to give it a rotation value.
-- `FTransform` consists of FVector (Location), FRotator (Rotation) and FVector (Scale in 3-axis).
-- `FQuat` another variable that can specify a rotation also known by its full name as [Quaternion](https://en.wikipedia.org/wiki/Quaternion), you will mostly use FRotator in game-code however, FQuat is less used outside the engine modules although it can prevent [Gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock). (It's also not exposed to Blueprint)
+- `FTransform` consists of `FVector` (Location), `FRotator` (Rotation) and `FVector` (Scale in 3-axis).
+- `FQuat` another variable that can specify a rotation also known by its full name as [Quaternion](https://en.wikipedia.org/wiki/Quaternion), you will mostly use `FRotator` in game-code however, `FQuat` is less used outside the engine modules although it can prevent [Gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock). (It's also not exposed to Blueprint)
 
 ### TArray, TMap, TSet
 
@@ -642,14 +642,14 @@ TSubclassOf<AProjectileActor> ProjectileClass; // The class to assign in Bluepri
 
 Now the designer will get a list of classes to assign that derive from ProjectileActor, making the code very dynamic and easy to change from Blueprint.
 
-Here we use the TSubclassOf variable ProjectileClass to spawn a new instance: ([link to code](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/ActionSystem/RogueAction_ProjectileAttack.cpp))
+Here we use the `TSubclassOf` variable `ProjectileClass` to spawn a new instance: ([link to code](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/ActionSystem/RogueAction_ProjectileAttack.cpp))
 
 ```cpp
 FTransform SpawnTM = FTransform(ProjRotation, HandLocation);
 GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnTM, SpawnParams);
 ```
 
-- [Documentation on TSubclassOf\<T\>](https://dev.epicgames.com/documentation/en-us/unreal-engine/typed-object-pointer-properties-in-unreal-engine)
+- [Documentation on `TSubclassOf<T>`](https://dev.epicgames.com/documentation/en-us/unreal-engine/typed-object-pointer-properties-in-unreal-engine)
 
 ## C++ MACROS (& Unreal Property System)
 
@@ -673,7 +673,7 @@ void StartAction(AActor* Instigator);
 
 ### UPROPERTY
 
-Allows marking-up variables, and exposing them to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose your C++ to Blueprint but it can do a lot more using this large list of [property specifiers](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-uproperties). Again, it's worth checking out [Unreal Garden's article](https://unreal-garden.com/docs/uproperty/) on UPROPERTY specifiers.
+Allows marking-up variables, and exposing them to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose your C++ to Blueprint but it can do a lot more using this large list of [property specifiers](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-uproperties). Again, it's worth checking out [Unreal Garden's article](https://unreal-garden.com/docs/uproperty/) on `UPROPERTY` specifiers.
 
 ```cpp
 // Expose to Blueprint and allow editing of its defaults and only grant read-only access in the node graphs.
@@ -706,7 +706,7 @@ struct FMyStruct
 
 ### UE\_LOG (Logging)
 
-Macro to easily log information including a category (eg. LogAI, LogGame, LogEngine) and a severity (eg. Log, Warning, Error, or Verbose) and can be an incredibly valuable tool to verify your code by printing out some data while playing your game much like _PrintString_ in Blueprint.
+Macro to easily log information including a category (eg. `LogAI`, `LogGame`, `LogEngine`) and a severity (eg. `Log`, `Warning`, `Error`, or `Verbose`) and can be an incredibly valuable tool to verify your code by printing out some data while playing your game much like `PrintString` in Blueprint.
 
 ```cpp
 // The simple logging without additional info about the context
@@ -765,12 +765,12 @@ UPROPERTY()
 TObjectPtr<AActor> FocusedActor;
 ```
 
-"Destroyed actors don’t have references to them nulled until they’re actually garbage collected. That's what _IsValid(yourobject)_ is used for checking." - [Ari Arnbjörnsson](https://www.notion.so/Soft-Weak-Pointers-2347eefb694b49fb8314fdd71ca83065)
+"Destroyed actors don’t have references to them nulled until they’re actually garbage collected. That's what `IsValid(yourobject)` is used for checking." - [Ari Arnbjörnsson](https://www.notion.so/Soft-Weak-Pointers-2347eefb694b49fb8314fdd71ca83065)
 
 You can read more about [automatic updating of references](https://docs.unrealengine.com/5.1/en-US/unreal-object-handling-in-unreal-engine/#automaticupdatingofreferences) on the official docs. The thing to keep in mind is that it only works for Actor and ActorComponent derived classes. In UE5 the behavior for automatically clearing RawPtrs / ObjectPtrs will change.
 
 {: .notice--info }
-__"This will be changing a bit in UE5. The GC will no longer clear UPROPERTY + RawPtr/TObjectPtr references (even for Actors) but instead mark them as garbage (MarkAsGarbage()) and not GC them. The only way to clear the memory will be to null the reference or use weak pointers."__ - [Ari Arnbjörnsson](https://twitter.com/flassari/status/1528668001901617152).
+__"This will be changing a bit in UE5. The GC will no longer clear `UPROPERTY` + `RawPtr`/`TObjectPtr` references (even for Actors) but instead mark them as garbage (`MarkAsGarbage()`) and not GC them. The only way to clear the memory will be to null the reference or use weak pointers."__ - [Ari Arnbjörnsson](https://twitter.com/flassari/status/1528668001901617152).
 
 ## TWeakObjPtr\<T\>
 
@@ -781,7 +781,7 @@ _Weak Object Pointer_. This is similar to pointers like `UObject*`, except that 
 TWeakObjectPtr<UGameAbility> MyReferencedAbility;
 ```
 
-Now we don't try to hold onto the object explicitly and it can be garbage collected safely. Before accessing the object, we must call `.Get()` which will attempt to retrieve the object from the internal object array and make sure it's valid. If it's no longer a valid object, a nullptr is returned instead.
+Now we don't try to hold onto the object explicitly and it can be garbage collected safely. Before accessing the object, we must call `.Get()` which will attempt to retrieve the object from the internal object array and make sure it's valid. If it's no longer a valid object, a `nullptr` is returned instead.
 
 ```cpp
 UGameAbility* Ability = MyReferencedAbility.Get();
