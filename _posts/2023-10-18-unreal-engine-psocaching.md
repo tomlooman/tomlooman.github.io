@@ -47,7 +47,7 @@ This screenshot (Unreal Insights) shows a game running without any handling of P
 
 The naming of the two systems can be a bit confusing as it goes by a few names in the engine code. The "PSO Precaching" is used for the new automatic runtime "just-in-time" compilation of the PSOs. This system was introduced in 5.1 and is production ready with 5.3 and later.
 
-The original system that shipped for years with UE4 requires manual collection of PSOs by the developer; the PSOs are _bundled_ with the game executable. These bundled PSOs are then compiled when the game first launches, for example in the main menu. You can call these _Bundled PSOs_ or _Recorded PSOs_. In C++ you may often see it referenced as _ShaderPipelineCache_ in the engine source.
+The original system that shipped for years with UE4 requires manual collection of PSOs by the developer; the PSOs are _bundled_ with the game executable. These bundled PSOs are then compiled when the game first launches, for example in the main menu. You can call these _Bundled PSOs_ or _Recorded PSOs_. In C++ you may often see it referenced as `ShaderPipelineCache` in the engine source.
 
 I'll cover the configuration settings and my discoveries for both systems below.
 
@@ -57,7 +57,7 @@ Fortnite's load screen is said to be about 15 seconds longer on first load due t
 
 ## How does PSO Precaching work?
 
-[PSO Precaching](https://docs.unrealengine.com/en-US/pso-precaching-for-unreal-engine/) attempts to compile the PSOs ahead of time during the PostLoad() of the object that supports it. This works well for loading screens where the objects won't be rendered yet. For in-game spawning and streaming this may be too late and compilation may not be finished when the object should be rendered on screen. There is a new feature for exactly this issue which can skip the draw call until the PSO is ready.
+[PSO Precaching](https://docs.unrealengine.com/en-US/pso-precaching-for-unreal-engine/) attempts to compile the PSOs ahead of time during the `PostLoad()` of the object that supports it. This works well for loading screens where the objects won't be rendered yet. For in-game spawning and streaming this may be too late and compilation may not be finished when the object should be rendered on screen. There is a new feature for exactly this issue which can skip the draw call until the PSO is ready.
 
 ```
 // Skips the draw command which is at a different stage from the Proxy Creation skip below. This may cause artifacts as part of the object could be rendered if split among different commands.
@@ -71,7 +71,7 @@ There are [two modes available](https://docs.unrealengine.com/en-US/pso-precachi
 
 The skip draw is my current best understanding of the system and commands (This article will be updated as I uncover this feature). Here is a quote I could find that may help clarify them.
 
-_"There is an option to skip the draw at command list building as well (r.SkipDrawOnPSOPrecaching) but it still needs to know if the PSO is still compiling or missing. The problem is that if the low level skips the draw that this could lead to visual artifacts (for example certain passes for a geometry have their PSOs compiles while other passes don't). That's why the skip proxy creation is pushed all the way to component level because there we know the PSOs are available for all the passes it needs to correctly render the object."_ - Epic
+_"There is an option to skip the draw at command list building as well (`r.SkipDrawOnPSOPrecaching`) but it still needs to know if the PSO is still compiling or missing. The problem is that if the low level skips the draw that this could lead to visual artifacts (for example certain passes for a geometry have their PSOs compiles while other passes don't). That's why the skip proxy creation is pushed all the way to component level because there we know the PSOs are available for all the passes it needs to correctly render the object."_ - Epic
 
 Make sure you [read the documentation](https://docs.unrealengine.com/en-US/pso-precaching-for-unreal-engine/) as this does a good job of covering a lot of concepts new with PSO Precaching.
 
@@ -125,7 +125,7 @@ To get proper stats here you do need to enable PSO Validation mentioned earlier.
 
 While the new system is a great improvement for games running on DX12, it will not catch everything just yet (tested in 5.4, more recent versions continue to improve on the system). If you have this enabled and still notice stutters and have confirmed this is due to PSOs (using Unreal Insights - simply look for the PSO bookmarks) then you can still manually gather the PSOs to fix these particular stutters.
 
-Combining both systems is what I am currently doing in the [Action Roguelike](https://github.com/tomlooman/ActionRoguelike) sample project for the best coverage. Without bundled PSOs I could not get a hitch free experience as of 5.3 since even basic components like DecalComponent are not supported at this time. In UE 5.6 (and possibly earlier versions) they have included additional coverage including UDecalComponent. You can find out by looking in code for things such as `UDecalComponent::PrecachePSOs()`.
+Combining both systems is what I am currently doing in the [Action Roguelike](https://github.com/tomlooman/ActionRoguelike) sample project for the best coverage. Without bundled PSOs I could not get a hitch free experience as of 5.3 since even basic components like DecalComponent are not supported at this time. In UE 5.6 (and possibly earlier versions) they have included additional coverage including `UDecalComponent`. You can find out by looking in code for things such as `UDecalComponent::PrecachePSOs()`.
 
 ## How to set up Bundled PSOs?
 
@@ -185,7 +185,7 @@ To verify this process is working for you, remember what you did when "recording
 
 Launch the packaged game with `-logPSO` as a launch parameter. The simplest way is to make a shortcut and add this in the Target field. I run all my executables with `-clearPSODriverCache` so that I can consistently see stutters and not accidentally use the GPU's driver cache which may contain compiled PSOs from an earlier run.
 
-Quit the game and find the `.rec.upipelinecache` file(s) in `Build/Windows/PipelineCaches/` each run with -logPSO will generate another file that can be copied into our `ActionRoguelike/CollectedPSOs` folder. You don't need to delete old recordings unless you want to start from scratch as they get merged together in the next step using the `ShaderPipelineCacheTools` commandlet.
+Quit the game and find the `.rec.upipelinecache` file(s) in `Build/Windows/PipelineCaches/` each run with `-logPSO` will generate another file that can be copied into our `ActionRoguelike/CollectedPSOs` folder. You don't need to delete old recordings unless you want to start from scratch as they get merged together in the next step using the `ShaderPipelineCacheTools` commandlet.
 
 ### Convert Recorded PSOs
 
@@ -197,9 +197,9 @@ You can use the following command template to convert the recorded PSOs: ([View 
 E:\Epic\UE_5.3\Engine\Binaries\Win64\UnrealEditor-Cmd.exe -run=ShaderPipelineCacheTools expand E:\GitHub\ActionRoguelike\CollectedPSOs\*.rec.upipelinecache E:\GitHub\ActionRoguelike\CollectedPSOs\*.shk E:\GitHub\ActionRoguelike\CollectedPSOs\PSO_ActionRoguelike_PCD3D_SM6.spc
 ```
 
-This runs the commandline version of the editor, executes the ShaderPipelineCacheTools commandlet with `expand` command and requires the .shk (shader stable files) copied from a previous step along with all the recordings. Running this commandlet generates _PSO\_ActionRoguelike\_PCD3D\_SM6.spc_ ([see the docs on naming this file](https://docs.unrealengine.com/en-US/manually-creating-bundled-pso-caches-in-unreal-engine/#convertingpsocaches))
+This runs the commandline version of the editor, executes the `ShaderPipelineCacheTools` commandlet with `expand` command and requires the .shk (shader stable files) copied from a previous step along with all the recordings. Running this commandlet generates `PSO_ActionRoguelike_PCD3D_SM6.spc` ([see the docs on naming this file](https://docs.unrealengine.com/en-US/manually-creating-bundled-pso-caches-in-unreal-engine/#convertingpsocaches))
 
-Copy the generated _PSO\_ActionRoguelike\_PCD3D\_SM6.spc_ file to [/Build/Windows/PipelineCaches/](https://github.com/tomlooman/ActionRoguelike/tree/master/Build/Windows/PipelineCaches) so it can be used by the cooker the next time the game is packaged.
+Copy the generated `PSO_ActionRoguelike_PCD3D_SM6.spc` file to [/Build/Windows/PipelineCaches/](https://github.com/tomlooman/ActionRoguelike/tree/master/Build/Windows/PipelineCaches) so it can be used by the cooker the next time the game is packaged.
 
 If you followed along with Precaching enabled, we run this system essentially in a "light" mode where it only captures PSOs not handled by precaching using the following CVARs:
 
@@ -271,7 +271,7 @@ You can of course modify your commands to properly automate this to avoid the mi
 
 Handling Bundled PSOs is a lot of work compared to the new PSO Precaching. Therefore we can only hope that it will eventually be replaced entirely saving everyone a ton of work. Until then I'd like to suggest some ideas for streamlining this process as implementing this falls out of the scope of this article.
 
-- Have QA or playtesters run the game with -logPSO, this would ideally automatically upload the generated file to a server to avoid manual work. Make sure they run on different scalability settings too as these will create different PSOs.
+- Have QA or playtesters run the game with `-logPSO`, this would ideally automatically upload the generated file to a server to avoid manual work. Make sure they run on different scalability settings too as these will create different PSOs.
 
 - Create a simple spline actor in every level that can do a flythrough to visit all locations. This might not cover everything so keep cinematics and spawnables in mind. Perhaps these cinematics can be triggered as part of the automation after the fly through has completed.
 
@@ -283,7 +283,11 @@ Don't forget to run the game on the low/medium/high/epic Scalability settings fo
 
 The **build configuration does not affect the generated PSOs**. You can use Debug/Development/Shipping build configurations for the cooked game builds to gather the PSOs in your development pipeline.
 
-// Use "Fast" for **loading screens**, "Background" for UI and interactive moments r.ShaderPipelineCache.SetBatchMode pause/fast/background/precompile
+Use `fast` for **loading screens** and `background` for UI and interactive moments. The available modes are `pause`, `fast`, `background`, and `precompile`. For example:
+
+```text
+r.ShaderPipelineCache.SetBatchMode fast
+```
 
 You can expose the number of remaining precompiles from Bundled PSOs to display some number or percentage in your main menu:
 
