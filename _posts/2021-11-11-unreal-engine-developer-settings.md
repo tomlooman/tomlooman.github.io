@@ -15,7 +15,7 @@ sidebar:
     nav: sidebar-cpp
 ---
 
-You might be placing all your settings and tweakable options in Blueprints or even hard-coded in C++. Unreal Engine does have the option to easily add more configuration settings in the INI config file system using the Developer Settings class. You are probably familiar with the existence of these configuration INI files already. DefaultGame.ini, DefaultEngine.ini, etc. are built using this class and the Unreal Editor's Project Settings and Editor Settings use this system.
+You might be placing all your settings and tweakable options in Blueprints or even hard-coded in C++. Unreal Engine does have the option to easily add more configuration settings in the INI config file system using the Developer Settings class. You are probably familiar with the existence of these configuration INI files already. `DefaultGame.ini`, `DefaultEngine.ini`, etc. are built using this class and the Unreal Editor's Project Settings and Editor Settings use this system.
 
 {: .notice--info }
 New in **Unreal Engine 5** is `DeveloperSettingsBackedByCVars` which adds easy binding with Console Variables (CVars) and project/editor settings. I'm explaining this new feature at the bottom of this post.
@@ -35,7 +35,7 @@ DummyTablePath=/Game/ActionRoguelike/Monsters/DT_Monsters.DT_Monsters
 
 By deriving a new C++ class from `UDeveloperSettings` you can easily add your own. The `[CategoryName]` will be your Project + ClassName: `[/Script/ActionRoguelike.SaveGameSettings]` in the case of my open-source [Action Roguelike GitHub](https://github.com/tomlooman/ActionRoguelike) project.
 
-[Configuration Files](https://dev.epicgames.com/documentation/en-us/unreal-engine/configuration-files-in-unreal-engine) use key-value pairs **Key=Value** and support file paths and even arrays. We'll be filling an FString and asset path to assign a DataTable via the INI file.
+[Configuration Files](https://dev.epicgames.com/documentation/en-us/unreal-engine/configuration-files-in-unreal-engine) use key-value pairs **`Key=Value`** and support file paths and even arrays. We'll be filling an `FString` and asset path to assign a DataTable via the INI file.
 
 _DeveloperSettings_ is a Module. Creating a `UDeveloperSettings` derived class will add this module to your `.uproject` automatically. If it doesn't or you want all your modules in the `.Build.cs` file then you should add DeveloperSettings manually.
 
@@ -62,11 +62,11 @@ public:
 };
 ```
 
-- `Config` - Exposes the variable to the INI file specified in the `UCLASS` in the top (Game = DefaultGame.ini)
+- `Config` - Exposes the variable to the INI file specified in the `UCLASS` in the top (Game = `DefaultGame.ini`)
 - `EditAnywhere` - Exposes it to the Project Settings window.
-- `BlueprintReadOnly` - Exposes variables to be accessed in Blueprint Graph via the "GetClassDefaults" node.
+- `BlueprintReadOnly` - Exposes variables to be accessed in Blueprint Graph via the `GetClassDefaults` node.
 - `defaultconfig` - _"Save object config only to Default INIs, never to local INIs." (local INIs are in your MyProject/Saved/Config/... folder)_
-- `Config=Game` - Store in DefaultGame.ini, other examples include Engine, Input.
+- `Config=Game` - Store in `DefaultGame.ini`, other examples include Engine, Input.
 
 ![Unreal Editor Project Settings with the new custom settings.](/assets/images/ue_projectsettings_customconfig.jpg)
 
@@ -94,7 +94,7 @@ The neat thing about configuration files is that the values are stored as plain 
 
 ## Developer Settings Blueprint Access
 
-Getting read-only access to the configuration settings is very easy using the GetClassDefaults node. Make sure you mark your variables BlueprintReadOnly for them to show up.
+Getting read-only access to the configuration settings is very easy using the `GetClassDefaults` node. Make sure you mark your variables `BlueprintReadOnly` for them to show up.
 
 ![blueprint node Get Class Defaults to access Developer Settings.](/assets/images/ue_developersettings_blueprintaccess.jpg)
 
@@ -108,7 +108,7 @@ If you want to store player configurable settings there is a different class ava
 
 This new class lets us bind _console variables_ to project settings and easily change and store defaults either per developer or project-wide. In practice this means we can define default values in the INI files and at runtime change them using console variables.
 
-An example of this can be found in the [Lyra Starter Game](https://www.unrealengine.com/marketplace/en-US/product/lyra) which was released with UE5.0. The `LyraWeaponsDebugSettings` has several properties for debugging trace hits. By using `DeveloperSettingsBackedByCVars` and the ConsoleVariable meta-specifier you can bind the variables together.
+An example of this can be found in the [Lyra Starter Game](https://www.unrealengine.com/marketplace/en-US/product/lyra) which was released with UE5.0. The `LyraWeaponsDebugSettings` has several properties for debugging trace hits. By using `DeveloperSettingsBackedByCVars` and the `ConsoleVariable` meta-specifier you can bind the variables together.
 
 ```cpp
 // Should we do debug drawing for bullet traces (if above zero, sets how long (in seconds)
