@@ -25,9 +25,16 @@ redirect_from:
     - /unreal-engine-cpp-action-roguelike-sample-project
     - /unreal-engine-gameplay-ability-system-action-rpg/
     - /survival-sample-game-for-ue4/
+    - /action-roguelike-cpp-ue4/
+tags:
+  - "gameplay-framework"
+  - "ability-systems"
+  - "gameplay-tags"
+  - "save-games"
+  - "asset-loading"
 ---
 
-"**Project Orion**" is the codename for the **Co-op Action Roguelike Sample Game** built in **C++** for **Unreal Engine 5**. It's origins can be found in the [Professional Game Development in C++ and Unreal Engine 5 Course](/courses/unrealengine-cpp) and has over the years received dozens of additional features, mechanics and code samples.
+"**Project Orion**" is the codename for the **Co-op Action Roguelike Sample Game** built in **C++** for **Unreal Engine 5**. Its origins can be found in the [Professional Game Development in C++ and Unreal Engine 5 Course](/courses/unrealengine-cpp), and the project has over the years received dozens of additional features, mechanics and code samples.
 
 The core framework is built in C++ to show off how a game can be built for Unreal Engine 5. The game uses "Risk of Rain 2" as a common point of design reference.
 
@@ -48,7 +55,7 @@ The game features a custom Ability System (dubbed the "Action System") with supp
 
 ### Actions
 
-Actions represent the Abilities/Skills of Actors such as the Players & enemy Monsters. Sprinting, projectile attacks, teleporting, etc. all is handled through Actions.
+Actions represent the Abilities/Skills of Actors such as the Players & enemy Monsters. Sprinting, projectile attacks, teleporting, etc. are all handled through Actions.
 
 ### ActionEffect
 
@@ -57,7 +64,9 @@ ActionEffects also often referred to as Buffs/Debuffs are temporary effects on g
 
 ### Attributes
 
-Attributes represent all sorts of values for the gameplay actors such as health, stamina, movement speed and can be modified through Actions and ActionEffects. They contain a Base and Modifier values where Base is the permanent value such as changes to the maximum health when leveling up and Modifier is where you applied temporary changes such as those received from buffs/debuffs.
+Attributes represent all sorts of values for the gameplay actors such as health, stamina, movement speed and can be modified through Actions and ActionEffects. They contain Base and Modifier values where Base is the permanent value such as changes to the maximum health when leveling up and Modifier is where you applied temporary changes such as those received from buffs/debuffs.
+
+## Enemy AI (Behavior Trees)
 
 ## Melee Combat
 
@@ -65,11 +74,11 @@ The enemy monsters can perform melee attacks as part of their AI Behaviors. The 
 
 ### Monster Melee Behavior Flow
 
-The Enemy BehaviorTree checks if target (player) is within certain distance, and initiate melee attack sequence (run closer then attack when in attack range)
+The Enemy BehaviorTree checks if the target (player) is within a certain distance, and initiates a melee attack sequence (run closer then attack when in attack range)
 
 - `RogueAction_MinionMeleeAttack` (Action) handles the start/stop of the attack. Runs an AnimMontage with the attack animation.
 - `RogueAnimationInstance` (AnimBlueprint) contains OnMeleeOverlap which the Melee Attack Action listens for.
-- `RogueAnimNotifyState_Melee` (AnimNotify) broadcasts OnMeleeOverlap event when an melee overlap is found by running OverlapMultiByChannel collision query while the AnimNotify is active.
+- `RogueAnimNotifyState_Melee` (AnimNotify) broadcasts OnMeleeOverlap event when a melee overlap is found by running OverlapMultiByChannel collision query while the AnimNotify is active.
 - `OnMeleeOverlap` is handled by the Melee Attack Action to apply Damage to the hit target.
 
 Apply console variable `game.drawdebugmelee 1` to visualize the overlap shape during a melee attack.
@@ -90,7 +99,7 @@ The game has several examples of performance oriented Data-oriented design. The 
 
 With DoD you can easily manage thousands of projectiles, which becomes a major challenge with a full fat Actor design. To explore this feature look at the `URogueProjectileSubsystem`.
 
-As the time of writing the projectiles are experimental and can be enabled by defining `USE_DATA_ORIENTED_PROJECTILES 1` (defaults to `0`) and re-compiling the project. When enabled, both the player and enemies will use these struct-based projectiles instead of Actors.
+At the time of writing the projectiles are experimental and can be enabled by defining `USE_DATA_ORIENTED_PROJECTILES 1` (defaults to `0`) and re-compiling the project. When enabled, both the player and enemies will use these struct-based projectiles instead of Actors.
 
 #### Thousands of Lootables
 
@@ -98,7 +107,7 @@ When killing an enemy, a thousand little coins spawn around the corpse. These ar
 
 ### Object Pooling
 
-The project support **Object Pooling** which is a common optimization to avoid creating and destroying objects such as Actors and instead make them dormant and invisible until they are requested again. An example implementation can be found with the Monster Corpses (`ARogueMonsterCorpse`). A fixed amount of instances are spawned during the load screen and immediately parked for later use. Game code can request a pooled Actor instead of spawning new instances. This improves CPU performance as spawning is generally expensive, helps against memory fragmentation (and allocations) and reduces the CPU cost of destroying objects together with performing garbage collection.
+The project supports **Object Pooling** which is a common optimization to avoid creating and destroying objects such as Actors and instead make them dormant and invisible until they are requested again. An example implementation can be found with the Monster Corpses (`ARogueMonsterCorpse`). A fixed amount of instances are spawned during the load screen and immediately parked for later use. Game code can request a pooled Actor instead of spawning new instances. This improves CPU performance as spawning is generally expensive, helps against memory fragmentation (and allocations) and reduces the CPU cost of destroying objects together with performing garbage collection.
 
 The code can be found inside `URogueActorPoolingSubsystem` and is at this time built specifically for Actors. The functions `ReleaseToPool` and `AcquireFromPool` manage the state of the pooled Actor.
 
@@ -108,15 +117,15 @@ To balance out the workload between frames the game uses `RogueDeferredTaskSyste
 
 ### Asynchronous Collision Queries
 
-By default any collision queries (line traces, sweeps, etc.) as performed synchronously. You don't always require instant feedback and can request something this frame, and use the results the next frame once it has been completed on a Worker Thread rather than blocking the GameThread.
+By default any collision queries (line traces, sweeps, etc.) are performed synchronously. You don't always require instant feedback and can request something this frame, and use the results the next frame once it has been completed on a Worker Thread rather than blocking the GameThread.
 
-Examples can be found in `ARoguePlayerCharacter::FindCrosshairTarget()` where `AsyncSweepByChannel` is used to find a target under the crosshair. Keep in mind that for you game, this specific type of query may be undesirable to delay by one frame as it may increase any perceived input latency. In a future example, the Data-oriented projectiles can be pretty trivially moved to become asynchronous, you can find the current update logic inside `URogueProjectilesSubsystem::Tick`.
+Examples can be found in `ARoguePlayerCharacter::FindCrosshairTarget()` where `AsyncSweepByChannel` is used to find a target under the crosshair. Keep in mind that for your game, this specific type of query may be undesirable to delay by one frame as it may increase any perceived input latency. In a future example, the Data-oriented projectiles can be pretty trivially moved to become asynchronous, you can find the current update logic inside `URogueProjectilesSubsystem::Tick`.
 
 ### Significance Manager
 
 The Significance Manager is a framework to help **throttle and cull gameplay logic and related systems such as animations and VFX** to keep performance consistent regardless of how much is happening on or off screen. It can group Actors and other instances into "Buckets" with a maximum capacity, allowing only X number of something to execute at the highest fidelity, throttling other "less significant" Actors.
 
-An example from Fornite is to use a maximum number of players running at "full fidelity" while forcing lower LODs and VFX on the remaining players that are less significant. Fortnite will prioritize your squadmembers and nearby players in view, while throttling any player that is offscreen and/or further away. Each platform, such as Mobile can have their own "bucket" size limits each defining how many players can be in a "bucket".
+An example from Fortnite is to use a maximum number of players running at "full fidelity" while forcing lower LODs and VFX on the remaining players that are less significant. Fortnite will prioritize your squadmembers and nearby players in view, while throttling any player that is offscreen and/or further away. Each platform, such as Mobile can have their own "bucket" size limits each defining how many players can be in a "bucket".
 
 The project contains an implementation example using the Enemy Monsters (Look for 'MinionRangedBP') to throttle their animations and VFX based on a significance value.
 
