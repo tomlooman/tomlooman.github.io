@@ -48,7 +48,9 @@ The function `Explode()` has no parameters in this example. To pass along parame
 
 ## Using SetTimer() on a Function with Parameters
 
-It's possible to pass parameters into timer functions (delegates). The example is from [Action Roguelike's Projectile Attack](https://github.com/tomlooman/ActionRoguelike/blob/487fc2d6cae913f488deae544b1f49af65b5decf/Source/ActionRoguelike/ActionSystem/RogueAction_ProjectileAttack.cpp#L37). In this case, we bind the function through an FTimerDelegate and pass the delegate into the `SetTimer` function.
+It's possible to pass parameters into timer functions. The example below is from [Project Orion's Projectile Attack](https://github.com/tomlooman/ActionRoguelike/blob/487fc2d6cae913f488deae544b1f49af65b5decf/Source/ActionRoguelike/ActionSystem/RogueAction_ProjectileAttack.cpp#L37). We bind the function through an `FTimerDelegate` and pass the delegate into the `SetTimer` function. This lets us pass in the 'Character' parameter when binding the callback below.
+
+For an explanation of the binding syntax, see [binding C++ delegates with parameters](/unreal-engine-cpp-guide/#delegates).
 
 ```cpp
 FTimerHandle TimerHandle_AttackDelay;
@@ -112,6 +114,8 @@ FTimerManagerTimerParameters { .bLoop = bLooping, .bMaxOncePerFrame = bMaxOncePe
 ### Frame Pacing
 
 You should never use TickManager as an excuse to not optimize badly performing code or naturally expensive operations. Running them as timer functions on a lower frequency may cause an instable framerate rather than smooth performance which hinders player experience. There are a couple of alternatives such as time slicing (spreading the workload across multiple frames) or running the entire function asynchronously using [Unreal's Task System](https://docs.unrealengine.com/en-US/tasks-systems-in-unreal-engine/).
+
+For a concrete way to spread work across frames, see [deferred tasks in Project Orion](/unreal-engine-sample-game-action-roguelike#deferred-tasks-frame-pacing). The sample schedules work when CPU frame budget is available, making it useful for tasks that can tolerate delayed execution.
 
 ### (Lack of) CPU Cache
 
