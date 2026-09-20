@@ -659,7 +659,7 @@ The ALL CAPS _preprocessor directives_ are used by the compiler to 'unfold' into
 
 Allows extra markup on functions, and exposes them to the [Property System (Reflection)](https://www.unrealengine.com/en-US/blog/unreal-property-system-reflection) of Unreal. Commonly used to expose functions to Blueprint. Sometimes required by the engine to bind functions to delegates (eg. binding a timer to call a function).
 
-Here is [additional information in a blog post](/ue4-ufunction-keywords-explained) on the available keywords within `UFUNCTION()` and how to use them. There are a lot of [function specifiers](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Functions/Specifiers/) worth checking out, and [BenUI](https://benui.ca/unreal/ufunction/) does a great job of detailing what's available.
+See [UFUNCTION specifiers explained](/ue4-ufunction-keywords-explained) for more information on the available keywords within `UFUNCTION()` and how to use them. There are a lot of [function specifiers](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/GameplayArchitecture/Functions/Specifiers/) worth checking out, and [BenUI](https://benui.ca/unreal/ufunction/) does a great job of detailing what's available.
 
 ```cpp
 // Can be called by Blueprint

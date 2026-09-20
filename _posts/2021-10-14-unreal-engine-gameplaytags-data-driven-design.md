@@ -161,7 +161,7 @@ With all the reasons why you should be using tags covered, let's show some actua
 
 ### Enabling GameplayTags in your C++ project.
 
-To enable the use of GameplayTags in C++ you must add the "GameplayTags" module to your `MyProject.build.cs`. Click [here](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/ActionRoguelike.Build.cs) for an example of \*.builds.cs with GameplayTags enabled.
+To enable the use of GameplayTags in C++ you must add the "GameplayTags" module to your `MyProject.build.cs`. See this [Build.cs example with GameplayTags enabled](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/ActionRoguelike.Build.cs).
 
 Make sure the "GameplayTagsEditor" plugin is enabled (default). Otherwise, you won't have any of the useful editor windows that make this so useful.
 
