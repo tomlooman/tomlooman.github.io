@@ -131,7 +131,7 @@ A quick tip is to _consider_ setting up your Curves as normalized between 0.0-1.
 
 ### Math-based Animations
 
-Unreal's FMath has many more built-in functions to help animate in C++. The implementation example uses `FMath::InterpEaseInOut`, so check out that class (`UnrealMathUtility.h`) for more options or search for `EEasingFunc` as that's the blueprint enum used to access the available easing functions.
+Unreal's `FMath` has many more built-in functions to help animate in C++. The implementation example uses `FMath::InterpEaseInOut`, so check out that class (`UnrealMathUtility.h`) for more options or search for `EEasingFunc` as that's the blueprint enum used to access the available easing functions.
 
 ### Runtime Curves (FRuntimeFloatCurve)
 
