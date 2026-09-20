@@ -54,7 +54,7 @@ All we need to do is have the (tickable) subsystem play the animation for us, pa
 
 ## Animating with Curves
 
-Using Curve Assets lets us trigger and control the animation logic in C++ while allowing a designer in the Unreal Editor to fine-tune the animation. Below is a usage example in the [RogueTreasureChest](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/World/RogueTreasureChest.cpp) to open the "LidMesh" based on the curve animation.
+Using Curve Assets lets us trigger and control the animation logic in C++ while allowing a designer in the Unreal Editor to fine-tune the animation. Below is a usage example in the [RogueTreasureChest](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/World/RogueTreasureChest.cpp) to open the `LidMesh` based on the curve animation.
 
 ```cpp
 URogueCurveAnimSubsystem* AnimSubsystem = GetWorld()->GetSubsystem<URogueCurveAnimSubsystem>();
@@ -68,9 +68,9 @@ AnimSubsystem->PlayCurveAnim(LidAnimCurve, 1.f, [&](float CurrValue)
 
 If you are unfamiliar with [lambdas](https://en.cppreference.com/w/cpp/language/lambda), they work a little bit like this:
 
-- **\[&\]** captures the values outside the function so they can be accessed inside the lambda. The ampersand capture is the "default capture by reference" for the data used inside the lambda. In our example the LidMesh must be "captured". We can also specify specific variables, which will capture them as a copy instead of by-reference.
-- **(float CurrValue)** optional parameter(s), in our case the "CurrValue" is the value we get out of the curve asset. We use this value to drive the animation.
-- **{ ... }** the body, it is the code that runs when calling the lambda inside the animation system.
+- `[&]` captures the values outside the function so they can be accessed inside the lambda. The ampersand capture is the "default capture by reference" for the data used inside the lambda. In our example the `LidMesh` must be "captured". We can also specify specific variables, which will capture them as a copy instead of by-reference.
+- `(float CurrValue)` optional parameter(s), in our case the `CurrValue` is the value we get out of the curve asset. We use this value to drive the animation.
+- `{ ... }` the body, it is the code that runs when calling the lambda inside the animation system.
 
 The Curve Asset would look a little something like this to create a slight wobble at the end.
 
