@@ -80,6 +80,8 @@ Lyra has a plugin dedicated to this called _GameplayMessageRouter_ which I recom
 
 You want to wrap your custom `AddTag()` and `RemoveTag()` functions so you can broadcast an event/delegate.
 
+My guide to [declaring and broadcasting C++ delegates](/unreal-engine-cpp-guide/#delegates) explains how to define these events and notify listeners when a tag is added or removed.
+
 I'll be adding a better example of this to the Action Roguelike sample project, at which time this section will be updated.
 
 ### Markup for Loot tables
@@ -135,6 +137,8 @@ Any assets referenced here will be loaded when the asset in question is used - u
 ## Decorating Items with Tags
 
 My game has a large number of "Items" which isn't just restricted to what you consider items from an Inventory. Even Points of Interest, Characters, Ships, Achievements, etc. could be considered an Item. In practice, it's a (Primary)DataAsset that holds UI information, ability data, related Actor class, **GameplayTags**, etc. The GameplayTags can be useful to generically decorate your "Item" with whatever information is desired in its context.
+
+To learn how to organize these item definitions and load their referenced content, see [Primary Data Assets and Asset Manager](/unreal-engine-asset-manager-async-loading/).
 
 ![](/assets/images/ue_gameplaytags_items-1.jpg)
 *Some of the current item types in WARPSQUAD.*
@@ -257,19 +261,17 @@ With the tag defined above you can use the `TAG_Attribute_Health` elsewhere in y
 
 ## Project Example
 
-Sometimes the best way to learn is by example. **My [open-source Action Roguelike](https://github.com/tomlooman/ActionRoguelike) project uses GameplayTags for Actions and Buffs.** For example, while Sprinting a tag is applied that prevents the player from attacking. You can find this in the _URogueActionComponent_ class and the _URogueAction_ class.
+Sometimes the best way to learn is by example. **My [open-source Project Orion](https://github.com/tomlooman/ActionRoguelike) project uses GameplayTags for Actions and Buffs.** For example, while Sprinting a tag is applied that prevents the player from attacking. You can find this in the _URogueActionComponent_ class and the _URogueAction_ class.
 
-This project is part of my new **Unreal Engine C++ Course** where I talk more in depth about GameplayTags and tons of other essential skills for Unreal C++ Game Programming!
-
-**[Unreal Engine C++ Pro Course (Full Details)](https://tomlooman.com/courses/unrealengine-cpp/)**
+This project is part of my **[Unreal Engine C++ Course](https://tomlooman.com/courses/unrealengine-cpp/)** where we explore in detail how to think about and apply GameplayTags, among other essential C++ gameplay programming concepts.
 
 ## Closing
 
 I hope this intro helped you understand how GameplayTags may be used in your project and will trigger you to continue researching and experimenting. Sometimes you just need to be made aware something exists as you won't go looking for it yourself.
 
-As always don't forget to follow me on [Twitter](https://twitter.com/t_looman) and subscribe to the mailing list!
+As always don't forget to follow me on [Twitter](https://twitter.com/t_looman) or subscribe to the mailing list!
 
 ## References
 
-- [Using GameplayTags to Label and Organise Content (Official Blog)](https://www.unrealengine.com/en-US/tech-blog/using-gameplay-tags-to-label-and-organize-your-content-in-ue4)
-- [GameplayTags (Official Documentation)](https://docs.unrealengine.com/en-US/gameplay-framework-in-unreal-engine)
+- [Using GameplayTags to Label and Organize Content (Official Blog)](https://www.unrealengine.com/en-US/tech-blog/using-gameplay-tags-to-label-and-organize-your-content-in-ue4)
+- [GameplayTags (Official Documentation)](https://dev.epicgames.com/documentation/unreal-engine/using-gameplay-tags-in-unreal-engine)

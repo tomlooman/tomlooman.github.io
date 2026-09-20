@@ -84,6 +84,8 @@ DataAsset class already set up to support Asset Manager. These assets will purel
 
 You can think of it as a descriptor, to describe the AI minion (hitpoints, abilities to grant, actor class to spawn, behavior tree to use) rather than its actual logic and brains.
 
+You can also add tags to these data assets to describe item properties that gameplay systems can query. See [GameplayTags for data-driven gameplay](/unreal-engine-gameplaytags-data-driven-design/#decorating-items-with-tags) for examples of decorating items with tags.
+
 ### PrimaryAssetId & PrimaryAssetType
 
 PrimaryAsset Id & Type are both glorified FNames and categorize/identify the assets. This is how you will point to specific assets that you want to load, and is similar to soft references you may be used to.
@@ -101,11 +103,13 @@ FPrimaryAssetId ULZItemData::GetPrimaryAssetId() const
 
 ## Asynchronous Loading
 
-This aspect is what I could find the least information on when diving into Asset Manager. So I'd like to share some code examples (also available on [GitHub](https://github.com/tomlooman/ActionRoguelike)) on how to async load your assets.
+This aspect is what I could find the least information on when diving into Asset Manager. So I'd like to share some code examples (also available as code samples in [Project Orion](https://github.com/tomlooman/ActionRoguelike)) on how to async load your assets.
 
 ### C++ Async Loading Example
 
-Loading in C++ works by creating a Delegate with your own set of parameters you wish to pass along with it. In the example below I pass in the loaded Id and a vector spawn location.
+Loading in C++ works by creating a Delegate with your own set of parameters you wish to pass along with it. In the example below I pass in the loaded `PrimaryAssetId` and a `FVector` spawn location.
+
+If the callback syntax is unfamiliar, read about [C++ delegates and parameter binding](/unreal-engine-cpp-guide/#delegates) to understand how the delegate binds a function and carries those parameters into the callback.
 
 ```cpp
 // Get the Asset Manager from anywhere
@@ -206,6 +210,8 @@ Right-clicking on an asset in the content browser lets you "Audit Assets...". Th
 
 ![](/assets/images/ue4_auditassets.jpg)
 *Audit Assets Window*
+
+For more ways to investigate performance beyond asset auditing, explore my [Unreal Engine profiling and optimization tutorials](/unreal-engine-optimization-tutorials/).
 
 ## References
 

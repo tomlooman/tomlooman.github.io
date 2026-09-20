@@ -24,6 +24,8 @@ This system requires some simple C++ to define the variables, so even without pr
 
 ## Setting up Developer Settings & Configuration Files
 
+The settings below include a default save slot name. For the broader example of saving and restoring player and world data, see my [C++ save-game system](/unreal-engine-cpp-save-system/).
+
 ```cpp
 // Example of configuration file content. These files are located in MyProject/Config/*.ini
 [/Script/ActionRoguelike.SSaveGameSettings]
@@ -85,6 +87,8 @@ void URogueSaveGameSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 ```
 
 We can't store direct pointers to content files, but we can use soft asset paths and resolve them in code once we need them. Make sure you actually load in the asset manually as otherwise it may or may not sit in memory yet (eg. when you already opened the asset once in your current editor session).
+
+If you need to load assets without blocking the game thread, [asynchronous asset loading with Asset Manager](/unreal-engine-asset-manager-async-loading/) is another option to explore beyond the synchronous example above.
 
 The neat thing about configuration files is that the values are stored as plain text and not compiled to binary, unlike C++ and Blueprint. They can be changed easily even after you already packaged your game.
 

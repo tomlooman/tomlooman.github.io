@@ -1,7 +1,7 @@
 ---
 title: "Unreal Engine C++ Save System"
 date: 2021-06-03
-last_modified_at: 02-03-2026
+last_modified_at: 20-09-2026
 categories: 
   - "C++ Programming"
 tags:
@@ -16,20 +16,15 @@ sidebar:
 
 For your game, you will eventually need to write some kind of save system. To store player information, unlocks, achievements, etc. In some cases, you will need to save the world state such as looted chests, unlocked doors, dropped player items, etc.
 
-In this article we go through the setup of your very own C++ SaveGame system. Different types of games will have their own specific serialization needs. Use this article and code as a starting point for whatever game you're building. You should be fairly familiar with Unreal Engine C++ to build this system.
-
-This won't be a step-by-step tutorial. Instead, it's more of a system breakdown with explanations. The [full source code is available](https://github.com/tomlooman/ActionRoguelike) for the entire project. If you do wish for a more guided approach, I teach this concept and many others in my **[Unreal Engine C++ Course](https://tomlooman.com/courses/unrealengine-cpp/).**
+In this article we go through the setup of your very own C++ SaveGame system. Different types of games will have their own specific serialization needs. Use this article and code as a starting point for whatever game you're building. You should be fairly familiar with Unreal Engine C++ to build this system. This is not a step-by-step tutorial. Instead, it's more of a system breakdown with explanations with full source code available.
 
 We'll be creating a save system similar to _Dark Souls_ with a bonfire interaction that saves the world state. We will be saving a few actors and some player information. The bonfire itself is a thematic interaction, with the real interesting bits being the actual world state that we save/load. Such as the moved item locations, previously opened treasure chests, and obtained credits (aka "Souls").
 
 ![](/assets/images/Dark_souls_bonfire.jpg)
 *Bonfire (Savepoint) from Dark Souls.*
 
-## Action Roguelike (Reference Project)
-
-**The entire project is available through [GitHub](https://github.com/tomlooman/ActionRoguelike)!** I recommend you download that and browse through it. It includes additional details such as the required #includes for each class used.
-
-This project was created for **[Stanford University Computer Science classes (CS193U)](https://tomlooman.com/courses/unrealengine-cpp/)** that I taught in late 2020. It is the reference project used in my **Unreal Engine C++ online course!**
+{: .notice--info }
+Throughout the article, I will be showing code snippets from ["Project Orion" a Co-op Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike). You can browse the full project on [GitHub](https://github.com/tomlooman/ActionRoguelike).
 
 ## SaveGame System Design
 
@@ -39,13 +34,15 @@ Unreal has a built-in [SaveGame UObject](https://dev.epicgames.com/documentation
 
 Loading the game will basically do the inverse operations. We load the SaveGame UObject from disk, all the variables get restored in this SaveGame object. We then pass all these variables back into the Objects/Actors they originated from such as Player position, Credits earned, and individual Actor's state (matched by the Actor's Name in our example) such as whether a treasure chest was looted in our previous session.
 
-To identify which Actors we wish to save state for we use an [Interface](https://dev.epicgames.com/documentation/en-us/unreal-engine/interfaces-in-unreal-engine). We also use this interface to allow Actors to respond to a game load (_OnActorLoaded_) so he may run some actor-specific code to properly restore animation state etc. In the [Action Roguelike](https://github.com/tomlooman/ActionRoguelike) project I re-used my _[GameplayInterface](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameplayInterface.h)_, but I would recommend you make a fresh interface specifically for marking objects/actors as savable (eg. _SavableObjectInterface_)
+To identify which Actors we wish to save state for we use an [Interface](/unreal-engine-cpp-guide/#interfaces). We also use this interface to allow Actors to respond to a game load (_OnActorLoaded_) so he may run some actor-specific code to properly restore animation state etc. In [Project Orion](https://github.com/tomlooman/ActionRoguelike) I re-used my _[GameplayInterface](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameplayInterface.h)_, but I would recommend you make a fresh interface specifically for marking objects/actors as savable (eg. _SavableObjectInterface_)
 
 SaveGame files will be placed under **../MyProject/Saved/SaveGames/**
 
 ## Saving World State
 
 In order to save the world state, we must decide which variables to store for each Actor and what misc. info we need to be saved to disk such as earned Credits by each player. Credits aren't really part of the world state and belong to the PlayerState class instead. Even though PlayerState exists in the world and is in fact an Actor, we handle them separately so we can properly restore it based on which Player it belonged to previously. One reason to handle this manually is so we can store a unique ID for each player to know who the stats belong to when a player re-joins the server at a later time.
+
+See [PlayerState and the Gameplay Framework](/unreal-engine-gameplay-framework/#playerstate) for why this class is useful for player data that needs to persist between deaths or replicate to other clients.
 
 ### Actor Data
 
