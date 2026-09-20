@@ -23,7 +23,7 @@ The Asset Manager in Unreal Engine lets you manage your content with more contro
 
 I recommend reading the [documentation page](https://dev.epicgames.com/documentation/en-us/unreal-engine/asset-management-in-unreal-engine) as I'll try not to repeat too much of what is already explained there. Instead I'll use this article to be more example-driven and from my personal experience.
 
-Your project must define certain classes as Primary Assets (these may often be derived from [PrimaryDataAsset](https://docs.unrealengine.com/en-US/API/Runtime/Engine/Engine/UPrimaryDataAsset/index.html) but can derive from any UObject). These are the assets you will manage and the system will load/unload any referenced content (also known as 'secondary assets') such as meshes and textures. You can turn these 'secondary assets' (Everything is considered a Secondary Asset by default) into Primary Assets by overriding GetPrimaryAssetId() from UObject.h:
+Your project must define certain classes as Primary Assets (these may often be derived from [PrimaryDataAsset](https://docs.unrealengine.com/en-US/API/Runtime/Engine/Engine/UPrimaryDataAsset/index.html) but can derive from any `UObject`). These are the assets you will manage and the system will load/unload any referenced content (also known as 'secondary assets') such as meshes and textures. You can turn these 'secondary assets' (Everything is considered a Secondary Asset by default) into Primary Assets by overriding `GetPrimaryAssetId()` from `UObject.h`:
 
 ```cpp
 /**
@@ -68,9 +68,9 @@ If you are looking for a hands-on look, I recommend checking out my [**Action Ro
 
 ## Primary Assets
 
-The Asset Manager in Unreal Engine works through Primary Assets that it loads and unloads per our request. It's similar to soft references in that regard except we use FPrimaryAssetId (a struct with Type and Name) to point to specific assets we wish to load.
+The Asset Manager in Unreal Engine works through Primary Assets that it loads and unloads per our request. It's similar to soft references in that regard except we use `FPrimaryAssetId` (a struct with Type and Name) to point to specific assets we wish to load.
 
-You can either use UPrimaryDataAsset or override GetPrimaryAssetId() in any UObject derived class as mentioned earlier to turn it into a Primary Asset. They look very similar code-wise in the MonsterData example earlier.
+You can either use `UPrimaryDataAsset` or override `GetPrimaryAssetId()` in any `UObject` derived class as mentioned earlier to turn it into a Primary Asset. They look very similar code-wise in the MonsterData example earlier.
 
 ![](/assets/images/2020-12-04-18_26_09-WarpSquad-Unreal-Editor.jpg)
 *Data Asset Examples of 'Mutations' in WARPSQUAD.*
@@ -90,7 +90,7 @@ You can also add tags to these data assets to describe item properties that game
 
 PrimaryAsset Id & Type are both glorified FNames and categorize/identify the assets. This is how you will point to specific assets that you want to load, and is similar to soft references you may be used to.
 
-For example, my ships are of type _ShipConfig_ and one of the Ids that point to a specific data asset could look like _ShipConfig:MyPirateShip_. (the Id combines the _Type:Name_) You won't be manually typing each Id, instead you can override the GetPrimaryAssetId on your asset in C++ to handle how you want Ids to be generated/handled. You may just want to return the name of your asset file.
+For example, my ships are of type _ShipConfig_ and one of the Ids that point to a specific data asset could look like `ShipConfig:MyPirateShip`. (the Id combines the _Type:Name_) You won't be manually typing each Id, instead you can override the `GetPrimaryAssetId` on your asset in C++ to handle how you want Ids to be generated/handled. You may just want to return the name of your asset file.
 
 Below is an example implementation of setting up the Id for a DataAsset.
 
@@ -132,7 +132,7 @@ if (UAssetManager* Manager = UAssetManager::GetIfValid())
 }
 ```
 
-The OnMonsterLoaded Function once load has completed:
+The `OnMonsterLoaded` Function once load has completed:
 
 ```cpp
 void ARogueGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
@@ -158,7 +158,7 @@ Async loading is a bit easier in Blueprint as there is a neat little node availa
 
 ![](/assets/images/ue4_blueprintasyncload.jpg)
 
-The downside of async loading in Blueprint is that we can't pass in additional parameters in our own Delegate as easily as we did in the C++ example above where we pass in the FVector for spawn location. You can pass in variables from other pins after the load has completed, but I'm unsure about how these variable values are 'captured' and so should be used with caution as they may have changed since you started the load request a few frames ago.
+The downside of async loading in Blueprint is that we can't pass in additional parameters in our own Delegate as easily as we did in the C++ example above where we pass in the `FVector` for spawn location. You can pass in variables from other pins after the load has completed, but I'm unsure about how these variable values are 'captured' and so should be used with caution as they may have changed since you started the load request a few frames ago.
 
 ### Asset Bundles
 
