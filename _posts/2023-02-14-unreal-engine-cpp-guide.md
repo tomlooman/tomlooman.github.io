@@ -408,7 +408,7 @@ IRogueGameplayInterface::Execute_Interact(MyActor, MyParam1);
 
 However, if you want to share functionality between Actors but don't want to use a base class then you could use an [ActorComponent](https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Actors/Components/).
 
-[Steve Streeting](https://www.stevestreeting.com/2020/11/02/ue4-c-interfaces-hints-n-tips/) has more details on using Interfaces which I recommend checking out. There is a code example in the Action Roguelike project as well using [RogueGameplayInterface](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameplayInterface.h) used by [InteractionComponent](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Player/RogueInteractionComponent.cpp) to call `Interact()` on any Actor implementing the interface.
+[Steve Streeting](https://www.stevestreeting.com/2020/11/02/ue4-c-interfaces-hints-n-tips/) has more details on using Interfaces which I recommend checking out. There is a code example in Project Orion as well using [RogueGameplayInterface](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameplayInterface.h) used by [InteractionComponent](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Player/RogueInteractionComponent.cpp) to call `Interact()` on any Actor implementing the interface.
 
 ## Delegates
 

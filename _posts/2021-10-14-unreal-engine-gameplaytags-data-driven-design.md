@@ -82,7 +82,7 @@ You want to wrap your custom `AddTag()` and `RemoveTag()` functions so you can b
 
 My guide to [declaring and broadcasting C++ delegates](/unreal-engine-cpp-guide/#delegates) explains how to define these events and notify listeners when a tag is added or removed.
 
-I'll be adding a better example of this to the Action Roguelike sample project, at which time this section will be updated.
+You can find an implementation example in [Project Orion](/unreal-engine-sample-game-action-roguelike) inside the `RogueActionComponent`.
 
 ### Markup for Loot tables
 

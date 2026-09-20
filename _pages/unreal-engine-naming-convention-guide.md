@@ -18,7 +18,7 @@ redirect_from:
     - /ue4-naming-convention/
 ---
 
-The goal of this document is to share my internal naming conventions with the community as used by the [Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike) project and the [Unreal Engine C++ Course](/courses/unrealengine-cpp) to give everyone something to start out with. Using and getting comfortable with a naming convention is essential before your projects grow beyond thousands of files.
+The goal of this document is to share my internal naming conventions with the community as used by the [Project Orion Sample Game](/unreal-engine-sample-game-action-roguelike) project and the [Unreal Engine C++ Course](/courses/unrealengine-cpp) to give everyone something to start out with. Using and getting comfortable with a naming convention is essential before your projects grow beyond thousands of files.
 
 First consider how you are accessing your assets. The Content Browser in Unreal Engine has powerful filter features making prefixes and suffixes less critical compared to older Unreal Engine editions. However, this same level of filtering doesn't apply to the simpler drop-down selection UI for picking class variables, etc. The same can happen when logging asset names in which 'assetName something error' occurred, bad naming can make it difficult to track down the origin.
 

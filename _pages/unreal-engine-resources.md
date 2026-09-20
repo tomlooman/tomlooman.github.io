@@ -174,7 +174,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 
 ## Sample Projects
 
-- [Co-op Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike)  
+- [Project Orion: Co-op Action Roguelike Sample Game](/unreal-engine-sample-game-action-roguelike)  
    Comprehensive C++ action rpg/roguelike game supporting multiplayer.
 
 ## Localization

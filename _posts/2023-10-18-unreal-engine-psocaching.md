@@ -36,7 +36,7 @@ The intent as stated by Epic Games is for the new **PSO Precaching** solution to
 
 **Update:** Coverage has since improved as we are now in UE 5.6 and issues that I had previously such as Decal Components now have added support for Precached PSOs.
 
-This article will cover an [implementation using **Action Roguelike on GitHub**](https://github.com/tomlooman/ActionRoguelike) to give you the best starting position for your own project. I'll mostly skip what is already covered by the docs including things like the background information on PSOs and how other APIs and platforms handle this. So I'll be focusing on Windows DirectX 12. _You \*really\* should read the available documentation along with this article as it provides additional details on these systems._
+This article will cover an [implementation using **Project Orion on GitHub**](https://github.com/tomlooman/ActionRoguelike) to give you the best starting position for your own project. I'll mostly skip what is already covered by the docs including things like the background information on PSOs and how other APIs and platforms handle this. So I'll be focusing on Windows DirectX 12. _You \*really\* should read the available documentation along with this article as it provides additional details on these systems._
 
 This screenshot (Unreal Insights) shows a game running without any handling of PSOs. The result is enormous frame spikes when objects are first seen on screen as the PSO compilation steps stall the game until the PSO is ready to be sent to the GPU. Here that PSO took 54.1ms to compile, meanwhile the game cannot continue rendering.
 

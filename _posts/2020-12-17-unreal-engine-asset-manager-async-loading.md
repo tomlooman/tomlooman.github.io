@@ -36,7 +36,7 @@ virtual FPrimaryAssetId GetPrimaryAssetId() const;
 
 An example of a _PrimaryAsset_ is an AI configuration asset that holds info about a specific monster along with which Actor to spawn for this AI, some attributes, abilities, and perhaps some UI stuff like name and icon.
 
-Here is an example of a PrimaryAsset with [MonsterData](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueMonsterData.h) from my ActionRoguelike on GitHub. The use-case is a basic configuration for an AI to be spawned into the world. The actions are its abilities to be granted.
+Here is an example of a PrimaryAsset with [MonsterData](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueMonsterData.h) from my Project Orion on GitHub. The use-case is a basic configuration for an AI to be spawned into the world. The actions are its abilities to be granted.
 
 ```cpp
 UCLASS()
