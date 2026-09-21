@@ -7,6 +7,7 @@ permalink: /unreal-engine-cpp-tutorials/
 coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 redirects_from:
     - /ue4-cpp-tutorials/
+    - /getting-started-with-unreal-engine-4/
 toc: true
 
 ---

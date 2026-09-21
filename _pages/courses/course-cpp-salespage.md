@@ -20,6 +20,7 @@ redirect_from:
     - /udemy-unrealcoupon/
     - /ue4-cpp-multiplayer-course/
     - /pro-course-github/
+    - /unrealcourse-cpp/
     - /unreal-engine-cpp-course/
     - /unreal-engine-cpp-course-available/
     - /unrealengine-cpp-course-available/
