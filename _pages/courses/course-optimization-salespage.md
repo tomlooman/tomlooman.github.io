@@ -73,16 +73,6 @@ The course covers a wide range of performance subjects for developers working at
 
 No C++ experience is required for most of the course. Programming-focused lessons use C++ where it is relevant, while many sections focus on profiling tools, rendering features, project settings, content, Blueprints, and production workflows.
 
-<div class="wide-content">
-  <section
-    class="partition_1"
-    style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
-  >
-    <h1 class="salesheader" style="text-align: center;"><strong>SUMMER SALE IS NOW!</strong></h1>
-    <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-optimization/#pricing-options">SUMMERSALE</a> at checkout for a $100 discount! Sale ends September 12th!</strong></p>
-  </section>
-</div>
-
 ## What You'll Learn
 
 ### Performance fundamentals and reliable profiling
@@ -154,16 +144,6 @@ The course is available in **Early Access** and already contains a substantial c
 {% include bio.html %}
 
 <a name="pricing-options"></a>
-
-<div class="wide-content">
-  <section
-    class="partition_1"
-    style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
-  >
-    <h1 class="salesheader" style="text-align: center;"><strong>SUMMER SALE IS NOW!</strong></h1>
-    <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-optimization/#pricing-options">SUMMERSALE</a> at checkout for a $100 discount! Sale ends September 12th!</strong></p>
-  </section>
-</div>
 
 {: .text-center}
 

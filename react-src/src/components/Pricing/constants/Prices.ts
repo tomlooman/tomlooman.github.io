@@ -2,15 +2,15 @@ export const Prices = {
     // C++ Course
     1: {
         INDIE_BASIC: 349,
-        INDIE_BASIC_DISCOUNTED: null, // Change to null to remove discount
-        INDIE_PAYMENT_PLAN: 75, // Price per month
-        INDIE_PAYMENT_PLAN_DISCOUNTED: null,
-        INDIE_COUPON_CODE: null, // e.g. "ARUNIVERSITY30"
+        INDIE_BASIC_DISCOUNTED: 249, // Change to null to remove discount
+        INDIE_PAYMENT_PLAN: 65, // Price per month
+        INDIE_PAYMENT_PLAN_DISCOUNTED: 49,
+        INDIE_COUPON_CODE: "FIVEYEARS", // e.g. "COMMUNITY15"
         PRO: 695,
-        PRO_DISCOUNTED: null,
-        PRO_COUPON_CODE: "",
+        PRO_DISCOUNTED: 595,
+        PRO_COUPON_CODE: "FIVEYEARS",
     },
-    // Optimisation Course
+    // Optimization Course
     2: {
         INDIE_BASIC: 395,
         INDIE_BASIC_DISCOUNTED: null,
@@ -25,12 +25,12 @@ export const Prices = {
 
 // product ids for the checkout page
 export const ProductId = {
-    1: {
-        indieBasic: "3423335",
-        indiePaymentPlan: "5880527",
-        pro: "3423338",
+    1: { // CPP Course UE5
+        indieBasic: "6797897",
+        indiePaymentPlan: "6797898",
+        pro: "6797896",
     },
-    2: {
+    2: { // Optim Course
         indieBasic: "5738003",
         indiePaymentPlan: "5931155",
         pro: "5738004",

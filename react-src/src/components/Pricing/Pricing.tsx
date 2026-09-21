@@ -65,7 +65,7 @@ const Pricing: React.FC<PricingProps> = ({ courseId }) => {
                     <div className={style.priceDescription}>
                         <p>For individuals and studios with less than $1M in annual revenue or funding.<br/><br/>Single User License.</p>
                         <div className={style.priceAmount}>
-                            {selectedIndieType === PriceItemType.INDIE_PAYMENT_PLAN && <div className={style.priceAdditionalInfo}>5 payments of</div>}
+                            {selectedIndieType === PriceItemType.INDIE_PAYMENT_PLAN && <div className={style.priceAdditionalInfo}>6 payments of</div>}
                             <h1>{`$${indieDiscountedPrice || indieOriginalPrice}`} {!!indieDiscountedPrice && <span>{`$${indieOriginalPrice}`}</span>}</h1>
                             {selectedIndieType === PriceItemType.INDIE_PAYMENT_PLAN && <div className={style.priceAdditionalInfo}>/month</div>}
                         </div>

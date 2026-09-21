@@ -18,7 +18,7 @@ title: Unreal Engine C++ & Optimization Tutorials
 Some popular pages you may be interested in! Looking for a specific post? Try searching in the top-right or [Browse Posts by Category](/categories) instead.
 <section class="featured-posts">
   {% assign featured_urls =
-    "/unreal-engine-cpp-guide/,/unreal-engine-5-8-performance-highlights/,/unreal-engine-sample-game-action-roguelike" | split: ","
+    "/unreal-engine-cpp-course-rebuilt/,/unreal-engine-5-8-performance-highlights/,/unreal-engine-sample-game-action-roguelike" | split: ","
   %}
 
   {% assign featured_content = site.posts | concat: site.pages %}

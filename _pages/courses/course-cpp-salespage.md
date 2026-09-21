@@ -11,7 +11,7 @@ header:
     - label: "See Pricing"
       url: "/courses/unrealengine-cpp/#pricing-options"
     - label: "View Curriculum"
-      url: "https://courses.tomlooman.com/courses/game-development-in-cpp-unreal-engine-5/lectures/62227301"
+      url: "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5?coupon_code=FIVEYEARS"
   overlay_filter: 0.3
 tagline: "Master Unreal Engine C++ with a learning path trusted by developers - from beginners to AAA studios."
 redirect_from:
@@ -26,7 +26,7 @@ redirect_from:
 ---
 
 {% assign summary = "
-[30+ Hours of C++ Lessons](https://courses.tomlooman.com/courses/game-development-in-cpp-unreal-engine-5/lectures/62227301)|
+[30+ Hours of C++ Lessons](https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5?coupon_code=FIVEYEARS)|
 7 Programming Assignments|
 Compatible with UE 5.8 |
 Lifetime Access|
@@ -81,14 +81,30 @@ Even experienced Unreal developers discover new techniques and best practices th
 - Technical artists who want to confidently work in Unreal Engine C++.
 
 <div class="wide-content">
-  <section 
-    class="partition_1"
+  <section
+    class="anniversary-offer"
     style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
-    >
-    <p>
-      <h1 class="salesheader" style="text-align: center;"><strong>SUMMER SALE IS NOW!</strong></h1>
-      <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-cpp/#pricing-options">SUMMERSALE</a> at checkout for $100 discount! Sale ends September 12th!</strong></p>
+    aria-labelledby="anniversary-offer-title"
+  >
+    <p class="anniversary-offer__eyebrow">Five-Year Anniversary Launch</p>
+
+    <h2 id="anniversary-offer-title">
+      Completely Rebuilt for Unreal Engine 5
+    </h2>
+
+    <p class="anniversary-offer__description">
+      Save $100 with coupon code
+      <code class="anniversary-offer__code">FIVEYEARS</code>
+      and receive the upcoming Multiplayer Programming module at no additional cost.
+      Offer ends <time datetime="2026-09-30">September 30</time>.
     </p>
+
+    <a
+      class="btn btn--info anniversary-offer__button"
+      href="#pricing-options"
+    >
+      View Pricing &amp; Enroll
+    </a>
   </section>
 </div>
 
@@ -147,13 +163,20 @@ Trusted by 6000+ Unreal Engine developers - from first-time programmers to Princ
 <a name="pricing-options"></a>
 
 <div class="wide-content">
-  <section 
-    class="partition_1"
+  <section
+    class="anniversary-offer anniversary-offer--closing"
     style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
-    >
-    <p>
-      <h1 class="salesheader" style="text-align: center;"><strong>SUMMER SALE IS NOW!</strong></h1>
-      <p style="text-align: center;"><strong>Use coupon code <a href="/courses/unrealengine-cpp/#pricing-options">SUMMERSALE</a> at checkout for $100 discount!</strong></p>
+    aria-labelledby="anniversary-offer-closing-title"
+  >
+    <p class="anniversary-offer__eyebrow">Anniversary Launch Offer</p>
+
+    <h2 id="anniversary-offer-closing-title">
+      Save $100 Through September 30
+    </h2>
+
+    <p class="anniversary-offer__description">
+      Use code <code class="anniversary-offer__code">FIVEYEARS</code> at checkout.
+      Enrollments during the launch also include the upcoming Multiplayer Programming module.
     </p>
   </section>
 </div>

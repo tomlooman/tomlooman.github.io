@@ -6,5 +6,8 @@
     > span {
         font-size: large;
         font-weight: bold;
+
+        font-variant-numeric: tabular-nums;
+        font-feature-settings: "tnum" 1;
     }
 }

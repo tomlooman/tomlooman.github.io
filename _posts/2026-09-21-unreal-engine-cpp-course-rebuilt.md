@@ -6,15 +6,20 @@ categories:
   - "C++ Programming"
   - "Courses"
 tags:
-    - "C++"
-    - "Courses"
-    - "Action Roguelike"
-    - "Project Orion"
+  - "cpp-fundamentals"
+  - "Courses"
+  - "data-driven-design"
+  - "Project Orion"
+  - "course-news"
+  - "gameplay-framework"
+  - "blueprint-integration"
+  - "reflection"
 coverImage: "Thumb_Course_CPP_HeroVariant_2_UE5_900.jpg"
 excerpt: "My Unreal Engine 5 C++ course is rebuilt with 30+ hours of new lessons, updated gameplay systems, and a refined curriculum. Free for existing C++ students."
-
 layout: single
 toc: true
+redirect_from:
+  - /unreal-engine-cpp-course-early-access/
 ---
 
 Five years after the original C++ course launched, I have rebuilt it from the ground up in Unreal Engine 5.6, supporting newer versions including 5.8, a refined curriculum, and more than 30 hours of re-recorded lessons.
@@ -85,7 +90,7 @@ The module is planned for release later this year (Q4 2026). **During the fifth-
 
 ## Launching Today
 
-The rebuilt edition of 'Professional Game Development in C++ and Unreal Engine 5' launches publicly on September 21, exactly five years after the original course.
+The rebuilt edition of **'Professional Game Development in C++ and Unreal Engine 5'** launches publicly on September 21, exactly five years after the original course.
 
 Whether you have been waiting for the Unreal Engine 5 rebuild, already own the original course, or are discovering it for the first time, this is the best version of the course I have created. I am very proud of the result and excited to finally share it.
 
