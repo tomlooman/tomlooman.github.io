@@ -113,7 +113,7 @@ FTimerManagerTimerParameters { .bLoop = bLooping, .bMaxOncePerFrame = bMaxOncePe
 
 ### Frame Pacing
 
-You should never use TickManager as an excuse to not optimize badly performing code or naturally expensive operations. Running them as timer functions on a lower frequency may cause an instable framerate rather than smooth performance which hinders player experience. There are a couple of alternatives such as time slicing (spreading the workload across multiple frames) or running the entire function asynchronously using [Unreal's Task System](https://docs.unrealengine.com/en-US/tasks-systems-in-unreal-engine/).
+You should never use TickManager as an excuse to not optimize badly performing code or naturally expensive operations. Running them as timer functions on a lower frequency may cause an unstable framerate rather than smooth performance which hinders player experience. There are a couple of alternatives such as time slicing (spreading the workload across multiple frames) or running the entire function asynchronously using [Unreal's Task System](https://docs.unrealengine.com/en-US/tasks-systems-in-unreal-engine/).
 
 For a concrete way to spread work across frames, see [deferred tasks in Project Orion](/unreal-engine-sample-game-action-roguelike#deferred-tasks-frame-pacing). The sample schedules work when CPU frame budget is available, making it useful for tasks that can tolerate delayed execution.
 

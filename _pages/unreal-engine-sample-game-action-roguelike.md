@@ -77,8 +77,8 @@ The enemy monsters can perform melee attacks as part of their AI Behaviors. The 
 The Enemy BehaviorTree checks if the target (player) is within a certain distance, and initiates a melee attack sequence (run closer then attack when in attack range)
 
 - `RogueAction_MinionMeleeAttack` (Action) handles the start/stop of the attack. Runs an AnimMontage with the attack animation.
-- `RogueAnimationInstance` (AnimBlueprint) contains OnMeleeOverlap which the Melee Attack Action listens for.
-- `RogueAnimNotifyState_Melee` (AnimNotify) broadcasts OnMeleeOverlap event when a melee overlap is found by running OverlapMultiByChannel collision query while the AnimNotify is active.
+- `RogueAnimationInstance` (AnimBlueprint) contains `OnMeleeOverlap` which the Melee Attack Action listens for.
+- `RogueAnimNotifyState_Melee` (AnimNotify) broadcasts `OnMeleeOverlap` event when a melee overlap is found by running `OverlapMultiByChannel` collision query while the AnimNotify is active.
 - `OnMeleeOverlap` is handled by the Melee Attack Action to apply Damage to the hit target.
 
 Apply console variable `game.drawdebugmelee 1` to visualize the overlap shape during a melee attack.
@@ -136,7 +136,7 @@ I talk about this system briefly in my [Game Optimization on a Budget Talk](http
  
 Animation Budget Allocator plugin is used for the Enemy Monsters. The plugin attempts to keep total frame time spent on Animation systems below a certain threshold. It can use several mechanisms including animation throttling (only running once every few frames) or forcing lower LODs on Skeletal Meshes to stay within this budget.
 
-You can define the allocated animation budget using scalability CVAR (`a.Budget.BudgetMs`) inside **DefaultScalability.ini**. View the budgeting debug and profiling information using `a.Budget.Debug.Enabled` and `stat AnimationBudgetAllocator`. 
+You can define the allocated animation budget using scalability CVAR (`a.Budget.BudgetMs`) inside `DefaultScalability.ini`. View the budgeting debug and profiling information using `a.Budget.Debug.Enabled` and `stat AnimationBudgetAllocator`. 
 
 The `ARogueAICharacter` class includes the optional `OnReduceAnimationWork` callback to allow custom logic to further throttle anim quality when necessary.
 

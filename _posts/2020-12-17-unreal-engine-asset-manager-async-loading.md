@@ -36,7 +36,7 @@ virtual FPrimaryAssetId GetPrimaryAssetId() const;
 
 An example of a _PrimaryAsset_ is an AI configuration asset that holds info about a specific monster along with which Actor to spawn for this AI, some attributes, abilities, and perhaps some UI stuff like name and icon.
 
-Here is an example of a PrimaryAsset with [MonsterData](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueMonsterData.h) from my Project Orion on GitHub. The use-case is a basic configuration for an AI to be spawned into the world. The actions are its abilities to be granted.
+Here is an example of a PrimaryAsset with [MonsterData](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueMonsterData.h) from my Project Orion on GitHub. The use-case is a basic configuration for an AI to be spawned into the world. The [Actions](/unreal-engine-sample-game-action-roguelike#action-system-abilities-buffs-attributes) are its abilities to be granted.
 
 ```cpp
 UCLASS()
@@ -64,7 +64,7 @@ public:
 
 Another example of a Primary Asset is a Weapon DataAsset that holds variables and soft references such as the weapon Actor Class, damage type, Icon texture, UI Name, Rarity, etc.
 
-If you are looking for a hands-on look, I recommend checking out my [**Action Roguelike** project on GitHub](https://github.com/tomlooman/ActionRoguelike). It contains some **async loading** examples using **Asset Manager**. [ActionRPG](https://docs.unrealengine.com/en-US/Resources/SampleGames/ARPG/index.html) by Epic uses Asset Manager too (but with blocking loads), still useful to see more use-cases on Primary Assets.
+If you are looking for a hands-on look, I recommend checking out my [**Project Orion Sample Game** on GitHub](https://github.com/tomlooman/ActionRoguelike). It contains some **async loading** examples using **Asset Manager**.
 
 ## Primary Assets
 
@@ -150,7 +150,7 @@ void ARogueGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector Spawn
 }
 ```
 
-[Example taken from open-source Action Roguelike.](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameModeBase.cpp)
+[Example taken from the open-source Project Orion Sample Game.](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameModeBase.cpp)
 
 ### Blueprint Async Loading Example
 
