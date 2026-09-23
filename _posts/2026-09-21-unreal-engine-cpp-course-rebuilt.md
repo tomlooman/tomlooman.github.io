@@ -1,5 +1,5 @@
 ---
-title: "'Professional Game Development in C++ and Unreal Engine 5' Completely Rebuilt"
+title: "I rebuilt my Unreal Engine C++ course from the ground up"
 date: 2026-09-08
 last_modified_at: 2026-09-08
 categories: 
@@ -15,7 +15,17 @@ tags:
   - "blueprint-integration"
   - "reflection"
 coverImage: "Thumb_Course_CPP_HeroVariant_2_UE5_900.jpg"
-excerpt: "My Unreal Engine 5 C++ course is rebuilt with 30+ hours of new lessons, updated gameplay systems, and a refined curriculum. Free for existing C++ students."
+excerpt: "My Unreal Engine 5 C++ course has been rebuilt with 30+ hours of new lessons, updated gameplay systems, and a refined curriculum."
+header:
+  og_image: "/assets/images/Thumb_Course_CPP_HeroVariant_2_UE5_900.jpg"
+  overlay_image: "assets/images/courses/CourseCPP_HeroBanner_2.jpg"
+  actions:
+    - label: "View Course Page"
+      url: "/courses/unrealengine-cpp"
+    - label: "Browse Curriculum"
+      url: "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5?coupon_code=FIVEYEARS"
+  overlay_filter: 0.3
+tagline: "My Unreal Engine C++ course has been rebuilt with 30+ hours of new lessons, updated gameplay systems, and a refined curriculum."
 layout: single
 toc: true
 redirect_from:
@@ -32,7 +42,7 @@ Best of all, **the complete rebuild available at no additional cost for existing
 
 What began as a straightforward Unreal Engine 5 update gradually turned into something much larger. Over the past year, I have rebuilt the course project, redesigned its gameplay systems, expanded and reorganized the curriculum, and re-recorded every lesson.
 
-Five years of additional game development experience and student feedback helped me refine this new course curriculum to be even better than the original. The result is a densely packed 30-hour learning path built around modern Unreal Engine 5 development, with updated systems, clearer explanations, and more advanced programming concepts than the original course.
+Five years of additional game development experience and student feedback helped me refine this new course curriculum to be even better than the original. The result is a densely packed 32-hour learning path built around modern Unreal Engine 5 C++ development, with updated systems, deeper explanations, and more advanced programming concepts than the original course.
 
 **It launches publicly on September 21, exactly five years after the original.** 
 
@@ -46,7 +56,7 @@ It progresses from the essential Unreal C++ foundations into increasingly advanc
 
 The goal has always been not simply to finish the course project, but to understand Unreal Engine well enough to make proper engineering decisions and confidently build your next project independently. That goal has been reinforced in the re-recording as a fundamental goal and student feedback has been incredibly positive (existing C++ students have had access for some time as the re-recording was being worked on).
 
-The production quality has also been upgraded, with higher-quality video and audio, clearer presentation, and editing to maintain a consistent pace throughout the course.
+The production quality has also been upgraded, with higher-quality video and audio, clearer presentation, and editing to maintain a consistent pace throughout the course. You can see for yourself by [watching a preview lesson](https://courses.tomlooman.com/courses/2815268/lectures/62227301).
 
 ## Built for the future
 

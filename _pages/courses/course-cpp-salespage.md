@@ -3,7 +3,7 @@ layout: salespage
 title: "Professional Game Development in C++ and Unreal Engine 5"
 permalink: /courses/unrealengine-cpp/
 coverImage: "Thumb_Course_CPP_HeroVariant_2_UE5_900.jpg"
-excerpt: "Master Unreal Engine C++ with a learning path trusted by developers - from beginners to AAA studios."
+excerpt: "Master Unreal Engine C++ with a learning path trusted by industry professionals, from Indies to AAA studios."
 header:
   og_image: "/assets/images/Thumb_Course_CPP_HeroVariant_2_UE5_900.jpg"
   overlay_image: "assets/images/courses/CourseCPP_HeroBanner_2.jpg"
@@ -13,7 +13,7 @@ header:
     - label: "View Curriculum"
       url: "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5?coupon_code=FIVEYEARS"
   overlay_filter: 0.3
-tagline: "Master Unreal Engine C++ with a learning path trusted by developers - from beginners to AAA studios."
+tagline: "Master Unreal Engine C++ with a learning path trusted by industry professionals, from Indies to AAA studios."
 redirect_from:
     - /stanford-cs193u/
     - /cpp-activedeal/
