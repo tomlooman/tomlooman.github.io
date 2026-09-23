@@ -181,7 +181,7 @@ Everything runs directly in the browser through the learning portal. No software
 
 Yes. Individual developers can purchase their own seat and receive an invoice suitable for most education budget policies.
 
-For studio purchases, we issue a single invoice with any applicable [Partner Tier discounts](courses/studio-pricing).
+For studio purchases, we issue a single invoice with any applicable [Partner Tier discounts](/courses/studio-pricing/).
 
 ### Do you offer bulk pricing?
 
