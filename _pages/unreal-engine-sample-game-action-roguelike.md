@@ -26,6 +26,7 @@ redirect_from:
     - /unreal-engine-gameplay-ability-system-action-rpg/
     - /survival-sample-game-for-ue4/
     - /action-roguelike-cpp-ue4/
+    - /project-orion/
 tags:
   - "gameplay-framework"
   - "ability-systems"
