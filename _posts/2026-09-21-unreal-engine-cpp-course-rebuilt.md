@@ -1,5 +1,5 @@
 ---
-title: "I rebuilt my Unreal Engine C++ course from the ground up"
+title: "Rebuilding My Unreal Engine C++ Course for UE5"
 date: 2026-09-08
 last_modified_at: 2026-09-08
 categories: 
