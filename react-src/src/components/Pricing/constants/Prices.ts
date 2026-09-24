@@ -14,7 +14,7 @@ export const Prices = {
     2: {
         INDIE_BASIC: 395,
         INDIE_BASIC_DISCOUNTED: null,
-        INDIE_PAYMENT_PLAN: 85,
+        INDIE_PAYMENT_PLAN: 69,
         INDIE_PAYMENT_PLAN_DISCOUNTED: null,
         INDIE_COUPON_CODE: null,
         PRO: 795,
@@ -32,7 +32,7 @@ export const ProductId = {
     },
     2: { // Optim Course
         indieBasic: "5738003",
-        indiePaymentPlan: "5931155",
+        indiePaymentPlan: "6863698",
         pro: "5738004",
     }
 };
