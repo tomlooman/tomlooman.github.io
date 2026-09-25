@@ -38,6 +38,18 @@ $breakpoint-text-size-change-large: 1280px;
   }
 }
 
+@media (min-width: 68.75em) {
+  #main article.page {
+    width: calc(100% - 200px);
+  }
+}
+
+@media (min-width: 75em) {
+  #main article.page {
+    width: calc(100% - 300px);
+  }
+}
+
 // hide the homepage title
 .layout--custom-home .page__title {
   display: none;
