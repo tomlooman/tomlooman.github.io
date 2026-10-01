@@ -1,6 +1,6 @@
 ---
 title: "Game Development Learning Resources"
-permalink: game-development-bookmarks
+permalink: /game-development-bookmarks/
 date: 2021-01-31
 last_modified_at: 16-02-2026
 layout: resourcecollection

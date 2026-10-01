@@ -2,7 +2,7 @@
 title: "Unreal Engine Learning Resources"
 date: 2020-07-28
 last_modified_at: 12-09-2025
-permalink: unreal-engine-bookmarks
+permalink: /unreal-engine-bookmarks/
 coverImage: "epicparty_dannyoakes_01.jpg"
 layout: resourcecollection
 redirect_from:

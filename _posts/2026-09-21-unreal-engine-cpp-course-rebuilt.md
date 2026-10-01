@@ -23,7 +23,7 @@ header:
     - label: "View Course Page"
       url: "/courses/unrealengine-cpp"
     - label: "Browse Curriculum"
-      url: "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5?coupon_code=FIVEYEARS"
+      url: "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5"
   overlay_filter: 0.3
 tagline: "My Unreal Engine C++ course has been rebuilt with 30+ hours of new lessons, updated gameplay systems, and a refined curriculum."
 layout: single

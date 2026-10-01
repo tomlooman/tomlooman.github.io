@@ -3,7 +3,7 @@ title: "Project Orion: C++ Co-op Action Roguelike in Unreal Engine 5"
 date: 2026-02-27
 last_modified_at: 2026-09-08
 layout: single
-permalink: /unreal-engine-sample-game-action-roguelike
+permalink: /unreal-engine-sample-game-action-roguelike/
 coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 excerpt: "The co-op Action Roguelike sample game is built in Unreal Engine 5 with C++ and is my most complete and advanced sample game available."
 tagline: "Explore a comprehensive C++ sample game packed with gameplay systems, multiplayer support, and practical programming concepts."

@@ -11,7 +11,7 @@ header:
     - label: "See Pricing"
       url: "/courses/unrealengine-cpp/#pricing-options"
     - label: "View Curriculum"
-      url: "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5?coupon_code=FIVEYEARS"
+      url: "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5"
   overlay_filter: 0.3
 tagline: "Master Unreal Engine C++ with a learning path trusted by industry professionals, from Indies to AAA studios."
 redirect_from:
