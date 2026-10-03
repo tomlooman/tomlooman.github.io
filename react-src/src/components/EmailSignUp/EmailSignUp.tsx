@@ -36,6 +36,7 @@ const EmailSignUp = () => {
                     <SingleInputForm
                         placeholder="Enter your email"
                         label="Email"
+                        aria-label="Subscribe to newsletter"
                         onSubmit={submitEmail}
                         submitText={loading ? "Submitting..." : "Sign me up"}
                     />

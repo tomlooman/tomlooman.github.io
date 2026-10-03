@@ -2,7 +2,6 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import Countdown from './src/components/Countdown';
 import ListItem from './src/components/ListItem';
-import CoursesBanner from './src/components/CoursesBanner';
 import EmailSignUp from './src/components/EmailSignUp';
 import CoursesMainIntroduction from './src/components/CoursesMainIntroduction';
 import Reviews from './src/components/Reviews';
@@ -25,11 +24,6 @@ if (listItems.length) {
     const text = item.getAttribute('data-text');
     createRoot(item).render(<ListItem text={text} />);
   });
-}
-
-const coursesBanner = document.getElementById('courses-banner');
-if (coursesBanner) {
-  createRoot(coursesBanner).render(<CoursesBanner />);
 }
 
 const emailSighUp = document.getElementById('email-sign-up');
