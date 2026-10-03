@@ -985,3 +985,50 @@ th {
     display: none;
   }
 }
+
+.courses-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1200 / 450;
+  min-height: 280px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.courses-banner__cpp,
+.courses-banner__optimization {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: transform 0.2s ease;
+}
+
+.courses-banner__cpp {
+  clip-path: polygon(0 0, 60% 0, 40% 100%, 0 100%);
+  background-position: left top;
+  background-color: $color-blue;
+}
+
+.courses-banner__optimization {
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+  background-position: right bottom;
+  background-color: $color-blue-accent;
+}
+
+.courses-banner__cpp:hover,
+.courses-banner__optimization:hover {
+  transform: scale(1.01);
+}
+
+.courses-banner a:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 4px white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .courses-banner a {
+    transition: none;
+  }
+}

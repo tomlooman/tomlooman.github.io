@@ -2,7 +2,20 @@
 layout: custom-home
 title: Unreal Engine C++ & Optimization Tutorials
 ---
-<div id="courses-banner"></div>
+<div class="courses-banner">
+  <a
+    href="{{ '/courses/unrealengine-cpp/' | relative_url }}"
+    class="courses-banner__cpp"
+    aria-label="C++ course"
+    style="background-image: url('{{ '/assets/images/Home_Course_CPP_Hero.webp' | relative_url }}');"
+  ></a>
+  <a
+    href="{{ '/courses/unrealengine-optimization/' | relative_url }}"
+    class="courses-banner__optimization"
+    aria-label="Optimization course"
+    style="background-image: url('{{ '/assets/images/Home_Course_Optim_Hero.webp' | relative_url }}');"
+  ></a>
+</div>
 <section class="intro-highlight">
     <h2>Unreal Engine 5 Tutorials & Courses for Programmers and (Tech) Artists.</h2>
     <p>
