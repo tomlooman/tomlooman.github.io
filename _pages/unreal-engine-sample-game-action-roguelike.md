@@ -8,7 +8,7 @@ coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 excerpt: "The co-op Action Roguelike sample game is built in Unreal Engine 5 with C++ and is my most complete and advanced sample game available."
 tagline: "Explore a comprehensive C++ sample game packed with gameplay systems, multiplayer support, and practical programming concepts."
 header:
-  og_image: "/assets/images/Thumb_Blog_Hero_2026_900.jpg"
+  og_image: "/assets/images/Thumb_Blog_Hero_2026_Med.webp"
   overlay_image: "assets/images/courses/CourseCPP_HeroBanner_2.jpg"
   actions:
     - label: "Browse Source Code"
