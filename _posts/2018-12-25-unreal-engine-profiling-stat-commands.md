@@ -9,7 +9,7 @@ tags:
   - "profiling"
   - "unreal-insights"
   - "cpu-optimization"
-coverImage: "Thumb_Blog_StatsTracesInsights.jpg"
+coverImage: "Thumb_Blog_StatsTracesInsights.webp"
 redirect_from:
   - /stat-commands-ue4/
 ---

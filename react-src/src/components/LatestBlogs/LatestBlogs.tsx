@@ -15,7 +15,7 @@ const LatestBlogs: React.FC<LatestBlogsProps> = ({ posts }) => {
     <div className={style.container}>
         {posts.map((post) => (
             <a href={post.url} key={post.url}>
-                <img src={`/assets/images/${post.coverImage}`} alt={post.title} />
+                <img src={`/assets/images/${post.coverImage}`} alt={post.title} loading="lazy" />
             </a>
         ))}
     </div>
