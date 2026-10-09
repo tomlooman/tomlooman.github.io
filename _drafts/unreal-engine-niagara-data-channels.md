@@ -2,11 +2,17 @@
 title: "Niagara Data Channels for Projectile Impacts"
 date: 2026-08-10
 last_modified_at: 2026-08-10
+permalink: /unreal-engine-niagara-data-channels/
 categories:
-  - ""
+  - "Performance & Optimization"
 tags:
-  - ""
-coverImage: ""
+  - "niagara"
+  - "niagara-data-channels"
+  - "decals"
+  - "cpu-optimization"
+  - "project-orion"
+coverImage: "Thumb_Blog_Hero_2026_900.jpg"
+layout: single
 ---
 
 In **Project Orion** the data-oriented implementation for projectiles (Class: `URogueProjectilesSubsystem`) implements `Niagara Data Channels` ("NDC") to handle impact decals. At this time, the impact explosions still rely on traditionally spawned Niagara VFX, however that could use NDCs as well. It's only the decal part that is currently handled through NDCs as an experimentation.
@@ -36,9 +42,11 @@ Writer->WriteVector("ImpactNormal", 0, ProjConfig.Hit.ImpactNormal);
 
 This code writes data into the NDC, which are their own assets:
 
-- '/Game/ActionRoguelike/Effects/DataChannel_Impacts' // The main Data Channel configuration, linked up for the NS_Impact_Decal VFX below
-- '/Game/ActionRoguelike/Effects/NS_Impact_Decal' // The main VFX used, with Decal Renderer (does not use any instanced rendering)
-- '/Game/ActionRoguelike/Effects/NS_Impact_Decal_Mesh.NS_Impact_Decal_Mesh' // Experimenting with Mesh Renderer for instanced rendering
+````cpp
+'/Game/ActionRoguelike/Effects/DataChannel_Impacts' // The main Data Channel configuration, linked up for the NS_Impact_Decal VFX below
+'/Game/ActionRoguelike/Effects/NS_Impact_Decal' // The main VFX used, with Decal Renderer (does not use any instanced rendering)
+'/Game/ActionRoguelike/Effects/NS_Impact_Decal_Mesh.NS_Impact_Decal_Mesh' // Experimenting with Mesh Renderer for instanced rendering
+````
 
 The game knows which NDC to use through `URogueProjectileData::ImpactDecal_DataChannel` (Implementation Example can be found in '/Game/ActionRoguelike/Projectiles/DA_ProjectileConfigAI', use the Reference Viewer to see how that is linked up to other content).
 
@@ -52,5 +60,6 @@ You can see the Niagara Data Channels in action by opening [Project Orion](https
 
 The intro article below is somewhat outdated and has a follow-up with some changes. It's still a useful reference point to loosely understand how NDC operates.
 
-- [Niagara Data Channels Overview | Unreal Docs](https://dev.epicgames.com/documentation/unreal-engine/niagara-data-channels-overview)
-- [Niagara Data Channels Intro | Epic](https://dev.epicgames.com/community/learning/tutorials/RJbm/unreal-engine-niagara-data-channels-intro)
+- [Niagara Data Channels Overview - Unreal Docs](https://dev.epicgames.com/documentation/unreal-engine/niagara-data-channels-overview)
+- [Niagara Data Channels Intro - Epic](https://dev.epicgames.com/community/learning/tutorials/RJbm/unreal-engine-niagara-data-channels-intro)
+
