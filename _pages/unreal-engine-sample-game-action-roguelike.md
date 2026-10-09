@@ -143,6 +143,10 @@ The `ARogueAICharacter` class includes the optional `OnReduceAnimationWork` call
 
 You can get a quick overview by checking out the [initial commit](https://github.com/tomlooman/ActionRoguelike/commit/bbf4ea3f1af05d2b3acdbcc3d2312137015d5789) on GitHub. Read more on the [Animation Budget Allocator Documentation](https://dev.epicgames.com/documentation/en-us/unreal-engine/animation-budget-allocator-in-unreal-engine) which contains all the steps to implement this in your own project.
 
+### Niagara Data Channels
+
+The project uses [Niagara Data Channels for impact decals](/unreal-engine-niagara-data-channels/) to reduce CPU overhead from short-living VFX. The current implementation is only for the impact decals in the data-oriented projectiles. 
+
 ## Explore Project Orion
 
 Project Orion is an ongoing Unreal Engine C++ sample project, built to demonstrate practical gameplay systems, multiplayer features, Enemy AI, optimization techniques, and production-ready programming patterns.
@@ -151,6 +155,5 @@ You can download the complete project, explore the source code, and adapt its sy
 
 [Explore 'Project Orion' on GitHub](https://github.com/tomlooman/ActionRoguelike)
 
-**Want to learn how these systems are designed and built from the ground up?** Project Orion began as the central project in my 'Professional Game Development in C++ and Unreal Engine 5' course.
-
-[Learn More About the C++ Course](/courses/unrealengine-cpp/)
+{: .notice--info }
+**Want to learn how these systems are designed and built from the ground up?** Project Orion began as the central project in my 'Professional Game Development in C++ and Unreal Engine 5' course. [Learn More About the C++ Course](/courses/unrealengine-cpp/)

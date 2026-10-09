@@ -1,7 +1,7 @@
 ---
 title: "Niagara Data Channels for Projectile Impacts"
-date: 2026-08-10
-last_modified_at: 2026-08-10
+date: 2026-09-10
+last_modified_at: 2026-09-10
 permalink: /unreal-engine-niagara-data-channels/
 categories:
   - "Performance & Optimization"
@@ -11,6 +11,7 @@ tags:
   - "decals"
   - "cpu-optimization"
   - "project-orion"
+  - "nugget"
 coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 layout: single
 ---
@@ -60,6 +61,7 @@ You can see the Niagara Data Channels in action by opening [Project Orion](/unre
 
 The intro article below is somewhat outdated and has a follow-up with some changes. It's still a useful reference point to loosely understand how NDC operates.
 
+- [Project Orion Documentation](/unreal-engine-sample-game-action-roguelike/)
 - [Niagara Data Channels Overview - Unreal Docs](https://dev.epicgames.com/documentation/unreal-engine/niagara-data-channels-overview)
 - [Niagara Data Channels Intro - Epic](https://dev.epicgames.com/community/learning/tutorials/RJbm/unreal-engine-niagara-data-channels-intro)
 

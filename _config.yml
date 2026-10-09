@@ -111,6 +111,8 @@ defaults:
     values:
       layout: single
       css: main
+      toc: false
+      related: true
 
 
 
