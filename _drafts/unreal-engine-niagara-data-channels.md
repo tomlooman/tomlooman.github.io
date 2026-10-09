@@ -15,7 +15,7 @@ coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 layout: single
 ---
 
-In **Project Orion** the data-oriented implementation for projectiles (Class: `URogueProjectilesSubsystem`) implements `Niagara Data Channels` ("NDC") to handle impact decals. At this time, the impact explosions still rely on traditionally spawned Niagara VFX, however that could use NDCs as well. It's only the decal part that is currently handled through NDCs as an experimentation.
+In [Project Orion](/unreal-engine-sample-game-action-roguelike/) the **data-oriented implementation for projectiles** (see class: `URogueProjectilesSubsystem`) implements `Niagara Data Channels` ("NDC") to handle impact decals. At this time, the impact explosions still rely on traditionally spawned Niagara VFX, however that could use NDCs as well. It's only the decal part that is currently handled through NDCs as an experimentation.
 
 ## What are Niagara Data Channels?
 
@@ -52,7 +52,7 @@ The game knows which NDC to use through `URogueProjectileData::ImpactDecal_DataC
 
 ## Trying the Code
 
-You can see the Niagara Data Channels in action by opening [Project Orion](https://tomlooman.com/unreal-engine-sample-game-action-roguelike/) and dragging a ProjectileSpammer blueprint ('/Game/ActionRoguelike/Performance/ProjectileSpammer.') onto the Map. This is configured to spam projectiles using the data-oriented implementation inside the Projectile Subsystem.
+You can see the Niagara Data Channels in action by opening [Project Orion](/unreal-engine-sample-game-action-roguelike/) and dragging a ProjectileSpammer blueprint ('/Game/ActionRoguelike/Performance/ProjectileSpammer.') onto the Map. This is configured to spam projectiles using the data-oriented implementation inside the Projectile Subsystem.
 
 ![](/assets/images/ndc_createprojectile.png)
 
