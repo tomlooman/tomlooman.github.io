@@ -9,7 +9,7 @@
         <a href="https://tomlooman.com/courses/unrealengine-cpp/">UE5 C++</a>
         and 
         <a href="https://tomlooman.com/courses/unrealengine-optimization/">Game Optimization</a>
-        courses with code <code>INDIESALE</code>.
+        courses with code <code>{{ site.data.sale.coupon_code | escape }}</code>.
         <br>Ends {{ site.data.sale.ends_at | date: "%B %-d at %H:%M" }} UTC.
         </p>
            <div
@@ -57,13 +57,6 @@
         });
 
         if (!timer) return;
-
-        const saleEndDateUTC = new Date(timer.dataset.saleEndDate);
-        if (Number.isFinite(saleEndDateUTC.getTime()) && Date.now() >= saleEndDateUTC.getTime()) 
-        {
-            banner.remove();
-            return;
-        }
 
     })();
     </script>

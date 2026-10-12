@@ -16,8 +16,8 @@
     <p class="anniversary-offer__description">
     Practical Unreal Engine training for your next game.
     <strong>Save 25%</strong> on this course with coupon code
-    <code class="anniversary-offer__code">INDIESALE</code>.
-    <br>Offer ends October 31 at 23:59 UTC.
+    <code class="anniversary-offer__code">{{ site.data.sale.coupon_code | escape }}</code>.
+    <br>Offer ends {{ site.data.sale.ends_at | date: "%B %-d at %H:%M" }} UTC.
     </p>
 
     <a
