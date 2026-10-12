@@ -1,6 +1,5 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Countdown from './src/components/Countdown';
 import ListItem from './src/components/ListItem';
 import EmailSignUp from './src/components/EmailSignUp';
 import CoursesMainIntroduction from './src/components/CoursesMainIntroduction';
@@ -12,11 +11,6 @@ import StudioLogos from './src/components/StudioLogos';
 import FAQ from './src/components/FAQ';
 import Footer from './src/components/Footer';
 
-const salesBannerTimer = document.getElementById('sales-banner-timer');
-if (salesBannerTimer) {
-  const saleEndDate = salesBannerTimer.getAttribute('data-sale-end-date');
-  createRoot(salesBannerTimer).render(<Countdown endDate={saleEndDate} />);
-}
 
 const listItems = document.getElementsByClassName('list-item');
 if (listItems.length) {
@@ -44,8 +38,12 @@ if (reviews) {
 
 const pricing = document.getElementById('pricing');
 if (pricing) {
-  const courseId = pricing.getAttribute('data-course-id');
-  createRoot(pricing).render(<Pricing courseId={Number(courseId)} />);
+  const courseId = Number(pricing.getAttribute('data-course-id'));
+  const saleActive = pricing.getAttribute('data-sale-active') === 'true';
+
+  createRoot(pricing).render(
+    <Pricing courseId={courseId} saleActive={saleActive} />
+  );
 }
 
 const latestBlogs = document.getElementById('latest-blogs');

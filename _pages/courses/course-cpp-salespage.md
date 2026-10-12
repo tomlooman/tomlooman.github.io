@@ -26,19 +26,31 @@ redirect_from:
     - /unrealengine-cpp-course-available/
 ---
 
-{% assign summary = "
-[30+ Hours of C++ Lessons](https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5?coupon_code=FIVEYEARS)|
+{% include sale-state.html %}
+
+{% assign course_summary_url = "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5" %}
+
+{% if sale_active and site.data.sale.coupon_code != blank %}
+  {% assign sale_coupon = site.data.sale.coupon_code | url_encode %}
+  {% assign course_summary_url = course_summary_url | append: "?coupon_code=" | append: sale_coupon %}
+{% endif %}
+
+{% capture summary_text %}
+[30+ Hours of C++ Lessons]({{ course_summary_url }})|
 7 Programming Assignments|
 Compatible with UE 5.8 |
 Lifetime Access|
 Instructor Support|
 Completion Certificate|
-Subtitles in 5 Languages"
-| split:"|" %}
+Subtitles in 5 Languages
+{% endcapture %}
+
+{% assign summary = summary_text | strip | split: "|" %}
 
 {% include course-summary.html
-title="Course at a Glance"
-items=summary %}
+  title="Course at a Glance"
+  items=summary 
+%}
 
 Learning Unreal Engine C++ is harder than it should be. Documentation is scattered, tutorials often teach bad habits, and it's difficult to know what professional Unreal code should actually look like. This course gives you a structured roadmap through Unreal Engine C++, teaching industry best practices, engineering principles, and debugging skills you need to confidently continue building games long after the course has finished.
 
@@ -81,33 +93,7 @@ Even experienced Unreal developers discover new techniques and best practices th
 - Students in game development (or computer science)
 - Technical artists who want to confidently work in Unreal Engine C++.
 
-<div class="wide-content">
-  <section
-    class="anniversary-offer"
-    style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
-    aria-labelledby="anniversary-offer-title"
-  >
-    <p class="anniversary-offer__eyebrow">Five-Year Anniversary Launch</p>
-
-    <h2 id="anniversary-offer-title">
-      Completely Rebuilt for Unreal Engine 5
-    </h2>
-
-    <p class="anniversary-offer__description">
-      Save $100 with coupon code
-      <code class="anniversary-offer__code">FIVEYEARS</code>
-      and receive the upcoming Multiplayer Programming module at no additional cost.
-      Offer ends <time datetime="2026-09-30">September 30</time>.
-    </p>
-
-    <a
-      class="btn btn--info anniversary-offer__button"
-      href="#pricing-options"
-    >
-      View Pricing &amp; Enroll
-    </a>
-  </section>
-</div>
+{%  include inline-sales-banner.html %}
 
 ## Built Around Professional Development
 
@@ -163,24 +149,7 @@ Trusted by 6000+ Unreal Engine developers - from first-time programmers to Princ
 
 <a name="pricing-options"></a>
 
-<div class="wide-content">
-  <section
-    class="anniversary-offer anniversary-offer--closing"
-    style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
-    aria-labelledby="anniversary-offer-closing-title"
-  >
-    <p class="anniversary-offer__eyebrow">Anniversary Launch Offer</p>
-
-    <h2 id="anniversary-offer-closing-title">
-      Save $100 Through September 30
-    </h2>
-
-    <p class="anniversary-offer__description">
-      Use code <code class="anniversary-offer__code">FIVEYEARS</code> at checkout.
-      Enrollments during the launch also include the upcoming Multiplayer Programming module.
-    </p>
-  </section>
-</div>
+{%  include inline-sales-banner.html %}
 
 {: .text-center}
 ## Get Started Today
@@ -188,7 +157,11 @@ Trusted by 6000+ Unreal Engine developers - from first-time programmers to Princ
 {: .text-center}
 Prices include VAT/Sales tax where applicable.
 
-<div id="pricing" data-course-id="1"></div>
+<div 
+  id="pricing" 
+  data-course-id="1" 
+  data-sale-active="{{ sale_active }}">
+</div>
 
 <br />
 

@@ -1,0 +1,10 @@
+{%- assign sale_active = false -%}
+
+{%- if site.data.sale.ends_at and site.data.sale.ends_at != "" -%}
+  {%- assign sale_end = site.data.sale.ends_at | date: "%s" | plus: 0 -%}
+  {%- assign build_time = site.time | date: "%s" | plus: 0 -%}
+
+  {%- if build_time < sale_end -%}
+    {%- assign sale_active = true -%}
+  {%- endif -%}
+{%- endif -%}

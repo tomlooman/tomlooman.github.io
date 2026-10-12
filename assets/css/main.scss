@@ -450,8 +450,26 @@ div.highlighter-rouge, figure.highlight {
 
 #sales-banner-timer {
   margin-left: auto;
+  flex-shrink: 0;
   white-space: nowrap;
 }
+
+.sales-countdown {
+  display: inline-block;
+  min-width: 15ch;
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .sales-countdown {
+    font-size: 0.8rem;
+  }
+}
+
 
 .sales-banner button {
   background: transparent;
@@ -503,8 +521,6 @@ div.highlighter-rouge, figure.highlight {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
-
-  display: none; // disable manually for now
 }
 
 .anniversary-offer__eyebrow {

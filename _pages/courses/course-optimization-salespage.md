@@ -20,6 +20,8 @@ redirect_from:
   - /course-game-optimization-unreal-engine-5/
 ---
 
+{% include sale-state.html %}
+
 {% assign summary = "
 [100+ Lessons and Resources](/courses/unrealengine-optimization/#curriculum-overview)|
 CPU, GPU and Memory Optimization|
@@ -72,6 +74,8 @@ The course covers a wide range of performance subjects for developers working at
 - Developers who want to prevent expensive performance problems earlier in production.
 
 No C++ experience is required for most of the course. Programming-focused lessons use C++ where it is relevant, while many sections focus on profiling tools, rendering features, project settings, content, Blueprints, and production workflows.
+
+{%  include inline-sales-banner.html %}
 
 ## What You'll Learn
 
@@ -145,6 +149,8 @@ The course is available in **Early Access** and already contains a substantial c
 
 <a name="pricing-options"></a>
 
+{%  include inline-sales-banner.html %}
+
 {: .text-center}
 
 ## Get Started Today
@@ -153,7 +159,11 @@ The course is available in **Early Access** and already contains a substantial c
 
 Prices include VAT/Sales tax where applicable.
 
-<div id="pricing" data-course-id="2"></div>
+<div 
+  id="pricing" 
+  data-course-id="2" 
+  data-sale-active="{{ sale_active }}">
+</div>
 
 <br />
 
