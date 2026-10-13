@@ -133,7 +133,7 @@ It may prove valuable to run some commands during a profiling session to see how
 - Only in Packaged Builds for accurate results
     - Example: `AnimSequence` is twice as large in editor builds.
 
-![](/assets/images/memreport.png)
+![Memory report listing animation sequence assets and their memory usage.](/assets/images/memreport-900x312.png)
 
 ## DumpTicks
 
@@ -246,7 +246,7 @@ Note: Nanite in UE5 has an entirely different occlusion culling system (Two-pass
 {: .notice--info }
 Note: As mentioned in the previous section. Nanite does not issue individual GPU occlusion queries. This visualization can still be used for non-Nanite meshes.
 
-![](/assets/images/renderdoc_depthtest.png)
+![RenderDoc Depth Test overlay showing an occlusion query box with green and red regions.](/assets/images/renderdoc_depthtest-900x577.png)
 
 ## Distance Culling
 
@@ -292,10 +292,10 @@ FreezeRendering does not work with Nanite.
 - ‘FreezeRendering’ + **;** (semi-colon) to fly with DebugCamera
 - Verify occlusion is working as expected
 
-![](/assets/images/ue_freezerendering_1.jpg)()
+![A building in a rocky canyon before freezing rendering to inspect occlusion culling.](/assets/images/ue_freezerendering_1-900x494.jpg)
 *Player looking toward building*
 
-![](/assets/images/ue_freezerendering_2.jpg)
+![Debug camera view after FreezeRendering, showing the building with culled roof and upper wall sections absent.](/assets/images/ue_freezerendering_2-900x494.jpg)
 *FreezeRendering enabled*
 
 ## Light Culling (Stationary & Movable)
@@ -429,7 +429,7 @@ SizeMap is a valuable tool to quickly find and address hard references in your c
 
 Check out Mark Craig's recent talk on [the hidden danger of Asset Dependency Chains](https://www.youtube.com/watch?v=4-oRyDLfo7M).
 
-![](/assets/images/sizemap.jpg)
+![Unreal Engine Size Map showing a level's 585 referenced assets as a treemap totaling 1.6 GB of memory.](/assets/images/sizemap-900x615.jpg)
 
 ## Statistics Window
 
@@ -441,7 +441,7 @@ I found myself often using this panel to investigate opportunities for memory an
 - Tip: Shift-click for _secondary_ sort.
     - Sort ‘Count’ + ‘Tris’ or ‘Size’ (Find large assets used only once)
 
-![](/assets/images/statistics_panel.png)
+![Primitive Stats table listing landscape and static mesh assets with instance counts, triangle counts, and memory sizes.](/assets/images/statistics_panel-900x204.png)
 
 ## Useful Console Commands
 

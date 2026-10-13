@@ -80,7 +80,7 @@ The overall biggest highlights of this release are continued improvements to Unr
 
 ## **GPU Profiler 2.0**
 
-![](/assets/images/ue56_insightsgpu-1.jpg)
+![Unreal Insights Timing View showing GPU frames and CPU thread tracks with nested rendering events.](/assets/images/ue56_insightsgpu.jpg)
 
 [](https://dev.epicgames.com/community/api/documentation/image/e1507154-55d5-42b4-a6a2-9909970df61d)Unreal Engine 5.6 introduces a re-architected Insights GPU profiler.
 
@@ -98,7 +98,7 @@ I’ve included examples of the new stat GPU and log output from ProfileGPU cons
 
 ![](/assets/images/ue56_statgpu.jpg)
 
-![](/assets/images/ue56_profilegpulog-1.jpg)
+![ProfileGPU log output showing a rendering event hierarchy with exclusive and inclusive GPU timings.](/assets/images/ue56_profilegpulog.jpg)
 
 ## **Renderer Parallelization**
 
