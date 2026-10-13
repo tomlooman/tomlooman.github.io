@@ -81,4 +81,4 @@ sidebar-optimization:
   - title: "Unreal Engine Course"
     children:
       - title: "- Complete Game Optimization for Unreal Engine 5"
-        url: /courses/unrealengine-Optimization
+        url: /courses/unrealengine-optimization/
