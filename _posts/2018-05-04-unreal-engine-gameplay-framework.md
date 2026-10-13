@@ -131,7 +131,7 @@ Some built-in useful functionality for ActorComponents includes
 
 To enable replication on the ActorComponent you must call SetIsReplicated(true) which is slightly different in name from the Actor's function. This is only necessary if you are trying to replicate a specific piece of logic for this component like a variable or function calls, and so not all components on a replicated Actor need to be replicated.
 
-##PlayerController
+## PlayerController
 
 The primary class for a player, receiving the input of the user. A `PlayerController` itself is not visually shown in the world, instead it will 'Possess' a `Pawn` instance which defines the visual and physical representation of that player in the world. During gameplay a player may possess a number of different pawns (eg. a vehicle, or a fresh copy of the Pawn when respawning) while the `PlayerController` instance remains the same throughout the duration of the level. This is important as there may also be moments where the `PlayerController` does not possess any pawn at all. This means things like the opening of menus should be added to the `PlayerController` and not the Pawn class.
 

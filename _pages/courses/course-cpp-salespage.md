@@ -128,7 +128,7 @@ This upgrade took over a year of work to complete. **Every existing student rece
 {% include feature-block.html
     title="Completely Rebuilt - From UE4 to Unreal Engine 5.6+"
     image="/assets/images/courses/course_cpp_upgraded56_2.jpg"
-    alt="Unreal Insights"
+    alt="Rider displaying the course project's C++ action code beside the Unreal Editor loading window and output log."
     content=feature-upgradedrecording
 %}
 
@@ -178,7 +178,7 @@ The course has been used by game studios of all sizes for many years. We offer f
 **Need a single license for someone on your team?** During checkout you have the option to purchase for someone else.
 
 {: .text-center}
-![](/assets/images/courses/moneyback_logo_small.png)
+![30-day money-back guarantee.](/assets/images/courses/moneyback_logo_small.png)
 
 <br />
 
