@@ -36,7 +36,7 @@ Five years after the original C++ course launched, I have rebuilt it from the gr
 
 In September 2021, I launched 'Professional Game Development in C++ and Unreal Engine', a course built around everything I had learned from years of developing games and teaching Unreal Engine and was originally taught at Stanford University. Exactly five years later, I have rebuilt the entire course for the latest versions of Unreal Engine 5. Every lesson has been re-recorded, the game project and code have been improved, and the curriculum has been expanded and reorganized from what I have learned in the past five years. It reflects current workflows, coding standards, and the latest practices I use in my own development work. 
 
-Best of all, **the complete rebuild available at no additional cost for existing C++ students!** If you already own the original C++ Course, [you can jump straight into the new curriculum](https://courses.tomlooman.com/courses/game-development-in-cpp-unreal-engine-5/lectures/62227301)
+Best of all, **the complete rebuild is available at no additional cost for existing C++ students!** If you already own the original C++ Course, [you can jump straight into the new curriculum](https://courses.tomlooman.com/courses/game-development-in-cpp-unreal-engine-5/lectures/62227301)
 
 ## Five Year Anniversary
 
@@ -50,7 +50,7 @@ Five years of additional game development experience and student feedback helped
 
 ## More Than an Engine Upgrade
 
-The rebuilt course is a densely packed 30-hour learning path created for modern Unreal Engine 5 C++ development. The new curriculum is roughly 6 hours longer, while more compactly edited, adding even more time to demonstrate and C++ programming concepts and letting me go into more depth with each topic.
+The rebuilt course is a densely packed 30-hour learning path created for modern Unreal Engine 5 C++ development. The new curriculum is roughly 6 hours longer, while more compactly edited, adding even more time to demonstrate C++ programming concepts and letting me go into more depth with each topic.
 
 It progresses from the essential Unreal C++ foundations into increasingly advanced gameplay systems. Along the way, I explain not only how each system works, but why it is designed that way, which alternatives exist, and how to diagnose problems when things do not work as expected. New lessons also introduce more advanced subjects such as [data-oriented design](https://gamesfromwithin.com/data-oriented-design/) to give you a different perspective of the usual Object Oriented Programming (OOP) which Unreal heavily relies on but is not always suitable for performance focused gameplay code.
 
