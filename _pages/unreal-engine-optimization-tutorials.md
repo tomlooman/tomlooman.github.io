@@ -1,7 +1,7 @@
 ---
 title: "Unreal Engine Optimization Tutorials"
 date: 07-08-2026
-last_modified_at: 07-08-2026
+last_modified_at: 2026-10-14
 permalink: /unreal-engine-optimization-tutorials/
 categories:
   - "Performance & Optimization"
@@ -61,11 +61,10 @@ There is a LOT to explore in this project, visit the [Project Overview page](/un
 ## A Selection of 'Profiling & Optimization' Tutorials
 
 {% assign optim_posts = all_posts | where: "categories", "Performance & Optimization" %}
-{% assign optim_tutorial_posts = optim_posts | where: "tags", "Tutorial" %}
-
-
-{% for post in optim_tutorial_posts %}
-  {% include archive-single.html type="post" %}
+{% for post in optim_posts %}
+  {% unless post.tags contains "engine-updates" %}
+    {% include archive-single.html type="post" %}
+  {% endunless %}
 {% endfor %}
 
 **See all '[Performance & Optimization](https://tomlooman.com/categories/#performance-optimization)' Posts.**
@@ -74,7 +73,7 @@ There is a LOT to explore in this project, visit the [Project Overview page](/un
 
 For every new version of Unreal Engine 5 I dig into the release notes and find the most interesting improvements to profiling, performance and optimization. There are always dozens of valuable changes buried in the incredibly long list of changes. I include further insights, and commentary where relevant, you can find them here:
 
-{% assign highlight_posts = all_posts | where: "tags", "Performance Highlights" %}
+{% assign highlight_posts = optim_posts | where: "tags", "engine-updates" %}
 
 {% for post in highlight_posts %}
   {% include archive-single.html type="post" %}
