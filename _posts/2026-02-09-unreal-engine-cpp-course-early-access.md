@@ -9,8 +9,11 @@ tags:
   - "archive"
   - "course-news"
 coverImage: "Thumb_Course_CPP_BlogAnnounce_600.jpg"
-excerpt: "The Unreal Engine 5 refresh of the Professional Game Development in C++ and Unreal Engine course has entered early access. Completely re-recording the entire course and improving every aspect of the code, best practices and curriculum."
+excerpt: "The February 2026 early-access announcement for the C++ course rebuild. See the current course page for availability, pricing, and curriculum."
 ---
+
+**Update — October 14, 2026:** This is the historical early-access announcement from February 2026. Read the [C++ course rebuild announcement](/unreal-engine-cpp-course-rebuilt/) for the subsequent update, and visit the [current course page](/courses/unrealengine-cpp/) for availability, pricing, curriculum, and multiplayer module details. The plans and projected prices below describe the course at the time of this announcement.
+{: .notice--info}
 
 **The [Professional Game Development in C++ and Unreal Engine](/courses/unrealengine-cpp) has received the first 12+ hours of major overhaul content (total course length expected roughly 25 hours) to bring it up to Unreal Engine 5.6 and above!** The course is being completely rebuilt and re-recorded from the ground up. The course includes further streamlining of the curriculum and covering both big and small features of Unreal Engine 5 such as Enhanced Input, Niagara (for gameplay), InstancedStructs, Data-oriented design, and lots more...
 
