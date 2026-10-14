@@ -3,7 +3,7 @@ import { Faq } from "../models/Faq";
 const commonFaq: Faq[] = [
     {
         question: "For how long will this course be updated and supported?",
-        answer: "The course will be updated to maintain compatibility with the latest engine versions. In 2026 the entire course has been upgraded to Unreal Engine 5.6 and compatible with 5.8. Q&A support is an ongoing part of the course, and there are no plans to discontinue it."
+        answer: "The course will be updated to maintain compatibility with the latest engine versions. Q&A support is an ongoing part of the course, and there are no plans to discontinue it."
     },
     {
         question: "When does the course start and finish?",
@@ -31,6 +31,10 @@ export const FAQs: { [key: number]: Faq[] } = {
     // C++ Course
     1: [
         ...commonFaq,
+        {
+            question: "Which version of Unreal Engine was this course created with?",
+            answer: "The entire C++ course was rebuilt in 2026 using Unreal Engine 5.6 and is compatible with UE 5.8."
+        },
         {
             question: "What level of programming know-how is expected before starting?",
             answer: "The course is challenging and assumes some basic programming or scripting experience. Knowing C++ is not a requirement, any programming languages such as C#, Python, Unreal's Blueprint, etc. is enough."
