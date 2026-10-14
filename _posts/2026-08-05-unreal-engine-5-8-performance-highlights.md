@@ -15,6 +15,10 @@ excerpt: "Discover the most important Unreal Engine 5.8 performance and optimiza
 
 It is time again for possibly the last **Performance Highlights overview for Unreal Engine 5**. The release of UE 5.8 marks the final release before Epic Games is moving development efforts to Unreal Engine 6.
 
+**Performance highlights by Unreal Engine version:**<br>
+[UE 5.5](/unreal-engine-5-5-performance-highlights/) · [UE 5.6](/unreal-engine-5-6-performance-highlights/) · [UE 5.7](/unreal-engine-5-7-performance-highlights/) · **UE 5.8 (this article)**
+{: .notice--info}
+
 That brings the focus of 5.8 to stabilize and optimize existing features. Although new experimental features such as Mesh Terrain have still been added. A couple of major performance oriented improvements include MegaLights turning production ready and Lumen receiving a new Lite-mode for better scalability across devices. You may want to read the [full release notes](https://dev.epicgames.com/documentation/unreal-engine/unreal-engine-5-8-release-notes), but let's first dive into the most interesting improvements made that focus on performance and optimization. As usual I add my own remarks to the release notes and clarify the changes where necessary.
 
 Some other optimization trends you see across rendering features include overall **image quality and stability** (Lumen, VSM, MegaLights), and **reduced shader permutations** across many shaders used in a variety of passes (Volumetric fog, VSM, Substrate, MegaLights, Lumen, etc.). These are mostly automatic wins for your project, sometimes with CVARs to control behavior or exclusions.

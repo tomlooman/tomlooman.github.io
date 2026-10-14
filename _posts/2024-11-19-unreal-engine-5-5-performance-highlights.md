@@ -14,6 +14,10 @@ sidebar:
 
 The following Highlights are taken from the [Unreal Engine 5.5 Release Notes](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5.5-release-notes) and focus primarily on real-time game performance on PC and consoles. My personal highlights have some commentary on them and at the bottom you'll find a raw list of changes that I found notable. There were so many changes that even at the bottom I choose not to include everything, especially if the release notes were vague on their benefit or actual improvement.
 
+**Performance highlights by Unreal Engine version:**<br>
+**UE 5.5 (this article)** · [UE 5.6](/unreal-engine-5-6-performance-highlights/) · [UE 5.7](/unreal-engine-5-7-performance-highlights/) · [UE 5.8](/unreal-engine-5-8-performance-highlights/)
+{: .notice--info}
+
 I will include a lot of the amazing new features and improvements in my [Game Optimization Course](https://tomlooman.com/courses/unrealengine-optimization/)!
 
 To kick off I'm starting with some lesser known changes which include some awesome additions like batched ticks and better profiling of input latency!

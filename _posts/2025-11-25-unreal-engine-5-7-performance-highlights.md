@@ -14,6 +14,10 @@ excerpt: "Highlights from Unreal Engine 5.7 performance updates, including Nanit
 
 It is time for another Unreal Engine 5.7 Performance Highlights post! I have compiled a list of the most impactful changes which make it worthwhile to upgrade to 5.7. I trimmed the list more substantially this time around to make it more digestible and really highlight the most interesting areas while keeping the more minor changes out. **I have included annotations and clarifications not found in the original release notes.**
 
+**Performance highlights by Unreal Engine version:**<br>
+[UE 5.5](/unreal-engine-5-5-performance-highlights/) · [UE 5.6](/unreal-engine-5-6-performance-highlights/) · **UE 5.7 (this article)** · [UE 5.8](/unreal-engine-5-8-performance-highlights/)
+{: .notice--info}
+
 As usual I approached this list from the game development perspective. Focusing on runtime performance of the game, profiling capabilities, bugs that affected performance, new CVARs for quality/performance tuning and some of the editor iteration performance as those have some notable changes.
 
 There are some major improvements like a new **Nanite Foliage** system using voxels which is a game changer and a much desired improvement for foliage rendering. Lumen continues moving away from Software ray-tracing (SWRT) by deprecating their "SWRT detail traces" render path and focusing on getting hardware raytracing to run at 60hz. **MegaLights** is moving into Beta, we can now inject **Custom HLODs** to give us greater control for distant geometry and more unusual changes such as optimizations to Windows high-precision mouse handling. Read the original full release notes [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-7-release-notes)

@@ -40,6 +40,8 @@ sidebar-main:
         url: /unreal-engine-cpp-guide
       - title: "- Naming Convention Guide"
         url: /unreal-engine-naming-convention-guide
+      - title: "- UE 5.8 Performance Highlights"
+        url: /unreal-engine-5-8-performance-highlights/
       - title: "- UE 5.7 Performance Highlights"
         url: /unreal-engine-5-7-performance-highlights/
       - title: "- Unreal Engine Optimization on a Budget"

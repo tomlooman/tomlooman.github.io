@@ -14,6 +14,10 @@ sidebar:
 
 The release of Unreal Engine 5.6 brings a lot of incredible performance improvements to the engine. In these alternative release notes I have filtered the list down to the most interesting optimizations and performance related changes. Where appropriate I have added my own notes, to explain more clearly or give context as these notes can sometimes be rather vague or short.
 
+**Performance highlights by Unreal Engine version:**<br>
+[UE 5.5](/unreal-engine-5-5-performance-highlights/) · **UE 5.6 (this article)** · [UE 5.7](/unreal-engine-5-7-performance-highlights/) · [UE 5.8](/unreal-engine-5-8-performance-highlights/)
+{: .notice--info}
+
 This is not every single optimization that made it into 5.6, instead primarily those that I think you should be aware of, might change previous assumptions or require manual changes or CVAR tuning. You can find the original full release notes [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-6-release-notes).
 
 ## Summary
