@@ -1,7 +1,7 @@
 ---
 title: "Unreal Engine Learning Resources"
 date: 2020-07-28
-last_modified_at: 12-09-2025
+last_modified_at: 21-10-2026
 permalink: /unreal-engine-bookmarks/
 coverImage: "epicparty_dannyoakes_01.jpg"
 layout: resourcecollection
@@ -27,7 +27,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
    Comprehensive reference guide for Unreal Engine C++.
 - [Course: Professional Game Development in C++ and Unreal Engine 5](https://tomlooman.com/courses/unrealengine-cpp/)  
    My Unreal Engine C++ Course for those looking to start or improve their C++ skills. Originally taught at Stanford University
-- [Laura's C++ Speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html) (NEW)  
+- [Laura's C++ Speedrun](https://landelare.github.io/2023/01/07/cpp-speedrun.html)
    Good list of things to be aware of when starting out in Unreal's C++ environment. Assumes C++ knowledge, just touching on the Unreal specifics.
 - [Why C++ In Unreal Engine Isn't That Scary?](https://dev.epicgames.com/community/learning/tutorials/Ml0p/why-c-in-unreal-engine-isn-t-that-scary)  
    "Working with C++ in Unreal Engine might be much easier than you think. It's halfway to the simplicity of custom scripting language."_
@@ -89,15 +89,21 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 - [User Interfaces Optimization Guidelines](https://dev.epicgames.com/documentation/en-us/unreal-engine/optimization-guidelines-for-umg-in-unreal-engine)
    Best practices guide by Epic for UMG and Slate UI.
 
-## Collision & Physics
+### Scalability & Platforms
 
-- [Tech Artist Playbook for Chaos Performance](https://dev.epicgames.com/community/learning/tutorials/KWeX/unreal-engine-a-tech-artist-s-playbook-for-chaos-performance)
-   Valuable and practical insight into optimizing Collision & Physics.
+- [SteamDeck Plugin](https://github.com/FeralCatDen/SteamDeckPlatform)  
+   Make SteamDeck its own 'Platform' to easily configure platform settings & apply scalability quality settings
 
 ## Performance Fun Reads
 
 - [Speeding up the Unreal Editor launch by not spawning 38000 tooltips?](https://larstofus.com/2025/09/02/speeding-up-the-unreal-editor-launch-by-not-spawning-38000-tooltips/)  
    The Editor & Project settings menus may slow down editor starts. An interesting read about the editor performance.
+
+## Collision & Physics
+
+- [Tech Artist Playbook for Chaos Performance](https://dev.epicgames.com/community/learning/tutorials/KWeX/unreal-engine-a-tech-artist-s-playbook-for-chaos-performance)
+   Valuable and practical insight into optimizing Collision & Physics.
+
 
 ## Materials (Shaders)
 
@@ -159,7 +165,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 - [Persistent Data Compendium](https://wizardcell.com/unreal/persistent-data/)  
    "Compendium for traveling, disconnecting, and persisting data across such scenarios"
 
-## Editor Extensions
+## Editor Tools & Extensions
 
 - [GenericGraph - Data structure Plugin](https://github.com/jinyuliao/GenericGraph)  
    Extend the editor for things like quests, dialogue, and progression systems. Provides a starting point to build your own.
@@ -169,6 +175,8 @@ Check out the [Game Development Resource](/game-development-resources) Page!
    Introductory tutorial on setting up a button and details panel.
 - [Plugin Creation Resources](https://github.com/Sythenz/UE4-Plugin-Resources)  
    Collection of tutorials on creating plugins, modules, and slate.
+- [Visualizing Everything in Unreal’s Editor Viewport](https://haukethiessen.com/visualizing-everything-in-unreals-editor-viewport/) - Hauke Thiessen
+Build custom visualizations to inspect your content directly in the editor viewport. Useful for production tools and performance audits such as visualizing Detail Mode on primitives.
 - [Editor Visualization Helpers](https://www.stevestreeting.com/2021/09/14/ue4-editor-visualisation-helper/)  
    C++ Tutorial on implementing editor-time helpers to visualize your Actors in the world.
 
@@ -189,7 +197,7 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 - [Particle Sorting Mini Tutorial](https://realtimevfx.com/t/niagara-5-3-sorting-mini-tutorial/24380)  
    Niels explains how Sorting works with Niagara
 
-## Unreal Editor
+## Editor Workflow & Production
 
 - [Content Browser 'Search' Syntax Cheat Sheet](https://www.unrealdirective.com/unreal-search-syntax/)  
    The Content Browser allows for complex filtering in the search box.
@@ -218,5 +226,3 @@ Check out the [Game Development Resource](/game-development-resources) Page!
 
 - [How to fix Motion Blur for RTS Games in Unreal](https://haukethiessen.com/how-to-fix-motion-blur-for-rts-games-in-unreal/)  
    Some camera modes might have problems with motion blur, this might be what you need.
-- [SteamDeck Plugin](https://github.com/FeralCatDen/SteamDeckPlatform)  
-   Make SteamDeck its own 'Platform' to easily configure platform settings & apply scalability quality settings

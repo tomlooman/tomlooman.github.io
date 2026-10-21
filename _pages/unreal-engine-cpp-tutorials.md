@@ -34,7 +34,7 @@ Essential knowledge for Unreal Engine is the built-in [Gameplay Framework](/unre
 
 ## Unreal Engine Bookmarks Collection
 
-For much more C++ content created by others in the community, check out my [Unreal Engine Bookmarks](/unreal-engine-resources) page.
+For much more C++ content created by others in the community, check out my [Unreal Engine Bookmarks](/unreal-engine-bookmarks) page.
 
 ## Latest C++ Content
 
