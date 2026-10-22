@@ -42,7 +42,7 @@ Best of all, **the complete rebuild is available at no additional cost for exist
 
 What began as a straightforward Unreal Engine 5 update gradually turned into something much larger. Over the past year, I have rebuilt the course project, redesigned its gameplay systems, expanded and reorganized the curriculum, and re-recorded every lesson.
 
-Five years of additional game development experience and student feedback helped me refine this new course curriculum to be even better than the original. The result is a densely packed 32-hour learning path built around modern Unreal Engine 5 C++ development, with updated systems, deeper explanations, and more advanced programming concepts than the original course.
+Five years of additional game development experience and student feedback helped me refine this new course curriculum to be even better than the original. The result is a densely packed 30+ hour learning path built around modern Unreal Engine 5 C++ development, with updated systems, deeper explanations, and more advanced programming concepts than the original course.
 
 **It launches publicly on September 21, exactly five years after the original.** 
 
@@ -50,7 +50,7 @@ Five years of additional game development experience and student feedback helped
 
 ## More Than an Engine Upgrade
 
-The rebuilt course is a densely packed 30-hour learning path created for modern Unreal Engine 5 C++ development. The new curriculum is roughly 6 hours longer, while more compactly edited, adding even more time to demonstrate C++ programming concepts and letting me go into more depth with each topic.
+The rebuilt course is a densely packed 30+ hour learning path created for modern Unreal Engine 5 C++ development. The new curriculum is roughly 6 hours longer, while more compactly edited, adding even more time to demonstrate C++ programming concepts and letting me go into more depth with each topic.
 
 It progresses from the essential Unreal C++ foundations into increasingly advanced gameplay systems. Along the way, I explain not only how each system works, but why it is designed that way, which alternatives exist, and how to diagnose problems when things do not work as expected. New lessons also introduce more advanced subjects such as [data-oriented design](https://gamesfromwithin.com/data-oriented-design/) to give you a different perspective of the usual Object Oriented Programming (OOP) which Unreal heavily relies on but is not always suitable for performance focused gameplay code.
 
@@ -72,7 +72,7 @@ Existing students are welcome to follow the new course again. Even if you comple
 
 The complete rebuild is automatically **available to every current C++ Course student at no additional cost**.
 
-Providing this upgrade at no additional cost is an important part of my commitment to lifetime access and something I promised students years ago when UE5 first released. The students who supported the original course should continue to benefit as Unreal Engine changes and the curriculum improves. The rebuilt took a long time to kick off, since the original remained quite relevant even with it being recorded in a much older Unreal Engine version, after a lot of research, redesigning and improving my owns skills, I finally felt it was time to completely remake the course and have it be an upgrade across the board.
+Providing this upgrade at no additional cost is an important part of my commitment to lifetime access and something I promised students years ago when UE5 first released. The students who supported the original course should continue to benefit as Unreal Engine changes and the curriculum improves. The rebuild took a long time to kick off because the original remained relevant despite being recorded in a much older Unreal Engine version. After a lot of research, redesigning, and improving my own skills, I finally felt it was time to completely remake the course and make it an upgrade across the board.
 
 I made that promise years ago, and this rebuild delivers on it.
 
@@ -94,7 +94,7 @@ With the rebuilt core course complete, my next focus is a dedicated **Multiplaye
 
 Multiplayer was included in the original course, therefore **current C++ students will receive the module at no additional cost.**
 
-For the rebuilt edition, I separated multiplayer into its own advanced module. This creates a more focused core curriculum for developers who do not need multiplayer programming, while giving me room to explore modern Unreal Engine multiplayer development in greater depth. Even without multiplayer, the new 30-hour core curriculum is larger than the complete original course (at roughly 25 hours).
+For the rebuilt edition, I separated multiplayer into its own advanced module. This creates a more focused core curriculum for developers who do not need multiplayer programming, while giving me room to explore modern Unreal Engine multiplayer development in greater depth. Even without multiplayer, the new 30+ hour core curriculum is larger than the complete original course (at roughly 25 hours).
 
 The module is planned for release later this year (Q4 2026). **During the fifth-anniversary launch (lasting till September 30th), new students will also receive it at no additional cost** and gain access automatically when it is released. **After this sale ends, the module will be a separate add-on purchase.**
 
