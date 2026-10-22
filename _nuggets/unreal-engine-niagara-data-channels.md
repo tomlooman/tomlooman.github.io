@@ -26,7 +26,7 @@ Niagara Data Channels can be used as an optimization to use one or a few Niagara
 
 ## Code Examples
 
-You can find the implementation of sending data into the NDC in `URogueProjectilesSubsystem::SpawnImpactFX`, the most interesting code snippet is added below:
+You can find the implementation of sending data into the NDC in [`URogueProjectilesSubsystem::SpawnImpactFX`](https://github.com/tomlooman/ActionRoguelike/blob/b3f0f4269957d6e2c305396669a4eb89f4310e10/Source/ActionRoguelike/Projectiles/RogueProjectilesSubsystem.cpp), the most interesting code snippet is added below:
 
 ````cpp
 // Helps find the correct island to inject this particle into
