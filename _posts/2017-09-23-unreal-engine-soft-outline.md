@@ -87,7 +87,7 @@ else
 
 Performance was recorded on an 850M mobile GPU at 1280x720 with ~1.5ms measured and on my GTX 980 Ti it runs at 1920x1080 with 0.8ms for the post process material. It depends heavily on the amount of iterations in the spiral blur. You will want to keep the DistanceSteps and RadialSteps as low as possible while maintaining a smooth edge. In the demo I settled on 4 DistanceSteps and 8 RadialSteps which is 32 iterations.
 
-[![](/assets/images/7sUn0Cx.jpg "source: imgur.com")](https://imgur.com/7sUn0Cx)
+[![GPU profiler showing the blurred-outline post-process material taking 1.57 ms at 1280 by 720 resolution.](/assets/images/softoutline_gpuprofiler.jpg "source: imgur.com")](https://imgur.com/7sUn0Cx)
 
 ## Conclusion
 

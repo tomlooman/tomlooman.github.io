@@ -19,11 +19,11 @@ Earlier this week I tweeted about hit-masking characters to show dynamic blood a
 
 ![](/assets/images/ue4_hitmask_damageexample.jpg)
 
-[![](/assets/images/etOcKPR.gif "source: imgur.com")](https://imgur.com/etOcKPR)
+[![First-person view shooting three mannequins, with wound masks appearing at the hit locations.](/assets/images/characterwounds_hitmasks.gif "source: imgur.com")](https://imgur.com/etOcKPR)
 
 We have a few decal types in our game like bullet impacts and blood splats we splat on walls behind damaged characters. These decals are attached to the component they hit, but if you were to attempt to do this on an animated mesh you'd notice the decal sliding over the surface which doesn't look too great. I noticed this kind of sliding in PlayerUnknown's Battlegrounds the other day, where they use traditional decals on characters, but a more stable solution is desirable especially for third person games where you constantly see your own character's body. It does the trick with small decals where the problem isn't as noticeable. Here is an exaggerated example of decal sliding:
 
-[![](/assets/images/TWV2kvH.gif "source: imgur.com")](https://imgur.com/TWV2kvH)
+[![Blood decal sliding across an animated mannequin's torso as it moves.](/assets/images/characterwounds_decalsliding.gif "source: imgur.com")](https://imgur.com/TWV2kvH)
 
 I wanted to try and find a solution for this problem on our characters and I was inspired by Ryan Bruck's GDC demos using Render Material to RenderTarget technique to splat spheres onto a character via a render target which can be used to mask wounds into the shader. Here is Ryan's render target based damage implementation:
 
