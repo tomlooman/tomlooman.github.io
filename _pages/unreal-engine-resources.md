@@ -175,8 +175,8 @@ Check out the [Game Development Resource](/game-development-resources) Page!
    Introductory tutorial on setting up a button and details panel.
 - [Plugin Creation Resources](https://github.com/Sythenz/UE4-Plugin-Resources)  
    Collection of tutorials on creating plugins, modules, and slate.
-- [Visualizing Everything in Unreal’s Editor Viewport](https://haukethiessen.com/visualizing-everything-in-unreals-editor-viewport/) - Hauke Thiessen
-Build custom visualizations to inspect your content directly in the editor viewport. Useful for production tools and performance audits such as visualizing Detail Mode on primitives.
+- [Visualizing Everything in Unreal’s Editor Viewport](https://haukethiessen.com/visualizing-everything-in-unreals-editor-viewport/) - Hauke Thiessen  
+   Build custom visualizations to inspect your content directly in the editor viewport. Useful for production tools and performance audits such as visualizing Detail Mode on primitives.
 - [Editor Visualization Helpers](https://www.stevestreeting.com/2021/09/14/ue4-editor-visualisation-helper/)  
    C++ Tutorial on implementing editor-time helpers to visualize your Actors in the world.
 
