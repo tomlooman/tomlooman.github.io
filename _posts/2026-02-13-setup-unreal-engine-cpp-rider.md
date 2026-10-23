@@ -1,7 +1,7 @@
 ---
 title: "Setting up Rider for C++ and Unreal Engine"
 date: 2026-02-13
-last_modified_at: 2026-02-13
+last_modified_at: 2026-10-23
 categories: 
   - "C++ Programming"
 tags:
@@ -22,7 +22,7 @@ In this article we will install **JetBrains Rider** for use with **Unreal Engine
 
 - [JetBrains Rider](https://www.jetbrains.com/rider/download/?section=windows)
 - [Epic Games Launcher](https://www.unrealengine.com/en-US/download) and Unreal Engine 5.0+ installed
-- [Visual Studio Build Tools (MSBuild)](https://visualstudio.microsoft.com/downloads/) or [direct link to VS_BuildTools.exe](https://aka.ms/vs/17/release/vs_BuildTools.exe)
+- [Visual Studio Build Tools (MSBuild)](https://visualstudio.microsoft.com/downloads/) or [direct link to VS_BuildTools.exe (Version 2026)](https://aka.ms/vs/stable/vs_BuildTools.exe)
 
 ## Installing JetBrains Rider
 
@@ -53,11 +53,11 @@ For a list of recommended components to install, Epic maintains a list [here](ht
 
 Go to "Individual Components" tab in the Visual Studio Installer and select the following components:
 
-- **Windows 11 SDK (10.0.26100.3916)** or higher
-- **.NET Framework 4.8.1 SDK** or higher
-- **MSVC v143 - VS 2022 C++ x64/x86 build tools (v14.38-17.8)**
+- **Windows 11 SDK (10.0.26100) or newer**
+- **.NET SDK 10.0 (listed as ".NET SDK" in installer, no version)**
+- **MSVC Build Tools v14.50 for x64/x86**
 
-The above versions are for UE 5.6, if you are using a different version check the [current list](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine) on the official docs. 
+The above versions are for **UE 5.8**, if you are using a different version check the [version compatibility list](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine) on the official docs. 
 
 ## Creating a C++ Unreal Engine Project
 
