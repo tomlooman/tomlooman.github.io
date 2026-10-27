@@ -1,7 +1,7 @@
 ---
 title: "Setting up PSO Precaching & Bundled PSOs for Unreal Engine"
 date: 2023-10-18
-last_modified_at: 2026-04-10
+last_modified_at: 2026-10-27
 excerpt: "Guide to PSO precaching and bundled PSOs in Unreal Engine to reduce shader hitching and improve rendering performance."
 categories: 
   - "Performance & Optimization"
@@ -17,12 +17,12 @@ redirect_from:
   - /psocaching-unreal-engine/
 ---
 
-**In recent years DirectX 12 games have gotten a bad rep for shader stutters. The most common issue we see discussed at launch is due to a lack of pre-compiling _Pipeline State Objects_. These PSOs (required by the GPU) need to be compiled on the CPU if not already cached on the local machine and will cause hitches as they may cost anywhere from a few milliseconds to several hundreds of milliseconds to compile before we may continue execution.**
+**In recent years DirectX 12 games have gotten a bad reputation for shader stutters. The most common issue we see discussed at launch is due to a lack of pre-compiling _Pipeline State Objects_. These PSOs (required by the GPU) need to be compiled on the CPU if not already cached on the local machine and will cause hitches as they may cost anywhere from a few milliseconds to several hundreds of milliseconds to compile before we may continue execution.**
 
 {: .notice--info }
-**Update:** A detailed video section on PSO gathering and project configuration is available in my [**Complete Game Optimization for Unreal Engine 5 Course**](https://tomlooman.com/courses/unrealengine-optimization/)! Feel free to use the written article below or check out the course which covers PSOs and MANY more essential topics for good game performance.
+**Update:** A detailed video section on PSO gathering and project configuration is available in my [**Complete Game Optimization for Unreal Engine 5 Course**](https://tomlooman.com/courses/unrealengine-optimization/)! Feel free to use the written article below or check out the course which covers PSOs and MANY more essential topics for optimizing your Unreal Engine 5 titles.
 
-In short, a "PSO" tells the GPU exactly what state it must set itself to before executing certain operations such as drawcalls. This PSO needs to be _compiled_ and is GPU dependent and therefore can't be done ahead of time on certain platforms such as PC. For platforms like Xbox and PlayStation this can be done during Cooking of the project as the hardware is known ahead of time. This explains why certain game releases only suffer from hitch related issues on PC and not consoles.
+In short, a "PSO" tells the GPU exactly what state it must set itself to before executing certain operations such as drawcalls. This PSO needs to be _compiled_ and is GPU (Make, Model, Driver) dependent and therefore can't be done ahead of time on certain platforms such as PC. For platforms like Xbox and PlayStation this can be done during Cooking of the project as the hardware is known ahead of time. This explains why certain game releases only suffer from hitch related issues on PC and not consoles.
 
 _"Earlier graphics APIs, such as Direct3D 11, needed to make dozens of separate calls to configure GPU parameters on the fly before issuing draw calls. More recent graphics APIs, such as Direct3D 12 (D3D12), Vulkan, and Metal, support using packages of pre-configured GPU state information, called Pipeline State Objects (PSOs), to change GPU states more quickly._
 
@@ -278,6 +278,19 @@ Handling Bundled PSOs is a lot of work compared to the new PSO Precaching. There
 - Have a custom map for PSO gathering. This can contain all your spawnables from gameplay such as items, weapons.
 
 Don't forget to run the game on the low/medium/high/epic Scalability settings for full coverage.
+
+## Advanced Shader Delivery (Since 5.8.4)
+
+**DirectX Advanced Shader Delivery (ASD)** moves the shader compilation work out of the game. The shaders are compiled ahead of time for each GPU and driver, and the store downloads the results alongside your game. This is a potentially huge feature for games and players. I have yet to try this out at the time of writing.
+
+Epic published new [documentation on Advanced Shader Delivery](https://dev.epicgames.com/documentation/unreal-engine/generating-a-state-object-database-for-advanced-shader-delivery).
+
+From the 5.8.4 release notes:
+- Support for generating SODBs via the ASDTool for compute shader and bundled PSOs from a cooked game
+- Developer workflow ASD testing tools for local compilation and registration
+
+**Note:** SODB = "State Object Database"
+
 
 ## Additional Notes
 
