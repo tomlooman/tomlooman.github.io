@@ -29,28 +29,27 @@ Niagara Data Channels can be used as an optimization to use one or a few Niagara
 You can find the implementation of sending data into the NDC in [`URogueProjectilesSubsystem::SpawnImpactFX`](https://github.com/tomlooman/ActionRoguelike/blob/b3f0f4269957d6e2c305396669a4eb89f4310e10/Source/ActionRoguelike/Projectiles/RogueProjectilesSubsystem.cpp), the relevant part of the code snippet is added below and is for UE 5.7+:
 
 ````cpp
-		// Since 5.7 we access NDCs through contexts
-		const UNiagaraDataChannel* NDC = ProjConfig.ConfigDataAsset->ImpactDecal_DataChannel->Get();
-		FNDCAccessContextInst AccessContext = NDC->GetTransientAccessContext();
+// Since 5.7 we access NDCs through contexts
+const UNiagaraDataChannel* NDC = ProjConfig.ConfigDataAsset->ImpactDecal_DataChannel->Get();
+FNDCAccessContextInst AccessContext = NDC->GetTransientAccessContext();
 
-		// Helps find the correct island to inject this particle into
-		// @todo: for now assumes legacy, eventually this should look into moving to the "new API" 
-		FNDCAccessContextLegacy& Context = AccessContext.GetChecked<FNDCAccessContextLegacy>();
-		Context.Location = ImpactPosition;
+// Helps find the correct island to inject this particle into
+// @todo: for now assumes legacy, eventually this should look into moving to the "new API" 
+FNDCAccessContextLegacy& Context = AccessContext.GetChecked<FNDCAccessContextLegacy>();
+Context.Location = ImpactPosition;
 
-		// DECAL, using the Data Channels rather than relying on individual particle systems
-		// only visible to CPU, for GPU particles we probably need "GPU" to be true instead 
-		UNiagaraDataChannelWriter* Writer = UNiagaraDataChannelLibrary::WriteToNiagaraDataChannel_WithContext(World, ProjConfig.ConfigDataAsset->ImpactDecal_DataChannel, AccessContext, 1, 
-			false, true, false, "ImpactDecals");
+// DECAL, using the Data Channels rather than relying on individual particle systems
+// only visible to CPU, for GPU particles we probably need "GPU" to be true instead 
+UNiagaraDataChannelWriter* Writer = UNiagaraDataChannelLibrary::WriteToNiagaraDataChannel_WithContext(World, ProjConfig.ConfigDataAsset->ImpactDecal_DataChannel, AccessContext, 1, 
+  false, true, false, "ImpactDecals");
 
-		Writer->WriteVector("ImpactLocation", 0, ImpactPosition);
-		Writer->WriteVector("ImpactNormal", 0, ProjConfig.Hit.ImpactNormal);
+Writer->WriteVector("ImpactLocation", 0, ImpactPosition);
+Writer->WriteVector("ImpactNormal", 0, ProjConfig.Hit.ImpactNormal);
 ````
 
 In case you are using an older version (prior to UE 5.7) then you would write into the Niagara Data Channels like this:
 
 ````cpp
-
 // NOTE: THIS IS FOR OLDER VERSIONS PRIOR TO 5.7
 
 // Helps find the correct island to inject this particle into
@@ -65,7 +64,7 @@ Writer->WriteVector("ImpactLocation", 0, ImpactPosition);
 Writer->WriteVector("ImpactNormal", 0, ProjConfig.Hit.ImpactNormal);
 ````
 
-This code writes data into the NDC, which are their own assets:
+The code example writes impact data (position and normal) into the NDC, which are their own assets available in Content:
 
 ````cpp
 '/Game/ActionRoguelike/Effects/DataChannel_Impacts' // The main Data Channel configuration, linked up for the NS_Impact_Decal VFX below
