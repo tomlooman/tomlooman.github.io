@@ -33,8 +33,7 @@ You can find the implementation of sending data into the NDC in [`URogueProjecti
 const UNiagaraDataChannel* NDC = ProjConfig.ConfigDataAsset->ImpactDecal_DataChannel->Get();
 FNDCAccessContextInst AccessContext = NDC->GetTransientAccessContext();
 
-// Helps find the correct island to inject this particle into
-// @todo: for now assumes legacy, eventually this should look into moving to the "new API" 
+// Helps find the correct island to inject this particle into ("Islands" NDC type is the current NDC type, which maps to the AccessContextLegacy)
 FNDCAccessContextLegacy& Context = AccessContext.GetChecked<FNDCAccessContextLegacy>();
 Context.Location = ImpactPosition;
 
