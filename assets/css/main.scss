@@ -720,12 +720,41 @@ th {
 
 .feature-block {
     display: grid;
-    grid-template-columns: 0.8fr 1fr;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
     gap: 2rem;
-    align-items: center;
+    align-items: stretch;
     margin: 2rem 0;
 
+    &__image {
+        min-width: 0;
+        align-self: start;
+
+        img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    }
+
+    &__content {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1.25rem;
+
+        // Keep text together at the top, leaving unused space below the content.
+        > * {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
     &--reverse {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+
         .feature-block__image {
             order: 2;
         }
@@ -734,30 +763,15 @@ th {
             order: 1;
         }
     }
-
-    img {
-        height: 100%;
-        object-fit: contain;
-        display: block;
-        border-radius: 8px;
-    }
-
-    h3 {
-        margin-top: 0;
-        margin-bottom: 1rem;
-    }
-
-    p:last-child {
-        margin-bottom: 0;
-    }
 }
 
-@media (max-width: 900px)
-{
+@media (max-width: 900px) {
     .feature-block {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
 
         &--reverse {
+            grid-template-columns: minmax(0, 1fr);
+
             .feature-block__image,
             .feature-block__content {
                 order: initial;
@@ -766,6 +780,81 @@ th {
     }
 }
 
+// Golden-orange palette for the C++ learning path and multiplayer add-on.
+#pricing[data-course-id="1"],
+.multiplayer-addon {
+    --course-accent: #{$color-orange};
+    --course-accent-soft: #{mix(#fff, $color-orange, 80%)};
+    --course-accent-subtle: #{mix(#fff, $color-orange, 94%)};
+    --course-accent-hover: #{mix(#fff, $color-orange, 65%)};
+    --course-accent-text: #a54e00;
+}
+
+.multiplayer-addon {
+    clear: both;
+    margin: 2.5rem 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 2px solid $color-blue;
+    border-top: 5px solid var(--course-accent);
+    border-radius: 8px;
+    background: var(--course-accent-subtle);
+    scroll-margin-top: 5rem;
+
+    &__eyebrow {
+        margin: 0 0 .5rem;
+        color: $color-blue;
+        font-size: .75em;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+
+    h2 { margin-top: 0; }
+
+    &__topics {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem 2rem;
+        margin: 1.5rem 0;
+        padding: 0;
+        list-style: none;
+
+        li { margin: 0; }
+        strong, span { display: block; }
+        span { margin-top: .3rem; font-size: .9em; }
+    }
+
+    &__note { font-size: .85em; }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .75rem 1.5rem;
+        font-size: .9em;
+
+        a {
+            color: var(--course-accent-text);
+            &:hover { color: $color-blue; }
+        }
+
+        .btn {
+            margin: 0;
+            border: 1px solid var(--course-accent);
+            background-color: var(--course-accent-soft);
+            color: var(--course-accent-text);
+
+            &:hover {
+                background-color: var(--course-accent-hover);
+                color: var(--course-accent-text);
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__topics { grid-template-columns: 1fr; }
+    }
+}
 
 .course-summary {
     background: $color-offwhite;

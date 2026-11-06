@@ -32,6 +32,14 @@ export const FAQs: { [key: number]: Faq[] } = {
     1: [
         ...commonFaq,
         {
+            question: "Is multiplayer programming included in the C++ course?",
+            answer: "The 'Multiplayer Programming in Unreal Engine 5' course is a separate, optional add-on purchase."
+        },
+        {
+            question: "Can I take the multiplayer programming course on its own?",
+            answer: "Yes, 'Multiplayer Programming in Unreal Engine 5' is also available as a standalone course. You will receive a game project (the same as we build in the C++ Course) to begin learning multiplayer programming from day 1."
+        },
+        {
             question: "Which version of Unreal Engine was this course created with?",
             answer: "The entire C++ course was rebuilt in 2026 using Unreal Engine 5.6 and is compatible with UE 5.8."
         },

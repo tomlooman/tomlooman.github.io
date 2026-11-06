@@ -7,12 +7,12 @@
 
     .signUpButton {
     margin-top: 1rem !important;
-    background-color: colors.$orange !important;
-    color: colors.$white !important;
-    border: none !important;
+    background-color: var(--course-accent-soft, #{colors.$orange-light}) !important;
+    color: var(--course-accent-text, #{color.scale(#ffa04a, $lightness: -50%)}) !important;
+    border: 1px solid var(--course-accent, #{colors.$orange}) !important;
 
     &:hover {
-        background-color: color.scale(colors.$orange, $lightness: -20%) !important;
+        background-color: var(--course-accent-hover, #{color.mix(colors.$orange, colors.$orange-light, 15%)}) !important;
     }
 }
 }

@@ -42,7 +42,8 @@ Compatible with UE 5.8 |
 Lifetime Access|
 Instructor Support|
 Completion Certificate|
-Subtitles in 5 Languages
+Subtitles in 5 Languages|
+[Optional Multiplayer Add-on](#multiplayer-addon)
 {% endcapture %}
 
 {% assign summary = summary_text | strip | split: "|" %}
@@ -132,6 +133,23 @@ This upgrade took over a year of work to complete. **Every existing student rece
     content=feature-upgradedrecording
 %}
 
+<section class="multiplayer-addon" id="multiplayer-addon" aria-labelledby="multiplayer-addon-title">
+  <p class="multiplayer-addon__eyebrow">Optional course add-on</p>
+  <h2 id="multiplayer-addon-title">Take your C++ skills into multiplayer</h2>
+  <p>Expand your Unreal Engine training with <strong>Multiplayer Programming in Unreal Engine 5</strong>. Add it to your C++ course package to learn the networking systems behind multiplayer gameplay in C++.</p>
+  <ul class="multiplayer-addon__topics">
+    <li><strong>Gameplay replication</strong><span>Understand how gameplay state is shared across the network.</span></li>
+    <li><strong>Remote Procedure Calls</strong><span>Learn how RPCs let clients and servers communicate.</span></li>
+    <li><strong>Network relevancy</strong><span>Explore which actors need to replicate to each client.</span></li>
+    <li><strong>Epic's Iris replication system</strong><span>Get familiar with Unreal Engine's newer replication system.</span></li>
+  </ul>
+  <p class="multiplayer-addon__note">Available as an optional add-on in the C++ &amp; Multiplayer Bundle.</p>
+  <div class="multiplayer-addon__actions">
+    <a class="btn btn--primary" href="#pricing-options">Browse Bundle Options</a>
+    <a href="https://courses.tomlooman.com/l/pdp/multiplayer-programming-unreal-engine">Browse the multiplayer curriculum (In Development) &rarr;</a>
+  </div>
+</section>
+
 ## Your Instructor : Tom Looman
 {% include bio.html %}
 
@@ -169,7 +187,7 @@ Prices include VAT/Sales tax where applicable.
 ## Training For Studios
 
 {: .text-center}
-Save time and money by offering your new hires a structured and industry-proven curriculum to onboard them efficiently into any team using Unreal Engine C++.
+Strengthen Unreal Engine C++ expertise across your studio—from getting new hires productive sooner to helping experienced engineers deepen their understanding of the engine.
 
 {: .text-center}
 The course has been used by game studios of all sizes for many years. We offer flexible enrollment to fit your needs on top of discounted pricing for bulk enrollment. You can reach out directly through [info@tomlooman.com](mailto:info@tomlooman.com) for more information.

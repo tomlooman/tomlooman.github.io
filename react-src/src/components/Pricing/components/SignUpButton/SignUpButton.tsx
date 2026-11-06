@@ -4,13 +4,14 @@ import style from './SignUpButton.module.scss';
 
 interface SignUpButtonProps {
     url?: string;
+    label?: string;
 }
 
-const SignUpButton = ({url}: SignUpButtonProps) => {
+const SignUpButton = ({url, label = "Buy Now"}: SignUpButtonProps) => {
     return (
         <div className={style.wrapper}>
             <Button variant="contained" classes={{ root: style.signUpButton }} href={url}>
-                Buy Now
+                {label}
             </Button>
         </div>
     );
