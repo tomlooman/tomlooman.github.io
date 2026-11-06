@@ -1,7 +1,7 @@
 ---
 title: "Creating Latent Blueprint Nodes"
 date: 2021-04-19
-last_modified_at: 2026-04-10
+last_modified_at: 2026-11-06
 categories: 
   - "C++ Programming"
 tags:
@@ -131,6 +131,9 @@ void ULZAsyncAction_RequestHttpMessage::HandleRequestCompleted(FString ResponseS
 	}
 
 	Completed.Broadcast(OutString, bSuccess);
+
+	// Must call destroy once completed
+	SetReadyToDestroy();
 }
 
 ULZAsyncAction_RequestHttpMessage* ULZAsyncAction_RequestHttpMessage::AsyncRequestHTTP(UObject* WorldContextObject, FString URL)
