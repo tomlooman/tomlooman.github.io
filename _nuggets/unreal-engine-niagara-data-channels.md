@@ -1,7 +1,7 @@
 ---
 title: "Niagara Data Channels for Projectile Impacts"
 date: 2026-09-10
-last_modified_at: 2026-09-10
+last_modified_at: 2026-11-06
 permalink: /unreal-engine-niagara-data-channels/
 categories:
   - "Performance & Optimization"
@@ -26,7 +26,7 @@ Niagara Data Channels can be used as an optimization to use one or a few Niagara
 
 ## Code Examples
 
-You can find the implementation of sending data into the NDC in [`URogueProjectilesSubsystem::SpawnImpactFX`](https://github.com/tomlooman/ActionRoguelike/blob/b3f0f4269957d6e2c305396669a4eb89f4310e10/Source/ActionRoguelike/Projectiles/RogueProjectilesSubsystem.cpp), the relevant part of the code snippet is added below and is for UE 5.7+:
+You can find the implementation of sending data into the NDC in [`URogueProjectilesSubsystem::SpawnImpactFX`](https://github.com/tomlooman/ActionRoguelike/blob/698655335b6cfa38d273863a39797d6c9964d5b4/Source/ActionRoguelike/Projectiles/RogueProjectilesSubsystem.cpp#L337), the relevant part of the code snippet is added below and is for UE 5.7+:
 
 ````cpp
 // Since 5.7 we access NDCs through contexts
@@ -46,7 +46,7 @@ Writer->WriteVector("ImpactLocation", 0, ImpactPosition);
 Writer->WriteVector("ImpactNormal", 0, ProjConfig.Hit.ImpactNormal);
 ````
 
-In case you are using an older version (prior to UE 5.7) then you would write into the Niagara Data Channels like this:
+In case you are using an older version (prior to UE 5.7) then you would [write into the Niagara Data Channels](https://github.com/tomlooman/ActionRoguelike/blob/b3f0f4269957d6e2c305396669a4eb89f4310e10/Source/ActionRoguelike/Projectiles/RogueProjectilesSubsystem.cpp#L332) like this:
 
 ````cpp
 // NOTE: THIS IS FOR OLDER VERSIONS PRIOR TO 5.7
