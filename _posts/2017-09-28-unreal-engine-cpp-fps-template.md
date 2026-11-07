@@ -1,6 +1,7 @@
 ---
 title: "Simple C++ FPS Template for Unreal Engine"
 date: 2017-09-28
+ue_version: "4"
 last_modified_at: 2026-04-10
 excerpt: "A simplified Unreal Engine FPS template for C++ learners, removing VR/mobile complexity and focusing on core gameplay code."
 categories: 

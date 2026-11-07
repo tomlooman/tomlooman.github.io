@@ -1,6 +1,7 @@
 ---
 title: "Unreal Engine Game Optimization on a Budget"
 date: 2022-11-03
+ue_version: "5.0"
 last_modified_at: 30-08-2025
 excerpt: "Notes from an Unreal Engine optimization talk covering profiling, performance tuning, and low-cost workflow improvements."
 categories: 

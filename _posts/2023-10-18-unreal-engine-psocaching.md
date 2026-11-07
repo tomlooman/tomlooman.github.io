@@ -1,6 +1,7 @@
 ---
 title: "Setting up PSO Precaching & Bundled PSOs for Unreal Engine"
 date: 2023-10-18
+ue_version: "5.3"
 last_modified_at: 2026-10-27
 excerpt: "Guide to PSO precaching and bundled PSOs in Unreal Engine to reduce shader hitching and improve rendering performance."
 categories: 

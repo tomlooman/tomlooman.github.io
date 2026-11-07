@@ -1,6 +1,8 @@
 ---
 title: "Adding 'Project Settings' to Unreal Engine (DeveloperSettings)"
 date: 2021-11-11
+ue_version: "4"
+ue_updated_version: "5.0"
 last_modified_at: 2026-04-10
 excerpt: "There is a better way to store and modify your project wide settings than using Blueprints or hard-coded C++. Learn how to use the Developer Settings class."
 categories: 

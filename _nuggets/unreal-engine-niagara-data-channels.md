@@ -1,6 +1,8 @@
 ---
 title: "Niagara Data Channels for Projectile Impacts"
 date: 2026-09-10
+ue_version: "5.6"
+ue_updated_version: "5.7"
 last_modified_at: 2026-11-06
 permalink: /unreal-engine-niagara-data-channels/
 categories:

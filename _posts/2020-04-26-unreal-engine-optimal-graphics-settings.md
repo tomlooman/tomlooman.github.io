@@ -1,6 +1,7 @@
 ---
 title: "Determine Optimal Scalability Settings for Players Hardware"
 date: 2020-04-26
+ue_version: "4"
 last_modified_at: 2026-04-10
 excerpt: "Learn how Unreal Engine can automatically apply scalability settings based on player hardware benchmark results."
 categories: 

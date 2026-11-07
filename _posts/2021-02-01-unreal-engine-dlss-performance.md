@@ -1,6 +1,7 @@
 ---
 title: "Exploring DLSS 2.0 in Unreal Engine"
 date: 2021-02-01
+ue_version: "4"
 last_modified_at: 2026-04-10
 excerpt: "A practical Unreal Engine guide to DLSS 2.0, comparing quality, performance, and setup for UE4 projects."
 categories: 

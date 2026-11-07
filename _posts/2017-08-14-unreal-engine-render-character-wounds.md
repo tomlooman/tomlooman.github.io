@@ -1,6 +1,7 @@
 ---
 title: "Rendering Wounds on Characters"
 date: 2017-08-14
+ue_version: "4"
 last_modified_at: 2026-04-10
 categories:
   - "Rendering"

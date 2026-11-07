@@ -1,6 +1,8 @@
 ---
 title: "Setting up Rider for C++ and Unreal Engine"
 date: 2026-02-13
+ue_version: "5.6"
+ue_updated_version: "5.8"
 last_modified_at: 2026-10-23
 categories: 
   - "C++ Programming"
@@ -46,7 +48,7 @@ https://aka.ms/vs/17/release/vs_BuildTools.exe) or scroll down on the page to lo
 
 Unreal Engine C++ build pipeline **requires a very specific set of components to be installed.** Please follow the instructions below carefully. I have also listed some possible errors you may encounter if you did not select the correct components. Selecting the wrong version of a component can cause your project to fail compilation.
 
-For a list of recommended components to install, Epic maintains a list [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine). I will list all the versions below for Unreal Engine 5.6. Every few releases of Unreal these are bumped to a more recent component version.
+For a list of recommended components to install, Epic maintains a list [here](https://dev.epicgames.com/documentation/en-us/unreal-engine/setting-up-visual-studio-development-environment-for-cplusplus-projects-in-unreal-engine). Every few releases of Unreal these are bumped to a more recent component version.
 
 ![](/assets/images/visualstudioinstaller_individualcomponents.png)
 *A very specific set of components in their correct version must be selected for Unreal Engine to compile correctly.*

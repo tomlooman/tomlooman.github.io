@@ -1,6 +1,7 @@
 ---
 title: "Mesh Outlines Without Post-Processing in Unreal Engine"
 date: 2019-06-04
+ue_version: "4"
 last_modified_at: 30-08-2025
 categories: 
   - "Rendering"

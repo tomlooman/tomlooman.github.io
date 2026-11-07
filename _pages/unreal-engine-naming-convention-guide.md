@@ -2,6 +2,8 @@
 title: "Unreal Engine Naming Convention Guide"
 permalink: /unreal-engine-naming-convention-guide/
 date: 2014-04-03
+ue_version: "4"
+ue_updated_version: "5.0"
 last_modified_at: 30-08-2025
 coverImage: "Thumb_Blog_Hero_2026_900.jpg"
 categories:

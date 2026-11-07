@@ -1,6 +1,8 @@
 ---
 title: "Unreal Engine 5 C++ Timers: SetTimer, FTimerHandle & Delegates Guide"
 date: 2015-04-09
+ue_version: "4"
+ue_updated_version: "5.4"
 last_modified_at: 03-04-2026
 categories: 
   - "C++ Programming"

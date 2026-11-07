@@ -1,6 +1,7 @@
 ---
 title: "Moving Unreal Engine Camera While Game Is Paused"
 date: 2020-01-25
+ue_version: "4"
 last_modified_at: 2026-04-10
 excerpt: "How to keep the Unreal Engine camera movable while the game is paused, including the necessary C++ setup."
 categories: 

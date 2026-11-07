@@ -1,6 +1,7 @@
 ---
 title: "GPU Profiling & Optimization in Unreal Engine 5 'Far Far West'"
 date: 2026-04-30
+ue_version: "5.7"
 last_modified_at: 30-04-2026
 categories:
   - "Performance & Optimization"

@@ -1,6 +1,7 @@
 ---
 title: "Optimizing Shader Compilation Settings & Reducing Package Sizes"
 date: 2020-01-02
+ue_version: "4"
 last_modified_at: 02-03-2026
 excerpt: "Reduce Unreal Engine shader compile times and package size with project settings and shader permutation optimizations."
 categories: 

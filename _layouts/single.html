@@ -39,6 +39,19 @@ layout: default
         </header>
       {% endunless %}
 
+      {% if page.ue_version %}
+        <p class="page__meta page__ue-version">
+          Originally written for <strong>Unreal Engine {{ page.ue_version | escape }}</strong>
+          {% if page.ue_updated_version %}
+            &middot; Updated for <strong>Unreal Engine {{ page.ue_updated_version | escape }}</strong>
+          {% endif %}
+          {% if page.last_modified_at %}
+            {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+            &middot; Last updated: <time class="dt-updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: date_format }}</time>
+          {% endif %}
+        </p>
+      {% endif %}
+
       <section class="page__content" itemprop="text">
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
