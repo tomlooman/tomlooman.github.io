@@ -85,7 +85,21 @@
     }
 
     .includes { font-size: .85rem; padding-top: .5rem; border-top: 1px solid colors.$gray; }
-    .paymentSummary { margin: .5rem 0 0; font-size: .75rem; }
+    .paymentSummary {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .3rem .6rem;
+        margin: .5rem 0 0;
+        font-size: .75rem;
+    }
+
+    .savings {
+        padding: .15em .6em;
+        border-radius: 1em;
+        background: var(--course-accent-soft, #{colors.$gray});
+        color: colors.$navy;
+    }
 
     > h2 {
         text-align: center;
@@ -206,11 +220,11 @@
                     }
 
                     > del {
-                        color: #687078;
-                        font-size: 1rem;
-                        text-decoration: line-through;
+                        color: colors.$charcoal;
+                        font-size: .68em;
+                        text-decoration: line-through 3px;
                         margin-left: .5rem;
-                        font-weight: normal;
+                        font-weight: 600;
                     }
                 }
             }

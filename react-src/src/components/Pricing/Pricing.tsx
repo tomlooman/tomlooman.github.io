@@ -19,6 +19,42 @@ interface PricingProps {
 
 const paymentBaseUrl = "https://courses.tomlooman.com/purchase";
 
+interface PriceDetailsProps {
+    price: number;
+    originalPrice: number | null;
+    monthly?: boolean;
+    perUser?: boolean;
+}
+
+const PriceDetails = ({ price, originalPrice, monthly, perUser }: PriceDetailsProps) => {
+    const payments = monthly ? 6 : 1;
+    const discounted = originalPrice != null && originalPrice > price;
+
+    return (
+        <>
+            <div className={style.priceAmount}>
+                {monthly && <div className={style.priceAdditionalInfo}>{payments} payments of</div>}
+                <h1>
+                    <span>{`$${price}`}</span>
+                    {discounted && (
+                        <del><span className="visually-hidden">Regular price: </span>{`$${originalPrice}`}</del>
+                    )}
+                </h1>
+                {monthly && <div className={style.priceAdditionalInfo}>/month</div>}
+                {perUser && <div className={style.priceAdditionalInfo}>per user</div>}
+            </div>
+            <p className={style.paymentSummary}>
+                {monthly ? `$${price * payments} total over ${payments} months` : "One-time payment"}
+                {discounted && (
+                    <strong className={style.savings}>
+                        {`Save ${Math.round((originalPrice - price) / originalPrice * 100)}%`}
+                    </strong>
+                )}
+            </p>
+        </>
+    );
+};
+
 const Pricing: React.FC<PricingProps> = ({
     courseId,
     saleActive = false,
@@ -148,18 +184,8 @@ const Pricing: React.FC<PricingProps> = ({
                         {isCpp && <p className={style.includes}>{bundleSelected
                             ? "Includes the C++ course and Multiplayer Programming add-on."
                             : "Includes the C++ course. Multiplayer is an optional add-on."}</p>}
-                        <div className={style.priceAmount}>
-                            {indieType === PriceItemType.INDIE_PAYMENT_PLAN && <div className={style.priceAdditionalInfo}>6 payments of</div>}
-                            <h1>
-                                <span>{`$${indiePrice}`}</span>
-                                {indieComparePrice != null && (
-                                    <del>{` $${indieComparePrice}`}</del>
-                                )}
-                            </h1>
-                            {indieType === PriceItemType.INDIE_PAYMENT_PLAN && <div className={style.priceAdditionalInfo}>/month</div>}
-                        </div>
-                        <p className={style.paymentSummary}>{indieType === PriceItemType.INDIE_PAYMENT_PLAN
-                            ? `$${indiePrice * 6} total over 6 months` : "One-time payment"}</p>
+                        <PriceDetails price={indiePrice} originalPrice={indieComparePrice}
+                            monthly={indieType === PriceItemType.INDIE_PAYMENT_PLAN} />
                     </div>
                     <SignUpButton url={indieBundle?.url ?? courseUrlForIndie} />
                 </div>
@@ -172,16 +198,7 @@ const Pricing: React.FC<PricingProps> = ({
                         {isCpp && <p className={style.includes}>{bundleSelected
                             ? "Includes the C++ course and Multiplayer Programming add-on."
                             : "Includes the C++ course. Multiplayer is an optional add-on."}</p>}
-                        <div className={style.priceAmount}>
-                            <h1>
-                                <span>{`$${proPrice}`}</span>
-                                {proComparePrice != null && (
-                                    <del>{` $${proComparePrice}`}</del>
-                                )}
-                            </h1>
-                            <div className={style.priceAdditionalInfo}> per user</div>
-                        </div>
-                        <p className={style.paymentSummary}>One-time payment</p>
+                        <PriceDetails price={proPrice} originalPrice={proComparePrice} perUser />
                     </div>
                     <SignUpButton url={proBundle?.url ?? courseUrlForPro} />
                 </div>
