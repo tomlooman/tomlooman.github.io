@@ -29,7 +29,6 @@
     <script>
     (function () {
         const banner = document.getElementById("sales-banner");
-        const timer = document.getElementById("sales-banner-timer");
         const close = document.getElementById("sales-banner-close");
 
         if (!banner) return;
@@ -49,13 +48,21 @@
             return;
         }
 
+        const rootStyle = document.documentElement.style;
+        function updateBannerHeight() {
+            rootStyle.setProperty("--sales-banner-height", banner.offsetHeight + "px");
+        }
+        updateBannerHeight();
+        const observer = new ResizeObserver(updateBannerHeight);
+        observer.observe(banner, { box: "border-box" });
+
         // User manually closes it
         close?.addEventListener("click", () => {
             localStorage.setItem(STORAGE_KEY, today);
+            observer.disconnect();
+            rootStyle.removeProperty("--sales-banner-height");
             banner.remove();
         });
-
-        if (!timer) return;
 
     })();
     </script>

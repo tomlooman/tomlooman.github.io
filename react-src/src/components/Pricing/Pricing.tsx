@@ -18,6 +18,7 @@ interface PricingProps {
 }
 
 const paymentBaseUrl = "https://courses.tomlooman.com/purchase";
+const indiePaymentCount = 6;
 
 interface PriceDetailsProps {
     price: number;
@@ -27,7 +28,7 @@ interface PriceDetailsProps {
 }
 
 const PriceDetails = ({ price, originalPrice, monthly, perUser }: PriceDetailsProps) => {
-    const payments = monthly ? 6 : 1;
+    const payments = monthly ? indiePaymentCount : 1;
     const discounted = originalPrice != null && originalPrice > price;
 
     return (
@@ -67,28 +68,20 @@ const Pricing: React.FC<PricingProps> = ({
     const isCpp = courseId === Courses.C_PLUS_PLUS;
     const bundleReady = isCpp && isBundlePlanReady(CppMultiplayerBundle.indieBasic)
         && isBundlePlanReady(CppMultiplayerBundle.pro);
+    const singleBundle = bundleReady ? getBundleOffer(CppMultiplayerBundle.indieBasic, saleActive) : null;
+    const monthlyBundle = bundleReady && isBundlePlanReady(CppMultiplayerBundle.indiePaymentPlan)
+        ? getBundleOffer(CppMultiplayerBundle.indiePaymentPlan, saleActive) : null;
+    const proBundle = bundleReady ? getBundleOffer(CppMultiplayerBundle.pro, saleActive) : null;
     const bundleSelected = bundleReady && includeMultiplayer;
-    const allowPaymentPlan = !bundleSelected || isBundlePlanReady(CppMultiplayerBundle.indiePaymentPlan);
+    const allowPaymentPlan = !bundleSelected || monthlyBundle != null;
     const indieType = allowPaymentPlan ? selectedIndieType : PriceItemType.INDIE_BASIC;
 
     const prices = Prices[courseId];
 
-    const indieOriginalPrice =
-        indieType === PriceItemType.INDIE_BASIC
-            ? prices.INDIE_BASIC
-            : prices.INDIE_PAYMENT_PLAN;
-
-    const indieDiscountedPrice = saleActive
-        ? (
-            indieType === PriceItemType.INDIE_BASIC
-                ? prices.INDIE_BASIC_DISCOUNTED
-                : prices.INDIE_PAYMENT_PLAN_DISCOUNTED
-        )
-        : null;
-
-    const proDiscountedPrice = saleActive
-        ? prices.PRO_DISCOUNTED
-        : null;
+    const singlePrice = (saleActive ? prices.INDIE_BASIC_DISCOUNTED : null) ?? prices.INDIE_BASIC;
+    const monthlyPrice = (saleActive ? prices.INDIE_PAYMENT_PLAN_DISCOUNTED : null) ?? prices.INDIE_PAYMENT_PLAN;
+    const proCoursePrice = (saleActive ? prices.PRO_DISCOUNTED : null) ?? prices.PRO;
+    const singleExtra = singleBundle && singleBundle.price - singlePrice;
 
     const productIdForIndie = ProductId[courseId][indieType];
     let courseUrlForIndie =
@@ -107,54 +100,31 @@ const Pricing: React.FC<PricingProps> = ({
             `&coupon_code=${encodeURIComponent(prices.PRO_COUPON_CODE)}`;
     }
 
-    const indieBundlePlan = indieType === PriceItemType.INDIE_PAYMENT_PLAN
-        ? CppMultiplayerBundle.indiePaymentPlan : CppMultiplayerBundle.indieBasic;
-    const indieBundle = bundleSelected && isBundlePlanReady(indieBundlePlan)
-        ? getBundleOffer(indieBundlePlan, saleActive) : null;
-    const proBundle = bundleSelected ? getBundleOffer(CppMultiplayerBundle.pro, saleActive) : null;
-    const indiePrice = indieBundle ? indieBundle.price : (indieDiscountedPrice ?? indieOriginalPrice);
-    const indieComparePrice = indieBundle ? indieBundle.originalPrice
-        : (indieDiscountedPrice != null ? indieOriginalPrice : null);
-    const proPrice = proBundle ? proBundle.price : (proDiscountedPrice ?? prices.PRO);
-    const proComparePrice = proBundle ? proBundle.originalPrice
-        : (proDiscountedPrice != null ? prices.PRO : null);
+    const monthly = indieType === PriceItemType.INDIE_PAYMENT_PLAN;
+    const indieBundle = bundleSelected ? (monthly ? monthlyBundle : singleBundle) : null;
+    const selectedProBundle = bundleSelected ? proBundle : null;
+    const indiePrice = indieBundle?.price ?? (monthly ? monthlyPrice : singlePrice);
+    const indieComparePrice = indieBundle ? indieBundle.originalPrice : (monthly ? prices.INDIE_PAYMENT_PLAN : prices.INDIE_BASIC);
+    const proPrice = selectedProBundle?.price ?? proCoursePrice;
+    const proComparePrice = selectedProBundle ? selectedProBundle.originalPrice : prices.PRO;
 
     return (
         <div className={style.wrapper}>
             {bundleReady && (
-                <fieldset className={style.packageChoice}>
-                    <legend>Choose Your Learning Path</legend>
-                    <div className={style.packageOptions}>
-                        <div className={style.packageOption}>
-                            <input id="cpp-package-course" type="radio" name="cpp-package" checked={!bundleSelected}
-                                aria-describedby="cpp-package-course-description cpp-package-course-list"
-                                onChange={() => setIncludeMultiplayer(false)} />
-                            <div className={style.packageDetails}>
-                                <label htmlFor="cpp-package-course"><strong>C++ course</strong></label>
-                                <p id="cpp-package-course-description" className={style.packageDescription}>For developers who want to build single-player games.</p>
-                                <p className={style.packageContains}>Contains:</p>
-                                <ul id="cpp-package-course-list" className={style.packageCourses}>
-                                    <li>Professional Game Development in C++ and Unreal Engine 5</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className={style.packageOption}>
-                            <input id="cpp-package-bundle" type="radio" name="cpp-package" checked={bundleSelected}
-                                aria-describedby="cpp-package-bundle-description cpp-package-bundle-list"
-                                onChange={() => setIncludeMultiplayer(true)} />
-                            <div className={style.packageDetails}>
-                                <label htmlFor="cpp-package-bundle"><strong>C++ &amp; Multiplayer Bundle{!saleActive && ` (+$${CppMultiplayerBundle.indieBasic.price - prices.INDIE_BASIC} one-time)`}</strong></label>
-                                <p id="cpp-package-bundle-description" className={style.packageDescription}>For developers who want to build single-player and multiplayer games.</p>
-                                <p className={style.packageContains}>Contains:</p>
-                                <ul id="cpp-package-bundle-list" className={style.packageCourses}>
-                                    <li>Professional Game Development in C++ and Unreal Engine 5</li>
-                                    <li>{MultiplayerCourse.title}</li>
-                                </ul>
-                                <a className={style.packageLink} href="#multiplayer-addon">Explore the multiplayer add-on</a>
-                            </div>
-                        </div>
+                <div className={style.addOnOption}>
+                    <label>
+                        <input type="checkbox" checked={bundleSelected} aria-describedby="multiplayer-description"
+                            onChange={event => setIncludeMultiplayer(event.currentTarget.checked)} />
+                        <strong>Include the Multiplayer Programming add-on (+${singleExtra})</strong>
+                    </label>
+                    <div id="multiplayer-description" className={style.addOnDescription}>
+                        <p>The core C++ course curriculum focuses on <strong>single-player gameplay programming</strong>.</p>
+                        <p>The additional lessons guide you through adding <strong>multiplayer co-op support</strong> to that same project.</p>
+                        <p>Available with Indie and Pro. <a href="#multiplayer-addon">Explore the multiplayer add-on</a></p>
                     </div>
-                </fieldset>
+                    <img className={style.addOnThumbnail} src="/assets/images/multiplayer-programming-ue5.jpg"
+                        alt="Multiplayer Programming, UE 5.8+" width={900} height={506} loading="lazy" />
+                </div>
             )}
             <div className={style.content}>
                 <div className={style.priceItem}>
@@ -181,11 +151,9 @@ const Pricing: React.FC<PricingProps> = ({
                     </div>
                     <div className={style.priceDescription}>
                         <p>For individuals and studios with less than $1M in annual revenue or funding.<br/><br/>Single User License.</p>
-                        {isCpp && <p className={style.includes}>{bundleSelected
-                            ? "Includes the C++ course and Multiplayer Programming add-on."
-                            : "Includes the C++ course. Multiplayer is an optional add-on."}</p>}
+                        {bundleSelected && <p className={style.includes}>Multiplayer Programming add-on included.</p>}
                         <PriceDetails price={indiePrice} originalPrice={indieComparePrice}
-                            monthly={indieType === PriceItemType.INDIE_PAYMENT_PLAN} />
+                            monthly={monthly} />
                     </div>
                     <SignUpButton url={indieBundle?.url ?? courseUrlForIndie} />
                 </div>
@@ -195,12 +163,10 @@ const Pricing: React.FC<PricingProps> = ({
                     </div>
                     <div className={style.priceDescription}>
                         <p>For employees working at studios with $1M+ in annual revenue or funding.<br/><br/>Single User License.</p>
-                        {isCpp && <p className={style.includes}>{bundleSelected
-                            ? "Includes the C++ course and Multiplayer Programming add-on."
-                            : "Includes the C++ course. Multiplayer is an optional add-on."}</p>}
+                        {bundleSelected && <p className={style.includes}>Multiplayer Programming add-on included.</p>}
                         <PriceDetails price={proPrice} originalPrice={proComparePrice} perUser />
                     </div>
-                    <SignUpButton url={proBundle?.url ?? courseUrlForPro} />
+                    <SignUpButton url={selectedProBundle?.url ?? courseUrlForPro} />
                 </div>
             </div>
             {isCpp && !bundleReady && (

@@ -76,6 +76,7 @@ $breakpoint-text-size-change-large: 1280px;
 /* avoid tiny horizontal scrolls due the above full width settings */
 html {
     overflow-x: clip;
+    scroll-padding-top: var(--sales-banner-height, 0px);
 }
 
 /* when loading urls with an anchor included, offset for sticky menu */
