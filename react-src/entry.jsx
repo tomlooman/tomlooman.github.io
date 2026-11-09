@@ -5,6 +5,7 @@ import EmailSignUp from './src/components/EmailSignUp';
 import CoursesMainIntroduction from './src/components/CoursesMainIntroduction';
 import Reviews from './src/components/Reviews';
 import Pricing from './src/components/Pricing';
+import SignUpButton from './src/components/Pricing/components/SignUpButton';
 import LinkButton from './src/components/LinkButton';
 import LatestBlogs from './src/components/LatestBlogs';
 import StudioLogos from './src/components/StudioLogos';
@@ -36,13 +37,19 @@ if (reviews) {
   createRoot(reviews).render(<Reviews courseId={Number(courseId)} />);
 }
 
+document.querySelectorAll('[data-sign-up-button] > a').forEach(link => {
+  createRoot(link.parentElement).render(
+    <SignUpButton url={link.getAttribute('href')} label={link.textContent.trim()} />
+  );
+});
+
 const pricing = document.getElementById('pricing');
 if (pricing) {
   const courseId = Number(pricing.getAttribute('data-course-id'));
   const saleActive = pricing.getAttribute('data-sale-active') === 'true';
 
   createRoot(pricing).render(
-    <Pricing courseId={courseId} saleActive={saleActive} />
+    <Pricing courseId={courseId} saleActive={saleActive} multiplayerUrl={pricing.dataset.multiplayerUrl} />
   );
 }
 

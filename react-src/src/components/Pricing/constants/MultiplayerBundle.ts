@@ -25,8 +25,18 @@ export interface BundlePlans {
 // The selector goes live only when both one-time checkout URLs are configured.
 // The $95 add-on applies to one-time licenses. The Indie bundle plan is 6 monthly payments of $79.
 export const CppMultiplayerBundle: BundlePlans = {
-    indieBasic: { price: 444, checkoutUrl: "https://courses.tomlooman.com/purchase?product_id=6907161" },
-    indiePaymentPlan: { price: 79, checkoutUrl: "https://courses.tomlooman.com/purchase?product_id=6907166" },
+    indieBasic: {
+        price: 444,
+        salePrice: 324,
+        couponCode: "BLACKFRIDAY",
+        checkoutUrl: "https://courses.tomlooman.com/purchase?product_id=6907161",
+    },
+    indiePaymentPlan: {
+        price: 79,
+        salePrice: 55,
+        couponCode: "BLACKFRIDAY",
+        checkoutUrl: "https://courses.tomlooman.com/purchase?product_id=6907166",
+    },
     pro: { price: 790, checkoutUrl: "https://courses.tomlooman.com/purchase?product_id=6907162" },
 };
 

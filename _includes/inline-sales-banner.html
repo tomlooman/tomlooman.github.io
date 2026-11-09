@@ -4,10 +4,10 @@
 <div class="wide-content">
   <section
     class="anniversary-offer"
-    style="background-image: url('https://www.tomlooman.com/assets/images/banner_full_gray.svg')"
+    style="background-image: url('{{ '/assets/images/banner_full_gray.svg' | relative_url }}')"
     aria-labelledby="anniversary-offer-title"
   >
-    <p class="anniversary-offer__eyebrow">Indie Developer Sale</p>
+    <p class="anniversary-offer__eyebrow">Black Friday SALE</p>
 
     <h2 id="anniversary-offer-title">
       Build Your Skills. Build Better Games.
@@ -15,17 +15,14 @@
 
     <p class="anniversary-offer__description">
     Practical Unreal Engine training for your next game.
-    <strong>Save 25%</strong> on this course with coupon code
+    <strong>Save up to 35%</strong> with code
     <code class="anniversary-offer__code">{{ site.data.sale.coupon_code | escape }}</code>.
     <br>Offer ends {{ site.data.sale.ends_at | date: "%B %-d at %H:%M" }} UTC.
     </p>
 
-    <a
-      class="btn btn--info anniversary-offer__button"
-      href="#pricing-options"
-    >
-      View Pricing &amp; Enroll
-    </a>
+    <div data-sign-up-button>
+      <a class="btn btn--info anniversary-offer__button" href="#pricing-options">View Pricing &amp; Enroll</a>
+    </div>
   </section>
 </div>
 {%endif%}

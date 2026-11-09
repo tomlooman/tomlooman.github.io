@@ -508,14 +508,15 @@ div.highlighter-rouge, figure.highlight {
 .sales-banner code,
 .anniversary-offer__code {
   display: inline-block;
-  padding: 0.12em 0.45em;
+  padding: 0.06em 0.28em;
   color: inherit;
   font-family: inherit;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
   background: rgba(255, 255, 255, 0.12);
-  border: 2px solid rgba(50, 50, 50, 1);
-  border-radius: 0.3rem;
+  border: 1px solid rgba(50, 50, 50, 1);
+  border-radius: 0.2rem;
 }
 
 .anniversary-offer {

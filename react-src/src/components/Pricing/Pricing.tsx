@@ -14,6 +14,7 @@ enum PriceItemType {
 interface PricingProps {
     courseId: Courses;
     saleActive?: boolean;
+    multiplayerUrl?: string;
 }
 
 const paymentBaseUrl = "https://courses.tomlooman.com/purchase";
@@ -21,6 +22,7 @@ const paymentBaseUrl = "https://courses.tomlooman.com/purchase";
 const Pricing: React.FC<PricingProps> = ({
     courseId,
     saleActive = false,
+    multiplayerUrl = MultiplayerCourse.url,
 }) => {
     const [selectedIndieType, setSelectedIndieType] =
         React.useState<PriceItemType>(PriceItemType.INDIE_BASIC);
@@ -105,7 +107,7 @@ const Pricing: React.FC<PricingProps> = ({
                                 aria-describedby="cpp-package-bundle-description cpp-package-bundle-list"
                                 onChange={() => setIncludeMultiplayer(true)} />
                             <div className={style.packageDetails}>
-                                <label htmlFor="cpp-package-bundle"><strong>C++ &amp; Multiplayer Bundle (+${CppMultiplayerBundle.indieBasic.price - prices.INDIE_BASIC} one-time)</strong></label>
+                                <label htmlFor="cpp-package-bundle"><strong>C++ &amp; Multiplayer Bundle{!saleActive && ` (+$${CppMultiplayerBundle.indieBasic.price - prices.INDIE_BASIC} one-time)`}</strong></label>
                                 <p id="cpp-package-bundle-description" className={style.packageDescription}>For developers who want to build single-player and multiplayer games.</p>
                                 <p className={style.packageContains}>Contains:</p>
                                 <ul id="cpp-package-bundle-list" className={style.packageCourses}>
@@ -149,9 +151,9 @@ const Pricing: React.FC<PricingProps> = ({
                         <div className={style.priceAmount}>
                             {indieType === PriceItemType.INDIE_PAYMENT_PLAN && <div className={style.priceAdditionalInfo}>6 payments of</div>}
                             <h1>
-                                {`$${indiePrice}`}
+                                <span>{`$${indiePrice}`}</span>
                                 {indieComparePrice != null && (
-                                    <span>{` $${indieComparePrice}`}</span>
+                                    <del>{` $${indieComparePrice}`}</del>
                                 )}
                             </h1>
                             {indieType === PriceItemType.INDIE_PAYMENT_PLAN && <div className={style.priceAdditionalInfo}>/month</div>}
@@ -172,9 +174,9 @@ const Pricing: React.FC<PricingProps> = ({
                             : "Includes the C++ course. Multiplayer is an optional add-on."}</p>}
                         <div className={style.priceAmount}>
                             <h1>
-                                {`$${proPrice}`}
+                                <span>{`$${proPrice}`}</span>
                                 {proComparePrice != null && (
-                                    <span>{` $${proComparePrice}`}</span>
+                                    <del>{` $${proComparePrice}`}</del>
                                 )}
                             </h1>
                             <div className={style.priceAdditionalInfo}> per user</div>
@@ -188,7 +190,7 @@ const Pricing: React.FC<PricingProps> = ({
                 <aside className={style.addOnNotice} aria-label="Optional multiplayer add-on">
                     <strong>Want to learn multiplayer too?</strong>
                     <p>Add {MultiplayerCourse.title} to your learning path. Available separately for ${MultiplayerCourse.standalonePrice}.</p>
-                    <a href={MultiplayerCourse.url}>View multiplayer course &rarr;</a>
+                    <a href={multiplayerUrl}>View multiplayer course &rarr;</a>
                 </aside>
             )}
         </div>

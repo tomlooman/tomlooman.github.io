@@ -30,9 +30,12 @@ redirect_from:
 
 {% assign course_summary_url = "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5" %}
 
-{% if sale_active and site.data.sale.coupon_code != blank %}
-  {% assign sale_coupon = site.data.sale.coupon_code | url_encode %}
-  {% assign course_summary_url = course_summary_url | append: "?coupon_code=" | append: sale_coupon %}
+{% assign multiplayer_url = "https://courses.tomlooman.com/l/pdp/multiplayer-programming-unreal-engine" %}
+{% assign coupon_code = site.data.sale.coupon_code | strip %}
+{% if sale_active and coupon_code != "" %}
+  {% assign coupon_query = coupon_code | url_encode | prepend: "?coupon_code=" %}
+  {% assign course_summary_url = course_summary_url | append: coupon_query %}
+  {% assign multiplayer_url = multiplayer_url | append: coupon_query %}
 {% endif %}
 
 {% capture summary_text %}
@@ -146,7 +149,7 @@ This upgrade took over a year of work to complete. **Every existing student rece
   <p class="multiplayer-addon__note">Available as an optional add-on in the C++ &amp; Multiplayer Bundle.</p>
   <div class="multiplayer-addon__actions">
     <a class="btn btn--primary" href="#pricing-options">Browse Bundle Options</a>
-    <a href="https://courses.tomlooman.com/l/pdp/multiplayer-programming-unreal-engine">Browse the multiplayer curriculum (In Development) &rarr;</a>
+    <a href="{{ multiplayer_url | escape }}">Browse the multiplayer curriculum (In Development) &rarr;</a>
   </div>
 </section>
 
@@ -178,7 +181,8 @@ Prices include VAT/Sales tax where applicable.
 <div 
   id="pricing" 
   data-course-id="1" 
-  data-sale-active="{{ sale_active }}">
+  data-sale-active="{{ sale_active }}"
+  data-multiplayer-url="{{ multiplayer_url | escape }}">
 </div>
 
 <br />
