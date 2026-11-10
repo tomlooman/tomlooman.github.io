@@ -1,7 +1,7 @@
 ---
 title: "Asset Manager for Data Assets & Async Loading"
 date: 2020-12-17
-last_modified_at: 2026-04-10
+last_modified_at: 2026-11-10
 excerpt: "Guide to using Unreal Engine's Asset Manager for data assets and async loading with example workflows."
 categories: 
   - "C++ Programming"
@@ -112,45 +112,27 @@ Loading in C++ works by creating a Delegate with your own set of parameters you 
 If the callback syntax is unfamiliar, read about [C++ delegates and parameter binding](/unreal-engine-cpp-guide/#delegates) to understand how the delegate binds a function and carries those parameters into the callback.
 
 ```cpp
-// Get the Asset Manager from anywhere
-if (UAssetManager* Manager = UAssetManager::GetIfValid())
 {
-    // Monster Id taken from a DataTable
-    FPrimaryAssetId MonsterId = SelectedMonsterRow->MonsterId;
+	FPrimaryAssetId MonsterId = SelectedRow->MonsterId;
 
-    // Optional "bundles" like "UI"
-    TArray<FName> Bundles;
+    // Optional "bundles" like "UI" to load sub-set of the full asset instead of everything (they must be soft pointers)
+	TArray<FName> Bundles;
 
-    // Locations array from omitted part of code (see github)
-    FVector SpawnLocation = Locations[0]; 
-
-    // Delegate with parameters we need once the asset had been loaded such as the Id we loaded and the location to spawn at. Will call function 'OnMonsterLoaded' once it's complete.
-    FStreamableDelegate Delegate = FStreamableDelegate::CreateUObject(this, &ARogueGameModeBase::OnMonsterLoaded, MonsterId, SpawnLocation);
-    
-    // The actual async load request
-    Manager->LoadPrimaryAsset(MonsterId, Bundles, Delegate);
+	FStreamableDelegate Delegate = FStreamableDelegate::CreateUObject(this, &ThisClass::OnMonsterLoaded, MonsterId, Locations[0]);
+	UAssetManager::Get().LoadPrimaryAsset(MonsterId, Bundles, Delegate);
 }
 ```
 
-The `OnMonsterLoaded` Function once load has completed:
+Inside `OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)`:
 
 ```cpp
-void ARogueGameModeBase::OnMonsterLoaded(FPrimaryAssetId LoadedId, FVector SpawnLocation)
-{
-    UAssetManager* Manager = UAssetManager::GetIfValid();
-    if (Manager)
-    {
-        URogueMonsterData* MonsterData = Cast<URogueMonsterData>(Manager->GetPrimaryAssetObject(LoadedId));
+// Resolve the Loaded Id to the specific Asset we just loaded
+URogueMonsterData* MonsterData = CastChecked<URogueMonsterData>(UAssetManager::Get().GetPrimaryAssetObject(LoadedId));
 
-        if (MonsterData)
-        {
-            AActor* NewBot = GetWorld()->SpawnActor<AActor>(MonsterData->MonsterClass, SpawnLocation, FRotator::ZeroRotator);
-        }
-    }
-}
+// ...
 ```
 
-[Example taken from the open-source Project Orion Sample Game.](https://github.com/tomlooman/ActionRoguelike/blob/master/Source/ActionRoguelike/Core/RogueGameModeBase.cpp)
+[Example taken from the open-source Project Orion Sample Game.](https://github.com/tomlooman/ActionRoguelike/blob/2ef8ef2b6e8e908774abda7ad8caabe2216bdfc3/Source/ActionRoguelike/Core/RoguePrimaryGameMode.cpp#L157-L197)
 
 ### Blueprint Async Loading Example
 
@@ -162,19 +144,19 @@ The downside of async loading in Blueprint is that we can't pass in additional p
 
 ### Asset Bundles
 
-Asset Bundles can be used to categorize the soft references inside your PrimaryAsset to a specific type or use-case. eg. in-game or menu. Sometimes you only need a small part of an asset to be loaded (eg. when viewing a weapon purely in UI without the Mesh rendered anywhere). You can mark up those variables with _meta = (Asset Bundles = "UI"_) (can be any name you decide) and during the async load request, you may specify to only load 1 or more specific bundles instead of the entire asset when no bundles are specified.
+Asset Bundles can be used to categorize the soft references inside your PrimaryAsset to a specific type or use-case. eg. in-game or menu. Sometimes you only need a small part of an asset to be loaded (eg. when viewing a weapon purely in UI without the Mesh rendered anywhere). You can mark up those variables with `meta = (Asset Bundles = "UI"`) (can be any name you decide) and during the async load request, you may specify to only load 1 or more specific bundles instead of the entire asset when no bundles are specified.
 
 ```cpp
-UPROPERTY(…, meta = (AssetBundles = "UI"))
-TSoftObjectPtr Icon;
+UPROPERTY(EditDefaultsOnly, meta = (AssetBundles = "UI"))
+TSoftObjectPtr<UTexture2D> Icon;
 
 /* Optional Action/Ability assigned to Item. Can be used to grant abilities while this item is active/equipped or to simply run item specific functions */
-UPROPERTY(…, meta = (AssetBundles = "Actions"))
-TArray> ActionClasses;
+UPROPERTY(EditDefaultsOnly, meta = (AssetBundles = "Actions"))
+TArray<TSoftClassPtr<URogueAction>> ActionClasses;
 
 /* Optional "Weapon" actor and/or world representation of this object if dropped or equipped by a player */
-UPROPERTY(…, meta = (AssetBundles = "Actor"))
-TSoftClassPtr ActorClass;
+UPROPERTY(EditDefaultsOnly, meta = (AssetBundles = "Actor"))
+TSoftClassPtr<AActor> ActorClass;
 ```
 
 ### Preloading Assets
