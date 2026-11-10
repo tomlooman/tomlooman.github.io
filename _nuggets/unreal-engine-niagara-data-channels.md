@@ -14,7 +14,8 @@ tags:
   - "cpu-optimization"
   - "project-orion"
   - "nugget"
-coverImage: "Thumb_Blog_Hero_2026_900.jpg"
+coverImage: "ndc_projectiles_impacts.jpg"
+excerpt: "How Project Orion sends projectile impact locations and normals to Niagara Data Channels (NDC) to draw decals in Unreal Engine 5. Includes C++ examples for UE 5.7 and earlier versions."
 layout: single
 ---
 

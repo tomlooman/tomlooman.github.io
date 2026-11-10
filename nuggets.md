@@ -1,12 +1,13 @@
 ---
 layout: archive
+title: "Nuggets"
+permalink: /nuggets/
+redirect_from:
+  - /nuggets.html
 search: false
 ---
-{% for nugget in site.nuggets %}
-  <h2>
-    <a href="{{ nugget.url }}">
-      {{ nugget.title }} - {{ nugget.category }}
-    </a>
-  </h2>
-  <p>{{ nugget.content | markdownify }}</p>
+
+{% assign nuggets = site.nuggets | sort: "date" | reverse %}
+{% for post in nuggets %}
+  {% include archive-single.html type="post" %}
 {% endfor %}

@@ -119,7 +119,7 @@ defaults:
 collections:
   nuggets:
     output: true
-    permalink: /:collection/:name
+    permalink: /:collection/:name/
 
 
 analytics:
