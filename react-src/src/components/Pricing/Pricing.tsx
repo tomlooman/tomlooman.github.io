@@ -110,22 +110,6 @@ const Pricing: React.FC<PricingProps> = ({
 
     return (
         <div className={style.wrapper}>
-            {bundleReady && (
-                <div className={style.addOnOption}>
-                    <label>
-                        <input type="checkbox" checked={bundleSelected} aria-describedby="multiplayer-description"
-                            onChange={event => setIncludeMultiplayer(event.currentTarget.checked)} />
-                        <strong>Include the Multiplayer Programming add-on (+${singleExtra})</strong>
-                    </label>
-                    <div id="multiplayer-description" className={style.addOnDescription}>
-                        <p>The core C++ course curriculum focuses on <strong>single-player gameplay programming</strong>.</p>
-                        <p>The additional lessons guide you through adding <strong>multiplayer co-op support</strong> to that same project.</p>
-                        <p>Available with Indie and Pro. <a href="#multiplayer-addon">Explore the multiplayer add-on</a></p>
-                    </div>
-                    <img className={style.addOnThumbnail} src="/assets/images/multiplayer-programming-ue5.jpg"
-                        alt="Multiplayer Programming, UE 5.8+" width={900} height={506} loading="lazy" />
-                </div>
-            )}
             <div className={style.content}>
                 <div className={style.priceItem}>
                     <div className={style.priceTitle}>
@@ -151,7 +135,6 @@ const Pricing: React.FC<PricingProps> = ({
                     </div>
                     <div className={style.priceDescription}>
                         <p>For individuals and studios with less than $1M in annual revenue or funding.<br/><br/>Single User License.</p>
-                        {bundleSelected && <p className={style.includes}>Multiplayer Programming add-on included.</p>}
                         <PriceDetails price={indiePrice} originalPrice={indieComparePrice}
                             monthly={monthly} />
                     </div>
@@ -163,12 +146,27 @@ const Pricing: React.FC<PricingProps> = ({
                     </div>
                     <div className={style.priceDescription}>
                         <p>For employees working at studios with $1M+ in annual revenue or funding.<br/><br/>Single User License.</p>
-                        {bundleSelected && <p className={style.includes}>Multiplayer Programming add-on included.</p>}
                         <PriceDetails price={proPrice} originalPrice={proComparePrice} perUser />
                     </div>
                     <SignUpButton url={selectedProBundle?.url ?? courseUrlForPro} />
                 </div>
             </div>
+            {bundleReady && (
+                <div className={style.addOnOption}>
+                    <label>
+                        <input type="checkbox" checked={bundleSelected} aria-describedby="multiplayer-description"
+                            onChange={event => setIncludeMultiplayer(event.currentTarget.checked)} />
+                        <strong>Include the Multiplayer Programming add-on (+${singleExtra})</strong>
+                    </label>
+                    <div id="multiplayer-description" className={style.addOnDescription}>
+                        <p>The core C++ course curriculum focuses on <strong>single-player gameplay programming</strong>.</p>
+                        <p>The additional lessons guide you through adding <strong>multiplayer co-op support</strong> to that same project.</p>
+                        <p>Available with Indie and Pro. <a href="#multiplayer-addon">Explore the multiplayer add-on</a></p>
+                    </div>
+                    <img className={style.addOnThumbnail} src="/assets/images/multiplayer-programming-ue5.jpg"
+                        alt="Multiplayer Programming, UE 5.8+" width={900} height={506} loading="lazy" />
+                </div>
+            )}
             {isCpp && !bundleReady && (
                 <aside className={style.addOnNotice} aria-label="Optional multiplayer add-on">
                     <strong>Want to learn multiplayer too?</strong>
