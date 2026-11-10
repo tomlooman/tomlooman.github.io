@@ -10,6 +10,8 @@ $typeface-heading: "Inter Tight", "Manrope", "Roboto", "Arial", sans-serif;
 $color-blue: #103D59;
 $color-blue-accent: #1A5273;
 $color-orange: #ffa04a;
+$color-burnt-orange: #812c13;
+$color-offer-orange: #c84d24;
 $color-offwhite: #F2F4FA;
 $color-lightgray: #eaeff8;
 $doc-font-size: 15px;
@@ -522,33 +524,49 @@ div.highlighter-rouge, figure.highlight {
 
 .anniversary-offer {
   margin-block: 2rem;
-  padding: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(0.75rem, 1.5vw, 1.25rem) clamp(1.5rem, 4vw, 3rem);
   text-align: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
 }
 
-.anniversary-offer__eyebrow {
+.anniversary-offer .anniversary-offer__eyebrow {
   margin: 0 0 0.5rem;
-  font-size: 0.8rem;
+  color: $color-offer-orange;
+  font-family: $typeface-heading;
+  font-size: clamp(2rem, 5vw, 3.25rem);
   font-weight: 800;
-  letter-spacing: 0.1em;
+  line-height: 1.05;
+  letter-spacing: 0.025em;
   text-transform: uppercase;
 }
 
 .anniversary-offer h2 {
   margin: 0;
+  color: #394957;
+  font-size: clamp(1.03rem, 2.35vw, 1.4rem);
+  font-weight: 600;
+  line-height: 1.25;
 }
 
-.anniversary-offer__description {
+.anniversary-offer .anniversary-offer__description {
   max-width: 760px;
-  margin: 0.85rem auto 1.25rem;
+  margin: 0.65rem auto 0.85rem;
+  font-size: 0.94rem;
   line-height: 1.6;
 }
 
 .anniversary-offer__button {
   margin: 0;
+}
+
+.anniversary-offer [data-sign-up-button] a {
+  background-color: $color-offer-orange !important;
+
+  &:hover {
+    background-color: #b8441e !important;
+  }
 }
 
 @media (max-width: 600px) {
@@ -562,7 +580,7 @@ div.highlighter-rouge, figure.highlight {
   }
 
   .anniversary-offer {
-    padding: 1.5rem 1rem;
+    padding: 0.75rem 1rem;
   }
 }
 
