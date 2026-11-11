@@ -453,12 +453,20 @@ div.highlighter-rouge, figure.highlight {
 
 #sales-banner-text {
   margin: 0;
+
+  &:has(+ #sales-banner-timer[hidden]) {
+    flex: 1;
+  }
 }
 
 #sales-banner-timer {
   margin-left: auto;
   flex-shrink: 0;
   white-space: nowrap;
+
+  &[hidden] {
+    display: none;
+  }
 }
 
 .sales-countdown {
