@@ -14,6 +14,7 @@ enum PriceItemType {
 interface PricingProps {
     courseId: Courses;
     saleActive?: boolean;
+    showMultiplayerAddon: boolean;
     multiplayerUrl?: string;
 }
 
@@ -59,14 +60,15 @@ const PriceDetails = ({ price, originalPrice, monthly, perUser }: PriceDetailsPr
 const Pricing: React.FC<PricingProps> = ({
     courseId,
     saleActive = false,
+    showMultiplayerAddon,
     multiplayerUrl = MultiplayerCourse.url,
 }) => {
     const [selectedIndieType, setSelectedIndieType] =
         React.useState<PriceItemType>(PriceItemType.INDIE_BASIC);
     const [includeMultiplayer, setIncludeMultiplayer] = React.useState(false);
 
-    const isCpp = courseId === Courses.C_PLUS_PLUS;
-    const bundleReady = isCpp && isBundlePlanReady(CppMultiplayerBundle.indieBasic)
+    const offerMultiplayer = courseId === Courses.C_PLUS_PLUS && showMultiplayerAddon;
+    const bundleReady = offerMultiplayer && isBundlePlanReady(CppMultiplayerBundle.indieBasic)
         && isBundlePlanReady(CppMultiplayerBundle.pro);
     const singleBundle = bundleReady ? getBundleOffer(CppMultiplayerBundle.indieBasic, saleActive) : null;
     const monthlyBundle = bundleReady && isBundlePlanReady(CppMultiplayerBundle.indiePaymentPlan)
@@ -167,7 +169,7 @@ const Pricing: React.FC<PricingProps> = ({
                         alt="Multiplayer Programming, UE 5.8+" width={900} height={506} loading="lazy" />
                 </div>
             )}
-            {isCpp && !bundleReady && (
+            {offerMultiplayer && !bundleReady && (
                 <aside className={style.addOnNotice} aria-label="Optional multiplayer add-on">
                     <strong>Want to learn multiplayer too?</strong>
                     <p>Add {MultiplayerCourse.title} to your learning path. Available separately for ${MultiplayerCourse.standalonePrice}.</p>

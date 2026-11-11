@@ -804,8 +804,8 @@ th {
     }
 }
 
-// Golden-orange palette for the C++ learning path and multiplayer add-on.
-#pricing[data-course-id="1"],
+// Golden-orange palette for course pricing and the multiplayer add-on.
+#pricing,
 .multiplayer-addon {
     --course-accent: #{$color-orange};
     --course-accent-soft: #{mix(#fff, $color-orange, 80%)};

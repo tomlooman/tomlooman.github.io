@@ -1,5 +1,6 @@
 ---
 layout: salespage
+show_multiplayer_addon: false
 title: "Professional Game Development in C++ and Unreal Engine 5"
 permalink: /courses/unrealengine-cpp/
 coverImage: "Thumb_Course_CPP_HeroVariant_2_UE5_900.jpg"
@@ -45,8 +46,8 @@ Compatible with UE 5.8 |
 Lifetime Access|
 Instructor Support|
 Completion Certificate|
-Subtitles in 5 Languages|
-[Optional Multiplayer Add-on](#multiplayer-addon)
+Subtitles in 5 Languages{% if page.show_multiplayer_addon %}|
+[Optional Multiplayer Add-on](#multiplayer-addon){% endif %}
 {% endcapture %}
 
 {% assign summary = summary_text | strip | split: "|" %}
@@ -136,6 +137,7 @@ This upgrade took over a year of work to complete. **Every existing student rece
     content=feature-upgradedrecording
 %}
 
+{% if page.show_multiplayer_addon %}
 <section class="multiplayer-addon" id="multiplayer-addon" aria-labelledby="multiplayer-addon-title">
   <p class="multiplayer-addon__eyebrow">Optional course add-on</p>
   <h2 id="multiplayer-addon-title">Take your C++ skills into multiplayer</h2>
@@ -152,6 +154,7 @@ This upgrade took over a year of work to complete. **Every existing student rece
     <a href="{{ multiplayer_url | escape }}">Browse the multiplayer curriculum (In Development) &rarr;</a>
   </div>
 </section>
+{% endif %}
 
 ## Your Instructor : Tom Looman
 {% include bio.html %}
@@ -182,6 +185,7 @@ Prices include VAT/Sales tax where applicable.
   id="pricing" 
   data-course-id="1" 
   data-sale-active="{{ sale_active }}"
+  data-show-multiplayer-addon="{{ page.show_multiplayer_addon }}"
   data-multiplayer-url="{{ multiplayer_url | escape }}">
 </div>
 

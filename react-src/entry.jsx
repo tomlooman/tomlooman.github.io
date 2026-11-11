@@ -49,7 +49,12 @@ if (pricing) {
   const saleActive = pricing.getAttribute('data-sale-active') === 'true';
 
   createRoot(pricing).render(
-    <Pricing courseId={courseId} saleActive={saleActive} multiplayerUrl={pricing.dataset.multiplayerUrl} />
+    <Pricing
+      courseId={courseId}
+      saleActive={saleActive}
+      showMultiplayerAddon={pricing.dataset.showMultiplayerAddon === 'true'}
+      multiplayerUrl={pricing.dataset.multiplayerUrl}
+    />
   );
 }
 
