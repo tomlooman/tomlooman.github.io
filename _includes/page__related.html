@@ -22,6 +22,8 @@
   {% endunless %}
 {% endfor %}
 
+{% assign redirectSources = posts | where_exp: 'source', 'source.redirect_to' %}
+
 {% comment %} Track the maximum log-scaled tag count for normalization. {% endcomment %}
 {% assign maxLogCommonTags = 1 %}
 {% assign relevantPosts = "" | split: "" %}
@@ -33,9 +35,11 @@
     {% assign tags = post.tags | uniq %}
 
     {% comment %} Preserve tags from the first source redirecting to this item. {% endcomment %}
-    {% assign sourcePost = posts | where: 'redirect_to', post.url | first %}
-    {% if sourcePost %}
-      {% assign tags = tags | concat: sourcePost.tags | uniq %}
+    {% if redirectSources.size > 0 %}
+      {% assign sourcePost = redirectSources | where: 'redirect_to', post.url | first %}
+      {% if sourcePost %}
+        {% assign tags = tags | concat: sourcePost.tags | uniq %}
+      {% endif %}
     {% endif %}
 
     {% comment %} Count shared topic tags; archive is never a matching signal. {% endcomment %}
