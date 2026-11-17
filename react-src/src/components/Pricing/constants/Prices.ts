@@ -7,8 +7,8 @@ export const Prices = {
         INDIE_PAYMENT_PLAN_DISCOUNTED: 39,
         INDIE_COUPON_CODE: "BLACKFRIDAY", // e.g. "COMMUNITY15"
         PRO: 695,
-        PRO_DISCOUNTED: null,
-        PRO_COUPON_CODE: "",
+        PRO_DISCOUNTED: 595,
+        PRO_COUPON_CODE: "BLACKFRIDAY",
     },
     // Optimization Course
     2: {
@@ -18,8 +18,8 @@ export const Prices = {
         INDIE_PAYMENT_PLAN_DISCOUNTED: 47,
         INDIE_COUPON_CODE: "BLACKFRIDAY",
         PRO: 795,
-        PRO_DISCOUNTED: null,
-        PRO_COUPON_CODE: "",
+        PRO_DISCOUNTED: 695,
+        PRO_COUPON_CODE: "BLACKFRIDAY",
     }
 };
 
