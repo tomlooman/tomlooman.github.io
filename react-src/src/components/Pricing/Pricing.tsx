@@ -48,8 +48,8 @@ const PriceDetails = ({ price, originalPrice, monthly, perUser }: PriceDetailsPr
             <p className={style.paymentSummary}>
                 {monthly ? `$${price * payments} total over ${payments} months` : "One-time payment"}
                 {discounted && (
-                    <strong className={style.savings}>
-                        {`Save ${Math.round((originalPrice - price) / originalPrice * 100)}%`}
+                    <strong className={style.savings} hidden>
+                        {`Save $${(originalPrice - price) * payments}`}
                     </strong>
                 )}
             </p>
