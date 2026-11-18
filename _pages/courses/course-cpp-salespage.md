@@ -12,7 +12,7 @@ header:
     - label: "See Pricing"
       url: "/courses/unrealengine-cpp/#pricing-options"
     - label: "View Curriculum"
-      url: "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5?coupon_code=BLACKFRIDAY"
+      url: "/courses/unrealengine-cpp/#curriculum"
   overlay_filter: 0.3
 tagline: "Master Unreal Engine C++ with a learning path trusted by industry professionals, from Indies to AAA studios."
 redirect_from:
@@ -29,18 +29,15 @@ redirect_from:
 
 {% include sale-state.html %}
 
-{% assign course_summary_url = "https://courses.tomlooman.com/l/pdp/professional-game-development-cpp-ue5" %}
-
 {% assign multiplayer_url = "https://courses.tomlooman.com/l/pdp/multiplayer-programming-unreal-engine" %}
 {% assign coupon_code = site.data.sale.coupon_code | strip %}
 {% if sale_active and coupon_code != "" %}
   {% assign coupon_query = coupon_code | url_encode | prepend: "?coupon_code=" %}
-  {% assign course_summary_url = course_summary_url | append: coupon_query %}
   {% assign multiplayer_url = multiplayer_url | append: coupon_query %}
 {% endif %}
 
 {% capture summary_text %}
-[30+ Hours of C++ Lessons]({{ course_summary_url }})|
+[30+ Hours of C++ Lessons](/courses/unrealengine-cpp/#curriculum)|
 7 Programming Assignments|
 Compatible with UE 5.8 |
 Lifetime Access|
@@ -136,6 +133,8 @@ This upgrade took over a year of work to complete. **Every existing student rece
     alt="Rider displaying the course project's C++ action code beside the Unreal Editor loading window and output log."
     content=feature-upgradedrecording
 %}
+
+{% include course-curriculum.html curriculum=site.data.course_curriculum_cpp %}
 
 {% if page.show_multiplayer_addon %}
 <section class="multiplayer-addon" id="multiplayer-addon" aria-labelledby="multiplayer-addon-title">
